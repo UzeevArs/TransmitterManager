@@ -57,7 +57,8 @@
             // 
             // btnOpenPreview
             // 
-            this.btnOpenPreview.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Appearance.Image")));
+            this.btnOpenPreview.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenPreview.Appearance.Image")));
+            this.btnOpenPreview.Appearance.Options.UseImage = true;
             this.btnOpenPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnOpenPreview.Image")));
             this.btnOpenPreview.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnOpenPreview.Location = new System.Drawing.Point(359, 8);
@@ -89,7 +90,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReportForm";
-            this.Text = "Отчеты";
+            this.Text = "\\";
             ((System.ComponentModel.ISupportInitialize)(this.cbReports.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

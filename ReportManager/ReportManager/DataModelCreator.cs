@@ -1,5 +1,5 @@
 ﻿using ReportManager.DataModel;
-using ReportManager.NifudaTableAdapters;
+using ReportManager.NifudaDataSetTableAdapters;
 using System.Collections.Generic;
 
 namespace ReportManager
@@ -8,7 +8,7 @@ namespace ReportManager
     {
         public static DeviceModel GetDeviceBySerial(SerialNumber serialNumber)
         {
-            DataTable1TableAdapter dataTable1TableAdapter = new DataTable1TableAdapter();
+            ReportDataTableAdapter dataTable1TableAdapter = new ReportDataTableAdapter();
             var deviceModel = new DeviceModel() { SerialNumber = new List<SerialNumber> { serialNumber } };
             var dataSet = dataTable1TableAdapter.GetDataBy(serialNumber.Serial);
 

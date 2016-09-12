@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReportManager.Forms;
+using System;
 using System.Security.Permissions;
 using System.Windows.Forms;
 
@@ -12,21 +13,55 @@ namespace ReportManager
             var keyFilter = new KeyMessageFilter();
             keyFilter.EventKeyHandler += KeyFilter_EventKeyHandler;
             Application.AddMessageFilter(keyFilter);
+
+            btnGenerateReports.Enabled = false;
         }
 
         private void KeyFilter_EventKeyHandler(object sender, Keys key, string serial)
         {
-            edtSerial.Edit.NullText = serial;
+            edtSerial.EditValue = serial;
+            if (edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty))
+            {
+                btnGenerateReports.Enabled = true;
+            }
+            else
+            {
+                btnGenerateReports.Enabled = false;
+            }
+        }
+
+        private void edtSerial_EditValueChanged(object sender, EventArgs e)
+        {
+            if (edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty))
+            {
+                btnGenerateReports.Enabled = true;
+            }
+            else
+            {
+                btnGenerateReports.Enabled = false;
+            }
         }
 
         private void btnGenerateReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            (new MainForm { MdiParent = this }).Show();
+            var deviceModel =
+                DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = edtSerial.EditValue.ToString() });
+
+            if (deviceModel != null)
+            {
+                ReportManagerContext.GetInstance().SetDeviceModel(deviceModel);
+                (new ReportForm { MdiParent = this }).Show();
+            }
+            else
+            {
+                MessageBox.Show("Серийный номер не найден", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnGenerateSerial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            (new SerialNumberGenerateForm { MdiParent = this }).Show();
         }
 
         [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]

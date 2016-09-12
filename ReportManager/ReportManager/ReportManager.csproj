@@ -96,19 +96,19 @@
     <Compile Include="DataModel\InputData.cs" />
     <Compile Include="DataModel\SerialNumber.cs" />
     <Compile Include="DataModel\DeviceTestResult.cs" />
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\SerialNumberGenerateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\SerialNumberGenerateForm.Designer.cs">
+      <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nifuda.cs">
-      <DependentUpon>Nifuda.xsd</DependentUpon>
+    <Compile Include="NifudaDataSet.cs">
+      <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Nifuda.Designer.cs">
+    <Compile Include="NifudaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Nifuda.xsd</DependentUpon>
+      <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,14 +126,16 @@
     <Compile Include="Reports\TransportListReport.Designer.cs">
       <DependentUpon>TransportListReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="SerialGenerator.cs" />
     <Compile Include="StagesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StagesForm.Designer.cs">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SerialNumberGenerateForm.resx">
+      <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -154,16 +156,16 @@
     <EmbeddedResource Include="StagesForm.resx">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Nifuda.xsc">
-      <DependentUpon>Nifuda.xsd</DependentUpon>
+    <None Include="NifudaDataSet.xsc">
+      <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Nifuda.xsd">
+    <None Include="NifudaDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Nifuda.Designer.cs</LastGenOutput>
+      <LastGenOutput>NifudaDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Nifuda.xss">
-      <DependentUpon>Nifuda.xsd</DependentUpon>
+    <None Include="NifudaDataSet.xss">
+      <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

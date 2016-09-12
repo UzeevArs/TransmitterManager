@@ -1,0 +1,1745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NifudaDataSet" targetNamespace="http://tempuri.org/Nifuda.xsd" xmlns:mstns="http://tempuri.org/Nifuda.xsd" xmlns="http://tempuri.org/Nifuda.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="YruPCIassemblingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="YruPCIassemblingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReportManager.Properties.Settings.GlobalReference.Default.YruPCIassemblingConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportDataTableAdapter" GeneratorDataComponentClassName="ReportDataTableAdapter" Name="ReportDataTable" UserDataComponentName="ReportDataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT                      NIFUDA.MS_CODE, NIFUDA.MODEL, NIFUDA.PROD_NO, NIFUDA.PROD_NO_SFIX, NIFUDA.LINE_NO, NIFUDA.CRP_GR_NO, NIFUDA.PROD_CAREER, 
+                                      NIFUDA.INDEX_NO, NIFUDA.TEST_CERT_SIGN, NIFUDA.DOC_LANG_TYPE, NIFUDA.INST_FINISH_D, NIFUDA.TEST_CERT_YN, 
+                                      NIFUDA.END_USER_CUST_N_J, NIFUDA.ORDER_NO, NIFUDA.ITEM_NO, NIFUDA.PROD_ITEM_REV_NO, NIFUDA.PROD_INST_REV_NO, 
+                                      NIFUDA.COMP_NO, NIFUDA.START_SCHDULE_D, NIFUDA.FINISH_SCHDULE_D, NIFUDA.START_NO, NIFUDA.SERIAL_NO, 
+                                      NIFUDA.ALLOWANCE_SIGN, NIFUDA.PROD_N_J, NIFUDA.PROD_N_E, NIFUDA.TOKUCHU_SPEC_SIGN, NIFUDA.SAP_LINKAGE_NO, 
+                                      NIFUDA.RANGE_INST_SIGN_500, NIFUDA.ORD_INST_MAX_500, NIFUDA.ORD_INST_MIN_500, NIFUDA.UNIT_500, NIFUDA.FEATURES_500, 
+                                      NIFUDA.RANGE_INST_SIGN_502, NIFUDA.ORD_INST_MAX_502, NIFUDA.ORD_INST_MIN_502, NIFUDA.UNIT_502, 
+                                      NIFUDA.ORD_INST_CONTECT1_W69, NIFUDA.ORD_INST_CONTECT1_X72, NIFUDA.ORD_INST_CONTECT1_X91, NIFUDA.ORD_INST_CONTECT1_Z30, 
+                                      NIFUDA.TAG_NO_525, NIFUDA.XJ_NO, NIFUDA.ORD_INST_CONTECT1_H46, NIFUDA.ORD_INST_CONTECT1_X92, 
+                                      NIFUDA.ORD_INST_CONTECT1_Y28, NIFUDA.ORD_INST_CONTECT1_W35, NIFUDA.ORD_INST_CONTECT1_X78, NIFUDA.ORD_INST_CONTECT1_X94, 
+                                      CRC_TB.SERIAL, CRC_TB.RESULT, CRC_TB.CAPNO, CRC_TB.AMPNO, CRC_TB.MSCODE, CRC_TB.STYLE, CRC_TB.ORDERNO, CRC_TB.RANGE, 
+                                      CRC_TB.TAG, CRC_TB.SQRT, CRC_TB.XJNO, CRC_TB.QIC, CRC_TB.BAR, CRC_TB.STN, CRC_TB.KMSERIAL1, CRC_TB.KMSERIAL2, 
+                                      CRC_TB.LINENAME, CRC_TB.SOFT, CRC_TB.VERSION, CRC_TB.CAL_DATE, CRC_TB.CAL_TIME, CRC_TB.TEMP, CRC_TB.HUMD, CRC_TB.DAMPING, 
+                                      CRC_TB.STBL, CRC_TB.ETHERCOM_VER, CRC_TB.BHCOM_VER, CRC_TB.PRESSCONT_VER, CRC_TB.PRESS_INI, CRC_TB.CRCX_INI, 
+                                      CRC_TB.EJXMSCODE_INI, CRC_TB.ATMOSPHERE, CRC_TB.STARTNO, CRC_TB.ADJ_V0, CRC_TB.ADJ_V100, CRC_TB.HARTSEL, CRC_TB.MSGDISP, 
+                                      CRC_TB.EUI64ADRS, CRC_TB.ACC, CRC_TB.CALUT, CRC_TB.CAL1, CRC_TB.CAL2, CRC_TB.CAL3, CRC_TB.DESUT, CRC_TB.DES1, CRC_TB.DES2, 
+                                      CRC_TB.DES3, CRC_TB.DTINC1, CRC_TB.DTINC2, CRC_TB.DTINC3, CRC_TB.DTDEC1, CRC_TB.DTDEC2, CRC_TB.DTDEC3, CRC_TB.CONVTUT, 
+                                      CRC_TB.CONVT1, CRC_TB.CONVT2, CRC_TB.CONVT3, CRC_TB.KMINC1, CRC_TB.KMINC2, CRC_TB.KMINC3, CRC_TB.KMDEC1, CRC_TB.KMDEC2, 
+                                      CRC_TB.KMDEC3, CRC_TB.CPINC1, CRC_TB.CPINC2, CRC_TB.CPINC3, CRC_TB.CPDEC1, CRC_TB.CPDEC2, CRC_TB.CPDEC3, CRC_TB.ATMN, 
+                                      CRC_TB.CALTIME, CRC_TB.ZEROR, CRC_TB.SPANR, CRC_TB.ADJUNIT, CRC_TB.WTMATL, CRC_TB.FLSIZE, HIPOT_TB.SERIAL AS Expr1, 
+                                      HIPOT_TB.RESULT AS Expr2, HIPOT_TB.ISOLATION_V, HIPOT_TB.ISOLATION_R, HIPOT_TB.ISOLATION_T, HIPOT_TB.IRESULT, HIPOT_TB.WITHSTAND_V, 
+                                      HIPOT_TB.WITHSTAND_I, HIPOT_TB.WITHSTAND_T, HIPOT_TB.WRESULT, HIPOT_TB.TEST_DATE, HIPOT_TB.TEST_TIME, HIPOT_TB.TUSER
+FROM                         NIFUDA INNER JOIN
+                                      CRC_TB ON NIFUDA.INDEX_NO = CRC_TB.BAR INNER JOIN
+                                      HIPOT_TB ON NIFUDA.SERIAL_NO = HIPOT_TB.SERIAL</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MS_CODE" DataSetColumn="MS_CODE" />
+              <Mapping SourceColumn="MODEL" DataSetColumn="MODEL" />
+              <Mapping SourceColumn="PROD_NO" DataSetColumn="PROD_NO" />
+              <Mapping SourceColumn="PROD_NO_SFIX" DataSetColumn="PROD_NO_SFIX" />
+              <Mapping SourceColumn="LINE_NO" DataSetColumn="LINE_NO" />
+              <Mapping SourceColumn="CRP_GR_NO" DataSetColumn="CRP_GR_NO" />
+              <Mapping SourceColumn="PROD_CAREER" DataSetColumn="PROD_CAREER" />
+              <Mapping SourceColumn="INDEX_NO" DataSetColumn="INDEX_NO" />
+              <Mapping SourceColumn="TEST_CERT_SIGN" DataSetColumn="TEST_CERT_SIGN" />
+              <Mapping SourceColumn="DOC_LANG_TYPE" DataSetColumn="DOC_LANG_TYPE" />
+              <Mapping SourceColumn="INST_FINISH_D" DataSetColumn="INST_FINISH_D" />
+              <Mapping SourceColumn="TEST_CERT_YN" DataSetColumn="TEST_CERT_YN" />
+              <Mapping SourceColumn="END_USER_CUST_N_J" DataSetColumn="END_USER_CUST_N_J" />
+              <Mapping SourceColumn="ORDER_NO" DataSetColumn="ORDER_NO" />
+              <Mapping SourceColumn="ITEM_NO" DataSetColumn="ITEM_NO" />
+              <Mapping SourceColumn="PROD_ITEM_REV_NO" DataSetColumn="PROD_ITEM_REV_NO" />
+              <Mapping SourceColumn="PROD_INST_REV_NO" DataSetColumn="PROD_INST_REV_NO" />
+              <Mapping SourceColumn="COMP_NO" DataSetColumn="COMP_NO" />
+              <Mapping SourceColumn="START_SCHDULE_D" DataSetColumn="START_SCHDULE_D" />
+              <Mapping SourceColumn="FINISH_SCHDULE_D" DataSetColumn="FINISH_SCHDULE_D" />
+              <Mapping SourceColumn="START_NO" DataSetColumn="START_NO" />
+              <Mapping SourceColumn="SERIAL_NO" DataSetColumn="SERIAL_NO" />
+              <Mapping SourceColumn="ALLOWANCE_SIGN" DataSetColumn="ALLOWANCE_SIGN" />
+              <Mapping SourceColumn="PROD_N_J" DataSetColumn="PROD_N_J" />
+              <Mapping SourceColumn="PROD_N_E" DataSetColumn="PROD_N_E" />
+              <Mapping SourceColumn="TOKUCHU_SPEC_SIGN" DataSetColumn="TOKUCHU_SPEC_SIGN" />
+              <Mapping SourceColumn="SAP_LINKAGE_NO" DataSetColumn="SAP_LINKAGE_NO" />
+              <Mapping SourceColumn="RANGE_INST_SIGN_500" DataSetColumn="RANGE_INST_SIGN_500" />
+              <Mapping SourceColumn="ORD_INST_MAX_500" DataSetColumn="ORD_INST_MAX_500" />
+              <Mapping SourceColumn="ORD_INST_MIN_500" DataSetColumn="ORD_INST_MIN_500" />
+              <Mapping SourceColumn="UNIT_500" DataSetColumn="UNIT_500" />
+              <Mapping SourceColumn="FEATURES_500" DataSetColumn="FEATURES_500" />
+              <Mapping SourceColumn="RANGE_INST_SIGN_502" DataSetColumn="RANGE_INST_SIGN_502" />
+              <Mapping SourceColumn="ORD_INST_MAX_502" DataSetColumn="ORD_INST_MAX_502" />
+              <Mapping SourceColumn="ORD_INST_MIN_502" DataSetColumn="ORD_INST_MIN_502" />
+              <Mapping SourceColumn="UNIT_502" DataSetColumn="UNIT_502" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_W69" DataSetColumn="ORD_INST_CONTECT1_W69" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X72" DataSetColumn="ORD_INST_CONTECT1_X72" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X91" DataSetColumn="ORD_INST_CONTECT1_X91" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_Z30" DataSetColumn="ORD_INST_CONTECT1_Z30" />
+              <Mapping SourceColumn="TAG_NO_525" DataSetColumn="TAG_NO_525" />
+              <Mapping SourceColumn="XJ_NO" DataSetColumn="XJ_NO" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_H46" DataSetColumn="ORD_INST_CONTECT1_H46" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X92" DataSetColumn="ORD_INST_CONTECT1_X92" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_Y28" DataSetColumn="ORD_INST_CONTECT1_Y28" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_W35" DataSetColumn="ORD_INST_CONTECT1_W35" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X78" DataSetColumn="ORD_INST_CONTECT1_X78" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X94" DataSetColumn="ORD_INST_CONTECT1_X94" />
+              <Mapping SourceColumn="SERIAL" DataSetColumn="SERIAL" />
+              <Mapping SourceColumn="RESULT" DataSetColumn="RESULT" />
+              <Mapping SourceColumn="CAPNO" DataSetColumn="CAPNO" />
+              <Mapping SourceColumn="AMPNO" DataSetColumn="AMPNO" />
+              <Mapping SourceColumn="MSCODE" DataSetColumn="MSCODE" />
+              <Mapping SourceColumn="STYLE" DataSetColumn="STYLE" />
+              <Mapping SourceColumn="ORDERNO" DataSetColumn="ORDERNO" />
+              <Mapping SourceColumn="RANGE" DataSetColumn="RANGE" />
+              <Mapping SourceColumn="TAG" DataSetColumn="TAG" />
+              <Mapping SourceColumn="SQRT" DataSetColumn="SQRT" />
+              <Mapping SourceColumn="XJNO" DataSetColumn="XJNO" />
+              <Mapping SourceColumn="QIC" DataSetColumn="QIC" />
+              <Mapping SourceColumn="BAR" DataSetColumn="BAR" />
+              <Mapping SourceColumn="STN" DataSetColumn="STN" />
+              <Mapping SourceColumn="KMSERIAL1" DataSetColumn="KMSERIAL1" />
+              <Mapping SourceColumn="KMSERIAL2" DataSetColumn="KMSERIAL2" />
+              <Mapping SourceColumn="LINENAME" DataSetColumn="LINENAME" />
+              <Mapping SourceColumn="SOFT" DataSetColumn="SOFT" />
+              <Mapping SourceColumn="VERSION" DataSetColumn="VERSION" />
+              <Mapping SourceColumn="CAL_DATE" DataSetColumn="CAL_DATE" />
+              <Mapping SourceColumn="CAL_TIME" DataSetColumn="CAL_TIME" />
+              <Mapping SourceColumn="TEMP" DataSetColumn="TEMP" />
+              <Mapping SourceColumn="HUMD" DataSetColumn="HUMD" />
+              <Mapping SourceColumn="DAMPING" DataSetColumn="DAMPING" />
+              <Mapping SourceColumn="STBL" DataSetColumn="STBL" />
+              <Mapping SourceColumn="ETHERCOM_VER" DataSetColumn="ETHERCOM_VER" />
+              <Mapping SourceColumn="BHCOM_VER" DataSetColumn="BHCOM_VER" />
+              <Mapping SourceColumn="PRESSCONT_VER" DataSetColumn="PRESSCONT_VER" />
+              <Mapping SourceColumn="PRESS_INI" DataSetColumn="PRESS_INI" />
+              <Mapping SourceColumn="CRCX_INI" DataSetColumn="CRCX_INI" />
+              <Mapping SourceColumn="EJXMSCODE_INI" DataSetColumn="EJXMSCODE_INI" />
+              <Mapping SourceColumn="ATMOSPHERE" DataSetColumn="ATMOSPHERE" />
+              <Mapping SourceColumn="STARTNO" DataSetColumn="STARTNO" />
+              <Mapping SourceColumn="ADJ_V0" DataSetColumn="ADJ_V0" />
+              <Mapping SourceColumn="ADJ_V100" DataSetColumn="ADJ_V100" />
+              <Mapping SourceColumn="HARTSEL" DataSetColumn="HARTSEL" />
+              <Mapping SourceColumn="MSGDISP" DataSetColumn="MSGDISP" />
+              <Mapping SourceColumn="EUI64ADRS" DataSetColumn="EUI64ADRS" />
+              <Mapping SourceColumn="ACC" DataSetColumn="ACC" />
+              <Mapping SourceColumn="CALUT" DataSetColumn="CALUT" />
+              <Mapping SourceColumn="CAL1" DataSetColumn="CAL1" />
+              <Mapping SourceColumn="CAL2" DataSetColumn="CAL2" />
+              <Mapping SourceColumn="CAL3" DataSetColumn="CAL3" />
+              <Mapping SourceColumn="DESUT" DataSetColumn="DESUT" />
+              <Mapping SourceColumn="DES1" DataSetColumn="DES1" />
+              <Mapping SourceColumn="DES2" DataSetColumn="DES2" />
+              <Mapping SourceColumn="DES3" DataSetColumn="DES3" />
+              <Mapping SourceColumn="DTINC1" DataSetColumn="DTINC1" />
+              <Mapping SourceColumn="DTINC2" DataSetColumn="DTINC2" />
+              <Mapping SourceColumn="DTINC3" DataSetColumn="DTINC3" />
+              <Mapping SourceColumn="DTDEC1" DataSetColumn="DTDEC1" />
+              <Mapping SourceColumn="DTDEC2" DataSetColumn="DTDEC2" />
+              <Mapping SourceColumn="DTDEC3" DataSetColumn="DTDEC3" />
+              <Mapping SourceColumn="CONVTUT" DataSetColumn="CONVTUT" />
+              <Mapping SourceColumn="CONVT1" DataSetColumn="CONVT1" />
+              <Mapping SourceColumn="CONVT2" DataSetColumn="CONVT2" />
+              <Mapping SourceColumn="CONVT3" DataSetColumn="CONVT3" />
+              <Mapping SourceColumn="KMINC1" DataSetColumn="KMINC1" />
+              <Mapping SourceColumn="KMINC2" DataSetColumn="KMINC2" />
+              <Mapping SourceColumn="KMINC3" DataSetColumn="KMINC3" />
+              <Mapping SourceColumn="KMDEC1" DataSetColumn="KMDEC1" />
+              <Mapping SourceColumn="KMDEC2" DataSetColumn="KMDEC2" />
+              <Mapping SourceColumn="KMDEC3" DataSetColumn="KMDEC3" />
+              <Mapping SourceColumn="CPINC1" DataSetColumn="CPINC1" />
+              <Mapping SourceColumn="CPINC2" DataSetColumn="CPINC2" />
+              <Mapping SourceColumn="CPINC3" DataSetColumn="CPINC3" />
+              <Mapping SourceColumn="CPDEC1" DataSetColumn="CPDEC1" />
+              <Mapping SourceColumn="CPDEC2" DataSetColumn="CPDEC2" />
+              <Mapping SourceColumn="CPDEC3" DataSetColumn="CPDEC3" />
+              <Mapping SourceColumn="ATMN" DataSetColumn="ATMN" />
+              <Mapping SourceColumn="CALTIME" DataSetColumn="CALTIME" />
+              <Mapping SourceColumn="ZEROR" DataSetColumn="ZEROR" />
+              <Mapping SourceColumn="SPANR" DataSetColumn="SPANR" />
+              <Mapping SourceColumn="ADJUNIT" DataSetColumn="ADJUNIT" />
+              <Mapping SourceColumn="WTMATL" DataSetColumn="WTMATL" />
+              <Mapping SourceColumn="FLSIZE" DataSetColumn="FLSIZE" />
+              <Mapping SourceColumn="ISOLATION_V" DataSetColumn="ISOLATION_V" />
+              <Mapping SourceColumn="ISOLATION_R" DataSetColumn="ISOLATION_R" />
+              <Mapping SourceColumn="ISOLATION_T" DataSetColumn="ISOLATION_T" />
+              <Mapping SourceColumn="IRESULT" DataSetColumn="IRESULT" />
+              <Mapping SourceColumn="WITHSTAND_V" DataSetColumn="WITHSTAND_V" />
+              <Mapping SourceColumn="WITHSTAND_I" DataSetColumn="WITHSTAND_I" />
+              <Mapping SourceColumn="WITHSTAND_T" DataSetColumn="WITHSTAND_T" />
+              <Mapping SourceColumn="WRESULT" DataSetColumn="WRESULT" />
+              <Mapping SourceColumn="TEST_DATE" DataSetColumn="TEST_DATE" />
+              <Mapping SourceColumn="TEST_TIME" DataSetColumn="TEST_TIME" />
+              <Mapping SourceColumn="TUSER" DataSetColumn="TUSER" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      NIFUDA.ALLOWANCE_SIGN, NIFUDA.COMP_NO, NIFUDA.CRP_GR_NO, NIFUDA.DOC_LANG_TYPE, NIFUDA.END_USER_CUST_N_J, 
+                                      NIFUDA.FEATURES_500, NIFUDA.FINISH_SCHDULE_D, NIFUDA.INDEX_NO, NIFUDA.INST_FINISH_D, NIFUDA.ITEM_NO, NIFUDA.LINE_NO, 
+                                      NIFUDA.MODEL, NIFUDA.MS_CODE, NIFUDA.ORDER_NO, NIFUDA.ORD_INST_CONTECT1_H46, NIFUDA.ORD_INST_CONTECT1_W35, 
+                                      NIFUDA.ORD_INST_CONTECT1_W69, NIFUDA.ORD_INST_CONTECT1_X72, NIFUDA.ORD_INST_CONTECT1_X78, NIFUDA.ORD_INST_CONTECT1_X91, 
+                                      NIFUDA.ORD_INST_CONTECT1_X92, NIFUDA.ORD_INST_CONTECT1_X94, NIFUDA.ORD_INST_CONTECT1_Y28, NIFUDA.ORD_INST_CONTECT1_Z30, 
+                                      NIFUDA.ORD_INST_MAX_500, NIFUDA.ORD_INST_MAX_502, NIFUDA.ORD_INST_MIN_500, NIFUDA.ORD_INST_MIN_502, NIFUDA.PROD_CAREER, 
+                                      NIFUDA.PROD_INST_REV_NO, NIFUDA.PROD_ITEM_REV_NO, NIFUDA.PROD_NO, NIFUDA.PROD_NO_SFIX, NIFUDA.PROD_N_E, NIFUDA.PROD_N_J, 
+                                      NIFUDA.RANGE_INST_SIGN_500, NIFUDA.RANGE_INST_SIGN_502, NIFUDA.SAP_LINKAGE_NO, NIFUDA.SERIAL_NO, NIFUDA.START_NO, 
+                                      NIFUDA.START_SCHDULE_D, NIFUDA.TAG_NO_525, NIFUDA.TEST_CERT_SIGN, NIFUDA.TEST_CERT_YN, NIFUDA.TOKUCHU_SPEC_SIGN, 
+                                      NIFUDA.UNIT_500, NIFUDA.UNIT_502, NIFUDA.XJ_NO, CRC_TB.SERIAL, CRC_TB.RESULT, CRC_TB.CAPNO, CRC_TB.AMPNO, CRC_TB.MSCODE, 
+                                      CRC_TB.STYLE, CRC_TB.ORDERNO, CRC_TB.RANGE, CRC_TB.TAG, CRC_TB.SQRT, CRC_TB.XJNO, CRC_TB.QIC, CRC_TB.BAR, CRC_TB.STN, 
+                                      CRC_TB.KMSERIAL1, CRC_TB.KMSERIAL2, CRC_TB.LINENAME, CRC_TB.SOFT, CRC_TB.VERSION, CRC_TB.CAL_DATE, CRC_TB.CAL_TIME, 
+                                      CRC_TB.TEMP, CRC_TB.HUMD, CRC_TB.DAMPING, CRC_TB.STBL, CRC_TB.ETHERCOM_VER, CRC_TB.BHCOM_VER, CRC_TB.PRESSCONT_VER, 
+                                      CRC_TB.PRESS_INI, CRC_TB.CRCX_INI, CRC_TB.EJXMSCODE_INI, CRC_TB.ATMOSPHERE, CRC_TB.STARTNO, CRC_TB.ADJ_V0, CRC_TB.ADJ_V100, 
+                                      CRC_TB.HARTSEL, CRC_TB.MSGDISP, CRC_TB.EUI64ADRS, CRC_TB.ACC, CRC_TB.CALUT, CRC_TB.CAL1, CRC_TB.CAL2, CRC_TB.CAL3, 
+                                      CRC_TB.DESUT, CRC_TB.DES1, CRC_TB.DES2, CRC_TB.DES3, CRC_TB.DTINC1, CRC_TB.DTINC2, CRC_TB.DTINC3, CRC_TB.DTDEC1, 
+                                      CRC_TB.DTDEC2, CRC_TB.DTDEC3, CRC_TB.CONVTUT, CRC_TB.CONVT1, CRC_TB.CONVT2, CRC_TB.CONVT3, CRC_TB.KMINC1, CRC_TB.KMINC2, 
+                                      CRC_TB.KMINC3, CRC_TB.KMDEC1, CRC_TB.KMDEC2, CRC_TB.KMDEC3, CRC_TB.CPINC1, CRC_TB.CPINC2, CRC_TB.CPINC3, CRC_TB.CPDEC1, 
+                                      CRC_TB.CPDEC2, CRC_TB.CPDEC3, CRC_TB.ATMN, CRC_TB.CALTIME, CRC_TB.ZEROR, CRC_TB.SPANR, CRC_TB.ADJUNIT, CRC_TB.WTMATL, 
+                                      CRC_TB.FLSIZE, HIPOT_TB.SERIAL AS Expr1, HIPOT_TB.RESULT AS Expr2, HIPOT_TB.ISOLATION_V, HIPOT_TB.ISOLATION_R, HIPOT_TB.ISOLATION_T, 
+                                      HIPOT_TB.IRESULT, HIPOT_TB.WITHSTAND_V, HIPOT_TB.WITHSTAND_I, HIPOT_TB.WITHSTAND_T, HIPOT_TB.WRESULT, HIPOT_TB.TEST_DATE, 
+                                      HIPOT_TB.TEST_TIME, HIPOT_TB.TUSER
+FROM                         NIFUDA INNER JOIN
+                                      CRC_TB ON NIFUDA.INDEX_NO = CRC_TB.BAR INNER JOIN
+                                      HIPOT_TB ON NIFUDA.SERIAL_NO = HIPOT_TB.SERIAL
+WHERE                       (NIFUDA.INDEX_NO = @SerialNumber)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="SerialNumber" ColumnName="INDEX_NO" DataSourceName="YruPCIassembling.dbo.NIFUDA" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@SerialNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="INDEX_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NifudaDataTableAdapter" GeneratorDataComponentClassName="NifudaDataTableAdapter" Name="NifudaDataTable" UserDataComponentName="NifudaDataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [NIFUDA] WHERE (([INDEX_NO] = @Original_INDEX_NO))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_INDEX_NO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="INDEX_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [NIFUDA] ([MS_CODE], [MODEL], [PROD_NO], [PROD_NO_SFIX], [LINE_NO], [CRP_GR_NO], [PROD_CAREER], [INDEX_NO], [TEST_CERT_SIGN], [DOC_LANG_TYPE], [INST_FINISH_D], [TEST_CERT_YN], [END_USER_CUST_N_J], [ORDER_NO], [ITEM_NO], [PROD_ITEM_REV_NO], [PROD_INST_REV_NO], [COMP_NO], [START_SCHDULE_D], [FINISH_SCHDULE_D], [START_NO], [SERIAL_NO], [ALLOWANCE_SIGN], [PROD_N_J], [PROD_N_E], [TOKUCHU_SPEC_SIGN], [SAP_LINKAGE_NO], [RANGE_INST_SIGN_500], [ORD_INST_MAX_500], [ORD_INST_MIN_500], [UNIT_500], [FEATURES_500], [RANGE_INST_SIGN_502], [ORD_INST_MAX_502], [ORD_INST_MIN_502], [UNIT_502], [ORD_INST_CONTECT1_W69], [ORD_INST_CONTECT1_X72], [ORD_INST_CONTECT1_X91], [ORD_INST_CONTECT1_Z30], [TAG_NO_525], [XJ_NO], [ORD_INST_CONTECT1_H46], [ORD_INST_CONTECT1_X92], [ORD_INST_CONTECT1_Y28], [ORD_INST_CONTECT1_W35], [ORD_INST_CONTECT1_X78], [ORD_INST_CONTECT1_X94]) VALUES (@MS_CODE, @MODEL, @PROD_NO, @PROD_NO_SFIX, @LINE_NO, @CRP_GR_NO, @PROD_CAREER, @INDEX_NO, @TEST_CERT_SIGN, @DOC_LANG_TYPE, @INST_FINISH_D, @TEST_CERT_YN, @END_USER_CUST_N_J, @ORDER_NO, @ITEM_NO, @PROD_ITEM_REV_NO, @PROD_INST_REV_NO, @COMP_NO, @START_SCHDULE_D, @FINISH_SCHDULE_D, @START_NO, @SERIAL_NO, @ALLOWANCE_SIGN, @PROD_N_J, @PROD_N_E, @TOKUCHU_SPEC_SIGN, @SAP_LINKAGE_NO, @RANGE_INST_SIGN_500, @ORD_INST_MAX_500, @ORD_INST_MIN_500, @UNIT_500, @FEATURES_500, @RANGE_INST_SIGN_502, @ORD_INST_MAX_502, @ORD_INST_MIN_502, @UNIT_502, @ORD_INST_CONTECT1_W69, @ORD_INST_CONTECT1_X72, @ORD_INST_CONTECT1_X91, @ORD_INST_CONTECT1_Z30, @TAG_NO_525, @XJ_NO, @ORD_INST_CONTECT1_H46, @ORD_INST_CONTECT1_X92, @ORD_INST_CONTECT1_Y28, @ORD_INST_CONTECT1_W35, @ORD_INST_CONTECT1_X78, @ORD_INST_CONTECT1_X94);
+SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94 FROM NIFUDA WHERE (INDEX_NO = @INDEX_NO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MS_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MS_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MODEL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODEL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_NO_SFIX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_NO_SFIX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LINE_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LINE_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CRP_GR_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CRP_GR_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_CAREER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_CAREER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@INDEX_NO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="INDEX_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEST_CERT_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEST_CERT_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DOC_LANG_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DOC_LANG_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@INST_FINISH_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="INST_FINISH_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEST_CERT_YN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEST_CERT_YN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@END_USER_CUST_N_J" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="END_USER_CUST_N_J" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDER_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDER_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ITEM_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ITEM_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_ITEM_REV_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_ITEM_REV_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_INST_REV_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_INST_REV_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@COMP_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COMP_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@START_SCHDULE_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="START_SCHDULE_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FINISH_SCHDULE_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FINISH_SCHDULE_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@START_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="START_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SERIAL_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SERIAL_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ALLOWANCE_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ALLOWANCE_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_N_J" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_N_J" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_N_E" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_N_E" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TOKUCHU_SPEC_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TOKUCHU_SPEC_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SAP_LINKAGE_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SAP_LINKAGE_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RANGE_INST_SIGN_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RANGE_INST_SIGN_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MAX_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MAX_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MIN_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MIN_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UNIT_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UNIT_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FEATURES_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FEATURES_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RANGE_INST_SIGN_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RANGE_INST_SIGN_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MAX_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MAX_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MIN_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MIN_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UNIT_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UNIT_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_W69" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_W69" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X72" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X72" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X91" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X91" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_Z30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_Z30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAG_NO_525" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAG_NO_525" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@XJ_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="XJ_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_H46" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_H46" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X92" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X92" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_Y28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_Y28" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_W35" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_W35" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X78" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X78" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X94" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X94" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      NIFUDA.*
+FROM                         NIFUDA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [NIFUDA] SET [MS_CODE] = @MS_CODE, [MODEL] = @MODEL, [PROD_NO] = @PROD_NO, [PROD_NO_SFIX] = @PROD_NO_SFIX, [LINE_NO] = @LINE_NO, [CRP_GR_NO] = @CRP_GR_NO, [PROD_CAREER] = @PROD_CAREER, [INDEX_NO] = @INDEX_NO, [TEST_CERT_SIGN] = @TEST_CERT_SIGN, [DOC_LANG_TYPE] = @DOC_LANG_TYPE, [INST_FINISH_D] = @INST_FINISH_D, [TEST_CERT_YN] = @TEST_CERT_YN, [END_USER_CUST_N_J] = @END_USER_CUST_N_J, [ORDER_NO] = @ORDER_NO, [ITEM_NO] = @ITEM_NO, [PROD_ITEM_REV_NO] = @PROD_ITEM_REV_NO, [PROD_INST_REV_NO] = @PROD_INST_REV_NO, [COMP_NO] = @COMP_NO, [START_SCHDULE_D] = @START_SCHDULE_D, [FINISH_SCHDULE_D] = @FINISH_SCHDULE_D, [START_NO] = @START_NO, [SERIAL_NO] = @SERIAL_NO, [ALLOWANCE_SIGN] = @ALLOWANCE_SIGN, [PROD_N_J] = @PROD_N_J, [PROD_N_E] = @PROD_N_E, [TOKUCHU_SPEC_SIGN] = @TOKUCHU_SPEC_SIGN, [SAP_LINKAGE_NO] = @SAP_LINKAGE_NO, [RANGE_INST_SIGN_500] = @RANGE_INST_SIGN_500, [ORD_INST_MAX_500] = @ORD_INST_MAX_500, [ORD_INST_MIN_500] = @ORD_INST_MIN_500, [UNIT_500] = @UNIT_500, [FEATURES_500] = @FEATURES_500, [RANGE_INST_SIGN_502] = @RANGE_INST_SIGN_502, [ORD_INST_MAX_502] = @ORD_INST_MAX_502, [ORD_INST_MIN_502] = @ORD_INST_MIN_502, [UNIT_502] = @UNIT_502, [ORD_INST_CONTECT1_W69] = @ORD_INST_CONTECT1_W69, [ORD_INST_CONTECT1_X72] = @ORD_INST_CONTECT1_X72, [ORD_INST_CONTECT1_X91] = @ORD_INST_CONTECT1_X91, [ORD_INST_CONTECT1_Z30] = @ORD_INST_CONTECT1_Z30, [TAG_NO_525] = @TAG_NO_525, [XJ_NO] = @XJ_NO, [ORD_INST_CONTECT1_H46] = @ORD_INST_CONTECT1_H46, [ORD_INST_CONTECT1_X92] = @ORD_INST_CONTECT1_X92, [ORD_INST_CONTECT1_Y28] = @ORD_INST_CONTECT1_Y28, [ORD_INST_CONTECT1_W35] = @ORD_INST_CONTECT1_W35, [ORD_INST_CONTECT1_X78] = @ORD_INST_CONTECT1_X78, [ORD_INST_CONTECT1_X94] = @ORD_INST_CONTECT1_X94 WHERE (([INDEX_NO] = @Original_INDEX_NO));
+SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94 FROM NIFUDA WHERE (INDEX_NO = @INDEX_NO)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MS_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MS_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MODEL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MODEL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_NO_SFIX" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_NO_SFIX" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@LINE_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="LINE_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CRP_GR_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CRP_GR_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_CAREER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_CAREER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@INDEX_NO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="INDEX_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEST_CERT_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEST_CERT_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DOC_LANG_TYPE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DOC_LANG_TYPE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@INST_FINISH_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="INST_FINISH_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TEST_CERT_YN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TEST_CERT_YN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@END_USER_CUST_N_J" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="END_USER_CUST_N_J" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORDER_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORDER_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ITEM_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ITEM_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_ITEM_REV_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_ITEM_REV_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_INST_REV_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_INST_REV_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@COMP_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COMP_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@START_SCHDULE_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="START_SCHDULE_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FINISH_SCHDULE_D" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FINISH_SCHDULE_D" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@START_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="START_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SERIAL_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SERIAL_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ALLOWANCE_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ALLOWANCE_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_N_J" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_N_J" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@PROD_N_E" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="PROD_N_E" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TOKUCHU_SPEC_SIGN" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TOKUCHU_SPEC_SIGN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SAP_LINKAGE_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SAP_LINKAGE_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RANGE_INST_SIGN_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RANGE_INST_SIGN_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MAX_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MAX_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MIN_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MIN_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UNIT_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UNIT_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FEATURES_500" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FEATURES_500" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@RANGE_INST_SIGN_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="RANGE_INST_SIGN_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MAX_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MAX_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_MIN_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_MIN_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@UNIT_502" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="UNIT_502" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_W69" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_W69" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X72" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X72" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X91" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X91" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_Z30" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_Z30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TAG_NO_525" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TAG_NO_525" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@XJ_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="XJ_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_H46" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_H46" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X92" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X92" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_Y28" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_Y28" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_W35" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_W35" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X78" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X78" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ORD_INST_CONTECT1_X94" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ORD_INST_CONTECT1_X94" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_INDEX_NO" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="INDEX_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MS_CODE" DataSetColumn="MS_CODE" />
+              <Mapping SourceColumn="MODEL" DataSetColumn="MODEL" />
+              <Mapping SourceColumn="PROD_NO" DataSetColumn="PROD_NO" />
+              <Mapping SourceColumn="PROD_NO_SFIX" DataSetColumn="PROD_NO_SFIX" />
+              <Mapping SourceColumn="LINE_NO" DataSetColumn="LINE_NO" />
+              <Mapping SourceColumn="CRP_GR_NO" DataSetColumn="CRP_GR_NO" />
+              <Mapping SourceColumn="PROD_CAREER" DataSetColumn="PROD_CAREER" />
+              <Mapping SourceColumn="INDEX_NO" DataSetColumn="INDEX_NO" />
+              <Mapping SourceColumn="TEST_CERT_SIGN" DataSetColumn="TEST_CERT_SIGN" />
+              <Mapping SourceColumn="DOC_LANG_TYPE" DataSetColumn="DOC_LANG_TYPE" />
+              <Mapping SourceColumn="INST_FINISH_D" DataSetColumn="INST_FINISH_D" />
+              <Mapping SourceColumn="TEST_CERT_YN" DataSetColumn="TEST_CERT_YN" />
+              <Mapping SourceColumn="END_USER_CUST_N_J" DataSetColumn="END_USER_CUST_N_J" />
+              <Mapping SourceColumn="ORDER_NO" DataSetColumn="ORDER_NO" />
+              <Mapping SourceColumn="ITEM_NO" DataSetColumn="ITEM_NO" />
+              <Mapping SourceColumn="PROD_ITEM_REV_NO" DataSetColumn="PROD_ITEM_REV_NO" />
+              <Mapping SourceColumn="PROD_INST_REV_NO" DataSetColumn="PROD_INST_REV_NO" />
+              <Mapping SourceColumn="COMP_NO" DataSetColumn="COMP_NO" />
+              <Mapping SourceColumn="START_SCHDULE_D" DataSetColumn="START_SCHDULE_D" />
+              <Mapping SourceColumn="FINISH_SCHDULE_D" DataSetColumn="FINISH_SCHDULE_D" />
+              <Mapping SourceColumn="START_NO" DataSetColumn="START_NO" />
+              <Mapping SourceColumn="SERIAL_NO" DataSetColumn="SERIAL_NO" />
+              <Mapping SourceColumn="ALLOWANCE_SIGN" DataSetColumn="ALLOWANCE_SIGN" />
+              <Mapping SourceColumn="PROD_N_J" DataSetColumn="PROD_N_J" />
+              <Mapping SourceColumn="PROD_N_E" DataSetColumn="PROD_N_E" />
+              <Mapping SourceColumn="TOKUCHU_SPEC_SIGN" DataSetColumn="TOKUCHU_SPEC_SIGN" />
+              <Mapping SourceColumn="SAP_LINKAGE_NO" DataSetColumn="SAP_LINKAGE_NO" />
+              <Mapping SourceColumn="RANGE_INST_SIGN_500" DataSetColumn="RANGE_INST_SIGN_500" />
+              <Mapping SourceColumn="ORD_INST_MAX_500" DataSetColumn="ORD_INST_MAX_500" />
+              <Mapping SourceColumn="ORD_INST_MIN_500" DataSetColumn="ORD_INST_MIN_500" />
+              <Mapping SourceColumn="UNIT_500" DataSetColumn="UNIT_500" />
+              <Mapping SourceColumn="FEATURES_500" DataSetColumn="FEATURES_500" />
+              <Mapping SourceColumn="RANGE_INST_SIGN_502" DataSetColumn="RANGE_INST_SIGN_502" />
+              <Mapping SourceColumn="ORD_INST_MAX_502" DataSetColumn="ORD_INST_MAX_502" />
+              <Mapping SourceColumn="ORD_INST_MIN_502" DataSetColumn="ORD_INST_MIN_502" />
+              <Mapping SourceColumn="UNIT_502" DataSetColumn="UNIT_502" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_W69" DataSetColumn="ORD_INST_CONTECT1_W69" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X72" DataSetColumn="ORD_INST_CONTECT1_X72" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X91" DataSetColumn="ORD_INST_CONTECT1_X91" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_Z30" DataSetColumn="ORD_INST_CONTECT1_Z30" />
+              <Mapping SourceColumn="TAG_NO_525" DataSetColumn="TAG_NO_525" />
+              <Mapping SourceColumn="XJ_NO" DataSetColumn="XJ_NO" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_H46" DataSetColumn="ORD_INST_CONTECT1_H46" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X92" DataSetColumn="ORD_INST_CONTECT1_X92" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_Y28" DataSetColumn="ORD_INST_CONTECT1_Y28" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_W35" DataSetColumn="ORD_INST_CONTECT1_W35" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X78" DataSetColumn="ORD_INST_CONTECT1_X78" />
+              <Mapping SourceColumn="ORD_INST_CONTECT1_X94" DataSetColumn="ORD_INST_CONTECT1_X94" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByEmptySerial" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEmptySerial" GeneratorSourceName="FillByEmptySerial" GetMethodModifier="Public" GetMethodName="GetDataByEmptySerial" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEmptySerial" UserSourceName="FillByEmptySerial">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, 
+                                      INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, 
+                                      START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, 
+                                      SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, 
+                                      ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, 
+                                      ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, 
+                                      ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94
+FROM                         NIFUDA
+WHERE                       (INDEX_NO = N'NO') AND (SERIAL_NO = N'NO')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UniqueSerialNumberTableAdapter" GeneratorDataComponentClassName="UniqueSerialNumberTableAdapter" Name="UniqueSerialNumberTable" UserDataComponentName="UniqueSerialNumberTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT                      SERIAL_NO
+FROM                         NIFUDA
+WHERE                       (SERIAL_NO &lt;&gt; 'NO')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SERIAL_NO" DataSetColumn="SERIAL_NO" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NifudaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NifudaDataSet" msprop:Generator_UserDSName="NifudaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportDataTable" msprop:Generator_TableClassName="ReportDataTableDataTable" msprop:Generator_TableVarName="tableReportDataTable" msprop:Generator_TablePropName="ReportDataTable" msprop:Generator_RowDeletingName="ReportDataTableRowDeleting" msprop:Generator_RowChangingName="ReportDataTableRowChanging" msprop:Generator_RowEvHandlerName="ReportDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportDataTableRowDeleted" msprop:Generator_UserTableName="ReportDataTable" msprop:Generator_RowChangedName="ReportDataTableRowChanged" msprop:Generator_RowEvArgName="ReportDataTableRowChangeEvent" msprop:Generator_RowClassName="ReportDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MS_CODE" msprop:Generator_ColumnVarNameInTable="columnMS_CODE" msprop:Generator_ColumnPropNameInRow="MS_CODE" msprop:Generator_ColumnPropNameInTable="MS_CODEColumn" msprop:Generator_UserColumnName="MS_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MODEL" msprop:Generator_ColumnVarNameInTable="columnMODEL" msprop:Generator_ColumnPropNameInRow="MODEL" msprop:Generator_ColumnPropNameInTable="MODELColumn" msprop:Generator_UserColumnName="MODEL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_NO" msprop:Generator_ColumnPropNameInRow="PROD_NO" msprop:Generator_ColumnPropNameInTable="PROD_NOColumn" msprop:Generator_UserColumnName="PROD_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_NO_SFIX" msprop:Generator_ColumnVarNameInTable="columnPROD_NO_SFIX" msprop:Generator_ColumnPropNameInRow="PROD_NO_SFIX" msprop:Generator_ColumnPropNameInTable="PROD_NO_SFIXColumn" msprop:Generator_UserColumnName="PROD_NO_SFIX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE_NO" msprop:Generator_ColumnVarNameInTable="columnLINE_NO" msprop:Generator_ColumnPropNameInRow="LINE_NO" msprop:Generator_ColumnPropNameInTable="LINE_NOColumn" msprop:Generator_UserColumnName="LINE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CRP_GR_NO" msprop:Generator_ColumnVarNameInTable="columnCRP_GR_NO" msprop:Generator_ColumnPropNameInRow="CRP_GR_NO" msprop:Generator_ColumnPropNameInTable="CRP_GR_NOColumn" msprop:Generator_UserColumnName="CRP_GR_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_CAREER" msprop:Generator_ColumnVarNameInTable="columnPROD_CAREER" msprop:Generator_ColumnPropNameInRow="PROD_CAREER" msprop:Generator_ColumnPropNameInTable="PROD_CAREERColumn" msprop:Generator_UserColumnName="PROD_CAREER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INDEX_NO" msprop:Generator_ColumnVarNameInTable="columnINDEX_NO" msprop:Generator_ColumnPropNameInRow="INDEX_NO" msprop:Generator_ColumnPropNameInTable="INDEX_NOColumn" msprop:Generator_UserColumnName="INDEX_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_CERT_SIGN" msprop:Generator_ColumnVarNameInTable="columnTEST_CERT_SIGN" msprop:Generator_ColumnPropNameInRow="TEST_CERT_SIGN" msprop:Generator_ColumnPropNameInTable="TEST_CERT_SIGNColumn" msprop:Generator_UserColumnName="TEST_CERT_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOC_LANG_TYPE" msprop:Generator_ColumnVarNameInTable="columnDOC_LANG_TYPE" msprop:Generator_ColumnPropNameInRow="DOC_LANG_TYPE" msprop:Generator_ColumnPropNameInTable="DOC_LANG_TYPEColumn" msprop:Generator_UserColumnName="DOC_LANG_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INST_FINISH_D" msprop:Generator_ColumnVarNameInTable="columnINST_FINISH_D" msprop:Generator_ColumnPropNameInRow="INST_FINISH_D" msprop:Generator_ColumnPropNameInTable="INST_FINISH_DColumn" msprop:Generator_UserColumnName="INST_FINISH_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_CERT_YN" msprop:Generator_ColumnVarNameInTable="columnTEST_CERT_YN" msprop:Generator_ColumnPropNameInRow="TEST_CERT_YN" msprop:Generator_ColumnPropNameInTable="TEST_CERT_YNColumn" msprop:Generator_UserColumnName="TEST_CERT_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="END_USER_CUST_N_J" msprop:Generator_ColumnVarNameInTable="columnEND_USER_CUST_N_J" msprop:Generator_ColumnPropNameInRow="END_USER_CUST_N_J" msprop:Generator_ColumnPropNameInTable="END_USER_CUST_N_JColumn" msprop:Generator_UserColumnName="END_USER_CUST_N_J" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDER_NO" msprop:Generator_ColumnVarNameInTable="columnORDER_NO" msprop:Generator_ColumnPropNameInRow="ORDER_NO" msprop:Generator_ColumnPropNameInTable="ORDER_NOColumn" msprop:Generator_UserColumnName="ORDER_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_NO" msprop:Generator_ColumnPropNameInRow="ITEM_NO" msprop:Generator_ColumnPropNameInTable="ITEM_NOColumn" msprop:Generator_UserColumnName="ITEM_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_ITEM_REV_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_ITEM_REV_NO" msprop:Generator_ColumnPropNameInRow="PROD_ITEM_REV_NO" msprop:Generator_ColumnPropNameInTable="PROD_ITEM_REV_NOColumn" msprop:Generator_UserColumnName="PROD_ITEM_REV_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_INST_REV_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_INST_REV_NO" msprop:Generator_ColumnPropNameInRow="PROD_INST_REV_NO" msprop:Generator_ColumnPropNameInTable="PROD_INST_REV_NOColumn" msprop:Generator_UserColumnName="PROD_INST_REV_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMP_NO" msprop:Generator_ColumnVarNameInTable="columnCOMP_NO" msprop:Generator_ColumnPropNameInRow="COMP_NO" msprop:Generator_ColumnPropNameInTable="COMP_NOColumn" msprop:Generator_UserColumnName="COMP_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="START_SCHDULE_D" msprop:Generator_ColumnVarNameInTable="columnSTART_SCHDULE_D" msprop:Generator_ColumnPropNameInRow="START_SCHDULE_D" msprop:Generator_ColumnPropNameInTable="START_SCHDULE_DColumn" msprop:Generator_UserColumnName="START_SCHDULE_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FINISH_SCHDULE_D" msprop:Generator_ColumnVarNameInTable="columnFINISH_SCHDULE_D" msprop:Generator_ColumnPropNameInRow="FINISH_SCHDULE_D" msprop:Generator_ColumnPropNameInTable="FINISH_SCHDULE_DColumn" msprop:Generator_UserColumnName="FINISH_SCHDULE_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="START_NO" msprop:Generator_ColumnVarNameInTable="columnSTART_NO" msprop:Generator_ColumnPropNameInRow="START_NO" msprop:Generator_ColumnPropNameInTable="START_NOColumn" msprop:Generator_UserColumnName="START_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SERIAL_NO" msprop:Generator_ColumnVarNameInTable="columnSERIAL_NO" msprop:Generator_ColumnPropNameInRow="SERIAL_NO" msprop:Generator_ColumnPropNameInTable="SERIAL_NOColumn" msprop:Generator_UserColumnName="SERIAL_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ALLOWANCE_SIGN" msprop:Generator_ColumnVarNameInTable="columnALLOWANCE_SIGN" msprop:Generator_ColumnPropNameInRow="ALLOWANCE_SIGN" msprop:Generator_ColumnPropNameInTable="ALLOWANCE_SIGNColumn" msprop:Generator_UserColumnName="ALLOWANCE_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_N_J" msprop:Generator_ColumnVarNameInTable="columnPROD_N_J" msprop:Generator_ColumnPropNameInRow="PROD_N_J" msprop:Generator_ColumnPropNameInTable="PROD_N_JColumn" msprop:Generator_UserColumnName="PROD_N_J" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_N_E" msprop:Generator_ColumnVarNameInTable="columnPROD_N_E" msprop:Generator_ColumnPropNameInRow="PROD_N_E" msprop:Generator_ColumnPropNameInTable="PROD_N_EColumn" msprop:Generator_UserColumnName="PROD_N_E" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOKUCHU_SPEC_SIGN" msprop:Generator_ColumnVarNameInTable="columnTOKUCHU_SPEC_SIGN" msprop:Generator_ColumnPropNameInRow="TOKUCHU_SPEC_SIGN" msprop:Generator_ColumnPropNameInTable="TOKUCHU_SPEC_SIGNColumn" msprop:Generator_UserColumnName="TOKUCHU_SPEC_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SAP_LINKAGE_NO" msprop:Generator_ColumnVarNameInTable="columnSAP_LINKAGE_NO" msprop:Generator_ColumnPropNameInRow="SAP_LINKAGE_NO" msprop:Generator_ColumnPropNameInTable="SAP_LINKAGE_NOColumn" msprop:Generator_UserColumnName="SAP_LINKAGE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RANGE_INST_SIGN_500" msprop:Generator_ColumnVarNameInTable="columnRANGE_INST_SIGN_500" msprop:Generator_ColumnPropNameInRow="RANGE_INST_SIGN_500" msprop:Generator_ColumnPropNameInTable="RANGE_INST_SIGN_500Column" msprop:Generator_UserColumnName="RANGE_INST_SIGN_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MAX_500" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MAX_500" msprop:Generator_ColumnPropNameInRow="ORD_INST_MAX_500" msprop:Generator_ColumnPropNameInTable="ORD_INST_MAX_500Column" msprop:Generator_UserColumnName="ORD_INST_MAX_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MIN_500" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MIN_500" msprop:Generator_ColumnPropNameInRow="ORD_INST_MIN_500" msprop:Generator_ColumnPropNameInTable="ORD_INST_MIN_500Column" msprop:Generator_UserColumnName="ORD_INST_MIN_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNIT_500" msprop:Generator_ColumnVarNameInTable="columnUNIT_500" msprop:Generator_ColumnPropNameInRow="UNIT_500" msprop:Generator_ColumnPropNameInTable="UNIT_500Column" msprop:Generator_UserColumnName="UNIT_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FEATURES_500" msprop:Generator_ColumnVarNameInTable="columnFEATURES_500" msprop:Generator_ColumnPropNameInRow="FEATURES_500" msprop:Generator_ColumnPropNameInTable="FEATURES_500Column" msprop:Generator_UserColumnName="FEATURES_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RANGE_INST_SIGN_502" msprop:Generator_ColumnVarNameInTable="columnRANGE_INST_SIGN_502" msprop:Generator_ColumnPropNameInRow="RANGE_INST_SIGN_502" msprop:Generator_ColumnPropNameInTable="RANGE_INST_SIGN_502Column" msprop:Generator_UserColumnName="RANGE_INST_SIGN_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MAX_502" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MAX_502" msprop:Generator_ColumnPropNameInRow="ORD_INST_MAX_502" msprop:Generator_ColumnPropNameInTable="ORD_INST_MAX_502Column" msprop:Generator_UserColumnName="ORD_INST_MAX_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MIN_502" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MIN_502" msprop:Generator_ColumnPropNameInRow="ORD_INST_MIN_502" msprop:Generator_ColumnPropNameInTable="ORD_INST_MIN_502Column" msprop:Generator_UserColumnName="ORD_INST_MIN_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNIT_502" msprop:Generator_ColumnVarNameInTable="columnUNIT_502" msprop:Generator_ColumnPropNameInRow="UNIT_502" msprop:Generator_ColumnPropNameInTable="UNIT_502Column" msprop:Generator_UserColumnName="UNIT_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_W69" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_W69" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_W69" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_W69Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_W69" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X72" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X72" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X72" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X72Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X72" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X91" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X91" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X91" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X91Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X91" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_Z30" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_Z30" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_Z30" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_Z30Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_Z30" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAG_NO_525" msprop:Generator_ColumnVarNameInTable="columnTAG_NO_525" msprop:Generator_ColumnPropNameInRow="TAG_NO_525" msprop:Generator_ColumnPropNameInTable="TAG_NO_525Column" msprop:Generator_UserColumnName="TAG_NO_525" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XJ_NO" msprop:Generator_ColumnVarNameInTable="columnXJ_NO" msprop:Generator_ColumnPropNameInRow="XJ_NO" msprop:Generator_ColumnPropNameInTable="XJ_NOColumn" msprop:Generator_UserColumnName="XJ_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_H46" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_H46" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_H46" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_H46Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_H46" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X92" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X92" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X92" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X92Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X92" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_Y28" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_Y28" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_Y28" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_Y28Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_Y28" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_W35" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_W35" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_W35" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_W35Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_W35" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X78" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X78" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X78" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X78Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X78" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X94" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X94" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X94" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X94Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X94" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SERIAL" msprop:Generator_ColumnVarNameInTable="columnSERIAL" msprop:Generator_ColumnPropNameInRow="SERIAL" msprop:Generator_ColumnPropNameInTable="SERIALColumn" msprop:Generator_UserColumnName="SERIAL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RESULT" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_UserColumnName="RESULT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAPNO" msprop:Generator_ColumnVarNameInTable="columnCAPNO" msprop:Generator_ColumnPropNameInRow="CAPNO" msprop:Generator_ColumnPropNameInTable="CAPNOColumn" msprop:Generator_UserColumnName="CAPNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AMPNO" msprop:Generator_ColumnVarNameInTable="columnAMPNO" msprop:Generator_ColumnPropNameInRow="AMPNO" msprop:Generator_ColumnPropNameInTable="AMPNOColumn" msprop:Generator_UserColumnName="AMPNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSCODE" msprop:Generator_ColumnVarNameInTable="columnMSCODE" msprop:Generator_ColumnPropNameInRow="MSCODE" msprop:Generator_ColumnPropNameInTable="MSCODEColumn" msprop:Generator_UserColumnName="MSCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STYLE" msprop:Generator_ColumnVarNameInTable="columnSTYLE" msprop:Generator_ColumnPropNameInRow="STYLE" msprop:Generator_ColumnPropNameInTable="STYLEColumn" msprop:Generator_UserColumnName="STYLE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDERNO" msprop:Generator_ColumnVarNameInTable="columnORDERNO" msprop:Generator_ColumnPropNameInRow="ORDERNO" msprop:Generator_ColumnPropNameInTable="ORDERNOColumn" msprop:Generator_UserColumnName="ORDERNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RANGE" msprop:Generator_ColumnVarNameInTable="columnRANGE" msprop:Generator_ColumnPropNameInRow="RANGE" msprop:Generator_ColumnPropNameInTable="RANGEColumn" msprop:Generator_UserColumnName="RANGE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAG" msprop:Generator_ColumnVarNameInTable="columnTAG" msprop:Generator_ColumnPropNameInRow="TAG" msprop:Generator_ColumnPropNameInTable="TAGColumn" msprop:Generator_UserColumnName="TAG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SQRT" msprop:Generator_ColumnVarNameInTable="columnSQRT" msprop:Generator_ColumnPropNameInRow="SQRT" msprop:Generator_ColumnPropNameInTable="SQRTColumn" msprop:Generator_UserColumnName="SQRT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XJNO" msprop:Generator_ColumnVarNameInTable="columnXJNO" msprop:Generator_ColumnPropNameInRow="XJNO" msprop:Generator_ColumnPropNameInTable="XJNOColumn" msprop:Generator_UserColumnName="XJNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QIC" msprop:Generator_ColumnVarNameInTable="columnQIC" msprop:Generator_ColumnPropNameInRow="QIC" msprop:Generator_ColumnPropNameInTable="QICColumn" msprop:Generator_UserColumnName="QIC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAR" msprop:Generator_ColumnVarNameInTable="columnBAR" msprop:Generator_ColumnPropNameInRow="BAR" msprop:Generator_ColumnPropNameInTable="BARColumn" msprop:Generator_UserColumnName="BAR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STN" msprop:Generator_ColumnVarNameInTable="columnSTN" msprop:Generator_ColumnPropNameInRow="STN" msprop:Generator_ColumnPropNameInTable="STNColumn" msprop:Generator_UserColumnName="STN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMSERIAL1" msprop:Generator_ColumnVarNameInTable="columnKMSERIAL1" msprop:Generator_ColumnPropNameInRow="KMSERIAL1" msprop:Generator_ColumnPropNameInTable="KMSERIAL1Column" msprop:Generator_UserColumnName="KMSERIAL1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMSERIAL2" msprop:Generator_ColumnVarNameInTable="columnKMSERIAL2" msprop:Generator_ColumnPropNameInRow="KMSERIAL2" msprop:Generator_ColumnPropNameInTable="KMSERIAL2Column" msprop:Generator_UserColumnName="KMSERIAL2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINENAME" msprop:Generator_ColumnVarNameInTable="columnLINENAME" msprop:Generator_ColumnPropNameInRow="LINENAME" msprop:Generator_ColumnPropNameInTable="LINENAMEColumn" msprop:Generator_UserColumnName="LINENAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOFT" msprop:Generator_ColumnVarNameInTable="columnSOFT" msprop:Generator_ColumnPropNameInRow="SOFT" msprop:Generator_ColumnPropNameInTable="SOFTColumn" msprop:Generator_UserColumnName="SOFT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VERSION" msprop:Generator_ColumnVarNameInTable="columnVERSION" msprop:Generator_ColumnPropNameInRow="VERSION" msprop:Generator_ColumnPropNameInTable="VERSIONColumn" msprop:Generator_UserColumnName="VERSION" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAL_DATE" msprop:Generator_ColumnVarNameInTable="columnCAL_DATE" msprop:Generator_ColumnPropNameInRow="CAL_DATE" msprop:Generator_ColumnPropNameInTable="CAL_DATEColumn" msprop:Generator_UserColumnName="CAL_DATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAL_TIME" msprop:Generator_ColumnVarNameInTable="columnCAL_TIME" msprop:Generator_ColumnPropNameInRow="CAL_TIME" msprop:Generator_ColumnPropNameInTable="CAL_TIMEColumn" msprop:Generator_UserColumnName="CAL_TIME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEMP" msprop:Generator_ColumnVarNameInTable="columnTEMP" msprop:Generator_ColumnPropNameInRow="TEMP" msprop:Generator_ColumnPropNameInTable="TEMPColumn" msprop:Generator_UserColumnName="TEMP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HUMD" msprop:Generator_ColumnVarNameInTable="columnHUMD" msprop:Generator_ColumnPropNameInRow="HUMD" msprop:Generator_ColumnPropNameInTable="HUMDColumn" msprop:Generator_UserColumnName="HUMD" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DAMPING" msprop:Generator_ColumnVarNameInTable="columnDAMPING" msprop:Generator_ColumnPropNameInRow="DAMPING" msprop:Generator_ColumnPropNameInTable="DAMPINGColumn" msprop:Generator_UserColumnName="DAMPING" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STBL" msprop:Generator_ColumnVarNameInTable="columnSTBL" msprop:Generator_ColumnPropNameInRow="STBL" msprop:Generator_ColumnPropNameInTable="STBLColumn" msprop:Generator_UserColumnName="STBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ETHERCOM_VER" msprop:Generator_ColumnVarNameInTable="columnETHERCOM_VER" msprop:Generator_ColumnPropNameInRow="ETHERCOM_VER" msprop:Generator_ColumnPropNameInTable="ETHERCOM_VERColumn" msprop:Generator_UserColumnName="ETHERCOM_VER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BHCOM_VER" msprop:Generator_ColumnVarNameInTable="columnBHCOM_VER" msprop:Generator_ColumnPropNameInRow="BHCOM_VER" msprop:Generator_ColumnPropNameInTable="BHCOM_VERColumn" msprop:Generator_UserColumnName="BHCOM_VER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRESSCONT_VER" msprop:Generator_ColumnVarNameInTable="columnPRESSCONT_VER" msprop:Generator_ColumnPropNameInRow="PRESSCONT_VER" msprop:Generator_ColumnPropNameInTable="PRESSCONT_VERColumn" msprop:Generator_UserColumnName="PRESSCONT_VER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRESS_INI" msprop:Generator_ColumnVarNameInTable="columnPRESS_INI" msprop:Generator_ColumnPropNameInRow="PRESS_INI" msprop:Generator_ColumnPropNameInTable="PRESS_INIColumn" msprop:Generator_UserColumnName="PRESS_INI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CRCX_INI" msprop:Generator_ColumnVarNameInTable="columnCRCX_INI" msprop:Generator_ColumnPropNameInRow="CRCX_INI" msprop:Generator_ColumnPropNameInTable="CRCX_INIColumn" msprop:Generator_UserColumnName="CRCX_INI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EJXMSCODE_INI" msprop:Generator_ColumnVarNameInTable="columnEJXMSCODE_INI" msprop:Generator_ColumnPropNameInRow="EJXMSCODE_INI" msprop:Generator_ColumnPropNameInTable="EJXMSCODE_INIColumn" msprop:Generator_UserColumnName="EJXMSCODE_INI" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATMOSPHERE" msprop:Generator_ColumnVarNameInTable="columnATMOSPHERE" msprop:Generator_ColumnPropNameInRow="ATMOSPHERE" msprop:Generator_ColumnPropNameInTable="ATMOSPHEREColumn" msprop:Generator_UserColumnName="ATMOSPHERE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STARTNO" msprop:Generator_ColumnVarNameInTable="columnSTARTNO" msprop:Generator_ColumnPropNameInRow="STARTNO" msprop:Generator_ColumnPropNameInTable="STARTNOColumn" msprop:Generator_UserColumnName="STARTNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADJ_V0" msprop:Generator_ColumnVarNameInTable="columnADJ_V0" msprop:Generator_ColumnPropNameInRow="ADJ_V0" msprop:Generator_ColumnPropNameInTable="ADJ_V0Column" msprop:Generator_UserColumnName="ADJ_V0" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADJ_V100" msprop:Generator_ColumnVarNameInTable="columnADJ_V100" msprop:Generator_ColumnPropNameInRow="ADJ_V100" msprop:Generator_ColumnPropNameInTable="ADJ_V100Column" msprop:Generator_UserColumnName="ADJ_V100" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HARTSEL" msprop:Generator_ColumnVarNameInTable="columnHARTSEL" msprop:Generator_ColumnPropNameInRow="HARTSEL" msprop:Generator_ColumnPropNameInTable="HARTSELColumn" msprop:Generator_UserColumnName="HARTSEL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MSGDISP" msprop:Generator_ColumnVarNameInTable="columnMSGDISP" msprop:Generator_ColumnPropNameInRow="MSGDISP" msprop:Generator_ColumnPropNameInTable="MSGDISPColumn" msprop:Generator_UserColumnName="MSGDISP" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EUI64ADRS" msprop:Generator_ColumnVarNameInTable="columnEUI64ADRS" msprop:Generator_ColumnPropNameInRow="EUI64ADRS" msprop:Generator_ColumnPropNameInTable="EUI64ADRSColumn" msprop:Generator_UserColumnName="EUI64ADRS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ACC" msprop:Generator_ColumnVarNameInTable="columnACC" msprop:Generator_ColumnPropNameInRow="ACC" msprop:Generator_ColumnPropNameInTable="ACCColumn" msprop:Generator_UserColumnName="ACC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CALUT" msprop:Generator_ColumnVarNameInTable="columnCALUT" msprop:Generator_ColumnPropNameInRow="CALUT" msprop:Generator_ColumnPropNameInTable="CALUTColumn" msprop:Generator_UserColumnName="CALUT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAL1" msprop:Generator_ColumnVarNameInTable="columnCAL1" msprop:Generator_ColumnPropNameInRow="CAL1" msprop:Generator_ColumnPropNameInTable="CAL1Column" msprop:Generator_UserColumnName="CAL1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAL2" msprop:Generator_ColumnVarNameInTable="columnCAL2" msprop:Generator_ColumnPropNameInRow="CAL2" msprop:Generator_ColumnPropNameInTable="CAL2Column" msprop:Generator_UserColumnName="CAL2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CAL3" msprop:Generator_ColumnVarNameInTable="columnCAL3" msprop:Generator_ColumnPropNameInRow="CAL3" msprop:Generator_ColumnPropNameInTable="CAL3Column" msprop:Generator_UserColumnName="CAL3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESUT" msprop:Generator_ColumnVarNameInTable="columnDESUT" msprop:Generator_ColumnPropNameInRow="DESUT" msprop:Generator_ColumnPropNameInTable="DESUTColumn" msprop:Generator_UserColumnName="DESUT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DES1" msprop:Generator_ColumnVarNameInTable="columnDES1" msprop:Generator_ColumnPropNameInRow="DES1" msprop:Generator_ColumnPropNameInTable="DES1Column" msprop:Generator_UserColumnName="DES1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DES2" msprop:Generator_ColumnVarNameInTable="columnDES2" msprop:Generator_ColumnPropNameInRow="DES2" msprop:Generator_ColumnPropNameInTable="DES2Column" msprop:Generator_UserColumnName="DES2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DES3" msprop:Generator_ColumnVarNameInTable="columnDES3" msprop:Generator_ColumnPropNameInRow="DES3" msprop:Generator_ColumnPropNameInTable="DES3Column" msprop:Generator_UserColumnName="DES3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTINC1" msprop:Generator_ColumnVarNameInTable="columnDTINC1" msprop:Generator_ColumnPropNameInRow="DTINC1" msprop:Generator_ColumnPropNameInTable="DTINC1Column" msprop:Generator_UserColumnName="DTINC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTINC2" msprop:Generator_ColumnVarNameInTable="columnDTINC2" msprop:Generator_ColumnPropNameInRow="DTINC2" msprop:Generator_ColumnPropNameInTable="DTINC2Column" msprop:Generator_UserColumnName="DTINC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTINC3" msprop:Generator_ColumnVarNameInTable="columnDTINC3" msprop:Generator_ColumnPropNameInRow="DTINC3" msprop:Generator_ColumnPropNameInTable="DTINC3Column" msprop:Generator_UserColumnName="DTINC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTDEC1" msprop:Generator_ColumnVarNameInTable="columnDTDEC1" msprop:Generator_ColumnPropNameInRow="DTDEC1" msprop:Generator_ColumnPropNameInTable="DTDEC1Column" msprop:Generator_UserColumnName="DTDEC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTDEC2" msprop:Generator_ColumnVarNameInTable="columnDTDEC2" msprop:Generator_ColumnPropNameInRow="DTDEC2" msprop:Generator_ColumnPropNameInTable="DTDEC2Column" msprop:Generator_UserColumnName="DTDEC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DTDEC3" msprop:Generator_ColumnVarNameInTable="columnDTDEC3" msprop:Generator_ColumnPropNameInRow="DTDEC3" msprop:Generator_ColumnPropNameInTable="DTDEC3Column" msprop:Generator_UserColumnName="DTDEC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONVTUT" msprop:Generator_ColumnVarNameInTable="columnCONVTUT" msprop:Generator_ColumnPropNameInRow="CONVTUT" msprop:Generator_ColumnPropNameInTable="CONVTUTColumn" msprop:Generator_UserColumnName="CONVTUT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONVT1" msprop:Generator_ColumnVarNameInTable="columnCONVT1" msprop:Generator_ColumnPropNameInRow="CONVT1" msprop:Generator_ColumnPropNameInTable="CONVT1Column" msprop:Generator_UserColumnName="CONVT1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONVT2" msprop:Generator_ColumnVarNameInTable="columnCONVT2" msprop:Generator_ColumnPropNameInRow="CONVT2" msprop:Generator_ColumnPropNameInTable="CONVT2Column" msprop:Generator_UserColumnName="CONVT2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONVT3" msprop:Generator_ColumnVarNameInTable="columnCONVT3" msprop:Generator_ColumnPropNameInRow="CONVT3" msprop:Generator_ColumnPropNameInTable="CONVT3Column" msprop:Generator_UserColumnName="CONVT3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMINC1" msprop:Generator_ColumnVarNameInTable="columnKMINC1" msprop:Generator_ColumnPropNameInRow="KMINC1" msprop:Generator_ColumnPropNameInTable="KMINC1Column" msprop:Generator_UserColumnName="KMINC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMINC2" msprop:Generator_ColumnVarNameInTable="columnKMINC2" msprop:Generator_ColumnPropNameInRow="KMINC2" msprop:Generator_ColumnPropNameInTable="KMINC2Column" msprop:Generator_UserColumnName="KMINC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMINC3" msprop:Generator_ColumnVarNameInTable="columnKMINC3" msprop:Generator_ColumnPropNameInRow="KMINC3" msprop:Generator_ColumnPropNameInTable="KMINC3Column" msprop:Generator_UserColumnName="KMINC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMDEC1" msprop:Generator_ColumnVarNameInTable="columnKMDEC1" msprop:Generator_ColumnPropNameInRow="KMDEC1" msprop:Generator_ColumnPropNameInTable="KMDEC1Column" msprop:Generator_UserColumnName="KMDEC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMDEC2" msprop:Generator_ColumnVarNameInTable="columnKMDEC2" msprop:Generator_ColumnPropNameInRow="KMDEC2" msprop:Generator_ColumnPropNameInTable="KMDEC2Column" msprop:Generator_UserColumnName="KMDEC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KMDEC3" msprop:Generator_ColumnVarNameInTable="columnKMDEC3" msprop:Generator_ColumnPropNameInRow="KMDEC3" msprop:Generator_ColumnPropNameInTable="KMDEC3Column" msprop:Generator_UserColumnName="KMDEC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPINC1" msprop:Generator_ColumnVarNameInTable="columnCPINC1" msprop:Generator_ColumnPropNameInRow="CPINC1" msprop:Generator_ColumnPropNameInTable="CPINC1Column" msprop:Generator_UserColumnName="CPINC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPINC2" msprop:Generator_ColumnVarNameInTable="columnCPINC2" msprop:Generator_ColumnPropNameInRow="CPINC2" msprop:Generator_ColumnPropNameInTable="CPINC2Column" msprop:Generator_UserColumnName="CPINC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPINC3" msprop:Generator_ColumnVarNameInTable="columnCPINC3" msprop:Generator_ColumnPropNameInRow="CPINC3" msprop:Generator_ColumnPropNameInTable="CPINC3Column" msprop:Generator_UserColumnName="CPINC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPDEC1" msprop:Generator_ColumnVarNameInTable="columnCPDEC1" msprop:Generator_ColumnPropNameInRow="CPDEC1" msprop:Generator_ColumnPropNameInTable="CPDEC1Column" msprop:Generator_UserColumnName="CPDEC1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPDEC2" msprop:Generator_ColumnVarNameInTable="columnCPDEC2" msprop:Generator_ColumnPropNameInRow="CPDEC2" msprop:Generator_ColumnPropNameInTable="CPDEC2Column" msprop:Generator_UserColumnName="CPDEC2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPDEC3" msprop:Generator_ColumnVarNameInTable="columnCPDEC3" msprop:Generator_ColumnPropNameInRow="CPDEC3" msprop:Generator_ColumnPropNameInTable="CPDEC3Column" msprop:Generator_UserColumnName="CPDEC3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ATMN" msprop:Generator_ColumnVarNameInTable="columnATMN" msprop:Generator_ColumnPropNameInRow="ATMN" msprop:Generator_ColumnPropNameInTable="ATMNColumn" msprop:Generator_UserColumnName="ATMN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CALTIME" msprop:Generator_ColumnVarNameInTable="columnCALTIME" msprop:Generator_ColumnPropNameInRow="CALTIME" msprop:Generator_ColumnPropNameInTable="CALTIMEColumn" msprop:Generator_UserColumnName="CALTIME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZEROR" msprop:Generator_ColumnVarNameInTable="columnZEROR" msprop:Generator_ColumnPropNameInRow="ZEROR" msprop:Generator_ColumnPropNameInTable="ZERORColumn" msprop:Generator_UserColumnName="ZEROR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SPANR" msprop:Generator_ColumnVarNameInTable="columnSPANR" msprop:Generator_ColumnPropNameInRow="SPANR" msprop:Generator_ColumnPropNameInTable="SPANRColumn" msprop:Generator_UserColumnName="SPANR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADJUNIT" msprop:Generator_ColumnVarNameInTable="columnADJUNIT" msprop:Generator_ColumnPropNameInRow="ADJUNIT" msprop:Generator_ColumnPropNameInTable="ADJUNITColumn" msprop:Generator_UserColumnName="ADJUNIT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WTMATL" msprop:Generator_ColumnVarNameInTable="columnWTMATL" msprop:Generator_ColumnPropNameInRow="WTMATL" msprop:Generator_ColumnPropNameInTable="WTMATLColumn" msprop:Generator_UserColumnName="WTMATL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FLSIZE" msprop:Generator_ColumnVarNameInTable="columnFLSIZE" msprop:Generator_ColumnPropNameInRow="FLSIZE" msprop:Generator_ColumnPropNameInTable="FLSIZEColumn" msprop:Generator_UserColumnName="FLSIZE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISOLATION_V" msprop:Generator_ColumnVarNameInTable="columnISOLATION_V" msprop:Generator_ColumnPropNameInRow="ISOLATION_V" msprop:Generator_ColumnPropNameInTable="ISOLATION_VColumn" msprop:Generator_UserColumnName="ISOLATION_V" type="xs:float" minOccurs="0" />
+              <xs:element name="ISOLATION_R" msprop:Generator_ColumnVarNameInTable="columnISOLATION_R" msprop:Generator_ColumnPropNameInRow="ISOLATION_R" msprop:Generator_ColumnPropNameInTable="ISOLATION_RColumn" msprop:Generator_UserColumnName="ISOLATION_R" type="xs:float" minOccurs="0" />
+              <xs:element name="ISOLATION_T" msprop:Generator_ColumnVarNameInTable="columnISOLATION_T" msprop:Generator_ColumnPropNameInRow="ISOLATION_T" msprop:Generator_ColumnPropNameInTable="ISOLATION_TColumn" msprop:Generator_UserColumnName="ISOLATION_T" type="xs:float" minOccurs="0" />
+              <xs:element name="IRESULT" msprop:Generator_ColumnVarNameInTable="columnIRESULT" msprop:Generator_ColumnPropNameInRow="IRESULT" msprop:Generator_ColumnPropNameInTable="IRESULTColumn" msprop:Generator_UserColumnName="IRESULT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WITHSTAND_V" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_V" msprop:Generator_ColumnPropNameInRow="WITHSTAND_V" msprop:Generator_ColumnPropNameInTable="WITHSTAND_VColumn" msprop:Generator_UserColumnName="WITHSTAND_V" type="xs:float" minOccurs="0" />
+              <xs:element name="WITHSTAND_I" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_I" msprop:Generator_ColumnPropNameInRow="WITHSTAND_I" msprop:Generator_ColumnPropNameInTable="WITHSTAND_IColumn" msprop:Generator_UserColumnName="WITHSTAND_I" type="xs:float" minOccurs="0" />
+              <xs:element name="WITHSTAND_T" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_T" msprop:Generator_ColumnPropNameInRow="WITHSTAND_T" msprop:Generator_ColumnPropNameInTable="WITHSTAND_TColumn" msprop:Generator_UserColumnName="WITHSTAND_T" type="xs:float" minOccurs="0" />
+              <xs:element name="WRESULT" msprop:Generator_ColumnVarNameInTable="columnWRESULT" msprop:Generator_ColumnPropNameInRow="WRESULT" msprop:Generator_ColumnPropNameInTable="WRESULTColumn" msprop:Generator_UserColumnName="WRESULT" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_DATE" msprop:Generator_ColumnVarNameInTable="columnTEST_DATE" msprop:Generator_ColumnPropNameInRow="TEST_DATE" msprop:Generator_ColumnPropNameInTable="TEST_DATEColumn" msprop:Generator_UserColumnName="TEST_DATE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_TIME" msprop:Generator_ColumnVarNameInTable="columnTEST_TIME" msprop:Generator_ColumnPropNameInRow="TEST_TIME" msprop:Generator_ColumnPropNameInTable="TEST_TIMEColumn" msprop:Generator_UserColumnName="TEST_TIME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TUSER" msprop:Generator_ColumnVarNameInTable="columnTUSER" msprop:Generator_ColumnPropNameInRow="TUSER" msprop:Generator_ColumnPropNameInTable="TUSERColumn" msprop:Generator_UserColumnName="TUSER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NifudaDataTable" msprop:Generator_TableClassName="NifudaDataTableDataTable" msprop:Generator_TableVarName="tableNifudaDataTable" msprop:Generator_RowChangedName="NifudaDataTableRowChanged" msprop:Generator_TablePropName="NifudaDataTable" msprop:Generator_RowDeletingName="NifudaDataTableRowDeleting" msprop:Generator_RowChangingName="NifudaDataTableRowChanging" msprop:Generator_RowEvHandlerName="NifudaDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="NifudaDataTableRowDeleted" msprop:Generator_RowClassName="NifudaDataTableRow" msprop:Generator_UserTableName="NifudaDataTable" msprop:Generator_RowEvArgName="NifudaDataTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MS_CODE" msprop:Generator_ColumnVarNameInTable="columnMS_CODE" msprop:Generator_ColumnPropNameInRow="MS_CODE" msprop:Generator_ColumnPropNameInTable="MS_CODEColumn" msprop:Generator_UserColumnName="MS_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MODEL" msprop:Generator_ColumnVarNameInTable="columnMODEL" msprop:Generator_ColumnPropNameInRow="MODEL" msprop:Generator_ColumnPropNameInTable="MODELColumn" msprop:Generator_UserColumnName="MODEL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_NO" msprop:Generator_ColumnPropNameInRow="PROD_NO" msprop:Generator_ColumnPropNameInTable="PROD_NOColumn" msprop:Generator_UserColumnName="PROD_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_NO_SFIX" msprop:Generator_ColumnVarNameInTable="columnPROD_NO_SFIX" msprop:Generator_ColumnPropNameInRow="PROD_NO_SFIX" msprop:Generator_ColumnPropNameInTable="PROD_NO_SFIXColumn" msprop:Generator_UserColumnName="PROD_NO_SFIX" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LINE_NO" msprop:Generator_ColumnVarNameInTable="columnLINE_NO" msprop:Generator_ColumnPropNameInRow="LINE_NO" msprop:Generator_ColumnPropNameInTable="LINE_NOColumn" msprop:Generator_UserColumnName="LINE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CRP_GR_NO" msprop:Generator_ColumnVarNameInTable="columnCRP_GR_NO" msprop:Generator_ColumnPropNameInRow="CRP_GR_NO" msprop:Generator_ColumnPropNameInTable="CRP_GR_NOColumn" msprop:Generator_UserColumnName="CRP_GR_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_CAREER" msprop:Generator_ColumnVarNameInTable="columnPROD_CAREER" msprop:Generator_ColumnPropNameInRow="PROD_CAREER" msprop:Generator_ColumnPropNameInTable="PROD_CAREERColumn" msprop:Generator_UserColumnName="PROD_CAREER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INDEX_NO" msprop:Generator_ColumnVarNameInTable="columnINDEX_NO" msprop:Generator_ColumnPropNameInRow="INDEX_NO" msprop:Generator_ColumnPropNameInTable="INDEX_NOColumn" msprop:Generator_UserColumnName="INDEX_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_CERT_SIGN" msprop:Generator_ColumnVarNameInTable="columnTEST_CERT_SIGN" msprop:Generator_ColumnPropNameInRow="TEST_CERT_SIGN" msprop:Generator_ColumnPropNameInTable="TEST_CERT_SIGNColumn" msprop:Generator_UserColumnName="TEST_CERT_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DOC_LANG_TYPE" msprop:Generator_ColumnVarNameInTable="columnDOC_LANG_TYPE" msprop:Generator_ColumnPropNameInRow="DOC_LANG_TYPE" msprop:Generator_ColumnPropNameInTable="DOC_LANG_TYPEColumn" msprop:Generator_UserColumnName="DOC_LANG_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="INST_FINISH_D" msprop:Generator_ColumnVarNameInTable="columnINST_FINISH_D" msprop:Generator_ColumnPropNameInRow="INST_FINISH_D" msprop:Generator_ColumnPropNameInTable="INST_FINISH_DColumn" msprop:Generator_UserColumnName="INST_FINISH_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TEST_CERT_YN" msprop:Generator_ColumnVarNameInTable="columnTEST_CERT_YN" msprop:Generator_ColumnPropNameInRow="TEST_CERT_YN" msprop:Generator_ColumnPropNameInTable="TEST_CERT_YNColumn" msprop:Generator_UserColumnName="TEST_CERT_YN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="END_USER_CUST_N_J" msprop:Generator_ColumnVarNameInTable="columnEND_USER_CUST_N_J" msprop:Generator_ColumnPropNameInRow="END_USER_CUST_N_J" msprop:Generator_ColumnPropNameInTable="END_USER_CUST_N_JColumn" msprop:Generator_UserColumnName="END_USER_CUST_N_J" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORDER_NO" msprop:Generator_ColumnVarNameInTable="columnORDER_NO" msprop:Generator_ColumnPropNameInRow="ORDER_NO" msprop:Generator_ColumnPropNameInTable="ORDER_NOColumn" msprop:Generator_UserColumnName="ORDER_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ITEM_NO" msprop:Generator_ColumnVarNameInTable="columnITEM_NO" msprop:Generator_ColumnPropNameInRow="ITEM_NO" msprop:Generator_ColumnPropNameInTable="ITEM_NOColumn" msprop:Generator_UserColumnName="ITEM_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_ITEM_REV_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_ITEM_REV_NO" msprop:Generator_ColumnPropNameInRow="PROD_ITEM_REV_NO" msprop:Generator_ColumnPropNameInTable="PROD_ITEM_REV_NOColumn" msprop:Generator_UserColumnName="PROD_ITEM_REV_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_INST_REV_NO" msprop:Generator_ColumnVarNameInTable="columnPROD_INST_REV_NO" msprop:Generator_ColumnPropNameInRow="PROD_INST_REV_NO" msprop:Generator_ColumnPropNameInTable="PROD_INST_REV_NOColumn" msprop:Generator_UserColumnName="PROD_INST_REV_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMP_NO" msprop:Generator_ColumnVarNameInTable="columnCOMP_NO" msprop:Generator_ColumnPropNameInRow="COMP_NO" msprop:Generator_ColumnPropNameInTable="COMP_NOColumn" msprop:Generator_UserColumnName="COMP_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="START_SCHDULE_D" msprop:Generator_ColumnVarNameInTable="columnSTART_SCHDULE_D" msprop:Generator_ColumnPropNameInRow="START_SCHDULE_D" msprop:Generator_ColumnPropNameInTable="START_SCHDULE_DColumn" msprop:Generator_UserColumnName="START_SCHDULE_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FINISH_SCHDULE_D" msprop:Generator_ColumnVarNameInTable="columnFINISH_SCHDULE_D" msprop:Generator_ColumnPropNameInRow="FINISH_SCHDULE_D" msprop:Generator_ColumnPropNameInTable="FINISH_SCHDULE_DColumn" msprop:Generator_UserColumnName="FINISH_SCHDULE_D" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="START_NO" msprop:Generator_ColumnVarNameInTable="columnSTART_NO" msprop:Generator_ColumnPropNameInRow="START_NO" msprop:Generator_ColumnPropNameInTable="START_NOColumn" msprop:Generator_UserColumnName="START_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SERIAL_NO" msprop:Generator_ColumnVarNameInTable="columnSERIAL_NO" msprop:Generator_ColumnPropNameInRow="SERIAL_NO" msprop:Generator_ColumnPropNameInTable="SERIAL_NOColumn" msprop:Generator_UserColumnName="SERIAL_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ALLOWANCE_SIGN" msprop:Generator_ColumnVarNameInTable="columnALLOWANCE_SIGN" msprop:Generator_ColumnPropNameInRow="ALLOWANCE_SIGN" msprop:Generator_ColumnPropNameInTable="ALLOWANCE_SIGNColumn" msprop:Generator_UserColumnName="ALLOWANCE_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_N_J" msprop:Generator_ColumnVarNameInTable="columnPROD_N_J" msprop:Generator_ColumnPropNameInRow="PROD_N_J" msprop:Generator_ColumnPropNameInTable="PROD_N_JColumn" msprop:Generator_UserColumnName="PROD_N_J" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PROD_N_E" msprop:Generator_ColumnVarNameInTable="columnPROD_N_E" msprop:Generator_ColumnPropNameInRow="PROD_N_E" msprop:Generator_ColumnPropNameInTable="PROD_N_EColumn" msprop:Generator_UserColumnName="PROD_N_E" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TOKUCHU_SPEC_SIGN" msprop:Generator_ColumnVarNameInTable="columnTOKUCHU_SPEC_SIGN" msprop:Generator_ColumnPropNameInRow="TOKUCHU_SPEC_SIGN" msprop:Generator_ColumnPropNameInTable="TOKUCHU_SPEC_SIGNColumn" msprop:Generator_UserColumnName="TOKUCHU_SPEC_SIGN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SAP_LINKAGE_NO" msprop:Generator_ColumnVarNameInTable="columnSAP_LINKAGE_NO" msprop:Generator_ColumnPropNameInRow="SAP_LINKAGE_NO" msprop:Generator_ColumnPropNameInTable="SAP_LINKAGE_NOColumn" msprop:Generator_UserColumnName="SAP_LINKAGE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RANGE_INST_SIGN_500" msprop:Generator_ColumnVarNameInTable="columnRANGE_INST_SIGN_500" msprop:Generator_ColumnPropNameInRow="RANGE_INST_SIGN_500" msprop:Generator_ColumnPropNameInTable="RANGE_INST_SIGN_500Column" msprop:Generator_UserColumnName="RANGE_INST_SIGN_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MAX_500" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MAX_500" msprop:Generator_ColumnPropNameInRow="ORD_INST_MAX_500" msprop:Generator_ColumnPropNameInTable="ORD_INST_MAX_500Column" msprop:Generator_UserColumnName="ORD_INST_MAX_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MIN_500" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MIN_500" msprop:Generator_ColumnPropNameInRow="ORD_INST_MIN_500" msprop:Generator_ColumnPropNameInTable="ORD_INST_MIN_500Column" msprop:Generator_UserColumnName="ORD_INST_MIN_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNIT_500" msprop:Generator_ColumnVarNameInTable="columnUNIT_500" msprop:Generator_ColumnPropNameInRow="UNIT_500" msprop:Generator_ColumnPropNameInTable="UNIT_500Column" msprop:Generator_UserColumnName="UNIT_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FEATURES_500" msprop:Generator_ColumnVarNameInTable="columnFEATURES_500" msprop:Generator_ColumnPropNameInRow="FEATURES_500" msprop:Generator_ColumnPropNameInTable="FEATURES_500Column" msprop:Generator_UserColumnName="FEATURES_500" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RANGE_INST_SIGN_502" msprop:Generator_ColumnVarNameInTable="columnRANGE_INST_SIGN_502" msprop:Generator_ColumnPropNameInRow="RANGE_INST_SIGN_502" msprop:Generator_ColumnPropNameInTable="RANGE_INST_SIGN_502Column" msprop:Generator_UserColumnName="RANGE_INST_SIGN_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MAX_502" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MAX_502" msprop:Generator_ColumnPropNameInRow="ORD_INST_MAX_502" msprop:Generator_ColumnPropNameInTable="ORD_INST_MAX_502Column" msprop:Generator_UserColumnName="ORD_INST_MAX_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_MIN_502" msprop:Generator_ColumnVarNameInTable="columnORD_INST_MIN_502" msprop:Generator_ColumnPropNameInRow="ORD_INST_MIN_502" msprop:Generator_ColumnPropNameInTable="ORD_INST_MIN_502Column" msprop:Generator_UserColumnName="ORD_INST_MIN_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UNIT_502" msprop:Generator_ColumnVarNameInTable="columnUNIT_502" msprop:Generator_ColumnPropNameInRow="UNIT_502" msprop:Generator_ColumnPropNameInTable="UNIT_502Column" msprop:Generator_UserColumnName="UNIT_502" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_W69" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_W69" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_W69" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_W69Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_W69" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X72" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X72" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X72" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X72Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X72" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X91" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X91" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X91" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X91Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X91" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_Z30" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_Z30" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_Z30" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_Z30Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_Z30" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TAG_NO_525" msprop:Generator_ColumnVarNameInTable="columnTAG_NO_525" msprop:Generator_ColumnPropNameInRow="TAG_NO_525" msprop:Generator_ColumnPropNameInTable="TAG_NO_525Column" msprop:Generator_UserColumnName="TAG_NO_525" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XJ_NO" msprop:Generator_ColumnVarNameInTable="columnXJ_NO" msprop:Generator_ColumnPropNameInRow="XJ_NO" msprop:Generator_ColumnPropNameInTable="XJ_NOColumn" msprop:Generator_UserColumnName="XJ_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_H46" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_H46" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_H46" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_H46Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_H46" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X92" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X92" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X92" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X92Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X92" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_Y28" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_Y28" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_Y28" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_Y28Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_Y28" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_W35" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_W35" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_W35" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_W35Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_W35" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X78" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X78" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X78" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X78Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X78" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_INST_CONTECT1_X94" msprop:Generator_ColumnVarNameInTable="columnORD_INST_CONTECT1_X94" msprop:Generator_ColumnPropNameInRow="ORD_INST_CONTECT1_X94" msprop:Generator_ColumnPropNameInTable="ORD_INST_CONTECT1_X94Column" msprop:Generator_UserColumnName="ORD_INST_CONTECT1_X94" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UniqueSerialNumberTable" msprop:Generator_TableClassName="UniqueSerialNumberTableDataTable" msprop:Generator_TableVarName="tableUniqueSerialNumberTable" msprop:Generator_RowChangedName="UniqueSerialNumberTableRowChanged" msprop:Generator_TablePropName="UniqueSerialNumberTable" msprop:Generator_RowDeletingName="UniqueSerialNumberTableRowDeleting" msprop:Generator_RowChangingName="UniqueSerialNumberTableRowChanging" msprop:Generator_RowEvHandlerName="UniqueSerialNumberTableRowChangeEventHandler" msprop:Generator_RowDeletedName="UniqueSerialNumberTableRowDeleted" msprop:Generator_RowClassName="UniqueSerialNumberTableRow" msprop:Generator_UserTableName="UniqueSerialNumberTable" msprop:Generator_RowEvArgName="UniqueSerialNumberTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SERIAL_NO" msprop:Generator_ColumnVarNameInTable="columnSERIAL_NO" msprop:Generator_ColumnPropNameInRow="SERIAL_NO" msprop:Generator_ColumnPropNameInTable="SERIAL_NOColumn" msprop:Generator_UserColumnName="SERIAL_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReportDataTable" />
+      <xs:field xpath="mstns:INDEX_NO" />
+    </xs:unique>
+    <xs:unique name="NifudaDataTable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:NifudaDataTable" />
+      <xs:field xpath="mstns:INDEX_NO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

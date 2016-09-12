@@ -40,7 +40,7 @@
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dataTable1TableAdapter1 = new ReportManager.NifudaTableAdapters.DataTable1TableAdapter();
+            this.reportDataTableAdapter = new ReportManager.NifudaDataSetTableAdapters.ReportDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -87,16 +87,16 @@
             // 
             this.edtSerial.Caption = "Серийный номер:  ";
             this.edtSerial.Edit = this.repositoryItemTextEdit1;
+            this.edtSerial.EditValue = "";
             this.edtSerial.EditWidth = 150;
-            this.edtSerial.Enabled = false;
             this.edtSerial.Id = 4;
             this.edtSerial.Name = "edtSerial";
+            this.edtSerial.EditValueChanged += new System.EventHandler(this.edtSerial_EditValueChanged);
             // 
             // repositoryItemTextEdit1
             // 
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            this.repositoryItemTextEdit1.ReadOnly = true;
             // 
             // ribbonPage1
             // 
@@ -129,7 +129,7 @@
             // 
             // dataTable1TableAdapter1
             // 
-            this.dataTable1TableAdapter1.ClearBeforeFill = true;
+            this.reportDataTableAdapter.ClearBeforeFill = true;
             // 
             // StagesForm
             // 
@@ -160,6 +160,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgStages;
         private System.Windows.Forms.Timer timer1;
-        private NifudaTableAdapters.DataTable1TableAdapter dataTable1TableAdapter1;
+        private NifudaDataSetTableAdapters.ReportDataTableAdapter reportDataTableAdapter;
     }
 }
