@@ -645,6 +645,31 @@ namespace ReportManager.DataModel
                 inputData.OrderInstContect1X94 = value;
             }
         }
+        public string IndexNumber
+        {
+            get
+            {
+                return inputData.IndexNumber;
+            }
+
+            set
+            {
+                inputData.IndexNumber = value;
+            }
+        }
+
+        public string CapsuleNumberInput
+        {
+            get
+            {
+                return inputData.CapsuleNumber;
+            }
+
+            set
+            {
+                inputData.CapsuleNumber = value;
+            }
+        }
 
         public string Result
         {
@@ -659,7 +684,7 @@ namespace ReportManager.DataModel
             }
         }
 
-        public string CapsuleNumber
+        public string CapsuleNumberCalibrate
         {
             get
             {
@@ -1112,5 +1137,7 @@ namespace ReportManager.DataModel
                 deviceTestResult.Result = value;
             }
         }
+              
+
     }
 }

@@ -9,7 +9,7 @@ namespace ReportManager.Forms
         public SerialNumberGenerateForm()
         {
             InitializeComponent();
-            nifudaDataTableAdapter1.FillByEmptySerial(nifudaDataSet1.NifudaDataTable);
+            nifudaDataTableAdapter1.FillByEmptyBarCode(nifudaDataSet1.NifudaDataTable);
         }
 
         private void grdEmptySerial_DoubleClick(object sender, EventArgs e)
@@ -18,6 +18,7 @@ namespace ReportManager.Forms
             if (rows.Length > 0)
             {
                 var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
+                nifudaDataTableAdapter1.UpdateQuery(serial.Item1);
                 MessageBox.Show(serial.ToString());
             }
         }

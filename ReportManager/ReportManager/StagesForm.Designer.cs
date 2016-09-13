@@ -40,7 +40,7 @@
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.reportDataTableAdapter = new ReportManager.NifudaDataSetTableAdapters.ReportDataTableAdapter();
+            this.nifudaDataTableAdapter = new ReportManager.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -129,7 +129,7 @@
             // 
             // dataTable1TableAdapter1
             // 
-            this.reportDataTableAdapter.ClearBeforeFill = true;
+            this.nifudaDataTableAdapter.ClearBeforeFill = true;
             // 
             // StagesForm
             // 
@@ -160,6 +160,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgStages;
         private System.Windows.Forms.Timer timer1;
-        private NifudaDataSetTableAdapters.ReportDataTableAdapter reportDataTableAdapter;
+        private NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter;
     }
 }

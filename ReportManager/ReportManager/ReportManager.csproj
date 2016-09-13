@@ -89,6 +89,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalibrationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataModelCreator.cs" />
     <Compile Include="DataModel\AggregatedFieldsModel.cs" />
     <Compile Include="DataModel\CalibrationResults.cs" />
@@ -101,6 +106,14 @@
     </Compile>
     <Compile Include="Forms\SerialNumberGenerateForm.Designer.cs">
       <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HipotDataTable.cs">
+      <DependentUpon>HipotDataTable.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HipotDataTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </Compile>
     <Compile Include="NifudaDataSet.cs">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
@@ -156,6 +169,28 @@
     <EmbeddedResource Include="StagesForm.resx">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CalibrationDataSet.xsc">
+      <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CalibrationDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CalibrationDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CalibrationDataSet.xss">
+      <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HipotDataTable.xsc">
+      <DependentUpon>HipotDataTable.xsd</DependentUpon>
+    </None>
+    <None Include="HipotDataTable.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HipotDataTable.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HipotDataTable.xss">
+      <DependentUpon>HipotDataTable.xsd</DependentUpon>
+    </None>
     <None Include="NifudaDataSet.xsc">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>

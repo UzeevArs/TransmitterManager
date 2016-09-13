@@ -1,5 +1,7 @@
 ﻿using ReportManager.DataModel;
 using ReportManager.NifudaDataSetTableAdapters;
+using ReportManager.HipotDataTableTableAdapters;
+using ReportManager.CalibrationDataSetTableAdapters;
 using System.Collections.Generic;
 
 namespace ReportManager
@@ -8,9 +10,15 @@ namespace ReportManager
     {
         public static DeviceModel GetDeviceBySerial(SerialNumber serialNumber)
         {
-            ReportDataTableAdapter dataTable1TableAdapter = new ReportDataTableAdapter();
+            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
             var deviceModel = new DeviceModel() { SerialNumber = new List<SerialNumber> { serialNumber } };
-            var dataSet = dataTable1TableAdapter.GetDataBy(serialNumber.Serial);
+            var dataSet = nifudaDataTableAdapter.GetDataBy(serialNumber.Serial);
+
+            CalibrationDataTableAdapter calibrationDataTableAdapter = new CalibrationDataTableAdapter();
+            var dataSetCalibrate = calibrationDataTableAdapter.GetDataBy(serialNumber.Serial);
+
+            HipotDataTableAdapter hipotDataTableAdapter = new HipotDataTableAdapter();
+            var dataSetHipot = hipotDataTableAdapter.GetDataBy(serialNumber.Serial);
 
             if (dataSet.Count == 0) return null;
 
@@ -23,10 +31,11 @@ namespace ReportManager
                 Features_500 = dataSet[0].FEATURES_500,
                 FinishScheduleD = dataSet[0].FINISH_SCHDULE_D,
                 InstFinishD = dataSet[0].INST_FINISH_D,
+                IndexNumber = dataSet[0].INDEX_NO,
                 ItemNumber = dataSet[0].ITEM_NO,
                 LineNumber = dataSet[0].LINE_NO,
                 Model = dataSet[0].MODEL,
-                MsCode = dataSet[0].MSCODE,
+                MsCode = dataSet[0].MS_CODE,
                 OrderInstContect1H46 = dataSet[0].ORD_INST_CONTECT1_H46,
                 OrderInstContect1W35 = dataSet[0].ORD_INST_CONTECT1_W35,
                 OrderInstContect1W69 = dataSet[0].ORD_INST_CONTECT1_W69,
@@ -61,54 +70,55 @@ namespace ReportManager
                 TokuchuSpecificationSign = dataSet[0].TOKUCHU_SPEC_SIGN,
                 Unit_500 = dataSet[0].UNIT_500,
                 Unit_502 = dataSet[0].UNIT_502,
-                XjNumber = dataSet[0].XJ_NO
+                XjNumber = dataSet[0].XJ_NO,
+                CapsuleNumber = dataSet[0].CAP_NO
             } };
 
             deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults
             {
-                AdjustScale_0 = dataSet[0].ADJ_V0,
-                AdjustScale_100 = dataSet[0].ADJ_V100,
-                AmplificationNumber = dataSet[0].AMPNO,
-                AtmospherePressure = dataSet[0].ATMOSPHERE,
-                Bar = dataSet[0].BAR,
-                Sqrt = dataSet[0].SQRT,
-                XjNumber = dataSet[0].XJNO,
-                BhcomVersion = dataSet[0].BHCOM_VER,
-                CalibrationDate = dataSet[0].CAL_DATE,
-                CalibrationTime = dataSet[0].CAL_TIME,
-                CapsuleNumber = dataSet[0].CAPNO,
-                CrcxInitialisation = dataSet[0].CRCX_INI,
-                Damping = dataSet[0].DAMPING,
-                EjxMsCodeInitialisation = dataSet[0].EJXMSCODE_INI,
-                EthercomVersion = dataSet[0].ETHERCOM_VER,
-                Eui64adrs = dataSet[0].EUI64ADRS,
-                HartSelection = dataSet[0].HARTSEL,
-                Humd = dataSet[0].HUMD,
-                KmSerial1 = dataSet[0].KMSERIAL1,
-                KmSerial2 = dataSet[0].KMSERIAL2,
-                LineName = dataSet[0].LINENAME,
-                MessageDisplay = dataSet[0].MSGDISP,
-                MsCode = dataSet[0].MSCODE,
-                OrderNumber = dataSet[0].ORDERNO,
-                PresscontVersion = dataSet[0].PRESSCONT_VER,
-                PressInitialisation = dataSet[0].PRESS_INI,
-                Qic = dataSet[0].QIC,
-                Range = dataSet[0].RANGE,
-                Result = dataSet[0].RESULT,
-                Soft = dataSet[0].SOFT,
-                StartNumber = dataSet[0].STARTNO,
-                Stbl = dataSet[0].STBL,
-                Stn = dataSet[0].STN,
-                Style = dataSet[0].STYLE,
-                Tag = dataSet[0].TAG,
-                Temp = dataSet[0].TEMP,
-                Version = dataSet[0].VERSION,
+                AdjustScale_0 = dataSetCalibrate[0].ADJ_V0,
+                AdjustScale_100 = dataSetCalibrate[0].ADJ_V100,
+                AmplificationNumber = dataSetCalibrate[0].AMPNO,
+                AtmospherePressure = dataSetCalibrate[0].ATMOSPHERE,
+                Bar = dataSetCalibrate[0].BAR,
+                Sqrt = dataSetCalibrate[0].SQRT,
+                XjNumber = dataSetCalibrate[0].XJNO,
+                BhcomVersion = dataSetCalibrate[0].BHCOM_VER,
+                CalibrationDate = dataSetCalibrate[0].CAL_DATE,
+                CalibrationTime = dataSetCalibrate[0].CAL_TIME,
+                CapsuleNumber = dataSetCalibrate[0].CAPNO,
+                CrcxInitialisation = dataSetCalibrate[0].CRCX_INI,
+                Damping = dataSetCalibrate[0].DAMPING,
+                EjxMsCodeInitialisation = dataSetCalibrate[0].EJXMSCODE_INI,
+                EthercomVersion = dataSetCalibrate[0].ETHERCOM_VER,
+                Eui64adrs = dataSetCalibrate[0].EUI64ADRS,
+                HartSelection = dataSetCalibrate[0].HARTSEL,
+                Humd = dataSetCalibrate[0].HUMD,
+                KmSerial1 = dataSetCalibrate[0].KMSERIAL1,
+                KmSerial2 = dataSetCalibrate[0].KMSERIAL2,
+                LineName = dataSetCalibrate[0].LINENAME,
+                MessageDisplay = dataSetCalibrate[0].MSGDISP,
+                MsCode = dataSetCalibrate[0].MSCODE,
+                OrderNumber = dataSetCalibrate[0].ORDERNO,
+                PresscontVersion = dataSetCalibrate[0].PRESSCONT_VER,
+                PressInitialisation = dataSetCalibrate[0].PRESS_INI,
+                Qic = dataSetCalibrate[0].QIC,
+                Range = dataSetCalibrate[0].RANGE,
+                Result = dataSetCalibrate[0].RESULT,
+                Soft = dataSetCalibrate[0].SOFT,
+                StartNumber = dataSetCalibrate[0].STARTNO,
+                Stbl = dataSetCalibrate[0].STBL,
+                Stn = dataSetCalibrate[0].STN,
+                Style = dataSetCalibrate[0].STYLE,
+                Tag = dataSetCalibrate[0].TAG,
+                Temp = dataSetCalibrate[0].TEMP,
+                Version = dataSetCalibrate[0].VERSION,
             }
             };
 
             deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult
             {
-                Result = dataSet[0].RESULT
+                Result = dataSetHipot[0].RESULT
             }
             };
 

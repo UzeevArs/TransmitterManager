@@ -15,7 +15,7 @@ namespace ReportManager.DataModel
         private string _lineNumber;
         private string _crpGroupNumber;
         private string _productionCareer;
-        //private string _indexNumber;
+        private string _indexNumber;
         private string _testCertSign;
         private string _documentationLangType;
         private string _instFinishD;
@@ -56,6 +56,7 @@ namespace ReportManager.DataModel
         private string _orderInstContect1W35;
         private string _orderInstContect1X78;
         private string _orderInstContect1X94;
+        private string _capsuleNumber;
 
         public string MsCode
         {
@@ -665,6 +666,32 @@ namespace ReportManager.DataModel
             set
             {
                 _orderInstContect1X94 = value;
+            }
+        }
+
+        public string IndexNumber
+        {
+            get
+            {
+                return _indexNumber;
+            }
+
+            set
+            {
+                _indexNumber = value;
+            }
+        }
+
+        public string CapsuleNumber
+        {
+            get
+            {
+                return _capsuleNumber;
+            }
+
+            set
+            {
+                _capsuleNumber = value;
             }
         }
     }
