@@ -204,10 +204,10 @@ WHERE                       (BAR = @barcode)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="CalibrationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CalibrationDataSet" msprop:Generator_UserDSName="CalibrationDataSet">
+  <xs:element name="CalibrationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CalibrationDataSet" msprop:Generator_UserDSName="CalibrationDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="CalibrationDataTable" msprop:Generator_TableClassName="CalibrationDataTableDataTable" msprop:Generator_TableVarName="tableCalibrationDataTable" msprop:Generator_RowChangedName="CalibrationDataTableRowChanged" msprop:Generator_TablePropName="CalibrationDataTable" msprop:Generator_RowDeletingName="CalibrationDataTableRowDeleting" msprop:Generator_RowChangingName="CalibrationDataTableRowChanging" msprop:Generator_RowEvHandlerName="CalibrationDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CalibrationDataTableRowDeleted" msprop:Generator_RowClassName="CalibrationDataTableRow" msprop:Generator_UserTableName="CalibrationDataTable" msprop:Generator_RowEvArgName="CalibrationDataTableRowChangeEvent">
+        <xs:element name="CalibrationDataTable" msprop:Generator_TableClassName="CalibrationDataTableDataTable" msprop:Generator_TableVarName="tableCalibrationDataTable" msprop:Generator_TablePropName="CalibrationDataTable" msprop:Generator_RowDeletingName="CalibrationDataTableRowDeleting" msprop:Generator_RowChangingName="CalibrationDataTableRowChanging" msprop:Generator_RowEvHandlerName="CalibrationDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CalibrationDataTableRowDeleted" msprop:Generator_UserTableName="CalibrationDataTable" msprop:Generator_RowChangedName="CalibrationDataTableRowChanged" msprop:Generator_RowEvArgName="CalibrationDataTableRowChangeEvent" msprop:Generator_RowClassName="CalibrationDataTableRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SERIAL" msprop:Generator_ColumnVarNameInTable="columnSERIAL" msprop:Generator_ColumnPropNameInRow="SERIAL" msprop:Generator_ColumnPropNameInTable="SERIALColumn" msprop:Generator_UserColumnName="SERIAL">

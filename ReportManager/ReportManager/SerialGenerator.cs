@@ -8,16 +8,17 @@ namespace ReportManager
 {
     public static class SerialGenerator
     {
-        public static Tuple<string, string> Generate(NifudaDataSet.NifudaDataTableRow row)
+        public static Tuple<string> Generate(NifudaDataSet.NifudaDataTableRow row)
         {
             
-            var serial = "Y2";
-            serial += GetYearCode();
-            serial += GetMonthCode();
-            serial += GenerateUniqueNumber(new UniqueSerialNumberDataTableAdapter().GetData());
+            //var serial = "Y2";
+            //serial += GetYearCode();
+            //serial += GetMonthCode();
+            //serial += GenerateUniqueNumber(new UniqueSerialNumberDataTableAdapter().GetData());
 
             var barCode = GenerateUniqueNumber(new UniqueSerialNumberDataTableAdapter().GetData());
-            return new Tuple<string, string>(barCode, serial);            
+
+            return new Tuple<string>(barCode);            
         }
 
         private static char GetYearCode()
@@ -84,7 +85,7 @@ namespace ReportManager
         private static string GenerateUniqueNumber(NifudaDataSet.UniqueSerialNumberDataTableDataTable dataTable)
         {
             return (dataTable.Select(element => 
-                Convert.ToInt32(new string(element[0].ToString().Skip(4).Take(5).ToArray()))).Max() + 1).ToString();
+                Convert.ToInt32(new string(element[0].ToString().ToArray()))).Max() + 1).ToString();
         }
     }
 }

@@ -202,7 +202,7 @@ namespace ReportManager {
             this.DataSetName = "HipotDataTable";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/HipotDataTable.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHipotDataTable = new HipotDataTableDataTable();
             base.Tables.Add(this.tableHipotDataTable);

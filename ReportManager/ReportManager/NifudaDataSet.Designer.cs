@@ -226,7 +226,7 @@ namespace ReportManager {
             this.DataSetName = "NifudaDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/NifudaDataSet.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableNifudaDataTable = new NifudaDataTableDataTable();
             base.Tables.Add(this.tableNifudaDataTable);
@@ -3469,9 +3469,10 @@ namespace ReportManager.NifudaDataSetTableAdapters {
                                       ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, 
                                       ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO
 FROM                         NIFUDA
-WHERE                       (INDEX_NO = @BarCode)";
+WHERE                       (SERIAL_NO = @SerialNO) OR
+                                      (SERIAL_NO = 'Y2S935597')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BarCode", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT                      MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, 
@@ -3482,14 +3483,19 @@ WHERE                       (INDEX_NO = @BarCode)";
                                       ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, 
                                       ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO
 FROM                         NIFUDA
-WHERE                       (INDEX_NO IS NULL)";
+WHERE                       (INDEX_NO = N'') OR
+                                      (INDEX_NO IS NULL)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "UPDATE                    NIFUDA\r\nSET                              INDEX_NO = @IN" +
-                "DEX_NO\r\nWHERE                       (INDEX_NO IS NULL);      \r\n";
+            this._commandCollection[3].CommandText = @"UPDATE                    NIFUDA
+SET                              INDEX_NO = @INDEX_NO
+WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
+                                      (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO IS NULL);         
+";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INDEX_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL_NO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3520,13 +3526,13 @@ WHERE                       (INDEX_NO IS NULL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(NifudaDataSet.NifudaDataTableDataTable dataTable, string BarCode) {
+        public virtual int FillBy(NifudaDataSet.NifudaDataTableDataTable dataTable, string SerialNO) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((BarCode == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((SerialNO == null)) {
+                throw new global::System.ArgumentNullException("SerialNO");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(BarCode));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SerialNO));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3539,13 +3545,13 @@ WHERE                       (INDEX_NO IS NULL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NifudaDataSet.NifudaDataTableDataTable GetDataBy(string BarCode) {
+        public virtual NifudaDataSet.NifudaDataTableDataTable GetDataBy(string SerialNO) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((BarCode == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            if ((SerialNO == null)) {
+                throw new global::System.ArgumentNullException("SerialNO");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(BarCode));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SerialNO));
             }
             NifudaDataSet.NifudaDataTableDataTable dataTable = new NifudaDataSet.NifudaDataTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -4435,13 +4441,19 @@ WHERE                       (INDEX_NO IS NULL)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string INDEX_NO) {
+        public virtual int UpdateQuery(string INDEX_NO, string SERIAL_NO) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((INDEX_NO == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[0].Value = ((string)(INDEX_NO));
+            }
+            if ((SERIAL_NO == null)) {
+                throw new global::System.ArgumentNullException("SERIAL_NO");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(SERIAL_NO));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4599,7 +4611,9 @@ WHERE                       (INDEX_NO IS NULL)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT                      INDEX_NO\r\nFROM                         NIFUDA";
+            this._commandCollection[0].CommandText = "SELECT                      INDEX_NO\r\nFROM                         NIFUDA\r\nWHERE " +
+                "                      (INDEX_NO <> N\'\') OR\r\n                                    " +
+                "  (INDEX_NO IS NULL)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -7,9 +7,12 @@
     }
 }
 
-namespace ReportManager.NifudaDataSetTableAdapters {
-    
-    
+namespace ReportManager.NifudaDataSetTableAdapters
+{
+    partial class NifudaDataTableAdapter
+    {
+    }
+
     public partial class UniqueSerialNumberDataTableAdapter {
     }
 }

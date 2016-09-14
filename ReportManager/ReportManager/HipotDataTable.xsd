@@ -75,10 +75,10 @@ WHERE                       (SERIAL = @BarCode)</CommandText>
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="HipotDataTable" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HipotDataTable" msprop:Generator_UserDSName="HipotDataTable">
+  <xs:element name="HipotDataTable" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HipotDataTable" msprop:Generator_UserDSName="HipotDataTable">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="HipotDataTable" msprop:Generator_TableClassName="HipotDataTableDataTable" msprop:Generator_TableVarName="tableHipotDataTable" msprop:Generator_TablePropName="_HipotDataTable" msprop:Generator_RowDeletingName="HipotDataTableRowDeleting" msprop:Generator_RowChangingName="HipotDataTableRowChanging" msprop:Generator_RowEvHandlerName="HipotDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotDataTableRowDeleted" msprop:Generator_UserTableName="HipotDataTable" msprop:Generator_RowChangedName="HipotDataTableRowChanged" msprop:Generator_RowEvArgName="HipotDataTableRowChangeEvent" msprop:Generator_RowClassName="HipotDataTableRow">
+        <xs:element name="HipotDataTable" msprop:Generator_TableClassName="HipotDataTableDataTable" msprop:Generator_TableVarName="tableHipotDataTable" msprop:Generator_RowChangedName="HipotDataTableRowChanged" msprop:Generator_TablePropName="_HipotDataTable" msprop:Generator_RowDeletingName="HipotDataTableRowDeleting" msprop:Generator_RowChangingName="HipotDataTableRowChanging" msprop:Generator_RowEvHandlerName="HipotDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotDataTableRowDeleted" msprop:Generator_RowClassName="HipotDataTableRow" msprop:Generator_UserTableName="HipotDataTable" msprop:Generator_RowEvArgName="HipotDataTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SERIAL" msprop:Generator_ColumnVarNameInTable="columnSERIAL" msprop:Generator_ColumnPropNameInRow="SERIAL" msprop:Generator_ColumnPropNameInTable="SERIALColumn" msprop:Generator_UserColumnName="SERIAL">

@@ -202,7 +202,7 @@ namespace ReportManager {
             this.DataSetName = "CalibrationDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/CalibrationDataSet.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCalibrationDataTable = new CalibrationDataTableDataTable();
             base.Tables.Add(this.tableCalibrationDataTable);

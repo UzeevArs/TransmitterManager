@@ -132,6 +132,12 @@
     <Compile Include="Forms\ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\CertificateReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CertificateReport.Designer.cs">
+      <DependentUpon>CertificateReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\ISavingReport.cs" />
     <Compile Include="Reports\TransportListReport.cs">
       <SubType>Component</SubType>
@@ -162,6 +168,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CertificateReport.resx">
+      <DependentUpon>CertificateReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\TransportListReport.resx">
       <DependentUpon>TransportListReport.cs</DependentUpon>
