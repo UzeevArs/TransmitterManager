@@ -7,13 +7,13 @@ using System.IO;
 
 namespace ReportManager.Reports
 {
-    public partial class CertificateReport : DevExpress.XtraReports.UI.XtraReport, ISavingReport
+    public partial class PasportReport : DevExpress.XtraReports.UI.XtraReport, ISavingReport
     {
-        public CertificateReport()
+        public PasportReport()
         {
             InitializeComponent();
-            Name = "CertificateReportTemplate";
-            Tag = "CertificateReportTemplate.repx";
+            Name = "PasportReportTemplate";
+            Tag = "PasportReportTemplate.repx";
         }
 
         public string GetTemplateFileName()
@@ -36,6 +36,6 @@ namespace ReportManager.Reports
                 return false;
             }
         }
-    }
 
+    }
 }

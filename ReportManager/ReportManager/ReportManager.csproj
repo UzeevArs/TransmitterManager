@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ReportManager</RootNamespace>
     <AssemblyName>ReportManager</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,10 +90,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalibrationDataSet.Designer.cs">
+    <Compile Include="Database\CalibrationDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ISUPData.cs">
+      <DependentUpon>ISUPData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ISUPData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISUPData.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataModelCreator.cs" />
     <Compile Include="DataModel\AggregatedFieldsModel.cs" />
@@ -107,21 +116,27 @@
     <Compile Include="Forms\SerialNumberGenerateForm.Designer.cs">
       <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HipotDataTable.cs">
+    <Compile Include="Database\HipotDataTable.cs">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="HipotDataTable.Designer.cs">
+    <Compile Include="Database\HipotDataTable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NifudaDataSet.cs">
+    <Compile Include="Database\NifudaDataSet.cs">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NifudaDataSet.Designer.cs">
+    <Compile Include="Database\NifudaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,6 +154,12 @@
       <DependentUpon>CertificateReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\ISavingReport.cs" />
+    <Compile Include="Reports\PasportReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PasportReport.Designer.cs">
+      <DependentUpon>PasportReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\TransportListReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -156,6 +177,9 @@
       <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +189,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Forms\ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
@@ -172,43 +197,57 @@
     <EmbeddedResource Include="Reports\CertificateReport.resx">
       <DependentUpon>CertificateReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PasportReport.resx">
+      <DependentUpon>PasportReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\TransportListReport.resx">
       <DependentUpon>TransportListReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StagesForm.resx">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="CalibrationDataSet.xsc">
+    <None Include="Database\CalibrationDataSet.xsc">
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="CalibrationDataSet.xsd">
+    <None Include="Database\CalibrationDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CalibrationDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="CalibrationDataSet.xss">
+    <None Include="Database\CalibrationDataSet.xss">
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="HipotDataTable.xsc">
+    <None Include="Database\HipotDataTable.xsc">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </None>
-    <None Include="HipotDataTable.xsd">
+    <None Include="Database\HipotDataTable.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HipotDataTable.Designer.cs</LastGenOutput>
     </None>
-    <None Include="HipotDataTable.xss">
+    <None Include="Database\HipotDataTable.xss">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </None>
-    <None Include="NifudaDataSet.xsc">
+    <None Include="Database\ISUPData.xsc">
+      <DependentUpon>ISUPData.xsd</DependentUpon>
+    </None>
+    <None Include="Database\ISUPData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ISUPData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Database\ISUPData.xss">
+      <DependentUpon>ISUPData.xsd</DependentUpon>
+    </None>
+    <None Include="Database\NifudaDataSet.xsc">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="NifudaDataSet.xsd">
+    <None Include="Database\NifudaDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NifudaDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="NifudaDataSet.xss">
+    <None Include="Database\NifudaDataSet.xss">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

@@ -23,13 +23,16 @@ namespace ReportManager.Forms
             if (rows.Length > 0)
             {
                 var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
+
                 nifudaDataTableAdapter1.UpdateQuery(serial.Item1, nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
+
                 var device = GetDeviceBySerial(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
                 var report = CreateReportInstance(device);
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
                     printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
                 }
+
             }
         }
 

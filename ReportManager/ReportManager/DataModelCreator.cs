@@ -1,7 +1,7 @@
 ﻿using ReportManager.DataModel;
-using ReportManager.NifudaDataSetTableAdapters;
-using ReportManager.HipotDataTableTableAdapters;
-using ReportManager.CalibrationDataSetTableAdapters;
+using ReportManager.Database.NifudaDataSetTableAdapters;
+using ReportManager.Database.HipotDataTableTableAdapters;
+using ReportManager.Database.CalibrationDataSetTableAdapters;
 using System.Collections.Generic;
 
 namespace ReportManager

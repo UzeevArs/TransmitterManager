@@ -1,4 +1,6 @@
-﻿namespace ReportManager.Forms
+﻿using ReportManager.Database;
+
+namespace ReportManager.Forms
 {
     partial class SerialNumberGenerateForm
     {
@@ -29,7 +31,7 @@
         private void InitializeComponent()
         {
             this.grdEmptySerial = new DevExpress.XtraGrid.GridControl();
-            this.nifudaDataSet1 = new ReportManager.NifudaDataSet();
+            this.nifudaDataSet1 = new ReportManager.Database.NifudaDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMODEL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +53,7 @@
             this.colPROD_N_E = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTOKUCHU_SPEC_SIGN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSAP_LINKAGE_NO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.nifudaDataTableAdapter1 = new ReportManager.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
+            this.nifudaDataTableAdapter1 = new ReportManager.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmptySerial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nifudaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -328,6 +330,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPROD_N_E;
         private DevExpress.XtraGrid.Columns.GridColumn colTOKUCHU_SPEC_SIGN;
         private DevExpress.XtraGrid.Columns.GridColumn colSAP_LINKAGE_NO;
-        private NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter1;
+        private Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter1;
     }
 }

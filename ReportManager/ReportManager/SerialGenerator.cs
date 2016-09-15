@@ -1,4 +1,5 @@
-﻿using ReportManager.NifudaDataSetTableAdapters;
+﻿using ReportManager.Database;
+using ReportManager.Database.NifudaDataSetTableAdapters;
 using System;
 using System.Data;
 using System.Linq;
