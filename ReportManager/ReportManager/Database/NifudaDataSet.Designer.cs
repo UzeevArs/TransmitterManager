@@ -26,8 +26,6 @@ namespace ReportManager.Database {
         
         private NifudaDataTableDataTable tableNifudaDataTable;
         
-        private UniqueSerialNumberDataTableDataTable tableUniqueSerialNumberDataTable;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -59,9 +57,6 @@ namespace ReportManager.Database {
                 if ((ds.Tables["NifudaDataTable"] != null)) {
                     base.Tables.Add(new NifudaDataTableDataTable(ds.Tables["NifudaDataTable"]));
                 }
-                if ((ds.Tables["UniqueSerialNumberDataTable"] != null)) {
-                    base.Tables.Add(new UniqueSerialNumberDataTableDataTable(ds.Tables["UniqueSerialNumberDataTable"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -87,16 +82,6 @@ namespace ReportManager.Database {
         public NifudaDataTableDataTable NifudaDataTable {
             get {
                 return this.tableNifudaDataTable;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public UniqueSerialNumberDataTableDataTable UniqueSerialNumberDataTable {
-            get {
-                return this.tableUniqueSerialNumberDataTable;
             }
         }
         
@@ -170,9 +155,6 @@ namespace ReportManager.Database {
                 if ((ds.Tables["NifudaDataTable"] != null)) {
                     base.Tables.Add(new NifudaDataTableDataTable(ds.Tables["NifudaDataTable"]));
                 }
-                if ((ds.Tables["UniqueSerialNumberDataTable"] != null)) {
-                    base.Tables.Add(new UniqueSerialNumberDataTableDataTable(ds.Tables["UniqueSerialNumberDataTable"]));
-                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -212,12 +194,6 @@ namespace ReportManager.Database {
                     this.tableNifudaDataTable.InitVars();
                 }
             }
-            this.tableUniqueSerialNumberDataTable = ((UniqueSerialNumberDataTableDataTable)(base.Tables["UniqueSerialNumberDataTable"]));
-            if ((initTable == true)) {
-                if ((this.tableUniqueSerialNumberDataTable != null)) {
-                    this.tableUniqueSerialNumberDataTable.InitVars();
-                }
-            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -226,23 +202,15 @@ namespace ReportManager.Database {
             this.DataSetName = "NifudaDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/NifudaDataSet.xsd";
-            this.EnforceConstraints = false;
+            this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableNifudaDataTable = new NifudaDataTableDataTable();
             base.Tables.Add(this.tableNifudaDataTable);
-            this.tableUniqueSerialNumberDataTable = new UniqueSerialNumberDataTableDataTable();
-            base.Tables.Add(this.tableUniqueSerialNumberDataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeNifudaDataTable() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeUniqueSerialNumberDataTable() {
             return false;
         }
         
@@ -303,9 +271,6 @@ namespace ReportManager.Database {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void NifudaDataTableRowChangeEventHandler(object sender, NifudaDataTableRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void UniqueSerialNumberDataTableRowChangeEventHandler(object sender, UniqueSerialNumberDataTableRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -411,104 +376,6 @@ namespace ReportManager.Database {
             private global::System.Data.DataColumn columnORD_INST_CONTECT1_X94;
             
             private global::System.Data.DataColumn columnCAP_NO;
-            
-            private global::System.Data.DataColumn columnExpr1;
-            
-            private global::System.Data.DataColumn columnExpr2;
-            
-            private global::System.Data.DataColumn columnExpr3;
-            
-            private global::System.Data.DataColumn columnExpr4;
-            
-            private global::System.Data.DataColumn columnExpr5;
-            
-            private global::System.Data.DataColumn columnExpr6;
-            
-            private global::System.Data.DataColumn columnExpr7;
-            
-            private global::System.Data.DataColumn columnExpr8;
-            
-            private global::System.Data.DataColumn columnExpr9;
-            
-            private global::System.Data.DataColumn columnExpr10;
-            
-            private global::System.Data.DataColumn columnExpr11;
-            
-            private global::System.Data.DataColumn columnExpr12;
-            
-            private global::System.Data.DataColumn columnExpr13;
-            
-            private global::System.Data.DataColumn columnExpr14;
-            
-            private global::System.Data.DataColumn columnExpr15;
-            
-            private global::System.Data.DataColumn columnExpr16;
-            
-            private global::System.Data.DataColumn columnExpr17;
-            
-            private global::System.Data.DataColumn columnExpr18;
-            
-            private global::System.Data.DataColumn columnExpr19;
-            
-            private global::System.Data.DataColumn columnExpr20;
-            
-            private global::System.Data.DataColumn columnExpr21;
-            
-            private global::System.Data.DataColumn columnExpr22;
-            
-            private global::System.Data.DataColumn columnExpr23;
-            
-            private global::System.Data.DataColumn columnExpr24;
-            
-            private global::System.Data.DataColumn columnExpr25;
-            
-            private global::System.Data.DataColumn columnExpr26;
-            
-            private global::System.Data.DataColumn columnExpr27;
-            
-            private global::System.Data.DataColumn columnExpr28;
-            
-            private global::System.Data.DataColumn columnExpr29;
-            
-            private global::System.Data.DataColumn columnExpr30;
-            
-            private global::System.Data.DataColumn columnExpr31;
-            
-            private global::System.Data.DataColumn columnExpr32;
-            
-            private global::System.Data.DataColumn columnExpr33;
-            
-            private global::System.Data.DataColumn columnExpr34;
-            
-            private global::System.Data.DataColumn columnExpr35;
-            
-            private global::System.Data.DataColumn columnExpr36;
-            
-            private global::System.Data.DataColumn columnExpr37;
-            
-            private global::System.Data.DataColumn columnExpr38;
-            
-            private global::System.Data.DataColumn columnExpr39;
-            
-            private global::System.Data.DataColumn columnExpr40;
-            
-            private global::System.Data.DataColumn columnExpr41;
-            
-            private global::System.Data.DataColumn columnExpr42;
-            
-            private global::System.Data.DataColumn columnExpr43;
-            
-            private global::System.Data.DataColumn columnExpr44;
-            
-            private global::System.Data.DataColumn columnExpr45;
-            
-            private global::System.Data.DataColumn columnExpr46;
-            
-            private global::System.Data.DataColumn columnExpr47;
-            
-            private global::System.Data.DataColumn columnExpr48;
-            
-            private global::System.Data.DataColumn columnExpr49;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -937,398 +804,6 @@ namespace ReportManager.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr2Column {
-                get {
-                    return this.columnExpr2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr3Column {
-                get {
-                    return this.columnExpr3;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr4Column {
-                get {
-                    return this.columnExpr4;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr5Column {
-                get {
-                    return this.columnExpr5;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr6Column {
-                get {
-                    return this.columnExpr6;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr7Column {
-                get {
-                    return this.columnExpr7;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr8Column {
-                get {
-                    return this.columnExpr8;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr9Column {
-                get {
-                    return this.columnExpr9;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr10Column {
-                get {
-                    return this.columnExpr10;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr11Column {
-                get {
-                    return this.columnExpr11;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr12Column {
-                get {
-                    return this.columnExpr12;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr13Column {
-                get {
-                    return this.columnExpr13;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr14Column {
-                get {
-                    return this.columnExpr14;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr15Column {
-                get {
-                    return this.columnExpr15;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr16Column {
-                get {
-                    return this.columnExpr16;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr17Column {
-                get {
-                    return this.columnExpr17;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr18Column {
-                get {
-                    return this.columnExpr18;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr19Column {
-                get {
-                    return this.columnExpr19;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr20Column {
-                get {
-                    return this.columnExpr20;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr21Column {
-                get {
-                    return this.columnExpr21;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr22Column {
-                get {
-                    return this.columnExpr22;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr23Column {
-                get {
-                    return this.columnExpr23;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr24Column {
-                get {
-                    return this.columnExpr24;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr25Column {
-                get {
-                    return this.columnExpr25;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr26Column {
-                get {
-                    return this.columnExpr26;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr27Column {
-                get {
-                    return this.columnExpr27;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr28Column {
-                get {
-                    return this.columnExpr28;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr29Column {
-                get {
-                    return this.columnExpr29;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr30Column {
-                get {
-                    return this.columnExpr30;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr31Column {
-                get {
-                    return this.columnExpr31;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr32Column {
-                get {
-                    return this.columnExpr32;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr33Column {
-                get {
-                    return this.columnExpr33;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr34Column {
-                get {
-                    return this.columnExpr34;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr35Column {
-                get {
-                    return this.columnExpr35;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr36Column {
-                get {
-                    return this.columnExpr36;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr37Column {
-                get {
-                    return this.columnExpr37;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr38Column {
-                get {
-                    return this.columnExpr38;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr39Column {
-                get {
-                    return this.columnExpr39;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr40Column {
-                get {
-                    return this.columnExpr40;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr41Column {
-                get {
-                    return this.columnExpr41;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr42Column {
-                get {
-                    return this.columnExpr42;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr43Column {
-                get {
-                    return this.columnExpr43;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr44Column {
-                get {
-                    return this.columnExpr44;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr45Column {
-                get {
-                    return this.columnExpr45;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr46Column {
-                get {
-                    return this.columnExpr46;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr47Column {
-                get {
-                    return this.columnExpr47;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr48Column {
-                get {
-                    return this.columnExpr48;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Expr49Column {
-                get {
-                    return this.columnExpr49;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1413,56 +888,7 @@ namespace ReportManager.Database {
                         string ORD_INST_CONTECT1_W35, 
                         string ORD_INST_CONTECT1_X78, 
                         string ORD_INST_CONTECT1_X94, 
-                        string CAP_NO, 
-                        string Expr1, 
-                        string Expr2, 
-                        string Expr3, 
-                        string Expr4, 
-                        string Expr5, 
-                        string Expr6, 
-                        string Expr7, 
-                        string Expr8, 
-                        string Expr9, 
-                        string Expr10, 
-                        string Expr11, 
-                        string Expr12, 
-                        string Expr13, 
-                        string Expr14, 
-                        string Expr15, 
-                        string Expr16, 
-                        string Expr17, 
-                        string Expr18, 
-                        string Expr19, 
-                        string Expr20, 
-                        string Expr21, 
-                        string Expr22, 
-                        string Expr23, 
-                        string Expr24, 
-                        string Expr25, 
-                        string Expr26, 
-                        string Expr27, 
-                        string Expr28, 
-                        string Expr29, 
-                        string Expr30, 
-                        string Expr31, 
-                        string Expr32, 
-                        string Expr33, 
-                        string Expr34, 
-                        string Expr35, 
-                        string Expr36, 
-                        string Expr37, 
-                        string Expr38, 
-                        string Expr39, 
-                        string Expr40, 
-                        string Expr41, 
-                        string Expr42, 
-                        string Expr43, 
-                        string Expr44, 
-                        string Expr45, 
-                        string Expr46, 
-                        string Expr47, 
-                        string Expr48, 
-                        string Expr49) {
+                        string CAP_NO) {
                 NifudaDataTableRow rowNifudaDataTableRow = ((NifudaDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MS_CODE,
@@ -1513,56 +939,7 @@ namespace ReportManager.Database {
                         ORD_INST_CONTECT1_W35,
                         ORD_INST_CONTECT1_X78,
                         ORD_INST_CONTECT1_X94,
-                        CAP_NO,
-                        Expr1,
-                        Expr2,
-                        Expr3,
-                        Expr4,
-                        Expr5,
-                        Expr6,
-                        Expr7,
-                        Expr8,
-                        Expr9,
-                        Expr10,
-                        Expr11,
-                        Expr12,
-                        Expr13,
-                        Expr14,
-                        Expr15,
-                        Expr16,
-                        Expr17,
-                        Expr18,
-                        Expr19,
-                        Expr20,
-                        Expr21,
-                        Expr22,
-                        Expr23,
-                        Expr24,
-                        Expr25,
-                        Expr26,
-                        Expr27,
-                        Expr28,
-                        Expr29,
-                        Expr30,
-                        Expr31,
-                        Expr32,
-                        Expr33,
-                        Expr34,
-                        Expr35,
-                        Expr36,
-                        Expr37,
-                        Expr38,
-                        Expr39,
-                        Expr40,
-                        Expr41,
-                        Expr42,
-                        Expr43,
-                        Expr44,
-                        Expr45,
-                        Expr46,
-                        Expr47,
-                        Expr48,
-                        Expr49};
+                        CAP_NO};
                 rowNifudaDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowNifudaDataTableRow);
                 return rowNifudaDataTableRow;
@@ -1641,55 +1018,6 @@ namespace ReportManager.Database {
                 this.columnORD_INST_CONTECT1_X78 = base.Columns["ORD_INST_CONTECT1_X78"];
                 this.columnORD_INST_CONTECT1_X94 = base.Columns["ORD_INST_CONTECT1_X94"];
                 this.columnCAP_NO = base.Columns["CAP_NO"];
-                this.columnExpr1 = base.Columns["Expr1"];
-                this.columnExpr2 = base.Columns["Expr2"];
-                this.columnExpr3 = base.Columns["Expr3"];
-                this.columnExpr4 = base.Columns["Expr4"];
-                this.columnExpr5 = base.Columns["Expr5"];
-                this.columnExpr6 = base.Columns["Expr6"];
-                this.columnExpr7 = base.Columns["Expr7"];
-                this.columnExpr8 = base.Columns["Expr8"];
-                this.columnExpr9 = base.Columns["Expr9"];
-                this.columnExpr10 = base.Columns["Expr10"];
-                this.columnExpr11 = base.Columns["Expr11"];
-                this.columnExpr12 = base.Columns["Expr12"];
-                this.columnExpr13 = base.Columns["Expr13"];
-                this.columnExpr14 = base.Columns["Expr14"];
-                this.columnExpr15 = base.Columns["Expr15"];
-                this.columnExpr16 = base.Columns["Expr16"];
-                this.columnExpr17 = base.Columns["Expr17"];
-                this.columnExpr18 = base.Columns["Expr18"];
-                this.columnExpr19 = base.Columns["Expr19"];
-                this.columnExpr20 = base.Columns["Expr20"];
-                this.columnExpr21 = base.Columns["Expr21"];
-                this.columnExpr22 = base.Columns["Expr22"];
-                this.columnExpr23 = base.Columns["Expr23"];
-                this.columnExpr24 = base.Columns["Expr24"];
-                this.columnExpr25 = base.Columns["Expr25"];
-                this.columnExpr26 = base.Columns["Expr26"];
-                this.columnExpr27 = base.Columns["Expr27"];
-                this.columnExpr28 = base.Columns["Expr28"];
-                this.columnExpr29 = base.Columns["Expr29"];
-                this.columnExpr30 = base.Columns["Expr30"];
-                this.columnExpr31 = base.Columns["Expr31"];
-                this.columnExpr32 = base.Columns["Expr32"];
-                this.columnExpr33 = base.Columns["Expr33"];
-                this.columnExpr34 = base.Columns["Expr34"];
-                this.columnExpr35 = base.Columns["Expr35"];
-                this.columnExpr36 = base.Columns["Expr36"];
-                this.columnExpr37 = base.Columns["Expr37"];
-                this.columnExpr38 = base.Columns["Expr38"];
-                this.columnExpr39 = base.Columns["Expr39"];
-                this.columnExpr40 = base.Columns["Expr40"];
-                this.columnExpr41 = base.Columns["Expr41"];
-                this.columnExpr42 = base.Columns["Expr42"];
-                this.columnExpr43 = base.Columns["Expr43"];
-                this.columnExpr44 = base.Columns["Expr44"];
-                this.columnExpr45 = base.Columns["Expr45"];
-                this.columnExpr46 = base.Columns["Expr46"];
-                this.columnExpr47 = base.Columns["Expr47"];
-                this.columnExpr48 = base.Columns["Expr48"];
-                this.columnExpr49 = base.Columns["Expr49"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1793,104 +1121,6 @@ namespace ReportManager.Database {
                 base.Columns.Add(this.columnORD_INST_CONTECT1_X94);
                 this.columnCAP_NO = new global::System.Data.DataColumn("CAP_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCAP_NO);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr2);
-                this.columnExpr3 = new global::System.Data.DataColumn("Expr3", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr3);
-                this.columnExpr4 = new global::System.Data.DataColumn("Expr4", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr4);
-                this.columnExpr5 = new global::System.Data.DataColumn("Expr5", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr5);
-                this.columnExpr6 = new global::System.Data.DataColumn("Expr6", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr6);
-                this.columnExpr7 = new global::System.Data.DataColumn("Expr7", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr7);
-                this.columnExpr8 = new global::System.Data.DataColumn("Expr8", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr8);
-                this.columnExpr9 = new global::System.Data.DataColumn("Expr9", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr9);
-                this.columnExpr10 = new global::System.Data.DataColumn("Expr10", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr10);
-                this.columnExpr11 = new global::System.Data.DataColumn("Expr11", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr11);
-                this.columnExpr12 = new global::System.Data.DataColumn("Expr12", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr12);
-                this.columnExpr13 = new global::System.Data.DataColumn("Expr13", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr13);
-                this.columnExpr14 = new global::System.Data.DataColumn("Expr14", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr14);
-                this.columnExpr15 = new global::System.Data.DataColumn("Expr15", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr15);
-                this.columnExpr16 = new global::System.Data.DataColumn("Expr16", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr16);
-                this.columnExpr17 = new global::System.Data.DataColumn("Expr17", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr17);
-                this.columnExpr18 = new global::System.Data.DataColumn("Expr18", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr18);
-                this.columnExpr19 = new global::System.Data.DataColumn("Expr19", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr19);
-                this.columnExpr20 = new global::System.Data.DataColumn("Expr20", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr20);
-                this.columnExpr21 = new global::System.Data.DataColumn("Expr21", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr21);
-                this.columnExpr22 = new global::System.Data.DataColumn("Expr22", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr22);
-                this.columnExpr23 = new global::System.Data.DataColumn("Expr23", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr23);
-                this.columnExpr24 = new global::System.Data.DataColumn("Expr24", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr24);
-                this.columnExpr25 = new global::System.Data.DataColumn("Expr25", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr25);
-                this.columnExpr26 = new global::System.Data.DataColumn("Expr26", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr26);
-                this.columnExpr27 = new global::System.Data.DataColumn("Expr27", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr27);
-                this.columnExpr28 = new global::System.Data.DataColumn("Expr28", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr28);
-                this.columnExpr29 = new global::System.Data.DataColumn("Expr29", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr29);
-                this.columnExpr30 = new global::System.Data.DataColumn("Expr30", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr30);
-                this.columnExpr31 = new global::System.Data.DataColumn("Expr31", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr31);
-                this.columnExpr32 = new global::System.Data.DataColumn("Expr32", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr32);
-                this.columnExpr33 = new global::System.Data.DataColumn("Expr33", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr33);
-                this.columnExpr34 = new global::System.Data.DataColumn("Expr34", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr34);
-                this.columnExpr35 = new global::System.Data.DataColumn("Expr35", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr35);
-                this.columnExpr36 = new global::System.Data.DataColumn("Expr36", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr36);
-                this.columnExpr37 = new global::System.Data.DataColumn("Expr37", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr37);
-                this.columnExpr38 = new global::System.Data.DataColumn("Expr38", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr38);
-                this.columnExpr39 = new global::System.Data.DataColumn("Expr39", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr39);
-                this.columnExpr40 = new global::System.Data.DataColumn("Expr40", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr40);
-                this.columnExpr41 = new global::System.Data.DataColumn("Expr41", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr41);
-                this.columnExpr42 = new global::System.Data.DataColumn("Expr42", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr42);
-                this.columnExpr43 = new global::System.Data.DataColumn("Expr43", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr43);
-                this.columnExpr44 = new global::System.Data.DataColumn("Expr44", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr44);
-                this.columnExpr45 = new global::System.Data.DataColumn("Expr45", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr45);
-                this.columnExpr46 = new global::System.Data.DataColumn("Expr46", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr46);
-                this.columnExpr47 = new global::System.Data.DataColumn("Expr47", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr47);
-                this.columnExpr48 = new global::System.Data.DataColumn("Expr48", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr48);
-                this.columnExpr49 = new global::System.Data.DataColumn("Expr49", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr49);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnSERIAL_NO}, true));
                 this.columnMS_CODE.MaxLength = 2147483647;
@@ -1944,56 +1174,6 @@ namespace ReportManager.Database {
                 this.columnORD_INST_CONTECT1_X78.MaxLength = 2147483647;
                 this.columnORD_INST_CONTECT1_X94.MaxLength = 2147483647;
                 this.columnCAP_NO.MaxLength = 2147483647;
-                this.columnExpr1.MaxLength = 2147483647;
-                this.columnExpr2.MaxLength = 2147483647;
-                this.columnExpr3.MaxLength = 2147483647;
-                this.columnExpr4.MaxLength = 2147483647;
-                this.columnExpr5.MaxLength = 2147483647;
-                this.columnExpr6.MaxLength = 2147483647;
-                this.columnExpr7.MaxLength = 2147483647;
-                this.columnExpr8.MaxLength = 50;
-                this.columnExpr9.MaxLength = 2147483647;
-                this.columnExpr10.MaxLength = 2147483647;
-                this.columnExpr11.MaxLength = 2147483647;
-                this.columnExpr12.MaxLength = 2147483647;
-                this.columnExpr13.MaxLength = 2147483647;
-                this.columnExpr14.MaxLength = 2147483647;
-                this.columnExpr15.MaxLength = 2147483647;
-                this.columnExpr16.MaxLength = 2147483647;
-                this.columnExpr17.MaxLength = 2147483647;
-                this.columnExpr18.MaxLength = 2147483647;
-                this.columnExpr19.MaxLength = 2147483647;
-                this.columnExpr20.MaxLength = 2147483647;
-                this.columnExpr21.MaxLength = 2147483647;
-                this.columnExpr22.AllowDBNull = false;
-                this.columnExpr22.MaxLength = 50;
-                this.columnExpr23.MaxLength = 2147483647;
-                this.columnExpr24.MaxLength = 2147483647;
-                this.columnExpr25.MaxLength = 2147483647;
-                this.columnExpr26.MaxLength = 2147483647;
-                this.columnExpr27.MaxLength = 2147483647;
-                this.columnExpr28.MaxLength = 2147483647;
-                this.columnExpr29.MaxLength = 2147483647;
-                this.columnExpr30.MaxLength = 2147483647;
-                this.columnExpr31.MaxLength = 2147483647;
-                this.columnExpr32.MaxLength = 2147483647;
-                this.columnExpr33.MaxLength = 2147483647;
-                this.columnExpr34.MaxLength = 2147483647;
-                this.columnExpr35.MaxLength = 2147483647;
-                this.columnExpr36.MaxLength = 2147483647;
-                this.columnExpr37.MaxLength = 2147483647;
-                this.columnExpr38.MaxLength = 2147483647;
-                this.columnExpr39.MaxLength = 2147483647;
-                this.columnExpr40.MaxLength = 2147483647;
-                this.columnExpr41.MaxLength = 2147483647;
-                this.columnExpr42.MaxLength = 2147483647;
-                this.columnExpr43.MaxLength = 2147483647;
-                this.columnExpr44.MaxLength = 2147483647;
-                this.columnExpr45.MaxLength = 2147483647;
-                this.columnExpr46.MaxLength = 2147483647;
-                this.columnExpr47.MaxLength = 2147483647;
-                this.columnExpr48.MaxLength = 2147483647;
-                this.columnExpr49.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2080,254 +1260,6 @@ namespace ReportManager.Database {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "NifudaDataTableDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class UniqueSerialNumberDataTableDataTable : global::System.Data.TypedTableBase<UniqueSerialNumberDataTableRow> {
-            
-            private global::System.Data.DataColumn columnINDEX_NO;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableDataTable() {
-                this.TableName = "UniqueSerialNumberDataTable";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal UniqueSerialNumberDataTableDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected UniqueSerialNumberDataTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn INDEX_NOColumn {
-                get {
-                    return this.columnINDEX_NO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableRow this[int index] {
-                get {
-                    return ((UniqueSerialNumberDataTableRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event UniqueSerialNumberDataTableRowChangeEventHandler UniqueSerialNumberDataTableRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event UniqueSerialNumberDataTableRowChangeEventHandler UniqueSerialNumberDataTableRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event UniqueSerialNumberDataTableRowChangeEventHandler UniqueSerialNumberDataTableRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event UniqueSerialNumberDataTableRowChangeEventHandler UniqueSerialNumberDataTableRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddUniqueSerialNumberDataTableRow(UniqueSerialNumberDataTableRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableRow AddUniqueSerialNumberDataTableRow(string INDEX_NO) {
-                UniqueSerialNumberDataTableRow rowUniqueSerialNumberDataTableRow = ((UniqueSerialNumberDataTableRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        INDEX_NO};
-                rowUniqueSerialNumberDataTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowUniqueSerialNumberDataTableRow);
-                return rowUniqueSerialNumberDataTableRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                UniqueSerialNumberDataTableDataTable cln = ((UniqueSerialNumberDataTableDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new UniqueSerialNumberDataTableDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnINDEX_NO = base.Columns["INDEX_NO"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnINDEX_NO = new global::System.Data.DataColumn("INDEX_NO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnINDEX_NO);
-                this.columnINDEX_NO.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableRow NewUniqueSerialNumberDataTableRow() {
-                return ((UniqueSerialNumberDataTableRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new UniqueSerialNumberDataTableRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(UniqueSerialNumberDataTableRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.UniqueSerialNumberDataTableRowChanged != null)) {
-                    this.UniqueSerialNumberDataTableRowChanged(this, new UniqueSerialNumberDataTableRowChangeEvent(((UniqueSerialNumberDataTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.UniqueSerialNumberDataTableRowChanging != null)) {
-                    this.UniqueSerialNumberDataTableRowChanging(this, new UniqueSerialNumberDataTableRowChangeEvent(((UniqueSerialNumberDataTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.UniqueSerialNumberDataTableRowDeleted != null)) {
-                    this.UniqueSerialNumberDataTableRowDeleted(this, new UniqueSerialNumberDataTableRowChangeEvent(((UniqueSerialNumberDataTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.UniqueSerialNumberDataTableRowDeleting != null)) {
-                    this.UniqueSerialNumberDataTableRowDeleting(this, new UniqueSerialNumberDataTableRowChangeEvent(((UniqueSerialNumberDataTableRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveUniqueSerialNumberDataTableRow(UniqueSerialNumberDataTableRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                NifudaDataSet ds = new NifudaDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "UniqueSerialNumberDataTableDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -3184,785 +2116,6 @@ namespace ReportManager.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr1\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr2 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr2\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr3 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr3Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr3\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr4 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr4Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr4\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr4Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr5 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr5Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr5\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr5Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr6 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr6Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr6\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr6Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr7 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr7Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr7\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr7Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr8 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr8Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr8\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr8Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr9 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr9Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr9\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr9Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr10 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr10Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr10\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr10Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr11 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr11Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr11\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr11Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr12 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr12Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr12\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr12Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr13 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr13Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr13\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr13Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr14 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr14Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr14\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr14Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr15 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr15Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr15\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr15Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr16 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr16Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr16\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr16Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr17 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr17Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr17\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr17Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr18 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr18Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr18\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr18Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr19 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr19Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr19\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr19Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr20 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr20Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr20\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr20Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr21 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr21Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr21\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr21Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr22 {
-                get {
-                    return ((string)(this[this.tableNifudaDataTable.Expr22Column]));
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr22Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr23 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr23Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr23\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr23Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr24 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr24Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr24\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr24Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr25 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr25Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr25\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr25Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr26 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr26Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr26\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr26Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr27 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr27Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr27\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr27Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr28 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr28Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr28\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr28Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr29 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr29Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr29\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr29Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr30 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr30Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr30\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr30Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr31 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr31Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr31\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr31Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr32 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr32Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr32\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr32Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr33 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr33Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr33\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr33Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr34 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr34Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr34\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr34Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr35 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr35Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr35\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr35Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr36 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr36Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr36\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr36Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr37 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr37Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr37\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr37Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr38 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr38Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr38\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr38Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr39 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr39Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr39\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr39Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr40 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr40Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr40\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr40Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr41 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr41Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr41\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr41Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr42 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr42Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr42\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr42Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr43 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr43Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr43\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr43Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr44 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr44Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr44\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr44Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr45 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr45Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr45\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr45Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr46 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr46Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr46\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr46Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr47 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr47Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr47\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr47Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr48 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr48Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr48\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr48Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Expr49 {
-                get {
-                    try {
-                        return ((string)(this[this.tableNifudaDataTable.Expr49Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Expr49\' в таблице \'NifudaDataTable\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableNifudaDataTable.Expr49Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMS_CODENull() {
                 return this.IsNull(this.tableNifudaDataTable.MS_CODEColumn);
             }
@@ -4536,626 +2689,6 @@ namespace ReportManager.Database {
             public void SetCAP_NONull() {
                 this[this.tableNifudaDataTable.CAP_NOColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr1Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr1Null() {
-                this[this.tableNifudaDataTable.Expr1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr2Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr2Null() {
-                this[this.tableNifudaDataTable.Expr2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr3Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr3Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr3Null() {
-                this[this.tableNifudaDataTable.Expr3Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr4Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr4Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr4Null() {
-                this[this.tableNifudaDataTable.Expr4Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr5Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr5Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr5Null() {
-                this[this.tableNifudaDataTable.Expr5Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr6Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr6Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr6Null() {
-                this[this.tableNifudaDataTable.Expr6Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr7Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr7Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr7Null() {
-                this[this.tableNifudaDataTable.Expr7Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr8Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr8Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr8Null() {
-                this[this.tableNifudaDataTable.Expr8Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr9Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr9Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr9Null() {
-                this[this.tableNifudaDataTable.Expr9Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr10Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr10Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr10Null() {
-                this[this.tableNifudaDataTable.Expr10Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr11Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr11Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr11Null() {
-                this[this.tableNifudaDataTable.Expr11Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr12Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr12Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr12Null() {
-                this[this.tableNifudaDataTable.Expr12Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr13Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr13Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr13Null() {
-                this[this.tableNifudaDataTable.Expr13Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr14Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr14Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr14Null() {
-                this[this.tableNifudaDataTable.Expr14Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr15Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr15Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr15Null() {
-                this[this.tableNifudaDataTable.Expr15Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr16Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr16Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr16Null() {
-                this[this.tableNifudaDataTable.Expr16Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr17Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr17Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr17Null() {
-                this[this.tableNifudaDataTable.Expr17Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr18Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr18Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr18Null() {
-                this[this.tableNifudaDataTable.Expr18Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr19Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr19Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr19Null() {
-                this[this.tableNifudaDataTable.Expr19Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr20Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr20Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr20Null() {
-                this[this.tableNifudaDataTable.Expr20Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr21Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr21Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr21Null() {
-                this[this.tableNifudaDataTable.Expr21Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr23Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr23Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr23Null() {
-                this[this.tableNifudaDataTable.Expr23Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr24Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr24Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr24Null() {
-                this[this.tableNifudaDataTable.Expr24Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr25Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr25Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr25Null() {
-                this[this.tableNifudaDataTable.Expr25Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr26Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr26Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr26Null() {
-                this[this.tableNifudaDataTable.Expr26Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr27Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr27Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr27Null() {
-                this[this.tableNifudaDataTable.Expr27Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr28Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr28Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr28Null() {
-                this[this.tableNifudaDataTable.Expr28Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr29Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr29Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr29Null() {
-                this[this.tableNifudaDataTable.Expr29Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr30Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr30Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr30Null() {
-                this[this.tableNifudaDataTable.Expr30Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr31Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr31Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr31Null() {
-                this[this.tableNifudaDataTable.Expr31Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr32Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr32Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr32Null() {
-                this[this.tableNifudaDataTable.Expr32Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr33Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr33Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr33Null() {
-                this[this.tableNifudaDataTable.Expr33Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr34Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr34Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr34Null() {
-                this[this.tableNifudaDataTable.Expr34Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr35Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr35Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr35Null() {
-                this[this.tableNifudaDataTable.Expr35Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr36Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr36Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr36Null() {
-                this[this.tableNifudaDataTable.Expr36Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr37Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr37Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr37Null() {
-                this[this.tableNifudaDataTable.Expr37Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr38Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr38Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr38Null() {
-                this[this.tableNifudaDataTable.Expr38Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr39Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr39Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr39Null() {
-                this[this.tableNifudaDataTable.Expr39Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr40Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr40Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr40Null() {
-                this[this.tableNifudaDataTable.Expr40Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr41Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr41Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr41Null() {
-                this[this.tableNifudaDataTable.Expr41Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr42Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr42Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr42Null() {
-                this[this.tableNifudaDataTable.Expr42Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr43Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr43Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr43Null() {
-                this[this.tableNifudaDataTable.Expr43Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr44Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr44Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr44Null() {
-                this[this.tableNifudaDataTable.Expr44Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr45Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr45Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr45Null() {
-                this[this.tableNifudaDataTable.Expr45Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr46Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr46Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr46Null() {
-                this[this.tableNifudaDataTable.Expr46Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr47Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr47Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr47Null() {
-                this[this.tableNifudaDataTable.Expr47Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr48Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr48Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr48Null() {
-                this[this.tableNifudaDataTable.Expr48Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsExpr49Null() {
-                return this.IsNull(this.tableNifudaDataTable.Expr49Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetExpr49Null() {
-                this[this.tableNifudaDataTable.Expr49Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class UniqueSerialNumberDataTableRow : global::System.Data.DataRow {
-            
-            private UniqueSerialNumberDataTableDataTable tableUniqueSerialNumberDataTable;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal UniqueSerialNumberDataTableRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableUniqueSerialNumberDataTable = ((UniqueSerialNumberDataTableDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string INDEX_NO {
-                get {
-                    try {
-                        return ((string)(this[this.tableUniqueSerialNumberDataTable.INDEX_NOColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'INDEX_NO\' в таблице \'UniqueSerialNumberDataTable\' равно DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableUniqueSerialNumberDataTable.INDEX_NOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsINDEX_NONull() {
-                return this.IsNull(this.tableUniqueSerialNumberDataTable.INDEX_NOColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetINDEX_NONull() {
-                this[this.tableUniqueSerialNumberDataTable.INDEX_NOColumn] = global::System.Convert.DBNull;
-            }
         }
         
         /// <summary>
@@ -5178,40 +2711,6 @@ namespace ReportManager.Database {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public NifudaDataTableRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class UniqueSerialNumberDataTableRowChangeEvent : global::System.EventArgs {
-            
-            private UniqueSerialNumberDataTableRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableRowChangeEvent(UniqueSerialNumberDataTableRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public UniqueSerialNumberDataTableRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5400,63 +2899,12 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ORD_INST_CONTECT1_X78", "ORD_INST_CONTECT1_X78");
             tableMapping.ColumnMappings.Add("ORD_INST_CONTECT1_X94", "ORD_INST_CONTECT1_X94");
             tableMapping.ColumnMappings.Add("CAP_NO", "CAP_NO");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
-            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
-            tableMapping.ColumnMappings.Add("Expr3", "Expr3");
-            tableMapping.ColumnMappings.Add("Expr4", "Expr4");
-            tableMapping.ColumnMappings.Add("Expr5", "Expr5");
-            tableMapping.ColumnMappings.Add("Expr6", "Expr6");
-            tableMapping.ColumnMappings.Add("Expr7", "Expr7");
-            tableMapping.ColumnMappings.Add("Expr8", "Expr8");
-            tableMapping.ColumnMappings.Add("Expr9", "Expr9");
-            tableMapping.ColumnMappings.Add("Expr10", "Expr10");
-            tableMapping.ColumnMappings.Add("Expr11", "Expr11");
-            tableMapping.ColumnMappings.Add("Expr12", "Expr12");
-            tableMapping.ColumnMappings.Add("Expr13", "Expr13");
-            tableMapping.ColumnMappings.Add("Expr14", "Expr14");
-            tableMapping.ColumnMappings.Add("Expr15", "Expr15");
-            tableMapping.ColumnMappings.Add("Expr16", "Expr16");
-            tableMapping.ColumnMappings.Add("Expr17", "Expr17");
-            tableMapping.ColumnMappings.Add("Expr18", "Expr18");
-            tableMapping.ColumnMappings.Add("Expr19", "Expr19");
-            tableMapping.ColumnMappings.Add("Expr20", "Expr20");
-            tableMapping.ColumnMappings.Add("Expr21", "Expr21");
-            tableMapping.ColumnMappings.Add("Expr22", "Expr22");
-            tableMapping.ColumnMappings.Add("Expr23", "Expr23");
-            tableMapping.ColumnMappings.Add("Expr24", "Expr24");
-            tableMapping.ColumnMappings.Add("Expr25", "Expr25");
-            tableMapping.ColumnMappings.Add("Expr26", "Expr26");
-            tableMapping.ColumnMappings.Add("Expr27", "Expr27");
-            tableMapping.ColumnMappings.Add("Expr28", "Expr28");
-            tableMapping.ColumnMappings.Add("Expr29", "Expr29");
-            tableMapping.ColumnMappings.Add("Expr30", "Expr30");
-            tableMapping.ColumnMappings.Add("Expr31", "Expr31");
-            tableMapping.ColumnMappings.Add("Expr32", "Expr32");
-            tableMapping.ColumnMappings.Add("Expr33", "Expr33");
-            tableMapping.ColumnMappings.Add("Expr34", "Expr34");
-            tableMapping.ColumnMappings.Add("Expr35", "Expr35");
-            tableMapping.ColumnMappings.Add("Expr36", "Expr36");
-            tableMapping.ColumnMappings.Add("Expr37", "Expr37");
-            tableMapping.ColumnMappings.Add("Expr38", "Expr38");
-            tableMapping.ColumnMappings.Add("Expr39", "Expr39");
-            tableMapping.ColumnMappings.Add("Expr40", "Expr40");
-            tableMapping.ColumnMappings.Add("Expr41", "Expr41");
-            tableMapping.ColumnMappings.Add("Expr42", "Expr42");
-            tableMapping.ColumnMappings.Add("Expr43", "Expr43");
-            tableMapping.ColumnMappings.Add("Expr44", "Expr44");
-            tableMapping.ColumnMappings.Add("Expr45", "Expr45");
-            tableMapping.ColumnMappings.Add("Expr46", "Expr46");
-            tableMapping.ColumnMappings.Add("Expr47", "Expr47");
-            tableMapping.ColumnMappings.Add("Expr48", "Expr48");
-            tableMapping.ColumnMappings.Add("Expr49", "Expr49");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [NIFUDA] WHERE (((@IsNull_Expr8 = 1 AND [INDEX_NO] IS NULL) OR ([INDEX_NO] = @Original_Expr8)) AND ([SERIAL_NO] = @Original_Expr22) AND ((@IsNull_INDEX_NO = 1 AND [INDEX_NO] IS NULL) OR ([INDEX_NO] = @Original_INDEX_NO)) AND ([SERIAL_NO] = @Original_SERIAL_NO))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [NIFUDA] WHERE (((@IsNull_INDEX_NO = 1 AND [INDEX_NO] IS NULL) OR ([I" +
+                "NDEX_NO] = @Original_INDEX_NO)) AND ([SERIAL_NO] = @Original_SERIAL_NO))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Expr8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expr8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expr22", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr22", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_INDEX_NO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INDEX_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SERIAL_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5472,110 +2920,29 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
                 " [ORD_INST_MIN_502], [UNIT_502], [ORD_INST_CONTECT1_W69], [ORD_INST_CONTECT1_X72" +
                 "], [ORD_INST_CONTECT1_X91], [ORD_INST_CONTECT1_Z30], [TAG_NO_525], [XJ_NO], [ORD" +
                 "_INST_CONTECT1_H46], [ORD_INST_CONTECT1_X92], [ORD_INST_CONTECT1_Y28], [ORD_INST" +
-                "_CONTECT1_W35], [ORD_INST_CONTECT1_X78], [ORD_INST_CONTECT1_X94], [CAP_NO], [MS_" +
-                "CODE], [MODEL], [PROD_NO], [PROD_NO_SFIX], [LINE_NO], [CRP_GR_NO], [PROD_CAREER]" +
-                ", [INDEX_NO], [TEST_CERT_SIGN], [DOC_LANG_TYPE], [INST_FINISH_D], [TEST_CERT_YN]" +
-                ", [END_USER_CUST_N_J], [ORDER_NO], [ITEM_NO], [PROD_ITEM_REV_NO], [PROD_INST_REV" +
-                "_NO], [COMP_NO], [START_SCHDULE_D], [FINISH_SCHDULE_D], [START_NO], [SERIAL_NO]," +
-                " [ALLOWANCE_SIGN], [PROD_N_J], [PROD_N_E], [TOKUCHU_SPEC_SIGN], [SAP_LINKAGE_NO]" +
-                ", [RANGE_INST_SIGN_500], [ORD_INST_MAX_500], [ORD_INST_MIN_500], [UNIT_500], [FE" +
-                "ATURES_500], [RANGE_INST_SIGN_502], [ORD_INST_MAX_502], [ORD_INST_MIN_502], [UNI" +
-                "T_502], [ORD_INST_CONTECT1_W69], [ORD_INST_CONTECT1_X72], [ORD_INST_CONTECT1_X91" +
-                "], [ORD_INST_CONTECT1_Z30], [TAG_NO_525], [XJ_NO], [ORD_INST_CONTECT1_H46], [ORD" +
-                "_INST_CONTECT1_X92], [ORD_INST_CONTECT1_Y28], [ORD_INST_CONTECT1_W35], [ORD_INST" +
-                "_CONTECT1_X78], [ORD_INST_CONTECT1_X94], [CAP_NO]) VALUES (@Expr1, @Expr2, @Expr" +
-                "3, @Expr4, @Expr5, @Expr6, @Expr7, @Expr8, @Expr9, @Expr10, @Expr11, @Expr12, @E" +
-                "xpr13, @Expr14, @Expr15, @Expr16, @Expr17, @Expr18, @Expr19, @Expr20, @Expr21, @" +
-                "Expr22, @Expr23, @Expr24, @Expr25, @Expr26, @Expr27, @Expr28, @Expr29, @Expr30, " +
-                "@Expr31, @Expr32, @Expr33, @Expr34, @Expr35, @Expr36, @Expr37, @Expr38, @Expr39," +
-                " @Expr40, @Expr41, @Expr42, @Expr43, @Expr44, @Expr45, @Expr46, @Expr47, @Expr48" +
-                ", @Expr49, @MS_CODE, @MODEL, @PROD_NO, @PROD_NO_SFIX, @LINE_NO, @CRP_GR_NO, @PRO" +
-                "D_CAREER, @INDEX_NO, @TEST_CERT_SIGN, @DOC_LANG_TYPE, @INST_FINISH_D, @TEST_CERT" +
-                "_YN, @END_USER_CUST_N_J, @ORDER_NO, @ITEM_NO, @PROD_ITEM_REV_NO, @PROD_INST_REV_" +
-                "NO, @COMP_NO, @START_SCHDULE_D, @FINISH_SCHDULE_D, @START_NO, @SERIAL_NO, @ALLOW" +
-                "ANCE_SIGN, @PROD_N_J, @PROD_N_E, @TOKUCHU_SPEC_SIGN, @SAP_LINKAGE_NO, @RANGE_INS" +
-                "T_SIGN_500, @ORD_INST_MAX_500, @ORD_INST_MIN_500, @UNIT_500, @FEATURES_500, @RAN" +
-                "GE_INST_SIGN_502, @ORD_INST_MAX_502, @ORD_INST_MIN_502, @UNIT_502, @ORD_INST_CON" +
-                "TECT1_W69, @ORD_INST_CONTECT1_X72, @ORD_INST_CONTECT1_X91, @ORD_INST_CONTECT1_Z3" +
-                "0, @TAG_NO_525, @XJ_NO, @ORD_INST_CONTECT1_H46, @ORD_INST_CONTECT1_X92, @ORD_INS" +
-                "T_CONTECT1_Y28, @ORD_INST_CONTECT1_W35, @ORD_INST_CONTECT1_X78, @ORD_INST_CONTEC" +
-                "T1_X94, @CAP_NO);\r\nSELECT MS_CODE AS Expr1, MODEL AS Expr2, PROD_NO AS Expr3, PR" +
-                "OD_NO_SFIX AS Expr4, LINE_NO AS Expr5, CRP_GR_NO AS Expr6, PROD_CAREER AS Expr7," +
-                " INDEX_NO AS Expr8, TEST_CERT_SIGN AS Expr9, DOC_LANG_TYPE AS Expr10, INST_FINIS" +
-                "H_D AS Expr11, TEST_CERT_YN AS Expr12, END_USER_CUST_N_J AS Expr13, ORDER_NO AS " +
-                "Expr14, ITEM_NO AS Expr15, PROD_ITEM_REV_NO AS Expr16, PROD_INST_REV_NO AS Expr1" +
-                "7, COMP_NO AS Expr18, START_SCHDULE_D AS Expr19, FINISH_SCHDULE_D AS Expr20, STA" +
-                "RT_NO AS Expr21, SERIAL_NO AS Expr22, ALLOWANCE_SIGN AS Expr23, PROD_N_J AS Expr" +
-                "24, PROD_N_E AS Expr25, TOKUCHU_SPEC_SIGN AS Expr26, SAP_LINKAGE_NO AS Expr27, R" +
-                "ANGE_INST_SIGN_500 AS Expr28, ORD_INST_MAX_500 AS Expr29, ORD_INST_MIN_500 AS Ex" +
-                "pr30, UNIT_500 AS Expr31, FEATURES_500 AS Expr32, RANGE_INST_SIGN_502 AS Expr33," +
-                " ORD_INST_MAX_502 AS Expr34, ORD_INST_MIN_502 AS Expr35, UNIT_502 AS Expr36, ORD" +
-                "_INST_CONTECT1_W69 AS Expr37, ORD_INST_CONTECT1_X72 AS Expr38, ORD_INST_CONTECT1" +
-                "_X91 AS Expr39, ORD_INST_CONTECT1_Z30 AS Expr40, TAG_NO_525 AS Expr41, XJ_NO AS " +
-                "Expr42, ORD_INST_CONTECT1_H46 AS Expr43, ORD_INST_CONTECT1_X92 AS Expr44, ORD_IN" +
-                "ST_CONTECT1_Y28 AS Expr45, ORD_INST_CONTECT1_W35 AS Expr46, ORD_INST_CONTECT1_X7" +
-                "8 AS Expr47, ORD_INST_CONTECT1_X94 AS Expr48, CAP_NO AS Expr49, MS_CODE, MODEL, " +
-                "PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN" +
-                ", DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_" +
-                "NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE" +
-                "_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, " +
-                "SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_50" +
-                "0, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_5" +
-                "02, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INS" +
-                "T_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92," +
-                " ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_C" +
-                "ONTECT1_X94, CAP_NO FROM NIFUDA WHERE (SERIAL_NO = @SERIAL_NO) AND (SERIAL_NO = " +
-                "@SERIAL_NO)";
+                "_CONTECT1_W35], [ORD_INST_CONTECT1_X78], [ORD_INST_CONTECT1_X94], [CAP_NO]) VALU" +
+                "ES (@MS_CODE, @MODEL, @PROD_NO, @PROD_NO_SFIX, @LINE_NO, @CRP_GR_NO, @PROD_CAREE" +
+                "R, @INDEX_NO, @TEST_CERT_SIGN, @DOC_LANG_TYPE, @INST_FINISH_D, @TEST_CERT_YN, @E" +
+                "ND_USER_CUST_N_J, @ORDER_NO, @ITEM_NO, @PROD_ITEM_REV_NO, @PROD_INST_REV_NO, @CO" +
+                "MP_NO, @START_SCHDULE_D, @FINISH_SCHDULE_D, @START_NO, @SERIAL_NO, @ALLOWANCE_SI" +
+                "GN, @PROD_N_J, @PROD_N_E, @TOKUCHU_SPEC_SIGN, @SAP_LINKAGE_NO, @RANGE_INST_SIGN_" +
+                "500, @ORD_INST_MAX_500, @ORD_INST_MIN_500, @UNIT_500, @FEATURES_500, @RANGE_INST" +
+                "_SIGN_502, @ORD_INST_MAX_502, @ORD_INST_MIN_502, @UNIT_502, @ORD_INST_CONTECT1_W" +
+                "69, @ORD_INST_CONTECT1_X72, @ORD_INST_CONTECT1_X91, @ORD_INST_CONTECT1_Z30, @TAG" +
+                "_NO_525, @XJ_NO, @ORD_INST_CONTECT1_H46, @ORD_INST_CONTECT1_X92, @ORD_INST_CONTE" +
+                "CT1_Y28, @ORD_INST_CONTECT1_W35, @ORD_INST_CONTECT1_X78, @ORD_INST_CONTECT1_X94," +
+                " @CAP_NO);\r\nSELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PR" +
+                "OD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN," +
+                " END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_" +
+                "NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD" +
+                "_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST" +
+                "_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INS" +
+                "T_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_" +
+                "X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_C" +
+                "ONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35" +
+                ", ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM NIFUDA WHERE (SERIAL" +
+                "_NO = @SERIAL_NO)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr17", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr18", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr18", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr19", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr19", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr20", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr21", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr21", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr22", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr22", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr23", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr23", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr24", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr24", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr25", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr26", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr26", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr27", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr27", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr28", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr28", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr29", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr29", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr30", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr31", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr31", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr32", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr32", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr33", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr33", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr34", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr34", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr35", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr35", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr36", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr36", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr37", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr37", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr38", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr38", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr39", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr39", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr40", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr41", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr41", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr42", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr42", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr43", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr43", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr44", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr44", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr45", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr45", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr46", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr46", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr47", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr47", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr48", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr48", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr49", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr49", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MS_CODE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODEL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5627,124 +2994,41 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [NIFUDA] SET [MS_CODE] = @Expr1, [MODEL] = @Expr2, [PROD_NO] = @Expr3, [PR" +
-                "OD_NO_SFIX] = @Expr4, [LINE_NO] = @Expr5, [CRP_GR_NO] = @Expr6, [PROD_CAREER] = " +
-                "@Expr7, [INDEX_NO] = @Expr8, [TEST_CERT_SIGN] = @Expr9, [DOC_LANG_TYPE] = @Expr1" +
-                "0, [INST_FINISH_D] = @Expr11, [TEST_CERT_YN] = @Expr12, [END_USER_CUST_N_J] = @E" +
-                "xpr13, [ORDER_NO] = @Expr14, [ITEM_NO] = @Expr15, [PROD_ITEM_REV_NO] = @Expr16, " +
-                "[PROD_INST_REV_NO] = @Expr17, [COMP_NO] = @Expr18, [START_SCHDULE_D] = @Expr19, " +
-                "[FINISH_SCHDULE_D] = @Expr20, [START_NO] = @Expr21, [SERIAL_NO] = @Expr22, [ALLO" +
-                "WANCE_SIGN] = @Expr23, [PROD_N_J] = @Expr24, [PROD_N_E] = @Expr25, [TOKUCHU_SPEC" +
-                "_SIGN] = @Expr26, [SAP_LINKAGE_NO] = @Expr27, [RANGE_INST_SIGN_500] = @Expr28, [" +
-                "ORD_INST_MAX_500] = @Expr29, [ORD_INST_MIN_500] = @Expr30, [UNIT_500] = @Expr31," +
-                " [FEATURES_500] = @Expr32, [RANGE_INST_SIGN_502] = @Expr33, [ORD_INST_MAX_502] =" +
-                " @Expr34, [ORD_INST_MIN_502] = @Expr35, [UNIT_502] = @Expr36, [ORD_INST_CONTECT1" +
-                "_W69] = @Expr37, [ORD_INST_CONTECT1_X72] = @Expr38, [ORD_INST_CONTECT1_X91] = @E" +
-                "xpr39, [ORD_INST_CONTECT1_Z30] = @Expr40, [TAG_NO_525] = @Expr41, [XJ_NO] = @Exp" +
-                "r42, [ORD_INST_CONTECT1_H46] = @Expr43, [ORD_INST_CONTECT1_X92] = @Expr44, [ORD_" +
-                "INST_CONTECT1_Y28] = @Expr45, [ORD_INST_CONTECT1_W35] = @Expr46, [ORD_INST_CONTE" +
-                "CT1_X78] = @Expr47, [ORD_INST_CONTECT1_X94] = @Expr48, [CAP_NO] = @Expr49, [MS_C" +
-                "ODE] = @MS_CODE, [MODEL] = @MODEL, [PROD_NO] = @PROD_NO, [PROD_NO_SFIX] = @PROD_" +
-                "NO_SFIX, [LINE_NO] = @LINE_NO, [CRP_GR_NO] = @CRP_GR_NO, [PROD_CAREER] = @PROD_C" +
-                "AREER, [INDEX_NO] = @INDEX_NO, [TEST_CERT_SIGN] = @TEST_CERT_SIGN, [DOC_LANG_TYP" +
-                "E] = @DOC_LANG_TYPE, [INST_FINISH_D] = @INST_FINISH_D, [TEST_CERT_YN] = @TEST_CE" +
-                "RT_YN, [END_USER_CUST_N_J] = @END_USER_CUST_N_J, [ORDER_NO] = @ORDER_NO, [ITEM_N" +
-                "O] = @ITEM_NO, [PROD_ITEM_REV_NO] = @PROD_ITEM_REV_NO, [PROD_INST_REV_NO] = @PRO" +
-                "D_INST_REV_NO, [COMP_NO] = @COMP_NO, [START_SCHDULE_D] = @START_SCHDULE_D, [FINI" +
-                "SH_SCHDULE_D] = @FINISH_SCHDULE_D, [START_NO] = @START_NO, [SERIAL_NO] = @SERIAL" +
-                "_NO, [ALLOWANCE_SIGN] = @ALLOWANCE_SIGN, [PROD_N_J] = @PROD_N_J, [PROD_N_E] = @P" +
-                "ROD_N_E, [TOKUCHU_SPEC_SIGN] = @TOKUCHU_SPEC_SIGN, [SAP_LINKAGE_NO] = @SAP_LINKA" +
-                "GE_NO, [RANGE_INST_SIGN_500] = @RANGE_INST_SIGN_500, [ORD_INST_MAX_500] = @ORD_I" +
-                "NST_MAX_500, [ORD_INST_MIN_500] = @ORD_INST_MIN_500, [UNIT_500] = @UNIT_500, [FE" +
-                "ATURES_500] = @FEATURES_500, [RANGE_INST_SIGN_502] = @RANGE_INST_SIGN_502, [ORD_" +
-                "INST_MAX_502] = @ORD_INST_MAX_502, [ORD_INST_MIN_502] = @ORD_INST_MIN_502, [UNIT" +
-                "_502] = @UNIT_502, [ORD_INST_CONTECT1_W69] = @ORD_INST_CONTECT1_W69, [ORD_INST_C" +
-                "ONTECT1_X72] = @ORD_INST_CONTECT1_X72, [ORD_INST_CONTECT1_X91] = @ORD_INST_CONTE" +
-                "CT1_X91, [ORD_INST_CONTECT1_Z30] = @ORD_INST_CONTECT1_Z30, [TAG_NO_525] = @TAG_N" +
-                "O_525, [XJ_NO] = @XJ_NO, [ORD_INST_CONTECT1_H46] = @ORD_INST_CONTECT1_H46, [ORD_" +
-                "INST_CONTECT1_X92] = @ORD_INST_CONTECT1_X92, [ORD_INST_CONTECT1_Y28] = @ORD_INST" +
-                "_CONTECT1_Y28, [ORD_INST_CONTECT1_W35] = @ORD_INST_CONTECT1_W35, [ORD_INST_CONTE" +
-                "CT1_X78] = @ORD_INST_CONTECT1_X78, [ORD_INST_CONTECT1_X94] = @ORD_INST_CONTECT1_" +
-                "X94, [CAP_NO] = @CAP_NO WHERE (((@IsNull_Expr8 = 1 AND [INDEX_NO] IS NULL) OR ([" +
-                "INDEX_NO] = @Original_Expr8)) AND ([SERIAL_NO] = @Original_Expr22) AND ((@IsNull" +
-                "_INDEX_NO = 1 AND [INDEX_NO] IS NULL) OR ([INDEX_NO] = @Original_INDEX_NO)) AND " +
-                "([SERIAL_NO] = @Original_SERIAL_NO));\r\nSELECT MS_CODE AS Expr1, MODEL AS Expr2, " +
-                "PROD_NO AS Expr3, PROD_NO_SFIX AS Expr4, LINE_NO AS Expr5, CRP_GR_NO AS Expr6, P" +
-                "ROD_CAREER AS Expr7, INDEX_NO AS Expr8, TEST_CERT_SIGN AS Expr9, DOC_LANG_TYPE A" +
-                "S Expr10, INST_FINISH_D AS Expr11, TEST_CERT_YN AS Expr12, END_USER_CUST_N_J AS " +
-                "Expr13, ORDER_NO AS Expr14, ITEM_NO AS Expr15, PROD_ITEM_REV_NO AS Expr16, PROD_" +
-                "INST_REV_NO AS Expr17, COMP_NO AS Expr18, START_SCHDULE_D AS Expr19, FINISH_SCHD" +
-                "ULE_D AS Expr20, START_NO AS Expr21, SERIAL_NO AS Expr22, ALLOWANCE_SIGN AS Expr" +
-                "23, PROD_N_J AS Expr24, PROD_N_E AS Expr25, TOKUCHU_SPEC_SIGN AS Expr26, SAP_LIN" +
-                "KAGE_NO AS Expr27, RANGE_INST_SIGN_500 AS Expr28, ORD_INST_MAX_500 AS Expr29, OR" +
-                "D_INST_MIN_500 AS Expr30, UNIT_500 AS Expr31, FEATURES_500 AS Expr32, RANGE_INST" +
-                "_SIGN_502 AS Expr33, ORD_INST_MAX_502 AS Expr34, ORD_INST_MIN_502 AS Expr35, UNI" +
-                "T_502 AS Expr36, ORD_INST_CONTECT1_W69 AS Expr37, ORD_INST_CONTECT1_X72 AS Expr3" +
-                "8, ORD_INST_CONTECT1_X91 AS Expr39, ORD_INST_CONTECT1_Z30 AS Expr40, TAG_NO_525 " +
-                "AS Expr41, XJ_NO AS Expr42, ORD_INST_CONTECT1_H46 AS Expr43, ORD_INST_CONTECT1_X" +
-                "92 AS Expr44, ORD_INST_CONTECT1_Y28 AS Expr45, ORD_INST_CONTECT1_W35 AS Expr46, " +
-                "ORD_INST_CONTECT1_X78 AS Expr47, ORD_INST_CONTECT1_X94 AS Expr48, CAP_NO AS Expr" +
-                "49, MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDE" +
-                "X_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_" +
-                "N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDU" +
-                "LE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E," +
-                " TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_I" +
-                "NST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_" +
-                "INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_C" +
-                "ONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, OR" +
-                "D_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONT" +
-                "ECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM NIFUDA WHERE (SERIAL_NO = @SERIAL_N" +
-                "O) AND (SERIAL_NO = @SERIAL_NO)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [NIFUDA] SET [MS_CODE] = @MS_CODE, [MODEL] = @MODEL, [PROD_NO] = @PROD_NO," +
+                " [PROD_NO_SFIX] = @PROD_NO_SFIX, [LINE_NO] = @LINE_NO, [CRP_GR_NO] = @CRP_GR_NO," +
+                " [PROD_CAREER] = @PROD_CAREER, [INDEX_NO] = @INDEX_NO, [TEST_CERT_SIGN] = @TEST_" +
+                "CERT_SIGN, [DOC_LANG_TYPE] = @DOC_LANG_TYPE, [INST_FINISH_D] = @INST_FINISH_D, [" +
+                "TEST_CERT_YN] = @TEST_CERT_YN, [END_USER_CUST_N_J] = @END_USER_CUST_N_J, [ORDER_" +
+                "NO] = @ORDER_NO, [ITEM_NO] = @ITEM_NO, [PROD_ITEM_REV_NO] = @PROD_ITEM_REV_NO, [" +
+                "PROD_INST_REV_NO] = @PROD_INST_REV_NO, [COMP_NO] = @COMP_NO, [START_SCHDULE_D] =" +
+                " @START_SCHDULE_D, [FINISH_SCHDULE_D] = @FINISH_SCHDULE_D, [START_NO] = @START_N" +
+                "O, [SERIAL_NO] = @SERIAL_NO, [ALLOWANCE_SIGN] = @ALLOWANCE_SIGN, [PROD_N_J] = @P" +
+                "ROD_N_J, [PROD_N_E] = @PROD_N_E, [TOKUCHU_SPEC_SIGN] = @TOKUCHU_SPEC_SIGN, [SAP_" +
+                "LINKAGE_NO] = @SAP_LINKAGE_NO, [RANGE_INST_SIGN_500] = @RANGE_INST_SIGN_500, [OR" +
+                "D_INST_MAX_500] = @ORD_INST_MAX_500, [ORD_INST_MIN_500] = @ORD_INST_MIN_500, [UN" +
+                "IT_500] = @UNIT_500, [FEATURES_500] = @FEATURES_500, [RANGE_INST_SIGN_502] = @RA" +
+                "NGE_INST_SIGN_502, [ORD_INST_MAX_502] = @ORD_INST_MAX_502, [ORD_INST_MIN_502] = " +
+                "@ORD_INST_MIN_502, [UNIT_502] = @UNIT_502, [ORD_INST_CONTECT1_W69] = @ORD_INST_C" +
+                "ONTECT1_W69, [ORD_INST_CONTECT1_X72] = @ORD_INST_CONTECT1_X72, [ORD_INST_CONTECT" +
+                "1_X91] = @ORD_INST_CONTECT1_X91, [ORD_INST_CONTECT1_Z30] = @ORD_INST_CONTECT1_Z3" +
+                "0, [TAG_NO_525] = @TAG_NO_525, [XJ_NO] = @XJ_NO, [ORD_INST_CONTECT1_H46] = @ORD_" +
+                "INST_CONTECT1_H46, [ORD_INST_CONTECT1_X92] = @ORD_INST_CONTECT1_X92, [ORD_INST_C" +
+                "ONTECT1_Y28] = @ORD_INST_CONTECT1_Y28, [ORD_INST_CONTECT1_W35] = @ORD_INST_CONTE" +
+                "CT1_W35, [ORD_INST_CONTECT1_X78] = @ORD_INST_CONTECT1_X78, [ORD_INST_CONTECT1_X9" +
+                "4] = @ORD_INST_CONTECT1_X94, [CAP_NO] = @CAP_NO WHERE (((@IsNull_INDEX_NO = 1 AN" +
+                "D [INDEX_NO] IS NULL) OR ([INDEX_NO] = @Original_INDEX_NO)) AND ([SERIAL_NO] = @" +
+                "Original_SERIAL_NO));\r\nSELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CR" +
+                "P_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TE" +
+                "ST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_RE" +
+                "V_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE" +
+                "_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_50" +
+                "0, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_5" +
+                "02, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INS" +
+                "T_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO," +
+                " ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_C" +
+                "ONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM NIFUDA WH" +
+                "ERE (SERIAL_NO = @SERIAL_NO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr1", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr2", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr3", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr4", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr5", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr6", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr7", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr9", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr9", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr10", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr10", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr11", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr11", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr12", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr12", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr13", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr13", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr14", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr14", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr15", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr15", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr16", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr16", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr17", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr17", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr18", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr18", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr19", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr19", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr20", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr20", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr21", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr21", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr22", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr22", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr23", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr23", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr24", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr24", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr25", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr25", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr26", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr26", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr27", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr27", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr28", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr28", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr29", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr29", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr30", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr31", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr31", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr32", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr32", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr33", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr33", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr34", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr34", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr35", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr35", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr36", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr36", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr37", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr37", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr38", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr38", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr39", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr39", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr40", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr40", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr41", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr41", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr42", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr42", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr43", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr43", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr44", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr44", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr45", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr45", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr46", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr46", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr47", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr47", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr48", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr48", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Expr49", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr49", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MS_CODE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODEL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5794,9 +3078,6 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X78", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X78", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X94", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X94", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Expr8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expr8", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Expr22", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Expr22", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_INDEX_NO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INDEX_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SERIAL_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5815,37 +3096,33 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT                      MS_CODE AS Expr1, MODEL AS Expr2, PROD_NO AS Expr3, P" +
-                "ROD_NO_SFIX AS Expr4, LINE_NO AS Expr5, CRP_GR_NO AS Expr6, \r\n                  " +
-                "                    PROD_CAREER AS Expr7, INDEX_NO AS Expr8, TEST_CERT_SIGN AS E" +
-                "xpr9, DOC_LANG_TYPE AS Expr10, INST_FINISH_D AS Expr11, \r\n                      " +
-                "                TEST_CERT_YN AS Expr12, END_USER_CUST_N_J AS Expr13, ORDER_NO AS" +
-                " Expr14, ITEM_NO AS Expr15, PROD_ITEM_REV_NO AS Expr16, \r\n                      " +
-                "                PROD_INST_REV_NO AS Expr17, COMP_NO AS Expr18, START_SCHDULE_D A" +
-                "S Expr19, FINISH_SCHDULE_D AS Expr20, START_NO AS Expr21, \r\n                    " +
-                "                  SERIAL_NO AS Expr22, ALLOWANCE_SIGN AS Expr23, PROD_N_J AS Exp" +
-                "r24, PROD_N_E AS Expr25, TOKUCHU_SPEC_SIGN AS Expr26, \r\n                        " +
-                "              SAP_LINKAGE_NO AS Expr27, RANGE_INST_SIGN_500 AS Expr28, ORD_INST_" +
-                "MAX_500 AS Expr29, ORD_INST_MIN_500 AS Expr30, \r\n                               " +
-                "       UNIT_500 AS Expr31, FEATURES_500 AS Expr32, RANGE_INST_SIGN_502 AS Expr33" +
-                ", ORD_INST_MAX_502 AS Expr34, ORD_INST_MIN_502 AS Expr35,\r\n                     " +
-                "                  UNIT_502 AS Expr36, ORD_INST_CONTECT1_W69 AS Expr37, ORD_INST_" +
-                "CONTECT1_X72 AS Expr38, ORD_INST_CONTECT1_X91 AS Expr39, \r\n                     " +
-                "                 ORD_INST_CONTECT1_Z30 AS Expr40, TAG_NO_525 AS Expr41, XJ_NO AS" +
-                " Expr42, ORD_INST_CONTECT1_H46 AS Expr43, \r\n                                    " +
-                "  ORD_INST_CONTECT1_X92 AS Expr44, ORD_INST_CONTECT1_Y28 AS Expr45, ORD_INST_CON" +
-                "TECT1_W35 AS Expr46, \r\n                                      ORD_INST_CONTECT1_X" +
-                "78 AS Expr47, ORD_INST_CONTECT1_X94 AS Expr48, CAP_NO AS Expr49, NIFUDA.*\r\nFROM " +
-                "                        NIFUDA";
+            this._commandCollection[0].CommandText = "SELECT                      NIFUDA.*\r\nFROM                         NIFUDA";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT ALLOWANCE_SIGN, CAP_NO, COMP_NO, CRP_GR_NO, DOC_LANG_TYPE, END_USER_CUST_N_J, FEATURES_500, FINISH_SCHDULE_D, INDEX_NO, INST_FINISH_D, ITEM_NO, LINE_NO, MODEL, MS_CODE, ORDER_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_X94, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_Z30, ORD_INST_MAX_500, ORD_INST_MAX_502, ORD_INST_MIN_500, ORD_INST_MIN_502, PROD_CAREER, PROD_INST_REV_NO, PROD_ITEM_REV_NO, PROD_NO, PROD_NO_SFIX, PROD_N_E, PROD_N_J, RANGE_INST_SIGN_500, RANGE_INST_SIGN_502, SAP_LINKAGE_NO, SERIAL_NO, START_NO, START_SCHDULE_D, TAG_NO_525, TEST_CERT_SIGN, TEST_CERT_YN, TOKUCHU_SPEC_SIGN, UNIT_500, UNIT_502, XJ_NO FROM NIFUDA WHERE (SERIAL_NO = @SerialNO) OR (SERIAL_NO = 'Y2S935597')";
+            this._commandCollection[1].CommandText = @"SELECT                      ALLOWANCE_SIGN, CAP_NO, COMP_NO, CRP_GR_NO, DOC_LANG_TYPE, END_USER_CUST_N_J, FEATURES_500, FINISH_SCHDULE_D, INDEX_NO, 
+                                      INST_FINISH_D, ITEM_NO, LINE_NO, MODEL, MS_CODE, ORDER_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_W35, 
+                                      ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_X92, 
+                                      ORD_INST_CONTECT1_X94, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_Z30, ORD_INST_MAX_500, ORD_INST_MAX_502, ORD_INST_MIN_500, 
+                                      ORD_INST_MIN_502, PROD_CAREER, PROD_INST_REV_NO, PROD_ITEM_REV_NO, PROD_NO, PROD_NO_SFIX, PROD_N_E, PROD_N_J, 
+                                      RANGE_INST_SIGN_500, RANGE_INST_SIGN_502, SAP_LINKAGE_NO, SERIAL_NO, START_NO, START_SCHDULE_D, TAG_NO_525, TEST_CERT_SIGN, 
+                                      TEST_CERT_YN, TOKUCHU_SPEC_SIGN, UNIT_500, UNIT_502, XJ_NO
+FROM                         NIFUDA
+WHERE                       (INDEX_NO = @Index_NO)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SerialNO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Index_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT ALLOWANCE_SIGN, CAP_NO, COMP_NO, CRP_GR_NO, DOC_LANG_TYPE, END_USER_CUST_N_J, FEATURES_500, FINISH_SCHDULE_D, INDEX_NO, INST_FINISH_D, ITEM_NO, LINE_NO, MODEL, MS_CODE, ORDER_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_X94, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_Z30, ORD_INST_MAX_500, ORD_INST_MAX_502, ORD_INST_MIN_500, ORD_INST_MIN_502, PROD_CAREER, PROD_INST_REV_NO, PROD_ITEM_REV_NO, PROD_NO, PROD_NO_SFIX, PROD_N_E, PROD_N_J, RANGE_INST_SIGN_500, RANGE_INST_SIGN_502, SAP_LINKAGE_NO, SERIAL_NO, START_NO, START_SCHDULE_D, TAG_NO_525, TEST_CERT_SIGN, TEST_CERT_YN, TOKUCHU_SPEC_SIGN, UNIT_500, UNIT_502, XJ_NO FROM NIFUDA WHERE (INDEX_NO = N'') OR (INDEX_NO IS NULL)";
+            this._commandCollection[2].CommandText = @"SELECT                      ALLOWANCE_SIGN, CAP_NO, COMP_NO, CRP_GR_NO, DOC_LANG_TYPE, END_USER_CUST_N_J, FEATURES_500, FINISH_SCHDULE_D, INDEX_NO, 
+                                      INST_FINISH_D, ITEM_NO, LINE_NO, MODEL, MS_CODE, ORDER_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_W35, 
+                                      ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_X92, 
+                                      ORD_INST_CONTECT1_X94, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_Z30, ORD_INST_MAX_500, ORD_INST_MAX_502, ORD_INST_MIN_500, 
+                                      ORD_INST_MIN_502, PROD_CAREER, PROD_INST_REV_NO, PROD_ITEM_REV_NO, PROD_NO, PROD_NO_SFIX, PROD_N_E, PROD_N_J, 
+                                      RANGE_INST_SIGN_500, RANGE_INST_SIGN_502, SAP_LINKAGE_NO, SERIAL_NO, START_NO, START_SCHDULE_D, TAG_NO_525, TEST_CERT_SIGN, 
+                                      TEST_CERT_YN, TOKUCHU_SPEC_SIGN, UNIT_500, UNIT_502, XJ_NO
+FROM                         NIFUDA
+WHERE                       (INDEX_NO = N'') OR
+                                      (INDEX_NO IS NULL)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
@@ -5872,33 +3149,17 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
                 "_CONTECT1_W69,@ORD_INST_CONTECT1_X72,@ORD_INST_CONTECT1_X91,@ORD_INST_CONTECT1_Z" +
                 "30,@TAG_NO_525,@XJ_NO,@ORD_INST_CONTECT1_H46,@ORD_INST_CONTECT1_X92,@ORD_INST_CO" +
                 "NTECT1_Y28,@ORD_INST_CONTECT1_W35,@ORD_INST_CONTECT1_X78,@ORD_INST_CONTECT1_X94," +
-                "@CAP_NO); \r\nSELECT MS_CODE AS Expr1, MODEL AS Expr2, PROD_NO AS Expr3, PROD_NO_S" +
-                "FIX AS Expr4, LINE_NO AS Expr5, CRP_GR_NO AS Expr6, PROD_CAREER AS Expr7, INDEX_" +
-                "NO AS Expr8, TEST_CERT_SIGN AS Expr9, DOC_LANG_TYPE AS Expr10, INST_FINISH_D AS " +
-                "Expr11, TEST_CERT_YN AS Expr12, END_USER_CUST_N_J AS Expr13, ORDER_NO AS Expr14," +
-                " ITEM_NO AS Expr15, PROD_ITEM_REV_NO AS Expr16, PROD_INST_REV_NO AS Expr17, COMP" +
-                "_NO AS Expr18, START_SCHDULE_D AS Expr19, FINISH_SCHDULE_D AS Expr20, START_NO A" +
-                "S Expr21, SERIAL_NO AS Expr22, ALLOWANCE_SIGN AS Expr23, PROD_N_J AS Expr24, PRO" +
-                "D_N_E AS Expr25, TOKUCHU_SPEC_SIGN AS Expr26, SAP_LINKAGE_NO AS Expr27, RANGE_IN" +
-                "ST_SIGN_500 AS Expr28, ORD_INST_MAX_500 AS Expr29, ORD_INST_MIN_500 AS Expr30, U" +
-                "NIT_500 AS Expr31, FEATURES_500 AS Expr32, RANGE_INST_SIGN_502 AS Expr33, ORD_IN" +
-                "ST_MAX_502 AS Expr34, ORD_INST_MIN_502 AS Expr35, UNIT_502 AS Expr36, ORD_INST_C" +
-                "ONTECT1_W69 AS Expr37, ORD_INST_CONTECT1_X72 AS Expr38, ORD_INST_CONTECT1_X91 AS" +
-                " Expr39, ORD_INST_CONTECT1_Z30 AS Expr40, TAG_NO_525 AS Expr41, XJ_NO AS Expr42," +
-                " ORD_INST_CONTECT1_H46 AS Expr43, ORD_INST_CONTECT1_X92 AS Expr44, ORD_INST_CONT" +
-                "ECT1_Y28 AS Expr45, ORD_INST_CONTECT1_W35 AS Expr46, ORD_INST_CONTECT1_X78 AS Ex" +
-                "pr47, ORD_INST_CONTECT1_X94 AS Expr48, CAP_NO AS Expr49, MS_CODE, MODEL, PROD_NO" +
-                ", PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_L" +
-                "ANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PRO" +
-                "D_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, STA" +
-                "RT_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LIN" +
-                "KAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEAT" +
-                "URES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD" +
-                "_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTE" +
-                "CT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_IN" +
-                "ST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1" +
-                "_X94, CAP_NO FROM NIFUDA WHERE (SERIAL_NO = @SERIAL_NO) AND (SERIAL_NO = @SERIAL" +
-                "_NO)";
+                "@CAP_NO); \r\nSELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PR" +
+                "OD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN," +
+                " END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_" +
+                "NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD" +
+                "_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST" +
+                "_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INS" +
+                "T_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_" +
+                "X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_C" +
+                "ONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35" +
+                ", ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM NIFUDA WHERE (SERIAL" +
+                "_NO = @SERIAL_NO)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MS_CODE", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "MS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODEL", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "MODEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5952,12 +3213,12 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters {
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = @"UPDATE                    NIFUDA
-SET                              INDEX_NO = @INDEX_NO
-WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
-                                      (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO IS NULL);         
-";
+SET                              ALLOWANCE_SIGN = @ALLOWANCE_SIGN
+WHERE                       (SERIAL_NO = @SERIAL_NO) AND (ALLOWANCE_SIGN = N'') OR
+                                      (SERIAL_NO = @SERIAL_NO) AND (ALLOWANCE_SIGN IS NULL); 
+SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM NIFUDA WHERE (SERIAL_NO = @SERIAL_NO)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INDEX_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALLOWANCE_SIGN", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ALLOWANCE_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL_NO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5989,13 +3250,13 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(NifudaDataSet.NifudaDataTableDataTable dataTable, string SerialNO) {
+        public virtual int FillBy(NifudaDataSet.NifudaDataTableDataTable dataTable, string Index_NO) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((SerialNO == null)) {
-                throw new global::System.ArgumentNullException("SerialNO");
+            if ((Index_NO == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SerialNO));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Index_NO));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6008,13 +3269,13 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual NifudaDataSet.NifudaDataTableDataTable GetDataBy(string SerialNO) {
+        public virtual NifudaDataSet.NifudaDataTableDataTable GetDataBy(string Index_NO) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((SerialNO == null)) {
-                throw new global::System.ArgumentNullException("SerialNO");
+            if ((Index_NO == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SerialNO));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Index_NO));
             }
             NifudaDataSet.NifudaDataTableDataTable dataTable = new NifudaDataSet.NifudaDataTableDataTable();
             this.Adapter.Fill(dataTable);
@@ -6067,33 +3328,20 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Expr8, string Original_Expr22, string Original_INDEX_NO, string Original_SERIAL_NO) {
-            if ((Original_Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr8");
+        public virtual int Delete(string Original_INDEX_NO, string Original_SERIAL_NO) {
+            if ((Original_INDEX_NO == null)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Expr8));
-            }
-            if ((Original_Expr22 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr22");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Expr22));
-            }
-            if ((Original_INDEX_NO == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_INDEX_NO));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_INDEX_NO));
             }
             if ((Original_SERIAL_NO == null)) {
                 throw new global::System.ArgumentNullException("Original_SERIAL_NO");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_SERIAL_NO));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_SERIAL_NO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6116,55 +3364,6 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    string Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12, 
-                    string Expr13, 
-                    string Expr14, 
-                    string Expr15, 
-                    string Expr16, 
-                    string Expr17, 
-                    string Expr18, 
-                    string Expr19, 
-                    string Expr20, 
-                    string Expr21, 
-                    string Expr22, 
-                    string Expr23, 
-                    string Expr24, 
-                    string Expr25, 
-                    string Expr26, 
-                    string Expr27, 
-                    string Expr28, 
-                    string Expr29, 
-                    string Expr30, 
-                    string Expr31, 
-                    string Expr32, 
-                    string Expr33, 
-                    string Expr34, 
-                    string Expr35, 
-                    string Expr36, 
-                    string Expr37, 
-                    string Expr38, 
-                    string Expr39, 
-                    string Expr40, 
-                    string Expr41, 
-                    string Expr42, 
-                    string Expr43, 
-                    string Expr44, 
-                    string Expr45, 
-                    string Expr46, 
-                    string Expr47, 
-                    string Expr48, 
-                    string Expr49, 
                     string MS_CODE, 
                     string MODEL, 
                     string PROD_NO, 
@@ -6214,593 +3413,299 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
                     string ORD_INST_CONTECT1_X78, 
                     string ORD_INST_CONTECT1_X94, 
                     string CAP_NO) {
-            if ((Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Expr1");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Expr1));
-            }
-            if ((Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Expr2");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Expr2));
-            }
-            if ((Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Expr3");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Expr3));
-            }
-            if ((Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Expr4");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Expr4));
-            }
-            if ((Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Expr5");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Expr5));
-            }
-            if ((Expr6 == null)) {
-                throw new global::System.ArgumentNullException("Expr6");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Expr6));
-            }
-            if ((Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Expr7");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Expr7));
-            }
-            if ((Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Expr8");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Expr8));
-            }
-            if ((Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Expr9");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Expr9));
-            }
-            if ((Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Expr10");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Expr10));
-            }
-            if ((Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Expr11");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Expr11));
-            }
-            if ((Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Expr12");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Expr12));
-            }
-            if ((Expr13 == null)) {
-                throw new global::System.ArgumentNullException("Expr13");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(Expr13));
-            }
-            if ((Expr14 == null)) {
-                throw new global::System.ArgumentNullException("Expr14");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(Expr14));
-            }
-            if ((Expr15 == null)) {
-                throw new global::System.ArgumentNullException("Expr15");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(Expr15));
-            }
-            if ((Expr16 == null)) {
-                throw new global::System.ArgumentNullException("Expr16");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Expr16));
-            }
-            if ((Expr17 == null)) {
-                throw new global::System.ArgumentNullException("Expr17");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(Expr17));
-            }
-            if ((Expr18 == null)) {
-                throw new global::System.ArgumentNullException("Expr18");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(Expr18));
-            }
-            if ((Expr19 == null)) {
-                throw new global::System.ArgumentNullException("Expr19");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(Expr19));
-            }
-            if ((Expr20 == null)) {
-                throw new global::System.ArgumentNullException("Expr20");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(Expr20));
-            }
-            if ((Expr21 == null)) {
-                throw new global::System.ArgumentNullException("Expr21");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(Expr21));
-            }
-            if ((Expr22 == null)) {
-                throw new global::System.ArgumentNullException("Expr22");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(Expr22));
-            }
-            if ((Expr23 == null)) {
-                throw new global::System.ArgumentNullException("Expr23");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(Expr23));
-            }
-            if ((Expr24 == null)) {
-                throw new global::System.ArgumentNullException("Expr24");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(Expr24));
-            }
-            if ((Expr25 == null)) {
-                throw new global::System.ArgumentNullException("Expr25");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(Expr25));
-            }
-            if ((Expr26 == null)) {
-                throw new global::System.ArgumentNullException("Expr26");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(Expr26));
-            }
-            if ((Expr27 == null)) {
-                throw new global::System.ArgumentNullException("Expr27");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(Expr27));
-            }
-            if ((Expr28 == null)) {
-                throw new global::System.ArgumentNullException("Expr28");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(Expr28));
-            }
-            if ((Expr29 == null)) {
-                throw new global::System.ArgumentNullException("Expr29");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(Expr29));
-            }
-            if ((Expr30 == null)) {
-                throw new global::System.ArgumentNullException("Expr30");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(Expr30));
-            }
-            if ((Expr31 == null)) {
-                throw new global::System.ArgumentNullException("Expr31");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(Expr31));
-            }
-            if ((Expr32 == null)) {
-                throw new global::System.ArgumentNullException("Expr32");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(Expr32));
-            }
-            if ((Expr33 == null)) {
-                throw new global::System.ArgumentNullException("Expr33");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(Expr33));
-            }
-            if ((Expr34 == null)) {
-                throw new global::System.ArgumentNullException("Expr34");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(Expr34));
-            }
-            if ((Expr35 == null)) {
-                throw new global::System.ArgumentNullException("Expr35");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(Expr35));
-            }
-            if ((Expr36 == null)) {
-                throw new global::System.ArgumentNullException("Expr36");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(Expr36));
-            }
-            if ((Expr37 == null)) {
-                throw new global::System.ArgumentNullException("Expr37");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(Expr37));
-            }
-            if ((Expr38 == null)) {
-                throw new global::System.ArgumentNullException("Expr38");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(Expr38));
-            }
-            if ((Expr39 == null)) {
-                throw new global::System.ArgumentNullException("Expr39");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(Expr39));
-            }
-            if ((Expr40 == null)) {
-                throw new global::System.ArgumentNullException("Expr40");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(Expr40));
-            }
-            if ((Expr41 == null)) {
-                throw new global::System.ArgumentNullException("Expr41");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[40].Value = ((string)(Expr41));
-            }
-            if ((Expr42 == null)) {
-                throw new global::System.ArgumentNullException("Expr42");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(Expr42));
-            }
-            if ((Expr43 == null)) {
-                throw new global::System.ArgumentNullException("Expr43");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[42].Value = ((string)(Expr43));
-            }
-            if ((Expr44 == null)) {
-                throw new global::System.ArgumentNullException("Expr44");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(Expr44));
-            }
-            if ((Expr45 == null)) {
-                throw new global::System.ArgumentNullException("Expr45");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(Expr45));
-            }
-            if ((Expr46 == null)) {
-                throw new global::System.ArgumentNullException("Expr46");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(Expr46));
-            }
-            if ((Expr47 == null)) {
-                throw new global::System.ArgumentNullException("Expr47");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(Expr47));
-            }
-            if ((Expr48 == null)) {
-                throw new global::System.ArgumentNullException("Expr48");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(Expr48));
-            }
-            if ((Expr49 == null)) {
-                throw new global::System.ArgumentNullException("Expr49");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(Expr49));
-            }
             if ((MS_CODE == null)) {
-                this.Adapter.InsertCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[49].Value = ((string)(MS_CODE));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(MS_CODE));
             }
             if ((MODEL == null)) {
-                this.Adapter.InsertCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[50].Value = ((string)(MODEL));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MODEL));
             }
             if ((PROD_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[51].Value = ((string)(PROD_NO));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PROD_NO));
             }
             if ((PROD_NO_SFIX == null)) {
-                this.Adapter.InsertCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[52].Value = ((string)(PROD_NO_SFIX));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PROD_NO_SFIX));
             }
             if ((LINE_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[53].Value = ((string)(LINE_NO));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(LINE_NO));
             }
             if ((CRP_GR_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[54].Value = ((string)(CRP_GR_NO));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(CRP_GR_NO));
             }
             if ((PROD_CAREER == null)) {
-                this.Adapter.InsertCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[55].Value = ((string)(PROD_CAREER));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PROD_CAREER));
             }
             if ((INDEX_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[56].Value = ((string)(INDEX_NO));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(INDEX_NO));
             }
             if ((TEST_CERT_SIGN == null)) {
-                this.Adapter.InsertCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[57].Value = ((string)(TEST_CERT_SIGN));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(TEST_CERT_SIGN));
             }
             if ((DOC_LANG_TYPE == null)) {
-                this.Adapter.InsertCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[58].Value = ((string)(DOC_LANG_TYPE));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(DOC_LANG_TYPE));
             }
             if ((INST_FINISH_D == null)) {
-                this.Adapter.InsertCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[59].Value = ((string)(INST_FINISH_D));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(INST_FINISH_D));
             }
             if ((TEST_CERT_YN == null)) {
-                this.Adapter.InsertCommand.Parameters[60].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[60].Value = ((string)(TEST_CERT_YN));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(TEST_CERT_YN));
             }
             if ((END_USER_CUST_N_J == null)) {
-                this.Adapter.InsertCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[61].Value = ((string)(END_USER_CUST_N_J));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(END_USER_CUST_N_J));
             }
             if ((ORDER_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[62].Value = ((string)(ORDER_NO));
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(ORDER_NO));
             }
             if ((ITEM_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[63].Value = ((string)(ITEM_NO));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(ITEM_NO));
             }
             if ((PROD_ITEM_REV_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[64].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[64].Value = ((string)(PROD_ITEM_REV_NO));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(PROD_ITEM_REV_NO));
             }
             if ((PROD_INST_REV_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[65].Value = ((string)(PROD_INST_REV_NO));
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(PROD_INST_REV_NO));
             }
             if ((COMP_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[66].Value = ((string)(COMP_NO));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(COMP_NO));
             }
             if ((START_SCHDULE_D == null)) {
-                this.Adapter.InsertCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[67].Value = ((string)(START_SCHDULE_D));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(START_SCHDULE_D));
             }
             if ((FINISH_SCHDULE_D == null)) {
-                this.Adapter.InsertCommand.Parameters[68].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[68].Value = ((string)(FINISH_SCHDULE_D));
+                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(FINISH_SCHDULE_D));
             }
             if ((START_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[69].Value = ((string)(START_NO));
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(START_NO));
             }
             if ((SERIAL_NO == null)) {
                 throw new global::System.ArgumentNullException("SERIAL_NO");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[70].Value = ((string)(SERIAL_NO));
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(SERIAL_NO));
             }
             if ((ALLOWANCE_SIGN == null)) {
-                this.Adapter.InsertCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[71].Value = ((string)(ALLOWANCE_SIGN));
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(ALLOWANCE_SIGN));
             }
             if ((PROD_N_J == null)) {
-                this.Adapter.InsertCommand.Parameters[72].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[72].Value = ((string)(PROD_N_J));
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(PROD_N_J));
             }
             if ((PROD_N_E == null)) {
-                this.Adapter.InsertCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[73].Value = ((string)(PROD_N_E));
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(PROD_N_E));
             }
             if ((TOKUCHU_SPEC_SIGN == null)) {
-                this.Adapter.InsertCommand.Parameters[74].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[74].Value = ((string)(TOKUCHU_SPEC_SIGN));
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(TOKUCHU_SPEC_SIGN));
             }
             if ((SAP_LINKAGE_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[75].Value = ((string)(SAP_LINKAGE_NO));
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(SAP_LINKAGE_NO));
             }
             if ((RANGE_INST_SIGN_500 == null)) {
-                this.Adapter.InsertCommand.Parameters[76].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[76].Value = ((string)(RANGE_INST_SIGN_500));
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(RANGE_INST_SIGN_500));
             }
             if ((ORD_INST_MAX_500 == null)) {
-                this.Adapter.InsertCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[77].Value = ((string)(ORD_INST_MAX_500));
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(ORD_INST_MAX_500));
             }
             if ((ORD_INST_MIN_500 == null)) {
-                this.Adapter.InsertCommand.Parameters[78].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[78].Value = ((string)(ORD_INST_MIN_500));
+                this.Adapter.InsertCommand.Parameters[29].Value = ((string)(ORD_INST_MIN_500));
             }
             if ((UNIT_500 == null)) {
-                this.Adapter.InsertCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[79].Value = ((string)(UNIT_500));
+                this.Adapter.InsertCommand.Parameters[30].Value = ((string)(UNIT_500));
             }
             if ((FEATURES_500 == null)) {
-                this.Adapter.InsertCommand.Parameters[80].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[80].Value = ((string)(FEATURES_500));
+                this.Adapter.InsertCommand.Parameters[31].Value = ((string)(FEATURES_500));
             }
             if ((RANGE_INST_SIGN_502 == null)) {
-                this.Adapter.InsertCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[81].Value = ((string)(RANGE_INST_SIGN_502));
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(RANGE_INST_SIGN_502));
             }
             if ((ORD_INST_MAX_502 == null)) {
-                this.Adapter.InsertCommand.Parameters[82].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[82].Value = ((string)(ORD_INST_MAX_502));
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(ORD_INST_MAX_502));
             }
             if ((ORD_INST_MIN_502 == null)) {
-                this.Adapter.InsertCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[83].Value = ((string)(ORD_INST_MIN_502));
+                this.Adapter.InsertCommand.Parameters[34].Value = ((string)(ORD_INST_MIN_502));
             }
             if ((UNIT_502 == null)) {
-                this.Adapter.InsertCommand.Parameters[84].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[84].Value = ((string)(UNIT_502));
+                this.Adapter.InsertCommand.Parameters[35].Value = ((string)(UNIT_502));
             }
             if ((ORD_INST_CONTECT1_W69 == null)) {
-                this.Adapter.InsertCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[85].Value = ((string)(ORD_INST_CONTECT1_W69));
+                this.Adapter.InsertCommand.Parameters[36].Value = ((string)(ORD_INST_CONTECT1_W69));
             }
             if ((ORD_INST_CONTECT1_X72 == null)) {
-                this.Adapter.InsertCommand.Parameters[86].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[86].Value = ((string)(ORD_INST_CONTECT1_X72));
+                this.Adapter.InsertCommand.Parameters[37].Value = ((string)(ORD_INST_CONTECT1_X72));
             }
             if ((ORD_INST_CONTECT1_X91 == null)) {
-                this.Adapter.InsertCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[87].Value = ((string)(ORD_INST_CONTECT1_X91));
+                this.Adapter.InsertCommand.Parameters[38].Value = ((string)(ORD_INST_CONTECT1_X91));
             }
             if ((ORD_INST_CONTECT1_Z30 == null)) {
-                this.Adapter.InsertCommand.Parameters[88].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[88].Value = ((string)(ORD_INST_CONTECT1_Z30));
+                this.Adapter.InsertCommand.Parameters[39].Value = ((string)(ORD_INST_CONTECT1_Z30));
             }
             if ((TAG_NO_525 == null)) {
-                this.Adapter.InsertCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[89].Value = ((string)(TAG_NO_525));
+                this.Adapter.InsertCommand.Parameters[40].Value = ((string)(TAG_NO_525));
             }
             if ((XJ_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[90].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[90].Value = ((string)(XJ_NO));
+                this.Adapter.InsertCommand.Parameters[41].Value = ((string)(XJ_NO));
             }
             if ((ORD_INST_CONTECT1_H46 == null)) {
-                this.Adapter.InsertCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[91].Value = ((string)(ORD_INST_CONTECT1_H46));
+                this.Adapter.InsertCommand.Parameters[42].Value = ((string)(ORD_INST_CONTECT1_H46));
             }
             if ((ORD_INST_CONTECT1_X92 == null)) {
-                this.Adapter.InsertCommand.Parameters[92].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[92].Value = ((string)(ORD_INST_CONTECT1_X92));
+                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(ORD_INST_CONTECT1_X92));
             }
             if ((ORD_INST_CONTECT1_Y28 == null)) {
-                this.Adapter.InsertCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[93].Value = ((string)(ORD_INST_CONTECT1_Y28));
+                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(ORD_INST_CONTECT1_Y28));
             }
             if ((ORD_INST_CONTECT1_W35 == null)) {
-                this.Adapter.InsertCommand.Parameters[94].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[94].Value = ((string)(ORD_INST_CONTECT1_W35));
+                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(ORD_INST_CONTECT1_W35));
             }
             if ((ORD_INST_CONTECT1_X78 == null)) {
-                this.Adapter.InsertCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[95].Value = ((string)(ORD_INST_CONTECT1_X78));
+                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(ORD_INST_CONTECT1_X78));
             }
             if ((ORD_INST_CONTECT1_X94 == null)) {
-                this.Adapter.InsertCommand.Parameters[96].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[96].Value = ((string)(ORD_INST_CONTECT1_X94));
+                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(ORD_INST_CONTECT1_X94));
             }
             if ((CAP_NO == null)) {
-                this.Adapter.InsertCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[97].Value = ((string)(CAP_NO));
+                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(CAP_NO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6823,55 +3728,6 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    string Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12, 
-                    string Expr13, 
-                    string Expr14, 
-                    string Expr15, 
-                    string Expr16, 
-                    string Expr17, 
-                    string Expr18, 
-                    string Expr19, 
-                    string Expr20, 
-                    string Expr21, 
-                    string Expr22, 
-                    string Expr23, 
-                    string Expr24, 
-                    string Expr25, 
-                    string Expr26, 
-                    string Expr27, 
-                    string Expr28, 
-                    string Expr29, 
-                    string Expr30, 
-                    string Expr31, 
-                    string Expr32, 
-                    string Expr33, 
-                    string Expr34, 
-                    string Expr35, 
-                    string Expr36, 
-                    string Expr37, 
-                    string Expr38, 
-                    string Expr39, 
-                    string Expr40, 
-                    string Expr41, 
-                    string Expr42, 
-                    string Expr43, 
-                    string Expr44, 
-                    string Expr45, 
-                    string Expr46, 
-                    string Expr47, 
-                    string Expr48, 
-                    string Expr49, 
                     string MS_CODE, 
                     string MODEL, 
                     string PROD_NO, 
@@ -6921,624 +3777,315 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
                     string ORD_INST_CONTECT1_X78, 
                     string ORD_INST_CONTECT1_X94, 
                     string CAP_NO, 
-                    string Original_Expr8, 
-                    string Original_Expr22, 
                     string Original_INDEX_NO, 
                     string Original_SERIAL_NO) {
-            if ((Expr1 == null)) {
-                throw new global::System.ArgumentNullException("Expr1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Expr1));
-            }
-            if ((Expr2 == null)) {
-                throw new global::System.ArgumentNullException("Expr2");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Expr2));
-            }
-            if ((Expr3 == null)) {
-                throw new global::System.ArgumentNullException("Expr3");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Expr3));
-            }
-            if ((Expr4 == null)) {
-                throw new global::System.ArgumentNullException("Expr4");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Expr4));
-            }
-            if ((Expr5 == null)) {
-                throw new global::System.ArgumentNullException("Expr5");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Expr5));
-            }
-            if ((Expr6 == null)) {
-                throw new global::System.ArgumentNullException("Expr6");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Expr6));
-            }
-            if ((Expr7 == null)) {
-                throw new global::System.ArgumentNullException("Expr7");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Expr7));
-            }
-            if ((Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Expr8");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Expr8));
-            }
-            if ((Expr9 == null)) {
-                throw new global::System.ArgumentNullException("Expr9");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Expr9));
-            }
-            if ((Expr10 == null)) {
-                throw new global::System.ArgumentNullException("Expr10");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Expr10));
-            }
-            if ((Expr11 == null)) {
-                throw new global::System.ArgumentNullException("Expr11");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Expr11));
-            }
-            if ((Expr12 == null)) {
-                throw new global::System.ArgumentNullException("Expr12");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Expr12));
-            }
-            if ((Expr13 == null)) {
-                throw new global::System.ArgumentNullException("Expr13");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Expr13));
-            }
-            if ((Expr14 == null)) {
-                throw new global::System.ArgumentNullException("Expr14");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Expr14));
-            }
-            if ((Expr15 == null)) {
-                throw new global::System.ArgumentNullException("Expr15");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Expr15));
-            }
-            if ((Expr16 == null)) {
-                throw new global::System.ArgumentNullException("Expr16");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Expr16));
-            }
-            if ((Expr17 == null)) {
-                throw new global::System.ArgumentNullException("Expr17");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Expr17));
-            }
-            if ((Expr18 == null)) {
-                throw new global::System.ArgumentNullException("Expr18");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Expr18));
-            }
-            if ((Expr19 == null)) {
-                throw new global::System.ArgumentNullException("Expr19");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Expr19));
-            }
-            if ((Expr20 == null)) {
-                throw new global::System.ArgumentNullException("Expr20");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Expr20));
-            }
-            if ((Expr21 == null)) {
-                throw new global::System.ArgumentNullException("Expr21");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Expr21));
-            }
-            if ((Expr22 == null)) {
-                throw new global::System.ArgumentNullException("Expr22");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Expr22));
-            }
-            if ((Expr23 == null)) {
-                throw new global::System.ArgumentNullException("Expr23");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Expr23));
-            }
-            if ((Expr24 == null)) {
-                throw new global::System.ArgumentNullException("Expr24");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Expr24));
-            }
-            if ((Expr25 == null)) {
-                throw new global::System.ArgumentNullException("Expr25");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Expr25));
-            }
-            if ((Expr26 == null)) {
-                throw new global::System.ArgumentNullException("Expr26");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Expr26));
-            }
-            if ((Expr27 == null)) {
-                throw new global::System.ArgumentNullException("Expr27");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Expr27));
-            }
-            if ((Expr28 == null)) {
-                throw new global::System.ArgumentNullException("Expr28");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Expr28));
-            }
-            if ((Expr29 == null)) {
-                throw new global::System.ArgumentNullException("Expr29");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Expr29));
-            }
-            if ((Expr30 == null)) {
-                throw new global::System.ArgumentNullException("Expr30");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Expr30));
-            }
-            if ((Expr31 == null)) {
-                throw new global::System.ArgumentNullException("Expr31");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Expr31));
-            }
-            if ((Expr32 == null)) {
-                throw new global::System.ArgumentNullException("Expr32");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Expr32));
-            }
-            if ((Expr33 == null)) {
-                throw new global::System.ArgumentNullException("Expr33");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Expr33));
-            }
-            if ((Expr34 == null)) {
-                throw new global::System.ArgumentNullException("Expr34");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Expr34));
-            }
-            if ((Expr35 == null)) {
-                throw new global::System.ArgumentNullException("Expr35");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Expr35));
-            }
-            if ((Expr36 == null)) {
-                throw new global::System.ArgumentNullException("Expr36");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Expr36));
-            }
-            if ((Expr37 == null)) {
-                throw new global::System.ArgumentNullException("Expr37");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Expr37));
-            }
-            if ((Expr38 == null)) {
-                throw new global::System.ArgumentNullException("Expr38");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Expr38));
-            }
-            if ((Expr39 == null)) {
-                throw new global::System.ArgumentNullException("Expr39");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Expr39));
-            }
-            if ((Expr40 == null)) {
-                throw new global::System.ArgumentNullException("Expr40");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Expr40));
-            }
-            if ((Expr41 == null)) {
-                throw new global::System.ArgumentNullException("Expr41");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Expr41));
-            }
-            if ((Expr42 == null)) {
-                throw new global::System.ArgumentNullException("Expr42");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Expr42));
-            }
-            if ((Expr43 == null)) {
-                throw new global::System.ArgumentNullException("Expr43");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Expr43));
-            }
-            if ((Expr44 == null)) {
-                throw new global::System.ArgumentNullException("Expr44");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Expr44));
-            }
-            if ((Expr45 == null)) {
-                throw new global::System.ArgumentNullException("Expr45");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Expr45));
-            }
-            if ((Expr46 == null)) {
-                throw new global::System.ArgumentNullException("Expr46");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Expr46));
-            }
-            if ((Expr47 == null)) {
-                throw new global::System.ArgumentNullException("Expr47");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Expr47));
-            }
-            if ((Expr48 == null)) {
-                throw new global::System.ArgumentNullException("Expr48");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Expr48));
-            }
-            if ((Expr49 == null)) {
-                throw new global::System.ArgumentNullException("Expr49");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Expr49));
-            }
             if ((MS_CODE == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(MS_CODE));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(MS_CODE));
             }
             if ((MODEL == null)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(MODEL));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MODEL));
             }
             if ((PROD_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(PROD_NO));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PROD_NO));
             }
             if ((PROD_NO_SFIX == null)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(PROD_NO_SFIX));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PROD_NO_SFIX));
             }
             if ((LINE_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(LINE_NO));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(LINE_NO));
             }
             if ((CRP_GR_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(CRP_GR_NO));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(CRP_GR_NO));
             }
             if ((PROD_CAREER == null)) {
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(PROD_CAREER));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PROD_CAREER));
             }
             if ((INDEX_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((string)(INDEX_NO));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(INDEX_NO));
             }
             if ((TEST_CERT_SIGN == null)) {
-                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[57].Value = ((string)(TEST_CERT_SIGN));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(TEST_CERT_SIGN));
             }
             if ((DOC_LANG_TYPE == null)) {
-                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(DOC_LANG_TYPE));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(DOC_LANG_TYPE));
             }
             if ((INST_FINISH_D == null)) {
-                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[59].Value = ((string)(INST_FINISH_D));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(INST_FINISH_D));
             }
             if ((TEST_CERT_YN == null)) {
-                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((string)(TEST_CERT_YN));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(TEST_CERT_YN));
             }
             if ((END_USER_CUST_N_J == null)) {
-                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[61].Value = ((string)(END_USER_CUST_N_J));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(END_USER_CUST_N_J));
             }
             if ((ORDER_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((string)(ORDER_NO));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(ORDER_NO));
             }
             if ((ITEM_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[63].Value = ((string)(ITEM_NO));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(ITEM_NO));
             }
             if ((PROD_ITEM_REV_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((string)(PROD_ITEM_REV_NO));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(PROD_ITEM_REV_NO));
             }
             if ((PROD_INST_REV_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[65].Value = ((string)(PROD_INST_REV_NO));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(PROD_INST_REV_NO));
             }
             if ((COMP_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((string)(COMP_NO));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(COMP_NO));
             }
             if ((START_SCHDULE_D == null)) {
-                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[67].Value = ((string)(START_SCHDULE_D));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(START_SCHDULE_D));
             }
             if ((FINISH_SCHDULE_D == null)) {
-                this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((string)(FINISH_SCHDULE_D));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(FINISH_SCHDULE_D));
             }
             if ((START_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[69].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[69].Value = ((string)(START_NO));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(START_NO));
             }
             if ((SERIAL_NO == null)) {
                 throw new global::System.ArgumentNullException("SERIAL_NO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((string)(SERIAL_NO));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(SERIAL_NO));
             }
             if ((ALLOWANCE_SIGN == null)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((string)(ALLOWANCE_SIGN));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(ALLOWANCE_SIGN));
             }
             if ((PROD_N_J == null)) {
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((string)(PROD_N_J));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(PROD_N_J));
             }
             if ((PROD_N_E == null)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((string)(PROD_N_E));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(PROD_N_E));
             }
             if ((TOKUCHU_SPEC_SIGN == null)) {
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((string)(TOKUCHU_SPEC_SIGN));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(TOKUCHU_SPEC_SIGN));
             }
             if ((SAP_LINKAGE_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[75].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[75].Value = ((string)(SAP_LINKAGE_NO));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(SAP_LINKAGE_NO));
             }
             if ((RANGE_INST_SIGN_500 == null)) {
-                this.Adapter.UpdateCommand.Parameters[76].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[76].Value = ((string)(RANGE_INST_SIGN_500));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(RANGE_INST_SIGN_500));
             }
             if ((ORD_INST_MAX_500 == null)) {
-                this.Adapter.UpdateCommand.Parameters[77].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[77].Value = ((string)(ORD_INST_MAX_500));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(ORD_INST_MAX_500));
             }
             if ((ORD_INST_MIN_500 == null)) {
-                this.Adapter.UpdateCommand.Parameters[78].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[78].Value = ((string)(ORD_INST_MIN_500));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(ORD_INST_MIN_500));
             }
             if ((UNIT_500 == null)) {
-                this.Adapter.UpdateCommand.Parameters[79].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[79].Value = ((string)(UNIT_500));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(UNIT_500));
             }
             if ((FEATURES_500 == null)) {
-                this.Adapter.UpdateCommand.Parameters[80].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[80].Value = ((string)(FEATURES_500));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(FEATURES_500));
             }
             if ((RANGE_INST_SIGN_502 == null)) {
-                this.Adapter.UpdateCommand.Parameters[81].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[81].Value = ((string)(RANGE_INST_SIGN_502));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(RANGE_INST_SIGN_502));
             }
             if ((ORD_INST_MAX_502 == null)) {
-                this.Adapter.UpdateCommand.Parameters[82].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[82].Value = ((string)(ORD_INST_MAX_502));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(ORD_INST_MAX_502));
             }
             if ((ORD_INST_MIN_502 == null)) {
-                this.Adapter.UpdateCommand.Parameters[83].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[83].Value = ((string)(ORD_INST_MIN_502));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(ORD_INST_MIN_502));
             }
             if ((UNIT_502 == null)) {
-                this.Adapter.UpdateCommand.Parameters[84].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[84].Value = ((string)(UNIT_502));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(UNIT_502));
             }
             if ((ORD_INST_CONTECT1_W69 == null)) {
-                this.Adapter.UpdateCommand.Parameters[85].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[85].Value = ((string)(ORD_INST_CONTECT1_W69));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(ORD_INST_CONTECT1_W69));
             }
             if ((ORD_INST_CONTECT1_X72 == null)) {
-                this.Adapter.UpdateCommand.Parameters[86].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[86].Value = ((string)(ORD_INST_CONTECT1_X72));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(ORD_INST_CONTECT1_X72));
             }
             if ((ORD_INST_CONTECT1_X91 == null)) {
-                this.Adapter.UpdateCommand.Parameters[87].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[87].Value = ((string)(ORD_INST_CONTECT1_X91));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(ORD_INST_CONTECT1_X91));
             }
             if ((ORD_INST_CONTECT1_Z30 == null)) {
-                this.Adapter.UpdateCommand.Parameters[88].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[88].Value = ((string)(ORD_INST_CONTECT1_Z30));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(ORD_INST_CONTECT1_Z30));
             }
             if ((TAG_NO_525 == null)) {
-                this.Adapter.UpdateCommand.Parameters[89].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[89].Value = ((string)(TAG_NO_525));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(TAG_NO_525));
             }
             if ((XJ_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[90].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[90].Value = ((string)(XJ_NO));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(XJ_NO));
             }
             if ((ORD_INST_CONTECT1_H46 == null)) {
-                this.Adapter.UpdateCommand.Parameters[91].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[91].Value = ((string)(ORD_INST_CONTECT1_H46));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(ORD_INST_CONTECT1_H46));
             }
             if ((ORD_INST_CONTECT1_X92 == null)) {
-                this.Adapter.UpdateCommand.Parameters[92].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[92].Value = ((string)(ORD_INST_CONTECT1_X92));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(ORD_INST_CONTECT1_X92));
             }
             if ((ORD_INST_CONTECT1_Y28 == null)) {
-                this.Adapter.UpdateCommand.Parameters[93].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[93].Value = ((string)(ORD_INST_CONTECT1_Y28));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(ORD_INST_CONTECT1_Y28));
             }
             if ((ORD_INST_CONTECT1_W35 == null)) {
-                this.Adapter.UpdateCommand.Parameters[94].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[94].Value = ((string)(ORD_INST_CONTECT1_W35));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(ORD_INST_CONTECT1_W35));
             }
             if ((ORD_INST_CONTECT1_X78 == null)) {
-                this.Adapter.UpdateCommand.Parameters[95].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[95].Value = ((string)(ORD_INST_CONTECT1_X78));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(ORD_INST_CONTECT1_X78));
             }
             if ((ORD_INST_CONTECT1_X94 == null)) {
-                this.Adapter.UpdateCommand.Parameters[96].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[96].Value = ((string)(ORD_INST_CONTECT1_X94));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(ORD_INST_CONTECT1_X94));
             }
             if ((CAP_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[97].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[97].Value = ((string)(CAP_NO));
-            }
-            if ((Original_Expr8 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr8");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[98].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[99].Value = ((string)(Original_Expr8));
-            }
-            if ((Original_Expr22 == null)) {
-                throw new global::System.ArgumentNullException("Original_Expr22");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[100].Value = ((string)(Original_Expr22));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(CAP_NO));
             }
             if ((Original_INDEX_NO == null)) {
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[102].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[101].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[102].Value = ((string)(Original_INDEX_NO));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_INDEX_NO));
             }
             if ((Original_SERIAL_NO == null)) {
                 throw new global::System.ArgumentNullException("Original_SERIAL_NO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[103].Value = ((string)(Original_SERIAL_NO));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((string)(Original_SERIAL_NO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7561,55 +4108,6 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string Expr1, 
-                    string Expr2, 
-                    string Expr3, 
-                    string Expr4, 
-                    string Expr5, 
-                    string Expr6, 
-                    string Expr7, 
-                    string Expr8, 
-                    string Expr9, 
-                    string Expr10, 
-                    string Expr11, 
-                    string Expr12, 
-                    string Expr13, 
-                    string Expr14, 
-                    string Expr15, 
-                    string Expr16, 
-                    string Expr17, 
-                    string Expr18, 
-                    string Expr19, 
-                    string Expr20, 
-                    string Expr21, 
-                    string Expr22, 
-                    string Expr23, 
-                    string Expr24, 
-                    string Expr25, 
-                    string Expr26, 
-                    string Expr27, 
-                    string Expr28, 
-                    string Expr29, 
-                    string Expr30, 
-                    string Expr31, 
-                    string Expr32, 
-                    string Expr33, 
-                    string Expr34, 
-                    string Expr35, 
-                    string Expr36, 
-                    string Expr37, 
-                    string Expr38, 
-                    string Expr39, 
-                    string Expr40, 
-                    string Expr41, 
-                    string Expr42, 
-                    string Expr43, 
-                    string Expr44, 
-                    string Expr45, 
-                    string Expr46, 
-                    string Expr47, 
-                    string Expr48, 
-                    string Expr49, 
                     string MS_CODE, 
                     string MODEL, 
                     string PROD_NO, 
@@ -7658,11 +4156,9 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
                     string ORD_INST_CONTECT1_X78, 
                     string ORD_INST_CONTECT1_X94, 
                     string CAP_NO, 
-                    string Original_Expr8, 
-                    string Original_Expr22, 
                     string Original_INDEX_NO, 
                     string Original_SERIAL_NO) {
-            return this.Update(Expr1, Expr2, Expr3, Expr4, Expr5, Expr6, Expr7, Expr8, Expr9, Expr10, Expr11, Expr12, Expr13, Expr14, Expr15, Expr16, Expr17, Expr18, Expr19, Expr20, Expr21, Expr22, Expr23, Expr24, Expr25, Expr26, Expr27, Expr28, Expr29, Expr30, Expr31, Expr32, Expr33, Expr34, Expr35, Expr36, Expr37, Expr38, Expr39, Expr40, Expr41, Expr42, Expr43, Expr44, Expr45, Expr46, Expr47, Expr48, Expr49, MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, Original_SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO, Original_Expr8, Original_Expr22, Original_INDEX_NO, Original_SERIAL_NO);
+            return this.Update(MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, Original_SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO, Original_INDEX_NO, Original_SERIAL_NO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8035,13 +4531,13 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string INDEX_NO, string SERIAL_NO) {
+        public virtual int UpdateQuery(string ALLOWANCE_SIGN, string SERIAL_NO) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
-            if ((INDEX_NO == null)) {
+            if ((ALLOWANCE_SIGN == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[0].Value = ((string)(INDEX_NO));
+                command.Parameters[0].Value = ((string)(ALLOWANCE_SIGN));
             }
             if ((SERIAL_NO == null)) {
                 throw new global::System.ArgumentNullException("SERIAL_NO");
@@ -8064,175 +4560,6 @@ WHERE                       (SERIAL_NO = @SERIAL_NO) AND (INDEX_NO = N'') OR
                 }
             }
             return returnValue;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class UniqueSerialNumberDataTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public UniqueSerialNumberDataTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "UniqueSerialNumberDataTable";
-            tableMapping.ColumnMappings.Add("INDEX_NO", "INDEX_NO");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ReportManager.Properties.Settings.Default.YruPCIassemblingConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT                      INDEX_NO\r\nFROM                         NIFUDA\r\nWHERE " +
-                "                      (INDEX_NO <> N\'\') OR\r\n                                    " +
-                "  (INDEX_NO IS NULL)";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(NifudaDataSet.UniqueSerialNumberDataTableDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual NifudaDataSet.UniqueSerialNumberDataTableDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            NifudaDataSet.UniqueSerialNumberDataTableDataTable dataTable = new NifudaDataSet.UniqueSerialNumberDataTableDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
     }
     

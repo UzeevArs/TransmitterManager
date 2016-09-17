@@ -50,14 +50,23 @@ namespace ReportManager
                 report.LoadLayout((report as ISavingReport).GetTemplateFileName());
             }
 
-            report.DataSource =
-                new List<AggregatedFieldsModel> {
-                    new AggregatedFieldsModel(
-                        ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
-                        ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
-                        ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
-                        ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0])
-                };
+
+            //new List<InputData> { ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0] };
+
+            //new DeviceModel().InputData
+            //{
+
+            //ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0]                   
+            //    }
+
+            report.DataSource = 
+                new List<AggregatedFieldsModel> {new AggregatedFieldsModel(
+
+                    ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
+                    ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
+                    ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
+                    ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0])
+            };
 
             return report;
         }

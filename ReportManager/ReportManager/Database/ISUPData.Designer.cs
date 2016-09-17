@@ -202,7 +202,7 @@ namespace ReportManager.Database {
             this.DataSetName = "ISUPData";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/ISUPData.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableISUPNifudaDataTable = new ISUPNifudaDataTableDataTable();
             base.Tables.Add(this.tableISUPNifudaDataTable);
@@ -2919,90 +2919,88 @@ namespace ReportManager.Database.ISUPDataTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SERIAL_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO         dbo.NIFUDA\r\n                                      (MS_CODE, M" +
-                "ODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CER" +
-                "T_SIGN, DOC_LANG_TYPE, \r\n                                      INST_FINISH_D, TE" +
-                "ST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_RE" +
-                "V_NO, COMP_NO, \r\n                                      START_SCHDULE_D, FINISH_S" +
-                "CHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_" +
-                "SIGN, \r\n                                      SAP_LINKAGE_NO, RANGE_INST_SIGN_50" +
-                "0, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_5" +
-                "02, \r\n                                      ORD_INST_MAX_502, ORD_INST_MIN_502, " +
-                "UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, \r" +
-                "\n                                      ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO," +
-                " ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, \r\n        " +
-                "                              ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_" +
-                "INST_CONTECT1_X94, CAP_NO)\r\nVALUES                    (@MS_CODE,@MODEL,@PROD_NO," +
-                "@PROD_NO_SFIX,@LINE_NO,@CRP_GR_NO,@PROD_CAREER,@INDEX_NO,@TEST_CERT_SIGN,@DOC_LA" +
-                "NG_TYPE,@INST_FINISH_D,@TEST_CERT_YN,@END_USER_CUST_N_J,@ORDER_NO,@ITEM_NO,@PROD" +
-                "_ITEM_REV_NO,@PROD_INST_REV_NO,@COMP_NO,@START_SCHDULE_D,@FINISH_SCHDULE_D,@STAR" +
-                "T_NO,@SERIAL_NO,@ALLOWANCE_SIGN,@PROD_N_J,@PROD_N_E,@TOKUCHU_SPEC_SIGN,@SAP_LINK" +
-                "AGE_NO,@RANGE_INST_SIGN_500,@ORD_INST_MAX_500,@ORD_INST_MIN_500,@UNIT_500,@FEATU" +
-                "RES_500,@RANGE_INST_SIGN_502,@ORD_INST_MAX_502,@ORD_INST_MIN_502,@UNIT_502,@ORD_" +
-                "INST_CONTECT1_W69,@ORD_INST_CONTECT1_X72,@ORD_INST_CONTECT1_X91,@ORD_INST_CONTEC" +
-                "T1_Z30,@TAG_NO_525,@XJ_NO,@ORD_INST_CONTECT1_H46,@ORD_INST_CONTECT1_X92,@ORD_INS" +
-                "T_CONTECT1_Y28,@ORD_INST_CONTECT1_W35,@ORD_INST_CONTECT1_X78,@ORD_INST_CONTECT1_" +
-                "X94,@CAP_NO); \r\nSELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO" +
-                ", PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT" +
-                "_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, C" +
-                "OMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, " +
-                "PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_" +
-                "INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD" +
-                "_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTE" +
-                "CT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_IN" +
-                "ST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1" +
-                "_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM dbo.NIFUDA WHERE" +
-                " (SERIAL_NO = @SERIAL_NO)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[NIFUDA] ([MS_CODE], [MODEL], [PROD_NO], [PROD_NO_SFIX], [LINE_" +
+                "NO], [CRP_GR_NO], [PROD_CAREER], [INDEX_NO], [TEST_CERT_SIGN], [DOC_LANG_TYPE], " +
+                "[INST_FINISH_D], [TEST_CERT_YN], [END_USER_CUST_N_J], [ORDER_NO], [ITEM_NO], [PR" +
+                "OD_ITEM_REV_NO], [PROD_INST_REV_NO], [COMP_NO], [START_SCHDULE_D], [FINISH_SCHDU" +
+                "LE_D], [START_NO], [SERIAL_NO], [ALLOWANCE_SIGN], [PROD_N_J], [PROD_N_E], [TOKUC" +
+                "HU_SPEC_SIGN], [SAP_LINKAGE_NO], [RANGE_INST_SIGN_500], [ORD_INST_MAX_500], [ORD" +
+                "_INST_MIN_500], [UNIT_500], [FEATURES_500], [RANGE_INST_SIGN_502], [ORD_INST_MAX" +
+                "_502], [ORD_INST_MIN_502], [UNIT_502], [ORD_INST_CONTECT1_W69], [ORD_INST_CONTEC" +
+                "T1_X72], [ORD_INST_CONTECT1_X91], [ORD_INST_CONTECT1_Z30], [TAG_NO_525], [XJ_NO]" +
+                ", [ORD_INST_CONTECT1_H46], [ORD_INST_CONTECT1_X92], [ORD_INST_CONTECT1_Y28], [OR" +
+                "D_INST_CONTECT1_W35], [ORD_INST_CONTECT1_X78], [ORD_INST_CONTECT1_X94], [CAP_NO]" +
+                ") VALUES (@MS_CODE, @MODEL, @PROD_NO, @PROD_NO_SFIX, @LINE_NO, @CRP_GR_NO, @PROD" +
+                "_CAREER, @INDEX_NO, @TEST_CERT_SIGN, @DOC_LANG_TYPE, @INST_FINISH_D, @TEST_CERT_" +
+                "YN, @END_USER_CUST_N_J, @ORDER_NO, @ITEM_NO, @PROD_ITEM_REV_NO, @PROD_INST_REV_N" +
+                "O, @COMP_NO, @START_SCHDULE_D, @FINISH_SCHDULE_D, @START_NO, @SERIAL_NO, @ALLOWA" +
+                "NCE_SIGN, @PROD_N_J, @PROD_N_E, @TOKUCHU_SPEC_SIGN, @SAP_LINKAGE_NO, @RANGE_INST" +
+                "_SIGN_500, @ORD_INST_MAX_500, @ORD_INST_MIN_500, @UNIT_500, @FEATURES_500, @RANG" +
+                "E_INST_SIGN_502, @ORD_INST_MAX_502, @ORD_INST_MIN_502, @UNIT_502, @ORD_INST_CONT" +
+                "ECT1_W69, @ORD_INST_CONTECT1_X72, @ORD_INST_CONTECT1_X91, @ORD_INST_CONTECT1_Z30" +
+                ", @TAG_NO_525, @XJ_NO, @ORD_INST_CONTECT1_H46, @ORD_INST_CONTECT1_X92, @ORD_INST" +
+                "_CONTECT1_Y28, @ORD_INST_CONTECT1_W35, @ORD_INST_CONTECT1_X78, @ORD_INST_CONTECT" +
+                "1_X94, @CAP_NO);\r\nSELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_" +
+                "NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CE" +
+                "RT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO," +
+                " COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN" +
+                ", PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, OR" +
+                "D_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, O" +
+                "RD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CON" +
+                "TECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_" +
+                "INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTEC" +
+                "T1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM dbo.NIFUDA WHE" +
+                "RE (SERIAL_NO = @SERIAL_NO)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MS_CODE", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "MS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODEL", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "MODEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO_SFIX", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO_SFIX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LINE_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "LINE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRP_GR_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "CRP_GR_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CAREER", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CAREER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INDEX_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEST_CERT_SIGN", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "TEST_CERT_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOC_LANG_TYPE", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DOC_LANG_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INST_FINISH_D", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "INST_FINISH_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEST_CERT_YN", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "TEST_CERT_YN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@END_USER_CUST_N_J", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "END_USER_CUST_N_J", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORDER_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORDER_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ITEM_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ITEM_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_ITEM_REV_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_ITEM_REV_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_INST_REV_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_INST_REV_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMP_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "COMP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@START_SCHDULE_D", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "START_SCHDULE_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FINISH_SCHDULE_D", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "FINISH_SCHDULE_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@START_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "START_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL_NO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALLOWANCE_SIGN", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ALLOWANCE_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_N_J", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_N_J", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_N_E", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_N_E", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TOKUCHU_SPEC_SIGN", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "TOKUCHU_SPEC_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SAP_LINKAGE_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "SAP_LINKAGE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGE_INST_SIGN_500", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "RANGE_INST_SIGN_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MAX_500", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MAX_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MIN_500", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MIN_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_500", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FEATURES_500", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "FEATURES_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGE_INST_SIGN_502", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "RANGE_INST_SIGN_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MAX_502", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MAX_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MIN_502", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MIN_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_502", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_W69", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_W69", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X72", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X72", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X91", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X91", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_Z30", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_Z30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TAG_NO_525", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "TAG_NO_525", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@XJ_NO", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "XJ_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_H46", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_H46", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X92", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X92", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_Y28", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_Y28", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_W35", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_W35", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X78", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X78", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X94", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X94", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_NO", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "CAP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MS_CODE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MODEL", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MODEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_NO_SFIX", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_NO_SFIX", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LINE_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LINE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRP_GR_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CRP_GR_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_CAREER", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_CAREER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INDEX_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEST_CERT_SIGN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEST_CERT_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DOC_LANG_TYPE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOC_LANG_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INST_FINISH_D", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INST_FINISH_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TEST_CERT_YN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TEST_CERT_YN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@END_USER_CUST_N_J", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "END_USER_CUST_N_J", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORDER_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORDER_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ITEM_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ITEM_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_ITEM_REV_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_ITEM_REV_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_INST_REV_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_INST_REV_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COMP_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "COMP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@START_SCHDULE_D", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "START_SCHDULE_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FINISH_SCHDULE_D", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FINISH_SCHDULE_D", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@START_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "START_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ALLOWANCE_SIGN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ALLOWANCE_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_N_J", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_N_J", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PROD_N_E", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PROD_N_E", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TOKUCHU_SPEC_SIGN", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TOKUCHU_SPEC_SIGN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SAP_LINKAGE_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SAP_LINKAGE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGE_INST_SIGN_500", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGE_INST_SIGN_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MAX_500", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MAX_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MIN_500", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MIN_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_500", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FEATURES_500", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FEATURES_500", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RANGE_INST_SIGN_502", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RANGE_INST_SIGN_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MAX_502", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MAX_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_MIN_502", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_MIN_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNIT_502", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UNIT_502", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_W69", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_W69", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X72", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X72", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X91", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X91", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_Z30", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_Z30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TAG_NO_525", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TAG_NO_525", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@XJ_NO", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "XJ_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_H46", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_H46", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X92", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X92", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_Y28", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_Y28", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_W35", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_W35", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X78", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X78", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ORD_INST_CONTECT1_X94", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ORD_INST_CONTECT1_X94", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_NO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAP_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[NIFUDA] SET [MS_CODE] = @MS_CODE, [MODEL] = @MODEL, [PROD_NO] = @PR" +
@@ -3115,18 +3113,15 @@ namespace ReportManager.Database.ISUPDataTableAdapters {
                                       ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, 
                                       ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO
 FROM                         dbo.NIFUDA
-WHERE                       (ALLOWANCE_SIGN IS NULL) OR
+WHERE                       (ALLOWANCE_SIGN IS NULL) AND (SERIAL_NO IS NOT NULL) OR
                                       (ALLOWANCE_SIGN = '')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE                    dbo.NIFUDA
-SET                              ALLOWANCE_SIGN = 'Downloaded'
-WHERE                       (ALLOWANCE_SIGN IS NULL) OR
-                                      (ALLOWANCE_SIGN = '');   
-SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, INDEX_NO, TEST_CERT_SIGN, DOC_LANG_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, START_SCHDULE_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, TOKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_502, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST_CONTECT1_X72, ORD_INST_CONTECT1_X91, ORD_INST_CONTECT1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INST_CONTECT1_Y28, ORD_INST_CONTECT1_W35, ORD_INST_CONTECT1_X78, ORD_INST_CONTECT1_X94, CAP_NO FROM dbo.NIFUDA WHERE (SERIAL_NO = @SERIAL_NO)";
+            this._commandCollection[1].CommandText = "UPDATE                    dbo.NIFUDA\r\nSET                              ALLOWANCE_" +
+                "SIGN = \'Downloaded\'\r\nWHERE                       (ALLOWANCE_SIGN IS NULL) OR\r\n  " +
+                "                                    (ALLOWANCE_SIGN = \'\');     \r\n";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL_NO", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4023,14 +4018,8 @@ SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string SERIAL_NO) {
+        public virtual int UpdateQuery() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((SERIAL_NO == null)) {
-                throw new global::System.ArgumentNullException("SERIAL_NO");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(SERIAL_NO));
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

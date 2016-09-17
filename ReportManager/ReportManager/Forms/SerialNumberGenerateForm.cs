@@ -14,7 +14,7 @@ namespace ReportManager.Forms
         public SerialNumberGenerateForm()
         {
             InitializeComponent();
-            nifudaDataTableAdapter1.FillByEmptyBarCode(nifudaDataSet1.NifudaDataTable);
+            nifudaDataTableAdapter1.Fill(nifudaDataSet1.NifudaDataTable);
         }
 
         private void grdEmptySerial_DoubleClick(object sender, EventArgs e)
@@ -22,21 +22,20 @@ namespace ReportManager.Forms
             var rows = (grdEmptySerial.MainView as GridView).GetSelectedRows();
             if (rows.Length > 0)
             {
-                var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
+                //var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
 
-                nifudaDataTableAdapter1.UpdateQuery(serial.Item1, nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
-
-                var device = GetDeviceBySerial(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
+                nifudaDataTableAdapter1.UpdateQuery("Generated", nifudaDataSet1.NifudaDataTable[rows[0]].INDEX_NO);
+                var device = GetDeviceBySerialNifuda(nifudaDataSet1.NifudaDataTable[rows[0]].INDEX_NO);
                 var report = CreateReportInstance(device);
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
                     printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
                 }
+             }
 
-            }
         }
 
-        private DeviceModel GetDeviceBySerial(string serial)
+        private DeviceModel GetDeviceBySerialNifuda(string serial)
         {
             return DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = serial });
         }

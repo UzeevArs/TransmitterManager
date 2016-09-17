@@ -35,12 +35,15 @@
             this.btnGenerateReports = new DevExpress.XtraBars.BarButtonItem();
             this.edtSerial = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.btnOpenTestWindow = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nifudaDataTableAdapter = new ReportManager.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnChangeConnectionString = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -53,9 +56,11 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.btnGenerateSerial,
             this.btnGenerateReports,
-            this.edtSerial});
+            this.edtSerial,
+            this.btnOpenTestWindow,
+            this.btnChangeConnectionString});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -98,11 +103,21 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // btnOpenTestWindow
+            // 
+            this.btnOpenTestWindow.Caption = "Обновление данных";
+            this.btnOpenTestWindow.Glyph = ((System.Drawing.Image)(resources.GetObject("btnOpenTestWindow.Glyph")));
+            this.btnOpenTestWindow.Id = 5;
+            this.btnOpenTestWindow.Name = "btnOpenTestWindow";
+            this.btnOpenTestWindow.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnOpenTestWindow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpenTestWindow_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.pgSerial,
-            this.pgStages});
+            this.pgStages,
+            this.ribbonPageGroup1});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Сборка";
             // 
@@ -127,9 +142,25 @@
             // 
             this.timer1.Enabled = true;
             // 
-            // dataTable1TableAdapter1
+            // nifudaDataTableAdapter
             // 
             this.nifudaDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnOpenTestWindow);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnChangeConnectionString);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Базы данных";
+            // 
+            // btnChangeConnectionString
+            // 
+            this.btnChangeConnectionString.Caption = "Настройка подключений к БД";
+            this.btnChangeConnectionString.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.Glyph")));
+            this.btnChangeConnectionString.Id = 6;
+            this.btnChangeConnectionString.Name = "btnChangeConnectionString";
+            this.btnChangeConnectionString.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangeConnectionString_ItemClick);
             // 
             // StagesForm
             // 
@@ -153,13 +184,16 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgSerial;
-        private DevExpress.XtraBars.BarButtonItem btnGenerateSerial;
-        private DevExpress.XtraBars.BarButtonItem btnGenerateReports;
+        public DevExpress.XtraBars.BarButtonItem btnGenerateSerial;
+        public DevExpress.XtraBars.BarButtonItem btnGenerateReports;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarEditItem edtSerial;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgStages;
         private System.Windows.Forms.Timer timer1;
         private Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem btnOpenTestWindow;
+        private DevExpress.XtraBars.BarButtonItem btnChangeConnectionString;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }
