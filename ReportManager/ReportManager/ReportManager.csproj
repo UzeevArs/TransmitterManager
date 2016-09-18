@@ -95,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Database\ConnectionStringContainer.cs" />
     <Compile Include="Database\ISUPData.cs">
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </Compile>

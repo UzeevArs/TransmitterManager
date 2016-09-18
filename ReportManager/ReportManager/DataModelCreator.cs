@@ -211,7 +211,8 @@ namespace ReportManager
             
             if (dataSetCalibrate.Count == 0)
             {
-                deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults { AdjustScale_0 = "No Data",
+                deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults { SerialNumberCalibration = "No Data",
+                    AdjustScale_0 = "No Data",
                     AdjustScale_100 = "No Data",
                     AmplificationNumber = "No Data",
                     AtmospherePressure = "No Data",
@@ -247,12 +248,54 @@ namespace ReportManager
                     Style = "No Data",
                     Tag = "No Data",
                     Temp = "No Data",
-                    Version = "No Data",} };
+                    Version = "No Data",
+                    Acc = "No Data",
+                    Calut = "No Data",
+                    Cal1 = "No Data",
+                    Cal2 = "No Data",
+                    Cal3 = "No Data",
+                    Desut = "No Data",
+                    Des1 = "No Data",
+                    Des2 = "No Data",
+                    Des3 = "No Data",
+                    Dtinc1 = "No Data",
+                    Dtinc2 = "No Data",
+                    Dtinc3 = "No Data",
+                    Dtdec1 = "No Data",
+                    Dtdec2 = "No Data",
+                    Dtdec3 = "No Data",
+                    Convtut = "No Data",
+                    Convt1 = "No Data",
+                    Convt2 = "No Data",
+                    Convt3 = "No Data",
+                    Kminc1 = "No Data",
+                    Kminc2 = "No Data",
+                    Kminc3 = "No Data",
+                    Kmdec1 = "No Data",
+                    Kmdec2 = "No Data",
+                    Kmdec3 = "No Data",
+                    Cpinc1 = "No Data",
+                    Cpinc2 = "No Data",
+                    Cpinc3 = "No Data",
+                    Cpdec1 = "No Data",
+                    Cpdec2 = "No Data",
+                    Cpdec3 = "No Data",
+                    Atmn = "No Data",
+                    Caltime = "No Data",
+                    Zeror = "No Data",
+                    Spanr = "No Data",
+                    AdjUnit = "No Data",
+                    WtMatl = "No Data",
+                    FlSize = "No Data"
+
+                } };
             }
             else
             {
                 deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults
                 {
+
+                    SerialNumberCalibration = dataSetCalibrate[0].SERIAL,
                     AdjustScale_0 = dataSetCalibrate[0].ADJ_V0,
                     AdjustScale_100 = dataSetCalibrate[0].ADJ_V100,
                     AmplificationNumber = dataSetCalibrate[0].AMPNO,
@@ -290,20 +333,83 @@ namespace ReportManager
                     Tag = dataSetCalibrate[0].TAG,
                     Temp = dataSetCalibrate[0].TEMP,
                     Version = dataSetCalibrate[0].VERSION,
-                } };
+                    Acc = dataSetCalibrate[0].ACC,
+                    Calut = dataSetCalibrate[0].CALUT,
+                    Cal1 = dataSetCalibrate[0].CAL1,
+                    Cal2 = dataSetCalibrate[0].CAL2,
+                    Cal3 = dataSetCalibrate[0].CAL3,
+                    Desut = dataSetCalibrate[0].DESUT,
+                    Des1 = dataSetCalibrate[0].DES1,
+                    Des2 = dataSetCalibrate[0].DES2,
+                    Des3 = dataSetCalibrate[0].DES3,
+                    Dtinc1 = dataSetCalibrate[0].DTINC1,
+                    Dtinc2 = dataSetCalibrate[0].DTINC2,
+                    Dtinc3 = dataSetCalibrate[0].DTINC3,
+                    Dtdec1 = dataSetCalibrate[0].DTDEC1,
+                    Dtdec2 = dataSetCalibrate[0].DTDEC2,
+                    Dtdec3 = dataSetCalibrate[0].DTDEC3,
+                    Convtut = dataSetCalibrate[0].CONVTUT,
+                    Convt1 = dataSetCalibrate[0].CONVT1,
+                    Convt2 = dataSetCalibrate[0].CONVT2,
+                    Convt3 = dataSetCalibrate[0].CONVT3,
+                    Kminc1 = dataSetCalibrate[0].KMINC1,
+                    Kminc2 = dataSetCalibrate[0].KMINC2,
+                    Kminc3 = dataSetCalibrate[0].KMINC3,
+                    Kmdec1 = dataSetCalibrate[0].KMDEC1,
+                    Kmdec2 = dataSetCalibrate[0].KMDEC2,
+                    Kmdec3 = dataSetCalibrate[0].KMDEC3,
+                    Cpinc1 = dataSetCalibrate[0].CPINC1,
+                    Cpinc2 = dataSetCalibrate[0].CPINC2,
+                    Cpinc3 = dataSetCalibrate[0].CPINC3,
+                    Cpdec1 = dataSetCalibrate[0].CPDEC1,
+                    Cpdec2 = dataSetCalibrate[0].CPDEC2,
+                    Cpdec3 = dataSetCalibrate[0].CPDEC3,
+                    Atmn = dataSetCalibrate[0].ATMN,
+                    Caltime = dataSetCalibrate[0].CALTIME,
+                    Zeror = dataSetCalibrate[0].ZEROR,
+                    Spanr = dataSetCalibrate[0].SPANR,
+                    AdjUnit = dataSetCalibrate[0].ADJUNIT,
+                    WtMatl = dataSetCalibrate[0].WTMATL,
+                    FlSize = dataSetCalibrate[0].FLSIZE
+
+    } };
             }
 
             if (dataSetHipot.Count == 0)
             {
                 deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult {
-                Result = "No Data"} };
+                    SerialNumberHipot = "No Data",
+                    Result = "No Data",
+                    IsolationV = "No Data",
+                    IsolationR = "No Data",
+                    IsolationT = "No Data",
+                    IResult = "No Data",
+                    WithStandV = "No Data",
+                    WithStandI = "No Data",
+                    WithStandT = "No Data",
+                    WResult = "No Data",
+                    TestDate = "No Data",
+                    TestTime = "No Data",
+                    TUser = "No Data"} };
             }
             else
             {
                 deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult
                 {
-                    Result = dataSetHipot[0].RESULT
-                } };
+                    SerialNumberHipot = dataSetHipot[0].SERIAL,
+                    Result = dataSetHipot[0].RESULT,
+                    IsolationV = dataSetHipot[0].ISOLATION_V.ToString(),
+                    IsolationR = dataSetHipot[0].ISOLATION_R.ToString(),
+                    IsolationT = dataSetHipot[0].ISOLATION_T.ToString(),
+                    IResult = dataSetHipot[0].IRESULT,
+                    WithStandV = dataSetHipot[0].WITHSTAND_V.ToString(),
+                    WithStandI = dataSetHipot[0].WITHSTAND_I.ToString(),
+                    WithStandT = dataSetHipot[0].WITHSTAND_T.ToString(),
+                    WResult = dataSetHipot[0].WRESULT,
+                    TestDate = dataSetHipot[0].TEST_DATE,
+                    TestTime = dataSetHipot[0].TEST_TIME,
+                    TUser = dataSetHipot[0].TUSER
+    } };
             }
 
             return deviceModel;

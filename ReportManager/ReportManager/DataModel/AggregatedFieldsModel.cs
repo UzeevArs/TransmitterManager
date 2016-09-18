@@ -671,6 +671,20 @@ namespace ReportManager.DataModel
             }
         }
 
+
+        public string SerialNumberCalibration
+        {
+            get
+            {
+                return calibrationResults.SerialNumberCalibration;
+            }
+
+            set
+            {
+                calibrationResults.SerialNumberCalibration = value;
+            }
+        }
+
         public string Result
         {
             get
@@ -1125,6 +1139,514 @@ namespace ReportManager.DataModel
                 calibrationResults.Eui64adrs = value;
             }
         }
+
+        public string Acc
+        {
+            get
+            {
+                return calibrationResults.Acc;
+            }
+
+            set
+            {
+                calibrationResults.Acc = value;
+            }
+        }
+
+        public string Calut
+        {
+            get
+            {
+                return calibrationResults.Calut;
+            }
+
+            set
+            {
+                calibrationResults.Calut = value;
+            }
+        }
+        public string Cal1
+        {
+            get
+            {
+                return calibrationResults.Cal1;
+            }
+
+            set
+            {
+                calibrationResults.Cal1 = value;
+            }
+        }
+
+        public string Cal2
+        {
+            get
+            {
+                return calibrationResults.Cal2;
+            }
+
+            set
+            {
+                calibrationResults.Cal2 = value;
+            }
+        }
+
+        public string Cal3
+        {
+            get
+            {
+                return calibrationResults.Cal3;
+            }
+
+            set
+            {
+                calibrationResults.Cal3 = value;
+            }
+        }
+
+        public string Desut
+        {
+            get
+            {
+                return calibrationResults.Desut;
+            }
+
+            set
+            {
+                calibrationResults.Desut = value;
+            }
+        }
+
+        public string Des1
+        {
+            get
+            {
+                return calibrationResults.Des1;
+            }
+
+            set
+            {
+                calibrationResults.Des1 = value;
+            }
+        }
+
+        public string Des2
+        {
+            get
+            {
+                return calibrationResults.Des2;
+            }
+
+            set
+            {
+                calibrationResults.Des2 = value;
+            }
+        }
+
+        public string Des3
+        {
+            get
+            {
+                return calibrationResults.Des3;
+            }
+
+            set
+            {
+                calibrationResults.Des3 = value;
+            }
+        }
+
+        public string Dtinc1
+        {
+            get
+            {
+                return calibrationResults.Dtinc1;
+            }
+
+            set
+            {
+                calibrationResults.Dtinc1 = value;
+            }
+        }
+
+        public string Dtinc2
+        {
+            get
+            {
+                return calibrationResults.Dtinc2;
+            }
+
+            set
+            {
+                calibrationResults.Dtinc2 = value;
+            }
+        }
+
+        public string Dtinc3
+        {
+            get
+            {
+                return calibrationResults.Dtinc3;
+            }
+
+            set
+            {
+                calibrationResults.Dtinc3 = value;
+            }
+        }
+
+        public string Dtdec1
+        {
+            get
+            {
+                return calibrationResults.Dtdec1;
+            }
+
+            set
+            {
+                calibrationResults.Dtdec1 = value;
+            }
+        }
+
+        public string Dtdec2
+        {
+            get
+            {
+                return calibrationResults.Dtdec2;
+            }
+
+            set
+            {
+                calibrationResults.Dtdec2 = value;
+            }
+        }
+
+        public string Dtdec3
+        {
+            get
+            {
+                return calibrationResults.Dtdec3;
+            }
+
+            set
+            {
+                calibrationResults.Dtdec3 = value;
+            }
+        }
+
+        public string Convtut
+        {
+            get
+            {
+                return calibrationResults.Convtut;
+            }
+
+            set
+            {
+                calibrationResults.Convtut = value;
+            }
+        }
+
+
+        public string Convt1
+        {
+            get
+            {
+                return calibrationResults.Convt1;
+            }
+
+            set
+            {
+                calibrationResults.Convt1 = value;
+            }
+        }
+
+        public string Convt2
+        {
+            get
+            {
+                return calibrationResults.Convt2;
+            }
+
+            set
+            {
+                calibrationResults.Convt2 = value;
+            }
+        }
+
+        public string Convt3
+        {
+            get
+            {
+                return calibrationResults.Convt3;
+            }
+
+            set
+            {
+                calibrationResults.Convt3 = value;
+            }
+        }
+
+        public string Kmnic1
+        {
+            get
+            {
+                return calibrationResults.Kminc1;
+            }
+
+            set
+            {
+                calibrationResults.Kminc1 = value;
+            }
+        }
+
+        public string Kmnic2
+        {
+            get
+            {
+                return calibrationResults.Kminc2;
+            }
+
+            set
+            {
+                calibrationResults.Kminc2 = value;
+            }
+        }
+
+        public string Kmnic3
+        {
+            get
+            {
+                return calibrationResults.Kminc3;
+            }
+
+            set
+            {
+                calibrationResults.Kminc3 = value;
+            }
+        }
+
+        public string Kmdec1
+        {
+            get
+            {
+                return calibrationResults.Kmdec1;
+            }
+
+            set
+            {
+                calibrationResults.Kmdec1 = value;
+            }
+        }
+
+        public string Kmdec2
+        {
+            get
+            {
+                return calibrationResults.Kmdec2;
+            }
+
+            set
+            {
+                calibrationResults.Kmdec2 = value;
+            }
+        }
+
+        public string Kmdec3
+        {
+            get
+            {
+                return calibrationResults.Kmdec3;
+            }
+
+            set
+            {
+                calibrationResults.Kmdec3 = value;
+            }
+        }
+
+        public string Cpinc1
+        {
+            get
+            {
+                return calibrationResults.Cpinc1;
+            }
+
+            set
+            {
+                calibrationResults.Cpinc1 = value;
+            }
+        }
+
+        public string Cpinc2
+        {
+            get
+            {
+                return calibrationResults.Cpinc2;
+            }
+
+            set
+            {
+                calibrationResults.Cpinc2 = value;
+            }
+        }
+
+        public string Cpinc3
+        {
+            get
+            {
+                return calibrationResults.Cpinc3;
+            }
+
+            set
+            {
+                calibrationResults.Cpinc3 = value;
+            }
+        }
+
+        public string Cpdec1
+        {
+            get
+            {
+                return calibrationResults.Cpdec1;
+            }
+
+            set
+            {
+                calibrationResults.Cpdec1 = value;
+            }
+        }
+
+        public string Cpdec2
+        {
+            get
+            {
+                return calibrationResults.Cpdec2;
+            }
+
+            set
+            {
+                calibrationResults.Cpdec2 = value;
+            }
+        }
+
+        public string Cpdec3
+        {
+            get
+            {
+                return calibrationResults.Cpdec3;
+            }
+
+            set
+            {
+                calibrationResults.Cpdec3 = value;
+            }
+        }
+
+        public string Atmn
+        {
+            get
+            {
+                return calibrationResults.Atmn;
+            }
+
+            set
+            {
+                calibrationResults.Atmn = value;
+            }
+        }
+
+        public string Caltime
+        {
+            get
+            {
+                return calibrationResults.Caltime;
+            }
+
+            set
+            {
+                calibrationResults.Caltime = value;
+            }
+        }
+
+        public string Zeror
+        {
+            get
+            {
+                return calibrationResults.Zeror;
+            }
+
+            set
+            {
+                calibrationResults.Zeror = value;
+            }
+        }
+
+        public string Spanr
+        {
+            get
+            {
+                return calibrationResults.Spanr;
+            }
+
+            set
+            {
+                calibrationResults.Spanr = value;
+            }
+        }
+
+        public string AdjUnit
+        {
+            get
+            {
+                return calibrationResults.AdjUnit;
+            }
+
+            set
+            {
+                calibrationResults.AdjUnit = value;
+            }
+        }
+
+        public string WtMatl
+        {
+            get
+            {
+                return calibrationResults.WtMatl;
+            }
+
+            set
+            {
+                calibrationResults.WtMatl = value;
+            }
+        }
+
+        public string FlSize
+        {
+            get
+            {
+                return calibrationResults.FlSize;
+            }
+
+            set
+            {
+                calibrationResults.FlSize = value;
+            }
+        }
+
+        public string SerialNumberHipot
+        {
+            get
+            {
+                return deviceTestResult.SerialNumberHipot;
+            }
+
+            set
+            {
+                deviceTestResult.SerialNumberHipot = value;
+            }
+        }
+
         public string DeviceTestResult
         {
             get
@@ -1137,7 +1659,150 @@ namespace ReportManager.DataModel
                 deviceTestResult.Result = value;
             }
         }
-              
+
+        public string IsolationV
+        {
+            get
+            {
+                return deviceTestResult.IsolationV;
+            }
+
+            set
+            {
+                deviceTestResult.IsolationV = value;
+            }
+        }
+
+        public string IsolationR
+        {
+            get
+            {
+                return deviceTestResult.IsolationR;
+            }
+
+            set
+            {
+                deviceTestResult.IsolationR = value;
+            }
+        }
+
+        public string IsolationT
+        {
+            get
+            {
+                return deviceTestResult.IsolationT;
+            }
+
+            set
+            {
+                deviceTestResult.IsolationT = value;
+            }
+        }
+
+        public string IResult
+        {
+            get
+            {
+                return deviceTestResult.IResult;
+            }
+
+            set
+            {
+                deviceTestResult.IResult = value;
+            }
+        }
+
+        public string WithStandV
+        {
+            get
+            {
+                return deviceTestResult.WithStandV;
+            }
+
+            set
+            {
+                deviceTestResult.WithStandV = value;
+            }
+        }
+
+        public string WithStandI
+        {
+            get
+            {
+                return deviceTestResult.WithStandI;
+            }
+
+            set
+            {
+                deviceTestResult.WithStandI = value;
+            }
+        }
+
+        public string WithStandT
+        {
+            get
+            {
+                return deviceTestResult.WithStandT;
+            }
+
+            set
+            {
+                deviceTestResult.WithStandT = value;
+            }
+        }
+
+
+        public string WResult
+        {
+            get
+            {
+                return deviceTestResult.WResult;
+            }
+
+            set
+            {
+                deviceTestResult.WResult = value;
+            }
+        }
+
+        public string TestDate
+        {
+            get
+            {
+                return deviceTestResult.TestDate;
+            }
+
+            set
+            {
+                deviceTestResult.TestDate = value;
+            }
+        }
+
+        public string TestTime
+        {
+            get
+            {
+                return deviceTestResult.TestTime;
+            }
+
+            set
+            {
+                deviceTestResult.TestTime = value;
+            }
+        }
+
+        public string TUser
+        {
+            get
+            {
+                return deviceTestResult.TUser;
+            }
+
+            set
+            {
+                deviceTestResult.TUser = value;
+            }
+        }
 
     }
 }
