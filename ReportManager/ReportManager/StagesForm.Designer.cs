@@ -35,15 +35,16 @@
             this.btnGenerateReports = new DevExpress.XtraBars.BarButtonItem();
             this.edtSerial = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.btnOpenTestWindow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLoadData = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChangeConnectionString = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.nifudaDataTableAdapter = new ReportManager.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnChangeConnectionString = new DevExpress.XtraBars.BarButtonItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -57,7 +58,7 @@
             this.btnGenerateSerial,
             this.btnGenerateReports,
             this.edtSerial,
-            this.btnOpenTestWindow,
+            this.btnLoadData,
             this.btnChangeConnectionString});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 7;
@@ -103,14 +104,23 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // btnOpenTestWindow
+            // btnLoadData
             // 
-            this.btnOpenTestWindow.Caption = "Обновление данных";
-            this.btnOpenTestWindow.Glyph = ((System.Drawing.Image)(resources.GetObject("btnOpenTestWindow.Glyph")));
-            this.btnOpenTestWindow.Id = 5;
-            this.btnOpenTestWindow.Name = "btnOpenTestWindow";
-            this.btnOpenTestWindow.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnOpenTestWindow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpenTestWindow_ItemClick);
+            this.btnLoadData.Caption = "Обновление данных";
+            this.btnLoadData.Glyph = ((System.Drawing.Image)(resources.GetObject("btnLoadData.Glyph")));
+            this.btnLoadData.Id = 5;
+            this.btnLoadData.Name = "btnLoadData";
+            this.btnLoadData.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoadData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpenTestWindow_ItemClick);
+            // 
+            // btnChangeConnectionString
+            // 
+            this.btnChangeConnectionString.Caption = "Настройка подключений к БД";
+            this.btnChangeConnectionString.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.Glyph")));
+            this.btnChangeConnectionString.Id = 6;
+            this.btnChangeConnectionString.Name = "btnChangeConnectionString";
+            this.btnChangeConnectionString.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangeConnectionString_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -134,6 +144,13 @@
             this.pgStages.Name = "pgStages";
             this.pgStages.Text = "Стадии сборки";
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnLoadData);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnChangeConnectionString);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Базы данных";
+            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
@@ -146,31 +163,25 @@
             // 
             this.nifudaDataTableAdapter.ClearBeforeFill = true;
             // 
-            // ribbonPageGroup1
+            // toolStrip1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnOpenTestWindow);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnChangeConnectionString);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Базы данных";
-            // 
-            // btnChangeConnectionString
-            // 
-            this.btnChangeConnectionString.Caption = "Настройка подключений к БД";
-            this.btnChangeConnectionString.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.Glyph")));
-            this.btnChangeConnectionString.Id = 6;
-            this.btnChangeConnectionString.Name = "btnChangeConnectionString";
-            this.btnChangeConnectionString.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangeConnectionString_ItemClick);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 141);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1012, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // StagesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 803);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "StagesForm";
             this.Text = "StagesForm";
+            this.Load += new System.EventHandler(this.StagesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -192,8 +203,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgStages;
         private System.Windows.Forms.Timer timer1;
         private Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter;
-        private DevExpress.XtraBars.BarButtonItem btnOpenTestWindow;
+        private DevExpress.XtraBars.BarButtonItem btnLoadData;
         private DevExpress.XtraBars.BarButtonItem btnChangeConnectionString;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

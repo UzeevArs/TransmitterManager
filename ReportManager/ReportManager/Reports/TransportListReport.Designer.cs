@@ -1995,7 +1995,7 @@
             this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
             this.objectDataSource1});
             this.DataSource = this.objectDataSource1;
-            this.Margins = new System.Drawing.Printing.Margins(5, 31, 200, 0);
+            this.Margins = new System.Drawing.Printing.Margins(16, 17, 200, 0);
             this.ScriptsSource = "\r\nprivate void xrLabel10_Draw(object sender, DevExpress.XtraReports.UI.DrawEventA" +
     "rgs e) {\r\n\r\n}\r\n";
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {

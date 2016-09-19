@@ -1,9 +1,12 @@
 ﻿using ReportManager.Database.ISUPDataTableAdapters;
 using ReportManager.Database.NifudaDataSetTableAdapters;
+using ReportManager.Database;
 using ReportManager.Forms;
 using System;
+using System.IO;
 using System.Security.Permissions;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace ReportManager
 {
@@ -15,80 +18,29 @@ namespace ReportManager
             var keyFilter = new KeyMessageFilter();
             keyFilter.EventKeyHandler += KeyFilter_EventKeyHandler;
             Application.AddMessageFilter(keyFilter);
-            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
-            ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
-
-            //int TimeOutConnectionISUP = iSUPNifudaDataTableAdapter.Connection.ConnectionTimeout;
-            //int TimeOutConnectionProduction = nifudaDataTableAdapter.Connection.ConnectionTimeout;
-            //TimeOutConnectionProduction = '1';
-            //TimeOutConnectionISUP = '1';
 
 
-            // ЧУТЬ-ЧУТЬ МОЖНО, НО СИЛЬНО НЕ УГОРАЙ Я НОВИЧОК В ЭТИХ ДЕЛАХ, преобразую в классы как время будет))
-            try
-            {
-                nifudaDataTableAdapter.Connection.Open();
-            }
-            catch (System.Data.SqlClient.SqlException s)
-            {
-                edtSerial.Enabled = false;
-                btnGenerateSerial.Enabled = false;
-                btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + nifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
-            }
-
-            try
-            {
-                iSUPNifudaDataTableAdapter.Connection.Open();
-            }
-            catch (System.Data.SqlClient.SqlException s)
-            {
-                edtSerial.Enabled = false;
-                btnGenerateSerial.Enabled = false;
-                btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + iSUPNifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
-            }
-
-            if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
-                {
-
-                    var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
-
-                    if (isupDevice.InputData[0].SerialNumber == null)
-                    {
-                        MessageBox.Show("Новых заказов не поступало");
-                    }
-                    else
-                    {
-                        for (int i = 0; i < isupDevice.InputData.Count; i++)
-                        {
-
-                            nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
-                                isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
-                                isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
-                                isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
-                                isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
-                                isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
-                                isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
-                                isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
-                                isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
-                                isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
-                                isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
-                                isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
-                                isupDevice.InputData[i].CapsuleNumber);
-                        }
-
-                    MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.State.ToString());
-                    iSUPNifudaDataTableAdapter.UpdateQuery();
-                }
-                    iSUPNifudaDataTableAdapter.Connection.Close();
-                    nifudaDataTableAdapter.Connection.Close();
-        }
-
-    iSUPNifudaDataTableAdapter.Connection.Close();
-    nifudaDataTableAdapter.Connection.Close();
-                       
+            
     }
+
+
+
+        private static string _settingsPath =
+            $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
+
+        public void LoadGlobalSettings()
+        {
+            try
+            {
+                var xs = new XmlSerializer(typeof(ConnectionStringContainer));
+                using (Stream reader = new FileStream(_settingsPath, FileMode.Open))
+                {
+                    ConnectionStringContainer.SetInstance((ConnectionStringContainer)xs.Deserialize(reader));
+                    reader.Close();
+                }
+            }
+            catch { }
+        }
 
         private void KeyFilter_EventKeyHandler(object sender, Keys key, string serial)
         {
@@ -115,13 +67,27 @@ namespace ReportManager
             }
         }
 
+
+
+        
         private void btnGenerateReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            var SerialTest = "";
+
+            if (nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString()).Count == 0)
+            {
+                MessageBox.Show("Не присвоен серийный номер");
+                SerialTest = "no Data";
+            }
+            else
+            {
+                SerialTest = nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString())[0].SERIAL_NO;
+            }
+          
+                        
             var deviceModel =
 
-                // ДОРАБОТКА - будет время нужно поменять serial на BARCODE везде
-                
-                DataModelCreator.GetDeviceBySerial (new DataModel.SerialNumber { Serial = edtSerial.EditValue.ToString() });
+                DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = SerialTest });
 
 
             if (deviceModel != null)
@@ -218,8 +184,11 @@ namespace ReportManager
         {
             NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
             ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
+            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
+
             //MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.ConnectionTimeout.ToString());
-            
+
             //РАЗОБРАТЬСЯ С ТАЙМАУТОМ, cоnnection.open выполняется в течение таймаута 
 
             try
@@ -295,6 +264,89 @@ namespace ReportManager
         {
             DatabaseSettingChange databaseSettingChange = new DatabaseSettingChange();
             databaseSettingChange.Show();
+        }
+
+        private void StagesForm_Load(object sender, EventArgs e)
+        {
+            LoadGlobalSettings();
+
+            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
+            ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
+
+            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
+
+
+            //int TimeOutConnectionISUP = iSUPNifudaDataTableAdapter.Connection.ConnectionTimeout;
+            //int TimeOutConnectionProduction = nifudaDataTableAdapter.Connection.ConnectionTimeout;
+            //TimeOutConnectionProduction = '1';
+            //TimeOutConnectionISUP = '1';
+
+
+            // ЧУТЬ-ЧУТЬ МОЖНО, НО СИЛЬНО НЕ УГОРАЙ Я НОВИЧОК В ЭТИХ ДЕЛАХ, преобразую в классы как время будет))
+            try
+            {
+                nifudaDataTableAdapter.Connection.Open();
+            }
+            catch (System.Data.SqlClient.SqlException s)
+            {
+                edtSerial.Enabled = false;
+                btnGenerateSerial.Enabled = false;
+                btnGenerateReports.Enabled = false;
+                MessageBox.Show("Соединение с" + nifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
+            }
+
+            try
+            {
+                iSUPNifudaDataTableAdapter.Connection.Open();
+            }
+            catch (System.Data.SqlClient.SqlException s)
+            {
+                edtSerial.Enabled = false;
+                btnGenerateSerial.Enabled = false;
+                btnGenerateReports.Enabled = false;
+                MessageBox.Show("Соединение с" + iSUPNifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
+            }
+
+            if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
+            {
+
+                var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
+
+                if (isupDevice.InputData[0].SerialNumber == null)
+                {
+                    MessageBox.Show("Новых заказов не поступало");
+                }
+                else
+                {
+                    for (int i = 0; i < isupDevice.InputData.Count; i++)
+                    {
+
+                        nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
+                            isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
+                            isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
+                            isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
+                            isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
+                            isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
+                            isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
+                            isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
+                            isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
+                            isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
+                            isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
+                            isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
+                            isupDevice.InputData[i].CapsuleNumber);
+                    }
+
+                    MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.State.ToString());
+                    iSUPNifudaDataTableAdapter.UpdateQuery();
+                }
+                iSUPNifudaDataTableAdapter.Connection.Close();
+                nifudaDataTableAdapter.Connection.Close();
+            }
+
+            iSUPNifudaDataTableAdapter.Connection.Close();
+            nifudaDataTableAdapter.Connection.Close();
+
         }
     }
 }

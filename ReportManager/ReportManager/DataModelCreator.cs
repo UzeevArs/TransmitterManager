@@ -4,6 +4,7 @@ using ReportManager.Database.CalibrationDataSetTableAdapters;
 using ReportManager.Database.ISUPDataTableAdapters;
 using System.Collections.Generic;
 using ReportManager.Database.NifudaDataSetTableAdapters;
+using ReportManager.Database;
 
 namespace ReportManager
 {
@@ -14,6 +15,7 @@ namespace ReportManager
         {
             var deviceModel = new DeviceModel();
             ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
+            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
             var dataSetISNifuda = iSUPNifudaDataTableAdapter.GetData();
 
             if (dataSetISNifuda.Count == 0)
@@ -86,11 +88,17 @@ namespace ReportManager
         public static DeviceModel GetDeviceBySerial(SerialNumber serialNumber)
         {
             NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
+            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+
             var deviceModel = new DeviceModel() { SerialNumber = new List<SerialNumber> { serialNumber } };
             var dataSetNifuda = nifudaDataTableAdapter.GetDataBy(serialNumber.Serial);
+            
             CalibrationDataTableAdapter calibrationDataTableAdapter = new CalibrationDataTableAdapter();
+            calibrationDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
             var dataSetCalibrate = calibrationDataTableAdapter.GetDataBy(serialNumber.Serial);
+
             HipotDataTableAdapter hipotDataTableAdapter = new HipotDataTableAdapter();
+            hipotDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
             var dataSetHipot = hipotDataTableAdapter.GetDataBy(serialNumber.Serial);
 
             if (dataSetNifuda.Count == 0)

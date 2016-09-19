@@ -54,6 +54,7 @@ namespace ReportManager.Forms
             this.colTOKUCHU_SPEC_SIGN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSAP_LINKAGE_NO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nifudaDataTableAdapter1 = new ReportManager.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
+            this.colALLOWANCE_SIGN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdEmptySerial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nifudaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -100,7 +101,8 @@ namespace ReportManager.Forms
             this.colSERIAL_NO,
             this.colPROD_N_E,
             this.colTOKUCHU_SPEC_SIGN,
-            this.colSAP_LINKAGE_NO});
+            this.colSAP_LINKAGE_NO,
+            this.colALLOWANCE_SIGN});
             this.gridView1.GridControl = this.grdEmptySerial;
             this.gridView1.Name = "gridView1";
             // 
@@ -288,6 +290,13 @@ namespace ReportManager.Forms
             // 
             this.nifudaDataTableAdapter1.ClearBeforeFill = true;
             // 
+            // colALLOWANCE_SIGN
+            // 
+            this.colALLOWANCE_SIGN.FieldName = "ALLOWANCE_SIGN";
+            this.colALLOWANCE_SIGN.Name = "colALLOWANCE_SIGN";
+            this.colALLOWANCE_SIGN.Visible = true;
+            this.colALLOWANCE_SIGN.VisibleIndex = 20;
+            // 
             // SerialNumberGenerateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,5 +340,6 @@ namespace ReportManager.Forms
         private DevExpress.XtraGrid.Columns.GridColumn colTOKUCHU_SPEC_SIGN;
         private DevExpress.XtraGrid.Columns.GridColumn colSAP_LINKAGE_NO;
         private Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter1;
+        private DevExpress.XtraGrid.Columns.GridColumn colALLOWANCE_SIGN;
     }
 }

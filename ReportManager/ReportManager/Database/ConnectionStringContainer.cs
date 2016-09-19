@@ -5,10 +5,24 @@ using System.Text;
 
 namespace ReportManager.Database
 {
-    class ConnectionStringContainer
+    public class ConnectionStringContainer
     {
-        public static string ConnStrNifuda { get; set;}
-        public static string ConnStrISUP { get; set; }
+        private static ConnectionStringContainer _instance;
+        public static ConnectionStringContainer GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new ConnectionStringContainer();
+            }
+            return _instance;
+        }
+        public static void SetInstance(ConnectionStringContainer instance)
+        {
+            _instance = instance;
+        }
+
+        public string ConnStrNifuda { get; set;}
+        public string ConnStrISUP { get; set; }
 
     }
 }

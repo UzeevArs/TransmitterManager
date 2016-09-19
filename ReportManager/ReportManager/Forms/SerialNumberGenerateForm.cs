@@ -1,6 +1,7 @@
 ﻿using DevExpress.LookAndFeel;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraReports.UI;
+using ReportManager.Database;
 using ReportManager.DataModel;
 using ReportManager.Reports;
 using System;
@@ -15,6 +16,7 @@ namespace ReportManager.Forms
         {
             InitializeComponent();
             nifudaDataTableAdapter1.Fill(nifudaDataSet1.NifudaDataTable);
+            nifudaDataTableAdapter1.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
         }
 
         private void grdEmptySerial_DoubleClick(object sender, EventArgs e)
@@ -24,8 +26,8 @@ namespace ReportManager.Forms
             {
                 //var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
 
-                nifudaDataTableAdapter1.UpdateQuery("Generated", nifudaDataSet1.NifudaDataTable[rows[0]].INDEX_NO);
-                var device = GetDeviceBySerialNifuda(nifudaDataSet1.NifudaDataTable[rows[0]].INDEX_NO);
+                nifudaDataTableAdapter1.UpdateQuery("Generated", nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
+                var device = GetDeviceBySerialNifuda(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
                 var report = CreateReportInstance(device);
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
