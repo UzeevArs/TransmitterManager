@@ -11,7 +11,7 @@ namespace ReportManager
     {
         //public static Tuple<string> Generate(NifudaDataSet.NifudaDataTableRow row)
         //{
-            
+
         //    //var serial = "Y2";
         //    //serial += GetYearCode();
         //    //serial += GetMonthCode();

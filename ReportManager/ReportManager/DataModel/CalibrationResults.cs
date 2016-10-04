@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReportManager.DataModel
+﻿namespace ReportManager.DataModel
 {
     public class CalibrationResults
     {
@@ -84,9 +78,6 @@ namespace ReportManager.DataModel
         private string _adjUnit;
         private string _wtMatl;
         private string _flSize;
-
-
-
 
         public string SerialNumberCalibration
         {

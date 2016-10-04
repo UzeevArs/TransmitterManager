@@ -1,37 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ReportManager.DataModel
+﻿namespace ReportManager.DataModel
 {
     public class AggregatedFieldsModel
     {
-        private SerialNumber serialNumber;
-        private InputData inputData;
-        private CalibrationResults calibrationResults;
-        private DeviceTestResult deviceTestResult;
+        private readonly SerialNumber _serialNumber;
+        private readonly InputData _inputData;
+        private readonly CalibrationResults _calibrationResults;
+        private readonly DeviceTestResult _deviceTestResult;
 
-        public AggregatedFieldsModel(SerialNumber serialNumber, InputData inputData,
-            CalibrationResults calibrationResults, DeviceTestResult deviceTestResult)
+        public AggregatedFieldsModel(SerialNumber serialNumber, 
+                                     InputData inputData,
+                                     CalibrationResults calibrationResults, 
+                                     DeviceTestResult deviceTestResult)
         {
-            this.serialNumber = serialNumber;
-            this.inputData = inputData;
-            this.calibrationResults = calibrationResults;
-            this.deviceTestResult = deviceTestResult;
+            _serialNumber = serialNumber;
+            _inputData = inputData;
+            _calibrationResults = calibrationResults;
+            _deviceTestResult = deviceTestResult;
         }
 
         public string Serial
         {
             get
             {
-                return serialNumber.Serial;
+                return _serialNumber.Serial;
             }
 
             set
             {
-                serialNumber.Serial = value;
+                _serialNumber.Serial = value;
             }
         }
 
@@ -39,12 +35,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.MsCode;
+                return _inputData.MsCode;
             }
 
             set
             {
-                inputData.MsCode = value;
+                _inputData.MsCode = value;
             }
         }
 
@@ -52,12 +48,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.Model;
+                return _inputData.Model;
             }
 
             set
             {
-                inputData.Model = value;
+                _inputData.Model = value;
             }
         }
 
@@ -65,12 +61,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionNumber;
+                return _inputData.ProductionNumber;
             }
 
             set
             {
-                inputData.ProductionNumber = value;
+                _inputData.ProductionNumber = value;
             }
         }
 
@@ -78,12 +74,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionNumberSuffix;
+                return _inputData.ProductionNumberSuffix;
             }
 
             set
             {
-                inputData.ProductionNumberSuffix = value;
+                _inputData.ProductionNumberSuffix = value;
             }
         }
 
@@ -91,12 +87,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.LineNumber;
+                return _inputData.LineNumber;
             }
 
             set
             {
-                inputData.LineNumber = value;
+                _inputData.LineNumber = value;
             }
         }
 
@@ -104,12 +100,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.CrpGroupNumber;
+                return _inputData.CrpGroupNumber;
             }
 
             set
             {
-                inputData.CrpGroupNumber = value;
+                _inputData.CrpGroupNumber = value;
             }
         }
 
@@ -117,12 +113,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionCareer;
+                return _inputData.ProductionCareer;
             }
 
             set
             {
-                inputData.ProductionCareer = value;
+                _inputData.ProductionCareer = value;
             }
         }
 
@@ -130,12 +126,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.TestCertSign;
+                return _inputData.TestCertSign;
             }
 
             set
             {
-                inputData.TestCertSign = value;
+                _inputData.TestCertSign = value;
             }
         }
 
@@ -143,12 +139,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.DocumentationLangType;
+                return _inputData.DocumentationLangType;
             }
 
             set
             {
-                inputData.DocumentationLangType = value;
+                _inputData.DocumentationLangType = value;
             }
         }
 
@@ -156,12 +152,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.InstFinishD;
+                return _inputData.InstFinishD;
             }
 
             set
             {
-                inputData.InstFinishD = value;
+                _inputData.InstFinishD = value;
             }
         }
 
@@ -169,12 +165,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.TestCertYn;
+                return _inputData.TestCertYn;
             }
 
             set
             {
-                inputData.TestCertYn = value;
+                _inputData.TestCertYn = value;
             }
         }
 
@@ -182,12 +178,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.EndUserCustNJ;
+                return _inputData.EndUserCustNJ;
             }
 
             set
             {
-                inputData.EndUserCustNJ = value;
+                _inputData.EndUserCustNJ = value;
             }
         }
 
@@ -195,12 +191,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderNumber;
+                return _inputData.OrderNumber;
             }
 
             set
             {
-                inputData.OrderNumber = value;
+                _inputData.OrderNumber = value;
             }
         }
 
@@ -208,12 +204,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ItemNumber;
+                return _inputData.ItemNumber;
             }
 
             set
             {
-                inputData.ItemNumber = value;
+                _inputData.ItemNumber = value;
             }
         }
 
@@ -221,12 +217,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionItemRevisionNumber;
+                return _inputData.ProductionItemRevisionNumber;
             }
 
             set
             {
-                inputData.ProductionItemRevisionNumber = value;
+                _inputData.ProductionItemRevisionNumber = value;
             }
         }
 
@@ -234,12 +230,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionInstRevisionNumber;
+                return _inputData.ProductionInstRevisionNumber;
             }
 
             set
             {
-                inputData.ProductionInstRevisionNumber = value;
+                _inputData.ProductionInstRevisionNumber = value;
             }
         }
 
@@ -247,12 +243,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.CompNumber;
+                return _inputData.CompNumber;
             }
 
             set
             {
-                inputData.CompNumber = value;
+                _inputData.CompNumber = value;
             }
         }
 
@@ -260,12 +256,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.StartScheduleD;
+                return _inputData.StartScheduleD;
             }
 
             set
             {
-                inputData.StartScheduleD = value;
+                _inputData.StartScheduleD = value;
             }
         }
 
@@ -273,12 +269,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.FinishScheduleD;
+                return _inputData.FinishScheduleD;
             }
 
             set
             {
-                inputData.FinishScheduleD = value;
+                _inputData.FinishScheduleD = value;
             }
         }
 
@@ -286,12 +282,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.StartNumber;
+                return _inputData.StartNumber;
             }
 
             set
             {
-                inputData.StartNumber = value;
+                _inputData.StartNumber = value;
             }
         }
 
@@ -299,12 +295,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.SerialNumber;
+                return _inputData.SerialNumber;
             }
 
             set
             {
-                inputData.SerialNumber = value;
+                _inputData.SerialNumber = value;
             }
         }
 
@@ -312,12 +308,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.AllowanceSign;
+                return _inputData.AllowanceSign;
             }
 
             set
             {
-                inputData.AllowanceSign = value;
+                _inputData.AllowanceSign = value;
             }
         }
 
@@ -325,12 +321,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionNumberJapan;
+                return _inputData.ProductionNumberJapan;
             }
 
             set
             {
-                inputData.ProductionNumberJapan = value;
+                _inputData.ProductionNumberJapan = value;
             }
         }
 
@@ -338,12 +334,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.ProductionNumberEnglish;
+                return _inputData.ProductionNumberEnglish;
             }
 
             set
             {
-                inputData.ProductionNumberEnglish = value;
+                _inputData.ProductionNumberEnglish = value;
             }
         }
 
@@ -351,12 +347,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.TokuchuSpecificationSign;
+                return _inputData.TokuchuSpecificationSign;
             }
 
             set
             {
-                inputData.TokuchuSpecificationSign = value;
+                _inputData.TokuchuSpecificationSign = value;
             }
         }
 
@@ -364,12 +360,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.SapLinkageNumber;
+                return _inputData.SapLinkageNumber;
             }
 
             set
             {
-                inputData.SapLinkageNumber = value;
+                _inputData.SapLinkageNumber = value;
             }
         }
 
@@ -377,12 +373,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.RangeInstSign_500;
+                return _inputData.RangeInstSign_500;
             }
 
             set
             {
-                inputData.RangeInstSign_500 = value;
+                _inputData.RangeInstSign_500 = value;
             }
         }
 
@@ -390,12 +386,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstMax_500;
+                return _inputData.OrderInstMax_500;
             }
 
             set
             {
-                inputData.OrderInstMax_500 = value;
+                _inputData.OrderInstMax_500 = value;
             }
         }
 
@@ -403,12 +399,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstMin_500;
+                return _inputData.OrderInstMin_500;
             }
 
             set
             {
-                inputData.OrderInstMin_500 = value;
+                _inputData.OrderInstMin_500 = value;
             }
         }
 
@@ -416,12 +412,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.Unit_500;
+                return _inputData.Unit_500;
             }
 
             set
             {
-                inputData.Unit_500 = value;
+                _inputData.Unit_500 = value;
             }
         }
 
@@ -429,12 +425,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.Features_500;
+                return _inputData.Features_500;
             }
 
             set
             {
-                inputData.Features_500 = value;
+                _inputData.Features_500 = value;
             }
         }
 
@@ -442,12 +438,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.RangeInstSign_502;
+                return _inputData.RangeInstSign_502;
             }
 
             set
             {
-                inputData.RangeInstSign_502 = value;
+                _inputData.RangeInstSign_502 = value;
             }
         }
 
@@ -455,12 +451,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstMax_502;
+                return _inputData.OrderInstMax_502;
             }
 
             set
             {
-                inputData.OrderInstMax_502 = value;
+                _inputData.OrderInstMax_502 = value;
             }
         }
 
@@ -468,12 +464,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstMin_502;
+                return _inputData.OrderInstMin_502;
             }
 
             set
             {
-                inputData.OrderInstMin_502 = value;
+                _inputData.OrderInstMin_502 = value;
             }
         }
 
@@ -481,12 +477,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.Unit_502;
+                return _inputData.Unit_502;
             }
 
             set
             {
-                inputData.Unit_502 = value;
+                _inputData.Unit_502 = value;
             }
         }
 
@@ -494,12 +490,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1W69;
+                return _inputData.OrderInstContect1W69;
             }
 
             set
             {
-                inputData.OrderInstContect1W69 = value;
+                _inputData.OrderInstContect1W69 = value;
             }
         }
 
@@ -507,12 +503,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1X72;
+                return _inputData.OrderInstContect1X72;
             }
 
             set
             {
-                inputData.OrderInstContect1X72 = value;
+                _inputData.OrderInstContect1X72 = value;
             }
         }
 
@@ -520,12 +516,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1X91;
+                return _inputData.OrderInstContect1X91;
             }
 
             set
             {
-                inputData.OrderInstContect1X91 = value;
+                _inputData.OrderInstContect1X91 = value;
             }
         }
 
@@ -533,12 +529,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1Z30;
+                return _inputData.OrderInstContect1Z30;
             }
 
             set
             {
-                inputData.OrderInstContect1Z30 = value;
+                _inputData.OrderInstContect1Z30 = value;
             }
         }
 
@@ -546,12 +542,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.TagNumber_525;
+                return _inputData.TagNumber_525;
             }
 
             set
             {
-                inputData.TagNumber_525 = value;
+                _inputData.TagNumber_525 = value;
             }
         }
 
@@ -559,12 +555,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.XjNumber;
+                return _inputData.XjNumber;
             }
 
             set
             {
-                inputData.XjNumber = value;
+                _inputData.XjNumber = value;
             }
         }
 
@@ -572,12 +568,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1H46;
+                return _inputData.OrderInstContect1H46;
             }
 
             set
             {
-                inputData.OrderInstContect1H46 = value;
+                _inputData.OrderInstContect1H46 = value;
             }
         }
 
@@ -585,12 +581,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1X92;
+                return _inputData.OrderInstContect1X92;
             }
 
             set
             {
-                inputData.OrderInstContect1X92 = value;
+                _inputData.OrderInstContect1X92 = value;
             }
         }
 
@@ -598,12 +594,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1Y28;
+                return _inputData.OrderInstContect1Y28;
             }
 
             set
             {
-                inputData.OrderInstContect1Y28 = value;
+                _inputData.OrderInstContect1Y28 = value;
             }
         }
 
@@ -611,12 +607,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1W35;
+                return _inputData.OrderInstContect1W35;
             }
 
             set
             {
-                inputData.OrderInstContect1W35 = value;
+                _inputData.OrderInstContect1W35 = value;
             }
         }
 
@@ -624,12 +620,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1X78;
+                return _inputData.OrderInstContect1X78;
             }
 
             set
             {
-                inputData.OrderInstContect1X78 = value;
+                _inputData.OrderInstContect1X78 = value;
             }
         }
 
@@ -637,24 +633,24 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.OrderInstContect1X94;
+                return _inputData.OrderInstContect1X94;
             }
 
             set
             {
-                inputData.OrderInstContect1X94 = value;
+                _inputData.OrderInstContect1X94 = value;
             }
         }
         public string IndexNumber
         {
             get
             {
-                return inputData.IndexNumber;
+                return _inputData.IndexNumber;
             }
 
             set
             {
-                inputData.IndexNumber = value;
+                _inputData.IndexNumber = value;
             }
         }
 
@@ -662,12 +658,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return inputData.CapsuleNumber;
+                return _inputData.CapsuleNumber;
             }
 
             set
             {
-                inputData.CapsuleNumber = value;
+                _inputData.CapsuleNumber = value;
             }
         }
 
@@ -676,12 +672,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.SerialNumberCalibration;
+                return _calibrationResults.SerialNumberCalibration;
             }
 
             set
             {
-                calibrationResults.SerialNumberCalibration = value;
+                _calibrationResults.SerialNumberCalibration = value;
             }
         }
 
@@ -689,12 +685,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Result;
+                return _calibrationResults.Result;
             }
 
             set
             {
-                calibrationResults.Result = value;
+                _calibrationResults.Result = value;
             }
         }
 
@@ -702,12 +698,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.CapsuleNumber;
+                return _calibrationResults.CapsuleNumber;
             }
 
             set
             {
-                calibrationResults.CapsuleNumber = value;
+                _calibrationResults.CapsuleNumber = value;
             }
         }
 
@@ -715,12 +711,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.AmplificationNumber;
+                return _calibrationResults.AmplificationNumber;
             }
 
             set
             {
-                calibrationResults.AmplificationNumber = value;
+                _calibrationResults.AmplificationNumber = value;
             }
         }
 
@@ -728,12 +724,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Style;
+                return _calibrationResults.Style;
             }
 
             set
             {
-                calibrationResults.Style = value;
+                _calibrationResults.Style = value;
             }
         }
            
@@ -741,12 +737,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Range;
+                return _calibrationResults.Range;
             }
 
             set
             {
-                calibrationResults.Range = value;
+                _calibrationResults.Range = value;
             }
         }
 
@@ -754,12 +750,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Tag;
+                return _calibrationResults.Tag;
             }
 
             set
             {
-                calibrationResults.Tag = value;
+                _calibrationResults.Tag = value;
             }
         }
 
@@ -767,12 +763,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Sqrt;
+                return _calibrationResults.Sqrt;
             }
 
             set
             {
-                calibrationResults.Sqrt = value;
+                _calibrationResults.Sqrt = value;
             }
         }
 
@@ -780,12 +776,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.XjNumber;
+                return _calibrationResults.XjNumber;
             }
 
             set
             {
-                calibrationResults.XjNumber = value;
+                _calibrationResults.XjNumber = value;
             }
         }
 
@@ -793,12 +789,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Qic;
+                return _calibrationResults.Qic;
             }
 
             set
             {
-                calibrationResults.Qic = value;
+                _calibrationResults.Qic = value;
             }
         }
 
@@ -806,12 +802,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Bar;
+                return _calibrationResults.Bar;
             }
 
             set
             {
-                calibrationResults.Bar = value;
+                _calibrationResults.Bar = value;
             }
         }
 
@@ -819,12 +815,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Stn;
+                return _calibrationResults.Stn;
             }
 
             set
             {
-                calibrationResults.Stn = value;
+                _calibrationResults.Stn = value;
             }
         }
 
@@ -832,12 +828,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.KmSerial1;
+                return _calibrationResults.KmSerial1;
             }
 
             set
             {
-                calibrationResults.KmSerial1 = value;
+                _calibrationResults.KmSerial1 = value;
             }
         }
 
@@ -845,12 +841,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.KmSerial2;
+                return _calibrationResults.KmSerial2;
             }
 
             set
             {
-                calibrationResults.KmSerial2 = value;
+                _calibrationResults.KmSerial2 = value;
             }
         }
 
@@ -858,12 +854,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.LineName;
+                return _calibrationResults.LineName;
             }
 
             set
             {
-                calibrationResults.LineName = value;
+                _calibrationResults.LineName = value;
             }
         }
 
@@ -871,12 +867,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Soft;
+                return _calibrationResults.Soft;
             }
 
             set
             {
-                calibrationResults.Soft = value;
+                _calibrationResults.Soft = value;
             }
         }
 
@@ -884,12 +880,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Version;
+                return _calibrationResults.Version;
             }
 
             set
             {
-                calibrationResults.Version = value;
+                _calibrationResults.Version = value;
             }
         }
 
@@ -897,12 +893,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.CalibrationDate;
+                return _calibrationResults.CalibrationDate;
             }
 
             set
             {
-                calibrationResults.CalibrationDate = value;
+                _calibrationResults.CalibrationDate = value;
             }
         }
 
@@ -910,12 +906,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.CalibrationTime;
+                return _calibrationResults.CalibrationTime;
             }
 
             set
             {
-                calibrationResults.CalibrationTime = value;
+                _calibrationResults.CalibrationTime = value;
             }
         }
 
@@ -923,12 +919,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Temp;
+                return _calibrationResults.Temp;
             }
 
             set
             {
-                calibrationResults.Temp = value;
+                _calibrationResults.Temp = value;
             }
         }
 
@@ -936,12 +932,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Humd;
+                return _calibrationResults.Humd;
             }
 
             set
             {
-                calibrationResults.Humd = value;
+                _calibrationResults.Humd = value;
             }
         }
 
@@ -949,12 +945,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Damping;
+                return _calibrationResults.Damping;
             }
 
             set
             {
-                calibrationResults.Damping = value;
+                _calibrationResults.Damping = value;
             }
         }
 
@@ -962,12 +958,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Stbl;
+                return _calibrationResults.Stbl;
             }
 
             set
             {
-                calibrationResults.Stbl = value;
+                _calibrationResults.Stbl = value;
             }
         }
 
@@ -975,12 +971,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.EthercomVersion;
+                return _calibrationResults.EthercomVersion;
             }
 
             set
             {
-                calibrationResults.EthercomVersion = value;
+                _calibrationResults.EthercomVersion = value;
             }
         }
 
@@ -988,12 +984,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.BhcomVersion;
+                return _calibrationResults.BhcomVersion;
             }
 
             set
             {
-                calibrationResults.BhcomVersion = value;
+                _calibrationResults.BhcomVersion = value;
             }
         }
 
@@ -1001,12 +997,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.PresscontVersion;
+                return _calibrationResults.PresscontVersion;
             }
 
             set
             {
-                calibrationResults.PresscontVersion = value;
+                _calibrationResults.PresscontVersion = value;
             }
         }
 
@@ -1014,12 +1010,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.PressInitialisation;
+                return _calibrationResults.PressInitialisation;
             }
 
             set
             {
-                calibrationResults.PressInitialisation = value;
+                _calibrationResults.PressInitialisation = value;
             }
         }
 
@@ -1027,12 +1023,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.CrcxInitialisation;
+                return _calibrationResults.CrcxInitialisation;
             }
 
             set
             {
-                calibrationResults.CrcxInitialisation = value;
+                _calibrationResults.CrcxInitialisation = value;
             }
         }
 
@@ -1040,12 +1036,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.EjxMsCodeInitialisation;
+                return _calibrationResults.EjxMsCodeInitialisation;
             }
 
             set
             {
-                calibrationResults.EjxMsCodeInitialisation = value;
+                _calibrationResults.EjxMsCodeInitialisation = value;
             }
         }
 
@@ -1053,12 +1049,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.AtmospherePressure;
+                return _calibrationResults.AtmospherePressure;
             }
 
             set
             {
-                calibrationResults.AtmospherePressure = value;
+                _calibrationResults.AtmospherePressure = value;
             }
         }
 
@@ -1066,12 +1062,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.StartNumber;
+                return _calibrationResults.StartNumber;
             }
 
             set
             {
-                calibrationResults.StartNumber = value;
+                _calibrationResults.StartNumber = value;
             }
         }
 
@@ -1079,12 +1075,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.AdjustScale_0;
+                return _calibrationResults.AdjustScale_0;
             }
 
             set
             {
-                calibrationResults.AdjustScale_0 = value;
+                _calibrationResults.AdjustScale_0 = value;
             }
         }
 
@@ -1092,12 +1088,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.AdjustScale_100;
+                return _calibrationResults.AdjustScale_100;
             }
 
             set
             {
-                calibrationResults.AdjustScale_100 = value;
+                _calibrationResults.AdjustScale_100 = value;
             }
         }
 
@@ -1105,12 +1101,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.HartSelection;
+                return _calibrationResults.HartSelection;
             }
 
             set
             {
-                calibrationResults.HartSelection = value;
+                _calibrationResults.HartSelection = value;
             }
         }
 
@@ -1118,12 +1114,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.MessageDisplay;
+                return _calibrationResults.MessageDisplay;
             }
 
             set
             {
-                calibrationResults.MessageDisplay = value;
+                _calibrationResults.MessageDisplay = value;
             }
         }
 
@@ -1131,12 +1127,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Eui64adrs;
+                return _calibrationResults.Eui64adrs;
             }
 
             set
             {
-                calibrationResults.Eui64adrs = value;
+                _calibrationResults.Eui64adrs = value;
             }
         }
 
@@ -1144,12 +1140,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Acc;
+                return _calibrationResults.Acc;
             }
 
             set
             {
-                calibrationResults.Acc = value;
+                _calibrationResults.Acc = value;
             }
         }
 
@@ -1157,24 +1153,24 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Calut;
+                return _calibrationResults.Calut;
             }
 
             set
             {
-                calibrationResults.Calut = value;
+                _calibrationResults.Calut = value;
             }
         }
         public string Cal1
         {
             get
             {
-                return calibrationResults.Cal1;
+                return _calibrationResults.Cal1;
             }
 
             set
             {
-                calibrationResults.Cal1 = value;
+                _calibrationResults.Cal1 = value;
             }
         }
 
@@ -1182,12 +1178,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cal2;
+                return _calibrationResults.Cal2;
             }
 
             set
             {
-                calibrationResults.Cal2 = value;
+                _calibrationResults.Cal2 = value;
             }
         }
 
@@ -1195,12 +1191,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cal3;
+                return _calibrationResults.Cal3;
             }
 
             set
             {
-                calibrationResults.Cal3 = value;
+                _calibrationResults.Cal3 = value;
             }
         }
 
@@ -1208,12 +1204,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Desut;
+                return _calibrationResults.Desut;
             }
 
             set
             {
-                calibrationResults.Desut = value;
+                _calibrationResults.Desut = value;
             }
         }
 
@@ -1221,12 +1217,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Des1;
+                return _calibrationResults.Des1;
             }
 
             set
             {
-                calibrationResults.Des1 = value;
+                _calibrationResults.Des1 = value;
             }
         }
 
@@ -1234,12 +1230,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Des2;
+                return _calibrationResults.Des2;
             }
 
             set
             {
-                calibrationResults.Des2 = value;
+                _calibrationResults.Des2 = value;
             }
         }
 
@@ -1247,12 +1243,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Des3;
+                return _calibrationResults.Des3;
             }
 
             set
             {
-                calibrationResults.Des3 = value;
+                _calibrationResults.Des3 = value;
             }
         }
 
@@ -1260,12 +1256,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtinc1;
+                return _calibrationResults.Dtinc1;
             }
 
             set
             {
-                calibrationResults.Dtinc1 = value;
+                _calibrationResults.Dtinc1 = value;
             }
         }
 
@@ -1273,12 +1269,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtinc2;
+                return _calibrationResults.Dtinc2;
             }
 
             set
             {
-                calibrationResults.Dtinc2 = value;
+                _calibrationResults.Dtinc2 = value;
             }
         }
 
@@ -1286,12 +1282,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtinc3;
+                return _calibrationResults.Dtinc3;
             }
 
             set
             {
-                calibrationResults.Dtinc3 = value;
+                _calibrationResults.Dtinc3 = value;
             }
         }
 
@@ -1299,12 +1295,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtdec1;
+                return _calibrationResults.Dtdec1;
             }
 
             set
             {
-                calibrationResults.Dtdec1 = value;
+                _calibrationResults.Dtdec1 = value;
             }
         }
 
@@ -1312,12 +1308,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtdec2;
+                return _calibrationResults.Dtdec2;
             }
 
             set
             {
-                calibrationResults.Dtdec2 = value;
+                _calibrationResults.Dtdec2 = value;
             }
         }
 
@@ -1325,12 +1321,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Dtdec3;
+                return _calibrationResults.Dtdec3;
             }
 
             set
             {
-                calibrationResults.Dtdec3 = value;
+                _calibrationResults.Dtdec3 = value;
             }
         }
 
@@ -1338,12 +1334,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Convtut;
+                return _calibrationResults.Convtut;
             }
 
             set
             {
-                calibrationResults.Convtut = value;
+                _calibrationResults.Convtut = value;
             }
         }
 
@@ -1352,12 +1348,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Convt1;
+                return _calibrationResults.Convt1;
             }
 
             set
             {
-                calibrationResults.Convt1 = value;
+                _calibrationResults.Convt1 = value;
             }
         }
 
@@ -1365,12 +1361,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Convt2;
+                return _calibrationResults.Convt2;
             }
 
             set
             {
-                calibrationResults.Convt2 = value;
+                _calibrationResults.Convt2 = value;
             }
         }
 
@@ -1378,12 +1374,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Convt3;
+                return _calibrationResults.Convt3;
             }
 
             set
             {
-                calibrationResults.Convt3 = value;
+                _calibrationResults.Convt3 = value;
             }
         }
 
@@ -1391,12 +1387,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kminc1;
+                return _calibrationResults.Kminc1;
             }
 
             set
             {
-                calibrationResults.Kminc1 = value;
+                _calibrationResults.Kminc1 = value;
             }
         }
 
@@ -1404,12 +1400,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kminc2;
+                return _calibrationResults.Kminc2;
             }
 
             set
             {
-                calibrationResults.Kminc2 = value;
+                _calibrationResults.Kminc2 = value;
             }
         }
 
@@ -1417,12 +1413,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kminc3;
+                return _calibrationResults.Kminc3;
             }
 
             set
             {
-                calibrationResults.Kminc3 = value;
+                _calibrationResults.Kminc3 = value;
             }
         }
 
@@ -1430,12 +1426,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kmdec1;
+                return _calibrationResults.Kmdec1;
             }
 
             set
             {
-                calibrationResults.Kmdec1 = value;
+                _calibrationResults.Kmdec1 = value;
             }
         }
 
@@ -1443,12 +1439,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kmdec2;
+                return _calibrationResults.Kmdec2;
             }
 
             set
             {
-                calibrationResults.Kmdec2 = value;
+                _calibrationResults.Kmdec2 = value;
             }
         }
 
@@ -1456,12 +1452,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Kmdec3;
+                return _calibrationResults.Kmdec3;
             }
 
             set
             {
-                calibrationResults.Kmdec3 = value;
+                _calibrationResults.Kmdec3 = value;
             }
         }
 
@@ -1469,12 +1465,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpinc1;
+                return _calibrationResults.Cpinc1;
             }
 
             set
             {
-                calibrationResults.Cpinc1 = value;
+                _calibrationResults.Cpinc1 = value;
             }
         }
 
@@ -1482,12 +1478,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpinc2;
+                return _calibrationResults.Cpinc2;
             }
 
             set
             {
-                calibrationResults.Cpinc2 = value;
+                _calibrationResults.Cpinc2 = value;
             }
         }
 
@@ -1495,12 +1491,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpinc3;
+                return _calibrationResults.Cpinc3;
             }
 
             set
             {
-                calibrationResults.Cpinc3 = value;
+                _calibrationResults.Cpinc3 = value;
             }
         }
 
@@ -1508,12 +1504,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpdec1;
+                return _calibrationResults.Cpdec1;
             }
 
             set
             {
-                calibrationResults.Cpdec1 = value;
+                _calibrationResults.Cpdec1 = value;
             }
         }
 
@@ -1521,12 +1517,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpdec2;
+                return _calibrationResults.Cpdec2;
             }
 
             set
             {
-                calibrationResults.Cpdec2 = value;
+                _calibrationResults.Cpdec2 = value;
             }
         }
 
@@ -1534,12 +1530,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Cpdec3;
+                return _calibrationResults.Cpdec3;
             }
 
             set
             {
-                calibrationResults.Cpdec3 = value;
+                _calibrationResults.Cpdec3 = value;
             }
         }
 
@@ -1547,12 +1543,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Atmn;
+                return _calibrationResults.Atmn;
             }
 
             set
             {
-                calibrationResults.Atmn = value;
+                _calibrationResults.Atmn = value;
             }
         }
 
@@ -1560,12 +1556,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Caltime;
+                return _calibrationResults.Caltime;
             }
 
             set
             {
-                calibrationResults.Caltime = value;
+                _calibrationResults.Caltime = value;
             }
         }
 
@@ -1573,12 +1569,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Zeror;
+                return _calibrationResults.Zeror;
             }
 
             set
             {
-                calibrationResults.Zeror = value;
+                _calibrationResults.Zeror = value;
             }
         }
 
@@ -1586,12 +1582,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.Spanr;
+                return _calibrationResults.Spanr;
             }
 
             set
             {
-                calibrationResults.Spanr = value;
+                _calibrationResults.Spanr = value;
             }
         }
 
@@ -1599,12 +1595,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.AdjUnit;
+                return _calibrationResults.AdjUnit;
             }
 
             set
             {
-                calibrationResults.AdjUnit = value;
+                _calibrationResults.AdjUnit = value;
             }
         }
 
@@ -1612,12 +1608,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.WtMatl;
+                return _calibrationResults.WtMatl;
             }
 
             set
             {
-                calibrationResults.WtMatl = value;
+                _calibrationResults.WtMatl = value;
             }
         }
 
@@ -1625,12 +1621,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return calibrationResults.FlSize;
+                return _calibrationResults.FlSize;
             }
 
             set
             {
-                calibrationResults.FlSize = value;
+                _calibrationResults.FlSize = value;
             }
         }
 
@@ -1638,12 +1634,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.SerialNumberHipot;
+                return _deviceTestResult.SerialNumberHipot;
             }
 
             set
             {
-                deviceTestResult.SerialNumberHipot = value;
+                _deviceTestResult.SerialNumberHipot = value;
             }
         }
 
@@ -1651,12 +1647,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.Result;
+                return _deviceTestResult.Result;
             }
 
             set
             {
-                deviceTestResult.Result = value;
+                _deviceTestResult.Result = value;
             }
         }
 
@@ -1664,12 +1660,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.IsolationV;
+                return _deviceTestResult.IsolationV;
             }
 
             set
             {
-                deviceTestResult.IsolationV = value;
+                _deviceTestResult.IsolationV = value;
             }
         }
 
@@ -1677,12 +1673,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.IsolationR;
+                return _deviceTestResult.IsolationR;
             }
 
             set
             {
-                deviceTestResult.IsolationR = value;
+                _deviceTestResult.IsolationR = value;
             }
         }
 
@@ -1690,12 +1686,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.IsolationT;
+                return _deviceTestResult.IsolationT;
             }
 
             set
             {
-                deviceTestResult.IsolationT = value;
+                _deviceTestResult.IsolationT = value;
             }
         }
 
@@ -1703,12 +1699,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.IResult;
+                return _deviceTestResult.IResult;
             }
 
             set
             {
-                deviceTestResult.IResult = value;
+                _deviceTestResult.IResult = value;
             }
         }
 
@@ -1716,12 +1712,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.WithStandV;
+                return _deviceTestResult.WithStandV;
             }
 
             set
             {
-                deviceTestResult.WithStandV = value;
+                _deviceTestResult.WithStandV = value;
             }
         }
 
@@ -1729,12 +1725,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.WithStandI;
+                return _deviceTestResult.WithStandI;
             }
 
             set
             {
-                deviceTestResult.WithStandI = value;
+                _deviceTestResult.WithStandI = value;
             }
         }
 
@@ -1742,12 +1738,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.WithStandT;
+                return _deviceTestResult.WithStandT;
             }
 
             set
             {
-                deviceTestResult.WithStandT = value;
+                _deviceTestResult.WithStandT = value;
             }
         }
 
@@ -1756,12 +1752,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.WResult;
+                return _deviceTestResult.WResult;
             }
 
             set
             {
-                deviceTestResult.WResult = value;
+                _deviceTestResult.WResult = value;
             }
         }
 
@@ -1769,12 +1765,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.TestDate;
+                return _deviceTestResult.TestDate;
             }
 
             set
             {
-                deviceTestResult.TestDate = value;
+                _deviceTestResult.TestDate = value;
             }
         }
 
@@ -1782,12 +1778,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.TestTime;
+                return _deviceTestResult.TestTime;
             }
 
             set
             {
-                deviceTestResult.TestTime = value;
+                _deviceTestResult.TestTime = value;
             }
         }
 
@@ -1795,12 +1791,12 @@ namespace ReportManager.DataModel
         {
             get
             {
-                return deviceTestResult.TUser;
+                return _deviceTestResult.TUser;
             }
 
             set
             {
-                deviceTestResult.TUser = value;
+                _deviceTestResult.TUser = value;
             }
         }
 

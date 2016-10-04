@@ -3,6 +3,7 @@ using ReportManager.Database.HipotDataTableTableAdapters;
 using ReportManager.Database.CalibrationDataSetTableAdapters;
 using ReportManager.Database.ISUPDataTableAdapters;
 using System.Collections.Generic;
+using System.Globalization;
 using ReportManager.Database.NifudaDataSetTableAdapters;
 using ReportManager.Database;
 
@@ -10,22 +11,20 @@ namespace ReportManager
 {
     public static class DataModelCreator
     {
-
-        public static DeviceModel GetDeviceFromOtherTable()
+        public static DeviceModel GetDeviceFromOtherTable(ISUPNifudaDataTableAdapter adapter)
         {
             var deviceModel = new DeviceModel();
-            ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
-            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
-            var dataSetISNifuda = iSUPNifudaDataTableAdapter.GetData();
+            
+            var dataSetIsNifuda = adapter.GetData();
 
-            if (dataSetISNifuda.Count == 0)
+            if (dataSetIsNifuda.Count == 0)
             {
-                deviceModel.InputData = new List<InputData> { new InputData { } };
+                deviceModel.InputData = new List<InputData> { new InputData() };
             }
             else
             {
                 deviceModel.InputData = new List<InputData>();
-                foreach (var nifudaElement in dataSetISNifuda)
+                foreach (var nifudaElement in dataSetIsNifuda)
                 {
                     deviceModel.InputData.Add(new InputData
                     {
@@ -87,72 +86,87 @@ namespace ReportManager
 
         public static DeviceModel GetDeviceBySerial(SerialNumber serialNumber)
         {
-            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
-            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
-
-            var deviceModel = new DeviceModel() { SerialNumber = new List<SerialNumber> { serialNumber } };
+            var nifudaDataTableAdapter = new NifudaDataTableAdapter
+            {
+                Connection = { ConnectionString = ConnectionStringContainer.GetInstance().NifudaConnectionString }
+            };
+            var deviceModel = new DeviceModel { SerialNumber = new List<SerialNumber> { serialNumber } };
             var dataSetNifuda = nifudaDataTableAdapter.GetDataBy(serialNumber.Serial);
-            
-            CalibrationDataTableAdapter calibrationDataTableAdapter = new CalibrationDataTableAdapter();
-            calibrationDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+
+            var calibrationDataTableAdapter = new CalibrationDataTableAdapter
+            {
+                Connection = { ConnectionString = ConnectionStringContainer.GetInstance().NifudaConnectionString }
+            };
             var dataSetCalibrate = calibrationDataTableAdapter.GetDataBy(serialNumber.Serial);
 
-            HipotDataTableAdapter hipotDataTableAdapter = new HipotDataTableAdapter();
-            hipotDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+            var hipotDataTableAdapter = new HipotDataTableAdapter
+            {
+                Connection = { ConnectionString = ConnectionStringContainer.GetInstance().NifudaConnectionString }
+            };
             var dataSetHipot = hipotDataTableAdapter.GetDataBy(serialNumber.Serial);
 
+            CheckNifudaDataTable(deviceModel, dataSetNifuda);
+            CheckCalibrationDataTable(deviceModel, dataSetCalibrate);
+            CheckHipotDataTable(deviceModel, dataSetHipot);
+
+            return deviceModel;
+        }
+
+        private static void CheckNifudaDataTable(DeviceModel deviceModel, 
+                                                 NifudaDataSet.NifudaDataTableDataTable dataSetNifuda)
+        {
             if (dataSetNifuda.Count == 0)
             {
-                
-                deviceModel.InputData = new List<InputData> { new InputData {AllowanceSign = "No Data",
-                CompNumber = "No Data",
-                CrpGroupNumber = "No Data",
-                DocumentationLangType = "No Data",
-                EndUserCustNJ = "No Data",
-                Features_500 = "No Data",
-                FinishScheduleD = "No Data",
-                InstFinishD = "No Data",
-                IndexNumber = "No Data",
-                ItemNumber = "No Data",
-                LineNumber = "No Data",
-                Model = "No Data",
-                MsCode = "No Data",
-                OrderInstContect1H46 = "No Data",
-                OrderInstContect1W35 = "No Data",
-                OrderInstContect1W69 = "No Data",
-                OrderInstContect1X72 = "No Data",
-                OrderInstContect1X78 = "No Data",
-                OrderInstContect1X91 = "No Data",
-                OrderInstContect1X92 = "No Data",
-                OrderInstContect1X94 = "No Data",
-                OrderInstContect1Y28 = "No Data",
-                OrderInstContect1Z30 = "No Data",
-                OrderInstMax_500 = "No Data",
-                OrderInstMax_502 = "No Data",
-                OrderInstMin_500 = "No Data",
-                OrderInstMin_502 = "No Data",
-                OrderNumber = "No Data",
-                ProductionCareer = "No Data",
-                ProductionInstRevisionNumber = "No Data",
-                ProductionItemRevisionNumber = "No Data",
-                ProductionNumber = "No Data",
-                ProductionNumberEnglish = "No Data",
-                ProductionNumberJapan = "No Data",
-                ProductionNumberSuffix = "No Data",
-                RangeInstSign_500 = "No Data",
-                RangeInstSign_502 = "No Data",
-                SapLinkageNumber = "No Data",
-                SerialNumber = "No Data",
-                StartNumber = "No Data",
-                StartScheduleD = "No Data",
-                TagNumber_525 = "No Data",
-                TestCertSign = "No Data",
-                TestCertYn = "No Data",
-                TokuchuSpecificationSign = "No Data",
-                Unit_500 = "No Data",
-                Unit_502 = "No Data",
-                XjNumber = "No Data",
-                CapsuleNumber = "No Data"} };
+                deviceModel.InputData = new List<InputData> { new InputData {
+                    AllowanceSign = "No Data",
+                    CompNumber = "No Data",
+                    CrpGroupNumber = "No Data",
+                    DocumentationLangType = "No Data",
+                    EndUserCustNJ = "No Data",
+                    Features_500 = "No Data",
+                    FinishScheduleD = "No Data",
+                    InstFinishD = "No Data",
+                    IndexNumber = "No Data",
+                    ItemNumber = "No Data",
+                    LineNumber = "No Data",
+                    Model = "No Data",
+                    MsCode = "No Data",
+                    OrderInstContect1H46 = "No Data",
+                    OrderInstContect1W35 = "No Data",
+                    OrderInstContect1W69 = "No Data",
+                    OrderInstContect1X72 = "No Data",
+                    OrderInstContect1X78 = "No Data",
+                    OrderInstContect1X91 = "No Data",
+                    OrderInstContect1X92 = "No Data",
+                    OrderInstContect1X94 = "No Data",
+                    OrderInstContect1Y28 = "No Data",
+                    OrderInstContect1Z30 = "No Data",
+                    OrderInstMax_500 = "No Data",
+                    OrderInstMax_502 = "No Data",
+                    OrderInstMin_500 = "No Data",
+                    OrderInstMin_502 = "No Data",
+                    OrderNumber = "No Data",
+                    ProductionCareer = "No Data",
+                    ProductionInstRevisionNumber = "No Data",
+                    ProductionItemRevisionNumber = "No Data",
+                    ProductionNumber = "No Data",
+                    ProductionNumberEnglish = "No Data",
+                    ProductionNumberJapan = "No Data",
+                    ProductionNumberSuffix = "No Data",
+                    RangeInstSign_500 = "No Data",
+                    RangeInstSign_502 = "No Data",
+                    SapLinkageNumber = "No Data",
+                    SerialNumber = "No Data",
+                    StartNumber = "No Data",
+                    StartScheduleD = "No Data",
+                    TagNumber_525 = "No Data",
+                    TestCertSign = "No Data",
+                    TestCertYn = "No Data",
+                    TokuchuSpecificationSign = "No Data",
+                    Unit_500 = "No Data",
+                    Unit_502 = "No Data",
+                    XjNumber = "No Data",
+                    CapsuleNumber = "No Data"} };
             }
             else
             {
@@ -205,18 +219,13 @@ namespace ReportManager
                 Unit_500 = dataSetNifuda[0].UNIT_500,
                 Unit_502 = dataSetNifuda[0].UNIT_502,
                 XjNumber = dataSetNifuda[0].XJ_NO,
-                CapsuleNumber = dataSetNifuda[0].CAP_NO
-            } };
+                CapsuleNumber = dataSetNifuda[0].CAP_NO } };
             }
-            
-        
+        }
 
-           // public static DeviceModel GetDeviceBySerialCalibrate(SerialNumber serialNumber)
-        //{
-
-            
-            //var deviceModel = new DeviceModel() { SerialNumber = new List<SerialNumber> { serialNumber } };
-            
+        private static void CheckCalibrationDataTable(DeviceModel deviceModel, 
+                                                      CalibrationDataSet.CalibrationDataTableDataTable dataSetCalibrate)
+        {
             if (dataSetCalibrate.Count == 0)
             {
                 deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults { SerialNumberCalibration = "No Data",
@@ -294,15 +303,12 @@ namespace ReportManager
                     Spanr = "No Data",
                     AdjUnit = "No Data",
                     WtMatl = "No Data",
-                    FlSize = "No Data"
-
-                } };
+                    FlSize = "No Data" } };
             }
             else
             {
                 deviceModel.CalibrationResults = new List<CalibrationResults> { new CalibrationResults
                 {
-
                     SerialNumberCalibration = dataSetCalibrate[0].SERIAL,
                     AdjustScale_0 = dataSetCalibrate[0].ADJ_V0,
                     AdjustScale_100 = dataSetCalibrate[0].ADJ_V100,
@@ -378,11 +384,13 @@ namespace ReportManager
                     Spanr = dataSetCalibrate[0].SPANR,
                     AdjUnit = dataSetCalibrate[0].ADJUNIT,
                     WtMatl = dataSetCalibrate[0].WTMATL,
-                    FlSize = dataSetCalibrate[0].FLSIZE
-
-    } };
+                    FlSize = dataSetCalibrate[0].FLSIZE } };
             }
+        }
 
+        private static void CheckHipotDataTable(DeviceModel deviceModel, 
+                                                Database.HipotDataTable.HipotDataTableDataTable dataSetHipot)
+        {
             if (dataSetHipot.Count == 0)
             {
                 deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult {
@@ -398,30 +406,25 @@ namespace ReportManager
                     WResult = "No Data",
                     TestDate = "No Data",
                     TestTime = "No Data",
-                    TUser = "No Data"} };
+                    TUser = "No Data" } };
             }
             else
             {
-                deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult
-                {
+                deviceModel.DeviceTestResults = new List<DeviceTestResult> { new DeviceTestResult {
                     SerialNumberHipot = dataSetHipot[0].SERIAL,
                     Result = dataSetHipot[0].RESULT,
-                    IsolationV = dataSetHipot[0].ISOLATION_V.ToString(),
-                    IsolationR = dataSetHipot[0].ISOLATION_R.ToString(),
-                    IsolationT = dataSetHipot[0].ISOLATION_T.ToString(),
+                    IsolationV = dataSetHipot[0].ISOLATION_V.ToString(CultureInfo.InvariantCulture),
+                    IsolationR = dataSetHipot[0].ISOLATION_R.ToString(CultureInfo.InvariantCulture),
+                    IsolationT = dataSetHipot[0].ISOLATION_T.ToString(CultureInfo.InvariantCulture),
                     IResult = dataSetHipot[0].IRESULT,
-                    WithStandV = dataSetHipot[0].WITHSTAND_V.ToString(),
-                    WithStandI = dataSetHipot[0].WITHSTAND_I.ToString(),
-                    WithStandT = dataSetHipot[0].WITHSTAND_T.ToString(),
+                    WithStandV = dataSetHipot[0].WITHSTAND_V.ToString(CultureInfo.InvariantCulture),
+                    WithStandI = dataSetHipot[0].WITHSTAND_I.ToString(CultureInfo.InvariantCulture),
+                    WithStandT = dataSetHipot[0].WITHSTAND_T.ToString(CultureInfo.InvariantCulture),
                     WResult = dataSetHipot[0].WRESULT,
                     TestDate = dataSetHipot[0].TEST_DATE,
                     TestTime = dataSetHipot[0].TEST_TIME,
-                    TUser = dataSetHipot[0].TUSER
-    } };
+                    TUser = dataSetHipot[0].TUSER } };
             }
-
-            return deviceModel;
         }
     }
-    }
-
+}

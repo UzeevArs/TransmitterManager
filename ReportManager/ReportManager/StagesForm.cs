@@ -3,425 +3,506 @@ using ReportManager.Database.NifudaDataSetTableAdapters;
 using ReportManager.Database;
 using ReportManager.Forms;
 using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Security.Permissions;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using DevExpress.XtraReports.UI;
-using DevExpress.LookAndFeel;
 using ReportManager.DataModel;
-using ReportManager.Reports;
-using System.Collections.Generic;
 
 namespace ReportManager
 {
     public partial class StagesForm : Form
     {
+        private Thread CheckNifudaThread;
+        private Thread CheckIsupThread;
+        private NifudaDataTableAdapter NifudaDataTableAdapter = new NifudaDataTableAdapter();
+        private ISUPNifudaDataTableAdapter IsupDataTableAdapter = new ISUPNifudaDataTableAdapter();
+
         public StagesForm()
         {
             InitializeComponent();
+
             var keyFilter = new KeyMessageFilter();
             keyFilter.EventKeyHandler += KeyFilter_EventKeyHandler;
             Application.AddMessageFilter(keyFilter);
+
             edtSerial.Enabled = false;
 
+            Init();
 
+            Application.ApplicationExit += Application_ApplicationExit;
         }
 
-
-
-        private static string _settingsPath =
-            $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
-
-        public object ReportName { get; private set; }
-
-        public void LoadGlobalSettings()
+        private void Init()
         {
-            try
-            {
-                var xs = new XmlSerializer(typeof(ConnectionStringContainer));
-                using (Stream reader = new FileStream(_settingsPath, FileMode.Open))
-                {
-                    ConnectionStringContainer.SetInstance((ConnectionStringContainer)xs.Deserialize(reader));
-                    reader.Close();
-                }
-            }
-            catch { }
+            edtSerial.Enabled = false;
+            btnGenerateSerial.Enabled = false;
+            btnGenerateReports.Enabled = false;
+
+            lblNifudaConnectionStatus.Caption = "Установка соединения...";
+            lblIsupConnectionStatus.Caption = "Установка соединения...";
         }
+
+        private void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            StopCheckNifudaConnection();
+            StopCheckIsupConnection();
+        }
+
+        #region KeyEvents
 
         private void KeyFilter_EventKeyHandler(object sender, Keys key, string serial)
         {
             edtSerial.EditValue = serial;
-            if (edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty))
-            {
-                btnGenerateReports.Enabled = true;
-            }
-            else
-            {
-                btnGenerateReports.Enabled = false;
-            }
+            btnGenerateReports.Enabled = edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty);
         }
 
         private void edtSerial_EditValueChanged(object sender, EventArgs e)
         {
-            if (edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty))
-            {
-                btnGenerateReports.Enabled = true;
-                edtSerial.Enabled = false;
-            }
-            else
-            {
-                btnGenerateReports.Enabled = false;
-                edtSerial.Enabled = false;
-            }
+            btnGenerateReports.Enabled = edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty);
+            edtSerial.Enabled = !(edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty));
         }
 
+        #endregion
 
-
-        
         private void btnGenerateReports_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var SerialTest = "";
-
-            if (nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString()).Count == 0)
+            var dataBySerial = nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString());
+            if (dataBySerial.Count == 0)
             {
-                MessageBox.Show("Производственный номер не найден");
-                SerialTest = "no Data";
+                MessageBox.Show("Серийный номер не найден", "Предупреждение",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 btnGenerateReports.Enabled = false;
+                return;
             }
-            else
-            {
-                SerialTest = nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString())[0].SERIAL_NO;
-            }
-          
-                        
+
             var deviceModel =
-
-                DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = SerialTest });
-
-
-            if (deviceModel != null) //&& nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString()).Count != 0)
-            {
-                ReportManagerContext.GetInstance().SetDeviceModel(deviceModel);
-                (new ReportForm { MdiParent = this }).Show();
-            }
-            else
-            {
-                MessageBox.Show("Серийный номер не найден", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                btnGenerateReports.Enabled = false;
-            }
+                DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber {Serial = dataBySerial[0].SERIAL_NO});
+            ReportManagerContext.GetInstance().SetDeviceModel(deviceModel);
+            new ReportForm {MdiParent = this}.Show();
         }
 
-
-        
-        //private XtraReport CreateReportInstance()
-        //{
-
-            
-
-        //    XtraReport report = (XtraReport)
-        //        Activator.CreateInstance((ReportName).ReportType);
-
-        //    //cbReports.SelectedItem
-
-        //    if (!(report is ISavingReport))
-        //    {
-        //        MessageBox.Show("Забыл унаследоваться от интерфейс ISavingReport");
-        //        return null;
-        //    };
-
-        //    if ((report as ISavingReport).IsExistTemplateFile())
-        //    {
-        //        report.LoadLayout((report as ISavingReport).GetTemplateFileName());
-        //    }
-
-
-        //    //new List<InputData> { ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0] };
-
-        //    //new DeviceModel().InputData
-        //    //{
-
-        //    //ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0]                   
-        //    //    }
-
-        //    report.DataSource =
-        //        new List<AggregatedFieldsModel> {new AggregatedFieldsModel(
-
-        //            ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
-        //            ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
-        //            ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
-        //            ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0])
-        //    };
-
-        //    return report;
-        //}
-
-
-        private void btnGenerateSerial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnGenerateTransportList_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //var report = CreateReportInstance();
-            //if (report == null) return;
-
-            //using (ReportPrintTool printTool = new ReportPrintTool(report))
-            //{
-            //    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
-            //}
-            
-            (new SerialNumberGenerateForm { MdiParent = this }).Show();
+            new TransportListGenerateForm {MdiParent = this}.Show();
         }
 
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
-        public class KeyMessageFilter : IMessageFilter
+        private Tuple<int, DateTime> SynchronizeData()
         {
-            public delegate void KeyHandler(object sender, Keys key, string keyChar);
-            public event KeyHandler EventKeyHandler;
-
-            private bool ctrlPressed = false;
-            private bool shiftPressed = false;
-            private bool twoPressed = false;
-
-            private bool firstEnter = false;
-
-            private string tempString = "";
-
-            public bool PreFilterMessage(ref Message m)
+            var isupDevice = DataModelCreator.GetDeviceFromOtherTable(IsupDataTableAdapter);
+            
+            if (isupDevice.InputData[0].SerialNumber != null)
             {
-                if (m.Msg == 0x101)
+                foreach (var data in isupDevice.InputData)
                 {
-                    Keys keyData = (Keys)m.WParam;
-                    Console.WriteLine($"Blocked messages: { new KeysConverter().ConvertToString(keyData) }");
-                    switch (keyData)
+                    var incomedFields = nifudaDataTableAdapter.GetDataBy(data.SerialNumber);
+                    if (incomedFields.Count == 0)
                     {
-                        case Keys.ControlKey:
-                            if (ctrlPressed && shiftPressed && twoPressed) break;
-                            ctrlPressed = true;
-                            break;
-                        case Keys.ShiftKey:
-                            if (ctrlPressed && shiftPressed && twoPressed) break;
-                            shiftPressed = ctrlPressed;
-                            break;
-                        case Keys.D2:
-                            if (ctrlPressed && shiftPressed && twoPressed)
-                            {
-                                tempString += "2";
-                                break;
-                            }
-                            twoPressed = ctrlPressed && shiftPressed;
-                            break;
-                        case Keys.Enter:
-                            if (firstEnter)
-                            {
-                                GenerateEvent(keyData, tempString);
-                                ctrlPressed = false;
-                                shiftPressed = false;
-                                twoPressed = false;
-                                firstEnter = false;
-                                tempString = "";
-                                break;
-                            }
-                            else
-                            {
-                                firstEnter = true;
-                                break;
-                            }
-
-                        default:
-                            if (ctrlPressed && shiftPressed && twoPressed)
-                            {
-                                tempString += new KeysConverter().ConvertToString(keyData);
-                            }
-                            break;
+                        nifudaDataTableAdapter.InsertQuery(data.MsCode,
+                            data.Model, data.ProductionNumber,
+                            data.ProductionNumberSuffix,
+                            data.LineNumber, data.CrpGroupNumber,
+                            data.ProductionCareer, data.IndexNumber,
+                            data.TestCertSign, data.DocumentationLangType,
+                            data.InstFinishD, data.TestCertYn,
+                            data.EndUserCustNJ, data.OrderNumber,
+                            data.ItemNumber, data.ProductionItemRevisionNumber,
+                            data.ProductionInstRevisionNumber, data.CompNumber,
+                            data.StartScheduleD, data.FinishScheduleD,
+                            data.StartNumber, data.SerialNumber,
+                            data.AllowanceSign, data.ProductionNumberJapan,
+                            data.ProductionNumberEnglish,
+                            data.TokuchuSpecificationSign,
+                            data.SapLinkageNumber, data.RangeInstSign_500,
+                            data.OrderInstMax_500, data.OrderInstMin_500,
+                            data.Unit_500, data.Features_500,
+                            data.RangeInstSign_502, data.OrderInstMax_502,
+                            data.OrderInstMin_502, data.Unit_502,
+                            data.OrderInstContect1W69,
+                            data.OrderInstContect1X72,
+                            data.OrderInstContect1X91,
+                            data.OrderInstContect1Z30,
+                            data.TagNumber_525, data.XjNumber,
+                            data.OrderInstContect1H46,
+                            data.OrderInstContect1X92,
+                            data.OrderInstContect1Y28,
+                            data.OrderInstContect1W35,
+                            data.OrderInstContect1X78,
+                            data.OrderInstContect1X94,
+                            data.CapsuleNumber);
                     }
                 }
-                return false;
+
+                IsupDataTableAdapter.UpdateQuery();
             }
 
-            private void GenerateEvent(Keys keyData, string generatedString)
-            {
-                EventKeyHandler?.Invoke(this, keyData, generatedString);
-                // Console.WriteLine($"Blocked messages: {generatedString}");
-            }
-        }
-
-        private void btnOpenTestWindow_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
-            ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
-            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
-            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
-
-            //MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.ConnectionTimeout.ToString());
-
-            //РАЗОБРАТЬСЯ С ТАЙМАУТОМ, cоnnection.open выполняется в течение таймаута 
-
-            try
-            {
-                
-                nifudaDataTableAdapter.Connection.Open();
-            }
-            catch (System.Data.SqlClient.SqlException s)
-            {
-                edtSerial.Enabled = false;
-                btnGenerateSerial.Enabled = false;
-                btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + nifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
-            }
-
-            try
-            {
-                
-                iSUPNifudaDataTableAdapter.Connection.Open();
-            }
-            catch (System.Data.SqlClient.SqlException s)
-            {
-                edtSerial.Enabled = false;
-                btnGenerateSerial.Enabled = false;
-                btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + iSUPNifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
-            }
-
-
-            if ((nifudaDataTableAdapter.Connection.State == System.Data.ConnectionState.Open) && 
-                (iSUPNifudaDataTableAdapter.Connection.State == System.Data.ConnectionState.Open))
-            {
-                edtSerial.Enabled = true;
-                btnGenerateSerial.Enabled = true;
-                btnGenerateReports.Enabled = true;
-                
-                var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
-
-                if (isupDevice.InputData[0].SerialNumber == null)
-                {
-                    MessageBox.Show("Новых заказов не поступало");
-                }
-                else
-                {
-                    for (int i = 0; i < isupDevice.InputData.Count; i++)
-                    {
-                        var incomedFields = nifudaDataTableAdapter.GetDataBy(isupDevice.InputData[i].SerialNumber);
-                        if (incomedFields.Count == 0)
-                        {
-                            nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
-                                isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
-                                isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
-                                isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
-                                isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
-                                isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
-                                isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
-                                isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
-                                isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
-                                isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
-                                isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
-                                isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
-                                isupDevice.InputData[i].CapsuleNumber);
-                        }
-                    }
-
-                    iSUPNifudaDataTableAdapter.UpdateQuery();
-                }
-                iSUPNifudaDataTableAdapter.Connection.Close();
-                nifudaDataTableAdapter.Connection.Close();
-            }
-
-            iSUPNifudaDataTableAdapter.Connection.Close();
-            nifudaDataTableAdapter.Connection.Close();
+            return new Tuple<int, DateTime>(nifudaDataTableAdapter.GetNotGeneratedData().Count, DateTime.Now);
         }
 
         private void btnChangeConnectionString_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DatabaseSettingChange databaseSettingChange = new DatabaseSettingChange();
-            databaseSettingChange.Show();
+            if (new DatabaseSettingChange().ShowDialog() == DialogResult.OK)
+            {
+                StopCheckNifudaConnection();
+                StopCheckIsupConnection();
+
+                NifudaDataTableAdapter.Connection.ConnectionString =
+                    ConnectionStringContainer.GetInstance().NifudaConnectionString;
+                IsupDataTableAdapter.Connection.ConnectionString =
+                    ConnectionStringContainer.GetInstance().IsupConnectionString;
+
+                StartCheckNifudaConnection();
+                StartCheckIsupConnection();
+            }
+        }
+
+        public void StartCheckNifudaConnection()
+        {
+            CheckNifudaThread = new Thread(CheckNifudaConnection);
+            CheckNifudaThread.Start();
+        }
+
+        public void StopCheckNifudaConnection()
+        {
+            CheckNifudaThread?.Abort();
+        }
+
+        private void CheckNifudaConnection()
+        {
+            var lastStateNifuda = ConnectionState.Fetching;
+            var lastStateIsup = ConnectionState.Fetching;
+
+            while (true)
+            {
+                try
+                {
+                    EmptyNifudaQueryExecute();
+
+                    if (NifudaDataTableAdapter.Connection.State == ConnectionState.Open)
+                    {
+                        if (lastStateNifuda != NifudaDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                NifudaConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateNifuda,
+                                        NifudaDataTableAdapter.Connection.State));
+                            });
+                            lastStateNifuda = NifudaDataTableAdapter.Connection.State;
+                            continue;
+                        }
+                        // Проверка заказов
+                    }
+                    else if (NifudaDataTableAdapter.Connection.State == ConnectionState.Closed)
+                    {
+                        if (lastStateNifuda != NifudaDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                NifudaConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateNifuda,
+                                        NifudaDataTableAdapter.Connection.State));
+                            });
+                            lastStateNifuda = NifudaDataTableAdapter.Connection.State;
+                            continue;
+                        }
+                        try
+                        {
+                            NifudaDataTableAdapter.Connection.Open();
+                        }
+                        catch { }
+                    }
+
+
+                    if (IsupDataTableAdapter.Connection.State == ConnectionState.Open)
+                    {
+                        if (lastStateIsup != IsupDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                ISUPConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateIsup,
+                                        IsupDataTableAdapter.Connection.State));
+                            });
+                            lastStateIsup = IsupDataTableAdapter.Connection.State;
+                            continue;
+                        }
+                        // Проверка заказов
+                    }
+                    else if (IsupDataTableAdapter.Connection.State == ConnectionState.Closed)
+                    {
+                        if (lastStateIsup != IsupDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                ISUPConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateIsup,
+                                        IsupDataTableAdapter.Connection.State));
+                            });
+                            lastStateIsup = IsupDataTableAdapter.Connection.State;
+                            continue;
+                        }
+
+                        try
+                        {
+                            IsupDataTableAdapter.Connection.Open();
+                        }
+                        catch { }
+                    }
+
+                    Thread.Sleep(100);
+                }
+                catch (ThreadAbortException)
+                {
+                    break;
+                }
+                catch (SqlException)
+                {
+                }
+            }
+        }
+
+        public void StartCheckIsupConnection()
+        {
+            CheckIsupThread = new Thread(CheckIsupConnection);
+            CheckIsupThread.Start();
+        }
+
+        public void StopCheckIsupConnection()
+        {
+            CheckIsupThread?.Abort();
+        }
+
+        private void CheckIsupConnection()
+        {
+            var lastStateIsup = ConnectionState.Fetching;
+
+            while (true)
+            {
+                try
+                {
+                    EmptyIsupQueryExecute();
+
+                    if (IsupDataTableAdapter.Connection.State == ConnectionState.Open)
+                    {
+                        if (lastStateIsup != IsupDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                ISUPConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateIsup,
+                                        IsupDataTableAdapter.Connection.State));
+                            });
+                            lastStateIsup = IsupDataTableAdapter.Connection.State;
+                            continue;
+                        }
+                        var data = SynchronizeData();
+                        Invoke((MethodInvoker)delegate
+                        {
+                            lblStatus.Caption =
+                                $"Время последнего обновления: {data.Item2}. " +
+                                $"Количество невыполненных заказов: {data.Item1}";
+                        });
+                    }
+                    else if (IsupDataTableAdapter.Connection.State == ConnectionState.Closed)
+                    {
+                        if (lastStateIsup != IsupDataTableAdapter.Connection.State)
+                        {
+                            Invoke((MethodInvoker)delegate
+                            {
+                                ISUPConnectionOnStateChange(this,
+                                    new StateChangeEventArgs(lastStateIsup,
+                                        IsupDataTableAdapter.Connection.State));
+                            });
+                            lastStateIsup = IsupDataTableAdapter.Connection.State;
+                            continue;
+                        }
+
+                        try
+                        {
+                            IsupDataTableAdapter.Connection.Open();
+                        }
+                        catch { }
+                    }
+
+                    Thread.Sleep(100);
+                }
+                catch (ThreadAbortException)
+                {
+                    break;
+                }
+                catch (SqlException)
+                {
+                }
+            }
+        }
+
+        private void EmptyNifudaQueryExecute()
+        {
+            try
+            {
+                NifudaDataTableAdapter.CheckConnection();
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    NifudaDataTableAdapter.Connection.Open();
+                }
+                catch { }
+            }
+        }
+
+        private void EmptyIsupQueryExecute()
+        {
+            try
+            {
+                IsupDataTableAdapter.ConnectionCheck();
+            }
+            catch (Exception)
+            {
+                try
+                {
+                    IsupDataTableAdapter.Connection.Open();
+                }
+                catch { }
+            }
         }
 
         private void StagesForm_Load(object sender, EventArgs e)
         {
-            LoadGlobalSettings();
-
-            NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
-            ISUPNifudaDataTableAdapter iSUPNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter();
-
-            nifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
-            iSUPNifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrISUP;
-
-
-            //int TimeOutConnectionISUP = iSUPNifudaDataTableAdapter.Connection.ConnectionTimeout;
-            //int TimeOutConnectionProduction = nifudaDataTableAdapter.Connection.ConnectionTimeout;
-            //TimeOutConnectionProduction = '1';
-            //TimeOutConnectionISUP = '1';
-
-
-            // ЧУТЬ-ЧУТЬ МОЖНО, НО СИЛЬНО НЕ УГОРАЙ Я НОВИЧОК В ЭТИХ ДЕЛАХ, преобразую в классы как время будет))
             try
             {
-                nifudaDataTableAdapter.Connection.Open();
+                ConnectionStringContainer.LoadGlobalSettings();
             }
-            catch (System.Data.SqlClient.SqlException s)
+            catch
+            {
+                ConnectionStringContainer.LoadDefaultSettings();
+            }
+
+            NifudaDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().NifudaConnectionString;
+            IsupDataTableAdapter.Connection.ConnectionString = ConnectionStringContainer.GetInstance().IsupConnectionString;
+
+            StartCheckNifudaConnection();
+            StartCheckIsupConnection();
+        }
+
+        private void NifudaConnectionOnStateChange(object sender, StateChangeEventArgs stateChangeEventArgs)
+        {
+            if (stateChangeEventArgs.CurrentState == ConnectionState.Closed)
             {
                 edtSerial.Enabled = false;
                 btnGenerateSerial.Enabled = false;
                 btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + nifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
+                lblNifudaConnectionStatus.Caption = $"Соединение с {nifudaDataTableAdapter.Connection.Database} отсутствует";
             }
-
-            try
+            else if (stateChangeEventArgs.CurrentState == ConnectionState.Open)
             {
-                iSUPNifudaDataTableAdapter.Connection.Open();
+                edtSerial.Enabled = true;
+                btnGenerateSerial.Enabled = true;
+                btnGenerateReports.Enabled = true;
+                lblNifudaConnectionStatus.Caption = $"Соединение с {nifudaDataTableAdapter.Connection.Database} установлено";
             }
-            catch (System.Data.SqlClient.SqlException s)
+        }
+
+        private void ISUPConnectionOnStateChange(object sender, StateChangeEventArgs stateChangeEventArgs)
+        {
+            if (stateChangeEventArgs.CurrentState == ConnectionState.Closed)
             {
                 edtSerial.Enabled = false;
                 btnGenerateSerial.Enabled = false;
                 btnGenerateReports.Enabled = false;
-                MessageBox.Show("Соединение с" + iSUPNifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
+                lblIsupConnectionStatus.Caption = $"Соединение с {IsupDataTableAdapter.Connection.Database} отсутствует";
             }
-
-            //if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
-            //{
-
-            //    var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
-
-            //    if (isupDevice.InputData[0].SerialNumber == null)
-            //    {
-            //        MessageBox.Show("Новых заказов не поступало");
-            //    }
-            //    else
-            //    {
-            //        for (int i = 0; i < isupDevice.InputData.Count; i++)
-            //        {
-
-            //            nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
-            //                isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
-            //                isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
-            //                isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
-            //                isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
-            //                isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
-            //                isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
-            //                isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
-            //                isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
-            //                isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
-            //                isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
-            //                isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
-            //                isupDevice.InputData[i].CapsuleNumber);
-            //        }
-
-            //        MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.State.ToString());
-            //        iSUPNifudaDataTableAdapter.UpdateQuery();
-            //    }
-            //    iSUPNifudaDataTableAdapter.Connection.Close();
-            //    nifudaDataTableAdapter.Connection.Close();
-            //}
-
-            iSUPNifudaDataTableAdapter.Connection.Close();
-            nifudaDataTableAdapter.Connection.Close();
-
+            else if (stateChangeEventArgs.CurrentState == ConnectionState.Open)
+            {
+                edtSerial.Enabled = true;
+                btnGenerateSerial.Enabled = true;
+                btnGenerateReports.Enabled = true;
+                lblIsupConnectionStatus.Caption = $"Соединение с {IsupDataTableAdapter.Connection.Database} установлено";
+            }
         }
 
         private void btnToSetManual_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             edtSerial.Enabled = true;
         }
+    }
 
+    [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
+    public class KeyMessageFilter : IMessageFilter
+    {
+        public delegate void KeyHandler(object sender, Keys key, string keyChar);
+        public event KeyHandler EventKeyHandler;
 
+        private bool _ctrlPressed;
+        private bool _shiftPressed;
+        private bool _twoPressed;
+
+        private bool _firstEnter;
+
+        private string _tempString = "";
+
+        public bool PreFilterMessage(ref Message m)
+        {
+            if (m.Msg != 0x101) return false;
+
+            var keyData = (Keys)m.WParam;
+            Console.WriteLine($"Blocked messages: { new KeysConverter().ConvertToString(keyData) }");
+
+            switch (keyData)
+            {
+                case Keys.ControlKey:
+                    if (_ctrlPressed && _shiftPressed && _twoPressed) break;
+                    _ctrlPressed = true;
+                    break;
+
+                case Keys.ShiftKey:
+                    if (_ctrlPressed && _shiftPressed && _twoPressed) break;
+                    _shiftPressed = _ctrlPressed;
+                    break;
+
+                case Keys.D2:
+                    if (_ctrlPressed && _shiftPressed && _twoPressed)
+                    {
+                        _tempString += "2";
+                        break;
+                    }
+                    _twoPressed = _ctrlPressed && _shiftPressed;
+                    break;
+
+                case Keys.Enter:
+                    if (_firstEnter)
+                    {
+                        GenerateEvent(keyData, _tempString);
+                        _ctrlPressed = false;
+                        _shiftPressed = false;
+                        _twoPressed = false;
+                        _firstEnter = false;
+                        _tempString = "";
+                        break;
+                    }
+                    _firstEnter = true;
+                    break;
+
+                default:
+                    if (_ctrlPressed && _shiftPressed && _twoPressed)
+                    {
+                        _tempString += new KeysConverter().ConvertToString(keyData);
+                    }
+                    break;
+            }
+            return false;
+        }
+
+        private void GenerateEvent(Keys keyData, string generatedString)
+        {
+            EventKeyHandler?.Invoke(this, keyData, generatedString);
+            Console.WriteLine($"Blocked messages: {generatedString}");
+        }
     }
 }

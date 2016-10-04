@@ -7,21 +7,11 @@ namespace ReportManager
         private static ReportManagerContext _instance;
         private DeviceModel currentDeviceModel;
 
-        public DeviceModel CurrentDeviceModel
-        {
-            get
-            {
-                return currentDeviceModel;
-            }
-        }
+        public DeviceModel CurrentDeviceModel => currentDeviceModel;
 
         public static ReportManagerContext GetInstance()
         {
-            if (_instance == null)
-            {
-                _instance = new ReportManagerContext();
-            }
-            return _instance;
+            return _instance ?? (_instance = new ReportManagerContext());
         }
 
         public void SetDeviceModel(DeviceModel model)

@@ -198,6 +198,16 @@ SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, I
               <Mapping SourceColumn="CAP_NO" DataSetColumn="CAP_NO" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="CheckConnection" GetMethodModifier="Public" GetMethodName="CheckConnection" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="CheckConnection" UserSourceName="CheckConnection">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MS_CODE
+FROM            NIFUDA
+WHERE        (MODEL = '')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -245,7 +255,17 @@ WHERE                       (INDEX_NO = @INDEX_NO)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="YruPCIassembling.dbo.NIFUDA" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetNotGeneratedData" GetMethodModifier="Public" GetMethodName="GetNotGeneratedData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetNotGeneratedData" UserSourceName="GetNotGeneratedData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        *
+FROM            NIFUDA
+WHERE        (ALLOWANCE_SIGN &lt;&gt; 'Generated')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO         NIFUDA
@@ -312,7 +332,7 @@ SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, I
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="YruPCIassemblingConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE                    NIFUDA
@@ -337,7 +357,7 @@ SELECT MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_GR_NO, PROD_CAREER, I
   <xs:element name="NifudaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NifudaDataSet" msprop:Generator_UserDSName="NifudaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="NifudaDataTable" msprop:Generator_TableClassName="NifudaDataTableDataTable" msprop:Generator_TableVarName="tableNifudaDataTable" msprop:Generator_TablePropName="NifudaDataTable" msprop:Generator_RowDeletingName="NifudaDataTableRowDeleting" msprop:Generator_RowChangingName="NifudaDataTableRowChanging" msprop:Generator_RowEvHandlerName="NifudaDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="NifudaDataTableRowDeleted" msprop:Generator_UserTableName="NifudaDataTable" msprop:Generator_RowChangedName="NifudaDataTableRowChanged" msprop:Generator_RowEvArgName="NifudaDataTableRowChangeEvent" msprop:Generator_RowClassName="NifudaDataTableRow">
+        <xs:element name="NifudaDataTable" msprop:Generator_TableClassName="NifudaDataTableDataTable" msprop:Generator_TableVarName="tableNifudaDataTable" msprop:Generator_RowChangedName="NifudaDataTableRowChanged" msprop:Generator_TablePropName="NifudaDataTable" msprop:Generator_RowDeletingName="NifudaDataTableRowDeleting" msprop:Generator_RowChangingName="NifudaDataTableRowChanging" msprop:Generator_RowEvHandlerName="NifudaDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="NifudaDataTableRowDeleted" msprop:Generator_RowClassName="NifudaDataTableRow" msprop:Generator_UserTableName="NifudaDataTable" msprop:Generator_RowEvArgName="NifudaDataTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MS_CODE" msprop:Generator_ColumnVarNameInTable="columnMS_CODE" msprop:Generator_ColumnPropNameInRow="MS_CODE" msprop:Generator_ColumnPropNameInTable="MS_CODEColumn" msprop:Generator_UserColumnName="MS_CODE" minOccurs="0">

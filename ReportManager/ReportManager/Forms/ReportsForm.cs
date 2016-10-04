@@ -1,26 +1,24 @@
-﻿using DevExpress.LookAndFeel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
+using DevExpress.LookAndFeel;
 using DevExpress.XtraReports.UI;
 using ReportManager.DataModel;
 using ReportManager.Reports;
-using ReportManager.Forms;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System;
-using System.Reflection;
-using System.Linq;
 
-namespace ReportManager
+namespace ReportManager.Forms
 {
     public partial class ReportForm : Form
     {
-        private LinkedList<ReportTypeWrapper> reportTypes;
+        private readonly LinkedList<ReportTypeWrapper> _reportTypes;
 
         public ReportForm()
         {
             InitializeComponent();
-            reportTypes = new LinkedList<ReportTypeWrapper>();
+            _reportTypes = new LinkedList<ReportTypeWrapper>();
             LoadReports();
-            //edtSerialCurrent.Text = edtSerial
         }
         private void LoadReports()
         {
@@ -30,15 +28,16 @@ namespace ReportManager
                 if (type.GetInterfaces().
                     FirstOrDefault(typeInst => typeInst == typeof(ISavingReport)) != null)
                 {
-                    reportTypes.AddLast(new ReportTypeWrapper { ReportType = type });
-                    cbReports.Properties.Items.Add(reportTypes.Last.Value);
+                    _reportTypes.AddLast(new ReportTypeWrapper { ReportType = type });
+                    cbReports.Properties.Items.Add(_reportTypes.Last.Value);
                 }
             }
             cbReports.SelectedIndex = 0;
         }
+
         private XtraReport CreateReportInstance()
         {
-            XtraReport report = (XtraReport)
+            var report = (XtraReport)
                 Activator.CreateInstance((cbReports.SelectedItem as ReportTypeWrapper).ReportType);
 
             if (!(report is ISavingReport))
@@ -52,23 +51,12 @@ namespace ReportManager
                 report.LoadLayout((report as ISavingReport).GetTemplateFileName());
             }
 
-
-            //new List<InputData> { ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0] };
-
-            //new DeviceModel().InputData
-            //{
-
-            //ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0]                   
-            //    }
-
             report.DataSource = 
-                new List<AggregatedFieldsModel> {new AggregatedFieldsModel(
-
+                new List<AggregatedFieldsModel> { new AggregatedFieldsModel(
                     ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
                     ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
                     ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
-                    ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0])
-            };
+                    ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0]) };
 
             return report;
         }

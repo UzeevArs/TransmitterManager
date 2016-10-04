@@ -1,4 +1,4 @@
-﻿namespace ReportManager
+﻿namespace ReportManager.Forms
 {
     partial class ReportForm
     {

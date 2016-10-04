@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace ReportManager.Forms
 {
-    public partial class SerialNumberGenerateForm : Form
+    public partial class TransportListGenerateForm : Form
     {
-        public SerialNumberGenerateForm()
+        public TransportListGenerateForm()
         {
             InitializeComponent();
             nifudaDataTableAdapter1.Fill(nifudaDataSet1.NifudaDataTable);
-            nifudaDataTableAdapter1.Connection.ConnectionString = ConnectionStringContainer.GetInstance().ConnStrNifuda;
+            nifudaDataTableAdapter1.Connection.ConnectionString = ConnectionStringContainer.GetInstance().NifudaConnectionString;
         }
 
         private void grdEmptySerial_DoubleClick(object sender, EventArgs e)
         {
-            var rows = (grdEmptySerial.MainView as GridView).GetSelectedRows();
-            if (rows.Length > 0)
+            var rows = (grdEmptySerial.MainView as GridView)?.GetSelectedRows();
+
+            if (rows?.Length > 0)
             {
                 //var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
-
                 nifudaDataTableAdapter1.UpdateQuery("Generated", nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
                 var device = GetDeviceBySerial(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
                 var report = CreateReportInstance(device);
@@ -39,7 +39,7 @@ namespace ReportManager.Forms
 
         private DeviceModel GetDeviceBySerial(string serial)
         {
-            return DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = serial });
+            return DataModelCreator.GetDeviceBySerial(new SerialNumber { Serial = serial });
         }
 
         private TransportListReport CreateReportInstance(DeviceModel device)

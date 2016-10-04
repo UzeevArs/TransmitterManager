@@ -2,7 +2,7 @@
 
 namespace ReportManager.Forms
 {
-    partial class SerialNumberGenerateForm
+    partial class TransportListGenerateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -297,7 +297,7 @@ namespace ReportManager.Forms
             this.colALLOWANCE_SIGN.Visible = true;
             this.colALLOWANCE_SIGN.VisibleIndex = 20;
             // 
-            // SerialNumberGenerateForm
+            // TransportListGenerateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -305,7 +305,7 @@ namespace ReportManager.Forms
             this.Controls.Add(this.grdEmptySerial);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "SerialNumberGenerateForm";
+            this.Name = "TransportListGenerateForm";
             this.Text = "Генерация серийного номера";
             ((System.ComponentModel.ISupportInitialize)(this.grdEmptySerial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nifudaDataSet1)).EndInit();

@@ -154,6 +154,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "DatabaseSettingChange";
             this.Text = "DatabaseSettingChange";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DatabaseSettingChange_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.edtNifudaConnString.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtISUPConnString.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
