@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 47);
+            this.ClientSize = new System.Drawing.Size(421, 47);
             this.Controls.Add(this.btnOpenEditor);
             this.Controls.Add(this.btnOpenPreview);
             this.Controls.Add(this.labelControl1);
@@ -90,7 +90,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReportForm";
-            this.Text = "\\";
+            this.Text = "Формирование отчётов";
             ((System.ComponentModel.ISupportInitialize)(this.cbReports.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

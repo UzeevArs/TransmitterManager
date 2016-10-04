@@ -37,6 +37,7 @@
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.btnLoadData = new DevExpress.XtraBars.BarButtonItem();
             this.btnChangeConnectionString = new DevExpress.XtraBars.BarButtonItem();
+            this.btnToSetManual = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,9 +60,10 @@
             this.btnGenerateReports,
             this.edtSerial,
             this.btnLoadData,
-            this.btnChangeConnectionString});
+            this.btnChangeConnectionString,
+            this.btnToSetManual});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -71,7 +73,7 @@
             // 
             // btnGenerateSerial
             // 
-            this.btnGenerateSerial.Caption = "Генерация маршрутного листа";
+            this.btnGenerateSerial.Caption = "Формирование маршрутного листа";
             this.btnGenerateSerial.Glyph = ((System.Drawing.Image)(resources.GetObject("btnGenerateSerial.Glyph")));
             this.btnGenerateSerial.Id = 2;
             this.btnGenerateSerial.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnGenerateSerial.LargeGlyph")));
@@ -91,7 +93,7 @@
             // 
             // edtSerial
             // 
-            this.edtSerial.Caption = "Серийный номер:  ";
+            this.edtSerial.Caption = "Производственный номер:  ";
             this.edtSerial.Edit = this.repositoryItemTextEdit1;
             this.edtSerial.EditValue = "";
             this.edtSerial.EditWidth = 150;
@@ -122,6 +124,13 @@
             this.btnChangeConnectionString.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangeConnectionString_ItemClick);
             // 
+            // btnToSetManual
+            // 
+            this.btnToSetManual.Caption = "Ввод вручную";
+            this.btnToSetManual.Id = 7;
+            this.btnToSetManual.Name = "btnToSetManual";
+            this.btnToSetManual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnToSetManual_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -134,6 +143,7 @@
             // pgSerial
             // 
             this.pgSerial.ItemLinks.Add(this.edtSerial);
+            this.pgSerial.ItemLinks.Add(this.btnToSetManual);
             this.pgSerial.Name = "pgSerial";
             this.pgSerial.Text = "Серийный номер";
             // 
@@ -198,7 +208,7 @@
         public DevExpress.XtraBars.BarButtonItem btnGenerateSerial;
         public DevExpress.XtraBars.BarButtonItem btnGenerateReports;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraBars.BarEditItem edtSerial;
+        public DevExpress.XtraBars.BarEditItem edtSerial;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgStages;
         private System.Windows.Forms.Timer timer1;
@@ -206,6 +216,7 @@
         private DevExpress.XtraBars.BarButtonItem btnLoadData;
         private DevExpress.XtraBars.BarButtonItem btnChangeConnectionString;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnToSetManual;
         private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

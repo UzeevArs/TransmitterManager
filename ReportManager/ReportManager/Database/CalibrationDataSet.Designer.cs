@@ -4192,9 +4192,9 @@ namespace ReportManager.Database.CalibrationDataSetTableAdapters {
                                       DES2, DES3, DTINC1, DTINC2, DTINC3, DTDEC1, DTDEC2, DTDEC3, CONVTUT, CONVT1, CONVT2, CONVT3, KMINC1, KMINC2, KMINC3, KMDEC1,
                                        KMDEC2, KMDEC3, CPINC1, CPINC2, CPINC3, CPDEC1, CPDEC2, CPDEC3, ATMN, CALTIME, ZEROR, SPANR, ADJUNIT, WTMATL, FLSIZE
 FROM                         CRC_TB
-WHERE                       (BAR = @barcode)";
+WHERE                       (SERIAL = @barcode)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barcode", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "BAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barcode", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4228,7 +4228,7 @@ WHERE                       (BAR = @barcode)";
         public virtual int FillBy(CalibrationDataSet.CalibrationDataTableDataTable dataTable, string barcode) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((barcode == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("barcode");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(barcode));
@@ -4247,7 +4247,7 @@ WHERE                       (BAR = @barcode)";
         public virtual CalibrationDataSet.CalibrationDataTableDataTable GetDataBy(string barcode) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((barcode == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("barcode");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(barcode));

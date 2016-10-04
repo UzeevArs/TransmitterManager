@@ -7,6 +7,11 @@ using System.IO;
 using System.Security.Permissions;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using DevExpress.XtraReports.UI;
+using DevExpress.LookAndFeel;
+using ReportManager.DataModel;
+using ReportManager.Reports;
+using System.Collections.Generic;
 
 namespace ReportManager
 {
@@ -18,15 +23,17 @@ namespace ReportManager
             var keyFilter = new KeyMessageFilter();
             keyFilter.EventKeyHandler += KeyFilter_EventKeyHandler;
             Application.AddMessageFilter(keyFilter);
+            edtSerial.Enabled = false;
 
 
-            
-    }
+        }
 
 
 
         private static string _settingsPath =
             $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
+
+        public object ReportName { get; private set; }
 
         public void LoadGlobalSettings()
         {
@@ -60,10 +67,12 @@ namespace ReportManager
             if (edtSerial.EditValue != null && !edtSerial.EditValue.Equals(string.Empty))
             {
                 btnGenerateReports.Enabled = true;
+                edtSerial.Enabled = false;
             }
             else
             {
                 btnGenerateReports.Enabled = false;
+                edtSerial.Enabled = false;
             }
         }
 
@@ -76,8 +85,9 @@ namespace ReportManager
 
             if (nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString()).Count == 0)
             {
-                MessageBox.Show("Не присвоен серийный номер");
+                MessageBox.Show("Производственный номер не найден");
                 SerialTest = "no Data";
+                btnGenerateReports.Enabled = false;
             }
             else
             {
@@ -90,7 +100,7 @@ namespace ReportManager
                 DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = SerialTest });
 
 
-            if (deviceModel != null)
+            if (deviceModel != null) //&& nifudaDataTableAdapter.GetDataBySerial(edtSerial.EditValue.ToString()).Count != 0)
             {
                 ReportManagerContext.GetInstance().SetDeviceModel(deviceModel);
                 (new ReportForm { MdiParent = this }).Show();
@@ -99,11 +109,65 @@ namespace ReportManager
             {
                 MessageBox.Show("Серийный номер не найден", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                btnGenerateReports.Enabled = false;
             }
         }
 
+
+        
+        //private XtraReport CreateReportInstance()
+        //{
+
+            
+
+        //    XtraReport report = (XtraReport)
+        //        Activator.CreateInstance((ReportName).ReportType);
+
+        //    //cbReports.SelectedItem
+
+        //    if (!(report is ISavingReport))
+        //    {
+        //        MessageBox.Show("Забыл унаследоваться от интерфейс ISavingReport");
+        //        return null;
+        //    };
+
+        //    if ((report as ISavingReport).IsExistTemplateFile())
+        //    {
+        //        report.LoadLayout((report as ISavingReport).GetTemplateFileName());
+        //    }
+
+
+        //    //new List<InputData> { ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0] };
+
+        //    //new DeviceModel().InputData
+        //    //{
+
+        //    //ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0]                   
+        //    //    }
+
+        //    report.DataSource =
+        //        new List<AggregatedFieldsModel> {new AggregatedFieldsModel(
+
+        //            ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
+        //            ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
+        //            ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
+        //            ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0])
+        //    };
+
+        //    return report;
+        //}
+
+
         private void btnGenerateSerial_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //var report = CreateReportInstance();
+            //if (report == null) return;
+
+            //using (ReportPrintTool printTool = new ReportPrintTool(report))
+            //{
+            //    printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
+            //}
+            
             (new SerialNumberGenerateForm { MdiParent = this }).Show();
         }
 
@@ -218,12 +282,13 @@ namespace ReportManager
             }
 
 
-            if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
+            if ((nifudaDataTableAdapter.Connection.State == System.Data.ConnectionState.Open) && 
+                (iSUPNifudaDataTableAdapter.Connection.State == System.Data.ConnectionState.Open))
             {
                 edtSerial.Enabled = true;
                 btnGenerateSerial.Enabled = true;
                 btnGenerateReports.Enabled = true;
-
+                
                 var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
 
                 if (isupDevice.InputData[0].SerialNumber == null)
@@ -234,20 +299,23 @@ namespace ReportManager
                 {
                     for (int i = 0; i < isupDevice.InputData.Count; i++)
                     {
-
-                        nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
-                            isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
-                            isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
-                            isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
-                            isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
-                            isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
-                            isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
-                            isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
-                            isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
-                            isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
-                            isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
-                            isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
-                            isupDevice.InputData[i].CapsuleNumber);
+                        var incomedFields = nifudaDataTableAdapter.GetDataBy(isupDevice.InputData[i].SerialNumber);
+                        if (incomedFields.Count == 0)
+                        {
+                            nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
+                                isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
+                                isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
+                                isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
+                                isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
+                                isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
+                                isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
+                                isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
+                                isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
+                                isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
+                                isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
+                                isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
+                                isupDevice.InputData[i].CapsuleNumber);
+                        }
                     }
 
                     iSUPNifudaDataTableAdapter.UpdateQuery();
@@ -308,45 +376,52 @@ namespace ReportManager
                 MessageBox.Show("Соединение с" + iSUPNifudaDataTableAdapter.Connection.Database + ' ' + "отсутствует" + '\n' + "Причина: " + s.Message.ToString());
             }
 
-            if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
-            {
+            //if ((nifudaDataTableAdapter.Connection.State.ToString() == "Open") & (iSUPNifudaDataTableAdapter.Connection.State.ToString() == "Open"))
+            //{
 
-                var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
+            //    var isupDevice = DataModelCreator.GetDeviceFromOtherTable();
 
-                if (isupDevice.InputData[0].SerialNumber == null)
-                {
-                    MessageBox.Show("Новых заказов не поступало");
-                }
-                else
-                {
-                    for (int i = 0; i < isupDevice.InputData.Count; i++)
-                    {
+            //    if (isupDevice.InputData[0].SerialNumber == null)
+            //    {
+            //        MessageBox.Show("Новых заказов не поступало");
+            //    }
+            //    else
+            //    {
+            //        for (int i = 0; i < isupDevice.InputData.Count; i++)
+            //        {
 
-                        nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
-                            isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
-                            isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
-                            isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
-                            isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
-                            isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
-                            isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
-                            isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
-                            isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
-                            isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
-                            isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
-                            isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
-                            isupDevice.InputData[i].CapsuleNumber);
-                    }
+            //            nifudaDataTableAdapter.InsertQuery(isupDevice.InputData[i].MsCode, isupDevice.InputData[i].Model, isupDevice.InputData[i].ProductionNumber, isupDevice.InputData[i].ProductionNumberSuffix,
+            //                isupDevice.InputData[i].LineNumber, isupDevice.InputData[i].CrpGroupNumber, isupDevice.InputData[i].ProductionCareer, isupDevice.InputData[i].IndexNumber,
+            //                isupDevice.InputData[i].TestCertSign, isupDevice.InputData[i].DocumentationLangType, isupDevice.InputData[i].InstFinishD, isupDevice.InputData[i].TestCertYn,
+            //                isupDevice.InputData[i].EndUserCustNJ, isupDevice.InputData[i].OrderNumber, isupDevice.InputData[i].ItemNumber, isupDevice.InputData[i].ProductionItemRevisionNumber,
+            //                isupDevice.InputData[i].ProductionInstRevisionNumber, isupDevice.InputData[i].CompNumber, isupDevice.InputData[i].StartScheduleD, isupDevice.InputData[i].FinishScheduleD,
+            //                isupDevice.InputData[i].StartNumber, isupDevice.InputData[i].SerialNumber, isupDevice.InputData[i].AllowanceSign, isupDevice.InputData[i].ProductionNumberJapan,
+            //                isupDevice.InputData[i].ProductionNumberEnglish, isupDevice.InputData[i].TokuchuSpecificationSign, isupDevice.InputData[i].SapLinkageNumber, isupDevice.InputData[i].RangeInstSign_500,
+            //                isupDevice.InputData[i].OrderInstMax_500, isupDevice.InputData[i].OrderInstMin_500, isupDevice.InputData[i].Unit_500, isupDevice.InputData[i].Features_500,
+            //                isupDevice.InputData[i].RangeInstSign_502, isupDevice.InputData[i].OrderInstMax_502, isupDevice.InputData[i].OrderInstMin_502, isupDevice.InputData[i].Unit_502,
+            //                isupDevice.InputData[i].OrderInstContect1W69, isupDevice.InputData[i].OrderInstContect1X72, isupDevice.InputData[i].OrderInstContect1X91, isupDevice.InputData[i].OrderInstContect1Z30,
+            //                isupDevice.InputData[i].TagNumber_525, isupDevice.InputData[i].XjNumber, isupDevice.InputData[i].OrderInstContect1H46, isupDevice.InputData[i].OrderInstContect1X92,
+            //                isupDevice.InputData[i].OrderInstContect1Y28, isupDevice.InputData[i].OrderInstContect1W35, isupDevice.InputData[i].OrderInstContect1X78, isupDevice.InputData[i].OrderInstContect1X94,
+            //                isupDevice.InputData[i].CapsuleNumber);
+            //        }
 
-                    MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.State.ToString());
-                    iSUPNifudaDataTableAdapter.UpdateQuery();
-                }
-                iSUPNifudaDataTableAdapter.Connection.Close();
-                nifudaDataTableAdapter.Connection.Close();
-            }
+            //        MessageBox.Show(iSUPNifudaDataTableAdapter.Connection.State.ToString());
+            //        iSUPNifudaDataTableAdapter.UpdateQuery();
+            //    }
+            //    iSUPNifudaDataTableAdapter.Connection.Close();
+            //    nifudaDataTableAdapter.Connection.Close();
+            //}
 
             iSUPNifudaDataTableAdapter.Connection.Close();
             nifudaDataTableAdapter.Connection.Close();
 
         }
+
+        private void btnToSetManual_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            edtSerial.Enabled = true;
+        }
+
+
     }
 }

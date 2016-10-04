@@ -2,6 +2,7 @@
 using DevExpress.XtraReports.UI;
 using ReportManager.DataModel;
 using ReportManager.Reports;
+using ReportManager.Forms;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System;
@@ -19,6 +20,7 @@ namespace ReportManager
             InitializeComponent();
             reportTypes = new LinkedList<ReportTypeWrapper>();
             LoadReports();
+            //edtSerialCurrent.Text = edtSerial
         }
         private void LoadReports()
         {

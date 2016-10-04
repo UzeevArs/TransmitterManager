@@ -27,7 +27,7 @@ namespace ReportManager.Forms
                 //var serial = SerialGenerator.Generate(nifudaDataSet1.NifudaDataTable[rows[0]]);
 
                 nifudaDataTableAdapter1.UpdateQuery("Generated", nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
-                var device = GetDeviceBySerialNifuda(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
+                var device = GetDeviceBySerial(nifudaDataSet1.NifudaDataTable[rows[0]].SERIAL_NO);
                 var report = CreateReportInstance(device);
                 using (ReportPrintTool printTool = new ReportPrintTool(report))
                 {
@@ -37,7 +37,7 @@ namespace ReportManager.Forms
 
         }
 
-        private DeviceModel GetDeviceBySerialNifuda(string serial)
+        private DeviceModel GetDeviceBySerial(string serial)
         {
             return DataModelCreator.GetDeviceBySerial(new DataModel.SerialNumber { Serial = serial });
         }
