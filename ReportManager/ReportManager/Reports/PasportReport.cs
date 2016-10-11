@@ -1,13 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using DevExpress.XtraReports.UI;
+﻿using DevExpress.XtraReports.UI;
 using System.IO;
+using ReportManager.Data.Settings;
 
 namespace ReportManager.Reports
 {
-    public partial class PasportReport : DevExpress.XtraReports.UI.XtraReport, ISavingReport
+    public partial class PasportReport : XtraReport, ISavingReport
     {
         public PasportReport()
         {
@@ -25,7 +22,7 @@ namespace ReportManager.Reports
         {
             try
             {
-                using (FileStream stream = new FileStream(GetTemplateFileName(), FileMode.Open))
+                using (var stream = new FileStream(GetTemplateFileName(), FileMode.Open))
                 {
                 }
 
@@ -37,5 +34,9 @@ namespace ReportManager.Reports
             }
         }
 
+        public override string ToString()
+        {
+            return "Паспорт";
+        }
     }
 }

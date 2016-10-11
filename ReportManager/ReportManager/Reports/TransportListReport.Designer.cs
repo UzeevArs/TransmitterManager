@@ -1,4 +1,6 @@
-﻿namespace ReportManager.Reports
+﻿using ReportManager.Data.DataModel;
+
+namespace ReportManager.Reports
 {
     partial class TransportListReport
     {
@@ -1981,7 +1983,7 @@
             // 
             // objectDataSource1
             // 
-            this.objectDataSource1.DataSource = typeof(ReportManager.DataModel.InputData);
+            this.objectDataSource1.DataSource = typeof(InputData);
             this.objectDataSource1.Name = "objectDataSource1";
             // 
             // TransportListReport

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
+﻿using System.IO;
 using DevExpress.XtraReports.UI;
-using System.IO;
+using ReportManager.Data.Settings;
 
 namespace ReportManager.Reports
 {
-    public partial class CertificateReport : DevExpress.XtraReports.UI.XtraReport, ISavingReport
+    public partial class CertificateReport : XtraReport, ISavingReport
     {
         public CertificateReport()
         {
@@ -18,14 +15,14 @@ namespace ReportManager.Reports
 
         public string GetTemplateFileName()
         {
-            return (string)Tag;
+            return (string) Tag;
         }
 
         public bool IsExistTemplateFile()
         {
             try
             {
-                using (FileStream stream = new FileStream(GetTemplateFileName(), FileMode.Open))
+                using (var stream = new FileStream(GetTemplateFileName(), FileMode.Open))
                 {
                 }
 
@@ -35,6 +32,11 @@ namespace ReportManager.Reports
             {
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            return "Сертификат";
         }
     }
 

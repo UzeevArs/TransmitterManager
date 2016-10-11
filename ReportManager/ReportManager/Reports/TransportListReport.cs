@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using DevExpress.XtraReports.UI;
 
 namespace ReportManager.Reports
 {
-    public partial class TransportListReport : DevExpress.XtraReports.UI.XtraReport, ISavingReport
+    public partial class TransportListReport : XtraReport, ISavingReport
     {
         public TransportListReport()
         {
@@ -21,7 +21,7 @@ namespace ReportManager.Reports
         {
             try
             {
-                using (FileStream stream = new FileStream(GetTemplateFileName(), FileMode.Open))
+                using (var stream = new FileStream(GetTemplateFileName(), FileMode.Open))
                 {
                 }
 
@@ -31,6 +31,11 @@ namespace ReportManager.Reports
             {
                 return false;
             }
+        }
+
+        public override string ToString()
+        {
+            return "Маршрутный лист";
         }
     }
 }
