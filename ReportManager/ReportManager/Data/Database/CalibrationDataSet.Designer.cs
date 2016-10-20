@@ -431,6 +431,82 @@ namespace ReportManager.Data.Database {
             
             private global::System.Data.DataColumn columnFLSIZE;
             
+            private global::System.Data.DataColumn columnCAL4;
+            
+            private global::System.Data.DataColumn columnCAL5;
+            
+            private global::System.Data.DataColumn columnCAL6;
+            
+            private global::System.Data.DataColumn columnCAL7;
+            
+            private global::System.Data.DataColumn columnDES4;
+            
+            private global::System.Data.DataColumn columnDES5;
+            
+            private global::System.Data.DataColumn columnDES6;
+            
+            private global::System.Data.DataColumn columnDES7;
+            
+            private global::System.Data.DataColumn columnDTINC4;
+            
+            private global::System.Data.DataColumn columnDTINC5;
+            
+            private global::System.Data.DataColumn columnDTINC6;
+            
+            private global::System.Data.DataColumn columnDTINC7;
+            
+            private global::System.Data.DataColumn columnDTDEC4;
+            
+            private global::System.Data.DataColumn columnDTDEC5;
+            
+            private global::System.Data.DataColumn columnDTDEC6;
+            
+            private global::System.Data.DataColumn columnDTDEC7;
+            
+            private global::System.Data.DataColumn columnCONVT4;
+            
+            private global::System.Data.DataColumn columnCONVT5;
+            
+            private global::System.Data.DataColumn columnCONVT6;
+            
+            private global::System.Data.DataColumn columnCONVT7;
+            
+            private global::System.Data.DataColumn columnKMINC4;
+            
+            private global::System.Data.DataColumn columnKMINC5;
+            
+            private global::System.Data.DataColumn columnKMINC6;
+            
+            private global::System.Data.DataColumn columnKMINC7;
+            
+            private global::System.Data.DataColumn columnKMDEC4;
+            
+            private global::System.Data.DataColumn columnKMDEC5;
+            
+            private global::System.Data.DataColumn columnKMDEC6;
+            
+            private global::System.Data.DataColumn columnKMDEC7;
+            
+            private global::System.Data.DataColumn columnCPINC4;
+            
+            private global::System.Data.DataColumn columnCPINC5;
+            
+            private global::System.Data.DataColumn columnCPINC6;
+            
+            private global::System.Data.DataColumn columnCPINC7;
+            
+            private global::System.Data.DataColumn columnCPDEC4;
+            
+            private global::System.Data.DataColumn columnCPDEC5;
+            
+            private global::System.Data.DataColumn columnCPDEC6;
+            
+            private global::System.Data.DataColumn columnCPDEC7;
+            
+            private global::System.Data.DataColumn columnACC2;
+            
+            private global::System.Data.DataColumn columnTUSER;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CalibrationDataTableDataTable() {
@@ -1074,6 +1150,310 @@ namespace ReportManager.Data.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAL4Column {
+                get {
+                    return this.columnCAL4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAL5Column {
+                get {
+                    return this.columnCAL5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAL6Column {
+                get {
+                    return this.columnCAL6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAL7Column {
+                get {
+                    return this.columnCAL7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DES4Column {
+                get {
+                    return this.columnDES4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DES5Column {
+                get {
+                    return this.columnDES5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DES6Column {
+                get {
+                    return this.columnDES6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DES7Column {
+                get {
+                    return this.columnDES7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTINC4Column {
+                get {
+                    return this.columnDTINC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTINC5Column {
+                get {
+                    return this.columnDTINC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTINC6Column {
+                get {
+                    return this.columnDTINC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTINC7Column {
+                get {
+                    return this.columnDTINC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTDEC4Column {
+                get {
+                    return this.columnDTDEC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTDEC5Column {
+                get {
+                    return this.columnDTDEC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTDEC6Column {
+                get {
+                    return this.columnDTDEC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DTDEC7Column {
+                get {
+                    return this.columnDTDEC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONVT4Column {
+                get {
+                    return this.columnCONVT4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONVT5Column {
+                get {
+                    return this.columnCONVT5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONVT6Column {
+                get {
+                    return this.columnCONVT6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CONVT7Column {
+                get {
+                    return this.columnCONVT7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMINC4Column {
+                get {
+                    return this.columnKMINC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMINC5Column {
+                get {
+                    return this.columnKMINC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMINC6Column {
+                get {
+                    return this.columnKMINC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMINC7Column {
+                get {
+                    return this.columnKMINC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMDEC4Column {
+                get {
+                    return this.columnKMDEC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMDEC5Column {
+                get {
+                    return this.columnKMDEC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMDEC6Column {
+                get {
+                    return this.columnKMDEC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn KMDEC7Column {
+                get {
+                    return this.columnKMDEC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPINC4Column {
+                get {
+                    return this.columnCPINC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPINC5Column {
+                get {
+                    return this.columnCPINC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPINC6Column {
+                get {
+                    return this.columnCPINC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPINC7Column {
+                get {
+                    return this.columnCPINC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPDEC4Column {
+                get {
+                    return this.columnCPDEC4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPDEC5Column {
+                get {
+                    return this.columnCPDEC5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPDEC6Column {
+                get {
+                    return this.columnCPDEC6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CPDEC7Column {
+                get {
+                    return this.columnCPDEC7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ACC2Column {
+                get {
+                    return this.columnACC2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TUSERColumn {
+                get {
+                    return this.columnTUSER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1185,7 +1565,45 @@ namespace ReportManager.Data.Database {
                         string SPANR, 
                         string ADJUNIT, 
                         string WTMATL, 
-                        string FLSIZE) {
+                        string FLSIZE, 
+                        string CAL4, 
+                        string CAL5, 
+                        string CAL6, 
+                        string CAL7, 
+                        string DES4, 
+                        string DES5, 
+                        string DES6, 
+                        string DES7, 
+                        string DTINC4, 
+                        string DTINC5, 
+                        string DTINC6, 
+                        string DTINC7, 
+                        string DTDEC4, 
+                        string DTDEC5, 
+                        string DTDEC6, 
+                        string DTDEC7, 
+                        string CONVT4, 
+                        string CONVT5, 
+                        string CONVT6, 
+                        string CONVT7, 
+                        string KMINC4, 
+                        string KMINC5, 
+                        string KMINC6, 
+                        string KMINC7, 
+                        string KMDEC4, 
+                        string KMDEC5, 
+                        string KMDEC6, 
+                        string KMDEC7, 
+                        string CPINC4, 
+                        string CPINC5, 
+                        string CPINC6, 
+                        string CPINC7, 
+                        string CPDEC4, 
+                        string CPDEC5, 
+                        string CPDEC6, 
+                        string CPDEC7, 
+                        string ACC2, 
+                        string TUSER) {
                 CalibrationDataTableRow rowCalibrationDataTableRow = ((CalibrationDataTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SERIAL,
@@ -1263,7 +1681,45 @@ namespace ReportManager.Data.Database {
                         SPANR,
                         ADJUNIT,
                         WTMATL,
-                        FLSIZE};
+                        FLSIZE,
+                        CAL4,
+                        CAL5,
+                        CAL6,
+                        CAL7,
+                        DES4,
+                        DES5,
+                        DES6,
+                        DES7,
+                        DTINC4,
+                        DTINC5,
+                        DTINC6,
+                        DTINC7,
+                        DTDEC4,
+                        DTDEC5,
+                        DTDEC6,
+                        DTDEC7,
+                        CONVT4,
+                        CONVT5,
+                        CONVT6,
+                        CONVT7,
+                        KMINC4,
+                        KMINC5,
+                        KMINC6,
+                        KMINC7,
+                        KMDEC4,
+                        KMDEC5,
+                        KMDEC6,
+                        KMDEC7,
+                        CPINC4,
+                        CPINC5,
+                        CPINC6,
+                        CPINC7,
+                        CPDEC4,
+                        CPDEC5,
+                        CPDEC6,
+                        CPDEC7,
+                        ACC2,
+                        TUSER};
                 rowCalibrationDataTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCalibrationDataTableRow);
                 return rowCalibrationDataTableRow;
@@ -1362,6 +1818,44 @@ namespace ReportManager.Data.Database {
                 this.columnADJUNIT = base.Columns["ADJUNIT"];
                 this.columnWTMATL = base.Columns["WTMATL"];
                 this.columnFLSIZE = base.Columns["FLSIZE"];
+                this.columnCAL4 = base.Columns["CAL4"];
+                this.columnCAL5 = base.Columns["CAL5"];
+                this.columnCAL6 = base.Columns["CAL6"];
+                this.columnCAL7 = base.Columns["CAL7"];
+                this.columnDES4 = base.Columns["DES4"];
+                this.columnDES5 = base.Columns["DES5"];
+                this.columnDES6 = base.Columns["DES6"];
+                this.columnDES7 = base.Columns["DES7"];
+                this.columnDTINC4 = base.Columns["DTINC4"];
+                this.columnDTINC5 = base.Columns["DTINC5"];
+                this.columnDTINC6 = base.Columns["DTINC6"];
+                this.columnDTINC7 = base.Columns["DTINC7"];
+                this.columnDTDEC4 = base.Columns["DTDEC4"];
+                this.columnDTDEC5 = base.Columns["DTDEC5"];
+                this.columnDTDEC6 = base.Columns["DTDEC6"];
+                this.columnDTDEC7 = base.Columns["DTDEC7"];
+                this.columnCONVT4 = base.Columns["CONVT4"];
+                this.columnCONVT5 = base.Columns["CONVT5"];
+                this.columnCONVT6 = base.Columns["CONVT6"];
+                this.columnCONVT7 = base.Columns["CONVT7"];
+                this.columnKMINC4 = base.Columns["KMINC4"];
+                this.columnKMINC5 = base.Columns["KMINC5"];
+                this.columnKMINC6 = base.Columns["KMINC6"];
+                this.columnKMINC7 = base.Columns["KMINC7"];
+                this.columnKMDEC4 = base.Columns["KMDEC4"];
+                this.columnKMDEC5 = base.Columns["KMDEC5"];
+                this.columnKMDEC6 = base.Columns["KMDEC6"];
+                this.columnKMDEC7 = base.Columns["KMDEC7"];
+                this.columnCPINC4 = base.Columns["CPINC4"];
+                this.columnCPINC5 = base.Columns["CPINC5"];
+                this.columnCPINC6 = base.Columns["CPINC6"];
+                this.columnCPINC7 = base.Columns["CPINC7"];
+                this.columnCPDEC4 = base.Columns["CPDEC4"];
+                this.columnCPDEC5 = base.Columns["CPDEC5"];
+                this.columnCPDEC6 = base.Columns["CPDEC6"];
+                this.columnCPDEC7 = base.Columns["CPDEC7"];
+                this.columnACC2 = base.Columns["ACC2"];
+                this.columnTUSER = base.Columns["TUSER"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1519,6 +2013,82 @@ namespace ReportManager.Data.Database {
                 base.Columns.Add(this.columnWTMATL);
                 this.columnFLSIZE = new global::System.Data.DataColumn("FLSIZE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFLSIZE);
+                this.columnCAL4 = new global::System.Data.DataColumn("CAL4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAL4);
+                this.columnCAL5 = new global::System.Data.DataColumn("CAL5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAL5);
+                this.columnCAL6 = new global::System.Data.DataColumn("CAL6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAL6);
+                this.columnCAL7 = new global::System.Data.DataColumn("CAL7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAL7);
+                this.columnDES4 = new global::System.Data.DataColumn("DES4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDES4);
+                this.columnDES5 = new global::System.Data.DataColumn("DES5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDES5);
+                this.columnDES6 = new global::System.Data.DataColumn("DES6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDES6);
+                this.columnDES7 = new global::System.Data.DataColumn("DES7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDES7);
+                this.columnDTINC4 = new global::System.Data.DataColumn("DTINC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTINC4);
+                this.columnDTINC5 = new global::System.Data.DataColumn("DTINC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTINC5);
+                this.columnDTINC6 = new global::System.Data.DataColumn("DTINC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTINC6);
+                this.columnDTINC7 = new global::System.Data.DataColumn("DTINC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTINC7);
+                this.columnDTDEC4 = new global::System.Data.DataColumn("DTDEC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTDEC4);
+                this.columnDTDEC5 = new global::System.Data.DataColumn("DTDEC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTDEC5);
+                this.columnDTDEC6 = new global::System.Data.DataColumn("DTDEC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTDEC6);
+                this.columnDTDEC7 = new global::System.Data.DataColumn("DTDEC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTDEC7);
+                this.columnCONVT4 = new global::System.Data.DataColumn("CONVT4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONVT4);
+                this.columnCONVT5 = new global::System.Data.DataColumn("CONVT5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONVT5);
+                this.columnCONVT6 = new global::System.Data.DataColumn("CONVT6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONVT6);
+                this.columnCONVT7 = new global::System.Data.DataColumn("CONVT7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCONVT7);
+                this.columnKMINC4 = new global::System.Data.DataColumn("KMINC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMINC4);
+                this.columnKMINC5 = new global::System.Data.DataColumn("KMINC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMINC5);
+                this.columnKMINC6 = new global::System.Data.DataColumn("KMINC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMINC6);
+                this.columnKMINC7 = new global::System.Data.DataColumn("KMINC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMINC7);
+                this.columnKMDEC4 = new global::System.Data.DataColumn("KMDEC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMDEC4);
+                this.columnKMDEC5 = new global::System.Data.DataColumn("KMDEC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMDEC5);
+                this.columnKMDEC6 = new global::System.Data.DataColumn("KMDEC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMDEC6);
+                this.columnKMDEC7 = new global::System.Data.DataColumn("KMDEC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKMDEC7);
+                this.columnCPINC4 = new global::System.Data.DataColumn("CPINC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPINC4);
+                this.columnCPINC5 = new global::System.Data.DataColumn("CPINC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPINC5);
+                this.columnCPINC6 = new global::System.Data.DataColumn("CPINC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPINC6);
+                this.columnCPINC7 = new global::System.Data.DataColumn("CPINC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPINC7);
+                this.columnCPDEC4 = new global::System.Data.DataColumn("CPDEC4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPDEC4);
+                this.columnCPDEC5 = new global::System.Data.DataColumn("CPDEC5", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPDEC5);
+                this.columnCPDEC6 = new global::System.Data.DataColumn("CPDEC6", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPDEC6);
+                this.columnCPDEC7 = new global::System.Data.DataColumn("CPDEC7", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCPDEC7);
+                this.columnACC2 = new global::System.Data.DataColumn("ACC2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnACC2);
+                this.columnTUSER = new global::System.Data.DataColumn("TUSER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTUSER);
                 this.columnSERIAL.AllowDBNull = false;
                 this.columnSERIAL.MaxLength = 50;
                 this.columnRESULT.MaxLength = 2147483647;
@@ -1596,6 +2166,44 @@ namespace ReportManager.Data.Database {
                 this.columnADJUNIT.MaxLength = 2147483647;
                 this.columnWTMATL.MaxLength = 2147483647;
                 this.columnFLSIZE.MaxLength = 2147483647;
+                this.columnCAL4.MaxLength = 2147483647;
+                this.columnCAL5.MaxLength = 2147483647;
+                this.columnCAL6.MaxLength = 2147483647;
+                this.columnCAL7.MaxLength = 2147483647;
+                this.columnDES4.MaxLength = 2147483647;
+                this.columnDES5.MaxLength = 2147483647;
+                this.columnDES6.MaxLength = 2147483647;
+                this.columnDES7.MaxLength = 2147483647;
+                this.columnDTINC4.MaxLength = 2147483647;
+                this.columnDTINC5.MaxLength = 2147483647;
+                this.columnDTINC6.MaxLength = 2147483647;
+                this.columnDTINC7.MaxLength = 2147483647;
+                this.columnDTDEC4.MaxLength = 2147483647;
+                this.columnDTDEC5.MaxLength = 2147483647;
+                this.columnDTDEC6.MaxLength = 2147483647;
+                this.columnDTDEC7.MaxLength = 2147483647;
+                this.columnCONVT4.MaxLength = 2147483647;
+                this.columnCONVT5.MaxLength = 2147483647;
+                this.columnCONVT6.MaxLength = 2147483647;
+                this.columnCONVT7.MaxLength = 2147483647;
+                this.columnKMINC4.MaxLength = 2147483647;
+                this.columnKMINC5.MaxLength = 2147483647;
+                this.columnKMINC6.MaxLength = 2147483647;
+                this.columnKMINC7.MaxLength = 2147483647;
+                this.columnKMDEC4.MaxLength = 2147483647;
+                this.columnKMDEC5.MaxLength = 2147483647;
+                this.columnKMDEC6.MaxLength = 2147483647;
+                this.columnKMDEC7.MaxLength = 2147483647;
+                this.columnCPINC4.MaxLength = 2147483647;
+                this.columnCPINC5.MaxLength = 2147483647;
+                this.columnCPINC6.MaxLength = 2147483647;
+                this.columnCPINC7.MaxLength = 2147483647;
+                this.columnCPDEC4.MaxLength = 2147483647;
+                this.columnCPDEC5.MaxLength = 2147483647;
+                this.columnCPDEC6.MaxLength = 2147483647;
+                this.columnCPDEC7.MaxLength = 2147483647;
+                this.columnACC2.MaxLength = 2147483647;
+                this.columnTUSER.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1751,11 +2359,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RESULT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.RESULTColumn]));
+                    if (this.IsRESULTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RESULT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.RESULTColumn]));
                     }
                 }
                 set {
@@ -1767,11 +2375,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAPNO {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAPNOColumn]));
+                    if (this.IsCAPNONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAPNO\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAPNOColumn]));
                     }
                 }
                 set {
@@ -1783,11 +2391,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string AMPNO {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.AMPNOColumn]));
+                    if (this.IsAMPNONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AMPNO\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.AMPNOColumn]));
                     }
                 }
                 set {
@@ -1799,11 +2407,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MSCODE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.MSCODEColumn]));
+                    if (this.IsMSCODENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MSCODE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.MSCODEColumn]));
                     }
                 }
                 set {
@@ -1815,11 +2423,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STYLE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.STYLEColumn]));
+                    if (this.IsSTYLENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STYLE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.STYLEColumn]));
                     }
                 }
                 set {
@@ -1831,11 +2439,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORDERNO {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ORDERNOColumn]));
+                    if (this.IsORDERNONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDERNO\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ORDERNOColumn]));
                     }
                 }
                 set {
@@ -1847,11 +2455,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RANGE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.RANGEColumn]));
+                    if (this.IsRANGENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RANGE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.RANGEColumn]));
                     }
                 }
                 set {
@@ -1863,11 +2471,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TAG {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.TAGColumn]));
+                    if (this.IsTAGNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TAG\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.TAGColumn]));
                     }
                 }
                 set {
@@ -1879,11 +2487,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SQRT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.SQRTColumn]));
+                    if (this.IsSQRTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SQRT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.SQRTColumn]));
                     }
                 }
                 set {
@@ -1895,11 +2503,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string XJNO {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.XJNOColumn]));
+                    if (this.IsXJNONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'XJNO\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.XJNOColumn]));
                     }
                 }
                 set {
@@ -1911,11 +2519,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string QIC {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.QICColumn]));
+                    if (this.IsQICNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QIC\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.QICColumn]));
                     }
                 }
                 set {
@@ -1927,11 +2535,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string BAR {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.BARColumn]));
+                    if (this.IsBARNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BAR\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.BARColumn]));
                     }
                 }
                 set {
@@ -1943,11 +2551,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STN {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.STNColumn]));
+                    if (this.IsSTNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STN\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.STNColumn]));
                     }
                 }
                 set {
@@ -1959,11 +2567,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMSERIAL1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMSERIAL1Column]));
+                    if (this.IsKMSERIAL1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMSERIAL1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMSERIAL1Column]));
                     }
                 }
                 set {
@@ -1975,11 +2583,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMSERIAL2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMSERIAL2Column]));
+                    if (this.IsKMSERIAL2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMSERIAL2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMSERIAL2Column]));
                     }
                 }
                 set {
@@ -1991,11 +2599,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LINENAME {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.LINENAMEColumn]));
+                    if (this.IsLINENAMENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LINENAME\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.LINENAMEColumn]));
                     }
                 }
                 set {
@@ -2007,11 +2615,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SOFT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.SOFTColumn]));
+                    if (this.IsSOFTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SOFT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.SOFTColumn]));
                     }
                 }
                 set {
@@ -2023,11 +2631,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string VERSION {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.VERSIONColumn]));
+                    if (this.IsVERSIONNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VERSION\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.VERSIONColumn]));
                     }
                 }
                 set {
@@ -2039,11 +2647,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAL_DATE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAL_DATEColumn]));
+                    if (this.IsCAL_DATENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAL_DATE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL_DATEColumn]));
                     }
                 }
                 set {
@@ -2055,11 +2663,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAL_TIME {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAL_TIMEColumn]));
+                    if (this.IsCAL_TIMENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAL_TIME\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL_TIMEColumn]));
                     }
                 }
                 set {
@@ -2071,11 +2679,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEMP {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.TEMPColumn]));
+                    if (this.IsTEMPNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEMP\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.TEMPColumn]));
                     }
                 }
                 set {
@@ -2087,11 +2695,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string HUMD {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.HUMDColumn]));
+                    if (this.IsHUMDNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HUMD\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.HUMDColumn]));
                     }
                 }
                 set {
@@ -2103,11 +2711,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DAMPING {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DAMPINGColumn]));
+                    if (this.IsDAMPINGNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DAMPING\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DAMPINGColumn]));
                     }
                 }
                 set {
@@ -2119,11 +2727,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STBL {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.STBLColumn]));
+                    if (this.IsSTBLNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STBL\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.STBLColumn]));
                     }
                 }
                 set {
@@ -2135,11 +2743,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ETHERCOM_VER {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ETHERCOM_VERColumn]));
+                    if (this.IsETHERCOM_VERNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ETHERCOM_VER\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ETHERCOM_VERColumn]));
                     }
                 }
                 set {
@@ -2151,11 +2759,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string BHCOM_VER {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.BHCOM_VERColumn]));
+                    if (this.IsBHCOM_VERNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BHCOM_VER\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.BHCOM_VERColumn]));
                     }
                 }
                 set {
@@ -2167,11 +2775,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRESSCONT_VER {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.PRESSCONT_VERColumn]));
+                    if (this.IsPRESSCONT_VERNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PRESSCONT_VER\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.PRESSCONT_VERColumn]));
                     }
                 }
                 set {
@@ -2183,11 +2791,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRESS_INI {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.PRESS_INIColumn]));
+                    if (this.IsPRESS_ININull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PRESS_INI\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.PRESS_INIColumn]));
                     }
                 }
                 set {
@@ -2199,11 +2807,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CRCX_INI {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CRCX_INIColumn]));
+                    if (this.IsCRCX_ININull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRCX_INI\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CRCX_INIColumn]));
                     }
                 }
                 set {
@@ -2215,11 +2823,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string EJXMSCODE_INI {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.EJXMSCODE_INIColumn]));
+                    if (this.IsEJXMSCODE_ININull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EJXMSCODE_INI\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.EJXMSCODE_INIColumn]));
                     }
                 }
                 set {
@@ -2231,11 +2839,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ATMOSPHERE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ATMOSPHEREColumn]));
+                    if (this.IsATMOSPHERENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATMOSPHERE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ATMOSPHEREColumn]));
                     }
                 }
                 set {
@@ -2247,11 +2855,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string STARTNO {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.STARTNOColumn]));
+                    if (this.IsSTARTNONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'STARTNO\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.STARTNOColumn]));
                     }
                 }
                 set {
@@ -2263,11 +2871,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ADJ_V0 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ADJ_V0Column]));
+                    if (this.IsADJ_V0Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ADJ_V0\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ADJ_V0Column]));
                     }
                 }
                 set {
@@ -2279,11 +2887,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ADJ_V100 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ADJ_V100Column]));
+                    if (this.IsADJ_V100Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ADJ_V100\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ADJ_V100Column]));
                     }
                 }
                 set {
@@ -2295,11 +2903,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string HARTSEL {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.HARTSELColumn]));
+                    if (this.IsHARTSELNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HARTSEL\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.HARTSELColumn]));
                     }
                 }
                 set {
@@ -2311,11 +2919,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MSGDISP {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.MSGDISPColumn]));
+                    if (this.IsMSGDISPNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MSGDISP\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.MSGDISPColumn]));
                     }
                 }
                 set {
@@ -2327,11 +2935,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string EUI64ADRS {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.EUI64ADRSColumn]));
+                    if (this.IsEUI64ADRSNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EUI64ADRS\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.EUI64ADRSColumn]));
                     }
                 }
                 set {
@@ -2343,11 +2951,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ACC {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ACCColumn]));
+                    if (this.IsACCNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ACC\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ACCColumn]));
                     }
                 }
                 set {
@@ -2359,11 +2967,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CALUT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CALUTColumn]));
+                    if (this.IsCALUTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CALUT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CALUTColumn]));
                     }
                 }
                 set {
@@ -2375,11 +2983,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAL1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAL1Column]));
+                    if (this.IsCAL1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAL1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL1Column]));
                     }
                 }
                 set {
@@ -2391,11 +2999,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAL2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAL2Column]));
+                    if (this.IsCAL2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAL2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL2Column]));
                     }
                 }
                 set {
@@ -2407,11 +3015,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAL3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CAL3Column]));
+                    if (this.IsCAL3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAL3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL3Column]));
                     }
                 }
                 set {
@@ -2423,11 +3031,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DESUT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DESUTColumn]));
+                    if (this.IsDESUTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DESUT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DESUTColumn]));
                     }
                 }
                 set {
@@ -2439,11 +3047,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DES1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DES1Column]));
+                    if (this.IsDES1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DES1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES1Column]));
                     }
                 }
                 set {
@@ -2455,11 +3063,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DES2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DES2Column]));
+                    if (this.IsDES2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DES2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES2Column]));
                     }
                 }
                 set {
@@ -2471,11 +3079,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DES3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DES3Column]));
+                    if (this.IsDES3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DES3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES3Column]));
                     }
                 }
                 set {
@@ -2487,11 +3095,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTINC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTINC1Column]));
+                    if (this.IsDTINC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTINC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC1Column]));
                     }
                 }
                 set {
@@ -2503,11 +3111,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTINC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTINC2Column]));
+                    if (this.IsDTINC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTINC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC2Column]));
                     }
                 }
                 set {
@@ -2519,11 +3127,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTINC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTINC3Column]));
+                    if (this.IsDTINC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTINC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC3Column]));
                     }
                 }
                 set {
@@ -2535,11 +3143,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTDEC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTDEC1Column]));
+                    if (this.IsDTDEC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTDEC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC1Column]));
                     }
                 }
                 set {
@@ -2551,11 +3159,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTDEC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTDEC2Column]));
+                    if (this.IsDTDEC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTDEC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC2Column]));
                     }
                 }
                 set {
@@ -2567,11 +3175,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DTDEC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.DTDEC3Column]));
+                    if (this.IsDTDEC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DTDEC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC3Column]));
                     }
                 }
                 set {
@@ -2583,11 +3191,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CONVTUT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CONVTUTColumn]));
+                    if (this.IsCONVTUTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONVTUT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVTUTColumn]));
                     }
                 }
                 set {
@@ -2599,11 +3207,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CONVT1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CONVT1Column]));
+                    if (this.IsCONVT1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONVT1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT1Column]));
                     }
                 }
                 set {
@@ -2615,11 +3223,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CONVT2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CONVT2Column]));
+                    if (this.IsCONVT2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONVT2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT2Column]));
                     }
                 }
                 set {
@@ -2631,11 +3239,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CONVT3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CONVT3Column]));
+                    if (this.IsCONVT3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CONVT3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT3Column]));
                     }
                 }
                 set {
@@ -2647,11 +3255,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMINC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMINC1Column]));
+                    if (this.IsKMINC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMINC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC1Column]));
                     }
                 }
                 set {
@@ -2663,11 +3271,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMINC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMINC2Column]));
+                    if (this.IsKMINC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMINC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC2Column]));
                     }
                 }
                 set {
@@ -2679,11 +3287,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMINC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMINC3Column]));
+                    if (this.IsKMINC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMINC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC3Column]));
                     }
                 }
                 set {
@@ -2695,11 +3303,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMDEC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMDEC1Column]));
+                    if (this.IsKMDEC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMDEC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC1Column]));
                     }
                 }
                 set {
@@ -2711,11 +3319,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMDEC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMDEC2Column]));
+                    if (this.IsKMDEC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMDEC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC2Column]));
                     }
                 }
                 set {
@@ -2727,11 +3335,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string KMDEC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.KMDEC3Column]));
+                    if (this.IsKMDEC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'KMDEC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC3Column]));
                     }
                 }
                 set {
@@ -2743,11 +3351,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPINC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPINC1Column]));
+                    if (this.IsCPINC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPINC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC1Column]));
                     }
                 }
                 set {
@@ -2759,11 +3367,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPINC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPINC2Column]));
+                    if (this.IsCPINC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPINC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC2Column]));
                     }
                 }
                 set {
@@ -2775,11 +3383,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPINC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPINC3Column]));
+                    if (this.IsCPINC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPINC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC3Column]));
                     }
                 }
                 set {
@@ -2791,11 +3399,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPDEC1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPDEC1Column]));
+                    if (this.IsCPDEC1Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPDEC1\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC1Column]));
                     }
                 }
                 set {
@@ -2807,11 +3415,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPDEC2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPDEC2Column]));
+                    if (this.IsCPDEC2Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPDEC2\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC2Column]));
                     }
                 }
                 set {
@@ -2823,11 +3431,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CPDEC3 {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CPDEC3Column]));
+                    if (this.IsCPDEC3Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CPDEC3\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC3Column]));
                     }
                 }
                 set {
@@ -2839,11 +3447,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ATMN {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ATMNColumn]));
+                    if (this.IsATMNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ATMN\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ATMNColumn]));
                     }
                 }
                 set {
@@ -2855,11 +3463,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CALTIME {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.CALTIMEColumn]));
+                    if (this.IsCALTIMENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CALTIME\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CALTIMEColumn]));
                     }
                 }
                 set {
@@ -2871,11 +3479,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ZEROR {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ZERORColumn]));
+                    if (this.IsZERORNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ZEROR\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ZERORColumn]));
                     }
                 }
                 set {
@@ -2887,11 +3495,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SPANR {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.SPANRColumn]));
+                    if (this.IsSPANRNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SPANR\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.SPANRColumn]));
                     }
                 }
                 set {
@@ -2903,11 +3511,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ADJUNIT {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.ADJUNITColumn]));
+                    if (this.IsADJUNITNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ADJUNIT\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ADJUNITColumn]));
                     }
                 }
                 set {
@@ -2919,11 +3527,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string WTMATL {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.WTMATLColumn]));
+                    if (this.IsWTMATLNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WTMATL\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.WTMATLColumn]));
                     }
                 }
                 set {
@@ -2935,15 +3543,623 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FLSIZE {
                 get {
-                    try {
-                        return ((string)(this[this.tableCalibrationDataTable.FLSIZEColumn]));
+                    if (this.IsFLSIZENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FLSIZE\' in table \'CalibrationDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.FLSIZEColumn]));
                     }
                 }
                 set {
                     this[this.tableCalibrationDataTable.FLSIZEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CAL4 {
+                get {
+                    if (this.IsCAL4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CAL4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CAL5 {
+                get {
+                    if (this.IsCAL5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CAL5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CAL6 {
+                get {
+                    if (this.IsCAL6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CAL6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CAL7 {
+                get {
+                    if (this.IsCAL7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CAL7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CAL7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DES4 {
+                get {
+                    if (this.IsDES4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DES4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DES5 {
+                get {
+                    if (this.IsDES5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DES5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DES6 {
+                get {
+                    if (this.IsDES6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DES6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DES7 {
+                get {
+                    if (this.IsDES7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DES7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DES7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTINC4 {
+                get {
+                    if (this.IsDTINC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTINC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTINC5 {
+                get {
+                    if (this.IsDTINC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTINC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTINC6 {
+                get {
+                    if (this.IsDTINC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTINC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTINC7 {
+                get {
+                    if (this.IsDTINC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTINC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTINC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTDEC4 {
+                get {
+                    if (this.IsDTDEC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTDEC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTDEC5 {
+                get {
+                    if (this.IsDTDEC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTDEC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTDEC6 {
+                get {
+                    if (this.IsDTDEC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTDEC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DTDEC7 {
+                get {
+                    if (this.IsDTDEC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.DTDEC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.DTDEC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONVT4 {
+                get {
+                    if (this.IsCONVT4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CONVT4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONVT5 {
+                get {
+                    if (this.IsCONVT5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CONVT5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONVT6 {
+                get {
+                    if (this.IsCONVT6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CONVT6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CONVT7 {
+                get {
+                    if (this.IsCONVT7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CONVT7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CONVT7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMINC4 {
+                get {
+                    if (this.IsKMINC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMINC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMINC5 {
+                get {
+                    if (this.IsKMINC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMINC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMINC6 {
+                get {
+                    if (this.IsKMINC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMINC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMINC7 {
+                get {
+                    if (this.IsKMINC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMINC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMINC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMDEC4 {
+                get {
+                    if (this.IsKMDEC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMDEC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMDEC5 {
+                get {
+                    if (this.IsKMDEC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMDEC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMDEC6 {
+                get {
+                    if (this.IsKMDEC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMDEC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string KMDEC7 {
+                get {
+                    if (this.IsKMDEC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.KMDEC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.KMDEC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPINC4 {
+                get {
+                    if (this.IsCPINC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPINC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPINC5 {
+                get {
+                    if (this.IsCPINC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPINC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPINC6 {
+                get {
+                    if (this.IsCPINC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPINC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPINC7 {
+                get {
+                    if (this.IsCPINC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPINC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPINC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPDEC4 {
+                get {
+                    if (this.IsCPDEC4Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC4Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPDEC4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPDEC5 {
+                get {
+                    if (this.IsCPDEC5Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC5Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPDEC5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPDEC6 {
+                get {
+                    if (this.IsCPDEC6Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC6Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPDEC6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CPDEC7 {
+                get {
+                    if (this.IsCPDEC7Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.CPDEC7Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.CPDEC7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ACC2 {
+                get {
+                    if (this.IsACC2Null()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.ACC2Column]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.ACC2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TUSER {
+                get {
+                    if (this.IsTUSERNull()) {
+                        return string.Empty;
+                    }
+                    else {
+                        return ((string)(this[this.tableCalibrationDataTable.TUSERColumn]));
+                    }
+                }
+                set {
+                    this[this.tableCalibrationDataTable.TUSERColumn] = value;
                 }
             }
             
@@ -3846,6 +5062,462 @@ namespace ReportManager.Data.Database {
             public void SetFLSIZENull() {
                 this[this.tableCalibrationDataTable.FLSIZEColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAL4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CAL4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAL4Null() {
+                this[this.tableCalibrationDataTable.CAL4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAL5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CAL5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAL5Null() {
+                this[this.tableCalibrationDataTable.CAL5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAL6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CAL6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAL6Null() {
+                this[this.tableCalibrationDataTable.CAL6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCAL7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CAL7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCAL7Null() {
+                this[this.tableCalibrationDataTable.CAL7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDES4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DES4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDES4Null() {
+                this[this.tableCalibrationDataTable.DES4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDES5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DES5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDES5Null() {
+                this[this.tableCalibrationDataTable.DES5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDES6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DES6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDES6Null() {
+                this[this.tableCalibrationDataTable.DES6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDES7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DES7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDES7Null() {
+                this[this.tableCalibrationDataTable.DES7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTINC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTINC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTINC4Null() {
+                this[this.tableCalibrationDataTable.DTINC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTINC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTINC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTINC5Null() {
+                this[this.tableCalibrationDataTable.DTINC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTINC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTINC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTINC6Null() {
+                this[this.tableCalibrationDataTable.DTINC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTINC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTINC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTINC7Null() {
+                this[this.tableCalibrationDataTable.DTINC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTDEC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTDEC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTDEC4Null() {
+                this[this.tableCalibrationDataTable.DTDEC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTDEC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTDEC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTDEC5Null() {
+                this[this.tableCalibrationDataTable.DTDEC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTDEC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTDEC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTDEC6Null() {
+                this[this.tableCalibrationDataTable.DTDEC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDTDEC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.DTDEC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDTDEC7Null() {
+                this[this.tableCalibrationDataTable.DTDEC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONVT4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CONVT4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONVT4Null() {
+                this[this.tableCalibrationDataTable.CONVT4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONVT5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CONVT5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONVT5Null() {
+                this[this.tableCalibrationDataTable.CONVT5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONVT6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CONVT6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONVT6Null() {
+                this[this.tableCalibrationDataTable.CONVT6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCONVT7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CONVT7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCONVT7Null() {
+                this[this.tableCalibrationDataTable.CONVT7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMINC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMINC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMINC4Null() {
+                this[this.tableCalibrationDataTable.KMINC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMINC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMINC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMINC5Null() {
+                this[this.tableCalibrationDataTable.KMINC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMINC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMINC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMINC6Null() {
+                this[this.tableCalibrationDataTable.KMINC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMINC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMINC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMINC7Null() {
+                this[this.tableCalibrationDataTable.KMINC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMDEC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMDEC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMDEC4Null() {
+                this[this.tableCalibrationDataTable.KMDEC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMDEC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMDEC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMDEC5Null() {
+                this[this.tableCalibrationDataTable.KMDEC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMDEC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMDEC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMDEC6Null() {
+                this[this.tableCalibrationDataTable.KMDEC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKMDEC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.KMDEC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetKMDEC7Null() {
+                this[this.tableCalibrationDataTable.KMDEC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPINC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPINC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPINC4Null() {
+                this[this.tableCalibrationDataTable.CPINC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPINC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPINC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPINC5Null() {
+                this[this.tableCalibrationDataTable.CPINC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPINC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPINC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPINC6Null() {
+                this[this.tableCalibrationDataTable.CPINC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPINC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPINC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPINC7Null() {
+                this[this.tableCalibrationDataTable.CPINC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPDEC4Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPDEC4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPDEC4Null() {
+                this[this.tableCalibrationDataTable.CPDEC4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPDEC5Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPDEC5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPDEC5Null() {
+                this[this.tableCalibrationDataTable.CPDEC5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPDEC6Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPDEC6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPDEC6Null() {
+                this[this.tableCalibrationDataTable.CPDEC6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCPDEC7Null() {
+                return this.IsNull(this.tableCalibrationDataTable.CPDEC7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCPDEC7Null() {
+                this[this.tableCalibrationDataTable.CPDEC7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsACC2Null() {
+                return this.IsNull(this.tableCalibrationDataTable.ACC2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetACC2Null() {
+                this[this.tableCalibrationDataTable.ACC2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTUSERNull() {
+                return this.IsNull(this.tableCalibrationDataTable.TUSERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTUSERNull() {
+                this[this.tableCalibrationDataTable.TUSERColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -4083,10 +5755,75 @@ namespace ReportManager.Data.Database.CalibrationDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ADJUNIT", "ADJUNIT");
             tableMapping.ColumnMappings.Add("WTMATL", "WTMATL");
             tableMapping.ColumnMappings.Add("FLSIZE", "FLSIZE");
+            tableMapping.ColumnMappings.Add("CAL4", "CAL4");
+            tableMapping.ColumnMappings.Add("CAL5", "CAL5");
+            tableMapping.ColumnMappings.Add("CAL6", "CAL6");
+            tableMapping.ColumnMappings.Add("CAL7", "CAL7");
+            tableMapping.ColumnMappings.Add("DES4", "DES4");
+            tableMapping.ColumnMappings.Add("DES5", "DES5");
+            tableMapping.ColumnMappings.Add("DES6", "DES6");
+            tableMapping.ColumnMappings.Add("DES7", "DES7");
+            tableMapping.ColumnMappings.Add("DTINC4", "DTINC4");
+            tableMapping.ColumnMappings.Add("DTINC5", "DTINC5");
+            tableMapping.ColumnMappings.Add("DTINC6", "DTINC6");
+            tableMapping.ColumnMappings.Add("DTINC7", "DTINC7");
+            tableMapping.ColumnMappings.Add("DTDEC4", "DTDEC4");
+            tableMapping.ColumnMappings.Add("DTDEC5", "DTDEC5");
+            tableMapping.ColumnMappings.Add("DTDEC6", "DTDEC6");
+            tableMapping.ColumnMappings.Add("DTDEC7", "DTDEC7");
+            tableMapping.ColumnMappings.Add("CONVT4", "CONVT4");
+            tableMapping.ColumnMappings.Add("CONVT5", "CONVT5");
+            tableMapping.ColumnMappings.Add("CONVT6", "CONVT6");
+            tableMapping.ColumnMappings.Add("CONVT7", "CONVT7");
+            tableMapping.ColumnMappings.Add("KMINC4", "KMINC4");
+            tableMapping.ColumnMappings.Add("KMINC5", "KMINC5");
+            tableMapping.ColumnMappings.Add("KMINC6", "KMINC6");
+            tableMapping.ColumnMappings.Add("KMINC7", "KMINC7");
+            tableMapping.ColumnMappings.Add("KMDEC4", "KMDEC4");
+            tableMapping.ColumnMappings.Add("KMDEC5", "KMDEC5");
+            tableMapping.ColumnMappings.Add("KMDEC6", "KMDEC6");
+            tableMapping.ColumnMappings.Add("KMDEC7", "KMDEC7");
+            tableMapping.ColumnMappings.Add("CPINC4", "CPINC4");
+            tableMapping.ColumnMappings.Add("CPINC5", "CPINC5");
+            tableMapping.ColumnMappings.Add("CPINC6", "CPINC6");
+            tableMapping.ColumnMappings.Add("CPINC7", "CPINC7");
+            tableMapping.ColumnMappings.Add("CPDEC4", "CPDEC4");
+            tableMapping.ColumnMappings.Add("CPDEC5", "CPDEC5");
+            tableMapping.ColumnMappings.Add("CPDEC6", "CPDEC6");
+            tableMapping.ColumnMappings.Add("CPDEC7", "CPDEC7");
+            tableMapping.ColumnMappings.Add("ACC2", "ACC2");
+            tableMapping.ColumnMappings.Add("TUSER", "TUSER");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [CRC_TB] ([SERIAL], [RESULT], [CAPNO], [AMPNO], [MSCODE], [STYLE], [ORDERNO], [RANGE], [TAG], [SQRT], [XJNO], [QIC], [BAR], [STN], [KMSERIAL1], [KMSERIAL2], [LINENAME], [SOFT], [VERSION], [CAL_DATE], [CAL_TIME], [TEMP], [HUMD], [DAMPING], [STBL], [ETHERCOM_VER], [BHCOM_VER], [PRESSCONT_VER], [PRESS_INI], [CRCX_INI], [EJXMSCODE_INI], [ATMOSPHERE], [STARTNO], [ADJ_V0], [ADJ_V100], [HARTSEL], [MSGDISP], [EUI64ADRS], [ACC], [CALUT], [CAL1], [CAL2], [CAL3], [DESUT], [DES1], [DES2], [DES3], [DTINC1], [DTINC2], [DTINC3], [DTDEC1], [DTDEC2], [DTDEC3], [CONVTUT], [CONVT1], [CONVT2], [CONVT3], [KMINC1], [KMINC2], [KMINC3], [KMDEC1], [KMDEC2], [KMDEC3], [CPINC1], [CPINC2], [CPINC3], [CPDEC1], [CPDEC2], [CPDEC3], [ATMN], [CALTIME], [ZEROR], [SPANR], [ADJUNIT], [WTMATL], [FLSIZE]) VALUES (@SERIAL, @RESULT, @CAPNO, @AMPNO, @MSCODE, @STYLE, @ORDERNO, @RANGE, @TAG, @SQRT, @XJNO, @QIC, @BAR, @STN, @KMSERIAL1, @KMSERIAL2, @LINENAME, @SOFT, @VERSION, @CAL_DATE, @CAL_TIME, @TEMP, @HUMD, @DAMPING, @STBL, @ETHERCOM_VER, @BHCOM_VER, @PRESSCONT_VER, @PRESS_INI, @CRCX_INI, @EJXMSCODE_INI, @ATMOSPHERE, @STARTNO, @ADJ_V0, @ADJ_V100, @HARTSEL, @MSGDISP, @EUI64ADRS, @ACC, @CALUT, @CAL1, @CAL2, @CAL3, @DESUT, @DES1, @DES2, @DES3, @DTINC1, @DTINC2, @DTINC3, @DTDEC1, @DTDEC2, @DTDEC3, @CONVTUT, @CONVT1, @CONVT2, @CONVT3, @KMINC1, @KMINC2, @KMINC3, @KMDEC1, @KMDEC2, @KMDEC3, @CPINC1, @CPINC2, @CPINC3, @CPDEC1, @CPDEC2, @CPDEC3, @ATMN, @CALTIME, @ZEROR, @SPANR, @ADJUNIT, @WTMATL, @FLSIZE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [CRC_TB] ([SERIAL], [RESULT], [CAPNO], [AMPNO], [MSCODE], [STYLE], [O" +
+                "RDERNO], [RANGE], [TAG], [SQRT], [XJNO], [QIC], [BAR], [STN], [KMSERIAL1], [KMSE" +
+                "RIAL2], [LINENAME], [SOFT], [VERSION], [CAL_DATE], [CAL_TIME], [TEMP], [HUMD], [" +
+                "DAMPING], [STBL], [ETHERCOM_VER], [BHCOM_VER], [PRESSCONT_VER], [PRESS_INI], [CR" +
+                "CX_INI], [EJXMSCODE_INI], [ATMOSPHERE], [STARTNO], [ADJ_V0], [ADJ_V100], [HARTSE" +
+                "L], [MSGDISP], [EUI64ADRS], [ACC], [CALUT], [CAL1], [CAL2], [CAL3], [CAL4], [CAL" +
+                "5], [CAL6], [CAL7], [DESUT], [DES1], [DES2], [DES3], [DES4], [DES5], [DES6], [DE" +
+                "S7], [DTINC1], [DTINC2], [DTINC3], [DTINC4], [DTINC5], [DTINC6], [DTINC7], [DTDE" +
+                "C1], [DTDEC2], [DTDEC3], [DTDEC4], [DTDEC5], [DTDEC6], [DTDEC7], [CONVTUT], [CON" +
+                "VT1], [CONVT2], [CONVT3], [CONVT4], [CONVT5], [CONVT6], [CONVT7], [KMINC1], [KMI" +
+                "NC2], [KMINC3], [KMINC4], [KMINC5], [KMINC6], [KMINC7], [KMDEC1], [KMDEC2], [KMD" +
+                "EC3], [KMDEC4], [KMDEC5], [KMDEC6], [KMDEC7], [CPINC1], [CPINC2], [CPINC3], [CPI" +
+                "NC4], [CPINC5], [CPINC6], [CPINC7], [CPDEC1], [CPDEC2], [CPDEC3], [CPDEC4], [CPD" +
+                "EC5], [CPDEC6], [CPDEC7], [ATMN], [CALTIME], [ZEROR], [SPANR], [ADJUNIT], [WTMAT" +
+                "L], [FLSIZE], [ACC2], [TUSER]) VALUES (@SERIAL, @RESULT, @CAPNO, @AMPNO, @MSCODE" +
+                ", @STYLE, @ORDERNO, @RANGE, @TAG, @SQRT, @XJNO, @QIC, @BAR, @STN, @KMSERIAL1, @K" +
+                "MSERIAL2, @LINENAME, @SOFT, @VERSION, @CAL_DATE, @CAL_TIME, @TEMP, @HUMD, @DAMPI" +
+                "NG, @STBL, @ETHERCOM_VER, @BHCOM_VER, @PRESSCONT_VER, @PRESS_INI, @CRCX_INI, @EJ" +
+                "XMSCODE_INI, @ATMOSPHERE, @STARTNO, @ADJ_V0, @ADJ_V100, @HARTSEL, @MSGDISP, @EUI" +
+                "64ADRS, @ACC, @CALUT, @CAL1, @CAL2, @CAL3, @CAL4, @CAL5, @CAL6, @CAL7, @DESUT, @" +
+                "DES1, @DES2, @DES3, @DES4, @DES5, @DES6, @DES7, @DTINC1, @DTINC2, @DTINC3, @DTIN" +
+                "C4, @DTINC5, @DTINC6, @DTINC7, @DTDEC1, @DTDEC2, @DTDEC3, @DTDEC4, @DTDEC5, @DTD" +
+                "EC6, @DTDEC7, @CONVTUT, @CONVT1, @CONVT2, @CONVT3, @CONVT4, @CONVT5, @CONVT6, @C" +
+                "ONVT7, @KMINC1, @KMINC2, @KMINC3, @KMINC4, @KMINC5, @KMINC6, @KMINC7, @KMDEC1, @" +
+                "KMDEC2, @KMDEC3, @KMDEC4, @KMDEC5, @KMDEC6, @KMDEC7, @CPINC1, @CPINC2, @CPINC3, " +
+                "@CPINC4, @CPINC5, @CPINC6, @CPINC7, @CPDEC1, @CPDEC2, @CPDEC3, @CPDEC4, @CPDEC5," +
+                " @CPDEC6, @CPDEC7, @ATMN, @CALTIME, @ZEROR, @SPANR, @ADJUNIT, @WTMATL, @FLSIZE, " +
+                "@ACC2, @TUSER)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SERIAL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RESULT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RESULT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4131,32 +5868,68 @@ namespace ReportManager.Data.Database.CalibrationDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAL7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CAL7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DESUT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DESUT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DES7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DES7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTINC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTINC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DTDEC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DTDEC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVTUT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVTUT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CONVT7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CONVT7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMINC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMINC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KMDEC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KMDEC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPINC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPINC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC3", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC3", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC4", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC4", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC5", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC5", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC6", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPDEC7", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPDEC7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ATMN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ATMN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CALTIME", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CALTIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZEROR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZEROR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4164,6 +5937,8 @@ namespace ReportManager.Data.Database.CalibrationDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ADJUNIT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ADJUNIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WTMATL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "WTMATL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FLSIZE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FLSIZE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACC2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACC2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TUSER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TUSER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4179,17 +5954,17 @@ namespace ReportManager.Data.Database.CalibrationDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT                      CRC_TB.*\r\nFROM                         CRC_TB";
+            this._commandCollection[0].CommandText = @"SELECT        SERIAL, RESULT, CAPNO, AMPNO, MSCODE, STYLE, ORDERNO, RANGE, TAG, SQRT, XJNO, QIC, BAR, STN, KMSERIAL1, KMSERIAL2, LINENAME, SOFT, VERSION, CAL_DATE, CAL_TIME, TEMP, HUMD, 
+                         DAMPING, STBL, ETHERCOM_VER, BHCOM_VER, PRESSCONT_VER, PRESS_INI, CRCX_INI, EJXMSCODE_INI, ATMOSPHERE, STARTNO, ADJ_V0, ADJ_V100, HARTSEL, MSGDISP, EUI64ADRS, ACC, CALUT, 
+                         CAL1, CAL2, CAL3, CAL4, CAL5, CAL6, CAL7, DESUT, DES1, DES2, DES3, DES4, DES5, DES6, DES7, DTINC1, DTINC2, DTINC3, DTINC4, DTINC5, DTINC6, DTINC7, DTDEC1, DTDEC2, DTDEC3, DTDEC4, DTDEC5, 
+                         DTDEC6, DTDEC7, CONVTUT, CONVT1, CONVT2, CONVT3, CONVT4, CONVT5, CONVT6, CONVT7, KMINC1, KMINC2, KMINC3, KMINC4, KMINC5, KMINC6, KMINC7, KMDEC1, KMDEC2, KMDEC3, KMDEC4, KMDEC5, 
+                         KMDEC6, KMDEC7, CPINC1, CPINC2, CPINC3, CPINC4, CPINC5, CPINC6, CPINC7, CPDEC1, CPDEC2, CPDEC3, CPDEC4, CPDEC5, CPDEC6, CPDEC7, ATMN, CALTIME, ZEROR, SPANR, ADJUNIT, WTMATL, FLSIZE, 
+                         ACC2, TUSER
+FROM            CRC_TB";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT                      SERIAL, RESULT, CAPNO, AMPNO, MSCODE, STYLE, ORDERNO, RANGE, TAG, SQRT, XJNO, QIC, BAR, STN, KMSERIAL1, KMSERIAL2, LINENAME, 
-                                      SOFT, VERSION, CAL_DATE, CAL_TIME, TEMP, HUMD, DAMPING, STBL, ETHERCOM_VER, BHCOM_VER, PRESSCONT_VER, PRESS_INI, CRCX_INI, 
-                                      EJXMSCODE_INI, ATMOSPHERE, STARTNO, ADJ_V0, ADJ_V100, HARTSEL, MSGDISP, EUI64ADRS, ACC, CALUT, CAL1, CAL2, CAL3, DESUT, DES1, 
-                                      DES2, DES3, DTINC1, DTINC2, DTINC3, DTDEC1, DTDEC2, DTDEC3, CONVTUT, CONVT1, CONVT2, CONVT3, KMINC1, KMINC2, KMINC3, KMDEC1,
-                                       KMDEC2, KMDEC3, CPINC1, CPINC2, CPINC3, CPDEC1, CPDEC2, CPDEC3, ATMN, CALTIME, ZEROR, SPANR, ADJUNIT, WTMATL, FLSIZE
-FROM                         CRC_TB
-WHERE                       (SERIAL = @barcode)";
+            this._commandCollection[1].CommandText = @"SELECT ACC, ACC2, ADJUNIT, ADJ_V0, ADJ_V100, AMPNO, ATMN, ATMOSPHERE, BAR, BHCOM_VER, CAL1, CAL2, CAL3, CAL4, CAL5, CAL6, CAL7, CALTIME, CALUT, CAL_DATE, CAL_TIME, CAPNO, CONVT1, CONVT2, CONVT3, CONVT4, CONVT5, CONVT6, CONVT7, CONVTUT, CPDEC1, CPDEC2, CPDEC3, CPDEC4, CPDEC5, CPDEC6, CPDEC7, CPINC1, CPINC2, CPINC3, CPINC4, CPINC5, CPINC6, CPINC7, CRCX_INI, DAMPING, DES1, DES2, DES3, DES4, DES5, DES6, DES7, DESUT, DTDEC1, DTDEC2, DTDEC3, DTDEC4, DTDEC5, DTDEC6, DTDEC7, DTINC1, DTINC2, DTINC3, DTINC4, DTINC5, DTINC6, DTINC7, EJXMSCODE_INI, ETHERCOM_VER, EUI64ADRS, FLSIZE, HARTSEL, HUMD, KMDEC1, KMDEC2, KMDEC3, KMDEC4, KMDEC5, KMDEC6, KMDEC7, KMINC1, KMINC2, KMINC3, KMINC4, KMINC5, KMINC6, KMINC7, KMSERIAL1, KMSERIAL2, LINENAME, MSCODE, MSGDISP, ORDERNO, PRESSCONT_VER, PRESS_INI, QIC, RANGE, RESULT, SERIAL, SOFT, SPANR, SQRT, STARTNO, STBL, STN, STYLE, TAG, TEMP, TUSER, VERSION, WTMATL, XJNO, ZEROR FROM CRC_TB WHERE (SERIAL = @barcode)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barcode", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "SERIAL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4331,39 +6106,77 @@ WHERE                       (SERIAL = @barcode)";
                     string CAL1, 
                     string CAL2, 
                     string CAL3, 
+                    string CAL4, 
+                    string CAL5, 
+                    string CAL6, 
+                    string CAL7, 
                     string DESUT, 
                     string DES1, 
                     string DES2, 
                     string DES3, 
+                    string DES4, 
+                    string DES5, 
+                    string DES6, 
+                    string DES7, 
                     string DTINC1, 
                     string DTINC2, 
                     string DTINC3, 
+                    string DTINC4, 
+                    string DTINC5, 
+                    string DTINC6, 
+                    string DTINC7, 
                     string DTDEC1, 
                     string DTDEC2, 
                     string DTDEC3, 
+                    string DTDEC4, 
+                    string DTDEC5, 
+                    string DTDEC6, 
+                    string DTDEC7, 
                     string CONVTUT, 
                     string CONVT1, 
                     string CONVT2, 
                     string CONVT3, 
+                    string CONVT4, 
+                    string CONVT5, 
+                    string CONVT6, 
+                    string CONVT7, 
                     string KMINC1, 
                     string KMINC2, 
                     string KMINC3, 
+                    string KMINC4, 
+                    string KMINC5, 
+                    string KMINC6, 
+                    string KMINC7, 
                     string KMDEC1, 
                     string KMDEC2, 
                     string KMDEC3, 
+                    string KMDEC4, 
+                    string KMDEC5, 
+                    string KMDEC6, 
+                    string KMDEC7, 
                     string CPINC1, 
                     string CPINC2, 
                     string CPINC3, 
+                    string CPINC4, 
+                    string CPINC5, 
+                    string CPINC6, 
+                    string CPINC7, 
                     string CPDEC1, 
                     string CPDEC2, 
                     string CPDEC3, 
+                    string CPDEC4, 
+                    string CPDEC5, 
+                    string CPDEC6, 
+                    string CPDEC7, 
                     string ATMN, 
                     string CALTIME, 
                     string ZEROR, 
                     string SPANR, 
                     string ADJUNIT, 
                     string WTMATL, 
-                    string FLSIZE) {
+                    string FLSIZE, 
+                    string ACC2, 
+                    string TUSER) {
             if ((SERIAL == null)) {
                 throw new global::System.ArgumentNullException("SERIAL");
             }
@@ -4622,203 +6435,431 @@ WHERE                       (SERIAL = @barcode)";
             else {
                 this.Adapter.InsertCommand.Parameters[42].Value = ((string)(CAL3));
             }
-            if ((DESUT == null)) {
+            if ((CAL4 == null)) {
                 this.Adapter.InsertCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(DESUT));
+                this.Adapter.InsertCommand.Parameters[43].Value = ((string)(CAL4));
             }
-            if ((DES1 == null)) {
+            if ((CAL5 == null)) {
                 this.Adapter.InsertCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(DES1));
+                this.Adapter.InsertCommand.Parameters[44].Value = ((string)(CAL5));
             }
-            if ((DES2 == null)) {
+            if ((CAL6 == null)) {
                 this.Adapter.InsertCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(DES2));
+                this.Adapter.InsertCommand.Parameters[45].Value = ((string)(CAL6));
             }
-            if ((DES3 == null)) {
+            if ((CAL7 == null)) {
                 this.Adapter.InsertCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(DES3));
+                this.Adapter.InsertCommand.Parameters[46].Value = ((string)(CAL7));
             }
-            if ((DTINC1 == null)) {
+            if ((DESUT == null)) {
                 this.Adapter.InsertCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(DTINC1));
+                this.Adapter.InsertCommand.Parameters[47].Value = ((string)(DESUT));
             }
-            if ((DTINC2 == null)) {
+            if ((DES1 == null)) {
                 this.Adapter.InsertCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(DTINC2));
+                this.Adapter.InsertCommand.Parameters[48].Value = ((string)(DES1));
             }
-            if ((DTINC3 == null)) {
+            if ((DES2 == null)) {
                 this.Adapter.InsertCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[49].Value = ((string)(DTINC3));
+                this.Adapter.InsertCommand.Parameters[49].Value = ((string)(DES2));
             }
-            if ((DTDEC1 == null)) {
+            if ((DES3 == null)) {
                 this.Adapter.InsertCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[50].Value = ((string)(DTDEC1));
+                this.Adapter.InsertCommand.Parameters[50].Value = ((string)(DES3));
             }
-            if ((DTDEC2 == null)) {
+            if ((DES4 == null)) {
                 this.Adapter.InsertCommand.Parameters[51].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[51].Value = ((string)(DTDEC2));
+                this.Adapter.InsertCommand.Parameters[51].Value = ((string)(DES4));
             }
-            if ((DTDEC3 == null)) {
+            if ((DES5 == null)) {
                 this.Adapter.InsertCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[52].Value = ((string)(DTDEC3));
+                this.Adapter.InsertCommand.Parameters[52].Value = ((string)(DES5));
             }
-            if ((CONVTUT == null)) {
+            if ((DES6 == null)) {
                 this.Adapter.InsertCommand.Parameters[53].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[53].Value = ((string)(CONVTUT));
+                this.Adapter.InsertCommand.Parameters[53].Value = ((string)(DES6));
             }
-            if ((CONVT1 == null)) {
+            if ((DES7 == null)) {
                 this.Adapter.InsertCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[54].Value = ((string)(CONVT1));
+                this.Adapter.InsertCommand.Parameters[54].Value = ((string)(DES7));
             }
-            if ((CONVT2 == null)) {
+            if ((DTINC1 == null)) {
                 this.Adapter.InsertCommand.Parameters[55].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[55].Value = ((string)(CONVT2));
+                this.Adapter.InsertCommand.Parameters[55].Value = ((string)(DTINC1));
             }
-            if ((CONVT3 == null)) {
+            if ((DTINC2 == null)) {
                 this.Adapter.InsertCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[56].Value = ((string)(CONVT3));
+                this.Adapter.InsertCommand.Parameters[56].Value = ((string)(DTINC2));
             }
-            if ((KMINC1 == null)) {
+            if ((DTINC3 == null)) {
                 this.Adapter.InsertCommand.Parameters[57].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[57].Value = ((string)(KMINC1));
+                this.Adapter.InsertCommand.Parameters[57].Value = ((string)(DTINC3));
             }
-            if ((KMINC2 == null)) {
+            if ((DTINC4 == null)) {
                 this.Adapter.InsertCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[58].Value = ((string)(KMINC2));
+                this.Adapter.InsertCommand.Parameters[58].Value = ((string)(DTINC4));
             }
-            if ((KMINC3 == null)) {
+            if ((DTINC5 == null)) {
                 this.Adapter.InsertCommand.Parameters[59].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[59].Value = ((string)(KMINC3));
+                this.Adapter.InsertCommand.Parameters[59].Value = ((string)(DTINC5));
             }
-            if ((KMDEC1 == null)) {
+            if ((DTINC6 == null)) {
                 this.Adapter.InsertCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[60].Value = ((string)(KMDEC1));
+                this.Adapter.InsertCommand.Parameters[60].Value = ((string)(DTINC6));
             }
-            if ((KMDEC2 == null)) {
+            if ((DTINC7 == null)) {
                 this.Adapter.InsertCommand.Parameters[61].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[61].Value = ((string)(KMDEC2));
+                this.Adapter.InsertCommand.Parameters[61].Value = ((string)(DTINC7));
             }
-            if ((KMDEC3 == null)) {
+            if ((DTDEC1 == null)) {
                 this.Adapter.InsertCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[62].Value = ((string)(KMDEC3));
+                this.Adapter.InsertCommand.Parameters[62].Value = ((string)(DTDEC1));
             }
-            if ((CPINC1 == null)) {
+            if ((DTDEC2 == null)) {
                 this.Adapter.InsertCommand.Parameters[63].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[63].Value = ((string)(CPINC1));
+                this.Adapter.InsertCommand.Parameters[63].Value = ((string)(DTDEC2));
             }
-            if ((CPINC2 == null)) {
+            if ((DTDEC3 == null)) {
                 this.Adapter.InsertCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[64].Value = ((string)(CPINC2));
+                this.Adapter.InsertCommand.Parameters[64].Value = ((string)(DTDEC3));
             }
-            if ((CPINC3 == null)) {
+            if ((DTDEC4 == null)) {
                 this.Adapter.InsertCommand.Parameters[65].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[65].Value = ((string)(CPINC3));
+                this.Adapter.InsertCommand.Parameters[65].Value = ((string)(DTDEC4));
             }
-            if ((CPDEC1 == null)) {
+            if ((DTDEC5 == null)) {
                 this.Adapter.InsertCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[66].Value = ((string)(CPDEC1));
+                this.Adapter.InsertCommand.Parameters[66].Value = ((string)(DTDEC5));
             }
-            if ((CPDEC2 == null)) {
+            if ((DTDEC6 == null)) {
                 this.Adapter.InsertCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[67].Value = ((string)(CPDEC2));
+                this.Adapter.InsertCommand.Parameters[67].Value = ((string)(DTDEC6));
             }
-            if ((CPDEC3 == null)) {
+            if ((DTDEC7 == null)) {
                 this.Adapter.InsertCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[68].Value = ((string)(CPDEC3));
+                this.Adapter.InsertCommand.Parameters[68].Value = ((string)(DTDEC7));
             }
-            if ((ATMN == null)) {
+            if ((CONVTUT == null)) {
                 this.Adapter.InsertCommand.Parameters[69].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[69].Value = ((string)(ATMN));
+                this.Adapter.InsertCommand.Parameters[69].Value = ((string)(CONVTUT));
             }
-            if ((CALTIME == null)) {
+            if ((CONVT1 == null)) {
                 this.Adapter.InsertCommand.Parameters[70].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[70].Value = ((string)(CALTIME));
+                this.Adapter.InsertCommand.Parameters[70].Value = ((string)(CONVT1));
             }
-            if ((ZEROR == null)) {
+            if ((CONVT2 == null)) {
                 this.Adapter.InsertCommand.Parameters[71].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[71].Value = ((string)(ZEROR));
+                this.Adapter.InsertCommand.Parameters[71].Value = ((string)(CONVT2));
             }
-            if ((SPANR == null)) {
+            if ((CONVT3 == null)) {
                 this.Adapter.InsertCommand.Parameters[72].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[72].Value = ((string)(SPANR));
+                this.Adapter.InsertCommand.Parameters[72].Value = ((string)(CONVT3));
             }
-            if ((ADJUNIT == null)) {
+            if ((CONVT4 == null)) {
                 this.Adapter.InsertCommand.Parameters[73].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[73].Value = ((string)(ADJUNIT));
+                this.Adapter.InsertCommand.Parameters[73].Value = ((string)(CONVT4));
             }
-            if ((WTMATL == null)) {
+            if ((CONVT5 == null)) {
                 this.Adapter.InsertCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[74].Value = ((string)(WTMATL));
+                this.Adapter.InsertCommand.Parameters[74].Value = ((string)(CONVT5));
             }
-            if ((FLSIZE == null)) {
+            if ((CONVT6 == null)) {
                 this.Adapter.InsertCommand.Parameters[75].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[75].Value = ((string)(FLSIZE));
+                this.Adapter.InsertCommand.Parameters[75].Value = ((string)(CONVT6));
+            }
+            if ((CONVT7 == null)) {
+                this.Adapter.InsertCommand.Parameters[76].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[76].Value = ((string)(CONVT7));
+            }
+            if ((KMINC1 == null)) {
+                this.Adapter.InsertCommand.Parameters[77].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[77].Value = ((string)(KMINC1));
+            }
+            if ((KMINC2 == null)) {
+                this.Adapter.InsertCommand.Parameters[78].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[78].Value = ((string)(KMINC2));
+            }
+            if ((KMINC3 == null)) {
+                this.Adapter.InsertCommand.Parameters[79].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[79].Value = ((string)(KMINC3));
+            }
+            if ((KMINC4 == null)) {
+                this.Adapter.InsertCommand.Parameters[80].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[80].Value = ((string)(KMINC4));
+            }
+            if ((KMINC5 == null)) {
+                this.Adapter.InsertCommand.Parameters[81].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[81].Value = ((string)(KMINC5));
+            }
+            if ((KMINC6 == null)) {
+                this.Adapter.InsertCommand.Parameters[82].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[82].Value = ((string)(KMINC6));
+            }
+            if ((KMINC7 == null)) {
+                this.Adapter.InsertCommand.Parameters[83].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[83].Value = ((string)(KMINC7));
+            }
+            if ((KMDEC1 == null)) {
+                this.Adapter.InsertCommand.Parameters[84].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[84].Value = ((string)(KMDEC1));
+            }
+            if ((KMDEC2 == null)) {
+                this.Adapter.InsertCommand.Parameters[85].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[85].Value = ((string)(KMDEC2));
+            }
+            if ((KMDEC3 == null)) {
+                this.Adapter.InsertCommand.Parameters[86].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[86].Value = ((string)(KMDEC3));
+            }
+            if ((KMDEC4 == null)) {
+                this.Adapter.InsertCommand.Parameters[87].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[87].Value = ((string)(KMDEC4));
+            }
+            if ((KMDEC5 == null)) {
+                this.Adapter.InsertCommand.Parameters[88].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[88].Value = ((string)(KMDEC5));
+            }
+            if ((KMDEC6 == null)) {
+                this.Adapter.InsertCommand.Parameters[89].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[89].Value = ((string)(KMDEC6));
+            }
+            if ((KMDEC7 == null)) {
+                this.Adapter.InsertCommand.Parameters[90].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[90].Value = ((string)(KMDEC7));
+            }
+            if ((CPINC1 == null)) {
+                this.Adapter.InsertCommand.Parameters[91].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[91].Value = ((string)(CPINC1));
+            }
+            if ((CPINC2 == null)) {
+                this.Adapter.InsertCommand.Parameters[92].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[92].Value = ((string)(CPINC2));
+            }
+            if ((CPINC3 == null)) {
+                this.Adapter.InsertCommand.Parameters[93].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[93].Value = ((string)(CPINC3));
+            }
+            if ((CPINC4 == null)) {
+                this.Adapter.InsertCommand.Parameters[94].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[94].Value = ((string)(CPINC4));
+            }
+            if ((CPINC5 == null)) {
+                this.Adapter.InsertCommand.Parameters[95].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[95].Value = ((string)(CPINC5));
+            }
+            if ((CPINC6 == null)) {
+                this.Adapter.InsertCommand.Parameters[96].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[96].Value = ((string)(CPINC6));
+            }
+            if ((CPINC7 == null)) {
+                this.Adapter.InsertCommand.Parameters[97].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[97].Value = ((string)(CPINC7));
+            }
+            if ((CPDEC1 == null)) {
+                this.Adapter.InsertCommand.Parameters[98].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[98].Value = ((string)(CPDEC1));
+            }
+            if ((CPDEC2 == null)) {
+                this.Adapter.InsertCommand.Parameters[99].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[99].Value = ((string)(CPDEC2));
+            }
+            if ((CPDEC3 == null)) {
+                this.Adapter.InsertCommand.Parameters[100].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[100].Value = ((string)(CPDEC3));
+            }
+            if ((CPDEC4 == null)) {
+                this.Adapter.InsertCommand.Parameters[101].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[101].Value = ((string)(CPDEC4));
+            }
+            if ((CPDEC5 == null)) {
+                this.Adapter.InsertCommand.Parameters[102].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[102].Value = ((string)(CPDEC5));
+            }
+            if ((CPDEC6 == null)) {
+                this.Adapter.InsertCommand.Parameters[103].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[103].Value = ((string)(CPDEC6));
+            }
+            if ((CPDEC7 == null)) {
+                this.Adapter.InsertCommand.Parameters[104].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[104].Value = ((string)(CPDEC7));
+            }
+            if ((ATMN == null)) {
+                this.Adapter.InsertCommand.Parameters[105].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[105].Value = ((string)(ATMN));
+            }
+            if ((CALTIME == null)) {
+                this.Adapter.InsertCommand.Parameters[106].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[106].Value = ((string)(CALTIME));
+            }
+            if ((ZEROR == null)) {
+                this.Adapter.InsertCommand.Parameters[107].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[107].Value = ((string)(ZEROR));
+            }
+            if ((SPANR == null)) {
+                this.Adapter.InsertCommand.Parameters[108].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[108].Value = ((string)(SPANR));
+            }
+            if ((ADJUNIT == null)) {
+                this.Adapter.InsertCommand.Parameters[109].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[109].Value = ((string)(ADJUNIT));
+            }
+            if ((WTMATL == null)) {
+                this.Adapter.InsertCommand.Parameters[110].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[110].Value = ((string)(WTMATL));
+            }
+            if ((FLSIZE == null)) {
+                this.Adapter.InsertCommand.Parameters[111].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[111].Value = ((string)(FLSIZE));
+            }
+            if ((ACC2 == null)) {
+                this.Adapter.InsertCommand.Parameters[112].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[112].Value = ((string)(ACC2));
+            }
+            if ((TUSER == null)) {
+                this.Adapter.InsertCommand.Parameters[113].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[113].Value = ((string)(TUSER));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

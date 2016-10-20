@@ -13,6 +13,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,38 +51,42 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v16.1.UI, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Extensions, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v16.1.Core, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v16.1.Extensions, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -85,65 +104,88 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\CalibrationDataSet.Designer.cs">
+    <Compile Include="Core\Logger\Log.cs" />
+    <Compile Include="Core\Stages\MaxigrafStage.cs" />
+    <Compile Include="Core\Stages\ReportCreateStage.cs" />
+    <Compile Include="Data\Database\CalibrationDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\ConnectionStringContainer.cs" />
-    <Compile Include="Database\ISUPData.cs">
+    <Compile Include="Core\Functional\CheckIsupDbConnectionFunctional.cs" />
+    <Compile Include="Core\Functional\CheckManifactureDbConnectionFunctional.cs" />
+    <Compile Include="Core\Functional\AbstractFunctional.cs" />
+    <Compile Include="Core\Functional\SynchronizeDbFunctional.cs" />
+    <Compile Include="Data\Settings\Settings.cs" />
+    <Compile Include="Data\Database\ISUPData.cs">
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\ISUPData.Designer.cs">
+    <Compile Include="Data\Database\ISUPData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\NifudaDataSet.Designer.cs">
+    <Compile Include="Data\Database\NifudaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataModelCreator.cs" />
-    <Compile Include="DataModel\AggregatedFieldsModel.cs" />
-    <Compile Include="DataModel\CalibrationResults.cs" />
-    <Compile Include="DataModel\DeviceModel.cs" />
-    <Compile Include="DataModel\InputData.cs" />
-    <Compile Include="DataModel\SerialNumber.cs" />
-    <Compile Include="DataModel\DeviceTestResult.cs" />
-    <Compile Include="Forms\DatabaseSettingChange.cs">
+    <Compile Include="Core\Utility\DataModelCreator.cs" />
+    <Compile Include="Data\DataModel\AggregatedFieldsModel.cs" />
+    <Compile Include="Data\DataModel\CalibrationResults.cs" />
+    <Compile Include="Data\DataModel\DeviceModel.cs" />
+    <Compile Include="Data\DataModel\InputData.cs" />
+    <Compile Include="Data\DataModel\SerialNumber.cs" />
+    <Compile Include="Data\DataModel\DeviceTestResult.cs" />
+    <Compile Include="Forms\Data\AllDataForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DatabaseSettingChange.Designer.cs">
-      <DependentUpon>DatabaseSettingChange.cs</DependentUpon>
+    <Compile Include="Forms\Data\AllDataForm.Designer.cs">
+      <DependentUpon>AllDataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\SerialNumberGenerateForm.cs">
+    <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\SerialNumberGenerateForm.Designer.cs">
-      <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Database\HipotDataTable.cs">
+    <Compile Include="Forms\Stages\MaxigrafStageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stages\MaxigrafStageForm.Designer.cs">
+      <DependentUpon>MaxigrafStageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Stages\TransportListGenerateStageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stages\TransportListGenerateStageForm.Designer.cs">
+      <DependentUpon>TransportListGenerateStageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Database\HipotDataTable.cs">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\HipotDataTable.Designer.cs">
+    <Compile Include="Data\Database\HipotDataTable.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MaxigrafIntegration\Converter.cs" />
+    <Compile Include="MaxigrafIntegration\DataFilling.cs" />
+    <Compile Include="MaxigrafIntegration\MaxiConnection.cs" />
+    <Compile Include="MaxigrafIntegration\PipesSettings.cs" />
+    <Compile Include="MaxigrafIntegration\PipeStream.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportManagerContext.cs" />
-    <Compile Include="Forms\ReportsForm.cs">
+    <Compile Include="Core\ReportManagerContext.cs" />
+    <Compile Include="Forms\Stages\ReportsCreateStageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ReportsForm.Designer.cs">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
+    <Compile Include="Forms\Stages\ReportsCreateStageForm.Designer.cs">
+      <DependentUpon>ReportsCreateStageForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\CertificateReport.cs">
       <SubType>Component</SubType>
@@ -164,18 +206,27 @@
     <Compile Include="Reports\TransportListReport.Designer.cs">
       <DependentUpon>TransportListReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="SerialGenerator.cs" />
-    <Compile Include="StagesForm.cs">
+    <Compile Include="Core\Utility\SerialGenerator.cs" />
+    <Compile Include="Data\Settings\SettingsContext.cs" />
+    <Compile Include="Forms\StagesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StagesForm.Designer.cs">
+    <Compile Include="Forms\StagesForm.Designer.cs">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\DatabaseSettingChange.resx">
-      <DependentUpon>DatabaseSettingChange.cs</DependentUpon>
+    <Compile Include="Core\Stages\AbstractStage.cs" />
+    <Compile Include="Core\Stages\TransportListCreateStage.cs" />
+    <EmbeddedResource Include="Forms\Data\AllDataForm.resx">
+      <DependentUpon>AllDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SerialNumberGenerateForm.resx">
-      <DependentUpon>SerialNumberGenerateForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stages\MaxigrafStageForm.resx">
+      <DependentUpon>MaxigrafStageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stages\TransportListGenerateStageForm.resx">
+      <DependentUpon>TransportListGenerateStageForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -189,8 +240,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Forms\ReportsForm.resx">
-      <DependentUpon>ReportsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Stages\ReportsCreateStageForm.resx">
+      <DependentUpon>ReportsCreateStageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\CertificateReport.resx">
       <DependentUpon>CertificateReport.cs</DependentUpon>
@@ -201,51 +252,51 @@
     <EmbeddedResource Include="Reports\TransportListReport.resx">
       <DependentUpon>TransportListReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StagesForm.resx">
+    <EmbeddedResource Include="Forms\StagesForm.resx">
       <DependentUpon>StagesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Database\CalibrationDataSet.xsc">
+    <None Include="Data\Database\CalibrationDataSet.xsc">
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\CalibrationDataSet.xsd">
+    <None Include="Data\Database\CalibrationDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CalibrationDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Database\CalibrationDataSet.xss">
+    <None Include="Data\Database\CalibrationDataSet.xss">
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\HipotDataTable.xsc">
+    <None Include="Data\Database\HipotDataTable.xsc">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </None>
-    <None Include="Database\HipotDataTable.xsd">
+    <None Include="Data\Database\HipotDataTable.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HipotDataTable.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Database\HipotDataTable.xss">
+    <None Include="Data\Database\HipotDataTable.xss">
       <DependentUpon>HipotDataTable.xsd</DependentUpon>
     </None>
-    <None Include="Database\ISUPData.xsc">
+    <None Include="Data\Database\ISUPData.xsc">
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </None>
-    <None Include="Database\ISUPData.xsd">
+    <None Include="Data\Database\ISUPData.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ISUPData.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Database\ISUPData.xss">
+    <None Include="Data\Database\ISUPData.xss">
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </None>
-    <None Include="Database\NifudaDataSet.xsc">
+    <None Include="Data\Database\NifudaDataSet.xsc">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
-    <None Include="Database\NifudaDataSet.xsd">
+    <None Include="Data\Database\NifudaDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NifudaDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Database\NifudaDataSet.xss">
+    <None Include="Data\Database\NifudaDataSet.xss">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -261,7 +312,26 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

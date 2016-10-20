@@ -7,6 +7,11 @@ namespace ReportManager.Core.Stages
         public TransportListCreateStage()
         {
             Name = "Стадия создания траспортного листа";
+        }
+
+        public override void Create()
+        {
+            base.Create();
             ChildForm = new TransportListGenerateStageForm();
         }
     }

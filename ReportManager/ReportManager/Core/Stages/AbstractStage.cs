@@ -28,6 +28,7 @@ namespace ReportManager.Core.Stages
 
         public virtual void OpenForm(Form mdiParent = null)
         {
+            Create();
             ChildForm.MdiParent = mdiParent;
             ChildForm.Show();
             StageStatusChanged?.Invoke(this, StageStatus.OpenedForm);

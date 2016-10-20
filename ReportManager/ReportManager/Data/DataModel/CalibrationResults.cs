@@ -45,32 +45,68 @@
         private string _cal1;
         private string _cal2;
         private string _cal3;
+        private string _cal4;
+        private string _cal5;
+        private string _cal6;
+        private string _cal7;
         private string _desut;
         private string _des1;
         private string _des2;
         private string _des3;
+        private string _des4;
+        private string _des5;
+        private string _des6;
+        private string _des7;
         private string _dtinc1;
         private string _dtinc2;
         private string _dtinc3;
+        private string _dtinc4;
+        private string _dtinc5;
+        private string _dtinc6;
+        private string _dtinc7;
         private string _dtdec1;
         private string _dtdec2;
         private string _dtdec3;
+        private string _dtdec4;
+        private string _dtdec5;
+        private string _dtdec6;
+        private string _dtdec7;
         private string _convtut;
         private string _convt1;
         private string _convt2;
         private string _convt3;
+        private string _convt4;
+        private string _convt5;
+        private string _convt6;
+        private string _convt7;
         private string _kminc1;
         private string _kminc2;
         private string _kminc3;
+        private string _kminc4;
+        private string _kminc5;
+        private string _kminc6;
+        private string _kminc7;
         private string _kmdec1;
         private string _kmdec2;
         private string _kmdec3;
+        private string _kmdec4;
+        private string _kmdec5;
+        private string _kmdec6;
+        private string _kmdec7;
         private string _cpinc1;
         private string _cpinc2;
         private string _cpinc3;
+        private string _cpinc4;
+        private string _cpinc5;
+        private string _cpinc6;
+        private string _cpinc7;
         private string _cpdec1;
         private string _cpdec2;
         private string _cpdec3;
+        private string _cpdec4;
+        private string _cpdec5;
+        private string _cpdec6;
+        private string _cpdec7;
         private string _atmn;
         private string _caltime;
         private string _zeror;
@@ -78,6 +114,8 @@
         private string _adjUnit;
         private string _wtMatl;
         private string _flSize;
+        private string _acc2;
+        private string _tuser;
 
         public string SerialNumberCalibration
         {
@@ -157,7 +195,7 @@
             }
         }
 
-        public string OrderNumber
+        public string OrderNo
         {
             get
             {
@@ -637,6 +675,58 @@
             }
         }
 
+        public string Cal4
+        {
+            get
+            {
+                return _cal4;
+            }
+
+            set
+            {
+                _cal4 = value;
+            }
+        }
+
+        public string Cal5
+        {
+            get
+            {
+                return _cal5;
+            }
+
+            set
+            {
+                _cal5 = value;
+            }
+        }
+
+        public string Cal6
+        {
+            get
+            {
+                return _cal6;
+            }
+
+            set
+            {
+                _cal6 = value;
+            }
+        }
+
+        public string Cal7
+        {
+            get
+            {
+                return _cal7;
+            }
+
+            set
+            {
+                _cal7 = value;
+            }
+        }
+
         public string Desut
         {
             get
@@ -689,6 +779,57 @@
             }
         }
 
+        public string Des4
+        {
+            get
+            {
+                return _des4;
+            }
+
+            set
+            {
+                _des4 = value;
+            }
+        }
+        public string Des5
+        {
+            get
+            {
+                return _des5;
+            }
+
+            set
+            {
+                _des5 = value;
+            }
+        }
+
+        public string Des6
+        {
+            get
+            {
+                return _des6;
+            }
+
+            set
+            {
+                _des6 = value;
+            }
+        }
+        public string Des7
+        {
+            get
+            {
+                return _des7;
+            }
+
+            set
+            {
+                _des7 = value;
+            }
+        }
+
+
         public string Dtinc1
         {
             get
@@ -725,6 +866,58 @@
             set
             {
                 _dtinc3 = value;
+            }
+        }
+
+        public string Dtinc4
+        {
+            get
+            {
+                return _dtinc4;
+            }
+
+            set
+            {
+                _dtinc4 = value;
+            }
+        }
+
+        public string Dtinc5
+        {
+            get
+            {
+                return _dtinc5;
+            }
+
+            set
+            {
+                _dtinc5 = value;
+            }
+        }
+
+        public string Dtinc6
+        {
+            get
+            {
+                return _dtinc6;
+            }
+
+            set
+            {
+                _dtinc6 = value;
+            }
+        }
+
+        public string Dtinc7
+        {
+            get
+            {
+                return _dtinc7;
+            }
+
+            set
+            {
+                _dtinc7 = value;
             }
         }
 
@@ -766,6 +959,59 @@
                 _dtdec3 = value;
             }
         }
+
+        public string Dtdec4
+        {
+            get
+            {
+                return _dtdec4;
+            }
+
+            set
+            {
+                _dtdec4 = value;
+            }
+        }
+
+        public string Dtdec5
+        {
+            get
+            {
+                return _dtdec5;
+            }
+
+            set
+            {
+                _dtdec5 = value;
+            }
+        }
+
+        public string Dtdec6
+        {
+            get
+            {
+                return _dtdec6;
+            }
+
+            set
+            {
+                _dtdec6 = value;
+            }
+        }
+
+        public string Dtdec7
+        {
+            get
+            {
+                return _dtdec7;
+            }
+
+            set
+            {
+                _dtdec7 = value;
+            }
+        }
+
 
         public string Convtut
         {
@@ -820,6 +1066,59 @@
             }
         }
 
+        public string Convt4
+        {
+            get
+            {
+                return _convt4;
+            }
+
+            set
+            {
+                _convt4 = value;
+            }
+        }
+
+        public string Convt5
+        {
+            get
+            {
+                return _convt5;
+            }
+
+            set
+            {
+                _convt5 = value;
+            }
+        }
+
+        public string Convt6
+        {
+            get
+            {
+                return _convt6;
+            }
+
+            set
+            {
+                _convt6 = value;
+            }
+        }
+
+        public string Convt7
+        {
+            get
+            {
+                return _convt7;
+            }
+
+            set
+            {
+                _convt7 = value;
+            }
+        }
+
+
         public string Kminc1
         {
             get
@@ -856,6 +1155,58 @@
             set
             {
                 _kminc3 = value;
+            }
+        }
+
+        public string Kminc4
+        {
+            get
+            {
+                return _kminc4;
+            }
+
+            set
+            {
+                _kminc4 = value;
+            }
+        }
+
+        public string Kminc5
+        {
+            get
+            {
+                return _kminc5;
+            }
+
+            set
+            {
+                _kminc5 = value;
+            }
+        }
+
+        public string Kminc6
+        {
+            get
+            {
+                return _kminc6;
+            }
+
+            set
+            {
+                _kminc6 = value;
+            }
+        }
+
+        public string Kminc7
+        {
+            get
+            {
+                return _kminc7;
+            }
+
+            set
+            {
+                _kminc7 = value;
             }
         }
 
@@ -898,6 +1249,58 @@
             }
         }
 
+        public string Kmdec4
+        {
+            get
+            {
+                return _kmdec4;
+            }
+
+            set
+            {
+                _kmdec4 = value;
+            }
+        }
+
+        public string Kmdec5
+        {
+            get
+            {
+                return _kmdec5;
+            }
+
+            set
+            {
+                _kmdec5 = value;
+            }
+        }
+
+        public string Kmdec6
+        {
+            get
+            {
+                return _kmdec6;
+            }
+
+            set
+            {
+                _kmdec6 = value;
+            }
+        }
+
+        public string Kmdec7
+        {
+            get
+            {
+                return _kmdec7;
+            }
+
+            set
+            {
+                _kmdec7 = value;
+            }
+        }
+
         public string Cpinc1
         {
             get
@@ -934,6 +1337,58 @@
             set
             {
                 _cpinc3 = value;
+            }
+        }
+
+        public string Cpinc4
+        {
+            get
+            {
+                return _cpinc4;
+            }
+
+            set
+            {
+                _cpinc4 = value;
+            }
+        }
+
+        public string Cpinc5
+        {
+            get
+            {
+                return _cpinc5;
+            }
+
+            set
+            {
+                _cpinc5 = value;
+            }
+        }
+
+        public string Cpinc6
+        {
+            get
+            {
+                return _cpinc6;
+            }
+
+            set
+            {
+                _cpinc6 = value;
+            }
+        }
+
+        public string Cpinc7
+        {
+            get
+            {
+                return _cpinc7;
+            }
+
+            set
+            {
+                _cpinc7 = value;
             }
         }
 
@@ -975,6 +1430,59 @@
                 _cpdec3 = value;
             }
         }
+
+        public string Cpdec4
+        {
+            get
+            {
+                return _cpdec4;
+            }
+
+            set
+            {
+                _cpdec4 = value;
+            }
+        }
+
+        public string Cpdec5
+        {
+            get
+            {
+                return _cpdec5;
+            }
+
+            set
+            {
+                _cpdec5 = value;
+            }
+        }
+
+        public string Cpdec6
+        {
+            get
+            {
+                return _cpdec6;
+            }
+
+            set
+            {
+                _cpdec6 = value;
+            }
+        }
+
+        public string Cpdec7
+        {
+            get
+            {
+                return _cpdec7;
+            }
+
+            set
+            {
+                _cpdec7 = value;
+            }
+        }
+
 
         public string Atmn
         {
@@ -1066,5 +1574,32 @@
                 _flSize = value;
             }
         }
+
+        public string Acc2
+        {
+            get
+            {
+                return _acc2;
+            }
+
+            set
+            {
+                _acc2 = value;
+            }
+        }
+
+        public string TUser
+        {
+            get
+            {
+                return _tuser;
+            }
+
+            set
+            {
+                _tuser = value;
+            }
+        }
+
     }
 }

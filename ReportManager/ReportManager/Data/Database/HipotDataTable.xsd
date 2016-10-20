@@ -78,17 +78,17 @@ WHERE                       (SERIAL = @BarCode)</CommandText>
   <xs:element name="HipotDataTable" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HipotDataTable" msprop:Generator_UserDSName="HipotDataTable">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="HipotDataTable" msprop:Generator_TableClassName="HipotDataTableDataTable" msprop:Generator_TableVarName="tableHipotDataTable" msprop:Generator_RowChangedName="HipotDataTableRowChanged" msprop:Generator_TablePropName="_HipotDataTable" msprop:Generator_RowDeletingName="HipotDataTableRowDeleting" msprop:Generator_RowChangingName="HipotDataTableRowChanging" msprop:Generator_RowEvHandlerName="HipotDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotDataTableRowDeleted" msprop:Generator_RowClassName="HipotDataTableRow" msprop:Generator_UserTableName="HipotDataTable" msprop:Generator_RowEvArgName="HipotDataTableRowChangeEvent">
+        <xs:element name="HipotDataTable" msprop:Generator_TableClassName="HipotDataTableDataTable" msprop:Generator_TableVarName="tableHipotDataTable" msprop:Generator_TablePropName="_HipotDataTable" msprop:Generator_RowDeletingName="HipotDataTableRowDeleting" msprop:Generator_RowChangingName="HipotDataTableRowChanging" msprop:Generator_RowEvHandlerName="HipotDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="HipotDataTableRowDeleted" msprop:Generator_UserTableName="HipotDataTable" msprop:Generator_RowChangedName="HipotDataTableRowChanged" msprop:Generator_RowEvArgName="HipotDataTableRowChangeEvent" msprop:Generator_RowClassName="HipotDataTableRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SERIAL" msprop:Generator_ColumnVarNameInTable="columnSERIAL" msprop:Generator_ColumnPropNameInRow="SERIAL" msprop:Generator_ColumnPropNameInTable="SERIALColumn" msprop:Generator_UserColumnName="SERIAL">
+              <xs:element name="SERIAL" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="SERIAL" msprop:Generator_ColumnVarNameInTable="columnSERIAL" msprop:Generator_ColumnPropNameInTable="SERIALColumn" msprop:Generator_UserColumnName="SERIAL">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RESULT" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_UserColumnName="RESULT" minOccurs="0">
+              <xs:element name="RESULT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="RESULT" msprop:Generator_ColumnVarNameInTable="columnRESULT" msprop:Generator_ColumnPropNameInTable="RESULTColumn" msprop:Generator_UserColumnName="RESULT" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -98,7 +98,7 @@ WHERE                       (SERIAL = @BarCode)</CommandText>
               <xs:element name="ISOLATION_V" msprop:Generator_ColumnVarNameInTable="columnISOLATION_V" msprop:Generator_ColumnPropNameInRow="ISOLATION_V" msprop:Generator_ColumnPropNameInTable="ISOLATION_VColumn" msprop:Generator_UserColumnName="ISOLATION_V" type="xs:float" minOccurs="0" />
               <xs:element name="ISOLATION_R" msprop:Generator_ColumnVarNameInTable="columnISOLATION_R" msprop:Generator_ColumnPropNameInRow="ISOLATION_R" msprop:Generator_ColumnPropNameInTable="ISOLATION_RColumn" msprop:Generator_UserColumnName="ISOLATION_R" type="xs:float" minOccurs="0" />
               <xs:element name="ISOLATION_T" msprop:Generator_ColumnVarNameInTable="columnISOLATION_T" msprop:Generator_ColumnPropNameInRow="ISOLATION_T" msprop:Generator_ColumnPropNameInTable="ISOLATION_TColumn" msprop:Generator_UserColumnName="ISOLATION_T" type="xs:float" minOccurs="0" />
-              <xs:element name="IRESULT" msprop:Generator_ColumnVarNameInTable="columnIRESULT" msprop:Generator_ColumnPropNameInRow="IRESULT" msprop:Generator_ColumnPropNameInTable="IRESULTColumn" msprop:Generator_UserColumnName="IRESULT" minOccurs="0">
+              <xs:element name="IRESULT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="IRESULT" msprop:Generator_ColumnVarNameInTable="columnIRESULT" msprop:Generator_ColumnPropNameInTable="IRESULTColumn" msprop:Generator_UserColumnName="IRESULT" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -108,21 +108,21 @@ WHERE                       (SERIAL = @BarCode)</CommandText>
               <xs:element name="WITHSTAND_V" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_V" msprop:Generator_ColumnPropNameInRow="WITHSTAND_V" msprop:Generator_ColumnPropNameInTable="WITHSTAND_VColumn" msprop:Generator_UserColumnName="WITHSTAND_V" type="xs:float" minOccurs="0" />
               <xs:element name="WITHSTAND_I" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_I" msprop:Generator_ColumnPropNameInRow="WITHSTAND_I" msprop:Generator_ColumnPropNameInTable="WITHSTAND_IColumn" msprop:Generator_UserColumnName="WITHSTAND_I" type="xs:float" minOccurs="0" />
               <xs:element name="WITHSTAND_T" msprop:Generator_ColumnVarNameInTable="columnWITHSTAND_T" msprop:Generator_ColumnPropNameInRow="WITHSTAND_T" msprop:Generator_ColumnPropNameInTable="WITHSTAND_TColumn" msprop:Generator_UserColumnName="WITHSTAND_T" type="xs:float" minOccurs="0" />
-              <xs:element name="WRESULT" msprop:Generator_ColumnVarNameInTable="columnWRESULT" msprop:Generator_ColumnPropNameInRow="WRESULT" msprop:Generator_ColumnPropNameInTable="WRESULTColumn" msprop:Generator_UserColumnName="WRESULT" minOccurs="0">
+              <xs:element name="WRESULT" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="WRESULT" msprop:Generator_ColumnVarNameInTable="columnWRESULT" msprop:Generator_ColumnPropNameInTable="WRESULTColumn" msprop:Generator_UserColumnName="WRESULT" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEST_DATE" msprop:Generator_ColumnVarNameInTable="columnTEST_DATE" msprop:Generator_ColumnPropNameInRow="TEST_DATE" msprop:Generator_ColumnPropNameInTable="TEST_DATEColumn" msprop:Generator_UserColumnName="TEST_DATE" minOccurs="0">
+              <xs:element name="TEST_DATE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="TEST_DATE" msprop:Generator_ColumnVarNameInTable="columnTEST_DATE" msprop:Generator_ColumnPropNameInTable="TEST_DATEColumn" msprop:Generator_UserColumnName="TEST_DATE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TEST_TIME" msprop:Generator_ColumnVarNameInTable="columnTEST_TIME" msprop:Generator_ColumnPropNameInRow="TEST_TIME" msprop:Generator_ColumnPropNameInTable="TEST_TIMEColumn" msprop:Generator_UserColumnName="TEST_TIME" minOccurs="0">
+              <xs:element name="TEST_TIME" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="TEST_TIME" msprop:Generator_ColumnVarNameInTable="columnTEST_TIME" msprop:Generator_ColumnPropNameInTable="TEST_TIMEColumn" msprop:Generator_UserColumnName="TEST_TIME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />

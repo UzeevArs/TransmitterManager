@@ -1318,11 +1318,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MS_CODE {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.MS_CODEColumn]));
+                    if (this.IsMS_CODENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MS_CODE\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.MS_CODEColumn]));
                     }
                 }
                 set {
@@ -1334,11 +1334,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string MODEL {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.MODELColumn]));
+                    if (this.IsMODELNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'MODEL\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.MODELColumn]));
                     }
                 }
                 set {
@@ -1350,11 +1350,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_NOColumn]));
+                    if (this.IsPROD_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_NOColumn]));
                     }
                 }
                 set {
@@ -1366,11 +1366,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_NO_SFIX {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_NO_SFIXColumn]));
+                    if (this.IsPROD_NO_SFIXNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_NO_SFIX\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_NO_SFIXColumn]));
                     }
                 }
                 set {
@@ -1382,11 +1382,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string LINE_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.LINE_NOColumn]));
+                    if (this.IsLINE_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LINE_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.LINE_NOColumn]));
                     }
                 }
                 set {
@@ -1398,11 +1398,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CRP_GR_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.CRP_GR_NOColumn]));
+                    if (this.IsCRP_GR_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRP_GR_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.CRP_GR_NOColumn]));
                     }
                 }
                 set {
@@ -1414,11 +1414,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_CAREER {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_CAREERColumn]));
+                    if (this.IsPROD_CAREERNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_CAREER\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_CAREERColumn]));
                     }
                 }
                 set {
@@ -1430,11 +1430,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string INDEX_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.INDEX_NOColumn]));
+                    if (this.IsINDEX_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'INDEX_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.INDEX_NOColumn]));
                     }
                 }
                 set {
@@ -1446,11 +1446,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEST_CERT_SIGN {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.TEST_CERT_SIGNColumn]));
+                    if (this.IsTEST_CERT_SIGNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEST_CERT_SIGN\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.TEST_CERT_SIGNColumn]));
                     }
                 }
                 set {
@@ -1462,11 +1462,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string DOC_LANG_TYPE {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.DOC_LANG_TYPEColumn]));
+                    if (this.IsDOC_LANG_TYPENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DOC_LANG_TYPE\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.DOC_LANG_TYPEColumn]));
                     }
                 }
                 set {
@@ -1478,11 +1478,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string INST_FINISH_D {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.INST_FINISH_DColumn]));
+                    if (this.IsINST_FINISH_DNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'INST_FINISH_D\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.INST_FINISH_DColumn]));
                     }
                 }
                 set {
@@ -1494,11 +1494,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEST_CERT_YN {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.TEST_CERT_YNColumn]));
+                    if (this.IsTEST_CERT_YNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEST_CERT_YN\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.TEST_CERT_YNColumn]));
                     }
                 }
                 set {
@@ -1510,12 +1510,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string END_USER_CUST_N_J {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.END_USER_CUST_N_JColumn]));
+                    if (this.IsEND_USER_CUST_N_JNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'END_USER_CUST_N_J\' in table \'ISUPNifudaDataTable\' is DBNull" +
-                                ".", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.END_USER_CUST_N_JColumn]));
                     }
                 }
                 set {
@@ -1527,11 +1526,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORDER_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORDER_NOColumn]));
+                    if (this.IsORDER_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDER_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORDER_NOColumn]));
                     }
                 }
                 set {
@@ -1543,11 +1542,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ITEM_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ITEM_NOColumn]));
+                    if (this.IsITEM_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ITEM_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ITEM_NOColumn]));
                     }
                 }
                 set {
@@ -1559,12 +1558,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_ITEM_REV_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_ITEM_REV_NOColumn]));
+                    if (this.IsPROD_ITEM_REV_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_ITEM_REV_NO\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_ITEM_REV_NOColumn]));
                     }
                 }
                 set {
@@ -1576,12 +1574,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_INST_REV_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_INST_REV_NOColumn]));
+                    if (this.IsPROD_INST_REV_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_INST_REV_NO\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_INST_REV_NOColumn]));
                     }
                 }
                 set {
@@ -1593,11 +1590,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string COMP_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.COMP_NOColumn]));
+                    if (this.IsCOMP_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'COMP_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.COMP_NOColumn]));
                     }
                 }
                 set {
@@ -1609,11 +1606,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string START_SCHDULE_D {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.START_SCHDULE_DColumn]));
+                    if (this.IsSTART_SCHDULE_DNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'START_SCHDULE_D\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.START_SCHDULE_DColumn]));
                     }
                 }
                 set {
@@ -1625,12 +1622,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FINISH_SCHDULE_D {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.FINISH_SCHDULE_DColumn]));
+                    if (this.IsFINISH_SCHDULE_DNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FINISH_SCHDULE_D\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.FINISH_SCHDULE_DColumn]));
                     }
                 }
                 set {
@@ -1642,11 +1638,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string START_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.START_NOColumn]));
+                    if (this.IsSTART_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'START_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.START_NOColumn]));
                     }
                 }
                 set {
@@ -1669,11 +1665,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ALLOWANCE_SIGN {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ALLOWANCE_SIGNColumn]));
+                    if (this.IsALLOWANCE_SIGNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ALLOWANCE_SIGN\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ALLOWANCE_SIGNColumn]));
                     }
                 }
                 set {
@@ -1685,11 +1681,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_N_J {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_N_JColumn]));
+                    if (this.IsPROD_N_JNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_N_J\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_N_JColumn]));
                     }
                 }
                 set {
@@ -1701,11 +1697,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PROD_N_E {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_N_EColumn]));
+                    if (this.IsPROD_N_ENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROD_N_E\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.PROD_N_EColumn]));
                     }
                 }
                 set {
@@ -1717,12 +1713,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TOKUCHU_SPEC_SIGN {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.TOKUCHU_SPEC_SIGNColumn]));
+                    if (this.IsTOKUCHU_SPEC_SIGNNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TOKUCHU_SPEC_SIGN\' in table \'ISUPNifudaDataTable\' is DBNull" +
-                                ".", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.TOKUCHU_SPEC_SIGNColumn]));
                     }
                 }
                 set {
@@ -1734,11 +1729,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SAP_LINKAGE_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.SAP_LINKAGE_NOColumn]));
+                    if (this.IsSAP_LINKAGE_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SAP_LINKAGE_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.SAP_LINKAGE_NOColumn]));
                     }
                 }
                 set {
@@ -1750,12 +1745,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RANGE_INST_SIGN_500 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.RANGE_INST_SIGN_500Column]));
+                    if (this.IsRANGE_INST_SIGN_500Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RANGE_INST_SIGN_500\' in table \'ISUPNifudaDataTable\' is DBNu" +
-                                "ll.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.RANGE_INST_SIGN_500Column]));
                     }
                 }
                 set {
@@ -1767,12 +1761,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_MAX_500 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MAX_500Column]));
+                    if (this.IsORD_INST_MAX_500Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_MAX_500\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MAX_500Column]));
                     }
                 }
                 set {
@@ -1784,12 +1777,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_MIN_500 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MIN_500Column]));
+                    if (this.IsORD_INST_MIN_500Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_MIN_500\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MIN_500Column]));
                     }
                 }
                 set {
@@ -1801,11 +1793,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string UNIT_500 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.UNIT_500Column]));
+                    if (this.IsUNIT_500Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UNIT_500\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.UNIT_500Column]));
                     }
                 }
                 set {
@@ -1817,11 +1809,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string FEATURES_500 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.FEATURES_500Column]));
+                    if (this.IsFEATURES_500Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FEATURES_500\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.FEATURES_500Column]));
                     }
                 }
                 set {
@@ -1833,12 +1825,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RANGE_INST_SIGN_502 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.RANGE_INST_SIGN_502Column]));
+                    if (this.IsRANGE_INST_SIGN_502Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RANGE_INST_SIGN_502\' in table \'ISUPNifudaDataTable\' is DBNu" +
-                                "ll.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.RANGE_INST_SIGN_502Column]));
                     }
                 }
                 set {
@@ -1850,12 +1841,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_MAX_502 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MAX_502Column]));
+                    if (this.IsORD_INST_MAX_502Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_MAX_502\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MAX_502Column]));
                     }
                 }
                 set {
@@ -1867,12 +1857,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_MIN_502 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MIN_502Column]));
+                    if (this.IsORD_INST_MIN_502Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_MIN_502\' in table \'ISUPNifudaDataTable\' is DBNull." +
-                                "", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_MIN_502Column]));
                     }
                 }
                 set {
@@ -1884,11 +1873,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string UNIT_502 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.UNIT_502Column]));
+                    if (this.IsUNIT_502Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'UNIT_502\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.UNIT_502Column]));
                     }
                 }
                 set {
@@ -1900,12 +1889,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_W69 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_W69Column]));
+                    if (this.IsORD_INST_CONTECT1_W69Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_W69\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_W69Column]));
                     }
                 }
                 set {
@@ -1917,12 +1905,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_X72 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X72Column]));
+                    if (this.IsORD_INST_CONTECT1_X72Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_X72\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X72Column]));
                     }
                 }
                 set {
@@ -1934,12 +1921,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_X91 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X91Column]));
+                    if (this.IsORD_INST_CONTECT1_X91Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_X91\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X91Column]));
                     }
                 }
                 set {
@@ -1951,12 +1937,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_Z30 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_Z30Column]));
+                    if (this.IsORD_INST_CONTECT1_Z30Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_Z30\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_Z30Column]));
                     }
                 }
                 set {
@@ -1968,11 +1953,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TAG_NO_525 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.TAG_NO_525Column]));
+                    if (this.IsTAG_NO_525Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TAG_NO_525\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.TAG_NO_525Column]));
                     }
                 }
                 set {
@@ -1984,11 +1969,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string XJ_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.XJ_NOColumn]));
+                    if (this.IsXJ_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'XJ_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.XJ_NOColumn]));
                     }
                 }
                 set {
@@ -2000,12 +1985,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_H46 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_H46Column]));
+                    if (this.IsORD_INST_CONTECT1_H46Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_H46\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_H46Column]));
                     }
                 }
                 set {
@@ -2017,12 +2001,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_X92 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X92Column]));
+                    if (this.IsORD_INST_CONTECT1_X92Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_X92\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X92Column]));
                     }
                 }
                 set {
@@ -2034,12 +2017,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_Y28 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_Y28Column]));
+                    if (this.IsORD_INST_CONTECT1_Y28Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_Y28\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_Y28Column]));
                     }
                 }
                 set {
@@ -2051,12 +2033,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_W35 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_W35Column]));
+                    if (this.IsORD_INST_CONTECT1_W35Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_W35\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_W35Column]));
                     }
                 }
                 set {
@@ -2068,12 +2049,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_X78 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X78Column]));
+                    if (this.IsORD_INST_CONTECT1_X78Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_X78\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X78Column]));
                     }
                 }
                 set {
@@ -2085,12 +2065,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string ORD_INST_CONTECT1_X94 {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X94Column]));
+                    if (this.IsORD_INST_CONTECT1_X94Null()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_INST_CONTECT1_X94\' in table \'ISUPNifudaDataTable\' is DB" +
-                                "Null.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.ORD_INST_CONTECT1_X94Column]));
                     }
                 }
                 set {
@@ -2102,11 +2081,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string CAP_NO {
                 get {
-                    try {
-                        return ((string)(this[this.tableISUPNifudaDataTable.CAP_NOColumn]));
+                    if (this.IsCAP_NONull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CAP_NO\' in table \'ISUPNifudaDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableISUPNifudaDataTable.CAP_NOColumn]));
                     }
                 }
                 set {

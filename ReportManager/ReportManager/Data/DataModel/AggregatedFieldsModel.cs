@@ -1200,6 +1200,60 @@
             }
         }
 
+        public string Cal4
+        {
+            get
+            {
+                return _calibrationResults.Cal4;
+            }
+
+            set
+            {
+                _calibrationResults.Cal4 = value;
+            }
+        }
+
+        public string Cal5
+        {
+            get
+            {
+                return _calibrationResults.Cal5;
+            }
+
+            set
+            {
+                _calibrationResults.Cal5 = value;
+            }
+        }
+
+        public string Cal6
+        {
+            get
+            {
+                return _calibrationResults.Cal6;
+            }
+
+            set
+            {
+                _calibrationResults.Cal6 = value;
+            }
+        }
+
+        public string Cal7
+        {
+            get
+            {
+                return _calibrationResults.Cal7;
+            }
+
+            set
+            {
+                _calibrationResults.Cal7 = value;
+            }
+        }
+
+
+
         public string Desut
         {
             get
@@ -1252,6 +1306,57 @@
             }
         }
 
+        public string Des4
+        {
+            get
+            {
+                return _calibrationResults.Des4;
+            }
+
+            set
+            {
+                _calibrationResults.Des4 = value;
+            }
+        }
+        public string Des5
+        {
+            get
+            {
+                return _calibrationResults.Des5;
+            }
+
+            set
+            {
+                _calibrationResults.Des5 = value;
+            }
+        }
+
+        public string Des6
+        {
+            get
+            {
+                return _calibrationResults.Des6;
+            }
+
+            set
+            {
+                _calibrationResults.Des6 = value;
+            }
+        }
+
+        public string Des7
+        {
+            get
+            {
+                return _calibrationResults.Des7;
+            }
+
+            set
+            {
+                _calibrationResults.Des7 = value;
+            }
+        }
+
         public string Dtinc1
         {
             get
@@ -1288,6 +1393,58 @@
             set
             {
                 _calibrationResults.Dtinc3 = value;
+            }
+        }
+
+        public string Dtinc4
+        {
+            get
+            {
+                return _calibrationResults.Dtinc4;
+            }
+
+            set
+            {
+                _calibrationResults.Dtinc4 = value;
+            }
+        }
+
+        public string Dtinc5
+        {
+            get
+            {
+                return _calibrationResults.Dtinc5;
+            }
+
+            set
+            {
+                _calibrationResults.Dtinc5 = value;
+            }
+        }
+
+        public string Dtinc6
+        {
+            get
+            {
+                return _calibrationResults.Dtinc6;
+            }
+
+            set
+            {
+                _calibrationResults.Dtinc6 = value;
+            }
+        }
+
+        public string Dtinc7
+        {
+            get
+            {
+                return _calibrationResults.Dtinc7;
+            }
+
+            set
+            {
+                _calibrationResults.Dtinc7 = value;
             }
         }
 
@@ -1329,6 +1486,59 @@
                 _calibrationResults.Dtdec3 = value;
             }
         }
+
+        public string Dtdec4
+        {
+            get
+            {
+                return _calibrationResults.Dtdec4;
+            }
+
+            set
+            {
+                _calibrationResults.Dtdec4 = value;
+            }
+        }
+
+        public string Dtdec5
+        {
+            get
+            {
+                return _calibrationResults.Dtdec5;
+            }
+
+            set
+            {
+                _calibrationResults.Dtdec5 = value;
+            }
+        }
+
+        public string Dtdec6
+        {
+            get
+            {
+                return _calibrationResults.Dtdec6;
+            }
+
+            set
+            {
+                _calibrationResults.Dtdec6 = value;
+            }
+        }
+
+        public string Dtdec7
+        {
+            get
+            {
+                return _calibrationResults.Dtdec7;
+            }
+
+            set
+            {
+                _calibrationResults.Dtdec7 = value;
+            }
+        }
+
 
         public string Convtut
         {
@@ -1383,6 +1593,59 @@
             }
         }
 
+        public string Convt4
+        {
+            get
+            {
+                return _calibrationResults.Convt4;
+            }
+
+            set
+            {
+                _calibrationResults.Convt4 = value;
+            }
+        }
+
+        public string Convt5
+        {
+            get
+            {
+                return _calibrationResults.Convt5;
+            }
+
+            set
+            {
+                _calibrationResults.Convt5 = value;
+            }
+        }
+
+        public string Convt6
+        {
+            get
+            {
+                return _calibrationResults.Convt6;
+            }
+
+            set
+            {
+                _calibrationResults.Convt6 = value;
+            }
+        }
+
+        public string Convt7
+        {
+            get
+            {
+                return _calibrationResults.Convt7;
+            }
+
+            set
+            {
+                _calibrationResults.Convt7 = value;
+            }
+        }
+
+
         public string Kmnic1
         {
             get
@@ -1419,6 +1682,58 @@
             set
             {
                 _calibrationResults.Kminc3 = value;
+            }
+        }
+
+        public string Kmnic4
+        {
+            get
+            {
+                return _calibrationResults.Kminc4;
+            }
+
+            set
+            {
+                _calibrationResults.Kminc4 = value;
+            }
+        }
+
+        public string Kmnic5
+        {
+            get
+            {
+                return _calibrationResults.Kminc5;
+            }
+
+            set
+            {
+                _calibrationResults.Kminc5 = value;
+            }
+        }
+
+        public string Kmnic6
+        {
+            get
+            {
+                return _calibrationResults.Kminc6;
+            }
+
+            set
+            {
+                _calibrationResults.Kminc6 = value;
+            }
+        }
+
+        public string Kmnic7
+        {
+            get
+            {
+                return _calibrationResults.Kminc7;
+            }
+
+            set
+            {
+                _calibrationResults.Kminc7 = value;
             }
         }
 
@@ -1461,6 +1776,56 @@
             }
         }
 
+        public string Kmdec4
+        {
+            get
+            {
+                return _calibrationResults.Kmdec4;
+            }
+
+            set
+            {
+                _calibrationResults.Kmdec4 = value;
+            }
+        }
+        public string Kmdec5
+        {
+            get
+            {
+                return _calibrationResults.Kmdec5;
+            }
+
+            set
+            {
+                _calibrationResults.Kmdec5 = value;
+            }
+        }
+
+        public string Kmdec6
+        {
+            get
+            {
+                return _calibrationResults.Kmdec6;
+            }
+
+            set
+            {
+                _calibrationResults.Kmdec6 = value;
+            }
+        }
+        public string Kmdec7
+        {
+            get
+            {
+                return _calibrationResults.Kmdec7;
+            }
+
+            set
+            {
+                _calibrationResults.Kmdec7 = value;
+            }
+        }
+
         public string Cpinc1
         {
             get
@@ -1497,6 +1862,56 @@
             set
             {
                 _calibrationResults.Cpinc3 = value;
+            }
+        }
+
+        public string Cpinc4
+        {
+            get
+            {
+                return _calibrationResults.Cpinc4;
+            }
+
+            set
+            {
+                _calibrationResults.Cpinc4 = value;
+            }
+        }
+
+        public string Cpinc5
+        {
+            get
+            {
+                return _calibrationResults.Cpinc5;
+            }
+
+            set
+            {
+                _calibrationResults.Cpinc5 = value;
+            }
+        }
+        public string Cpinc6
+        {
+            get
+            {
+                return _calibrationResults.Cpinc6;
+            }
+
+            set
+            {
+                _calibrationResults.Cpinc6 = value;
+            }
+        }
+        public string Cpinc7
+        {
+            get
+            {
+                return _calibrationResults.Cpinc7;
+            }
+
+            set
+            {
+                _calibrationResults.Cpinc7 = value;
             }
         }
 
@@ -1538,6 +1953,58 @@
                 _calibrationResults.Cpdec3 = value;
             }
         }
+
+        public string Cpdec4
+        {
+            get
+            {
+                return _calibrationResults.Cpdec4;
+            }
+
+            set
+            {
+                _calibrationResults.Cpdec4 = value;
+            }
+        }
+        public string Cpdec5
+        {
+            get
+            {
+                return _calibrationResults.Cpdec5;
+            }
+
+            set
+            {
+                _calibrationResults.Cpdec5 = value;
+            }
+        }
+
+        public string Cpdec6
+        {
+            get
+            {
+                return _calibrationResults.Cpdec6;
+            }
+
+            set
+            {
+                _calibrationResults.Cpdec6 = value;
+            }
+        }
+
+        public string Cpdec7
+        {
+            get
+            {
+                return _calibrationResults.Cpdec7;
+            }
+
+            set
+            {
+                _calibrationResults.Cpdec7 = value;
+            }
+        }
+
 
         public string Atmn
         {
@@ -1629,6 +2096,33 @@
                 _calibrationResults.FlSize = value;
             }
         }
+
+        public string Acc2
+        {
+            get
+            {
+                return _calibrationResults.Acc2;
+            }
+
+            set
+            {
+                _calibrationResults.Acc2 = value;
+            }
+        }
+
+        public string TUserCalibrate
+        {
+            get
+            {
+                return _calibrationResults.TUser;
+            }
+
+            set
+            {
+                _calibrationResults.TUser = value;
+            }
+        }
+
 
         public string SerialNumberHipot
         {

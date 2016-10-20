@@ -7,6 +7,11 @@ namespace ReportManager.Core.Stages
         public MaxigrafStage()
         {
             Name = "Стадия гравировки";
+        }
+
+        public override void Create()
+        {
+            base.Create();
             ChildForm = new MaxigrafStageForm();
         }
     }

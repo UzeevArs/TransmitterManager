@@ -290,6 +290,7 @@ namespace ReportManager.Forms
         {
             new AllDataForm {MdiParent = this}.Show();
         }
+
     }
 
     [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]

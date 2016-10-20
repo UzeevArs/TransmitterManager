@@ -726,11 +726,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string RESULT {
                 get {
-                    try {
-                        return ((string)(this[this.tableHipotDataTable.RESULTColumn]));
+                    if (this.IsRESULTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'RESULT\' in table \'HipotDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHipotDataTable.RESULTColumn]));
                     }
                 }
                 set {
@@ -790,11 +790,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string IRESULT {
                 get {
-                    try {
-                        return ((string)(this[this.tableHipotDataTable.IRESULTColumn]));
+                    if (this.IsIRESULTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IRESULT\' in table \'HipotDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHipotDataTable.IRESULTColumn]));
                     }
                 }
                 set {
@@ -854,11 +854,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string WRESULT {
                 get {
-                    try {
-                        return ((string)(this[this.tableHipotDataTable.WRESULTColumn]));
+                    if (this.IsWRESULTNull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WRESULT\' in table \'HipotDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHipotDataTable.WRESULTColumn]));
                     }
                 }
                 set {
@@ -870,11 +870,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEST_DATE {
                 get {
-                    try {
-                        return ((string)(this[this.tableHipotDataTable.TEST_DATEColumn]));
+                    if (this.IsTEST_DATENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEST_DATE\' in table \'HipotDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHipotDataTable.TEST_DATEColumn]));
                     }
                 }
                 set {
@@ -886,11 +886,11 @@ namespace ReportManager.Data.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TEST_TIME {
                 get {
-                    try {
-                        return ((string)(this[this.tableHipotDataTable.TEST_TIMEColumn]));
+                    if (this.IsTEST_TIMENull()) {
+                        return string.Empty;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TEST_TIME\' in table \'HipotDataTable\' is DBNull.", e);
+                    else {
+                        return ((string)(this[this.tableHipotDataTable.TEST_TIMEColumn]));
                     }
                 }
                 set {
