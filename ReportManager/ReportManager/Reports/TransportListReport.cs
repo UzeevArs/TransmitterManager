@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using DevExpress.XtraReports.UI;
+using System;
 
 namespace ReportManager.Reports
 {
@@ -8,8 +9,11 @@ namespace ReportManager.Reports
         public TransportListReport()
         {
             InitializeComponent();
+
+            
             Name = "TransportListReportTemplate";
             Tag = "TransportListReportTemplate.repx";
+
         }
 
         public string GetTemplateFileName()

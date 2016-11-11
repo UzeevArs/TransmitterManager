@@ -51,6 +51,9 @@ namespace ReportManager.Forms
                     btnTrasportListCreateStage.Enabled = false;
                     btnReportCreateStage.Enabled = false;
                     btnMaxigrafStage.Enabled = false;
+                    lblExtraInformation.EditValue = "";
+                    lblExtraInformation.Visibility = BarItemVisibility.Never;
+                    edtMsCode.EditValue = "";
                 }
                 else
                 {
@@ -238,6 +241,7 @@ namespace ReportManager.Forms
             if (edtMsCode.EditValue != null && !edtMsCode.EditValue.Equals(string.Empty))
             {
                 btnToSetManual.Enabled = true;
+
                 edtMsCode.CanOpenEdit = false;
                 edtMsCode.Edit.BorderStyle = BorderStyles.Default;
                 edtMsCode.Edit.Appearance.BorderColor = DefaultBackColor;
@@ -322,6 +326,8 @@ namespace ReportManager.Forms
                 if (_currentNumCount == _maxNumCount)
                 {
                     GenerateEvent(keyData, _tempString);
+                    _tempString = "";
+                    _currentNumCount = 0;
                     return true;
                 }
 
@@ -340,7 +346,7 @@ namespace ReportManager.Forms
         private void GenerateEvent(Keys keyData, string generatedString)
         {
             EventKeyHandler?.Invoke(this, keyData, generatedString);
-            Console.WriteLine($"Blocked messages: {generatedString}");
+            Console.WriteLine($"GeneratingEvent: {generatedString}");
         }
     }
 }
