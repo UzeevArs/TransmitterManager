@@ -83,7 +83,7 @@ namespace ReportManager.MaxigrafIntegration
             }).Start();
         }
 
-        public void SendScript()
+        public void SendTextScript(string path)
         {
             new Thread(delegate()
             {
@@ -92,21 +92,89 @@ namespace ReportManager.MaxigrafIntegration
                     var startStatus = _serverPipe.Send(
                                         Converter.ToAsciiBytes(
                                             ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.TxtFileStart]));
+                    long counter = 0;
+                    var startTime = DateTime.Now;
 
-                    using (var stream = new StreamReader("test.txt"))
+                    using (var stream = new StreamReader(path))
                     {
                         while (!stream.EndOfStream)
                         {
+                            var line = stream.ReadLine() + "*?";
                             var streamWriteStatus = _serverPipe.Send(
-                                                        Converter.ToAsciiBytes(stream.ReadLine() + "*?"));
+                                                        Converter.ToAsciiBytes(line));
+                            if (++counter % 100 == 0)
+                                ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, $"Writed (Count {counter}): {line}"));
                         }
                     }
+                    var writedTime = DateTime.Now;
 
                     var endStatus = _serverPipe.Send(
                                         Converter.ToAsciiBytes(
                                             ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.EndFile]));
+                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, "Finished writing. Now waiting"));
 
                     var readStatus = _serverPipe.Read();
+                    var finishedTime = DateTime.Now;
+                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
+                        $"Starttime: {startTime}\nWritedTime: {writedTime}\nFinishedTime: {finishedTime}"));
+                    if (readStatus.Item1 != ReadWriteStatus.Success)
+                    {
+                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
+                                                                                              "Error in reading status " +
+                                                                                              "from client pipe"));
+                        return;
+                    }
+                    if (ClientPipeSettings.TryParseCommand(Converter.ToAsciiString(readStatus.Item2))
+                            == ClientPipeSettings.Commands.TxtSuccess)
+                    {
+                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected,
+                                                                                              ""));
+                    }
+                    else
+                    {
+                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
+                                                                                              $"Error: {Converter.ToAsciiString(readStatus.Item2)}"));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
+                                                                                          ex.Message));
+                }
+            }).Start();
+        }
+
+        public void SendLeScript(string path)
+        {
+            new Thread(delegate ()
+            {
+                try
+                {
+                    var startStatus = _serverPipe.Send(
+                                        Converter.ToAsciiBytes(
+                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.LeFileStart]));
+                    long counter = 0;
+                    var startTime = DateTime.Now;
+                    using (var binaryStream = new BinaryReader(File.OpenRead(path)))
+                    {
+                        while (binaryStream.BaseStream.Position != binaryStream.BaseStream.Length)
+                        {
+                            var streamWriteStatus = _serverPipe.Send(binaryStream.ReadBytes(256));
+                            if (++counter % 100 == 0)
+                                ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, $"Writed 256 bytes (Count {counter})"));
+                        }
+                    }
+                    var writedTime = DateTime.Now;
+
+                    var endStatus = _serverPipe.Send(
+                                        Converter.ToAsciiBytes(
+                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.EndFile]));
+                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, "Finished writing. Now waiting"));
+
+                    var readStatus = _serverPipe.Read();
+                    var finishedTime = DateTime.Now;
+                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, 
+                        $"Start time: {startTime}\nWritedTime: {writedTime}\nFinishedTime: {finishedTime}"));
                     if (readStatus.Item1 != ReadWriteStatus.Success)
                     {
                         ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
@@ -244,15 +312,18 @@ namespace ReportManager.MaxigrafIntegration
             {
                 try
                 {
-                    var data = _clientPipe.Read();
-                    if (data.Item1 != ReadWriteStatus.Success)
+                    while (true)
                     {
-                        ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, 
-                                                                                          "ReadWriteStatus not success"));
-                        return;
+                        var data = _clientPipe.Read();
+                        if (data.Item1 != ReadWriteStatus.Success)
+                        {
+                            ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error,
+                                                                                              "ReadWriteStatus not success"));
+                            return;
+                        }
+                        ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
+                                                                                          Converter.ToAsciiString(data.Item2)));
                     }
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                                                                                      Converter.ToAsciiString(data.Item2)));
                 }
                 catch (Exception ex)
                 {

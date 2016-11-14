@@ -40,7 +40,12 @@
             this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton1
@@ -76,10 +81,11 @@
             this.memoEdit1.Name = "memoEdit1";
             this.memoEdit1.Size = new System.Drawing.Size(593, 265);
             this.memoEdit1.TabIndex = 3;
+            this.memoEdit1.TextChanged += new System.EventHandler(this.memoEdit1_TextChanged);
             // 
             // simpleButton4
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(349, 366);
+            this.simpleButton4.Location = new System.Drawing.Point(358, 366);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(183, 23);
             this.simpleButton4.TabIndex = 4;
@@ -109,7 +115,7 @@
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(183, 23);
             this.simpleButton7.TabIndex = 7;
-            this.simpleButton7.Text = "SendScript";
+            this.simpleButton7.Text = "SendTextScript";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton8
@@ -141,16 +147,53 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(319, 454);
+            this.textBox1.Location = new System.Drawing.Point(630, 513);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(250, 21);
             this.textBox1.TabIndex = 11;
+            this.textBox1.Visible = false;
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(157, 470);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(243, 20);
+            this.textEdit1.TabIndex = 12;
+            // 
+            // simpleButton11
+            // 
+            this.simpleButton11.Location = new System.Drawing.Point(406, 468);
+            this.simpleButton11.Name = "simpleButton11";
+            this.simpleButton11.Size = new System.Drawing.Size(23, 23);
+            this.simpleButton11.TabIndex = 13;
+            this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
+            // 
+            // simpleButton12
+            // 
+            this.simpleButton12.Location = new System.Drawing.Point(157, 438);
+            this.simpleButton12.Name = "simpleButton12";
+            this.simpleButton12.Size = new System.Drawing.Size(183, 23);
+            this.simpleButton12.TabIndex = 14;
+            this.simpleButton12.Text = "SendLeScript";
+            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
+            // 
+            // simpleButton13
+            // 
+            this.simpleButton13.Location = new System.Drawing.Point(766, 202);
+            this.simpleButton13.Name = "simpleButton13";
+            this.simpleButton13.Size = new System.Drawing.Size(28, 23);
+            this.simpleButton13.TabIndex = 15;
+            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
             // 
             // MaxigrafStageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 568);
+            this.Controls.Add(this.simpleButton13);
+            this.Controls.Add(this.simpleButton12);
+            this.Controls.Add(this.simpleButton11);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.simpleButton10);
             this.Controls.Add(this.simpleButton9);
@@ -168,6 +211,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaxigrafStageForm_FormClosed);
             this.Shown += new System.EventHandler(this.MaxigrafStageForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +231,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton9;
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
         private System.Windows.Forms.TextBox textBox1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton11;
+        private DevExpress.XtraEditors.SimpleButton simpleButton12;
+        private DevExpress.XtraEditors.SimpleButton simpleButton13;
     }
 }
