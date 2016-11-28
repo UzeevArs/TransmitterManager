@@ -9,11 +9,9 @@ namespace ReportManager.Reports
         public TransportListReport()
         {
             InitializeComponent();
-
             
             Name = "TransportListReportTemplate";
             Tag = "TransportListReportTemplate.repx";
-
         }
 
         public string GetTemplateFileName()

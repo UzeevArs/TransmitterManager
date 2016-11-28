@@ -56,6 +56,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -80,9 +81,10 @@
             this.lblStatus,
             this.btnExit,
             this.btnAllData,
-            this.lblExtraInformation});
+            this.lblExtraInformation,
+            this.lblUserName});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -266,6 +268,7 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.lblNifudaConnectionStatus);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblIsupConnectionStatus);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblStatus);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblUserName);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 775);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -284,6 +287,14 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblUserName.Caption = "Имя пользователя: ";
+            this.lblUserName.Id = 17;
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // StagesForm
             // 
@@ -336,5 +347,6 @@
         private DevExpress.XtraBars.BarEditItem lblExtraInformation;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraBars.BarStaticItem lblUserName;
     }
 }

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using ReportManager.Core.Utility;
 using ReportManager.Data.DataModel;
@@ -14,12 +16,8 @@ namespace ReportManager.Forms.Stages
 {
     public partial class TransportListGenerateStageForm : XtraForm
     {
-        
-
-       
         public TransportListGenerateStageForm()
         {
-            var dateTime = DateTime.Now.Date;
             InitializeComponent();
             nifudaDataTableAdapter1.Fill(nifudaDataSet1.NifudaDataTable);
             nifudaDataTableAdapter1.Connection.ConnectionString = SettingsContext.GlobalSettings.NifudaConnectionString;
@@ -37,25 +35,20 @@ namespace ReportManager.Forms.Stages
             report.DataSource =
                 new List<InputData> { device.InputData[0] };
 
-
-
-            report.PrintingSystem.EndPrint+= Report_AfterPrint;
-
-//            AfterPrint
+            report.PrintingSystem.PrintProgress += Report_PrintProgress;
 
             return report;
         }
 
-
-
-
-        private void Report_AfterPrint(object sender, EventArgs e)
+        private void Report_PrintProgress(object sender, PrintProgressEventArgs e)
         {
-            var folderData = FolderUtility.CheckAndCreateCurrentPath();
+            var folderData = FolderUtility.CheckAndCreateCurrentPath("Transport List");
             if (folderData.Item1 == FolderUtilityStatus.Success)
             {
-                (sender as TransportListReport)?.ExportToPdf($"{folderData.Item2}" +
-                    $"{ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0].Serial}.pdf");
+                var path = $"{folderData.Item2}" +
+                           $"TransportList_{ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0].Serial}.pdf";
+                if (!Directory.Exists(path))
+                    (sender as TransportListReport)?.ExportToPdf(path);
             }
             else if (folderData.Item1 == FolderUtilityStatus.Error)
             {
@@ -78,6 +71,7 @@ namespace ReportManager.Forms.Stages
                 printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
             }
         }
+
         private void OnDeviceModelCreatedStatus(object sender, Tuple<DeviceModelStatus, DeviceModel> data)
         {
             if ( data.Item1 == DeviceModelStatus.CreatedSuccess)
@@ -88,14 +82,12 @@ namespace ReportManager.Forms.Stages
             {
                 Close();
             }
-        
         }
+
         private void TransportListGenerateStageForm_Shown(object sender, EventArgs e)
         {
             ReportManagerContext.GetInstance().DeviceModelCreatedStatus += OnDeviceModelCreatedStatus;
             ShowReport(ReportManagerContext.GetInstance().CurrentDeviceModel);
         }
-
-
     }
 }

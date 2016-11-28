@@ -28,7 +28,7 @@ namespace ReportManager.Core
             Stages.Clear();
         }
 
-        public event DeviceModelHandler DeviceModelCreatedStatus;
+        public event EventHandler<Tuple<DeviceModelStatus, DeviceModel>> DeviceModelCreatedStatus;
 
         private void SettingsContextOnSettingsLoadingEvent(object sender,
             Tuple<Settings, SettingsStatus, string> status)
@@ -104,6 +104,5 @@ namespace ReportManager.Core
         }
     }
 
-    public delegate void DeviceModelHandler(object sender, Tuple<DeviceModelStatus, DeviceModel> data);
     public enum DeviceModelStatus { CreatedSuccess, CreatedError }
 }

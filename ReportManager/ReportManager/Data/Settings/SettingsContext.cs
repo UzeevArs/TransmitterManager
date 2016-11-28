@@ -12,9 +12,12 @@ namespace ReportManager.Data.Settings
         private static readonly string SettingsPath =
             $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
 
-        public static event SettingsLoading SettingsLoadingEvent;
+        public static event EventHandler<Tuple<Settings, SettingsStatus, string>> SettingsLoadingEvent;
 
         public static Settings GlobalSettings { get; private set; } = new Settings();
+
+        public static string UserName { get; set; }
+        public static string UserPassword { get; set; }
 
         public static Tuple<SettingsStatus, string> SaveSettings()
         {
@@ -97,8 +100,6 @@ namespace ReportManager.Data.Settings
         }
     }
 
-
-    public delegate void SettingsLoading(object sender, Tuple<Settings, SettingsStatus, string> status);
     public enum SettingsStatus
     {
         SuccessLoaded, ErrorLoaded, SuccessSaved, ErrorSaved, Changed

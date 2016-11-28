@@ -30,7 +30,7 @@ namespace ReportManager.Core.Utility
                 {
                     deviceModel.InputData.Add(new InputData
                     {
-                        AllowanceSign = nifudaElement.ALLOWANCE_SIGN,
+                        ALLOWANCE_SIGN = nifudaElement.ALLOWANCE_SIGN,
                         CompNumber = nifudaElement.COMP_NO,
                         CrpGroupNumber = nifudaElement.CRP_GR_NO,
                         DocumentationLangType = nifudaElement.DOC_LANG_TYPE,
@@ -120,7 +120,7 @@ namespace ReportManager.Core.Utility
             if (dataSetNifuda.Count == 0)
             {
                 deviceModel.InputData = new List<InputData> { new InputData {
-                    AllowanceSign = "No Data",
+                    ALLOWANCE_SIGN = "No Data",
                     CompNumber = "No Data",
                     CrpGroupNumber = "No Data",
                     DocumentationLangType = "No Data",
@@ -173,7 +173,7 @@ namespace ReportManager.Core.Utility
             else
             {
                 deviceModel.InputData = new List<InputData> { new InputData {
-                AllowanceSign = dataSetNifuda[0].ALLOWANCE_SIGN,
+                ALLOWANCE_SIGN = dataSetNifuda[0].ALLOWANCE_SIGN,
                 CompNumber = dataSetNifuda[0].COMP_NO,
                 CrpGroupNumber = dataSetNifuda[0].CRP_GR_NO,
                 DocumentationLangType = dataSetNifuda[0].DOC_LANG_TYPE,

@@ -325,7 +325,7 @@
             }
         }
 
-        public string AllowanceSign
+        public string ALLOWANCE_SIGN
         {
             get
             {

@@ -6,7 +6,7 @@ namespace ReportManager.Core.Utility
 {
     public class FolderUtility
     {
-        public static Tuple<FolderUtilityStatus, string> CheckAndCreateCurrentPath()
+        public static Tuple<FolderUtilityStatus, string> CheckAndCreateCurrentPath(string stageName)
         {
             var path = SettingsContext.GlobalSettings.ReportSavePath;
             var time = DateTime.Now;
@@ -24,11 +24,11 @@ namespace ReportManager.Core.Utility
                 }
             }
 
-            if (!Directory.Exists($"{path}\\{time.Year}"))
+            if (!Directory.Exists($"{path}\\{stageName}"))
             {
                 try
                 {
-                    Directory.CreateDirectory($"{path}\\{time.Year}");
+                    Directory.CreateDirectory($"{path}\\{stageName}");
                 }
                 catch (Exception ex)
                 {
@@ -37,11 +37,11 @@ namespace ReportManager.Core.Utility
                 }
             }
 
-            if (!Directory.Exists($"{path}\\{time.Year}\\{time.Month}"))
+            if (!Directory.Exists($"{path}\\{stageName}\\{time.Year}"))
             {
                 try
                 {
-                    Directory.CreateDirectory($"{path}\\{time.Year}\\{time.Month}");
+                    Directory.CreateDirectory($"{path}\\{stageName}\\{time.Year}");
                 }
                 catch (Exception ex)
                 {
@@ -50,11 +50,24 @@ namespace ReportManager.Core.Utility
                 }
             }
 
-            if (!Directory.Exists($"{path}\\{time.Year}\\{time.Month}\\{time.Day}"))
+            if (!Directory.Exists($"{path}\\{stageName}\\{time.Year}\\{time.Month}"))
             {
                 try
                 {
-                    Directory.CreateDirectory($"{path}\\{time.Year}\\{time.Month}\\{time.Day}");
+                    Directory.CreateDirectory($"{path}\\{stageName}\\{time.Year}\\{time.Month}");
+                }
+                catch (Exception ex)
+                {
+                    return new Tuple<FolderUtilityStatus,
+                        string>(FolderUtilityStatus.Error, ex.Message);
+                }
+            }
+
+            if (!Directory.Exists($"{path}\\{stageName}\\{time.Year}\\{time.Month}\\{time.Day}"))
+            {
+                try
+                {
+                    Directory.CreateDirectory($"{path}\\{stageName}\\{time.Year}\\{time.Month}\\{time.Day}");
                 }
                 catch (Exception ex)
                 {
@@ -64,7 +77,7 @@ namespace ReportManager.Core.Utility
             }
 
             return new Tuple<FolderUtilityStatus, string>(FolderUtilityStatus.Success, 
-                $"{path}\\{time.Year}\\{time.Month}\\{time.Day}\\");
+                $"{path}\\{stageName}\\{time.Year}\\{time.Month}\\{time.Day}\\");
         }
     }
 

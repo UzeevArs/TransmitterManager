@@ -12,7 +12,7 @@ namespace ReportManager.Core.Functional
 {
     public class SynchronizeDbFunctional : AbstractFunctional
     {
-        public event SynchronizeEventHandler SyncronizeDataIncome;
+        public event EventHandler<Tuple<NifudaDataSet.NifudaDataTableDataTable, DateTime>> SyncronizeDataIncome;
 
         [XmlIgnore]
         private ISUPNifudaDataTableAdapter IsupDataTableAdapter { get; } = new ISUPNifudaDataTableAdapter();
@@ -96,7 +96,7 @@ namespace ReportManager.Core.Functional
                         data.ProductionInstRevisionNumber, data.CompNumber,
                         data.StartScheduleD, data.FinishScheduleD,
                         data.StartNumber, data.SerialNumber,
-                        data.AllowanceSign, data.ProductionNumberJapan,
+                        data.ALLOWANCE_SIGN, data.ProductionNumberJapan,
                         data.ProductionNumberEnglish,
                         data.TokuchuSpecificationSign,
                         data.SapLinkageNumber, data.RangeInstSign_500,
@@ -134,7 +134,4 @@ namespace ReportManager.Core.Functional
             return Name;
         }
     }
-
-    public delegate void SynchronizeEventHandler(
-        object sender, Tuple<NifudaDataSet.NifudaDataTableDataTable, DateTime> data);
 }

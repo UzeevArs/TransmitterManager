@@ -25,7 +25,7 @@ namespace ReportManager
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 LoadSettings();
-                Application.Run(new StagesForm());
+                Application.Run(new Loader());
                 mutex.ReleaseMutex();
             }
             else

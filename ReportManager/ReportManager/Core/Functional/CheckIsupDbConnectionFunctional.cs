@@ -111,6 +111,5 @@ namespace ReportManager.Core.Functional
         {
             return Name;
         }
-
     }
 }

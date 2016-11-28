@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 using DevExpress.XtraEditors;
 
@@ -18,7 +19,7 @@ namespace ReportManager.Core.Stages
             return Name;
         }
 
-        public event StageHandler StageStatusChanged;
+        public event EventHandler<StageStatus> StageStatusChanged;
 
         public virtual void Create()
         {
@@ -46,6 +47,5 @@ namespace ReportManager.Core.Stages
         }
     }
 
-    public delegate void StageHandler(object sender, StageStatus status);
     public enum StageStatus { Created, OpenedForm, ClosedForm, Disposed, Error }
 }

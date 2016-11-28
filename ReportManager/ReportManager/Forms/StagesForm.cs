@@ -23,6 +23,8 @@ namespace ReportManager.Forms
         {
             InitializeComponent();
 
+            FillData();
+            
             var keyFilter = new KeyMessageFilter();
             keyFilter.EventKeyHandler += KeyFilter_EventKeyHandler;
             Application.AddMessageFilter(keyFilter);
@@ -36,6 +38,11 @@ namespace ReportManager.Forms
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
             ReportManagerContext.GetInstance().DeviceModelCreatedStatus += StagesForm_DeviceModelCreatedStatus;
             FunctionalSubscribe();
+        }
+
+        private void FillData()
+        {
+            lblUserName.Caption += SettingsContext.UserName;
         }
 
         private void StagesForm_DeviceModelCreatedStatus(object sender,

@@ -308,12 +308,12 @@
         {
             get
             {
-                return _inputData.AllowanceSign;
+                return _inputData.ALLOWANCE_SIGN;
             }
 
             set
             {
-                _inputData.AllowanceSign = value;
+                _inputData.ALLOWANCE_SIGN = value;
             }
         }
 
