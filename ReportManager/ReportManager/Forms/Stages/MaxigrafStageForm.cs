@@ -26,7 +26,7 @@ namespace ReportManager.Forms.Stages
         {
             if (data.Item1 == DeviceModelStatus.CreatedSuccess)
             {
-                textBox1.Text = ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0].IndexNumber;
+                textBox1.Text = ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0].INDEX_NO;
             }
             else
             {
@@ -121,7 +121,7 @@ namespace ReportManager.Forms.Stages
         private void MaxigrafStageForm_Shown(object sender, EventArgs e)
         {
             ReportManagerContext.GetInstance().DeviceModelCreatedStatus += OnDeviceModelCreatedStatus;
-            textBox1.Text = ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0].IndexNumber;
+            textBox1.Text = ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0].INDEX_NO;
         }
 
         private void MaxigrafStageForm_FormClosed(object sender, FormClosedEventArgs e)

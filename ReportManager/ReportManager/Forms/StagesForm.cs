@@ -262,7 +262,7 @@ namespace ReportManager.Forms
                 else
                 {
                     var model = ReportManagerContext.GetInstance().CurrentDeviceModel;
-                    lblExtraInformation.EditValue = $"Модель: {model.InputData[0].Model}. Серийный номер: {model.InputData[0].SerialNumber}";
+                    lblExtraInformation.EditValue = $"Модель: {model.InputData[0].MODEL}. Серийный номер: {model.InputData[0].SERIAL_NO}";
                     lblExtraInformation.Visibility = BarItemVisibility.Always;
                 }
             }

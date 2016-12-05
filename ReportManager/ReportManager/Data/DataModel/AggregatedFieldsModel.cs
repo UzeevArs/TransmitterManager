@@ -35,12 +35,12 @@
         {
             get
             {
-                return _inputData.MsCode;
+                return _inputData.MS_CODE;
             }
 
             set
             {
-                _inputData.MsCode = value;
+                _inputData.MS_CODE = value;
             }
         }
 
@@ -48,12 +48,12 @@
         {
             get
             {
-                return _inputData.Model;
+                return _inputData.MODEL;
             }
 
             set
             {
-                _inputData.Model = value;
+                _inputData.MODEL = value;
             }
         }
 
@@ -61,12 +61,12 @@
         {
             get
             {
-                return _inputData.ProductionNumber;
+                return _inputData.PROD_NO;
             }
 
             set
             {
-                _inputData.ProductionNumber = value;
+                _inputData.PROD_NO = value;
             }
         }
 
@@ -74,12 +74,12 @@
         {
             get
             {
-                return _inputData.ProductionNumberSuffix;
+                return _inputData.PROD_NO_SFIX;
             }
 
             set
             {
-                _inputData.ProductionNumberSuffix = value;
+                _inputData.PROD_NO_SFIX = value;
             }
         }
 
@@ -87,12 +87,12 @@
         {
             get
             {
-                return _inputData.LineNumber;
+                return _inputData.LINE_NO;
             }
 
             set
             {
-                _inputData.LineNumber = value;
+                _inputData.LINE_NO = value;
             }
         }
 
@@ -100,12 +100,12 @@
         {
             get
             {
-                return _inputData.CrpGroupNumber;
+                return _inputData.CRP_GR_NO;
             }
 
             set
             {
-                _inputData.CrpGroupNumber = value;
+                _inputData.CRP_GR_NO = value;
             }
         }
 
@@ -113,12 +113,12 @@
         {
             get
             {
-                return _inputData.ProductionCareer;
+                return _inputData.PROD_CAREER;
             }
 
             set
             {
-                _inputData.ProductionCareer = value;
+                _inputData.PROD_CAREER = value;
             }
         }
 
@@ -126,12 +126,12 @@
         {
             get
             {
-                return _inputData.TestCertSign;
+                return _inputData.TEST_CERT_SIGN;
             }
 
             set
             {
-                _inputData.TestCertSign = value;
+                _inputData.TEST_CERT_SIGN = value;
             }
         }
 
@@ -139,12 +139,12 @@
         {
             get
             {
-                return _inputData.DocumentationLangType;
+                return _inputData.DOC_LANG_TYPE;
             }
 
             set
             {
-                _inputData.DocumentationLangType = value;
+                _inputData.DOC_LANG_TYPE = value;
             }
         }
 
@@ -152,12 +152,12 @@
         {
             get
             {
-                return _inputData.InstFinishD;
+                return _inputData.INST_FINISH_D;
             }
 
             set
             {
-                _inputData.InstFinishD = value;
+                _inputData.INST_FINISH_D = value;
             }
         }
 
@@ -165,12 +165,12 @@
         {
             get
             {
-                return _inputData.TestCertYn;
+                return _inputData.TEST_CERT_YN;
             }
 
             set
             {
-                _inputData.TestCertYn = value;
+                _inputData.TEST_CERT_YN = value;
             }
         }
 
@@ -178,12 +178,12 @@
         {
             get
             {
-                return _inputData.EndUserCustNJ;
+                return _inputData.END_USER_CUST_N_J;
             }
 
             set
             {
-                _inputData.EndUserCustNJ = value;
+                _inputData.END_USER_CUST_N_J = value;
             }
         }
 
@@ -191,12 +191,12 @@
         {
             get
             {
-                return _inputData.OrderNumber;
+                return _inputData.ORDER_NO;
             }
 
             set
             {
-                _inputData.OrderNumber = value;
+                _inputData.ORDER_NO = value;
             }
         }
 
@@ -204,12 +204,12 @@
         {
             get
             {
-                return _inputData.ItemNumber;
+                return _inputData.ITEM_NO;
             }
 
             set
             {
-                _inputData.ItemNumber = value;
+                _inputData.ITEM_NO = value;
             }
         }
 
@@ -217,12 +217,12 @@
         {
             get
             {
-                return _inputData.ProductionItemRevisionNumber;
+                return _inputData.PROD_ITEM_REV_NO;
             }
 
             set
             {
-                _inputData.ProductionItemRevisionNumber = value;
+                _inputData.PROD_ITEM_REV_NO = value;
             }
         }
 
@@ -230,12 +230,12 @@
         {
             get
             {
-                return _inputData.ProductionInstRevisionNumber;
+                return _inputData.PROD_INST_REV_NO;
             }
 
             set
             {
-                _inputData.ProductionInstRevisionNumber = value;
+                _inputData.PROD_INST_REV_NO = value;
             }
         }
 
@@ -243,12 +243,12 @@
         {
             get
             {
-                return _inputData.CompNumber;
+                return _inputData.COMP_NO;
             }
 
             set
             {
-                _inputData.CompNumber = value;
+                _inputData.COMP_NO = value;
             }
         }
 
@@ -256,12 +256,12 @@
         {
             get
             {
-                return _inputData.StartScheduleD;
+                return _inputData.START_SCHDULE_D;
             }
 
             set
             {
-                _inputData.StartScheduleD = value;
+                _inputData.START_SCHDULE_D = value;
             }
         }
 
@@ -269,12 +269,12 @@
         {
             get
             {
-                return _inputData.FinishScheduleD;
+                return _inputData.FINISH_SCHDULE_D;
             }
 
             set
             {
-                _inputData.FinishScheduleD = value;
+                _inputData.FINISH_SCHDULE_D = value;
             }
         }
 
@@ -282,12 +282,12 @@
         {
             get
             {
-                return _inputData.StartNumber;
+                return _inputData.START_NO;
             }
 
             set
             {
-                _inputData.StartNumber = value;
+                _inputData.START_NO = value;
             }
         }
 
@@ -295,12 +295,12 @@
         {
             get
             {
-                return _inputData.SerialNumber;
+                return _inputData.SERIAL_NO;
             }
 
             set
             {
-                _inputData.SerialNumber = value;
+                _inputData.SERIAL_NO = value;
             }
         }
 
@@ -321,12 +321,12 @@
         {
             get
             {
-                return _inputData.ProductionNumberJapan;
+                return _inputData.PROD_N_J;
             }
 
             set
             {
-                _inputData.ProductionNumberJapan = value;
+                _inputData.PROD_N_J = value;
             }
         }
 
@@ -334,12 +334,12 @@
         {
             get
             {
-                return _inputData.ProductionNumberEnglish;
+                return _inputData.PROD_N_E;
             }
 
             set
             {
-                _inputData.ProductionNumberEnglish = value;
+                _inputData.PROD_N_E = value;
             }
         }
 
@@ -347,12 +347,12 @@
         {
             get
             {
-                return _inputData.TokuchuSpecificationSign;
+                return _inputData.TOKUCHU_SPEC_SIGN;
             }
 
             set
             {
-                _inputData.TokuchuSpecificationSign = value;
+                _inputData.TOKUCHU_SPEC_SIGN = value;
             }
         }
 
@@ -360,12 +360,12 @@
         {
             get
             {
-                return _inputData.SapLinkageNumber;
+                return _inputData.SAP_LINKAGE_NO;
             }
 
             set
             {
-                _inputData.SapLinkageNumber = value;
+                _inputData.SAP_LINKAGE_NO = value;
             }
         }
 
@@ -373,12 +373,12 @@
         {
             get
             {
-                return _inputData.RangeInstSign_500;
+                return _inputData.RANGE_INST_SIGN_500;
             }
 
             set
             {
-                _inputData.RangeInstSign_500 = value;
+                _inputData.RANGE_INST_SIGN_500 = value;
             }
         }
 
@@ -386,12 +386,12 @@
         {
             get
             {
-                return _inputData.OrderInstMax_500;
+                return _inputData.ORD_INST_MAX_500;
             }
 
             set
             {
-                _inputData.OrderInstMax_500 = value;
+                _inputData.ORD_INST_MAX_500 = value;
             }
         }
 
@@ -399,12 +399,12 @@
         {
             get
             {
-                return _inputData.OrderInstMin_500;
+                return _inputData.ORD_INST_MIN_500;
             }
 
             set
             {
-                _inputData.OrderInstMin_500 = value;
+                _inputData.ORD_INST_MIN_500 = value;
             }
         }
 
@@ -412,12 +412,12 @@
         {
             get
             {
-                return _inputData.Unit_500;
+                return _inputData.UNIT_500;
             }
 
             set
             {
-                _inputData.Unit_500 = value;
+                _inputData.UNIT_500 = value;
             }
         }
 
@@ -425,12 +425,12 @@
         {
             get
             {
-                return _inputData.Features_500;
+                return _inputData.FEATURES_500;
             }
 
             set
             {
-                _inputData.Features_500 = value;
+                _inputData.FEATURES_500 = value;
             }
         }
 
@@ -438,12 +438,12 @@
         {
             get
             {
-                return _inputData.RangeInstSign_502;
+                return _inputData.RANGE_INST_SIGN_502;
             }
 
             set
             {
-                _inputData.RangeInstSign_502 = value;
+                _inputData.RANGE_INST_SIGN_502 = value;
             }
         }
 
@@ -451,12 +451,12 @@
         {
             get
             {
-                return _inputData.OrderInstMax_502;
+                return _inputData.ORD_INST_MAX_502;
             }
 
             set
             {
-                _inputData.OrderInstMax_502 = value;
+                _inputData.ORD_INST_MAX_502 = value;
             }
         }
 
@@ -464,12 +464,12 @@
         {
             get
             {
-                return _inputData.OrderInstMin_502;
+                return _inputData.ORD_INST_MIN_502;
             }
 
             set
             {
-                _inputData.OrderInstMin_502 = value;
+                _inputData.ORD_INST_MIN_502 = value;
             }
         }
 
@@ -477,12 +477,12 @@
         {
             get
             {
-                return _inputData.Unit_502;
+                return _inputData.UNIT_502;
             }
 
             set
             {
-                _inputData.Unit_502 = value;
+                _inputData.UNIT_502 = value;
             }
         }
 
@@ -490,12 +490,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1W69;
+                return _inputData.ORD_INST_CONTECT1_W69;
             }
 
             set
             {
-                _inputData.OrderInstContect1W69 = value;
+                _inputData.ORD_INST_CONTECT1_W69 = value;
             }
         }
 
@@ -503,12 +503,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1X72;
+                return _inputData.ORD_INST_CONTECT1_X72;
             }
 
             set
             {
-                _inputData.OrderInstContect1X72 = value;
+                _inputData.ORD_INST_CONTECT1_X72 = value;
             }
         }
 
@@ -516,12 +516,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1X91;
+                return _inputData.ORD_INST_CONTECT1_X91;
             }
 
             set
             {
-                _inputData.OrderInstContect1X91 = value;
+                _inputData.ORD_INST_CONTECT1_X91 = value;
             }
         }
 
@@ -529,12 +529,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1Z30;
+                return _inputData.ORD_INST_CONTECT1_Z30;
             }
 
             set
             {
-                _inputData.OrderInstContect1Z30 = value;
+                _inputData.ORD_INST_CONTECT1_Z30 = value;
             }
         }
 
@@ -542,12 +542,12 @@
         {
             get
             {
-                return _inputData.TagNumber_525;
+                return _inputData.TAG_NO_525;
             }
 
             set
             {
-                _inputData.TagNumber_525 = value;
+                _inputData.TAG_NO_525 = value;
             }
         }
 
@@ -555,12 +555,12 @@
         {
             get
             {
-                return _inputData.XjNumber;
+                return _inputData.XJ_NO;
             }
 
             set
             {
-                _inputData.XjNumber = value;
+                _inputData.XJ_NO = value;
             }
         }
 
@@ -568,12 +568,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1H46;
+                return _inputData.ORD_INST_CONTECT1_H46;
             }
 
             set
             {
-                _inputData.OrderInstContect1H46 = value;
+                _inputData.ORD_INST_CONTECT1_H46 = value;
             }
         }
 
@@ -581,12 +581,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1X92;
+                return _inputData.ORD_INST_CONTECT1_X92;
             }
 
             set
             {
-                _inputData.OrderInstContect1X92 = value;
+                _inputData.ORD_INST_CONTECT1_X92 = value;
             }
         }
 
@@ -594,12 +594,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1Y28;
+                return _inputData.ORD_INST_CONTECT1_Y28;
             }
 
             set
             {
-                _inputData.OrderInstContect1Y28 = value;
+                _inputData.ORD_INST_CONTECT1_Y28 = value;
             }
         }
 
@@ -607,12 +607,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1W35;
+                return _inputData.ORD_INST_CONTECT1_W35;
             }
 
             set
             {
-                _inputData.OrderInstContect1W35 = value;
+                _inputData.ORD_INST_CONTECT1_W35 = value;
             }
         }
 
@@ -620,12 +620,12 @@
         {
             get
             {
-                return _inputData.OrderInstContect1X78;
+                return _inputData.ORD_INST_CONTECT1_X78;
             }
 
             set
             {
-                _inputData.OrderInstContect1X78 = value;
+                _inputData.ORD_INST_CONTECT1_X78 = value;
             }
         }
 
@@ -633,24 +633,24 @@
         {
             get
             {
-                return _inputData.OrderInstContect1X94;
+                return _inputData.ORD_INST_CONTECT1_X94;
             }
 
             set
             {
-                _inputData.OrderInstContect1X94 = value;
+                _inputData.ORD_INST_CONTECT1_X94 = value;
             }
         }
         public string IndexNumber
         {
             get
             {
-                return _inputData.IndexNumber;
+                return _inputData.INDEX_NO;
             }
 
             set
             {
-                _inputData.IndexNumber = value;
+                _inputData.INDEX_NO = value;
             }
         }
 
@@ -658,12 +658,12 @@
         {
             get
             {
-                return _inputData.CapsuleNumber;
+                return _inputData.CAP_NO;
             }
 
             set
             {
-                _inputData.CapsuleNumber = value;
+                _inputData.CAP_NO = value;
             }
         }
 
@@ -672,12 +672,12 @@
         {
             get
             {
-                return _calibrationResults.SerialNumberCalibration;
+                return _calibrationResults.SERIAL;
             }
 
             set
             {
-                _calibrationResults.SerialNumberCalibration = value;
+                _calibrationResults.SERIAL = value;
             }
         }
 
@@ -685,12 +685,12 @@
         {
             get
             {
-                return _calibrationResults.Result;
+                return _calibrationResults.RESULT;
             }
 
             set
             {
-                _calibrationResults.Result = value;
+                _calibrationResults.RESULT = value;
             }
         }
 
@@ -698,12 +698,12 @@
         {
             get
             {
-                return _calibrationResults.CapsuleNumber;
+                return _calibrationResults.CAPNO;
             }
 
             set
             {
-                _calibrationResults.CapsuleNumber = value;
+                _calibrationResults.CAPNO = value;
             }
         }
 
@@ -711,12 +711,12 @@
         {
             get
             {
-                return _calibrationResults.AmplificationNumber;
+                return _calibrationResults.AMPNO;
             }
 
             set
             {
-                _calibrationResults.AmplificationNumber = value;
+                _calibrationResults.AMPNO = value;
             }
         }
 
@@ -724,12 +724,12 @@
         {
             get
             {
-                return _calibrationResults.Style;
+                return _calibrationResults.STYLE;
             }
 
             set
             {
-                _calibrationResults.Style = value;
+                _calibrationResults.STYLE = value;
             }
         }
            
@@ -737,12 +737,12 @@
         {
             get
             {
-                return _calibrationResults.Range;
+                return _calibrationResults.RANGE;
             }
 
             set
             {
-                _calibrationResults.Range = value;
+                _calibrationResults.RANGE = value;
             }
         }
 
@@ -750,12 +750,12 @@
         {
             get
             {
-                return _calibrationResults.Tag;
+                return _calibrationResults.TAG;
             }
 
             set
             {
-                _calibrationResults.Tag = value;
+                _calibrationResults.TAG = value;
             }
         }
 
@@ -763,12 +763,12 @@
         {
             get
             {
-                return _calibrationResults.Sqrt;
+                return _calibrationResults.SQRT;
             }
 
             set
             {
-                _calibrationResults.Sqrt = value;
+                _calibrationResults.SQRT = value;
             }
         }
 
@@ -776,12 +776,12 @@
         {
             get
             {
-                return _calibrationResults.XjNumber;
+                return _calibrationResults.XJNO;
             }
 
             set
             {
-                _calibrationResults.XjNumber = value;
+                _calibrationResults.XJNO = value;
             }
         }
 
@@ -789,12 +789,12 @@
         {
             get
             {
-                return _calibrationResults.Qic;
+                return _calibrationResults.QIC;
             }
 
             set
             {
-                _calibrationResults.Qic = value;
+                _calibrationResults.QIC = value;
             }
         }
 
@@ -802,12 +802,12 @@
         {
             get
             {
-                return _calibrationResults.Bar;
+                return _calibrationResults.BAR;
             }
 
             set
             {
-                _calibrationResults.Bar = value;
+                _calibrationResults.BAR = value;
             }
         }
 
@@ -815,12 +815,12 @@
         {
             get
             {
-                return _calibrationResults.Stn;
+                return _calibrationResults.STN;
             }
 
             set
             {
-                _calibrationResults.Stn = value;
+                _calibrationResults.STN = value;
             }
         }
 
@@ -828,12 +828,12 @@
         {
             get
             {
-                return _calibrationResults.KmSerial1;
+                return _calibrationResults.KMSERIAL1;
             }
 
             set
             {
-                _calibrationResults.KmSerial1 = value;
+                _calibrationResults.KMSERIAL1 = value;
             }
         }
 
@@ -841,12 +841,12 @@
         {
             get
             {
-                return _calibrationResults.KmSerial2;
+                return _calibrationResults.KMSERIAL2;
             }
 
             set
             {
-                _calibrationResults.KmSerial2 = value;
+                _calibrationResults.KMSERIAL2 = value;
             }
         }
 
@@ -854,12 +854,12 @@
         {
             get
             {
-                return _calibrationResults.LineName;
+                return _calibrationResults.LINENAME;
             }
 
             set
             {
-                _calibrationResults.LineName = value;
+                _calibrationResults.LINENAME = value;
             }
         }
 
@@ -867,12 +867,12 @@
         {
             get
             {
-                return _calibrationResults.Soft;
+                return _calibrationResults.SOFT;
             }
 
             set
             {
-                _calibrationResults.Soft = value;
+                _calibrationResults.SOFT = value;
             }
         }
 
@@ -880,12 +880,12 @@
         {
             get
             {
-                return _calibrationResults.Version;
+                return _calibrationResults.VERSION;
             }
 
             set
             {
-                _calibrationResults.Version = value;
+                _calibrationResults.VERSION = value;
             }
         }
 
@@ -893,12 +893,12 @@
         {
             get
             {
-                return _calibrationResults.CalibrationDate;
+                return _calibrationResults.CAL_DATE;
             }
 
             set
             {
-                _calibrationResults.CalibrationDate = value;
+                _calibrationResults.CAL_DATE = value;
             }
         }
 
@@ -906,12 +906,12 @@
         {
             get
             {
-                return _calibrationResults.CalibrationTime;
+                return _calibrationResults.CAL_TIME;
             }
 
             set
             {
-                _calibrationResults.CalibrationTime = value;
+                _calibrationResults.CAL_TIME = value;
             }
         }
 
@@ -919,12 +919,12 @@
         {
             get
             {
-                return _calibrationResults.Temp;
+                return _calibrationResults.TEMP;
             }
 
             set
             {
-                _calibrationResults.Temp = value;
+                _calibrationResults.TEMP = value;
             }
         }
 
@@ -932,12 +932,12 @@
         {
             get
             {
-                return _calibrationResults.Humd;
+                return _calibrationResults.HUMD;
             }
 
             set
             {
-                _calibrationResults.Humd = value;
+                _calibrationResults.HUMD = value;
             }
         }
 
@@ -945,12 +945,12 @@
         {
             get
             {
-                return _calibrationResults.Damping;
+                return _calibrationResults.DAMPING;
             }
 
             set
             {
-                _calibrationResults.Damping = value;
+                _calibrationResults.DAMPING = value;
             }
         }
 
@@ -958,12 +958,12 @@
         {
             get
             {
-                return _calibrationResults.Stbl;
+                return _calibrationResults.STBL;
             }
 
             set
             {
-                _calibrationResults.Stbl = value;
+                _calibrationResults.STBL = value;
             }
         }
 
@@ -971,12 +971,12 @@
         {
             get
             {
-                return _calibrationResults.EthercomVersion;
+                return _calibrationResults.ETHERCOM_VER;
             }
 
             set
             {
-                _calibrationResults.EthercomVersion = value;
+                _calibrationResults.ETHERCOM_VER = value;
             }
         }
 
@@ -984,12 +984,12 @@
         {
             get
             {
-                return _calibrationResults.BhcomVersion;
+                return _calibrationResults.BHCOM_VER;
             }
 
             set
             {
-                _calibrationResults.BhcomVersion = value;
+                _calibrationResults.BHCOM_VER = value;
             }
         }
 
@@ -997,12 +997,12 @@
         {
             get
             {
-                return _calibrationResults.PresscontVersion;
+                return _calibrationResults.PRESSCONT_VER;
             }
 
             set
             {
-                _calibrationResults.PresscontVersion = value;
+                _calibrationResults.PRESSCONT_VER = value;
             }
         }
 
@@ -1010,12 +1010,12 @@
         {
             get
             {
-                return _calibrationResults.PressInitialisation;
+                return _calibrationResults.PRESS_INI;
             }
 
             set
             {
-                _calibrationResults.PressInitialisation = value;
+                _calibrationResults.PRESS_INI = value;
             }
         }
 
@@ -1023,12 +1023,12 @@
         {
             get
             {
-                return _calibrationResults.CrcxInitialisation;
+                return _calibrationResults.CRCX_INI;
             }
 
             set
             {
-                _calibrationResults.CrcxInitialisation = value;
+                _calibrationResults.CRCX_INI = value;
             }
         }
 
@@ -1036,12 +1036,12 @@
         {
             get
             {
-                return _calibrationResults.EjxMsCodeInitialisation;
+                return _calibrationResults.EJXMSCODE_INI;
             }
 
             set
             {
-                _calibrationResults.EjxMsCodeInitialisation = value;
+                _calibrationResults.EJXMSCODE_INI = value;
             }
         }
 
@@ -1049,12 +1049,12 @@
         {
             get
             {
-                return _calibrationResults.AtmospherePressure;
+                return _calibrationResults.ATMOSPHERE;
             }
 
             set
             {
-                _calibrationResults.AtmospherePressure = value;
+                _calibrationResults.ATMOSPHERE = value;
             }
         }
 
@@ -1062,12 +1062,12 @@
         {
             get
             {
-                return _calibrationResults.StartNumber;
+                return _calibrationResults.STARTNO;
             }
 
             set
             {
-                _calibrationResults.StartNumber = value;
+                _calibrationResults.STARTNO = value;
             }
         }
 
@@ -1075,12 +1075,12 @@
         {
             get
             {
-                return _calibrationResults.AdjustScale_0;
+                return _calibrationResults.ADJ_V0;
             }
 
             set
             {
-                _calibrationResults.AdjustScale_0 = value;
+                _calibrationResults.ADJ_V0 = value;
             }
         }
 
@@ -1088,12 +1088,12 @@
         {
             get
             {
-                return _calibrationResults.AdjustScale_100;
+                return _calibrationResults.ADJ_V100;
             }
 
             set
             {
-                _calibrationResults.AdjustScale_100 = value;
+                _calibrationResults.ADJ_V100 = value;
             }
         }
 
@@ -1101,12 +1101,12 @@
         {
             get
             {
-                return _calibrationResults.HartSelection;
+                return _calibrationResults.HARTSEL;
             }
 
             set
             {
-                _calibrationResults.HartSelection = value;
+                _calibrationResults.HARTSEL = value;
             }
         }
 
@@ -1114,12 +1114,12 @@
         {
             get
             {
-                return _calibrationResults.MessageDisplay;
+                return _calibrationResults.MSGDISP;
             }
 
             set
             {
-                _calibrationResults.MessageDisplay = value;
+                _calibrationResults.MSGDISP = value;
             }
         }
 
@@ -1127,12 +1127,12 @@
         {
             get
             {
-                return _calibrationResults.Eui64adrs;
+                return _calibrationResults.EUI64ADRS;
             }
 
             set
             {
-                _calibrationResults.Eui64adrs = value;
+                _calibrationResults.EUI64ADRS = value;
             }
         }
 
@@ -1140,12 +1140,12 @@
         {
             get
             {
-                return _calibrationResults.Acc;
+                return _calibrationResults.ACC;
             }
 
             set
             {
-                _calibrationResults.Acc = value;
+                _calibrationResults.ACC = value;
             }
         }
 
@@ -1153,24 +1153,24 @@
         {
             get
             {
-                return _calibrationResults.Calut;
+                return _calibrationResults.CALUT;
             }
 
             set
             {
-                _calibrationResults.Calut = value;
+                _calibrationResults.CALUT = value;
             }
         }
         public string Cal1
         {
             get
             {
-                return _calibrationResults.Cal1;
+                return _calibrationResults.CAL1;
             }
 
             set
             {
-                _calibrationResults.Cal1 = value;
+                _calibrationResults.CAL1 = value;
             }
         }
 
@@ -1178,12 +1178,12 @@
         {
             get
             {
-                return _calibrationResults.Cal2;
+                return _calibrationResults.CAL2;
             }
 
             set
             {
-                _calibrationResults.Cal2 = value;
+                _calibrationResults.CAL2 = value;
             }
         }
 
@@ -1191,12 +1191,12 @@
         {
             get
             {
-                return _calibrationResults.Cal3;
+                return _calibrationResults.CAL3;
             }
 
             set
             {
-                _calibrationResults.Cal3 = value;
+                _calibrationResults.CAL3 = value;
             }
         }
 
@@ -1204,12 +1204,12 @@
         {
             get
             {
-                return _calibrationResults.Cal4;
+                return _calibrationResults.CAL4;
             }
 
             set
             {
-                _calibrationResults.Cal4 = value;
+                _calibrationResults.CAL4 = value;
             }
         }
 
@@ -1217,12 +1217,12 @@
         {
             get
             {
-                return _calibrationResults.Cal5;
+                return _calibrationResults.CAL5;
             }
 
             set
             {
-                _calibrationResults.Cal5 = value;
+                _calibrationResults.CAL5 = value;
             }
         }
 
@@ -1230,12 +1230,12 @@
         {
             get
             {
-                return _calibrationResults.Cal6;
+                return _calibrationResults.CAL6;
             }
 
             set
             {
-                _calibrationResults.Cal6 = value;
+                _calibrationResults.CAL6 = value;
             }
         }
 
@@ -1243,12 +1243,12 @@
         {
             get
             {
-                return _calibrationResults.Cal7;
+                return _calibrationResults.CAL7;
             }
 
             set
             {
-                _calibrationResults.Cal7 = value;
+                _calibrationResults.CAL7 = value;
             }
         }
 
@@ -1258,12 +1258,12 @@
         {
             get
             {
-                return _calibrationResults.Desut;
+                return _calibrationResults.DESUT;
             }
 
             set
             {
-                _calibrationResults.Desut = value;
+                _calibrationResults.DESUT = value;
             }
         }
 
@@ -1271,12 +1271,12 @@
         {
             get
             {
-                return _calibrationResults.Des1;
+                return _calibrationResults.DES1;
             }
 
             set
             {
-                _calibrationResults.Des1 = value;
+                _calibrationResults.DES1 = value;
             }
         }
 
@@ -1284,12 +1284,12 @@
         {
             get
             {
-                return _calibrationResults.Des2;
+                return _calibrationResults.DES2;
             }
 
             set
             {
-                _calibrationResults.Des2 = value;
+                _calibrationResults.DES2 = value;
             }
         }
 
@@ -1297,12 +1297,12 @@
         {
             get
             {
-                return _calibrationResults.Des3;
+                return _calibrationResults.DES3;
             }
 
             set
             {
-                _calibrationResults.Des3 = value;
+                _calibrationResults.DES3 = value;
             }
         }
 
@@ -1310,24 +1310,24 @@
         {
             get
             {
-                return _calibrationResults.Des4;
+                return _calibrationResults.DES4;
             }
 
             set
             {
-                _calibrationResults.Des4 = value;
+                _calibrationResults.DES4 = value;
             }
         }
         public string Des5
         {
             get
             {
-                return _calibrationResults.Des5;
+                return _calibrationResults.DES5;
             }
 
             set
             {
-                _calibrationResults.Des5 = value;
+                _calibrationResults.DES5 = value;
             }
         }
 
@@ -1335,12 +1335,12 @@
         {
             get
             {
-                return _calibrationResults.Des6;
+                return _calibrationResults.DES6;
             }
 
             set
             {
-                _calibrationResults.Des6 = value;
+                _calibrationResults.DES6 = value;
             }
         }
 
@@ -1348,12 +1348,12 @@
         {
             get
             {
-                return _calibrationResults.Des7;
+                return _calibrationResults.DES7;
             }
 
             set
             {
-                _calibrationResults.Des7 = value;
+                _calibrationResults.DES7 = value;
             }
         }
 
@@ -1361,12 +1361,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc1;
+                return _calibrationResults.DTINC1;
             }
 
             set
             {
-                _calibrationResults.Dtinc1 = value;
+                _calibrationResults.DTINC1 = value;
             }
         }
 
@@ -1374,12 +1374,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc2;
+                return _calibrationResults.DTINC2;
             }
 
             set
             {
-                _calibrationResults.Dtinc2 = value;
+                _calibrationResults.DTINC2 = value;
             }
         }
 
@@ -1387,12 +1387,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc3;
+                return _calibrationResults.DTINC3;
             }
 
             set
             {
-                _calibrationResults.Dtinc3 = value;
+                _calibrationResults.DTINC3 = value;
             }
         }
 
@@ -1400,12 +1400,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc4;
+                return _calibrationResults.DTINC4;
             }
 
             set
             {
-                _calibrationResults.Dtinc4 = value;
+                _calibrationResults.DTINC4 = value;
             }
         }
 
@@ -1413,12 +1413,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc5;
+                return _calibrationResults.DTINC5;
             }
 
             set
             {
-                _calibrationResults.Dtinc5 = value;
+                _calibrationResults.DTINC5 = value;
             }
         }
 
@@ -1426,12 +1426,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc6;
+                return _calibrationResults.DTINC6;
             }
 
             set
             {
-                _calibrationResults.Dtinc6 = value;
+                _calibrationResults.DTINC6 = value;
             }
         }
 
@@ -1439,12 +1439,12 @@
         {
             get
             {
-                return _calibrationResults.Dtinc7;
+                return _calibrationResults.DTINC7;
             }
 
             set
             {
-                _calibrationResults.Dtinc7 = value;
+                _calibrationResults.DTINC7 = value;
             }
         }
 
@@ -1452,12 +1452,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec1;
+                return _calibrationResults.DTDEC1;
             }
 
             set
             {
-                _calibrationResults.Dtdec1 = value;
+                _calibrationResults.DTDEC1 = value;
             }
         }
 
@@ -1465,12 +1465,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec2;
+                return _calibrationResults.DTDEC2;
             }
 
             set
             {
-                _calibrationResults.Dtdec2 = value;
+                _calibrationResults.DTDEC2 = value;
             }
         }
 
@@ -1478,12 +1478,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec3;
+                return _calibrationResults.DTDEC3;
             }
 
             set
             {
-                _calibrationResults.Dtdec3 = value;
+                _calibrationResults.DTDEC3 = value;
             }
         }
 
@@ -1491,12 +1491,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec4;
+                return _calibrationResults.DTDEC4;
             }
 
             set
             {
-                _calibrationResults.Dtdec4 = value;
+                _calibrationResults.DTDEC4 = value;
             }
         }
 
@@ -1504,12 +1504,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec5;
+                return _calibrationResults.DTDEC5;
             }
 
             set
             {
-                _calibrationResults.Dtdec5 = value;
+                _calibrationResults.DTDEC5 = value;
             }
         }
 
@@ -1517,12 +1517,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec6;
+                return _calibrationResults.DTDEC6;
             }
 
             set
             {
-                _calibrationResults.Dtdec6 = value;
+                _calibrationResults.DTDEC6 = value;
             }
         }
 
@@ -1530,12 +1530,12 @@
         {
             get
             {
-                return _calibrationResults.Dtdec7;
+                return _calibrationResults.DTDEC7;
             }
 
             set
             {
-                _calibrationResults.Dtdec7 = value;
+                _calibrationResults.DTDEC7 = value;
             }
         }
 
@@ -1544,12 +1544,12 @@
         {
             get
             {
-                return _calibrationResults.Convtut;
+                return _calibrationResults.CONVTUT;
             }
 
             set
             {
-                _calibrationResults.Convtut = value;
+                _calibrationResults.CONVTUT = value;
             }
         }
 
@@ -1558,12 +1558,12 @@
         {
             get
             {
-                return _calibrationResults.Convt1;
+                return _calibrationResults.CONVT1;
             }
 
             set
             {
-                _calibrationResults.Convt1 = value;
+                _calibrationResults.CONVT1 = value;
             }
         }
 
@@ -1571,12 +1571,12 @@
         {
             get
             {
-                return _calibrationResults.Convt2;
+                return _calibrationResults.CONVT2;
             }
 
             set
             {
-                _calibrationResults.Convt2 = value;
+                _calibrationResults.CONVT2 = value;
             }
         }
 
@@ -1584,12 +1584,12 @@
         {
             get
             {
-                return _calibrationResults.Convt3;
+                return _calibrationResults.CONVT3;
             }
 
             set
             {
-                _calibrationResults.Convt3 = value;
+                _calibrationResults.CONVT3 = value;
             }
         }
 
@@ -1597,12 +1597,12 @@
         {
             get
             {
-                return _calibrationResults.Convt4;
+                return _calibrationResults.CONVT4;
             }
 
             set
             {
-                _calibrationResults.Convt4 = value;
+                _calibrationResults.CONVT4 = value;
             }
         }
 
@@ -1610,12 +1610,12 @@
         {
             get
             {
-                return _calibrationResults.Convt5;
+                return _calibrationResults.CONVT5;
             }
 
             set
             {
-                _calibrationResults.Convt5 = value;
+                _calibrationResults.CONVT5 = value;
             }
         }
 
@@ -1623,12 +1623,12 @@
         {
             get
             {
-                return _calibrationResults.Convt6;
+                return _calibrationResults.CONVT6;
             }
 
             set
             {
-                _calibrationResults.Convt6 = value;
+                _calibrationResults.CONVT6 = value;
             }
         }
 
@@ -1636,12 +1636,12 @@
         {
             get
             {
-                return _calibrationResults.Convt7;
+                return _calibrationResults.CONVT7;
             }
 
             set
             {
-                _calibrationResults.Convt7 = value;
+                _calibrationResults.CONVT7 = value;
             }
         }
 
@@ -1650,12 +1650,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc1;
+                return _calibrationResults.KMINC1;
             }
 
             set
             {
-                _calibrationResults.Kminc1 = value;
+                _calibrationResults.KMINC1 = value;
             }
         }
 
@@ -1663,12 +1663,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc2;
+                return _calibrationResults.KMINC2;
             }
 
             set
             {
-                _calibrationResults.Kminc2 = value;
+                _calibrationResults.KMINC2 = value;
             }
         }
 
@@ -1676,12 +1676,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc3;
+                return _calibrationResults.KMINC3;
             }
 
             set
             {
-                _calibrationResults.Kminc3 = value;
+                _calibrationResults.KMINC3 = value;
             }
         }
 
@@ -1689,12 +1689,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc4;
+                return _calibrationResults.KMINC4;
             }
 
             set
             {
-                _calibrationResults.Kminc4 = value;
+                _calibrationResults.KMINC4 = value;
             }
         }
 
@@ -1702,12 +1702,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc5;
+                return _calibrationResults.KMINC5;
             }
 
             set
             {
-                _calibrationResults.Kminc5 = value;
+                _calibrationResults.KMINC5 = value;
             }
         }
 
@@ -1715,12 +1715,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc6;
+                return _calibrationResults.KMINC6;
             }
 
             set
             {
-                _calibrationResults.Kminc6 = value;
+                _calibrationResults.KMINC6 = value;
             }
         }
 
@@ -1728,12 +1728,12 @@
         {
             get
             {
-                return _calibrationResults.Kminc7;
+                return _calibrationResults.KMINC7;
             }
 
             set
             {
-                _calibrationResults.Kminc7 = value;
+                _calibrationResults.KMINC7 = value;
             }
         }
 
@@ -1741,12 +1741,12 @@
         {
             get
             {
-                return _calibrationResults.Kmdec1;
+                return _calibrationResults.KMDEC1;
             }
 
             set
             {
-                _calibrationResults.Kmdec1 = value;
+                _calibrationResults.KMDEC1 = value;
             }
         }
 
@@ -1754,12 +1754,12 @@
         {
             get
             {
-                return _calibrationResults.Kmdec2;
+                return _calibrationResults.KMDEC2;
             }
 
             set
             {
-                _calibrationResults.Kmdec2 = value;
+                _calibrationResults.KMDEC2 = value;
             }
         }
 
@@ -1767,12 +1767,12 @@
         {
             get
             {
-                return _calibrationResults.Kmdec3;
+                return _calibrationResults.KMDEC3;
             }
 
             set
             {
-                _calibrationResults.Kmdec3 = value;
+                _calibrationResults.KMDEC3 = value;
             }
         }
 
@@ -1780,24 +1780,24 @@
         {
             get
             {
-                return _calibrationResults.Kmdec4;
+                return _calibrationResults.KMDEC4;
             }
 
             set
             {
-                _calibrationResults.Kmdec4 = value;
+                _calibrationResults.KMDEC4 = value;
             }
         }
         public string Kmdec5
         {
             get
             {
-                return _calibrationResults.Kmdec5;
+                return _calibrationResults.KMDEC5;
             }
 
             set
             {
-                _calibrationResults.Kmdec5 = value;
+                _calibrationResults.KMDEC5 = value;
             }
         }
 
@@ -1805,24 +1805,24 @@
         {
             get
             {
-                return _calibrationResults.Kmdec6;
+                return _calibrationResults.KMDEC6;
             }
 
             set
             {
-                _calibrationResults.Kmdec6 = value;
+                _calibrationResults.KMDEC6 = value;
             }
         }
         public string Kmdec7
         {
             get
             {
-                return _calibrationResults.Kmdec7;
+                return _calibrationResults.KMDEC7;
             }
 
             set
             {
-                _calibrationResults.Kmdec7 = value;
+                _calibrationResults.KMDEC7 = value;
             }
         }
 
@@ -1830,12 +1830,12 @@
         {
             get
             {
-                return _calibrationResults.Cpinc1;
+                return _calibrationResults.CPINC1;
             }
 
             set
             {
-                _calibrationResults.Cpinc1 = value;
+                _calibrationResults.CPINC1 = value;
             }
         }
 
@@ -1843,12 +1843,12 @@
         {
             get
             {
-                return _calibrationResults.Cpinc2;
+                return _calibrationResults.CPINC2;
             }
 
             set
             {
-                _calibrationResults.Cpinc2 = value;
+                _calibrationResults.CPINC2 = value;
             }
         }
 
@@ -1856,12 +1856,12 @@
         {
             get
             {
-                return _calibrationResults.Cpinc3;
+                return _calibrationResults.CPINC3;
             }
 
             set
             {
-                _calibrationResults.Cpinc3 = value;
+                _calibrationResults.CPINC3 = value;
             }
         }
 
@@ -1869,12 +1869,12 @@
         {
             get
             {
-                return _calibrationResults.Cpinc4;
+                return _calibrationResults.CPINC4;
             }
 
             set
             {
-                _calibrationResults.Cpinc4 = value;
+                _calibrationResults.CPINC4 = value;
             }
         }
 
@@ -1882,36 +1882,36 @@
         {
             get
             {
-                return _calibrationResults.Cpinc5;
+                return _calibrationResults.CPINC5;
             }
 
             set
             {
-                _calibrationResults.Cpinc5 = value;
+                _calibrationResults.CPINC5 = value;
             }
         }
         public string Cpinc6
         {
             get
             {
-                return _calibrationResults.Cpinc6;
+                return _calibrationResults.CPINC6;
             }
 
             set
             {
-                _calibrationResults.Cpinc6 = value;
+                _calibrationResults.CPINC6 = value;
             }
         }
         public string Cpinc7
         {
             get
             {
-                return _calibrationResults.Cpinc7;
+                return _calibrationResults.CPINC7;
             }
 
             set
             {
-                _calibrationResults.Cpinc7 = value;
+                _calibrationResults.CPINC7 = value;
             }
         }
 
@@ -1919,12 +1919,12 @@
         {
             get
             {
-                return _calibrationResults.Cpdec1;
+                return _calibrationResults.CPDEC1;
             }
 
             set
             {
-                _calibrationResults.Cpdec1 = value;
+                _calibrationResults.CPDEC1 = value;
             }
         }
 
@@ -1932,12 +1932,12 @@
         {
             get
             {
-                return _calibrationResults.Cpdec2;
+                return _calibrationResults.CPDEC2;
             }
 
             set
             {
-                _calibrationResults.Cpdec2 = value;
+                _calibrationResults.CPDEC2 = value;
             }
         }
 
@@ -1945,12 +1945,12 @@
         {
             get
             {
-                return _calibrationResults.Cpdec3;
+                return _calibrationResults.CPDEC3;
             }
 
             set
             {
-                _calibrationResults.Cpdec3 = value;
+                _calibrationResults.CPDEC3 = value;
             }
         }
 
@@ -1958,24 +1958,24 @@
         {
             get
             {
-                return _calibrationResults.Cpdec4;
+                return _calibrationResults.CPDEC4;
             }
 
             set
             {
-                _calibrationResults.Cpdec4 = value;
+                _calibrationResults.CPDEC4 = value;
             }
         }
         public string Cpdec5
         {
             get
             {
-                return _calibrationResults.Cpdec5;
+                return _calibrationResults.CPDEC5;
             }
 
             set
             {
-                _calibrationResults.Cpdec5 = value;
+                _calibrationResults.CPDEC5 = value;
             }
         }
 
@@ -1983,12 +1983,12 @@
         {
             get
             {
-                return _calibrationResults.Cpdec6;
+                return _calibrationResults.CPDEC6;
             }
 
             set
             {
-                _calibrationResults.Cpdec6 = value;
+                _calibrationResults.CPDEC6 = value;
             }
         }
 
@@ -1996,12 +1996,12 @@
         {
             get
             {
-                return _calibrationResults.Cpdec7;
+                return _calibrationResults.CPDEC7;
             }
 
             set
             {
-                _calibrationResults.Cpdec7 = value;
+                _calibrationResults.CPDEC7 = value;
             }
         }
 
@@ -2010,12 +2010,12 @@
         {
             get
             {
-                return _calibrationResults.Atmn;
+                return _calibrationResults.ATMN;
             }
 
             set
             {
-                _calibrationResults.Atmn = value;
+                _calibrationResults.ATMN = value;
             }
         }
 
@@ -2023,12 +2023,12 @@
         {
             get
             {
-                return _calibrationResults.Caltime;
+                return _calibrationResults.CALTIME;
             }
 
             set
             {
-                _calibrationResults.Caltime = value;
+                _calibrationResults.CALTIME = value;
             }
         }
 
@@ -2036,12 +2036,12 @@
         {
             get
             {
-                return _calibrationResults.Zeror;
+                return _calibrationResults.ZEROR;
             }
 
             set
             {
-                _calibrationResults.Zeror = value;
+                _calibrationResults.ZEROR = value;
             }
         }
 
@@ -2049,12 +2049,12 @@
         {
             get
             {
-                return _calibrationResults.Spanr;
+                return _calibrationResults.SPANR;
             }
 
             set
             {
-                _calibrationResults.Spanr = value;
+                _calibrationResults.SPANR = value;
             }
         }
 
@@ -2062,12 +2062,12 @@
         {
             get
             {
-                return _calibrationResults.AdjUnit;
+                return _calibrationResults.ADJUNIT;
             }
 
             set
             {
-                _calibrationResults.AdjUnit = value;
+                _calibrationResults.ADJUNIT = value;
             }
         }
 
@@ -2075,12 +2075,12 @@
         {
             get
             {
-                return _calibrationResults.WtMatl;
+                return _calibrationResults.WTMATL;
             }
 
             set
             {
-                _calibrationResults.WtMatl = value;
+                _calibrationResults.WTMATL = value;
             }
         }
 
@@ -2088,12 +2088,12 @@
         {
             get
             {
-                return _calibrationResults.FlSize;
+                return _calibrationResults.FLSIZE;
             }
 
             set
             {
-                _calibrationResults.FlSize = value;
+                _calibrationResults.FLSIZE = value;
             }
         }
 
@@ -2101,12 +2101,12 @@
         {
             get
             {
-                return _calibrationResults.Acc2;
+                return _calibrationResults.ACC2;
             }
 
             set
             {
-                _calibrationResults.Acc2 = value;
+                _calibrationResults.ACC2 = value;
             }
         }
 
@@ -2114,12 +2114,12 @@
         {
             get
             {
-                return _calibrationResults.TUser;
+                return _calibrationResults.TUSER;
             }
 
             set
             {
-                _calibrationResults.TUser = value;
+                _calibrationResults.TUSER = value;
             }
         }
 

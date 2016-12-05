@@ -117,7 +117,7 @@
         private string _acc2;
         private string _tuser;
 
-        public string SerialNumberCalibration
+        public string SERIAL
         {
             get
             {
@@ -130,7 +130,7 @@
             }
         }
 
-        public string Result
+        public string RESULT
         {
             get
             {
@@ -143,7 +143,7 @@
             }
         }
        
-        public string CapsuleNumber
+        public string CAPNO
         {
             get
             {
@@ -156,7 +156,7 @@
             }
         }
 
-        public string AmplificationNumber
+        public string AMPNO
         {
             get
             {
@@ -169,7 +169,7 @@
             }
         }
 
-        public string MsCode
+        public string MSCODE
         {
             get
             {
@@ -182,7 +182,7 @@
             }
         }
 
-        public string Style
+        public string STYLE
         {
             get
             {
@@ -195,7 +195,7 @@
             }
         }
 
-        public string OrderNo
+        public string ORDERNO
         {
             get
             {
@@ -208,7 +208,7 @@
             }
         }
 
-        public string Range
+        public string RANGE
         {
             get
             {
@@ -221,7 +221,7 @@
             }
         }
 
-        public string Tag
+        public string TAG
         {
             get
             {
@@ -234,7 +234,7 @@
             }
         }
 
-        public string Sqrt
+        public string SQRT
         {
             get
             {
@@ -247,7 +247,7 @@
             }
         }
 
-        public string XjNumber
+        public string XJNO
         {
             get
             {
@@ -260,7 +260,7 @@
             }
         }
 
-        public string Qic
+        public string QIC
         {
             get
             {
@@ -273,7 +273,7 @@
             }
         }
 
-        public string Bar
+        public string BAR
         {
             get
             {
@@ -286,7 +286,7 @@
             }
         }
 
-        public string Stn
+        public string STN
         {
             get
             {
@@ -299,7 +299,7 @@
             }
         }
 
-        public string KmSerial1
+        public string KMSERIAL1
         {
             get
             {
@@ -312,7 +312,7 @@
             }
         }
 
-        public string KmSerial2
+        public string KMSERIAL2
         {
             get
             {
@@ -325,7 +325,7 @@
             }
         }
 
-        public string LineName
+        public string LINENAME
         {
             get
             {
@@ -338,7 +338,7 @@
             }
         }
 
-        public string Soft
+        public string SOFT
         {
             get
             {
@@ -351,7 +351,7 @@
             }
         }
 
-        public string Version
+        public string VERSION
         {
             get
             {
@@ -364,7 +364,7 @@
             }
         }
 
-        public string CalibrationDate
+        public string CAL_DATE
         {
             get
             {
@@ -377,7 +377,7 @@
             }
         }
 
-        public string CalibrationTime
+        public string CAL_TIME
         {
             get
             {
@@ -390,7 +390,7 @@
             }
         }
 
-        public string Temp
+        public string TEMP
         {
             get
             {
@@ -403,7 +403,7 @@
             }
         }
 
-        public string Humd
+        public string HUMD
         {
             get
             {
@@ -416,7 +416,7 @@
             }
         }
 
-        public string Damping
+        public string DAMPING
         {
             get
             {
@@ -429,7 +429,7 @@
             }
         }
 
-        public string Stbl
+        public string STBL
         {
             get
             {
@@ -442,7 +442,7 @@
             }
         }
 
-        public string EthercomVersion
+        public string ETHERCOM_VER
         {
             get
             {
@@ -455,7 +455,7 @@
             }
         }
 
-        public string BhcomVersion
+        public string BHCOM_VER
         {
             get
             {
@@ -468,7 +468,7 @@
             }
         }
 
-        public string PresscontVersion
+        public string PRESSCONT_VER
         {
             get
             {
@@ -481,7 +481,7 @@
             }
         }
 
-        public string PressInitialisation
+        public string PRESS_INI
         {
             get
             {
@@ -494,7 +494,7 @@
             }
         }
 
-        public string CrcxInitialisation
+        public string CRCX_INI
         {
             get
             {
@@ -507,7 +507,7 @@
             }
         }
 
-        public string EjxMsCodeInitialisation
+        public string EJXMSCODE_INI
         {
             get
             {
@@ -520,7 +520,7 @@
             }
         }
 
-        public string AtmospherePressure
+        public string ATMOSPHERE
         {
             get
             {
@@ -533,7 +533,7 @@
             }
         }
 
-        public string StartNumber
+        public string STARTNO
         {
             get
             {
@@ -546,7 +546,7 @@
             }
         }
 
-        public string AdjustScale_0
+        public string ADJ_V0
         {
             get
             {
@@ -559,7 +559,7 @@
             }
         }
 
-        public string AdjustScale_100
+        public string ADJ_V100
         {
             get
             {
@@ -572,7 +572,7 @@
             }
         }
 
-        public string HartSelection
+        public string HARTSEL
         {
             get
             {
@@ -585,7 +585,7 @@
             }
         }
 
-        public string MessageDisplay
+        public string MSGDISP
         {
             get
             {
@@ -598,7 +598,7 @@
             }
         }
 
-        public string Eui64adrs
+        public string EUI64ADRS
         {
             get
             {
@@ -611,7 +611,7 @@
             }
         }
 
-        public string Acc
+        public string ACC
         {
             get
             {
@@ -624,7 +624,7 @@
             }
         }
 
-        public string Calut
+        public string CALUT
         {
             get
             {
@@ -636,7 +636,7 @@
                 _calut = value;
             }
         }
-        public string Cal1
+        public string CAL1
         {
             get
             {
@@ -649,7 +649,7 @@
             }
         }
 
-        public string Cal2
+        public string CAL2
         {
             get
             {
@@ -662,7 +662,7 @@
             }
         }
 
-        public string Cal3
+        public string CAL3
         {
             get
             {
@@ -675,7 +675,7 @@
             }
         }
 
-        public string Cal4
+        public string CAL4
         {
             get
             {
@@ -688,7 +688,7 @@
             }
         }
 
-        public string Cal5
+        public string CAL5
         {
             get
             {
@@ -701,7 +701,7 @@
             }
         }
 
-        public string Cal6
+        public string CAL6
         {
             get
             {
@@ -714,7 +714,7 @@
             }
         }
 
-        public string Cal7
+        public string CAL7
         {
             get
             {
@@ -727,7 +727,7 @@
             }
         }
 
-        public string Desut
+        public string DESUT
         {
             get
             {
@@ -740,7 +740,7 @@
             }
         }
 
-        public string Des1
+        public string DES1
         {
             get
             {
@@ -753,7 +753,7 @@
             }
         }
 
-        public string Des2
+        public string DES2
         {
             get
             {
@@ -766,7 +766,7 @@
             }
         }
 
-        public string Des3
+        public string DES3
         {
             get
             {
@@ -779,7 +779,7 @@
             }
         }
 
-        public string Des4
+        public string DES4
         {
             get
             {
@@ -791,7 +791,7 @@
                 _des4 = value;
             }
         }
-        public string Des5
+        public string DES5
         {
             get
             {
@@ -804,7 +804,7 @@
             }
         }
 
-        public string Des6
+        public string DES6
         {
             get
             {
@@ -816,7 +816,7 @@
                 _des6 = value;
             }
         }
-        public string Des7
+        public string DES7
         {
             get
             {
@@ -830,7 +830,7 @@
         }
 
 
-        public string Dtinc1
+        public string DTINC1
         {
             get
             {
@@ -843,7 +843,7 @@
             }
         }
 
-        public string Dtinc2
+        public string DTINC2
         {
             get
             {
@@ -856,7 +856,7 @@
             }
         }
 
-        public string Dtinc3
+        public string DTINC3
         {
             get
             {
@@ -869,7 +869,7 @@
             }
         }
 
-        public string Dtinc4
+        public string DTINC4
         {
             get
             {
@@ -882,7 +882,7 @@
             }
         }
 
-        public string Dtinc5
+        public string DTINC5
         {
             get
             {
@@ -895,7 +895,7 @@
             }
         }
 
-        public string Dtinc6
+        public string DTINC6
         {
             get
             {
@@ -908,7 +908,7 @@
             }
         }
 
-        public string Dtinc7
+        public string DTINC7
         {
             get
             {
@@ -921,7 +921,7 @@
             }
         }
 
-        public string Dtdec1
+        public string DTDEC1
         {
             get
             {
@@ -934,7 +934,7 @@
             }
         }
 
-        public string Dtdec2
+        public string DTDEC2
         {
             get
             {
@@ -947,7 +947,7 @@
             }
         }
 
-        public string Dtdec3
+        public string DTDEC3
         {
             get
             {
@@ -960,7 +960,7 @@
             }
         }
 
-        public string Dtdec4
+        public string DTDEC4
         {
             get
             {
@@ -973,7 +973,7 @@
             }
         }
 
-        public string Dtdec5
+        public string DTDEC5
         {
             get
             {
@@ -986,7 +986,7 @@
             }
         }
 
-        public string Dtdec6
+        public string DTDEC6
         {
             get
             {
@@ -999,7 +999,7 @@
             }
         }
 
-        public string Dtdec7
+        public string DTDEC7
         {
             get
             {
@@ -1013,7 +1013,7 @@
         }
 
 
-        public string Convtut
+        public string CONVTUT
         {
             get
             {
@@ -1027,7 +1027,7 @@
         }
 
 
-        public string Convt1
+        public string CONVT1
         {
             get
             {
@@ -1040,7 +1040,7 @@
             }
         }
 
-        public string Convt2
+        public string CONVT2
         {
             get
             {
@@ -1053,7 +1053,7 @@
             }
         }
 
-        public string Convt3
+        public string CONVT3
         {
             get
             {
@@ -1066,7 +1066,7 @@
             }
         }
 
-        public string Convt4
+        public string CONVT4
         {
             get
             {
@@ -1079,7 +1079,7 @@
             }
         }
 
-        public string Convt5
+        public string CONVT5
         {
             get
             {
@@ -1092,7 +1092,7 @@
             }
         }
 
-        public string Convt6
+        public string CONVT6
         {
             get
             {
@@ -1105,7 +1105,7 @@
             }
         }
 
-        public string Convt7
+        public string CONVT7
         {
             get
             {
@@ -1119,7 +1119,7 @@
         }
 
 
-        public string Kminc1
+        public string KMINC1
         {
             get
             {
@@ -1132,7 +1132,7 @@
             }
         }
 
-        public string Kminc2
+        public string KMINC2
         {
             get
             {
@@ -1145,7 +1145,7 @@
             }
         }
 
-        public string Kminc3
+        public string KMINC3
         {
             get
             {
@@ -1158,7 +1158,7 @@
             }
         }
 
-        public string Kminc4
+        public string KMINC4
         {
             get
             {
@@ -1171,7 +1171,7 @@
             }
         }
 
-        public string Kminc5
+        public string KMINC5
         {
             get
             {
@@ -1184,7 +1184,7 @@
             }
         }
 
-        public string Kminc6
+        public string KMINC6
         {
             get
             {
@@ -1197,7 +1197,7 @@
             }
         }
 
-        public string Kminc7
+        public string KMINC7
         {
             get
             {
@@ -1210,7 +1210,7 @@
             }
         }
 
-        public string Kmdec1
+        public string KMDEC1
         {
             get
             {
@@ -1223,7 +1223,7 @@
             }
         }
 
-        public string Kmdec2
+        public string KMDEC2
         {
             get
             {
@@ -1236,7 +1236,7 @@
             }
         }
 
-        public string Kmdec3
+        public string KMDEC3
         {
             get
             {
@@ -1249,7 +1249,7 @@
             }
         }
 
-        public string Kmdec4
+        public string KMDEC4
         {
             get
             {
@@ -1262,7 +1262,7 @@
             }
         }
 
-        public string Kmdec5
+        public string KMDEC5
         {
             get
             {
@@ -1275,7 +1275,7 @@
             }
         }
 
-        public string Kmdec6
+        public string KMDEC6
         {
             get
             {
@@ -1288,7 +1288,7 @@
             }
         }
 
-        public string Kmdec7
+        public string KMDEC7
         {
             get
             {
@@ -1301,7 +1301,7 @@
             }
         }
 
-        public string Cpinc1
+        public string CPINC1
         {
             get
             {
@@ -1314,7 +1314,7 @@
             }
         }
 
-        public string Cpinc2
+        public string CPINC2
         {
             get
             {
@@ -1327,7 +1327,7 @@
             }
         }
 
-        public string Cpinc3
+        public string CPINC3
         {
             get
             {
@@ -1340,7 +1340,7 @@
             }
         }
 
-        public string Cpinc4
+        public string CPINC4
         {
             get
             {
@@ -1353,7 +1353,7 @@
             }
         }
 
-        public string Cpinc5
+        public string CPINC5
         {
             get
             {
@@ -1366,7 +1366,7 @@
             }
         }
 
-        public string Cpinc6
+        public string CPINC6
         {
             get
             {
@@ -1379,7 +1379,7 @@
             }
         }
 
-        public string Cpinc7
+        public string CPINC7
         {
             get
             {
@@ -1392,7 +1392,7 @@
             }
         }
 
-        public string Cpdec1
+        public string CPDEC1
         {
             get
             {
@@ -1405,7 +1405,7 @@
             }
         }
 
-        public string Cpdec2
+        public string CPDEC2
         {
             get
             {
@@ -1418,7 +1418,7 @@
             }
         }
 
-        public string Cpdec3
+        public string CPDEC3
         {
             get
             {
@@ -1431,7 +1431,7 @@
             }
         }
 
-        public string Cpdec4
+        public string CPDEC4
         {
             get
             {
@@ -1444,7 +1444,7 @@
             }
         }
 
-        public string Cpdec5
+        public string CPDEC5
         {
             get
             {
@@ -1457,7 +1457,7 @@
             }
         }
 
-        public string Cpdec6
+        public string CPDEC6
         {
             get
             {
@@ -1470,7 +1470,7 @@
             }
         }
 
-        public string Cpdec7
+        public string CPDEC7
         {
             get
             {
@@ -1484,7 +1484,7 @@
         }
 
 
-        public string Atmn
+        public string ATMN
         {
             get
             {
@@ -1497,7 +1497,7 @@
             }
         }
 
-        public string Caltime
+        public string CALTIME
         {
             get
             {
@@ -1510,7 +1510,7 @@
             }
         }
 
-        public string Zeror
+        public string ZEROR
         {
             get
             {
@@ -1523,7 +1523,7 @@
             }
         }
 
-        public string Spanr
+        public string SPANR
         {
             get
             {
@@ -1536,7 +1536,7 @@
             }
         }
 
-        public string AdjUnit
+        public string ADJUNIT
         {
             get
             {
@@ -1549,7 +1549,7 @@
             }
         }
 
-        public string WtMatl
+        public string WTMATL
         {
             get
             {
@@ -1562,7 +1562,7 @@
             }
         }
 
-        public string FlSize
+        public string FLSIZE
         {
             get
             {
@@ -1575,7 +1575,7 @@
             }
         }
 
-        public string Acc2
+        public string ACC2
         {
             get
             {
@@ -1588,7 +1588,7 @@
             }
         }
 
-        public string TUser
+        public string TUSER
         {
             get
             {

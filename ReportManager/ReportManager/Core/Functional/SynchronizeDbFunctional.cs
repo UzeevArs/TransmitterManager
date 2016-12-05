@@ -75,47 +75,47 @@ namespace ReportManager.Core.Functional
         {
             var isupDevice = DataModelCreator.GetDeviceFromOtherTable(IsupDataTableAdapter);
 
-            if (isupDevice.InputData[0].SerialNumber == null)
+            if (isupDevice.InputData[0].SERIAL_NO == null)
                 return new Tuple<NifudaDataSet.NifudaDataTableDataTable, DateTime>(
                     NifudaDataTableAdapter.GetNotGeneratedData(), DateTime.Now);
 
             foreach (var data in isupDevice.InputData)
             {
-                var incomedFields = NifudaDataTableAdapter.GetDataBy(data.SerialNumber);
+                var incomedFields = NifudaDataTableAdapter.GetDataBy(data.SERIAL_NO);
                 if (incomedFields.Count == 0)
                 {
-                    NifudaDataTableAdapter.InsertQuery(data.MsCode,
-                        data.Model, data.ProductionNumber,
-                        data.ProductionNumberSuffix,
-                        data.LineNumber, data.CrpGroupNumber,
-                        data.ProductionCareer, data.IndexNumber,
-                        data.TestCertSign, data.DocumentationLangType,
-                        data.InstFinishD, data.TestCertYn,
-                        data.EndUserCustNJ, data.OrderNumber,
-                        data.ItemNumber, data.ProductionItemRevisionNumber,
-                        data.ProductionInstRevisionNumber, data.CompNumber,
-                        data.StartScheduleD, data.FinishScheduleD,
-                        data.StartNumber, data.SerialNumber,
-                        data.ALLOWANCE_SIGN, data.ProductionNumberJapan,
-                        data.ProductionNumberEnglish,
-                        data.TokuchuSpecificationSign,
-                        data.SapLinkageNumber, data.RangeInstSign_500,
-                        data.OrderInstMax_500, data.OrderInstMin_500,
-                        data.Unit_500, data.Features_500,
-                        data.RangeInstSign_502, data.OrderInstMax_502,
-                        data.OrderInstMin_502, data.Unit_502,
-                        data.OrderInstContect1W69,
-                        data.OrderInstContect1X72,
-                        data.OrderInstContect1X91,
-                        data.OrderInstContect1Z30,
-                        data.TagNumber_525, data.XjNumber,
-                        data.OrderInstContect1H46,
-                        data.OrderInstContect1X92,
-                        data.OrderInstContect1Y28,
-                        data.OrderInstContect1W35,
-                        data.OrderInstContect1X78,
-                        data.OrderInstContect1X94,
-                        data.CapsuleNumber);
+                    NifudaDataTableAdapter.InsertQuery(data.MS_CODE,
+                        data.MODEL, data.PROD_NO,
+                        data.PROD_NO_SFIX,
+                        data.LINE_NO, data.CRP_GR_NO,
+                        data.PROD_CAREER, data.INDEX_NO,
+                        data.TEST_CERT_SIGN, data.DOC_LANG_TYPE,
+                        data.INST_FINISH_D, data.TEST_CERT_YN,
+                        data.END_USER_CUST_N_J, data.ORDER_NO,
+                        data.ITEM_NO, data.PROD_ITEM_REV_NO,
+                        data.PROD_INST_REV_NO, data.COMP_NO,
+                        data.START_SCHDULE_D, data.FINISH_SCHDULE_D,
+                        data.START_NO, data.SERIAL_NO,
+                        data.ALLOWANCE_SIGN, data.PROD_N_J,
+                        data.PROD_N_E,
+                        data.TOKUCHU_SPEC_SIGN,
+                        data.SAP_LINKAGE_NO, data.RANGE_INST_SIGN_500,
+                        data.ORD_INST_MAX_500, data.ORD_INST_MIN_500,
+                        data.UNIT_500, data.FEATURES_500,
+                        data.RANGE_INST_SIGN_502, data.ORD_INST_MAX_502,
+                        data.ORD_INST_MIN_502, data.UNIT_502,
+                        data.ORD_INST_CONTECT1_W69,
+                        data.ORD_INST_CONTECT1_X72,
+                        data.ORD_INST_CONTECT1_X91,
+                        data.ORD_INST_CONTECT1_Z30,
+                        data.TAG_NO_525, data.XJ_NO,
+                        data.ORD_INST_CONTECT1_H46,
+                        data.ORD_INST_CONTECT1_X92,
+                        data.ORD_INST_CONTECT1_Y28,
+                        data.ORD_INST_CONTECT1_W35,
+                        data.ORD_INST_CONTECT1_X78,
+                        data.ORD_INST_CONTECT1_X94,
+                        data.CAP_NO);
                 }
             }
             IsupDataTableAdapter.UpdateQuery();

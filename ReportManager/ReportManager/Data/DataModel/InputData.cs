@@ -52,7 +52,7 @@
         private string _orderInstContect1X94;
         private string _capsuleNumber;
 
-        public string MsCode
+        public string MS_CODE
         {
             get
             {
@@ -65,7 +65,7 @@
             }
         }
 
-        public string Model
+        public string MODEL
         {
             get
             {
@@ -78,7 +78,7 @@
             }
         }
 
-        public string ProductionNumber
+        public string PROD_NO
         {
             get
             {
@@ -91,7 +91,7 @@
             }
         }
 
-        public string ProductionNumberSuffix
+        public string PROD_NO_SFIX
         {
             get
             {
@@ -104,7 +104,7 @@
             }
         }
 
-        public string LineNumber
+        public string LINE_NO
         {
             get
             {
@@ -117,7 +117,7 @@
             }
         }
 
-        public string CrpGroupNumber
+        public string CRP_GR_NO
         {
             get
             {
@@ -130,7 +130,7 @@
             }
         }
 
-        public string ProductionCareer
+        public string PROD_CAREER
         {
             get
             {
@@ -143,7 +143,7 @@
             }
         }
 
-        public string TestCertSign
+        public string TEST_CERT_SIGN
         {
             get
             {
@@ -156,7 +156,7 @@
             }
         }
 
-        public string DocumentationLangType
+        public string DOC_LANG_TYPE
         {
             get
             {
@@ -169,7 +169,7 @@
             }
         }
 
-        public string InstFinishD
+        public string INST_FINISH_D
         {
             get
             {
@@ -182,7 +182,7 @@
             }
         }
 
-        public string TestCertYn
+        public string TEST_CERT_YN
         {
             get
             {
@@ -195,7 +195,7 @@
             }
         }
 
-        public string EndUserCustNJ
+        public string END_USER_CUST_N_J
         {
             get
             {
@@ -208,7 +208,7 @@
             }
         }
 
-        public string OrderNumber
+        public string ORDER_NO
         {
             get
             {
@@ -221,7 +221,7 @@
             }
         }
 
-        public string ItemNumber
+        public string ITEM_NO
         {
             get
             {
@@ -234,7 +234,7 @@
             }
         }
 
-        public string ProductionItemRevisionNumber
+        public string PROD_ITEM_REV_NO
         {
             get
             {
@@ -247,7 +247,7 @@
             }
         }
 
-        public string ProductionInstRevisionNumber
+        public string PROD_INST_REV_NO
         {
             get
             {
@@ -260,7 +260,7 @@
             }
         }
 
-        public string CompNumber
+        public string COMP_NO
         {
             get
             {
@@ -273,7 +273,7 @@
             }
         }
 
-        public string StartScheduleD
+        public string START_SCHDULE_D
         {
             get
             {
@@ -286,7 +286,7 @@
             }
         }
 
-        public string FinishScheduleD
+        public string FINISH_SCHDULE_D
         {
             get
             {
@@ -299,7 +299,7 @@
             }
         }
 
-        public string StartNumber
+        public string START_NO
         {
             get
             {
@@ -312,7 +312,7 @@
             }
         }
 
-        public string SerialNumber
+        public string SERIAL_NO
         {
             get
             {
@@ -338,7 +338,7 @@
             }
         }
 
-        public string ProductionNumberJapan
+        public string PROD_N_J
         {
             get
             {
@@ -351,7 +351,7 @@
             }
         }
 
-        public string ProductionNumberEnglish
+        public string PROD_N_E
         {
             get
             {
@@ -364,7 +364,7 @@
             }
         }
 
-        public string TokuchuSpecificationSign
+        public string TOKUCHU_SPEC_SIGN
         {
             get
             {
@@ -377,7 +377,7 @@
             }
         }
 
-        public string SapLinkageNumber
+        public string SAP_LINKAGE_NO
         {
             get
             {
@@ -390,7 +390,7 @@
             }
         }
 
-        public string RangeInstSign_500
+        public string RANGE_INST_SIGN_500
         {
             get
             {
@@ -403,7 +403,7 @@
             }
         }
 
-        public string OrderInstMax_500
+        public string ORD_INST_MAX_500
         {
             get
             {
@@ -416,7 +416,7 @@
             }
         }
 
-        public string OrderInstMin_500
+        public string ORD_INST_MIN_500
         {
             get
             {
@@ -429,7 +429,7 @@
             }
         }
 
-        public string Unit_500
+        public string UNIT_500
         {
             get
             {
@@ -442,7 +442,7 @@
             }
         }
 
-        public string Features_500
+        public string FEATURES_500
         {
             get
             {
@@ -455,7 +455,7 @@
             }
         }
 
-        public string RangeInstSign_502
+        public string RANGE_INST_SIGN_502
         {
             get
             {
@@ -468,7 +468,7 @@
             }
         }
 
-        public string OrderInstMax_502
+        public string ORD_INST_MAX_502
         {
             get
             {
@@ -481,7 +481,7 @@
             }
         }
 
-        public string OrderInstMin_502
+        public string ORD_INST_MIN_502
         {
             get
             {
@@ -494,7 +494,7 @@
             }
         }
 
-        public string Unit_502
+        public string UNIT_502
         {
             get
             {
@@ -507,7 +507,7 @@
             }
         }
 
-        public string OrderInstContect1W69
+        public string ORD_INST_CONTECT1_W69
         {
             get
             {
@@ -520,7 +520,7 @@
             }
         }
 
-        public string OrderInstContect1X72
+        public string ORD_INST_CONTECT1_X72
         {
             get
             {
@@ -533,7 +533,7 @@
             }
         }
 
-        public string OrderInstContect1X91
+        public string ORD_INST_CONTECT1_X91
         {
             get
             {
@@ -546,7 +546,7 @@
             }
         }
 
-        public string OrderInstContect1Z30
+        public string ORD_INST_CONTECT1_Z30
         {
             get
             {
@@ -559,7 +559,7 @@
             }
         }
 
-        public string TagNumber_525
+        public string TAG_NO_525
         {
             get
             {
@@ -572,7 +572,7 @@
             }
         }
 
-        public string XjNumber
+        public string XJ_NO
         {
             get
             {
@@ -585,7 +585,7 @@
             }
         }
 
-        public string OrderInstContect1H46
+        public string ORD_INST_CONTECT1_H46
         {
             get
             {
@@ -598,7 +598,7 @@
             }
         }
 
-        public string OrderInstContect1X92
+        public string ORD_INST_CONTECT1_X92
         {
             get
             {
@@ -611,7 +611,7 @@
             }
         }
 
-        public string OrderInstContect1Y28
+        public string ORD_INST_CONTECT1_Y28
         {
             get
             {
@@ -624,7 +624,7 @@
             }
         }
 
-        public string OrderInstContect1W35
+        public string ORD_INST_CONTECT1_W35
         {
             get
             {
@@ -637,7 +637,7 @@
             }
         }
 
-        public string OrderInstContect1X78
+        public string ORD_INST_CONTECT1_X78
         {
             get
             {
@@ -650,7 +650,7 @@
             }
         }
 
-        public string OrderInstContect1X94
+        public string ORD_INST_CONTECT1_X94
         {
             get
             {
@@ -663,7 +663,7 @@
             }
         }
 
-        public string IndexNumber
+        public string INDEX_NO
         {
             get
             {
@@ -676,7 +676,7 @@
             }
         }
 
-        public string CapsuleNumber
+        public string CAP_NO
         {
             get
             {
