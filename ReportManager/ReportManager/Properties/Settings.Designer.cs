@@ -44,5 +44,16 @@ namespace ReportManager.Properties {
                 return ((string)(this["yru_v2ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HIS0555;Initial Catalog=YruPciAssembling;User ID=YruPCItestUser;Passw" +
+            "ord=YruPCItestUser")]
+        public string YruPciAssemblingConnectionString1 {
+            get {
+                return ((string)(this["YruPciAssemblingConnectionString1"]));
+            }
+        }
     }
 }

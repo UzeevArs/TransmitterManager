@@ -5,6 +5,8 @@ using ReportManager.Data.Database.CalibrationDataSetTableAdapters;
 using ReportManager.Data.Database.HipotDataTableTableAdapters;
 using ReportManager.Data.Database.ISUPDataTableAdapters;
 using ReportManager.Data.Database.NifudaDataSetTableAdapters;
+using ReportManager.Data.Database.MaxigrafDataSetTableAdapters;
+using ReportManager.Data.Database.UsersDataSetTableAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using System.Linq;
@@ -93,6 +95,7 @@ namespace ReportManager.Core.Utility
                 Connection = { ConnectionString = SettingsContext.GlobalSettings.NifudaConnectionString }
             };
             var deviceModel = new DeviceModel { SerialNumber = new List<SerialNumber> { serialNumber } };
+            
             var dataSetNifuda = nifudaDataTableAdapter.GetDataBy(serialNumber.Serial);
 
             var calibrationDataTableAdapter = new CalibrationDataTableAdapter
@@ -107,9 +110,19 @@ namespace ReportManager.Core.Utility
             };
             var dataSetHipot = hipotDataTableAdapter.GetDataBy(serialNumber.Serial);
 
+            var maxiGrafPlatesSettingTableAdapter = new MaxiGrafPlatesSettingTableAdapter { };
+            var maxiGrafPlatesTableAdapter = new MaxiGrafPlatesTableAdapter { };
+
+            var dataSetMaxiGrafPlates = maxiGrafPlatesTableAdapter.GetDataBy();
+            var dataSetMaxiGrafPlatesSettings = maxiGrafPlatesSettingTableAdapter.GetDataBy();
+
+
+
+
             CheckNifudaDataTable(deviceModel, dataSetNifuda);
             CheckCalibrationDataTable(deviceModel, dataSetCalibrate);
             CheckHipotDataTable(deviceModel, dataSetHipot);
+            
 
             return deviceModel;
         }
@@ -355,5 +368,9 @@ namespace ReportManager.Core.Utility
                     TUser = dataSetHipot[0].TUSER } };
             }
         }
+
+
+
+ 
     }
 }

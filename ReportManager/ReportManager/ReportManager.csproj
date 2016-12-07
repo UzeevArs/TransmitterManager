@@ -156,6 +156,22 @@
     <Compile Include="Core\Functional\CheckManifactureDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\AbstractFunctional.cs" />
     <Compile Include="Core\Functional\SynchronizeDbFunctional.cs" />
+    <Compile Include="Data\Database\MaxigrafDataSet.cs">
+      <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Database\MaxigrafDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Database\UsersDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataModel\MaxiGrafPlates.cs" />
+    <Compile Include="Data\DataModel\MaxiGrafPlatesSettings.cs" />
+    <Compile Include="Data\DataModel\UsersData.cs" />
     <Compile Include="Data\Settings\Settings.cs" />
     <Compile Include="Data\Database\ISUPData.cs">
       <DependentUpon>ISUPData.xsd</DependentUpon>
@@ -333,6 +349,17 @@
     <None Include="Data\Database\ISUPData.xss">
       <DependentUpon>ISUPData.xsd</DependentUpon>
     </None>
+    <None Include="Data\Database\MaxigrafDataSet.xsc">
+      <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\MaxigrafDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MaxigrafDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\Database\MaxigrafDataSet.xss">
+      <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Data\Database\NifudaDataSet.xsc">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
@@ -343,6 +370,17 @@
     </None>
     <None Include="Data\Database\NifudaDataSet.xss">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\UsersDataSet.xsc">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\UsersDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsersDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\Database\UsersDataSet.xss">
+      <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

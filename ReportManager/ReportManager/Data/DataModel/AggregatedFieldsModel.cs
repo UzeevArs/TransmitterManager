@@ -6,6 +6,7 @@
         private readonly InputData _inputData;
         private readonly CalibrationResults _calibrationResults;
         private readonly DeviceTestResult _deviceTestResult;
+        
 
         public AggregatedFieldsModel(SerialNumber serialNumber, 
                                      InputData inputData,
