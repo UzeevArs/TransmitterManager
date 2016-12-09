@@ -22,7 +22,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetData();

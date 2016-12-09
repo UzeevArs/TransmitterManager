@@ -21,7 +21,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.IsupConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetData();
@@ -38,7 +38,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.IsupConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 var methodInfo = typeof(ISUPNifudaDataTableAdapter).GetMethod("Insert");
@@ -50,6 +50,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 
@@ -64,7 +65,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.IsupConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 int fieldsCount = (new ISUPNifudaDataTableDataTable()).Columns.Count;
@@ -78,6 +79,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 
@@ -92,7 +94,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.IsupConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 adapter.UpdateQuery();
@@ -107,7 +109,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.IsupConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 var methodInfo = typeof(ISUPNifudaDataTableAdapter).GetMethod("Delete");
@@ -119,6 +121,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 

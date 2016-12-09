@@ -180,6 +180,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\Database\SafeCheck.cs" />
     <Compile Include="Data\Database\UsersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

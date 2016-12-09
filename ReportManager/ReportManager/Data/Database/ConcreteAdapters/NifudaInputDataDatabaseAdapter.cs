@@ -23,7 +23,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetData();
@@ -40,7 +40,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 var methodInfo = typeof(NifudaDataTableAdapter).GetMethod("Insert");
@@ -52,6 +52,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 
@@ -66,7 +67,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 int fieldsCount = (new NifudaDataSet.NifudaDataTableDataTable()).Columns.Count;
@@ -80,6 +81,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 
@@ -94,7 +96,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
                 var methodInfo = typeof(NifudaDataTableAdapter).GetMethod("Delete");
@@ -106,6 +108,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                                                                    tupleParameters.FirstOrDefault(p =>
                                                                                                   p.Name.ToLower()
                                                                                                   == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
                     methodInfo.Invoke(adapter, values.ToArray());
                 }
 
@@ -121,7 +124,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetDataBy(serial);
@@ -138,7 +141,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetDataBySerial(index);
@@ -155,7 +158,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = adapter.GetNotGeneratedData();
@@ -172,7 +175,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
             })
             {
-                if (adapter.Connection.State != ConnectionState.Open)
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
                 var dataTable = new NifudaDataSet.NifudaDataTableDataTable();

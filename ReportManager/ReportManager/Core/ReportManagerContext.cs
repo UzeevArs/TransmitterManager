@@ -72,6 +72,11 @@ namespace ReportManager.Core
                 }
 
                 CurrentInput = inputDataAdapter.SelectBySerial(dataBySerial[0].SERIAL_NO).FirstOrDefault();
+                if (CurrentInput == null)
+                {
+                    InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+                    return (DeviceModelStatus.CreatedError, null);
+                }
 
                 InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedSuccess, CurrentInput));
                 return (DeviceModelStatus.CreatedSuccess, CurrentInput);
