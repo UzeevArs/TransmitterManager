@@ -32,10 +32,76 @@ namespace ReportManager.Data.Database.ConcreteAdapters
             }
         }
 
-        public (Result, string) Insert(IEnumerable<User> data, object state = null) => throw new NotImplementedException();
+        public (Result, string) Insert(IEnumerable<User> data, object state = null)
+        {
+            using (var adapter = new UsersTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    return (Result.Unsuccess, $"Database connection error");
 
-        public (Result, string) Update(IEnumerable<User> data, object state = null) => throw new NotImplementedException();
+                var methodInfo = typeof(UsersTableAdapter).GetMethod("InsertQuery");
 
-        public (Result, string) Delete(IEnumerable<User> data, object state = null) => throw new NotImplementedException();
+                foreach (var obj in data)
+                {
+                    var tupleParameters = obj.PropertiesToTuple();
+                    var values = methodInfo.GetParameters().Select(info =>
+                                                                   tupleParameters.FirstOrDefault(p =>
+                                                                                                  p.Name.ToLower()
+                                                                                                  == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
+                    methodInfo.Invoke(adapter, values.ToArray());
+                }
+
+                return (Result.Success, $"Ok");
+            }
+        }
+
+        public (Result, string) Update(IEnumerable<User> data, object state = null)
+        {
+            using (var adapter = new UsersTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    return (Result.Unsuccess, $"Database connection error");
+                var methodInfo = typeof(UsersTableAdapter).GetMethod("UpdateQuery");
+
+                foreach (var obj in data)
+                {
+                    var tupleParameters = obj.PropertiesToTuple();
+                    var values = methodInfo.GetParameters().Select(info =>
+                                                                   tupleParameters.FirstOrDefault(p =>
+                                                                                                  p.Name.ToLower()
+                                                                                                  == info.Name.ToLower()).Value ?? "");
+                    if (values == null) continue;
+                    methodInfo.Invoke(adapter, values.ToArray());
+                }
+
+                return (Result.Success, $"Ok");
+            }
+        }
+
+        public (Result, string) Delete(IEnumerable<User> data, object state = null)
+        {
+            using (var adapter = new UsersTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    return (Result.Unsuccess, $"Database connection error");
+
+                foreach (var obj in data)
+                {
+                    adapter.DeleteQuery(obj.TUSER);
+                }
+
+                return (Result.Success, $"Ok");
+            }
+        }
     }
 }

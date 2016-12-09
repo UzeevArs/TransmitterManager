@@ -10,24 +10,24 @@ namespace ReportManager.Core.Utility
     {
         public static bool IsSet<T>(this T flags, T flag) where T : struct
         {
-            int flagsValue = (int)(object)flags;
-            int flagValue = (int)(object)flag;
+            long flagsValue = (long)(object)flags;
+            long flagValue = (long)(object)flag;
 
             return (flagsValue & flagValue) != 0;
         }
 
         public static void Set<T>(ref T flags, T flag) where T : struct
         {
-            int flagsValue = (int)(object)flags;
-            int flagValue = (int)(object)flag;
+            long flagsValue = (long)(object)flags;
+            long flagValue = (long)(object)flag;
 
             flags = (T)(object)(flagsValue | flagValue);
         }
 
         public static void Unset<T>(ref T flags, T flag) where T : struct
         {
-            int flagsValue = (int)(object)flags;
-            int flagValue = (int)(object)flag;
+            long flagsValue = (long)(object)flags;
+            long flagValue = (long)(object)flag;
 
             flags = (T)(object)(flagsValue & (~flagValue));
         }

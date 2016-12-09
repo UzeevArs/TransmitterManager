@@ -3,7 +3,7 @@ using ReportManager.Forms.Stages.MaxigraphStageForm;
 
 namespace ReportManager.Core.Stages
 {
-    internal class MaxigrafStage : Stage
+    public class MaxigrafStage : Stage
     {
         public MaxigrafStage()
         {

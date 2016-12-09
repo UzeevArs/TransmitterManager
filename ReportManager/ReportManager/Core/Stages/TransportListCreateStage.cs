@@ -2,7 +2,7 @@
 
 namespace ReportManager.Core.Stages
 {
-    internal class TransportListCreateStage : Stage
+    public class TransportListCreateStage : Stage
     {
         public TransportListCreateStage()
         {

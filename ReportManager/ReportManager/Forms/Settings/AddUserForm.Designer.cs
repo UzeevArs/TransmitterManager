@@ -65,7 +65,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(11, 23);
+            this.labelControl1.Location = new System.Drawing.Point(11, 26);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(97, 13);
             this.labelControl1.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(167, 20);
+            this.tbUserName.Location = new System.Drawing.Point(167, 23);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(378, 20);
             this.tbUserName.TabIndex = 2;
@@ -86,17 +86,18 @@
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Отмена";
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // tbUserPassword
             // 
-            this.tbUserPassword.Location = new System.Drawing.Point(167, 72);
+            this.tbUserPassword.Location = new System.Drawing.Point(167, 75);
             this.tbUserPassword.Name = "tbUserPassword";
             this.tbUserPassword.Size = new System.Drawing.Size(378, 20);
             this.tbUserPassword.TabIndex = 5;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(11, 75);
+            this.labelControl2.Location = new System.Drawing.Point(11, 78);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(41, 13);
             this.labelControl2.TabIndex = 4;
@@ -120,10 +121,10 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 1"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 2", System.Windows.Forms.CheckState.Checked),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 3")});
-            this.cbFunctionsList.Location = new System.Drawing.Point(2, 21);
+            this.cbFunctionsList.Location = new System.Drawing.Point(2, 20);
             this.cbFunctionsList.Name = "cbFunctionsList";
             this.cbFunctionsList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbFunctionsList.Size = new System.Drawing.Size(268, 213);
+            this.cbFunctionsList.Size = new System.Drawing.Size(268, 214);
             this.cbFunctionsList.TabIndex = 999;
             this.cbFunctionsList.TabStop = false;
             // 
@@ -145,10 +146,10 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 1"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 2"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 3", System.Windows.Forms.CheckState.Checked)});
-            this.cbStageList.Location = new System.Drawing.Point(2, 21);
+            this.cbStageList.Location = new System.Drawing.Point(2, 20);
             this.cbStageList.Name = "cbStageList";
             this.cbStageList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbStageList.Size = new System.Drawing.Size(268, 213);
+            this.cbStageList.Size = new System.Drawing.Size(268, 214);
             this.cbStageList.TabIndex = 999;
             this.cbStageList.TabStop = false;
             // 
@@ -168,7 +169,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(11, 49);
+            this.labelControl3.Location = new System.Drawing.Point(11, 52);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(62, 13);
             this.labelControl3.TabIndex = 6;
@@ -176,7 +177,7 @@
             // 
             // tbFullUserName
             // 
-            this.tbFullUserName.Location = new System.Drawing.Point(167, 46);
+            this.tbFullUserName.Location = new System.Drawing.Point(167, 49);
             this.tbFullUserName.Name = "tbFullUserName";
             this.tbFullUserName.Size = new System.Drawing.Size(378, 20);
             this.tbFullUserName.TabIndex = 7;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using DevExpress.XtraEditors;

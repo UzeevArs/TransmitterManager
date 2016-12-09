@@ -2,26 +2,27 @@
 using ReportManager.Core.Stages;
 using ReportManager.Core.Utility;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace ReportManager.Data.DataModel
 {
     [Flags]
-    public enum UsersStages
+    public enum UsersStages : long
     {
-        None = 0,
-        TransportListCreateStage = 1,
-        ReportCreateStage = 2,
-        MaxigrafStage = 3
+        None                                        = 0x0,
+        TransportListCreateStage                    = 0x1,
+        ReportCreateStage                           = 0x2,
+        MaxigrafStage                               = 0x4
     }
 
     [Flags]
-    public enum UserExtraFunc
+    public enum UserExtraFunc : long
     {
-        None = 0,
-        CheckIsupDb = 1,
-        CheckNifudaDb = 2,
-        SynchronizeDb = 3
+        None                                        = 0x0,
+        CheckIsupDbConnectionFunctional             = 0x1,
+        CheckManifactureDbConnectionFunctional      = 0x2,
+        SynchronizeDbFunctional                     = 0x4
     }
 
     public class User
@@ -37,16 +38,11 @@ namespace ReportManager.Data.DataModel
             {
                 if (_stages != null) return _stages;
 
+                var namesp = typeof(TransportListCreateStage).Namespace;
                 _stages = new List<Stage>();
-
-                if (((UsersStages)UserStagesMask).IsSet(UsersStages.TransportListCreateStage))
-                    _stages.Add(new TransportListCreateStage());
-
-                if (((UsersStages)UserStagesMask).IsSet(UsersStages.ReportCreateStage))
-                    _stages.Add(new ReportCreateStage());
-
-                if (((UsersStages)UserStagesMask).IsSet(UsersStages.MaxigrafStage))
-                    _stages.Add(new MaxigrafStage());
+                _stages.AddRange(Enum.GetNames(typeof(UsersStages))
+                    .Where(en => en != "None" && UserStagesMask.IsSet((long)Enum.Parse(typeof(UsersStages), en)))
+                    .Select(en => (Stage) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
 
                 return _stages;
             }
@@ -59,16 +55,11 @@ namespace ReportManager.Data.DataModel
             {
                 if (_functions != null) return _functions;
 
+                var namesp = typeof(SynchronizeDbFunctional).Namespace;
                 _functions = new List<Functional>();
-
-                if (((UserExtraFunc)UserStagesMask).IsSet(UserExtraFunc.CheckIsupDb))
-                    _functions.Add(new CheckIsupDbConnectionFunctional());
-
-                if (((UserExtraFunc)UserStagesMask).IsSet(UserExtraFunc.CheckNifudaDb))
-                    _functions.Add(new CheckManifactureDbConnectionFunctional());
-
-                if (((UserExtraFunc)UserStagesMask).IsSet(UserExtraFunc.SynchronizeDb))
-                    _functions.Add(new SynchronizeDbFunctional());
+                _functions.AddRange(Enum.GetNames(typeof(UserExtraFunc))
+                    .Where(en => en != "None" && UserExtraFuncMask.IsSet((long)Enum.Parse(typeof(UserExtraFunc), en)))
+                    .Select(en => (Functional) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
 
                 return _functions;
             }
