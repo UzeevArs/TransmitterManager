@@ -8,7 +8,7 @@ namespace ReportManager.Core.Stages
     [XmlInclude(typeof(TransportListCreateStage))]
     [XmlInclude(typeof(MaxigrafStage))]
     [XmlInclude(typeof(ReportCreateStage))]
-    internal abstract class Stage
+    public abstract class Stage
     {
         [XmlIgnore]
         public XtraForm ChildForm { get; protected set; }
@@ -47,5 +47,5 @@ namespace ReportManager.Core.Stages
         }
     }
 
-    internal enum StageStatus { Created, OpenedForm, ClosedForm, Disposed, Error }
+    public enum StageStatus { Created, OpenedForm, ClosedForm, Disposed, Error }
 }

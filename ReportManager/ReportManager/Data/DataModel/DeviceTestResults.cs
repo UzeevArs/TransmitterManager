@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class DeviceTestResults
+    public class DeviceTestResults
     {
         public string SERIAL { get; set; } = "";
         public string RESULT { get; set; } = "";

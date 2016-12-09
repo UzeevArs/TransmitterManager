@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class CalibrationResults
+    public class CalibrationResults
     {
         public string SERIAL { get; set; } = "";
         public string RESULT { get; set; } = "";

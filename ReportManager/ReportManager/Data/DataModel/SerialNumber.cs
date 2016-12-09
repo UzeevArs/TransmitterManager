@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class SerialNumber
+    public class SerialNumber
     {
         public string Serial { get; set; } = "";
     }

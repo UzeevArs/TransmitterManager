@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class InputData
+    public class InputData
     {
         public string MS_CODE { get; set; } = "";
         public string MODEL { get; set; } = "";

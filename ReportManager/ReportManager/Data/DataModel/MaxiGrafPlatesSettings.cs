@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class MaxigrafPlatesSettings
+    public class MaxigrafPlatesSettings
     {
         public string Num { get; set; } = "";
         public string ObjectPath { get; set; } = "";
