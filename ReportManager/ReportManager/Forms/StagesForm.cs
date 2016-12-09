@@ -14,6 +14,10 @@ using ReportManager.Data.Database;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Forms.Data;
+using ReportManager.Forms.Settings;
+using ReportManager.Forms.Stages.MaxigraphStageForm;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ReportManager.Forms
 {
@@ -36,21 +40,23 @@ namespace ReportManager.Forms
             UpdateStageButtons();
 
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
-            ReportManagerContext.GetInstance().DeviceModelCreatedStatus += StagesForm_DeviceModelCreatedStatus;
+            ReportManagerContext.GetInstance().InputDataCreatedStatus += StagesForm_DeviceModelCreatedStatus;
             FunctionalSubscribe();
         }
 
         private void FillData()
         {
-            lblUserName.Caption += SettingsContext.UserName;
+            ribbonPage3.Visible = SettingsContext.CurrentUser.TUSER == "ReportManagerAdmin";
+            lblUserName.Caption += SettingsContext.CurrentUser.FullName;
         }
 
-        private void StagesForm_DeviceModelCreatedStatus(object sender,
-            Tuple<DeviceModelStatus, DeviceModel> data)
+        private void StagesForm_DeviceModelCreatedStatus(object sender, (DeviceModelStatus, InputData) data)
         {
+            var (status, input) = data;
+
             Invoke((MethodInvoker) delegate
             {
-                if (data.Item1 == DeviceModelStatus.CreatedError)
+                if (status == DeviceModelStatus.CreatedError)
                 {
                     MessageBox.Show("Серийный номер не найден", "Предупреждение",
                         MessageBoxButtons.OK,
@@ -73,7 +79,7 @@ namespace ReportManager.Forms
 
         private void FunctionalSubscribe()
         {
-            foreach (var functional in SettingsContext.GlobalSettings.Functionals)
+            foreach (var functional in SettingsContext.CurrentUser.UserExtraFunction)
             {
                 if (functional.GetType() == typeof(CheckIsupDbConnectionFunctional))
                 {
@@ -91,13 +97,14 @@ namespace ReportManager.Forms
             }
         }
 
-        private void SyncOnStateChanged(object sender, Tuple<NifudaDataSet.NifudaDataTableDataTable, DateTime> data)
+        private void SyncOnStateChanged(object sender, (IEnumerable<InputData>, DateTime) data)
         {
             try
             {
                 Invoke((MethodInvoker) delegate
                 {
-                    lblStatus.Caption = $"Дата: {data.Item2}. Непринятых заказов: {data.Item1.Count}";
+                    var (input, date) = data;
+                    lblStatus.Caption = $"Дата: {date}. Непринятых заказов: {input.Count()}";
                 });
             }
             catch
@@ -124,9 +131,7 @@ namespace ReportManager.Forms
                     }
                 });
             }
-            catch
-            {
-            }
+            catch { }
         }
 
         private void IsupDbConnectionOnStateChange(object sender, StateChangeEventArgs stateChangeEventArgs)
@@ -149,11 +154,10 @@ namespace ReportManager.Forms
             catch { }
         }
 
-        private void SettingsContextOnSettingsLoadingEvent(object sender, 
-            Tuple<Settings, SettingsStatus, string> status)
+        private void SettingsContextOnSettingsLoadingEvent(object sender, (ReportManager.Data.Settings.Settings, SettingsStatus, string) status)
         {
-            if (status.Item2 == SettingsStatus.Changed
-                || status.Item2 == SettingsStatus.SuccessLoaded)
+            var (settings, settingsStatus, message) = status;
+            if (settingsStatus == SettingsStatus.Changed || settingsStatus == SettingsStatus.SuccessLoaded)
             {
                 lblIsupConnectionStatus.Caption = "";
                 lblNifudaConnectionStatus.Caption = "";
@@ -165,20 +169,20 @@ namespace ReportManager.Forms
 
         private void UpdateStageButtons()
         {
-            btnTrasportListCreateStage.Visibility = SettingsContext.GlobalSettings.Stages.Find(stage =>
+            btnTrasportListCreateStage.Visibility = SettingsContext.CurrentUser.UserStages.Find(stage =>
                 stage.GetType() == typeof(TransportListCreateStage)) != null ? BarItemVisibility.Always : BarItemVisibility.Never;
             btnTrasportListCreateStage.Tag =
-                SettingsContext.GlobalSettings.Stages.Find(stage => stage.GetType() == typeof(TransportListCreateStage));
+                SettingsContext.CurrentUser.UserStages.Find(stage => stage.GetType() == typeof(TransportListCreateStage));
 
-            btnReportCreateStage.Visibility = SettingsContext.GlobalSettings.Stages.Find(stage =>
+            btnReportCreateStage.Visibility = SettingsContext.CurrentUser.UserStages.Find(stage =>
                 stage.GetType() == typeof(ReportCreateStage)) != null ? BarItemVisibility.Always : BarItemVisibility.Never;
             btnReportCreateStage.Tag =
-                SettingsContext.GlobalSettings.Stages.Find(stage => stage.GetType() == typeof(ReportCreateStage));
+                SettingsContext.CurrentUser.UserStages.Find(stage => stage.GetType() == typeof(ReportCreateStage));
 
-            btnMaxigrafStage.Visibility = SettingsContext.GlobalSettings.Stages.Find(stage =>
+            btnMaxigrafStage.Visibility = SettingsContext.CurrentUser.UserStages.Find(stage =>
                 stage.GetType() == typeof(MaxigrafStage)) != null ? BarItemVisibility.Always : BarItemVisibility.Never;
             btnMaxigrafStage.Tag =
-                SettingsContext.GlobalSettings.Stages.Find(stage => stage.GetType() == typeof(MaxigrafStage));
+                SettingsContext.CurrentUser.UserStages.Find(stage => stage.GetType() == typeof(MaxigrafStage));
         }
 
         #region Application launch
@@ -214,7 +218,7 @@ namespace ReportManager.Forms
             }
         }
 
-        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -228,7 +232,7 @@ namespace ReportManager.Forms
             ReportManagerContext.GetInstance().Dispose();
         }
 
-        private void btnExit_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnExit_ItemClick(object sender, ItemClickEventArgs e)
         {
             Application.Exit();
         }
@@ -243,7 +247,7 @@ namespace ReportManager.Forms
             edtMsCode.EditValue = serial;
         }
 
-        private void edtSerial_EditValueChanged(object sender, EventArgs e)
+        private void EdtSerial_EditValueChanged(object sender, EventArgs e)
         {
             if (edtMsCode.EditValue != null && !edtMsCode.EditValue.Equals(string.Empty))
             {
@@ -261,35 +265,35 @@ namespace ReportManager.Forms
                 }
                 else
                 {
-                    var model = ReportManagerContext.GetInstance().CurrentDeviceModel;
-                    lblExtraInformation.EditValue = $"Модель: {model.InputData[0].MODEL}. Серийный номер: {model.InputData[0].SERIAL_NO}";
+                    var input = ReportManagerContext.GetInstance().CurrentInput;
+                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
                     lblExtraInformation.Visibility = BarItemVisibility.Always;
                 }
             }
         }
         #endregion
 
-        private void btnTrasportListCreateStage_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnTrasportListCreateStage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            (btnTrasportListCreateStage.Tag as AbstractStage)?.OpenForm(this);
+            (btnTrasportListCreateStage.Tag as Stage)?.OpenForm(this);
         }
 
-        private void btnReportCreateStage_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnReportCreateStage_ItemClick(object sender, ItemClickEventArgs e)
         {
-            (btnReportCreateStage.Tag as AbstractStage)?.OpenForm(this);
+            (btnReportCreateStage.Tag as Stage)?.OpenForm(this);
         }
 
-        private void btnLoadData_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnLoadData_ItemClick(object sender, ItemClickEventArgs e)
         {
-            (btnMaxigrafStage.Tag as AbstractStage)?.OpenForm(this);
+            (btnMaxigrafStage.Tag as Stage)?.OpenForm(this);
         }
 
-        private void btnOpenSettings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void BtnOpenSettings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new SettingsForm().ShowDialog();
         }
 
-        private void btnToSetManual_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnToSetManual_ItemClick(object sender, ItemClickEventArgs e)
         {
             edtMsCode.CanOpenEdit = true;
             edtMsCode.Edit.BorderStyle = BorderStyles.HotFlat;
@@ -297,11 +301,20 @@ namespace ReportManager.Forms
             btnToSetManual.Enabled = false;
         }
 
-        private void btnAllData_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnAllData_ItemClick(object sender, ItemClickEventArgs e)
         {
             new AllDataForm {MdiParent = this}.Show();
         }
 
+        private void BtnUserSettings_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new UserSettingsForm { MdiParent = this }.Show();
+        }
+
+        private void BtnPlates_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            new PlatesForm { MdiParent = this }.Show();
+        }
     }
 
     [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
@@ -312,7 +325,6 @@ namespace ReportManager.Forms
 
         private int _maxNumCount = 10;
         private int _currentNumCount = 0;
-        private bool _enterPressed;
 
         private string _tempString = "";
 

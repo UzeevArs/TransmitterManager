@@ -4,22 +4,22 @@ using System.IO;
 using System.Xml.Serialization;
 using ReportManager.Core.Functional;
 using ReportManager.Core.Stages;
+using ReportManager.Data.DataModel;
 
 namespace ReportManager.Data.Settings
 {
-    public static class SettingsContext
+    internal static class SettingsContext
     {
         private static readonly string SettingsPath =
             $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
 
-        public static event EventHandler<Tuple<Settings, SettingsStatus, string>> SettingsLoadingEvent;
+        public static event EventHandler<(Settings settings, SettingsStatus status, string error)> SettingsLoadingEvent;
 
         public static Settings GlobalSettings { get; private set; } = new Settings();
 
-        public static string UserName { get; set; }
-        public static string UserPassword { get; set; }
+        public static User CurrentUser { get; set; } = new User();
 
-        public static Tuple<SettingsStatus, string> SaveSettings()
+        public static (SettingsStatus status, string message) SaveSettings()
         {
             try
             {
@@ -34,17 +34,15 @@ namespace ReportManager.Data.Settings
             }
             catch (Exception ex)
             {
-                SettingsLoadingEvent?.Invoke(GlobalSettings,
-                    new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.ErrorSaved, ex.Message));
-                return new Tuple<SettingsStatus, string>(SettingsStatus.ErrorSaved, ex.Message);
+                SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.ErrorSaved, ex.Message));
+                return (SettingsStatus.ErrorSaved, ex.Message);
             }
 
-            SettingsLoadingEvent?.Invoke(GlobalSettings,
-                new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.SuccessSaved, ""));
-            return new Tuple<SettingsStatus, string>(SettingsStatus.SuccessSaved, "");
+            SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.SuccessSaved, ""));
+            return (SettingsStatus.SuccessSaved, "");
         }
 
-        public static Tuple<SettingsStatus, string> LoadGlobalSettings()
+        public static (SettingsStatus status, string message) LoadGlobalSettings()
         {
             try
             {
@@ -57,25 +55,22 @@ namespace ReportManager.Data.Settings
                     reader.Close();
                 }
 
-                SettingsLoadingEvent?.Invoke(GlobalSettings,
-                   new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.SuccessLoaded, ""));
-                return new Tuple<SettingsStatus, string>(SettingsStatus.SuccessLoaded, "");
+                SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.SuccessLoaded, ""));
+                return (SettingsStatus.SuccessLoaded, "");
             }
             catch (Exception ex)
             {
-                SettingsLoadingEvent?.Invoke(GlobalSettings,
-                   new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.ErrorLoaded, ex.Message));
-                return new Tuple<SettingsStatus, string>(SettingsStatus.ErrorLoaded, ex.Message);
+                SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.ErrorLoaded, ex.Message));
+                return (SettingsStatus.ErrorLoaded, ex.Message);
             }
         }
 
         public static void NotifyChanged()
         {
-            SettingsLoadingEvent?.Invoke(GlobalSettings,
-                  new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.Changed, ""));
+            SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.Changed, ""));
         }
 
-        public static Tuple<SettingsStatus, string> LoadDefaultSettings()
+        public static (SettingsStatus status, string message) LoadDefaultSettings()
         {
             GlobalSettings = new Settings
             {
@@ -83,13 +78,10 @@ namespace ReportManager.Data.Settings
                 NifudaConnectionString = "Data Source=HIS0555\\;Initial Catalog=YruPCIassembling;User ID=YruPCItestUser; Password=YruPCItestUser",
                 ReportSavePath = "C:\\",
                 UpdateTimeout = 1000,
-                Stages = new List<AbstractStage>(),
-                Functionals = new List<AbstractFunctional>()
             };
 
-            SettingsLoadingEvent?.Invoke(GlobalSettings,
-                   new Tuple<Settings, SettingsStatus, string>(GlobalSettings, SettingsStatus.SuccessLoaded, ""));
-            return new Tuple<SettingsStatus, string>(SettingsStatus.SuccessLoaded, "");
+            SettingsLoadingEvent?.Invoke(GlobalSettings, (GlobalSettings, SettingsStatus.SuccessLoaded, ""));
+            return (SettingsStatus.SuccessLoaded, "");
         }
 
         private static void CreateSettingsFolder()

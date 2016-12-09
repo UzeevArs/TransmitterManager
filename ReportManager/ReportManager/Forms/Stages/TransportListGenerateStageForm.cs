@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using ReportManager.Core.Utility;
@@ -11,6 +10,7 @@ using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Reports;
 using ReportManager.Core;
+using ReportManager.Data.Extensions;
 
 namespace ReportManager.Forms.Stages
 {
@@ -23,7 +23,7 @@ namespace ReportManager.Forms.Stages
             nifudaDataTableAdapter1.Connection.ConnectionString = SettingsContext.GlobalSettings.NifudaConnectionString;
         }
 
-        private TransportListReport CreateReportInstance(DeviceModel device)
+        private TransportListReport CreateReportInstance(InputData input)
         {
             TransportListReport report = new TransportListReport();
 
@@ -31,9 +31,12 @@ namespace ReportManager.Forms.Stages
             {
                 report.LoadLayout((report as ISavingReport).GetTemplateFileName());
             }
-            
-            report.DataSource =
-                new List<InputData> { device.InputData[0] };
+
+            report.DataSource = new List<object> { input }
+                            .PropertiesToDict()
+                            .ToExpando()
+                            .ToDynamicArray()
+                            .ToDataTable();
 
             report.PrintingSystem.PrintProgress += Report_PrintProgress;
 
@@ -42,41 +45,43 @@ namespace ReportManager.Forms.Stages
 
         private void Report_PrintProgress(object sender, PrintProgressEventArgs e)
         {
-            var folderData = FolderUtility.CheckAndCreateCurrentPath("Transport List");
-            if (folderData.Item1 == FolderUtilityStatus.Success)
+            var (status, extra) = FolderUtility.CheckAndCreateCurrentPath("Transport List");
+            if (status == FolderUtilityStatus.Success)
             {
-                var path = $"{folderData.Item2}" +
-                           $"TransportList_{ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0].Serial}.pdf";
+                var path = $"{extra}" +
+                           $"TransportList_{ReportManagerContext.GetInstance().CurrentInput.SERIAL_NO}.pdf";
                 if (!Directory.Exists(path))
                     (sender as TransportListReport)?.ExportToPdf(path);
             }
-            else if (folderData.Item1 == FolderUtilityStatus.Error)
+            else if (status == FolderUtilityStatus.Error)
             {
-                XtraMessageBox.Show($"Не удалось сохранить отчет\n{folderData.Item2}");
+                XtraMessageBox.Show($"Не удалось сохранить отчет\n{extra}");
             }
         }
 
         private void TransportListGenerateStageForm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
         {
-            ReportManagerContext.GetInstance().DeviceModelCreatedStatus -= OnDeviceModelCreatedStatus;
+            ReportManagerContext.GetInstance().InputDataCreatedStatus -= OnDeviceModelCreatedStatus;
         }
 
-        private void ShowReport(DeviceModel model)
+        private void ShowReport(InputData input)
         {
-            if (model == null) return;
+            if (input == null) return;
 
-            var report = CreateReportInstance(model);
+            var report = CreateReportInstance(input);
             using (ReportPrintTool printTool = new ReportPrintTool(report))
             {
                 printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
             }
         }
 
-        private void OnDeviceModelCreatedStatus(object sender, Tuple<DeviceModelStatus, DeviceModel> data)
+        private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, InputData) data)
         {
-            if ( data.Item1 == DeviceModelStatus.CreatedSuccess)
+            var (status, input) = data;
+
+            if (status == DeviceModelStatus.CreatedSuccess)
             {
-                ShowReport(data.Item2);
+                ShowReport(input);
             }
             else if(data.Item1 == DeviceModelStatus.CreatedError)
             {
@@ -86,8 +91,8 @@ namespace ReportManager.Forms.Stages
 
         private void TransportListGenerateStageForm_Shown(object sender, EventArgs e)
         {
-            ReportManagerContext.GetInstance().DeviceModelCreatedStatus += OnDeviceModelCreatedStatus;
-            ShowReport(ReportManagerContext.GetInstance().CurrentDeviceModel);
+            ReportManagerContext.GetInstance().InputDataCreatedStatus += OnDeviceModelCreatedStatus;
+            ShowReport(ReportManagerContext.GetInstance().CurrentInput);
         }
     }
 }

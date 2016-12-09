@@ -9,6 +9,8 @@ using DevExpress.XtraReports.UI;
 using ReportManager.Core;
 using ReportManager.Data.DataModel;
 using ReportManager.Reports;
+using ReportManager.Data.Extensions;
+using ReportManager.Data.Database.ConcreteAdapters;
 
 namespace ReportManager.Forms.Stages
 {
@@ -53,17 +55,18 @@ namespace ReportManager.Forms.Stages
                 report.LoadLayout((report as ISavingReport).GetTemplateFileName());
             }
 
-            report.DataSource = 
-                new List<AggregatedFieldsModel> { new AggregatedFieldsModel(
-                    ReportManagerContext.GetInstance().CurrentDeviceModel.SerialNumber[0],
-                    ReportManagerContext.GetInstance().CurrentDeviceModel.InputData[0],
-                    ReportManagerContext.GetInstance().CurrentDeviceModel.CalibrationResults[0],
-                    ReportManagerContext.GetInstance().CurrentDeviceModel.DeviceTestResults[0]) };
-
+            var input = ReportManagerContext.GetInstance().CurrentInput;
+            report.DataSource = new List<object> { input,
+                                                   (new CalibrationResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault(),
+                                                   (new DeviceTestResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault() }
+                                .PropertiesToDict()
+                                .ToExpando()
+                                .ToDynamicArray()
+                                .ToDataTable();
             return report;
         }
 
-        private void btnOpenPreview_Click(object sender, System.EventArgs e)
+        private void BtnOpenPreview_Click(object sender, System.EventArgs e)
         {
             var report = CreateReportInstance();
             if (report == null) return;
@@ -73,7 +76,7 @@ namespace ReportManager.Forms.Stages
                 printTool.ShowRibbonPreviewDialog(UserLookAndFeel.Default);
             }
         }
-        private void btnOpenEditor_Click(object sender, EventArgs e)
+        private void BtnOpenEditor_Click(object sender, EventArgs e)
         {
             var report = CreateReportInstance();
             if (report == null) return;

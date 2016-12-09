@@ -59,5 +59,50 @@ namespace ReportManager.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Поля установлены. Начало маркировки.
+        /// </summary>
+        internal static string MaxigrafStageForm_btnStart_Click_GraphStart {
+            get {
+                return ResourceManager.GetString("MaxigrafStageForm_btnStart_Click_GraphStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Начало загрузки LE скрипта.
+        /// </summary>
+        internal static string MaxigrafStageForm_btnStart_Click_LeLoadStart {
+            get {
+                return ResourceManager.GetString("MaxigrafStageForm_btnStart_Click_LeLoadStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загружен LE скрипт. Начало установки полей.
+        /// </summary>
+        internal static string MaxigrafStageForm_btnStart_Click_ValueSettingStart {
+            get {
+                return ResourceManager.GetString("MaxigrafStageForm_btnStart_Click_ValueSettingStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Маркировка остановлена.
+        /// </summary>
+        internal static string MaxigrafStageForm_ConnectionOnReadEventHandler_GraphStopped {
+            get {
+                return ResourceManager.GetString("MaxigrafStageForm_ConnectionOnReadEventHandler_GraphStopped", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Маркировка завершена успешно.
+        /// </summary>
+        internal static string MaxigrafStageForm_ConnectionOnReadEventHandler_GraphSuccess {
+            get {
+                return ResourceManager.GetString("MaxigrafStageForm_ConnectionOnReadEventHandler_GraphSuccess", resourceCulture);
+            }
+        }
     }
 }

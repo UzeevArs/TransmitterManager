@@ -1,8 +1,9 @@
 ﻿using ReportManager.Forms.Stages;
+using ReportManager.Forms.Stages.MaxigraphStageForm;
 
 namespace ReportManager.Core.Stages
 {
-    public class MaxigrafStage : AbstractStage
+    internal class MaxigrafStage : Stage
     {
         public MaxigrafStage()
         {

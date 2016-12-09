@@ -4,7 +4,7 @@ using ReportManager.Data.Settings;
 
 namespace ReportManager.Reports
 {
-    public partial class PasportReport : XtraReport, ISavingReport
+    internal partial class PasportReport : XtraReport, ISavingReport
     {
         public PasportReport()
         {

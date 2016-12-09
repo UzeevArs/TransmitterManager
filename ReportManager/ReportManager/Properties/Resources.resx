@@ -114,4 +114,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="MaxigrafStageForm_ConnectionOnReadEventHandler_GraphSuccess" xml:space="preserve">
+    <value>Маркировка завершена успешно</value>
+  </data>
+  <data name="MaxigrafStageForm_ConnectionOnReadEventHandler_GraphStopped" xml:space="preserve">
+    <value>Маркировка остановлена</value>
+  </data>
+  <data name="MaxigrafStageForm_btnStart_Click_LeLoadStart" xml:space="preserve">
+    <value>Начало загрузки LE скрипта</value>
+  </data>
+  <data name="MaxigrafStageForm_btnStart_Click_ValueSettingStart" xml:space="preserve">
+    <value>Загружен LE скрипт. Начало установки полей</value>
+  </data>
+  <data name="MaxigrafStageForm_btnStart_Click_GraphStart" xml:space="preserve">
+    <value>Поля установлены. Начало маркировки</value>
+  </data>
 </root>

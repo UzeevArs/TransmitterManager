@@ -8,7 +8,7 @@ using ReportManager.Data.Settings;
 
 namespace ReportManager.Core.Functional
 {
-    public class CheckManifactureDbConnectionFunctional : AbstractFunctional
+    internal class CheckManifactureDbConnectionFunctional : Functional
     {
         public virtual event StateChangeEventHandler StateChange;
 

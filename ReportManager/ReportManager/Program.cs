@@ -10,9 +10,10 @@ using ReportManager.Forms;
 
 namespace ReportManager
 {
-    static class Program
+    internal static class Program
     {
-        private static readonly Mutex mutex = new Mutex(true, "{49d5ce46-ac41-4baa-8c03-82798ec2c81e}");
+        private static readonly Mutex mutex = 
+            new Mutex(true, "{49d5ce46-ac41-4baa-8c03-82798ec2c81e}");
 
         [STAThread]
         static void Main()

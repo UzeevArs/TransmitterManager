@@ -1,20 +1,7 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    public class SerialNumber
+    internal class SerialNumber
     {
-        private string _serial;
-
-        public string Serial
-        {
-            get
-            {
-                return _serial;
-            }
-
-            set
-            {
-                _serial = value;
-            }
-        }
+        public string Serial { get; set; } = "";
     }
 }

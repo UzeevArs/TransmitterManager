@@ -25,38 +25,10 @@ namespace ReportManager.Forms
         {
             InitializeComponent();
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
-            FillStages();
-            FillFunctionals();
             LoadSettings();
         }
-
-        private void FillStages()
-        {
-            cbStageList.Items.Clear();
-            var mscorlib = typeof(AbstractStage).Assembly;
-            foreach (var type in mscorlib.GetTypes())
-            {
-                if (type.GetBaseType() == typeof(AbstractStage))
-                {
-                    cbStageList.Items.Add((AbstractStage)Activator.CreateInstance(type));
-                }
-            }
-        }
-
-        private void FillFunctionals()
-        {
-            cbFunctionsList.Items.Clear();
-            var mscorlib = typeof(AbstractFunctional).Assembly;
-            foreach (var type in mscorlib.GetTypes())
-            {
-                if (type.GetBaseType() == typeof(AbstractFunctional))
-                {
-                    cbFunctionsList.Items.Add((AbstractFunctional)Activator.CreateInstance(type));
-                }
-            }
-        }
-
-        private void SettingsContextOnSettingsLoadingEvent(object sender, Tuple<Settings, SettingsStatus, string> status)
+       
+        private void SettingsContextOnSettingsLoadingEvent(object sender, (ReportManager.Data.Settings.Settings, SettingsStatus, string) status)
         {
             if (status.Item2 == SettingsStatus.ErrorSaved)
             {
@@ -77,65 +49,35 @@ namespace ReportManager.Forms
             edtManufString.Text = SettingsContext.GlobalSettings.NifudaConnectionString;
             edtUpdateTimeout.Value = SettingsContext.GlobalSettings.UpdateTimeout;
             btnReportSavePath.Text = SettingsContext.GlobalSettings.ReportSavePath;
-            if (SettingsContext.GlobalSettings.Stages == null)
-            {
-                SettingsContext.GlobalSettings.Stages = new List<AbstractStage>();
-            }
-            else
-            {
-                foreach (var stage in SettingsContext.GlobalSettings.Stages)
-                    cbStageList.Items.First(item => item.ToString().Equals(stage.Name)).CheckState = CheckState.Checked;
-            }
-
-            if (SettingsContext.GlobalSettings.Functionals == null)
-            {
-                SettingsContext.GlobalSettings.Functionals = new List<AbstractFunctional>();
-            }
-            else
-            {
-                foreach (var functional in SettingsContext.GlobalSettings.Functionals)
-                    cbFunctionsList.Items.First(item => item.ToString().Equals(functional.Name)).CheckState = CheckState.Checked;
-            }
         }
 
-        private Tuple<SettingsStatus, string> SaveSettings()
+        private (SettingsStatus status, string message) SaveSettings()
         {
             SettingsContext.GlobalSettings.IsupConnectionString = edtIsupString.Text;
             SettingsContext.GlobalSettings.NifudaConnectionString = edtManufString.Text;
             SettingsContext.GlobalSettings.UpdateTimeout = (uint) edtUpdateTimeout.Value;
             SettingsContext.GlobalSettings.ReportSavePath = btnReportSavePath.Text;
 
-            SettingsContext.GlobalSettings.Stages.Clear();
-            SettingsContext.GlobalSettings.Functionals.Clear();
-
-            foreach (var stage in cbStageList.Items.GetCheckedValues())
-                SettingsContext.GlobalSettings.Stages.Add(stage as AbstractStage);
-
-            foreach (var functional in cbFunctionsList.Items.GetCheckedValues())
-                SettingsContext.GlobalSettings.Functionals.Add(functional as AbstractFunctional);
-
             SettingsContext.NotifyChanged();
             return SettingsContext.SaveSettings();
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void BtnOk_Click(object sender, EventArgs e)
         {
             if (SaveSettings().Item1 == SettingsStatus.SuccessSaved)
                 Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnTryConnectIsup_Click(object sender, EventArgs e)
+        private void BtnTryConnectIsup_Click(object sender, EventArgs e)
         {
             btnOk.Enabled = false;
             btnCancel.Enabled = false;
             grpMainSettings.Enabled = false;
-            grpStages.Enabled = false;
-            grpFunctions.Enabled = false;
             prgsDbConnect.Visible = true;
 
             new Thread(delegate()
@@ -157,13 +99,11 @@ namespace ReportManager.Forms
             }).Start();
         }
 
-        private void btnTryConnectManif_Click(object sender, EventArgs e)
+        private void BtnTryConnectManif_Click(object sender, EventArgs e)
         {
             btnOk.Enabled = false;
             btnCancel.Enabled = false;
             grpMainSettings.Enabled = false;
-            grpStages.Enabled = false;
-            grpFunctions.Enabled = false;
             prgsDbConnect.Visible = true;
 
             new Thread(delegate ()
@@ -192,8 +132,6 @@ namespace ReportManager.Forms
                 btnOk.Enabled = true;
                 btnCancel.Enabled = true;
                 grpMainSettings.Enabled = true;
-                grpStages.Enabled = true;
-                grpFunctions.Enabled = true;
                 prgsDbConnect.Visible = false;
 
                 MessageBox.Show("Подключение к производственной БД выполнено успешно. ",
@@ -210,8 +148,6 @@ namespace ReportManager.Forms
                 btnOk.Enabled = true;
                 btnCancel.Enabled = true;
                 grpMainSettings.Enabled = true;
-                grpFunctions.Enabled = true;
-                grpStages.Enabled = true;
                 prgsDbConnect.Visible = false;
 
                 MessageBox.Show($"Подключение к БД не выполнено\n{error}",
@@ -221,7 +157,7 @@ namespace ReportManager.Forms
             });
         }
 
-        private void btnReportSavePath_ButtonClick(object sender, ButtonPressedEventArgs e)
+        private void BtnReportSavePath_ButtonClick(object sender, ButtonPressedEventArgs e)
         {
             if (e.Button.Kind == ButtonPredefines.Ellipsis)
             {

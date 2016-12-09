@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ReportManager.Core.Logger
 {
-    public static class Log
+    internal static class Log
     {
         public static void L(string message)
         {

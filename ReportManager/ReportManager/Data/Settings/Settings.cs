@@ -4,7 +4,7 @@ using ReportManager.Core.Stages;
 
 namespace ReportManager.Data.Settings
 {
-    public class Settings
+    internal class Settings
     {
         public string NifudaConnectionString { get; set; }
 
@@ -13,9 +13,5 @@ namespace ReportManager.Data.Settings
         public string ReportSavePath { get; set; }
 
         public uint UpdateTimeout { get; set; }
-
-        public List<AbstractFunctional> Functionals { get; set; }
-
-        public List<AbstractStage> Stages { get; set; }
     }
 }

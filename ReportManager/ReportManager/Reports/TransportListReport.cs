@@ -4,7 +4,7 @@ using System;
 
 namespace ReportManager.Reports
 {
-    public partial class TransportListReport : XtraReport, ISavingReport
+    internal partial class TransportListReport : XtraReport, ISavingReport
     {
         public TransportListReport()
         {

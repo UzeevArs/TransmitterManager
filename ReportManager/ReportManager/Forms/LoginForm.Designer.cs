@@ -56,7 +56,8 @@
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 2;
             this.btnOk.Text = "Вход";
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
+            this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // btnCancel
             // 
@@ -65,7 +66,8 @@
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = " Выход";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            this.btnCancel.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // labelControl2
             // 
@@ -82,6 +84,7 @@
             this.tbPassword.Properties.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(180, 20);
             this.tbPassword.TabIndex = 4;
+            this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // cbUsersName
             // 
@@ -92,6 +95,7 @@
             this.cbUsersName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbUsersName.Size = new System.Drawing.Size(180, 20);
             this.cbUsersName.TabIndex = 0;
+            this.cbUsersName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // btnOpenSettings
             // 
@@ -100,7 +104,8 @@
             this.btnOpenSettings.Size = new System.Drawing.Size(75, 23);
             this.btnOpenSettings.TabIndex = 6;
             this.btnOpenSettings.Text = "Настройки";
-            this.btnOpenSettings.Click += new System.EventHandler(this.btnOpenSettings_Click);
+            this.btnOpenSettings.Click += new System.EventHandler(this.BtnOpenSettings_Click);
+            this.btnOpenSettings.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // defaultLookAndFeel1
             // 

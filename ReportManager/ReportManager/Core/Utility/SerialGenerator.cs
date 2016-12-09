@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Core.Utility
 {
-    public static class SerialGenerator
+    internal static class SerialGenerator
     {
         //public static Tuple<string> Generate(NifudaDataSet.NifudaDataTableRow row)
         //{

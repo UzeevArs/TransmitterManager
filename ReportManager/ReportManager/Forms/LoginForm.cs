@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Management;
-using System.DirectoryServices;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ReportManager.Data.Settings;
+using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.DataModel;
+using ReportManager.Core.Functional;
 
 namespace ReportManager.Forms
 {
@@ -27,6 +24,7 @@ namespace ReportManager.Forms
         {
             var users = GetActiveMachineUsers();
             cbUsersName.Properties.Items.AddRange(users.ToList());
+            cbUsersName.Properties.Items.Add("ReportManagerAdmin");
             cbUsersName.SelectedItem = Environment.UserName;
         }
 
@@ -37,23 +35,74 @@ namespace ReportManager.Forms
                 yield return (string) envVar["Name"];
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void BtnOk_Click(object sender, EventArgs e)
         {
-            SettingsContext.UserName = cbUsersName.SelectedItem.ToString();
-            SettingsContext.UserPassword = tbPassword.Text;
-            DialogResult = DialogResult.OK;
-            Close();
+            CheckUser();
         }
 
-        private void btnOpenSettings_Click(object sender, EventArgs e)
+        private void CheckUser()
+        {
+            if (cbUsersName.SelectedItem.ToString() == "ReportManagerAdmin"
+                && tbPassword.Text == "FDc5sZLq")
+            {
+                SettingsContext.CurrentUser = new User
+                {
+                    FullName = "Report manager administrator",
+                    TUSER = "ReportManagerAdmin",
+                    PASSWORD = "FDc5sZLq",
+                    UserExtraFuncMask = 65535,
+                    UserStagesMask = 65535,
+                };
+
+                DialogResult = DialogResult.OK;
+                Close();
+                return;
+            }
+
+            if ((new UsersDatabaseAdapter())
+                .Select()
+                .Any(user => user.TUSER == cbUsersName.SelectedItem.ToString()
+                             && user.PASSWORD == tbPassword.Text))
+            {
+                SettingsContext.CurrentUser = (new UsersDatabaseAdapter())
+                    .Select()
+                    .FirstOrDefault(user => user.TUSER == cbUsersName.SelectedItem.ToString()
+                                            && user.PASSWORD == tbPassword.Text);
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Логин / пароль неверные. Попытайтесь ещё раз",
+                                "Ошибка",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnOpenSettings_Click(object sender, EventArgs e)
         {
             new SettingsForm().ShowDialog();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Cancel();
+        }
+
+        private void Cancel()
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void LoginForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                CheckUser();
+            else if (e.KeyCode == Keys.Escape)
+                Cancel();
         }
     }
 }

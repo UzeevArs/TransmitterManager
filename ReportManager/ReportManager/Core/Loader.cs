@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using ReportManager.Data.Settings;
 using ReportManager.Forms;
+using ReportManager.Data.Database.ConcreteAdapters;
 
 namespace ReportManager.Core
 {
@@ -23,7 +20,9 @@ namespace ReportManager.Core
             Visible = false;
 
             if (OpenLoginForm())
+            {
                 OpenStagesForm();
+            }
             else
                 Close();
         }

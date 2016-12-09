@@ -2,7 +2,7 @@
 
 namespace ReportManager.Core.Stages
 {
-    public class ReportCreateStage : AbstractStage
+    internal class ReportCreateStage : Stage
     {
         public ReportCreateStage()
         {

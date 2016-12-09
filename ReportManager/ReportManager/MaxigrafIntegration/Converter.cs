@@ -2,7 +2,7 @@
 
 namespace ReportManager.MaxigrafIntegration
 {
-    public static class Converter
+    internal static class Converter
     {
         public static string ToAsciiString(byte[] bytes)
         {

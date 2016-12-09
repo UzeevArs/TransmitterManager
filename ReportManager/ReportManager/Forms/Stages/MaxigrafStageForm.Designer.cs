@@ -1,4 +1,4 @@
-﻿namespace ReportManager.Forms.Stages
+﻿namespace ReportManager.Forms.Stages.MaxigraphStageForm
 {
     partial class MaxigrafStageForm
     {
@@ -28,212 +28,324 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton9 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton12 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton13 = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.progressPanel = new DevExpress.XtraWaitForm.ProgressPanel();
+            this.btnConnect = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDisconnect = new DevExpress.XtraEditors.SimpleButton();
+            this.grpConnection = new DevExpress.XtraEditors.GroupControl();
+            this.grpControl = new DevExpress.XtraEditors.GroupControl();
+            this.progressMarking = new DevExpress.XtraEditors.ProgressBarControl();
+            this.btnStop = new DevExpress.XtraEditors.SimpleButton();
+            this.btnShowRect = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStart = new DevExpress.XtraEditors.SimpleButton();
+            this.btnShowCross = new DevExpress.XtraEditors.SimpleButton();
+            this.grpPlateSettings = new DevExpress.XtraEditors.GroupControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.grpCurrentDevice = new DevExpress.XtraEditors.GroupControl();
+            this.tbGraphStatus = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.tbPlateName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.tbSerial = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.grpLog = new DevExpress.XtraEditors.GroupControl();
+            this.btnClear = new DevExpress.XtraEditors.SimpleButton();
+            this.memoLog = new DevExpress.XtraEditors.MemoEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpConnection)).BeginInit();
+            this.grpConnection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grpControl)).BeginInit();
+            this.grpControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressMarking.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpPlateSettings)).BeginInit();
+            this.grpPlateSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCurrentDevice)).BeginInit();
+            this.grpCurrentDevice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGraphStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPlateName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSerial.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpLog)).BeginInit();
+            this.grpLog.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoLog.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton1
+            // progressPanel
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(146, 66);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Connect";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.progressPanel.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.progressPanel.Appearance.Options.UseBackColor = true;
+            this.progressPanel.Caption = "Пожалуйста, подождите";
+            this.progressPanel.Description = "Идёт подключение к Maxigraph";
+            this.progressPanel.Location = new System.Drawing.Point(8, 53);
+            this.progressPanel.Name = "progressPanel";
+            this.progressPanel.Size = new System.Drawing.Size(232, 66);
+            this.progressPanel.TabIndex = 0;
+            this.progressPanel.Text = "Connection";
+            this.progressPanel.Visible = false;
             // 
-            // simpleButton2
+            // btnConnect
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(349, 41);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "ShowCrossJoystick";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.btnConnect.Location = new System.Drawing.Point(127, 24);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(110, 23);
+            this.btnConnect.TabIndex = 1;
+            this.btnConnect.Text = "Подключиться";
+            this.btnConnect.Click += new System.EventHandler(this.BtnConnect_Click);
             // 
-            // simpleButton3
+            // btnDisconnect
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(556, 41);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton3.TabIndex = 2;
-            this.simpleButton3.Text = "Dispose";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            this.btnDisconnect.Enabled = false;
+            this.btnDisconnect.Location = new System.Drawing.Point(8, 24);
+            this.btnDisconnect.Name = "btnDisconnect";
+            this.btnDisconnect.Size = new System.Drawing.Size(110, 23);
+            this.btnDisconnect.TabIndex = 2;
+            this.btnDisconnect.Text = "Отключиться";
+            this.btnDisconnect.Click += new System.EventHandler(this.BtnDisconnect_Click);
             // 
-            // memoEdit1
+            // grpConnection
             // 
-            this.memoEdit1.Location = new System.Drawing.Point(146, 95);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(593, 265);
-            this.memoEdit1.TabIndex = 3;
-            this.memoEdit1.TextChanged += new System.EventHandler(this.memoEdit1_TextChanged);
+            this.grpConnection.Controls.Add(this.progressPanel);
+            this.grpConnection.Controls.Add(this.btnDisconnect);
+            this.grpConnection.Controls.Add(this.btnConnect);
+            this.grpConnection.Location = new System.Drawing.Point(12, 12);
+            this.grpConnection.Name = "grpConnection";
+            this.grpConnection.Size = new System.Drawing.Size(245, 132);
+            this.grpConnection.TabIndex = 3;
+            this.grpConnection.Text = "Панель подключения";
             // 
-            // simpleButton4
+            // grpControl
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(358, 366);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton4.TabIndex = 4;
-            this.simpleButton4.Text = "ReadFromServerPipe";
-            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            this.grpControl.Controls.Add(this.progressMarking);
+            this.grpControl.Controls.Add(this.btnStop);
+            this.grpControl.Controls.Add(this.btnShowRect);
+            this.grpControl.Controls.Add(this.btnStart);
+            this.grpControl.Controls.Add(this.btnShowCross);
+            this.grpControl.Enabled = false;
+            this.grpControl.Location = new System.Drawing.Point(12, 150);
+            this.grpControl.Name = "grpControl";
+            this.grpControl.Size = new System.Drawing.Size(245, 166);
+            this.grpControl.TabIndex = 4;
+            this.grpControl.Text = "Панель управления";
             // 
-            // simpleButton5
+            // progressMarking
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(556, 12);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton5.TabIndex = 5;
-            this.simpleButton5.Text = "Recreate";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+            this.progressMarking.Location = new System.Drawing.Point(8, 113);
+            this.progressMarking.Name = "progressMarking";
+            this.progressMarking.Size = new System.Drawing.Size(229, 18);
+            this.progressMarking.TabIndex = 7;
             // 
-            // simpleButton6
+            // btnStop
             // 
-            this.simpleButton6.Location = new System.Drawing.Point(711, 366);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(28, 23);
-            this.simpleButton6.TabIndex = 6;
-            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
+            this.btnStop.Enabled = false;
+            this.btnStop.Location = new System.Drawing.Point(8, 137);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(229, 23);
+            this.btnStop.TabIndex = 5;
+            this.btnStop.Text = "Остановить маркировку";
+            this.btnStop.Click += new System.EventHandler(this.BtnStop_ClickAsync);
             // 
-            // simpleButton7
+            // btnShowRect
             // 
-            this.simpleButton7.Location = new System.Drawing.Point(157, 409);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton7.TabIndex = 7;
-            this.simpleButton7.Text = "SendTextScript";
-            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
+            this.btnShowRect.Location = new System.Drawing.Point(127, 24);
+            this.btnShowRect.Name = "btnShowRect";
+            this.btnShowRect.Size = new System.Drawing.Size(110, 23);
+            this.btnShowRect.TabIndex = 4;
+            this.btnShowRect.Text = "Rect-джойстик";
+            this.btnShowRect.Click += new System.EventHandler(this.BtnShowRect_ClickAsync);
             // 
-            // simpleButton8
+            // btnStart
             // 
-            this.simpleButton8.Location = new System.Drawing.Point(358, 409);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton8.TabIndex = 8;
-            this.simpleButton8.Text = "Start Marking";
-            this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click);
+            this.btnStart.Location = new System.Drawing.Point(8, 84);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(229, 23);
+            this.btnStart.TabIndex = 3;
+            this.btnStart.Text = "Начать маркировку";
+            this.btnStart.Click += new System.EventHandler(this.BtnStart_ClickAsync);
             // 
-            // simpleButton9
+            // btnShowCross
             // 
-            this.simpleButton9.Location = new System.Drawing.Point(556, 409);
-            this.simpleButton9.Name = "simpleButton9";
-            this.simpleButton9.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton9.TabIndex = 9;
-            this.simpleButton9.Text = "Stop Marking";
-            this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click);
+            this.btnShowCross.Location = new System.Drawing.Point(8, 24);
+            this.btnShowCross.Name = "btnShowCross";
+            this.btnShowCross.Size = new System.Drawing.Size(110, 23);
+            this.btnShowCross.TabIndex = 2;
+            this.btnShowCross.Text = "Cross-джойстик";
+            this.btnShowCross.Click += new System.EventHandler(this.BtnShowCross_ClickAsync);
             // 
-            // simpleButton10
+            // grpPlateSettings
             // 
-            this.simpleButton10.Location = new System.Drawing.Point(349, 66);
-            this.simpleButton10.Name = "simpleButton10";
-            this.simpleButton10.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton10.TabIndex = 10;
-            this.simpleButton10.Text = "ShowRectJoystick";
-            this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click);
+            this.grpPlateSettings.Controls.Add(this.gridControl1);
+            this.grpPlateSettings.Location = new System.Drawing.Point(263, 150);
+            this.grpPlateSettings.Name = "grpPlateSettings";
+            this.grpPlateSettings.Size = new System.Drawing.Size(656, 406);
+            this.grpPlateSettings.TabIndex = 5;
+            this.grpPlateSettings.Text = "Поля таблички";
             // 
-            // textBox1
+            // gridControl1
             // 
-            this.textBox1.Location = new System.Drawing.Point(630, 513);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 21);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.Visible = false;
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(2, 20);
+            this.gridControl1.MainView = this.tileView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(652, 384);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tileView1});
             // 
-            // textEdit1
+            // tileView1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(157, 470);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(243, 20);
-            this.textEdit1.TabIndex = 12;
+            this.tileView1.GridControl = this.gridControl1;
+            this.tileView1.Name = "tileView1";
             // 
-            // simpleButton11
+            // grpCurrentDevice
             // 
-            this.simpleButton11.Location = new System.Drawing.Point(406, 468);
-            this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(23, 23);
-            this.simpleButton11.TabIndex = 13;
-            this.simpleButton11.Click += new System.EventHandler(this.simpleButton11_Click);
+            this.grpCurrentDevice.Controls.Add(this.tbGraphStatus);
+            this.grpCurrentDevice.Controls.Add(this.labelControl3);
+            this.grpCurrentDevice.Controls.Add(this.tbPlateName);
+            this.grpCurrentDevice.Controls.Add(this.labelControl2);
+            this.grpCurrentDevice.Controls.Add(this.tbSerial);
+            this.grpCurrentDevice.Controls.Add(this.labelControl1);
+            this.grpCurrentDevice.Location = new System.Drawing.Point(265, 12);
+            this.grpCurrentDevice.Name = "grpCurrentDevice";
+            this.grpCurrentDevice.Size = new System.Drawing.Size(652, 132);
+            this.grpCurrentDevice.TabIndex = 6;
+            this.grpCurrentDevice.Text = "Информация:";
             // 
-            // simpleButton12
+            // tbGraphStatus
             // 
-            this.simpleButton12.Location = new System.Drawing.Point(157, 438);
-            this.simpleButton12.Name = "simpleButton12";
-            this.simpleButton12.Size = new System.Drawing.Size(183, 23);
-            this.simpleButton12.TabIndex = 14;
-            this.simpleButton12.Text = "SendLeScript";
-            this.simpleButton12.Click += new System.EventHandler(this.simpleButton12_Click);
+            this.tbGraphStatus.Location = new System.Drawing.Point(318, 88);
+            this.tbGraphStatus.Name = "tbGraphStatus";
+            this.tbGraphStatus.Properties.ReadOnly = true;
+            this.tbGraphStatus.Size = new System.Drawing.Size(200, 20);
+            this.tbGraphStatus.TabIndex = 5;
             // 
-            // simpleButton13
+            // labelControl3
             // 
-            this.simpleButton13.Location = new System.Drawing.Point(766, 202);
-            this.simpleButton13.Name = "simpleButton13";
-            this.simpleButton13.Size = new System.Drawing.Size(28, 23);
-            this.simpleButton13.TabIndex = 15;
-            this.simpleButton13.Click += new System.EventHandler(this.simpleButton13_Click);
+            this.labelControl3.Location = new System.Drawing.Point(129, 91);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(102, 13);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Статус гравировки:";
+            // 
+            // tbPlateName
+            // 
+            this.tbPlateName.Location = new System.Drawing.Point(318, 62);
+            this.tbPlateName.Name = "tbPlateName";
+            this.tbPlateName.Properties.ReadOnly = true;
+            this.tbPlateName.Size = new System.Drawing.Size(200, 20);
+            this.tbPlateName.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(129, 65);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(74, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Имя таблички:";
+            // 
+            // tbSerial
+            // 
+            this.tbSerial.Location = new System.Drawing.Point(318, 36);
+            this.tbSerial.Name = "tbSerial";
+            this.tbSerial.Properties.ReadOnly = true;
+            this.tbSerial.Size = new System.Drawing.Size(200, 20);
+            this.tbSerial.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(129, 39);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(135, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Производственный номер:";
+            // 
+            // grpLog
+            // 
+            this.grpLog.Controls.Add(this.btnClear);
+            this.grpLog.Controls.Add(this.memoLog);
+            this.grpLog.Location = new System.Drawing.Point(12, 322);
+            this.grpLog.Name = "grpLog";
+            this.grpLog.Size = new System.Drawing.Size(245, 232);
+            this.grpLog.TabIndex = 7;
+            this.grpLog.Text = "Лог";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(5, 24);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(229, 23);
+            this.btnClear.TabIndex = 14;
+            this.btnClear.Text = "Очистить лог";
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // memoLog
+            // 
+            this.memoLog.Location = new System.Drawing.Point(0, 53);
+            this.memoLog.Name = "memoLog";
+            this.memoLog.Properties.ReadOnly = true;
+            this.memoLog.Size = new System.Drawing.Size(245, 174);
+            this.memoLog.TabIndex = 13;
+            this.memoLog.TextChanged += new System.EventHandler(this.MemoLog_TextChanged);
             // 
             // MaxigrafStageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 568);
-            this.Controls.Add(this.simpleButton13);
-            this.Controls.Add(this.simpleButton12);
-            this.Controls.Add(this.simpleButton11);
-            this.Controls.Add(this.textEdit1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.simpleButton10);
-            this.Controls.Add(this.simpleButton9);
-            this.Controls.Add(this.simpleButton8);
-            this.Controls.Add(this.simpleButton7);
-            this.Controls.Add(this.simpleButton6);
-            this.Controls.Add(this.simpleButton5);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.memoEdit1);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.grpLog);
+            this.Controls.Add(this.grpCurrentDevice);
+            this.Controls.Add(this.grpPlateSettings);
+            this.Controls.Add(this.grpControl);
+            this.Controls.Add(this.grpConnection);
             this.Name = "MaxigrafStageForm";
-            this.Text = "MaxigrafStageForm";
+            this.Text = "Гравировка табличек";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MaxigrafStageForm_FormClosed);
             this.Shown += new System.EventHandler(this.MaxigrafStageForm_Shown);
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpConnection)).EndInit();
+            this.grpConnection.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grpControl)).EndInit();
+            this.grpControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.progressMarking.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpPlateSettings)).EndInit();
+            this.grpPlateSettings.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpCurrentDevice)).EndInit();
+            this.grpCurrentDevice.ResumeLayout(false);
+            this.grpCurrentDevice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGraphStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPlateName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSerial.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpLog)).EndInit();
+            this.grpLog.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memoLog.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton9;
-        private DevExpress.XtraEditors.SimpleButton simpleButton10;
-        private System.Windows.Forms.TextBox textBox1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton11;
-        private DevExpress.XtraEditors.SimpleButton simpleButton12;
-        private DevExpress.XtraEditors.SimpleButton simpleButton13;
+        private DevExpress.XtraWaitForm.ProgressPanel progressPanel;
+        private DevExpress.XtraEditors.SimpleButton btnConnect;
+        private DevExpress.XtraEditors.SimpleButton btnDisconnect;
+        private DevExpress.XtraEditors.GroupControl grpConnection;
+        private DevExpress.XtraEditors.GroupControl grpControl;
+        private DevExpress.XtraEditors.GroupControl grpPlateSettings;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
+        private DevExpress.XtraEditors.SimpleButton btnStop;
+        private DevExpress.XtraEditors.SimpleButton btnShowRect;
+        private DevExpress.XtraEditors.SimpleButton btnStart;
+        private DevExpress.XtraEditors.SimpleButton btnShowCross;
+        private DevExpress.XtraEditors.ProgressBarControl progressMarking;
+        private DevExpress.XtraEditors.GroupControl grpCurrentDevice;
+        private DevExpress.XtraEditors.TextEdit tbGraphStatus;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit tbPlateName;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit tbSerial;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.GroupControl grpLog;
+        private DevExpress.XtraEditors.SimpleButton btnClear;
+        private DevExpress.XtraEditors.MemoEdit memoLog;
     }
 }

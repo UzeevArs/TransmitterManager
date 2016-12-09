@@ -4,9 +4,9 @@ using ReportManager.Data.Settings;
 
 namespace ReportManager.Core.Utility
 {
-    public class FolderUtility
+    internal class FolderUtility
     {
-        public static Tuple<FolderUtilityStatus, string> CheckAndCreateCurrentPath(string stageName)
+        public static (FolderUtilityStatus Status, string Extra) CheckAndCreateCurrentPath(string stageName)
         {
             var path = SettingsContext.GlobalSettings.ReportSavePath;
             var time = DateTime.Now;
@@ -19,8 +19,7 @@ namespace ReportManager.Core.Utility
                 }
                 catch (Exception ex)
                 {
-                    return new Tuple<FolderUtilityStatus,
-                        string>(FolderUtilityStatus.Error, ex.Message);
+                    return (FolderUtilityStatus.Error, ex.Message);
                 }
             }
 
@@ -32,8 +31,7 @@ namespace ReportManager.Core.Utility
                 }
                 catch (Exception ex)
                 {
-                    return new Tuple<FolderUtilityStatus,
-                        string>(FolderUtilityStatus.Error, ex.Message);
+                    return (FolderUtilityStatus.Error, ex.Message);
                 }
             }
 
@@ -45,8 +43,7 @@ namespace ReportManager.Core.Utility
                 }
                 catch (Exception ex)
                 {
-                    return new Tuple<FolderUtilityStatus,
-                        string>(FolderUtilityStatus.Error, ex.Message);
+                    return (FolderUtilityStatus.Error, ex.Message);
                 }
             }
 
@@ -58,8 +55,7 @@ namespace ReportManager.Core.Utility
                 }
                 catch (Exception ex)
                 {
-                    return new Tuple<FolderUtilityStatus,
-                        string>(FolderUtilityStatus.Error, ex.Message);
+                    return (FolderUtilityStatus.Error, ex.Message);
                 }
             }
 
@@ -71,13 +67,11 @@ namespace ReportManager.Core.Utility
                 }
                 catch (Exception ex)
                 {
-                    return new Tuple<FolderUtilityStatus,
-                        string>(FolderUtilityStatus.Error, ex.Message);
+                    return (FolderUtilityStatus.Error, ex.Message);
                 }
             }
 
-            return new Tuple<FolderUtilityStatus, string>(FolderUtilityStatus.Success, 
-                $"{path}\\{stageName}\\{time.Year}\\{time.Month}\\{time.Day}\\");
+            return (FolderUtilityStatus.Success, $"{path}\\{stageName}\\{time.Year}\\{time.Month}\\{time.Day}\\");
         }
     }
 

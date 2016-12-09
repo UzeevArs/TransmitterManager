@@ -2,9 +2,9 @@
 
 namespace ReportManager.MaxigrafIntegration
 {
-    public static class DataFilling
+    internal static class DataFilling
     {
-        public static string Fill(DeviceModel deviceModel, string file)
+        public static string Fill(InputData input, string file)
         {
             return file;
         }

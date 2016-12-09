@@ -65,7 +65,7 @@
             this.btnOpenPreview.Name = "btnOpenPreview";
             this.btnOpenPreview.Size = new System.Drawing.Size(22, 22);
             this.btnOpenPreview.TabIndex = 2;
-            this.btnOpenPreview.Click += new System.EventHandler(this.btnOpenPreview_Click);
+            this.btnOpenPreview.Click += new System.EventHandler(this.BtnOpenPreview_Click);
             // 
             // btnOpenEditor
             // 
@@ -76,7 +76,7 @@
             this.btnOpenEditor.Size = new System.Drawing.Size(22, 22);
             this.btnOpenEditor.TabIndex = 3;
             this.btnOpenEditor.Text = "\r\n";
-            this.btnOpenEditor.Click += new System.EventHandler(this.btnOpenEditor_Click);
+            this.btnOpenEditor.Click += new System.EventHandler(this.BtnOpenEditor_Click);
             // 
             // ReportForm
             // 

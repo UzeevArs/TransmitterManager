@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using DevExpress.XtraEditors;
+
+namespace ReportManager.Forms.Settings
+{
+    public partial class AddPlateForm : DevExpress.XtraEditors.XtraForm
+    {
+        public AddPlateForm()
+        {
+            InitializeComponent();
+        }
+    }
+}

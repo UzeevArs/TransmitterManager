@@ -46,17 +46,22 @@
             this.btnAllData = new DevExpress.XtraBars.BarButtonItem();
             this.lblExtraInformation = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
+            this.btnUserSettings = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPlates = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.barButtonItem1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnMainTable = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -82,13 +87,16 @@
             this.btnExit,
             this.btnAllData,
             this.lblExtraInformation,
-            this.lblUserName});
+            this.lblUserName,
+            this.btnUserSettings,
+            this.btnPlates});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 22;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
-            this.ribbonPage2});
+            this.ribbonPage2,
+            this.ribbonPage3});
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnChangeConnectionString);
             this.ribbonControl1.QuickToolbarItemLinks.Add(this.btnExit);
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -102,23 +110,23 @@
             // 
             this.btnTrasportListCreateStage.Caption = "Формирование маршрутного листа";
             this.btnTrasportListCreateStage.Enabled = false;
-            this.btnTrasportListCreateStage.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTrasportListCreateStage.Glyph")));
             this.btnTrasportListCreateStage.Id = 2;
-            this.btnTrasportListCreateStage.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTrasportListCreateStage.LargeGlyph")));
+            this.btnTrasportListCreateStage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTrasportListCreateStage.ImageOptions.Image")));
+            this.btnTrasportListCreateStage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTrasportListCreateStage.ImageOptions.LargeImage")));
             this.btnTrasportListCreateStage.Name = "btnTrasportListCreateStage";
             this.btnTrasportListCreateStage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTrasportListCreateStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrasportListCreateStage_ItemClick);
+            this.btnTrasportListCreateStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTrasportListCreateStage_ItemClick);
             // 
             // btnReportCreateStage
             // 
             this.btnReportCreateStage.Caption = "Генерация отчётов";
             this.btnReportCreateStage.Enabled = false;
-            this.btnReportCreateStage.Glyph = ((System.Drawing.Image)(resources.GetObject("btnReportCreateStage.Glyph")));
             this.btnReportCreateStage.Id = 3;
-            this.btnReportCreateStage.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnReportCreateStage.LargeGlyph")));
+            this.btnReportCreateStage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReportCreateStage.ImageOptions.Image")));
+            this.btnReportCreateStage.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReportCreateStage.ImageOptions.LargeImage")));
             this.btnReportCreateStage.Name = "btnReportCreateStage";
             this.btnReportCreateStage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnReportCreateStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReportCreateStage_ItemClick);
+            this.btnReportCreateStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReportCreateStage_ItemClick);
             // 
             // edtMsCode
             // 
@@ -129,7 +137,7 @@
             this.edtMsCode.EditWidth = 250;
             this.edtMsCode.Id = 4;
             this.edtMsCode.Name = "edtMsCode";
-            this.edtMsCode.EditValueChanged += new System.EventHandler(this.edtSerial_EditValueChanged);
+            this.edtMsCode.EditValueChanged += new System.EventHandler(this.EdtSerial_EditValueChanged);
             // 
             // repositoryItemTextEdit1
             // 
@@ -141,30 +149,30 @@
             // 
             this.btnMaxigrafStage.Caption = "Гравировка";
             this.btnMaxigrafStage.Enabled = false;
-            this.btnMaxigrafStage.Glyph = ((System.Drawing.Image)(resources.GetObject("btnMaxigrafStage.Glyph")));
             this.btnMaxigrafStage.Id = 5;
+            this.btnMaxigrafStage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxigrafStage.ImageOptions.Image")));
             this.btnMaxigrafStage.Name = "btnMaxigrafStage";
             this.btnMaxigrafStage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnMaxigrafStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoadData_ItemClick);
+            this.btnMaxigrafStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLoadData_ItemClick);
             // 
             // btnChangeConnectionString
             // 
             this.btnChangeConnectionString.Caption = "Настройки";
-            this.btnChangeConnectionString.Glyph = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.Glyph")));
             this.btnChangeConnectionString.Id = 6;
-            this.btnChangeConnectionString.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.LargeGlyph")));
+            this.btnChangeConnectionString.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.ImageOptions.Image")));
+            this.btnChangeConnectionString.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChangeConnectionString.ImageOptions.LargeImage")));
             this.btnChangeConnectionString.Name = "btnChangeConnectionString";
             this.btnChangeConnectionString.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpenSettings_ItemClick);
+            this.btnChangeConnectionString.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnOpenSettings_ItemClick);
             // 
             // btnToSetManual
             // 
             this.btnToSetManual.Caption = "Ввод производственного номера вручную";
-            this.btnToSetManual.Glyph = ((System.Drawing.Image)(resources.GetObject("btnToSetManual.Glyph")));
             this.btnToSetManual.Id = 7;
-            this.btnToSetManual.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnToSetManual.LargeGlyph")));
+            this.btnToSetManual.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnToSetManual.ImageOptions.Image")));
+            this.btnToSetManual.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnToSetManual.ImageOptions.LargeImage")));
             this.btnToSetManual.Name = "btnToSetManual";
-            this.btnToSetManual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnToSetManual_ItemClick);
+            this.btnToSetManual.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnToSetManual_ItemClick);
             // 
             // lblNifudaConnectionStatus
             // 
@@ -194,18 +202,20 @@
             // btnExit
             // 
             this.btnExit.Caption = "Выход";
-            this.btnExit.Glyph = ((System.Drawing.Image)(resources.GetObject("btnExit.Glyph")));
             this.btnExit.Id = 13;
-            this.btnExit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnExit.LargeGlyph")));
+            this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
+            this.btnExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.LargeImage")));
             this.btnExit.Name = "btnExit";
-            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
+            this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnExit_ItemClick);
             // 
             // btnAllData
             // 
-            this.btnAllData.Caption = "таблица";
+            this.btnAllData.Caption = "Общая таблица";
             this.btnAllData.Id = 14;
+            this.btnAllData.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAllData.ImageOptions.Image")));
+            this.btnAllData.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAllData.ImageOptions.LargeImage")));
             this.btnAllData.Name = "btnAllData";
-            this.btnAllData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAllData_ItemClick);
+            this.btnAllData.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAllData_ItemClick);
             // 
             // lblExtraInformation
             // 
@@ -220,6 +230,32 @@
             // 
             this.repositoryItemTextEdit2.AutoHeight = false;
             this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.lblUserName.Caption = "Имя пользователя: ";
+            this.lblUserName.Id = 17;
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // btnUserSettings
+            // 
+            this.btnUserSettings.Caption = "Настройка пользователей";
+            this.btnUserSettings.Id = 18;
+            this.btnUserSettings.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.ImageOptions.Image")));
+            this.btnUserSettings.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUserSettings.ImageOptions.LargeImage")));
+            this.btnUserSettings.Name = "btnUserSettings";
+            this.btnUserSettings.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUserSettings_ItemClick);
+            // 
+            // btnPlates
+            // 
+            this.btnPlates.Caption = "Настройка табличек";
+            this.btnPlates.Id = 19;
+            this.btnPlates.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPlates.ImageOptions.Image")));
+            this.btnPlates.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPlates.ImageOptions.LargeImage")));
+            this.btnPlates.Name = "btnPlates";
+            this.btnPlates.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPlates_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -248,15 +284,35 @@
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.barButtonItem1});
+            this.btnMainTable});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "Данные";
             // 
-            // barButtonItem1
+            // btnMainTable
             // 
-            this.barButtonItem1.ItemLinks.Add(this.btnAllData);
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.Text = "Производственная БД";
+            this.btnMainTable.ItemLinks.Add(this.btnAllData);
+            this.btnMainTable.Name = "btnMainTable";
+            this.btnMainTable.Text = "Производственная БД";
+            // 
+            // ribbonPage3
+            // 
+            this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.ribbonPage3.Name = "ribbonPage3";
+            this.ribbonPage3.Text = "Настройки";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnUserSettings);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Настройка пользователей";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnPlates);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Настройка табличек";
             // 
             // repositoryItemTextEdit3
             // 
@@ -282,19 +338,11 @@
             // 
             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
             this.notifyIcon.Text = "Менеджер отчетов";
-            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseClick);
             // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.lblUserName.Caption = "Имя пользователя: ";
-            this.lblUserName.Id = 17;
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // StagesForm
             // 
@@ -343,10 +391,15 @@
         private DevExpress.XtraBars.BarButtonItem btnExit;
         private DevExpress.XtraBars.BarButtonItem btnAllData;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup btnMainTable;
         private DevExpress.XtraBars.BarEditItem lblExtraInformation;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
         private DevExpress.XtraBars.BarStaticItem lblUserName;
+        private DevExpress.XtraBars.BarButtonItem btnUserSettings;
+        private DevExpress.XtraBars.BarButtonItem btnPlates;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

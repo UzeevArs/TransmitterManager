@@ -43,22 +43,12 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.edtIsupString = new DevExpress.XtraEditors.MemoEdit();
             this.prgsDbConnect = new DevExpress.XtraWaitForm.ProgressPanel();
-            this.grpStages = new DevExpress.XtraEditors.GroupControl();
-            this.cbStageList = new DevExpress.XtraEditors.CheckedListBoxControl();
-            this.grpFunctions = new DevExpress.XtraEditors.GroupControl();
-            this.cbFunctionsList = new DevExpress.XtraEditors.CheckedListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.grpMainSettings)).BeginInit();
             this.grpMainSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportSavePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtUpdateTimeout.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtManufString.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtIsupString.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpStages)).BeginInit();
-            this.grpStages.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbStageList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpFunctions)).BeginInit();
-            this.grpFunctions.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cbFunctionsList)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -71,22 +61,22 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(462, 512);
+            this.btnOk.Location = new System.Drawing.Point(463, 277);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 23);
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Сохранить";
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(12, 512);
+            this.btnCancel.Location = new System.Drawing.Point(13, 277);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 23);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Отмена";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // grpMainSettings
             // 
@@ -114,7 +104,7 @@
             this.btnTryConnectManif.Name = "btnTryConnectManif";
             this.btnTryConnectManif.Size = new System.Drawing.Size(22, 22);
             this.btnTryConnectManif.TabIndex = 3;
-            this.btnTryConnectManif.Click += new System.EventHandler(this.btnTryConnectManif_Click);
+            this.btnTryConnectManif.Click += new System.EventHandler(this.BtnTryConnectManif_Click);
             // 
             // btnTryConnectIsup
             // 
@@ -124,7 +114,7 @@
             this.btnTryConnectIsup.Name = "btnTryConnectIsup";
             this.btnTryConnectIsup.Size = new System.Drawing.Size(22, 22);
             this.btnTryConnectIsup.TabIndex = 1;
-            this.btnTryConnectIsup.Click += new System.EventHandler(this.btnTryConnectIsup_Click);
+            this.btnTryConnectIsup.Click += new System.EventHandler(this.BtnTryConnectIsup_Click);
             // 
             // labelControl4
             // 
@@ -144,7 +134,7 @@
             this.btnReportSavePath.Size = new System.Drawing.Size(229, 20);
             this.btnReportSavePath.TabIndex = 999;
             this.btnReportSavePath.TabStop = false;
-            this.btnReportSavePath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnReportSavePath_ButtonClick);
+            this.btnReportSavePath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BtnReportSavePath_ButtonClick);
             // 
             // labelControl3
             // 
@@ -213,61 +203,14 @@
             this.prgsDbConnect.Appearance.Options.UseBackColor = true;
             this.prgsDbConnect.Caption = "Пожалуйста, подождите";
             this.prgsDbConnect.Description = "Попытка подключения к БД...";
-            this.prgsDbConnect.Location = new System.Drawing.Point(172, 491);
+            this.prgsDbConnect.Location = new System.Drawing.Point(173, 256);
             this.prgsDbConnect.Name = "prgsDbConnect";
+            this.prgsDbConnect.RangeAnimationElementThickness = 2;
             this.prgsDbConnect.Size = new System.Drawing.Size(243, 66);
             this.prgsDbConnect.TabIndex = 999;
             this.prgsDbConnect.TabStop = false;
             this.prgsDbConnect.Text = "progressPanel1";
             this.prgsDbConnect.Visible = false;
-            // 
-            // grpStages
-            // 
-            this.grpStages.Controls.Add(this.cbStageList);
-            this.grpStages.Location = new System.Drawing.Point(12, 254);
-            this.grpStages.Name = "grpStages";
-            this.grpStages.Size = new System.Drawing.Size(272, 236);
-            this.grpStages.TabIndex = 999;
-            this.grpStages.Text = "Настройка стадий";
-            // 
-            // cbStageList
-            // 
-            this.cbStageList.CheckOnClick = true;
-            this.cbStageList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbStageList.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 1"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 2"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 3", System.Windows.Forms.CheckState.Checked)});
-            this.cbStageList.Location = new System.Drawing.Point(5, 43);
-            this.cbStageList.Name = "cbStageList";
-            this.cbStageList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbStageList.Size = new System.Drawing.Size(262, 170);
-            this.cbStageList.TabIndex = 999;
-            this.cbStageList.TabStop = false;
-            // 
-            // grpFunctions
-            // 
-            this.grpFunctions.Controls.Add(this.cbFunctionsList);
-            this.grpFunctions.Location = new System.Drawing.Point(290, 254);
-            this.grpFunctions.Name = "grpFunctions";
-            this.grpFunctions.Size = new System.Drawing.Size(272, 236);
-            this.grpFunctions.TabIndex = 1000;
-            this.grpFunctions.Text = "Настройка доп. функций";
-            // 
-            // cbFunctionsList
-            // 
-            this.cbFunctionsList.CheckOnClick = true;
-            this.cbFunctionsList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbFunctionsList.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 1"),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 2", System.Windows.Forms.CheckState.Checked),
-            new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 3")});
-            this.cbFunctionsList.Location = new System.Drawing.Point(5, 43);
-            this.cbFunctionsList.Name = "cbFunctionsList";
-            this.cbFunctionsList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbFunctionsList.Size = new System.Drawing.Size(262, 170);
-            this.cbFunctionsList.TabIndex = 999;
-            this.cbFunctionsList.TabStop = false;
             // 
             // SettingsForm
             // 
@@ -275,9 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(575, 557);
-            this.Controls.Add(this.grpFunctions);
-            this.Controls.Add(this.grpStages);
+            this.ClientSize = new System.Drawing.Size(575, 331);
             this.Controls.Add(this.grpMainSettings);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.prgsDbConnect);
@@ -295,12 +236,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.edtUpdateTimeout.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtManufString.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtIsupString.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpStages)).EndInit();
-            this.grpStages.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbStageList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grpFunctions)).EndInit();
-            this.grpFunctions.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cbFunctionsList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,9 +255,5 @@
         private DevExpress.XtraEditors.SpinEdit edtUpdateTimeout;
         private DevExpress.XtraEditors.SimpleButton btnTryConnectIsup;
         private DevExpress.XtraEditors.SimpleButton btnTryConnectManif;
-        private DevExpress.XtraEditors.GroupControl grpStages;
-        private DevExpress.XtraEditors.CheckedListBoxControl cbStageList;
-        private DevExpress.XtraEditors.GroupControl grpFunctions;
-        private DevExpress.XtraEditors.CheckedListBoxControl cbFunctionsList;
     }
 }

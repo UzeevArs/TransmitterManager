@@ -1,6 +1,6 @@
 ﻿namespace ReportManager.Reports
 {
-    public interface ISavingReport
+    internal interface ISavingReport
     {
         bool IsExistTemplateFile();
         string GetTemplateFileName();

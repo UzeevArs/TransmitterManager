@@ -1,356 +1,355 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
+
+using static ReportManager.MaxigrafIntegration.ClientPipeSettings;
 
 namespace ReportManager.MaxigrafIntegration
 {
-    public class MaxiConnection : IDisposable
+    internal class MaxiConnection : IDisposable
     {
         public event ConnectionHandler ConnectionEventHandler;
         public event ReadHandler WriteEventHandler;
         public event WriteHandler ReadEventHandler;
 
-        private ClientPipeStream _clientPipe;
-        private ServerPipeStream _serverPipe;
+        private readonly ClientPipeStreamFacade _clientPipe;
+        private readonly ServerPipeStreamFacade _serverPipe;
+
+        private readonly Thread _serverThread;
 
         public MaxiConnection()
         {
-            _clientPipe = new ClientPipeStream(ClientPipeSettings.Name);
-            _serverPipe = new ServerPipeStream(ServerPipeSettings.Name);
+            _serverThread = new Thread(ReadServerPipe);
+            _clientPipe = new ClientPipeStreamFacade(Name);
+            _serverPipe = new ServerPipeStreamFacade(ServerPipeSettings.Name);
         }
 
-        public void Connect()
+        public async Task<bool> ConnectAsync()
         {
-            new Thread(delegate()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var connectStatus = _clientPipe.Connect();
-                    if (connectStatus != ConnectStatus.SuccessConnected)
-                    {
-                        ConnectionEventHandler?.Invoke(this,
-                            new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                "Error in client pipe connection"));
-                        return;
-                    }
+                    WrapConnectionError(_clientPipe.Connect(),
+                                        s => s != ConnectStatus.SuccessConnected,
+                                        "Error in client pipe connection");
 
                     var readStatus = _clientPipe.Read();
-                    if (readStatus.Item1 != ReadWriteStatus.Success)
-                    {
-                        ConnectionEventHandler?.Invoke(this,
-                            new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                "Error in reading request \'Hello\' command " +
-                                "from client pipe"));
-                        return;
-                    }
+                    WrapConnectionError(readStatus,
+                                        s => s.Item1 != ReadWriteStatus.Success,
+                                        "Error in reading request \'Hello\' command from client pipe");
+
                     var command = Converter.ToAsciiString(readStatus.Item2);
-                    if (ClientPipeSettings.HelloRequest != command)
-                    {
-                        ConnectionEventHandler?.Invoke(this,
-                            new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                "Error in parsing request \'Hello\' command " +
-                                "from client pipe"));
-                        return;
-                    }
+                    WrapConnectionError(command,
+                                        s => s != HelloRequest,
+                                        "Error in parsing request \'Hello\' command from client pipe");
 
-                    var writeStatus = _clientPipe.Send(Converter.ToAsciiBytes(ClientPipeSettings.HelloResponse));
-                    if (writeStatus != ReadWriteStatus.Success)
-                    {
-                        ConnectionEventHandler?.Invoke(this,
-                            new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                "Error in sending response \'Hello\' command " +
-                                "to client pipe"));
-                        return;
-                    }
-                    var listenStatus = _serverPipe.StartListening();
-                    if (listenStatus != ConnectStatus.SuccessConnected)
-                    {
-                        ConnectionEventHandler?.Invoke(this,
-                            new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                "Error in accepting server pipe"));
-                        return;
-                    }
+                    WrapConnectionError(_clientPipe.Send(Converter.ToAsciiBytes(HelloResponse)),
+                                        s => s != ReadWriteStatus.Success,
+                                        "Error in sending response \'Hello\' command to client pipe");
 
-                    ConnectionEventHandler?.Invoke(this,
-                        new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected, ""));
+                    WrapConnectionError(_serverPipe.StartListening(),
+                                        s => s != ConnectStatus.SuccessConnected,
+                                        "Error in accepting server pipe");
+
+                    ConnectionSuccess();
+                    return true;
                 }
                 catch (Exception ex)
                 {
-                    ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                        ex.Message));
+                    ConnectionError(ex.Message);
+                    return false;
                 }
-
-            }).Start();
+            });
         }
 
-        public void SendTextScript(string path)
+        public async Task<bool> SendTextScriptAsync(string path)
         {
-            new Thread(delegate()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var startStatus = _serverPipe.Send(
-                                        Converter.ToAsciiBytes(
-                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.TxtFileStart]));
-                    long counter = 0;
-                    var startTime = DateTime.Now;
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.TxtFileStart])),
+                        status => status != ReadWriteStatus.Success,
+                        "Error in sending text script initial command");
 
                     using (var stream = new StreamReader(path))
-                    {
                         while (!stream.EndOfStream)
-                        {
-                            var line = stream.ReadLine() + "*?";
-                            var streamWriteStatus = _serverPipe.Send(
-                                                        Converter.ToAsciiBytes(line));
-                            if (++counter % 100 == 0)
-                                ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, $"Writed (Count {counter}): {line}"));
-                        }
-                    }
-                    var writedTime = DateTime.Now;
+                            _serverPipe.Send(Converter.ToAsciiBytes(new StringBuilder()
+                                .Append(stream.ReadLine())
+                                .Append("*?")
+                                .ToString()));
 
-                    var endStatus = _serverPipe.Send(
-                                        Converter.ToAsciiBytes(
-                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.EndFile]));
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, "Finished writing. Now waiting"));
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.EndFile])),
+                        status => status != ReadWriteStatus.Success,
+                        "Error in sending text script end file command");
 
                     var readStatus = _serverPipe.Read();
-                    var finishedTime = DateTime.Now;
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                        $"Starttime: {startTime}\nWritedTime: {writedTime}\nFinishedTime: {finishedTime}"));
-                    if (readStatus.Item1 != ReadWriteStatus.Success)
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                              "Error in reading status " +
-                                                                                              "from client pipe"));
-                        return;
-                    }
-                    if (ClientPipeSettings.TryParseCommand(Converter.ToAsciiString(readStatus.Item2))
-                            == ClientPipeSettings.Commands.TxtSuccess)
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected,
-                                                                                              ""));
-                    }
-                    else
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                              $"Error: {Converter.ToAsciiString(readStatus.Item2)}"));
-                    }
+                    WrapReadError(readStatus,
+                        t => t.Item1 != ReadWriteStatus.Success,
+                        "Error in reading status from client pipe");
+
+                    WrapReadError(TryParseCommand(Converter.ToAsciiString(readStatus.Item2)),
+                        t => t != Commands.TxtSuccess,
+                        $"Error: {Converter.ToAsciiString(readStatus.Item2)}");
+
+                    ReadSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                          ex.Message));
+                    return false;
                 }
-            }).Start();
+            });
         }
 
-        public void SendLeScript(string path)
+        public async Task<bool> SendLeScriptAsync(string path)
         {
-            new Thread(delegate ()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var startStatus = _serverPipe.Send(
-                                        Converter.ToAsciiBytes(
-                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.LeFileStart]));
-                    long counter = 0;
-                    var startTime = DateTime.Now;
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.LeFileStart])),
+                        status => status != ReadWriteStatus.Success,
+                        "Error in sending le script initial command");
+
                     using (var binaryStream = new BinaryReader(File.OpenRead(path)))
-                    {
                         while (binaryStream.BaseStream.Position != binaryStream.BaseStream.Length)
-                        {
-                            var streamWriteStatus = _serverPipe.Send(binaryStream.ReadBytes(256));
-                            if (++counter % 100 == 0)
-                                ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, $"Writed 256 bytes (Count {counter})"));
-                        }
-                    }
-                    var writedTime = DateTime.Now;
+                            _serverPipe.Send(binaryStream.ReadBytes(256));
 
-                    var endStatus = _serverPipe.Send(
-                                        Converter.ToAsciiBytes(
-                                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.EndFile]));
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, "Finished writing. Now waiting"));
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.EndFile])),
+                        status => status != ReadWriteStatus.Success,
+                        "Error in sending le script end command");
+
 
                     var readStatus = _serverPipe.Read();
-                    var finishedTime = DateTime.Now;
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, 
-                        $"Start time: {startTime}\nWritedTime: {writedTime}\nFinishedTime: {finishedTime}"));
-                    if (readStatus.Item1 != ReadWriteStatus.Success)
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                              "Error in reading status " +
-                                                                                              "from client pipe"));
-                        return;
-                    }
-                    if (ClientPipeSettings.TryParseCommand(Converter.ToAsciiString(readStatus.Item2))
-                            == ClientPipeSettings.Commands.TxtSuccess)
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected,
-                                                                                              ""));
-                    }
-                    else
-                    {
-                        ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                              $"Error: {Converter.ToAsciiString(readStatus.Item2)}"));
-                    }
+                    WrapReadError(readStatus,
+                        t => t.Item1 != ReadWriteStatus.Success,
+                        "Error in reading status from client pipe");
+
+                    WrapReadError(TryParseCommand(Converter.ToAsciiString(readStatus.Item2)),
+                        t => t != Commands.LeSuccess,
+                        $"Error: {Converter.ToAsciiString(readStatus.Item2)}");
+
+                    ReadSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    ConnectionEventHandler?.Invoke(this, new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError,
-                                                                                          ex.Message));
+                    return false;
                 }
-            }).Start();
+            });
         }
 
-        public void ShowCrossJoystick()
+        public async Task<bool> ShowCrossJoystickAsync()
         {
-            new Thread(delegate()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var status = _serverPipe.Send(
-                                    Converter.ToAsciiBytes(
-                                        ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.ShowCrossJoystick]));
-                    if (status != ReadWriteStatus.Success)
-                    {
-                        WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, 
-                                                                                           "ReadWriteStatus not success"));
-                        return;
-                    }
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, 
-                                                                                       ""));
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.ShowCrossJoystick])),
+                        status => status != ReadWriteStatus.Success,
+                        "Error in sending show cross joystick initial command");
+                    WriteSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, ex.Message));
+                    return false;
                 }
-
-            }).Start();
+            });
         }
 
-        public void ShowRectJoystick()
+        public async Task<bool> ShowRectJoystickAsync()
         {
-            new Thread(delegate ()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var status = _serverPipe.Send(
-                                    Converter.ToAsciiBytes(
-                                        ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.ShowRectJoystick]));
-                    if (status != ReadWriteStatus.Success)
-                    {
-                        WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error,
-                                                                                           "ReadWriteStatus not success"));
-                        return;
-                    }
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                                                                                       ""));
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.ShowRectJoystick])),
+                                    status => status != ReadWriteStatus.Success,
+                                    "Error in sending show rect joystick initial command");
+                    WriteSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, ex.Message));
+                    return false;
                 }
-
-            }).Start();
+            });
         }
 
-        public void StartMarking()
+        public async Task<bool> SetNewValueAsync(string path, string value)
         {
-            new Thread(delegate ()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var status = _serverPipe.Send(
-                                    Converter.ToAsciiBytes(
-                                        ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.StartMarking]));
-                    if (status != ReadWriteStatus.Success)
-                    {
-                        WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error,
-                                                                                           "ReadWriteStatus not success"));
-                        return;
-                    }
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                                                                                       ""));
-                }
-                catch (Exception ex)
-                {
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, ex.Message));
-                }
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.SetValue])),
+                                   status => status != ReadWriteStatus.Success,
+                                   "Error in sending set new value command");
 
-            }).Start();
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes($"{path}={value}")),
+                                   status => status != ReadWriteStatus.Success,
+                                   $"Error in sending: {path}={value}");
+
+                    var readStatus = _serverPipe.Read();
+                    WrapReadError(readStatus,
+                                  t => int.Parse(Converter.ToAsciiString(t.Item2)) != 0,
+                                  $"Error in status from client pipe ({Converter.ToAsciiString(readStatus.Item2)})");
+
+                    ReadSuccess();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            });
         }
 
-        public void StopMarking()
+        public async Task<bool> StartMarkingAsync()
         {
-            new Thread(delegate ()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    var status = _serverPipe.Send(
-                                    Converter.ToAsciiBytes(
-                                        ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.StopMarking]));
-                    if (status != ReadWriteStatus.Success)
-                    {
-                        WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error,
-                                                                                           "ReadWriteStatus not success"));
-                        return;
-                    }
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                                                                                       ""));
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.StartMarking])),
+                                    status => status != ReadWriteStatus.Success,
+                                    "Error in sending start marking initial command");
+                    WriteSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    WriteEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, ex.Message));
+                    return false;
                 }
-
-            }).Start();
+            });
         }
 
-        public void ReadServerPipe()
+        public async Task<bool> StopMarkingAsync()
         {
-            new Thread(delegate()
+            return await Task.Run(() =>
             {
                 try
                 {
-                    while (true)
-                    {
-                        var data = _clientPipe.Read();
-                        if (data.Item1 != ReadWriteStatus.Success)
-                        {
-                            ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error,
-                                                                                              "ReadWriteStatus not success"));
-                            return;
-                        }
-                        ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success,
-                                                                                          Converter.ToAsciiString(data.Item2)));
-                    }
+                    WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.StopMarking])),
+                                    status => status != ReadWriteStatus.Success,
+                                    "Error in sending stop marking initial command");
+                    WriteSuccess();
+                    return true;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    ReadEventHandler?.Invoke(this, new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, ex.Message));
+                    return false;
                 }
+            });
+        }
 
-            }).Start();
+        public void StartReadServerPipe()
+        {
+            _serverThread.Start();
+        }
+
+        private void ReadServerPipe()
+        {
+            try
+            {
+                while (true)
+                {
+                    var data = _clientPipe.Read();
+                    WrapReadError(data,
+                                  t => t.Item1 != ReadWriteStatus.Success,
+                                  "Server pipe message reading error");
+                    ReadSuccess(Converter.ToAsciiString(data.Item2));
+                }
+            }
+            catch { }
         }
 
         public void Dispose()
         {
-            new Thread(delegate()
+            try
             {
-                try
-                {
-                    _serverPipe.Send(
-                        Converter.ToAsciiBytes(
-                            ClientPipeSettings.CommandsList[ClientPipeSettings.Commands.Exit]));
-                    _clientPipe.Read();
+                _serverThread.Abort();
+                _serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.Exit]));
+                _clientPipe.Read();
 
-                    _clientPipe.Dispose();
-                    _serverPipe.Dispose();
-                }
-                catch { }
-
-            }).Start();
+                _clientPipe.Dispose();
+                _serverPipe.Dispose();
+            }
+            catch { }
         }
+
+
+        private void WrapReadError<T>(T result, Func<T, bool> compareFunctor, string message)
+        {
+            if (compareFunctor(result))
+            {
+                ReadError(message);
+                throw new Exception(message);
+            }
+        }
+
+        private void ReadError(string message)
+        {
+            ReadEventHandler?.Invoke(this,
+                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, message));
+        }
+
+        private void ReadSuccess(string message = "")
+        {
+            ReadEventHandler?.Invoke(this,
+                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, message));
+        }
+
+
+        private void WrapWriteError<T>(T result, Func<T, bool> compareFunctor, string message)
+        {
+            if (compareFunctor(result))
+            {
+                WriteError(message);
+                throw new Exception(message);
+            }
+        }
+
+        private void WriteError(string message)
+        {
+            WriteEventHandler?.Invoke(this,
+                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, message));
+        }
+
+        private void WriteSuccess(string message = "")
+        {
+            WriteEventHandler?.Invoke(this,
+                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, message));
+        }
+
+
+        private void WrapConnectionError<T>(T result, Func<T, bool> compareFunctor, string message)
+        {
+            if (compareFunctor(result))
+            {
+                ConnectionError(message);
+                throw new Exception(message);
+            }
+                
+        }
+
+        private void ConnectionError(string message)
+        {
+            ConnectionEventHandler?.Invoke(this,
+                new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError, message));
+        }
+
+        private void ConnectionSuccess(string message = "")
+        {
+            ConnectionEventHandler?.Invoke(this,
+                new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected, message));
+        }
+
 
         public delegate void ConnectionHandler(object sender, Tuple<ConnectStatus, string> status);
 

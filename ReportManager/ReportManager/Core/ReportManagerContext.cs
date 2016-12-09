@@ -6,13 +6,15 @@ using ReportManager.Core.Utility;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Data.Database.NifudaDataSetTableAdapters;
+using ReportManager.Data.Database.ConcreteAdapters;
+using System.Linq;
 
 namespace ReportManager.Core
 {
-    public class ReportManagerContext
+    internal class ReportManagerContext
     {
         private static ReportManagerContext _instance;
-        private NifudaDataTableAdapter nifudaDataTableAdapter = new NifudaDataTableAdapter();
+        private NifudaInputDataDatabaseAdapter inputDataAdapter = new NifudaInputDataDatabaseAdapter();
 
         private ReportManagerContext()
         {
@@ -28,13 +30,13 @@ namespace ReportManager.Core
             Stages.Clear();
         }
 
-        public event EventHandler<Tuple<DeviceModelStatus, DeviceModel>> DeviceModelCreatedStatus;
+        public event EventHandler<(DeviceModelStatus, InputData)> InputDataCreatedStatus;
 
-        private void SettingsContextOnSettingsLoadingEvent(object sender,
-            Tuple<Settings, SettingsStatus, string> status)
+        private void SettingsContextOnSettingsLoadingEvent(object sender, (Settings, SettingsStatus, string) status)
         {
-            if (status.Item2 == SettingsStatus.Changed
-                || status.Item2 == SettingsStatus.SuccessLoaded)
+            var (settings, settingStatus, message) = status;
+            if (settingStatus == SettingsStatus.Changed 
+                || settingStatus == SettingsStatus.SuccessLoaded)
             {
                 Fill();
                 Start();
@@ -49,54 +51,42 @@ namespace ReportManager.Core
             Stages.ForEach(stage => stage?.Dispose());
             Stages.Clear();
 
-            nifudaDataTableAdapter.Connection.ConnectionString = 
-                SettingsContext.GlobalSettings.NifudaConnectionString;
-
-            if (SettingsContext.GlobalSettings.Functionals != null)
-                foreach (var function in SettingsContext.GlobalSettings.Functionals)
-                    Functionals.Add(function);
-
-            if (SettingsContext.GlobalSettings.Stages != null)
-                foreach (var stage in SettingsContext.GlobalSettings.Stages)
-                    Stages.Add(stage);
+            Functionals.AddRange(SettingsContext.CurrentUser.UserExtraFunction);
+            Stages.AddRange(SettingsContext.CurrentUser.UserStages);
         }
 
         public void Start()
         {
-            if (SettingsContext.GlobalSettings.Functionals != null)
-                SettingsContext.GlobalSettings.Functionals.ForEach(functional => functional.Start());
+            Functionals.ForEach(functional => functional.Start());
         }
 
-        public Tuple<DeviceModelStatus, DeviceModel> FillCurrentDeviceByMsCode(string msCode)
+        public (DeviceModelStatus status, InputData input) FillCurrentDeviceByMsCode(string msCode)
         {
             try
             {
-                var dataBySerial = nifudaDataTableAdapter.GetDataBySerial(msCode);
-                if (dataBySerial.Count == 0)
+                var dataBySerial = inputDataAdapter.SelectDataByIndex(msCode).ToList();
+                if (dataBySerial.Count() == 0)
                 {
-                    DeviceModelCreatedStatus?.Invoke(this,
-                        new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedError, null));
-                    return new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedError, null);
+                    InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+                    return (DeviceModelStatus.CreatedError, null);
                 }
 
-                CurrentDeviceModel =
-                    DataModelCreator.GetDeviceBySerial(new SerialNumber { Serial = dataBySerial[0].SERIAL_NO });
-                DeviceModelCreatedStatus?.Invoke(this,
-                        new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedSuccess, CurrentDeviceModel));
-                return new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedSuccess, CurrentDeviceModel);
+                CurrentInput = inputDataAdapter.SelectBySerial(dataBySerial[0].SERIAL_NO).FirstOrDefault();
+
+                InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedSuccess, CurrentInput));
+                return (DeviceModelStatus.CreatedSuccess, CurrentInput);
             }
             catch
             {
-                DeviceModelCreatedStatus?.Invoke(this,
-                                        new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedError, null));
-                return new Tuple<DeviceModelStatus, DeviceModel>(DeviceModelStatus.CreatedError, null);
+                InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+                return (DeviceModelStatus.CreatedError, null);
             }
         }
 
-        public DeviceModel CurrentDeviceModel { get; private set; }
+        public InputData CurrentInput { get; private set; }
 
-        public List<AbstractFunctional> Functionals { get; set; } = new List<AbstractFunctional>();
-        public List<AbstractStage> Stages { get; set; } = new List<AbstractStage>();
+        public List<Functional.Functional> Functionals { get; set; } = new List<Functional.Functional>();
+        public List<Stage> Stages { get; set; } = new List<Stage>();
 
         public static ReportManagerContext GetInstance()
         {
