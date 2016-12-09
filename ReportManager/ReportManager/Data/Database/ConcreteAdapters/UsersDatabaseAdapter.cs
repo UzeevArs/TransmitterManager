@@ -27,7 +27,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
 
                 var dataTable = adapter.GetData();
                 foreach (var obj in dataTable.AdaptWithSameProperties<User,
-                                                                      UsersTableRow>())
+                                                                      USERS_TBRow>())
                     yield return obj;
             }
         }
