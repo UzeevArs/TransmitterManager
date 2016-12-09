@@ -1,17 +1,18 @@
 ﻿namespace ReportManager.Data.DataModel
 {
-    internal class MaxigrafPlatesSettings
+    public class MaxigrafPlateSetting
     {
-        public string Num { get; set; } = "";
+        public int Num { get; set; }
         public string ObjectPath { get; set; } = "";
         public string NifudaPath { get; set; } = "";
         public string DefaultValue { get; set; } = "";
-        public string MaxSymbolCount { get; set; } = "";
-        public string RegisterType { get; set; } = "";
+        public int MaxSymbolCount { get; set; }
+        public int RegisterType { get; set; }
         public string Regex { get; set; } = "";
         public string Comments { get; set; } = "";
         public string OwerFlowMovePath { get; set; } = "";
-        public string PlateID { get; set; } = "";
+        public int PlateID { get; set; }
         public string MoveTo { get; set; } = "";
+        public string Value { get; set; } = "";
     }
 }

@@ -1609,6 +1609,11 @@ namespace ReportManager.Data.Database.MaxigrafDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PlateID", "PlateID");
             tableMapping.ColumnMappings.Add("MoveTo", "MoveTo");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM PLATES_SETTINGS_TB\r\nWHERE        (Num = @Num)";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Num", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Num", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO PLATES_SETTINGS_TB
@@ -1632,7 +1637,7 @@ SET                ObjectPath = @ObjectPath, NifudaPath = @NifudaPath, DefaultVa
                          OwerFlowMovePath = @OwerFlowMovePath, MoveTo = @MoveTo, PlateID = PLATES_TB.PlateID
 FROM            PLATES_SETTINGS_TB INNER JOIN
                          PLATES_TB ON PLATES_SETTINGS_TB.PlateID = PLATES_TB.PlateID
-WHERE        (PLATES_TB.PlateID = @PlateID)";
+WHERE        (PLATES_SETTINGS_TB.Num = @Num)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ObjectPath", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "ObjectPath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NifudaPath", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "NifudaPath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1643,7 +1648,7 @@ WHERE        (PLATES_TB.PlateID = @PlateID)";
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Comments", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Comments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OwerFlowMovePath", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "OwerFlowMovePath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MoveTo", global::System.Data.SqlDbType.Text, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "MoveTo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PlateID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PlateID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Num", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Num", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1754,6 +1759,28 @@ WHERE        (PLATES_TB.PlateID = @PlateID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Num) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Num));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string ObjectPath, string NifudaPath, string DefaultValue, int MaxSymbolCount, int RegisterType, string Regex, string Comments, string OwerFlowMovePath, int PlateID, string MoveTo) {
             if ((ObjectPath == null)) {
@@ -1821,7 +1848,7 @@ WHERE        (PLATES_TB.PlateID = @PlateID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string ObjectPath, string NifudaPath, string DefaultValue, int MaxSymbolCount, int RegisterType, string Regex, string Comments, string OwerFlowMovePath, string MoveTo, int PlateID) {
+        public virtual int Update(string ObjectPath, string NifudaPath, string DefaultValue, int MaxSymbolCount, int RegisterType, string Regex, string Comments, string OwerFlowMovePath, string MoveTo, int Num) {
             if ((ObjectPath == null)) {
                 throw new global::System.ArgumentNullException("ObjectPath");
             }
@@ -1866,7 +1893,7 @@ WHERE        (PLATES_TB.PlateID = @PlateID)";
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(MoveTo));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(PlateID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Num));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

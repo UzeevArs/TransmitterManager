@@ -186,8 +186,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\DataModel\MaxigrafPlates.cs" />
-    <Compile Include="Data\DataModel\MaxigrafPlatesSettings.cs" />
+    <Compile Include="Data\DataModel\MaxigrafPlate.cs" />
+    <Compile Include="Data\DataModel\MaxigrafPlateSetting.cs" />
     <Compile Include="Data\DataModel\Users.cs" />
     <Compile Include="Data\Extensions\ExpandoExtension.cs" />
     <Compile Include="Data\Extensions\TypeExtension.cs" />

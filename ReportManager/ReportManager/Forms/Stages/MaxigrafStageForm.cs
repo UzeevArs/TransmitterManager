@@ -9,6 +9,8 @@ using ReportManager.Properties;
 
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings;
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings.Commands;
+using ReportManager.Data.Database.ConcreteAdapters;
+using System.Text.RegularExpressions;
 
 namespace ReportManager.Forms.Stages.MaxigraphStageForm
 {
@@ -17,6 +19,7 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         private MaxiConnection _connection;
         private readonly TextBox _memo;
         private InputData _inputData;
+        private MaxigrafPlate _plate;
 
         public MaxigrafStageForm()
         {
@@ -25,10 +28,30 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             _inputData = ReportManagerContext.GetInstance().CurrentInput;
         }
 
+        private bool FindPlate()
+        {
+            _plate = MatchPlate(_inputData.MS_CODE);
+            if (_plate == null)
+            {
+                MessageBox.Show($"Не найдена табличка, удовлетворяющая данному MSCode {_inputData.MS_CODE}");
+                Close();
+                return false;
+            }
+            return true;
+        }
+
+        private MaxigrafPlate MatchPlate(string msCode)
+        {
+            var plates = (new MaxigrafPlatesDatabaseAdapter()).Select();
+            return plates.FirstOrDefault(p => Regex.Match(msCode, p.Regex).Success);
+        }
+
         private void MaxigrafStageForm_Shown(object sender, EventArgs e)
         {
             ReportManagerContext.GetInstance().InputDataCreatedStatus += OnDeviceModelCreatedStatus;
+            if (!FindPlate()) return;
             tbSerial.Text = _inputData.INDEX_NO;
+            tbPlateName.Text = _plate.PlateName;
         }
 
         private void MaxigrafStageForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -77,9 +100,14 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
             /*
              Загрузка полей для скрипта
+
+             В цикле по принятому курсору
+             foreach(var setting in "Курсор")
+             {
+                 var asyncSetNewValue = _connection?.SetNewValueAsync(setting.ObjectPath, setting.Value);
+                 if (asyncSetNewValue != null) await asyncSetNewValue;
+             }
              */
-            var asyncSetNewValue = _connection?.SetNewValueAsync("Путь", "Значение");
-            if (asyncSetNewValue != null) await asyncSetNewValue;
 
             progressMarking.Position = 60;
             tbGraphStatus.Text = Resources.MaxigrafStageForm_btnStart_Click_GraphStart;
@@ -92,7 +120,6 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
         private async void BtnStop_ClickAsync(object sender, EventArgs e)
         {
-
             var asyncStopMarking = _connection?.StopMarkingAsync();
             if (asyncStopMarking != null) await asyncStopMarking;
         }
@@ -106,10 +133,12 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         {
             var (status, input) = data;
             _inputData = input;
+            if (!FindPlate()) return;
 
             if (status == DeviceModelStatus.CreatedSuccess)
             {
                 tbSerial.Text = _inputData.INDEX_NO;
+                tbPlateName.Text = _plate.PlateName;
             }
             else
             {

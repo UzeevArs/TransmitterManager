@@ -4,12 +4,12 @@ using ReportManager.Data.Extensions;
 using ReportManager.Data.AbstractAdapters;
 using ReportManager.Data.DataModel;
 using System.Linq;
+using System.Data;
 using System.Data.SqlClient;
 using ReportManager.Data.Settings;
 using ReportManager.Data.Database.UsersDataSetTableAdapters;
 
 using static ReportManager.Data.Database.UsersDataSet;
-using System.Data;
 
 namespace ReportManager.Data.Database.ConcreteAdapters
 {

@@ -68,9 +68,8 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
-                int fieldsCount = (new ISUPNifudaDataTableDataTable()).Columns.Count;
                 var methodInfo = typeof(ISUPNifudaDataTableAdapter).GetMethod("Update", 
-                    Enumerable.Range(0, fieldsCount).Select(i => typeof(string)).ToArray());
+                    Enumerable.Range(0, 49).Select(i => typeof(string)).ToArray());
 
                 foreach (var obj in data)
                 {

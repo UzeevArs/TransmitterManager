@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace ReportManager.Data.DataModel
 {
     [Flags]
-    internal enum UsersStages
+    public enum UsersStages
     {
         None = 0,
         TransportListCreateStage = 1,
@@ -16,7 +16,7 @@ namespace ReportManager.Data.DataModel
     }
 
     [Flags]
-    internal enum UserExtraFunc
+    public enum UserExtraFunc
     {
         None = 0,
         CheckIsupDb = 1,
@@ -24,7 +24,7 @@ namespace ReportManager.Data.DataModel
         SynchronizeDb = 3
     }
 
-    internal class User
+    public class User
     {
         private List<Stage> _stages;
         private List<Functional> _functions;

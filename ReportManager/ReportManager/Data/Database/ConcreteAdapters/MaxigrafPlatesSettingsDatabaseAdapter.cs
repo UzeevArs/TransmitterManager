@@ -7,15 +7,15 @@ using ReportManager.Data.Extensions;
 using ReportManager.Data.Settings;
 using System.Data.SqlClient;
 using System;
+using System.Data;
 
 using static ReportManager.Data.Database.MaxigrafDataSet;
-using System.Data;
 
 namespace ReportManager.Data.Database.ConcreteAdapters
 {
-    internal class MaxigrafPlatesSettingsDatabaseAdapter : ICommonAdapter<MaxigrafPlatesSettings>
+    internal class MaxigrafPlatesSettingsDatabaseAdapter : ICommonAdapter<MaxigrafPlateSetting>
     {
-        public IEnumerable<MaxigrafPlatesSettings> Select(object state)
+        public IEnumerable<MaxigrafPlateSetting> Select(object state = null)
         {
             using (var adapter = new MaxigrafPlatesSettingDataTableTableAdapter
             {
@@ -26,13 +26,13 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                     yield break;
 
                 var dataTable = adapter.GetDataBy();
-                foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlatesSettings,
+                foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlateSetting,
                                                                       MaxigrafPlatesSettingDataTableRow>())
                     yield return obj;
             }
         }
 
-        public IEnumerable<MaxigrafPlatesSettings> SelectByPlateId(int plateId, object state)
+        public IEnumerable<MaxigrafPlateSetting> SelectByPlateId(int plateId, object state = null)
         {
             using (var adapter = new MaxigrafPlatesSettingDataTableTableAdapter
             {
@@ -43,13 +43,13 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                     yield break;
 
                 var dataTable = adapter.GetData(plateId);
-                foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlatesSettings,
+                foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlateSetting,
                                                                       MaxigrafPlatesSettingDataTableRow>())
                     yield return obj;
             }
         }
 
-        public (Result, string) Insert(IEnumerable<MaxigrafPlatesSettings> data, object state)
+        public (Result, string) Insert(IEnumerable<MaxigrafPlateSetting> data, object state = null)
         {
             using (var adapter = new MaxigrafPlatesSettingDataTableTableAdapter
             {
@@ -76,7 +76,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
             }
         }
 
-        public (Result, string) Update(IEnumerable<MaxigrafPlatesSettings> data, object state)
+        public (Result, string) Update(IEnumerable<MaxigrafPlateSetting> data, object state = null)
         {
             using (var adapter = new MaxigrafPlatesSettingDataTableTableAdapter
             {
@@ -86,9 +86,10 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
                     return (Result.Unsuccess, $"Database connection error");
 
-                int fieldsCount = (new MaxigrafPlatesSettingDataTableDataTable()).Columns.Count;
                 var methodInfo = typeof(MaxigrafPlatesSettingDataTableTableAdapter).GetMethod("Update",
-                    Enumerable.Range(0, fieldsCount).Select(i => typeof(string)).ToArray());
+                     new List<Type> { typeof(string), typeof(string), typeof(string),
+                                      typeof(int), typeof(int), typeof(string), typeof(string),
+                                      typeof(string), typeof(string), typeof(int) }.ToArray());
 
                 foreach (var obj in data)
                 {
@@ -105,6 +106,23 @@ namespace ReportManager.Data.Database.ConcreteAdapters
             }
         }
 
-        public (Result, string) Delete(IEnumerable<MaxigrafPlatesSettings> data, object state) => throw new NotImplementedException();
+        public (Result, string) Delete(IEnumerable<MaxigrafPlateSetting> data, object state = null)
+        {
+            using (var adapter = new MaxigrafPlatesSettingDataTableTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    return (Result.Unsuccess, $"Database connection error");
+
+                foreach (var obj in data)
+                {
+                    adapter.Delete(obj.Num);
+                }
+
+                return (Result.Success, $"Ok");
+            }
+        }
     }
 }
