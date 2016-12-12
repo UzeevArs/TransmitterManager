@@ -113,8 +113,6 @@
             this.colUserStagesMask.Name = "colUserStagesMask";
             this.colUserStagesMask.OptionsColumn.AllowEdit = false;
             this.colUserStagesMask.OptionsColumn.ReadOnly = true;
-            this.colUserStagesMask.Visible = true;
-            this.colUserStagesMask.VisibleIndex = 3;
             // 
             // colUserFuncMask
             // 
@@ -123,8 +121,6 @@
             this.colUserFuncMask.Name = "colUserFuncMask";
             this.colUserFuncMask.OptionsColumn.AllowEdit = false;
             this.colUserFuncMask.OptionsColumn.ReadOnly = true;
-            this.colUserFuncMask.Visible = true;
-            this.colUserFuncMask.VisibleIndex = 4;
             // 
             // mainMenu
             // 
