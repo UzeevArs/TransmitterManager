@@ -19,6 +19,8 @@ namespace ReportManager.MaxigrafIntegration
 
         private readonly Thread _serverThread;
 
+        public bool Alive { get { return _serverPipe.Alive; } }
+
         public MaxiConnection()
         {
             _serverThread = new Thread(ReadServerPipe);
@@ -38,7 +40,7 @@ namespace ReportManager.MaxigrafIntegration
 
                     var readStatus = _clientPipe.Read();
                     WrapConnectionError(readStatus,
-                                        s => s.Item1 != ReadWriteStatus.Success,
+                                        s => s.Item1 != Status.Success,
                                         "Error in reading request \'Hello\' command from client pipe");
 
                     var command = Converter.ToAsciiString(readStatus.Item2);
@@ -47,7 +49,7 @@ namespace ReportManager.MaxigrafIntegration
                                         "Error in parsing request \'Hello\' command from client pipe");
 
                     WrapConnectionError(_clientPipe.Send(Converter.ToAsciiBytes(HelloResponse)),
-                                        s => s != ReadWriteStatus.Success,
+                                        s => s != Status.Success,
                                         "Error in sending response \'Hello\' command to client pipe");
 
                     WrapConnectionError(_serverPipe.StartListening(),
@@ -72,8 +74,8 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.TxtFileStart])),
-                        status => status != ReadWriteStatus.Success,
-                        "Error in sending text script initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending text script initial command");
 
                     using (var stream = new StreamReader(path))
                         while (!stream.EndOfStream)
@@ -83,17 +85,17 @@ namespace ReportManager.MaxigrafIntegration
                                 .ToString()));
 
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.EndFile])),
-                        status => status != ReadWriteStatus.Success,
-                        "Error in sending text script end file command");
+                                   status => status != Status.Success,
+                                   "Error in sending text script end file command");
 
                     var readStatus = _serverPipe.Read();
                     WrapReadError(readStatus,
-                        t => t.Item1 != ReadWriteStatus.Success,
-                        "Error in reading status from client pipe");
+                                  t => t.Item1 != Status.Success,
+                                  "Error in reading status from client pipe");
 
                     WrapReadError(TryParseCommand(Converter.ToAsciiString(readStatus.Item2)),
-                        t => t != Commands.TxtSuccess,
-                        $"Error: {Converter.ToAsciiString(readStatus.Item2)}");
+                                  t => t != Commands.TxtSuccess,
+                                  $"Error: {Converter.ToAsciiString(readStatus.Item2)}");
 
                     ReadSuccess();
                     return true;
@@ -112,26 +114,38 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.LeFileStart])),
-                        status => status != ReadWriteStatus.Success,
-                        "Error in sending le script initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending le script initial command");
+                    WriteMessage($"[Дата: {DateTime.Now}]. Отправлена команда {CommandsList[Commands.LeFileStart]}");
 
+                    WriteMessage($"[Дата: {DateTime.Now}]. Открытие файла {path}. Существует ли файл: {File.Exists(path)}");
+                    ulong counter = 0; 
                     using (var binaryStream = new BinaryReader(File.OpenRead(path)))
                         while (binaryStream.BaseStream.Position != binaryStream.BaseStream.Length)
+                        {
                             _serverPipe.Send(binaryStream.ReadBytes(256));
+                            counter++;
+                            if (counter % 1000 == 0)
+                                WriteMessage($"[Дата: {DateTime.Now}, {counter} итерация]. Отправлены 256 байт");
+                        }
+                    WriteMessage($"[Дата: {DateTime.Now}]. Общее количество итераций: {counter}");
 
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.EndFile])),
-                        status => status != ReadWriteStatus.Success,
-                        "Error in sending le script end command");
+                                   status => status != Status.Success,
+                                   "Error in sending le script end command");
+                    WriteMessage($"[Дата: {DateTime.Now}]. Отправлена команда: {CommandsList[Commands.EndFile]}");
 
 
+                    WriteMessage($"[Дата: {DateTime.Now}]. Ожидание ответа о статусе операции");
                     var readStatus = _serverPipe.Read();
                     WrapReadError(readStatus,
-                        t => t.Item1 != ReadWriteStatus.Success,
-                        "Error in reading status from client pipe");
+                                  t => t.Item1 != Status.Success,
+                                  "Error in reading status from client pipe");
 
-                    WrapReadError(TryParseCommand(Converter.ToAsciiString(readStatus.Item2)),
-                        t => t != Commands.LeSuccess,
-                        $"Error: {Converter.ToAsciiString(readStatus.Item2)}");
+                    WriteMessage($"[Дата: {DateTime.Now}]. Статус: {Converter.ToAsciiString(readStatus.bytes)}");
+                    WrapReadError(TryParseCommand(Converter.ToAsciiString(readStatus.bytes)),
+                                  t => t != Commands.LeSuccess,
+                                  $"Error: {Converter.ToAsciiString(readStatus.bytes)}");
 
                     ReadSuccess();
                     return true;
@@ -150,8 +164,8 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.ShowCrossJoystick])),
-                        status => status != ReadWriteStatus.Success,
-                        "Error in sending show cross joystick initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending show cross joystick initial command");
                     WriteSuccess();
                     return true;
                 }
@@ -169,8 +183,8 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.ShowRectJoystick])),
-                                    status => status != ReadWriteStatus.Success,
-                                    "Error in sending show rect joystick initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending show rect joystick initial command");
                     WriteSuccess();
                     return true;
                 }
@@ -188,11 +202,11 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.SetValue])),
-                                   status => status != ReadWriteStatus.Success,
+                                   status => status != Status.Success,
                                    "Error in sending set new value command");
 
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes($"{path}={value}")),
-                                   status => status != ReadWriteStatus.Success,
+                                   status => status != Status.Success,
                                    $"Error in sending: {path}={value}");
 
                     var readStatus = _serverPipe.Read();
@@ -217,8 +231,8 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.StartMarking])),
-                                    status => status != ReadWriteStatus.Success,
-                                    "Error in sending start marking initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending start marking initial command");
                     WriteSuccess();
                     return true;
                 }
@@ -236,8 +250,8 @@ namespace ReportManager.MaxigrafIntegration
                 try
                 {
                     WrapWriteError(_serverPipe.Send(Converter.ToAsciiBytes(CommandsList[Commands.StopMarking])),
-                                    status => status != ReadWriteStatus.Success,
-                                    "Error in sending stop marking initial command");
+                                   status => status != Status.Success,
+                                   "Error in sending stop marking initial command");
                     WriteSuccess();
                     return true;
                 }
@@ -261,7 +275,7 @@ namespace ReportManager.MaxigrafIntegration
                 {
                     var data = _clientPipe.Read();
                     WrapReadError(data,
-                                  t => t.Item1 != ReadWriteStatus.Success,
+                                  t => t.Item1 != Status.Success,
                                   "Server pipe message reading error");
                     ReadSuccess(Converter.ToAsciiString(data.Item2));
                 }
@@ -295,14 +309,12 @@ namespace ReportManager.MaxigrafIntegration
 
         private void ReadError(string message)
         {
-            ReadEventHandler?.Invoke(this,
-                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, message));
+            ReadEventHandler?.Invoke(this, (Status.Error, message));
         }
 
         private void ReadSuccess(string message = "")
         {
-            ReadEventHandler?.Invoke(this,
-                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, message));
+            ReadEventHandler?.Invoke(this, (Status.Success, message));
         }
 
 
@@ -317,14 +329,17 @@ namespace ReportManager.MaxigrafIntegration
 
         private void WriteError(string message)
         {
-            WriteEventHandler?.Invoke(this,
-                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Error, message));
+            WriteEventHandler?.Invoke(this, (Status.Error, message));
+        }
+
+        private void WriteMessage(string message)
+        {
+            WriteEventHandler?.Invoke(this, (Status.Message, message));
         }
 
         private void WriteSuccess(string message = "")
         {
-            WriteEventHandler?.Invoke(this,
-                new Tuple<ReadWriteStatus, string>(ReadWriteStatus.Success, message));
+            WriteEventHandler?.Invoke(this, (Status.Success, message));
         }
 
 
@@ -335,26 +350,23 @@ namespace ReportManager.MaxigrafIntegration
                 ConnectionError(message);
                 throw new Exception(message);
             }
-                
         }
 
         private void ConnectionError(string message)
         {
-            ConnectionEventHandler?.Invoke(this,
-                new Tuple<ConnectStatus, string>(ConnectStatus.ConnectError, message));
+            ConnectionEventHandler?.Invoke(this, (ConnectStatus.ConnectError, message));
         }
 
         private void ConnectionSuccess(string message = "")
         {
-            ConnectionEventHandler?.Invoke(this,
-                new Tuple<ConnectStatus, string>(ConnectStatus.SuccessConnected, message));
+            ConnectionEventHandler?.Invoke(this, (ConnectStatus.SuccessConnected, message));
         }
 
 
-        public delegate void ConnectionHandler(object sender, Tuple<ConnectStatus, string> status);
+        public delegate void ConnectionHandler(object sender, (ConnectStatus status, string message) status);
 
-        public delegate void ReadHandler(object sender, Tuple<ReadWriteStatus, string> status);
+        public delegate void ReadHandler(object sender, (Status status, string message) status);
 
-        public delegate void WriteHandler(object sender, Tuple<ReadWriteStatus, string> status);
+        public delegate void WriteHandler(object sender, (Status status, string message) status);
     }
 }

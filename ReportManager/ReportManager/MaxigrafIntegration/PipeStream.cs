@@ -44,7 +44,7 @@ namespace ReportManager.MaxigrafIntegration
             _clientStream?.Dispose();
         }
 
-        public async Task<ReadWriteStatus> SendAsync(byte[] data)
+        public async Task<Status> SendAsync(byte[] data)
         {
             var writedBytes = 0;
             while (true)
@@ -58,15 +58,15 @@ namespace ReportManager.MaxigrafIntegration
                 }
                 catch
                 {
-                    return ReadWriteStatus.Error;
+                    return Status.Error;
                 }
 
                 writedBytes += 256;
             }
-            return ReadWriteStatus.Success;
+            return Status.Success;
         }
 
-        public ReadWriteStatus Send(byte[] data)
+        public Status Send(byte[] data)
         {
             var writedBytes = 0;
             while (true)
@@ -80,15 +80,15 @@ namespace ReportManager.MaxigrafIntegration
                 }
                 catch
                 {
-                    return ReadWriteStatus.Error;
+                    return Status.Error;
                 }
 
                 writedBytes += 256;
             }
-            return ReadWriteStatus.Success;
+            return Status.Success;
         }
 
-        public async Task<Tuple<ReadWriteStatus, byte[]>> ReadAsync()
+        public async Task<Tuple<Status, byte[]>> ReadAsync()
         {
             try
             {
@@ -100,15 +100,15 @@ namespace ReportManager.MaxigrafIntegration
                     var bundleBytes = new byte[readedBytes];
                     for (var i = 0; i < readedBytes; ++i)
                         bundleBytes[i] = rawBytes[i];
-                    return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Success, bundleBytes);
+                    return new Tuple<Status, byte[]>(Status.Success, bundleBytes);
                 }
             }
             catch { }
 
-            return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Error, new byte[0]);
+            return new Tuple<Status, byte[]>(Status.Error, new byte[0]);
         }
 
-        public Tuple<ReadWriteStatus, byte[]> Read()
+        public Tuple<Status, byte[]> Read()
         {
             try
             {
@@ -120,18 +120,20 @@ namespace ReportManager.MaxigrafIntegration
                     var bundleBytes = new byte[readedBytes];
                     for (var i = 0; i < readedBytes; ++i)
                         bundleBytes[i] = rawBytes[i];
-                    return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Success, bundleBytes);
+                    return new Tuple<Status, byte[]>(Status.Success, bundleBytes);
                 }
             }
             catch { }
 
-            return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Error, new byte[0]);
+            return new Tuple<Status, byte[]>(Status.Error, new byte[0]);
         }
     }
 
     internal class ServerPipeStreamFacade : IDisposable
     {
         private readonly NamedPipeServerStream _serverStream;
+
+        public bool Alive { get { return (bool)_serverStream?.IsConnected; } }
 
         public ServerPipeStreamFacade(string name)
         {
@@ -169,9 +171,11 @@ namespace ReportManager.MaxigrafIntegration
             _serverStream?.Dispose();
         }
 
-        public async Task<ReadWriteStatus> SendAsync(byte[] data)
+        public async Task<Status> SendAsync(byte[] data)
         {
             var writedBytes = 0;
+            data = Check256Bytes(data);
+
             while (true)
             {
                 if (writedBytes >= data.Length)
@@ -183,17 +187,19 @@ namespace ReportManager.MaxigrafIntegration
                 }
                 catch
                 {
-                    return ReadWriteStatus.Error;
+                    return Status.Error;
                 }
 
                 writedBytes += 256;
             }
-            return ReadWriteStatus.Success;
+            return Status.Success;
         }
 
-        public ReadWriteStatus Send(byte[] data)
+        public Status Send(byte[] data)
         {
             var writedBytes = 0;
+            data = Check256Bytes(data);
+
             while (true)
             {
                 if (writedBytes >= data.Length)
@@ -205,15 +211,15 @@ namespace ReportManager.MaxigrafIntegration
                 }
                 catch
                 {
-                    return ReadWriteStatus.Error;
+                    return Status.Error;
                 }
 
                 writedBytes += 256;
             }
-            return ReadWriteStatus.Success;
+            return Status.Success;
         }
 
-        public async Task<Tuple<ReadWriteStatus, byte[]>> ReadAsync()
+        public async Task<(Status status, byte[] bytes)> ReadAsync()
         {
             try
             {
@@ -225,15 +231,15 @@ namespace ReportManager.MaxigrafIntegration
                     var bundleBytes = new byte[readedBytes];
                     for (var i = 0; i < readedBytes; ++i)
                         bundleBytes[i] = rawBytes[i];
-                    return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Success, bundleBytes);
+                    return (Status.Success, bundleBytes);
                 }
             }
             catch { }
 
-            return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Error, new byte[0]);
+            return (Status.Error, new byte[0]);
         }
 
-        public Tuple<ReadWriteStatus, byte[]> Read()
+        public (Status status, byte[] bytes) Read()
         {
             try
             {
@@ -245,12 +251,24 @@ namespace ReportManager.MaxigrafIntegration
                     var bundleBytes = new byte[readedBytes];
                     for (var i = 0; i < readedBytes; ++i)
                         bundleBytes[i] = rawBytes[i];
-                    return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Success, bundleBytes);
+                    return (Status.Success, bundleBytes);
                 }
             }
             catch { }
 
-            return new Tuple<ReadWriteStatus, byte[]>(ReadWriteStatus.Error, new byte[0]);
+            return (Status.Error, new byte[0]);
+        }
+
+        private byte[] Check256Bytes(byte[] bytes)
+        {
+            if (bytes.Length >= 256) return bytes;
+
+            var newbytes = new byte[256];
+            for (var i = 0; i < bytes.Length; ++i)
+            {
+                newbytes[i] = bytes[i];
+            }
+            return newbytes;
         }
     }
 
@@ -259,8 +277,8 @@ namespace ReportManager.MaxigrafIntegration
         SuccessConnected, ConnectError
     }
 
-    internal enum ReadWriteStatus
+    internal enum Status
     {
-        Success, Error
+        Success, Error, Message
     }
 }

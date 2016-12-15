@@ -6,11 +6,16 @@ using ReportManager.Core;
 using ReportManager.Data.DataModel;
 using ReportManager.MaxigrafIntegration;
 using ReportManager.Properties;
+using ReportManager.Data.Extensions;
 
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings;
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings.Commands;
 using ReportManager.Data.Database.ConcreteAdapters;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Globalization;
 
 namespace ReportManager.Forms.Stages.MaxigraphStageForm
 {
@@ -26,6 +31,40 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             InitializeComponent();
             _memo = GetInnerTextBox(memoLog);
             _inputData = ReportManagerContext.GetInstance().CurrentInput;
+            SetDataSource();
+        }
+
+        private async void SetDataSource()
+        {
+            var table = new List<GU1_Table> {
+                new GU1_Table
+                {
+                    MODEL = ("", _inputData.MODEL),
+                    PROD_CAREER = ("", _inputData.PROD_CAREER),
+                    MS_CODE = ("", _inputData.MS_CODE),
+                    POWER = ("", _inputData.MS_CODE),
+                    MWP = ("", _inputData.MS_CODE),
+                    ORD_INST_MIN_502 = ("", _inputData.ORD_INST_MIN_502),
+                    ORD_INST_MAX_502 = ("", _inputData.ORD_INST_MAX_502),
+                    UNIT_502 = ("", _inputData.UNIT_502),
+                    SERIAL_NO = ("", _inputData.SERIAL_NO),
+                    ORD = ("", ""),
+                    ORD_INST_CONTECT1_Z30 = ("", _inputData.ORD_INST_CONTECT1_Z30),
+                    TAG_NO_525 = ("", _inputData.TAG_NO_525),
+                    TAG_NO_525_1 = ("", _inputData.TAG_NO_525)
+            } }
+            .PropertiesToDict()
+            .Select(el => new Pair { Item1 = (((string, string))el.Value).Item1, Item2 = (((string, string))el.Value).Item2 } )
+            .ToList();
+
+            gridControl1.DataSource = table;
+            gridControl1.RefreshDataSource();
+
+            await Task.Run(() =>
+            {
+                Thread.Sleep(500);
+                Invoke((Action)(() => btnConnect.PerformClick()));
+            });
         }
 
         private bool FindPlate()
@@ -42,8 +81,10 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
         private MaxigrafPlate MatchPlate(string msCode)
         {
+            //var plates = (new MaxigrafPlatesDatabaseAdapter()).Select();
+            //return plates.FirstOrDefault(p => Regex.Match(msCode, p.Regex).Success);
             var plates = (new MaxigrafPlatesDatabaseAdapter()).Select();
-            return plates.FirstOrDefault(p => Regex.Match(msCode, p.Regex).Success);
+            return plates.FirstOrDefault(p => Regex.Match("GU1", p.Regex).Success);
         }
 
         private void MaxigrafStageForm_Shown(object sender, EventArgs e)
@@ -62,16 +103,22 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
         private void BtnConnect_Click(object sender, EventArgs e)
         {
-            progressPanel.Visible = true;
-            btnConnect.Enabled = false;
-            CreateConnectionAsync();
+            if (_connection == null || !_connection.Alive)
+            {
+                progressPanel.Visible = true;
+                btnConnect.Enabled = false;
+                CreateConnectionAsync();
+            }
         }
 
         private void BtnDisconnect_Click(object sender, EventArgs e)
         {
-            btnDisconnect.Enabled = false;
-            grpControl.Enabled = false;
-            DestroyConnection();
+            if (_connection != null && _connection.Alive)
+            {
+                btnDisconnect.Enabled = false;
+                grpControl.Enabled = false;
+                DestroyConnection();
+            }
         }
 
         private async void BtnShowCross_ClickAsync(object sender, EventArgs e)
@@ -90,13 +137,30 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         {
             grpConnection.Enabled = false;
             progressMarking.Position = 10;
+            btnStart.Enabled = false;
             tbGraphStatus.Text = Resources.MaxigrafStageForm_btnStart_Click_LeLoadStart;
 
-            var asyncSendLeScript = _connection?.SendLeScriptAsync("Путь до файла скрипта");
+            var asyncSendLeScript = _connection?.SendLeScriptAsync(_plate.ScriptPath);
             if (asyncSendLeScript != null) await asyncSendLeScript;
 
             progressMarking.Position = 30;
             tbGraphStatus.Text = Resources.MaxigrafStageForm_btnStart_Click_ValueSettingStart;
+
+            foreach (var setting in (gridControl1.DataSource as List<Pair>))
+            {
+                if (setting.Item2 != string.Empty)
+                {
+                    var asyncSetNewValue = _connection?.SetNewValueAsync($"{setting.Item1}.Text",
+                                                                         setting.Item2);
+                    if (asyncSetNewValue != null) await asyncSetNewValue;
+                }
+                else
+                {
+                    var asyncSetNewValue = _connection?.SetNewValueAsync($"{setting.Item1}.MarkPrim",
+                                                                         "false");
+                    if (asyncSetNewValue != null) await asyncSetNewValue;
+                }
+            }
 
             /*
              Загрузка полей для скрипта
@@ -115,6 +179,7 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             var asyncStartMarking = _connection?.StartMarkingAsync();
             if (asyncStartMarking != null) await asyncStartMarking;
 
+            btnStop.Enabled = true;
             progressMarking.Position = 80;
         }
 
@@ -122,6 +187,8 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         {
             var asyncStopMarking = _connection?.StopMarkingAsync();
             if (asyncStopMarking != null) await asyncStopMarking;
+            btnStop.Enabled = false;
+            btnStart.Enabled = true;
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -133,6 +200,7 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         {
             var (status, input) = data;
             _inputData = input;
+            SetDataSource();
             if (!FindPlate()) return;
 
             if (status == DeviceModelStatus.CreatedSuccess)
@@ -169,24 +237,33 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             _connection.StartReadServerPipe();
         }
 
-        private void ConnectionOnWriteEventHandler(object sender, Tuple<ReadWriteStatus, string> status)
+        private void ConnectionOnWriteEventHandler(object sender, (Status status, string message) status)
         {
             Invoke((MethodInvoker)delegate
             {
-                _memo.AppendText($"[Write handler]. Status: {status.Item1}. Message: {status.Item2}\n\n");
+                if (status.status == Status.Message)
+                {
+                    _memo.AppendText($"!!! {status.message} !!!");
+                }
+                else
+                {
+                    _memo.AppendText($"[Write handler]. Status: {status.status}. Message: {status.message}\n\n");
+                }
             });
         }
 
-        private void ConnectionOnReadEventHandler(object sender, Tuple<ReadWriteStatus, string> status)
+        private void ConnectionOnReadEventHandler(object sender, (Status status, string message) status)
         {
             Invoke((MethodInvoker)delegate
             {
-                _memo.AppendText($"[Read handler]. Status: {status.Item1}. Message: {status.Item2}\n\n");
+                _memo.AppendText($"[Read handler]. Status: {status.status}. Message: {status.message}\n\n");
 
-                if (status.Item1 != ReadWriteStatus.Success) return;
+                if (status.Item1 != Status.Success) return;
 
                 if (status.Item2 == CommandsList[MarkingCompleted])
                 {
+                    btnStart.Enabled = true;
+                    btnStop.Enabled = false;
                     grpConnection.Enabled = true;
                     tbGraphStatus.Text = Resources.MaxigrafStageForm_ConnectionOnReadEventHandler_GraphSuccess;
                     progressMarking.Position = 100;
@@ -200,11 +277,11 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             });
         }
 
-        private void ConnectionOnConnectionEventHandler(object sender, Tuple<ConnectStatus, string> status)
+        private void ConnectionOnConnectionEventHandler(object sender, (ConnectStatus status, string message) status)
         {
-            Invoke((MethodInvoker) delegate
+            Invoke((MethodInvoker)delegate
             {
-                _memo.AppendText($"[Connection handler]. Status: {status.Item1}. Message: {status.Item2}\n\n");
+                _memo.AppendText($"[Connection handler]. Status: {status.status}. Message: {status.message}\n\n");
 
                 progressPanel.Visible = false;
                 if (status.Item1 == ConnectStatus.SuccessConnected)
@@ -227,6 +304,172 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         private static TextBox GetInnerTextBox(TextEdit editor)
         {
             return editor?.Controls.OfType<TextBox>().FirstOrDefault();
+        }
+    }
+
+    internal class Pair
+    {
+        public string Item1 { get; set; }
+        public string Item2 { get; set; }
+
+    }
+
+    internal class GU1_Table
+    {
+        private string model_path => @"DPharp_Parameters\MODEL";
+        private string prod_career_path => @"DPharp_Parameters\PROD_CAREER";
+        private string ms_code_path => @"DPharp_Parameters\MS_CODE";
+        private string ms_code_1_path => @"DPharp_Parameters\MS_CODE1";
+        private string power_path => @"DPharp_Parameters\POWER";
+        private string mwp_path => @"DPharp_Parameters\MWP";
+        private string ord_inst_min_525_path => @"DPharp_Parameters\ORD_INST_MIN_502";
+        private string ord_inst_max_525_path => @"DPharp_Parameters\ORD_INST_MAX_502";
+        private string unit_502_path => @"DPharp_Parameters\UNIT_502";
+        private string serial_no_path => @"DPharp_Parameters\SERIAL_NO";
+        private string ord_path => @"DPharp_Parameters\ORD";
+        private string ord_inst_contect1_z30_path => @"DPharp_Parameters\ORD_INST_CONTECT1_Z30";
+        private string tag_no_525_path => @"DPharp_Parameters\TAG_NO_525";
+        private string tag_no_525_1_path => @"DPharp_Parameters\TAG_NO_525_1";
+
+        private string model_value { get; set; } = "";
+        private string prod_career_value { get; set; } = "";
+        private string ms_code_value { get; set; } = "";
+        private string ms_code_1_value { get; set; } = "";
+        private string power_value { get; set; } = "";
+        private string mwp_value { get; set; } = "";
+        private string ord_inst_min_525_value { get; set; } = "";
+        private string ord_inst_max_525_value { get; set; } = "";
+        private string unit_502_value { get; set; } = "";
+        private string serial_no_value { get; set; } = "";
+        private string ord_value { get; set; } = "";
+        private string ord_inst_contect1_z30_value { get; set; } = "";
+        private string tag_no_525_value { get; set; } = "";
+        private string tag_no_525_1_value { get; set; } = "";
+
+        public (string path, string value) MODEL
+        {
+            get { return (model_path, model_value); }
+            set { model_value = value.value; }
+        }
+        public (string path, string value) PROD_CAREER
+        {
+            get { return (prod_career_path, prod_career_value); }
+            set { prod_career_value = value.value; }
+        }
+        public (string path, string value) MS_CODE
+        {
+            get { return (ms_code_path, ms_code_value); }
+            set
+            {
+                if (value.value.Length <= 31)
+                    ms_code_value = value.value.Substring(7);
+                else
+                {
+                    ms_code_value = value.value.Substring(7, 24);
+                    ms_code_1_value = value.value.Substring(31);
+                }
+            }
+        }
+        public (string path, string value) MS_CODE1
+        {
+            get { return (ms_code_1_path, ms_code_1_value); }
+            set { ms_code_1_value = value.value; }
+        }
+        public (string path, string value) POWER
+        {
+            get { return (power_path, power_value); }
+            set
+            {
+                if (Regex.Match(value.value, "/A").Success)
+                    power_value = "10.5-30(32)";
+                else
+                    power_value = "10.5-30(42)";
+            }
+        }
+        public (string path, string value) MWP
+        {
+            get { return (mwp_path, mwp_value); }
+            set
+            {
+                if (Regex.Match(value.value, "EJA110E").Success 
+                    && Regex.Match(value.value, "/HG").Success)
+                {
+                    mwp_value = "25";
+                }
+                else if (Regex.Match(value.value, "EJA110E").Success
+                         && !Regex.Match(value.value, "/HG").Success)
+                {
+                    mwp_value = "16";
+                }
+                else if (Regex.Match(value.value, "EJA530E").Success)
+                {
+                    switch (value.value[9])
+                    {
+                        case 'A': mwp_value = "0.2"; break;
+                        case 'B': mwp_value = "2"; break;
+                        case 'C': mwp_value = "10"; break;
+                        case 'D': mwp_value = Regex.Match(value.value, "/HG").Success ? "70" : "50"; break;
+                    }
+                }
+            }
+        }
+        public (string path, string value) ORD_INST_MIN_502
+        {
+            get { return (ord_inst_min_525_path, ord_inst_min_525_value); }
+            set { ord_inst_min_525_value = value.value; }
+        }
+        public (string path, string value) ORD_INST_MAX_502
+        {
+            get { return (ord_inst_max_525_path, ord_inst_max_525_value); }
+            set { ord_inst_max_525_value = value.value; }
+        }
+        public (string path, string value) UNIT_502
+        {
+            get { return (unit_502_path, unit_502_value); }
+            set { unit_502_value = value.value; }
+        }
+        public (string path, string value) SERIAL_NO
+        {
+            get { return (serial_no_path, serial_no_value); }
+            set { serial_no_value = value.value; }
+        }
+        public (string path, string value) ORD
+        {
+            get { return (ord_path, ord_value); }
+            set
+            {
+                ord_value = $"{DateTime.Now.Year.ToString()[3]}{GetIso8601WeekOfYear(DateTime.Now)}";
+            }
+        }
+        public (string path, string value) ORD_INST_CONTECT1_Z30
+        {
+            get { return (ord_inst_contect1_z30_path, ord_inst_contect1_z30_value); }
+            set { ord_inst_contect1_z30_value = value.value; }
+        }
+        public (string path, string value) TAG_NO_525
+        {
+            get { return (tag_no_525_path, tag_no_525_value); }
+            set { tag_no_525_value = value.value; }
+        }
+        public (string path, string value) TAG_NO_525_1
+        {
+            get { return (tag_no_525_1_path, tag_no_525_1_value); }
+            set { tag_no_525_1_value = value.value; }
+        }
+
+        private static int GetIso8601WeekOfYear(DateTime time)
+        {
+            // Seriously cheat.  If its Monday, Tuesday or Wednesday, then it'll 
+            // be the same week# as whatever Thursday, Friday or Saturday are,
+            // and we always get those right
+            DayOfWeek day = CultureInfo.InvariantCulture.Calendar.GetDayOfWeek(time);
+            if (day >= DayOfWeek.Monday && day <= DayOfWeek.Wednesday)
+            {
+                time = time.AddDays(3);
+            }
+
+            // Return the week of our adjusted day
+            return CultureInfo.InvariantCulture.Calendar.GetWeekOfYear(time, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday);
         }
     }
 }

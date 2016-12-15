@@ -9,7 +9,7 @@ namespace ReportManager.Data.Extensions
     {
         private static bool IsSimple(Type type)
         {
-            return type.IsPrimitive || type.Equals(typeof(string));
+            return type.IsPrimitive || type.Equals(typeof(string)) || type.Equals(typeof((string, string)));
         }
 
         public static IEnumerable<KeyValuePair<string, object>> PropertiesToDict(this IEnumerable<object> objects)
