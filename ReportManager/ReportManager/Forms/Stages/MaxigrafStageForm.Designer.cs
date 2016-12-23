@@ -40,7 +40,9 @@
             this.btnShowCross = new DevExpress.XtraEditors.SimpleButton();
             this.grpPlateSettings = new DevExpress.XtraEditors.GroupControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colKey = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grpCurrentDevice = new DevExpress.XtraEditors.GroupControl();
             this.tbGraphStatus = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -59,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpPlateSettings)).BeginInit();
             this.grpPlateSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpCurrentDevice)).BeginInit();
             this.grpCurrentDevice.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbGraphStatus.Properties)).BeginInit();
@@ -78,6 +80,7 @@
             this.progressPanel.Description = "Идёт подключение к Maxigraph";
             this.progressPanel.Location = new System.Drawing.Point(8, 53);
             this.progressPanel.Name = "progressPanel";
+            this.progressPanel.RangeAnimationElementThickness = 2;
             this.progressPanel.Size = new System.Drawing.Size(232, 66);
             this.progressPanel.TabIndex = 0;
             this.progressPanel.Text = "Connection";
@@ -123,13 +126,13 @@
             this.grpControl.Enabled = false;
             this.grpControl.Location = new System.Drawing.Point(12, 150);
             this.grpControl.Name = "grpControl";
-            this.grpControl.Size = new System.Drawing.Size(245, 166);
+            this.grpControl.Size = new System.Drawing.Size(245, 138);
             this.grpControl.TabIndex = 4;
             this.grpControl.Text = "Панель управления";
             // 
             // progressMarking
             // 
-            this.progressMarking.Location = new System.Drawing.Point(8, 113);
+            this.progressMarking.Location = new System.Drawing.Point(8, 82);
             this.progressMarking.Name = "progressMarking";
             this.progressMarking.Size = new System.Drawing.Size(229, 18);
             this.progressMarking.TabIndex = 7;
@@ -137,7 +140,7 @@
             // btnStop
             // 
             this.btnStop.Enabled = false;
-            this.btnStop.Location = new System.Drawing.Point(8, 137);
+            this.btnStop.Location = new System.Drawing.Point(8, 106);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(229, 23);
             this.btnStop.TabIndex = 5;
@@ -151,11 +154,12 @@
             this.btnShowRect.Size = new System.Drawing.Size(110, 23);
             this.btnShowRect.TabIndex = 4;
             this.btnShowRect.Text = "Rect-джойстик";
+            this.btnShowRect.Visible = false;
             this.btnShowRect.Click += new System.EventHandler(this.BtnShowRect_ClickAsync);
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(8, 84);
+            this.btnStart.Location = new System.Drawing.Point(8, 53);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(229, 23);
             this.btnStart.TabIndex = 3;
@@ -169,6 +173,7 @@
             this.btnShowCross.Size = new System.Drawing.Size(110, 23);
             this.btnShowCross.TabIndex = 2;
             this.btnShowCross.Text = "Cross-джойстик";
+            this.btnShowCross.Visible = false;
             this.btnShowCross.Click += new System.EventHandler(this.BtnShowCross_ClickAsync);
             // 
             // grpPlateSettings
@@ -184,17 +189,39 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(2, 20);
-            this.gridControl1.MainView = this.tileView1;
+            this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(652, 384);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.tileView1});
+            this.gridView1});
             // 
-            // tileView1
+            // gridView1
             // 
-            this.tileView1.GridControl = this.gridControl1;
-            this.tileView1.Name = "tileView1";
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colKey,
+            this.colValue});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colKey
+            // 
+            this.colKey.Caption = "Путь";
+            this.colKey.FieldName = "Item1";
+            this.colKey.Name = "colKey";
+            this.colKey.OptionsColumn.AllowEdit = false;
+            this.colKey.OptionsColumn.ReadOnly = true;
+            this.colKey.Visible = true;
+            this.colKey.VisibleIndex = 0;
+            // 
+            // colValue
+            // 
+            this.colValue.Caption = "Значение";
+            this.colValue.FieldName = "Item2";
+            this.colValue.Name = "colValue";
+            this.colValue.Visible = true;
+            this.colValue.VisibleIndex = 1;
             // 
             // grpCurrentDevice
             // 
@@ -262,9 +289,9 @@
             // 
             this.grpLog.Controls.Add(this.btnClear);
             this.grpLog.Controls.Add(this.memoLog);
-            this.grpLog.Location = new System.Drawing.Point(12, 322);
+            this.grpLog.Location = new System.Drawing.Point(12, 294);
             this.grpLog.Name = "grpLog";
-            this.grpLog.Size = new System.Drawing.Size(245, 232);
+            this.grpLog.Size = new System.Drawing.Size(245, 260);
             this.grpLog.TabIndex = 7;
             this.grpLog.Text = "Лог";
             // 
@@ -282,7 +309,7 @@
             this.memoLog.Location = new System.Drawing.Point(0, 53);
             this.memoLog.Name = "memoLog";
             this.memoLog.Properties.ReadOnly = true;
-            this.memoLog.Size = new System.Drawing.Size(245, 174);
+            this.memoLog.Size = new System.Drawing.Size(245, 202);
             this.memoLog.TabIndex = 13;
             this.memoLog.TextChanged += new System.EventHandler(this.MemoLog_TextChanged);
             // 
@@ -308,7 +335,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpPlateSettings)).EndInit();
             this.grpPlateSettings.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpCurrentDevice)).EndInit();
             this.grpCurrentDevice.ResumeLayout(false);
             this.grpCurrentDevice.PerformLayout();
@@ -331,7 +358,6 @@
         private DevExpress.XtraEditors.GroupControl grpControl;
         private DevExpress.XtraEditors.GroupControl grpPlateSettings;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraEditors.SimpleButton btnStop;
         private DevExpress.XtraEditors.SimpleButton btnShowRect;
         private DevExpress.XtraEditors.SimpleButton btnStart;
@@ -347,5 +373,8 @@
         private DevExpress.XtraEditors.GroupControl grpLog;
         private DevExpress.XtraEditors.SimpleButton btnClear;
         private DevExpress.XtraEditors.MemoEdit memoLog;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colKey;
+        private DevExpress.XtraGrid.Columns.GridColumn colValue;
     }
 }

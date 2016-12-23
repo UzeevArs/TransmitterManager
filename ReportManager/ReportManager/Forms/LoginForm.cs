@@ -22,7 +22,7 @@ namespace ReportManager.Forms
 
         private void LoadData()
         {
-            var users = GetActiveMachineUsers();
+            var users = GetDbUsers();
             cbUsersName.Properties.Items.AddRange(users.ToList());
             cbUsersName.Properties.Items.Add("ReportManagerAdmin");
             cbUsersName.SelectedItem = Environment.UserName;
@@ -30,9 +30,17 @@ namespace ReportManager.Forms
 
         private static IEnumerable<string> GetActiveMachineUsers()
         {
-            var searcher = new ManagementObjectSearcher(new SelectQuery("Win32_UserAccount"));
-            foreach (var envVar in searcher.Get())
+            var searcher = new ManagementObjectSearcher(new ManagementScope("\\\\localhost\\"), 
+                                                        new SelectQuery("Win32_UserAccount")).Get();
+            foreach (var envVar in searcher)
                 yield return (string) envVar["Name"];
+        }
+
+        private static IEnumerable<string> GetDbUsers()
+        {
+            return (new UsersDatabaseAdapter())
+                .Select()
+                .Select(u => u.TUSER);
         }
 
         private void BtnOk_Click(object sender, EventArgs e)
