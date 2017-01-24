@@ -13,7 +13,8 @@ namespace ReportManager.Data.DataModel
         None                                        = 0x0,
         TransportListCreateStage                    = 0x1,
         ReportCreateStage                           = 0x2,
-        MaxigrafStage                               = 0x4
+        MaxigrafStage                               = 0x4,
+        TemperatureStage                            = 0x8
     }
 
     [Flags]
@@ -22,7 +23,8 @@ namespace ReportManager.Data.DataModel
         None                                        = 0x0,
         CheckIsupDbConnectionFunctional             = 0x1,
         CheckManifactureDbConnectionFunctional      = 0x2,
-        SynchronizeDbFunctional                     = 0x4
+        SynchronizeDbFunctional                     = 0x4,
+        TemperatureDbWriteFunctional                = 0x8
     }
 
     public class User
@@ -41,8 +43,8 @@ namespace ReportManager.Data.DataModel
                 var namesp = typeof(TransportListCreateStage).Namespace;
                 _stages = new List<Stage>();
                 _stages.AddRange(Enum.GetNames(typeof(UsersStages))
-                    .Where(en => en != "None" && UserStagesMask.IsSet((long)Enum.Parse(typeof(UsersStages), en)))
-                    .Select(en => (Stage) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
+                       .Where(en => en != "None" && UserStagesMask.IsSet((long)Enum.Parse(typeof(UsersStages), en)))
+                       .Select(en => (Stage) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
 
                 return _stages;
             }
@@ -58,8 +60,8 @@ namespace ReportManager.Data.DataModel
                 var namesp = typeof(SynchronizeDbFunctional).Namespace;
                 _functions = new List<Functional>();
                 _functions.AddRange(Enum.GetNames(typeof(UserExtraFunc))
-                    .Where(en => en != "None" && UserExtraFuncMask.IsSet((long)Enum.Parse(typeof(UserExtraFunc), en)))
-                    .Select(en => (Functional) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
+                          .Where(en => en != "None" && UserExtraFuncMask.IsSet((long)Enum.Parse(typeof(UserExtraFunc), en)))
+                          .Select(en => (Functional) Activator.CreateInstance(Type.GetType($"{namesp}.{en}"))));
 
                 return _functions;
             }

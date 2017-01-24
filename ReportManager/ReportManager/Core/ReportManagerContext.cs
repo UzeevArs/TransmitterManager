@@ -8,6 +8,7 @@ using ReportManager.Data.Settings;
 using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.Database.ConcreteAdapters;
 using System.Linq;
+using ReportManager.TemperatureLogger.Modbus;
 
 namespace ReportManager.Core
 {
@@ -89,6 +90,7 @@ namespace ReportManager.Core
         }
 
         public InputData CurrentInput { get; private set; }
+        public TemperatureDevice Device { get; private set; } = new TemperatureDevice();
 
         public List<Functional.Functional> Functionals { get; set; } = new List<Functional.Functional>();
         public List<Stage> Stages { get; set; } = new List<Stage>();
