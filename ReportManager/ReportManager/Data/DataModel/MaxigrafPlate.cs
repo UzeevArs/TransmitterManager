@@ -9,4 +9,5 @@
         public string Regex { get; set; } = "";
         public string StoredProcedureName { get; set; } = "";
     }
+        
 }

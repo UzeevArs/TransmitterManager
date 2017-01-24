@@ -18,6 +18,8 @@ using ReportManager.Forms.Settings;
 using ReportManager.Forms.Stages.MaxigraphStageForm;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
+using System.Text;
 using ReportManager.TemperatureLogger.Modbus;
 using ReportManager.Forms.Stages;
 using DevExpress.XtraEditors.Repository;
@@ -383,9 +385,48 @@ namespace ReportManager.Forms
             new PlatesForm { MdiParent = this }.Show();
         }
 
-        private void btnTemperatureStage_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new TemperatureForm { MdiParent = this }.Show();
+            
+           
+
+            SqlConnection sqlConnection1 = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = YruPCIassembling; Integrated Security = True");
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader;
+
+            cmd.CommandText = "MaxiQuery";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@plateID", SqlDbType.Char, 20);
+            cmd.Parameters["@plateID"].Value = "7";
+            cmd.Parameters.Add("@sn", SqlDbType.Char, 20);
+            cmd.Parameters["@sn"].Value = "Y2S900004";
+            cmd.Connection = sqlConnection1;
+
+            sqlConnection1.Open();
+
+            reader = cmd.ExecuteReader();
+            // Data is accessible through the DataReader object here.
+
+            if (reader.HasRows)
+            {
+                StringBuilder builder = new StringBuilder();
+                while (reader.Read())
+                {
+                    builder.Append($"{new String(reader.GetSqlChars(0).Value)}\t{new String(reader.GetSqlChars(1).Value)}\n");
+                }
+
+                MessageBox.Show(builder.ToString());
+            }
+            else
+            {
+                MessageBox.Show("No rows found.");
+            }
+        
+        sqlConnection1.Close();
+
+            //TestClass tst = new TestClass();
+            //tst.RunStoredProc();
+            //tst.CreateUser();
         }
     }
 
