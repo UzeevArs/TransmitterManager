@@ -387,9 +387,6 @@ namespace ReportManager.Forms
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
-           
-
             SqlConnection sqlConnection1 = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = YruPCIassembling; Integrated Security = True");
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
@@ -422,11 +419,16 @@ namespace ReportManager.Forms
                 MessageBox.Show("No rows found.");
             }
         
-        sqlConnection1.Close();
+            sqlConnection1.Close();
 
             //TestClass tst = new TestClass();
             //tst.RunStoredProc();
             //tst.CreateUser();
+        }
+
+        private void btnTemperatureStage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            (btnTemperatureStage.Tag as Stage)?.OpenForm(this);
         }
     }
 
