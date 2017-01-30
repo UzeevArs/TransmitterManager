@@ -11,14 +11,16 @@ namespace ReportManager.Core.Functional
     internal class CheckIsupDbConnectionFunctional : Functional
     {
         public virtual event StateChangeEventHandler StateChange;
-        public override event EventHandler<bool> StatusChanged;
 
+        [XmlIgnore]
         private ISUPNifudaDataTableAdapter IsupDataTableAdapter { get; set; }
 
+        [XmlIgnore]
         private Thread CheckIsupThread { get; set; }
 
-        public override bool IsRunning { get { return (bool) CheckIsupThread?.IsAlive; } }
-
+        [XmlIgnore]
+        public bool? IsAlive => CheckIsupThread?.IsAlive;
+        
         public CheckIsupDbConnectionFunctional()
         {
             Name = "Проверка подключения к ISUP бд";
@@ -32,13 +34,11 @@ namespace ReportManager.Core.Functional
             };
             CheckIsupThread = new Thread(CheckIsupConnection);
             CheckIsupThread.Start();
-            StatusChanged?.Invoke(this, true);
         }
 
         public override void Stop()
         {
             CheckIsupThread?.Abort();
-            StatusChanged?.Invoke(this, false);
         }
 
         private void CheckIsupConnection()

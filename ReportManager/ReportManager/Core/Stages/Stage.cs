@@ -6,8 +6,12 @@ using DevExpress.XtraEditors;
 
 namespace ReportManager.Core.Stages
 {
+    [XmlInclude(typeof(TransportListCreateStage))]
+    [XmlInclude(typeof(MaxigrafStage))]
+    [XmlInclude(typeof(ReportCreateStage))]
     public abstract class Stage
     {
+        [XmlIgnore]
         public XtraForm ChildForm { get; protected set; }
         public string Name { get; set; }
 

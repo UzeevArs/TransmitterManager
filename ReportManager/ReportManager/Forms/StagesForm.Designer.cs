@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StagesForm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnTrasportListCreateStage = new DevExpress.XtraBars.BarButtonItem();
             this.btnReportCreateStage = new DevExpress.XtraBars.BarButtonItem();
@@ -50,21 +49,9 @@
             this.lblUserName = new DevExpress.XtraBars.BarStaticItem();
             this.btnUserSettings = new DevExpress.XtraBars.BarButtonItem();
             this.btnPlates = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.barStaticItem4 = new DevExpress.XtraBars.BarStaticItem();
-            this.btnTemperatureStage = new DevExpress.XtraBars.BarButtonItem();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.pgFunctionals = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.btnMainTable = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -78,8 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -104,18 +89,13 @@
             this.lblExtraInformation,
             this.lblUserName,
             this.btnUserSettings,
-            this.btnPlates,
-            this.barButtonItem1,
-            this.barStaticItem2,
-            this.barButtonItem2,
-            this.barStaticItem3,
-            this.barStaticItem4,
-            this.btnTemperatureStage,
-            this.barEditItem1,
-            this.barEditItem2,
-            this.barEditItem3});
+            this.btnPlates});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 54;
+//<<<<<<< HEAD
+            this.ribbonControl1.MaxItemId = 23;
+//=======
+            this.ribbonControl1.MaxItemId = 24;
+//>>>>>>> df58244f99adacac94fca2633f552b588860b3b6
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -126,10 +106,8 @@
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
-            this.repositoryItemTextEdit3,
-            this.repositoryItemComboBox1,
-            this.repositoryItemButtonEdit1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1392, 140);
+            this.repositoryItemTextEdit3});
+            this.ribbonControl1.Size = new System.Drawing.Size(1012, 140);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btnTrasportListCreateStage
@@ -283,89 +261,11 @@
             this.btnPlates.Name = "btnPlates";
             this.btnPlates.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPlates_ItemClick);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 25;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barStaticItem2
-            // 
-            this.barStaticItem2.Id = 26;
-            this.barStaticItem2.Name = "barStaticItem2";
-            this.barStaticItem2.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 27;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barStaticItem3
-            // 
-            this.barStaticItem3.Id = 28;
-            this.barStaticItem3.Name = "barStaticItem3";
-            this.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // barStaticItem4
-            // 
-            this.barStaticItem4.Id = 29;
-            this.barStaticItem4.Name = "barStaticItem4";
-            this.barStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near;
-            // 
-            // btnTemperatureStage
-            // 
-            this.btnTemperatureStage.Caption = "Температурный датчик";
-            this.btnTemperatureStage.Id = 32;
-            this.btnTemperatureStage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemperatureStage.ImageOptions.Image")));
-            this.btnTemperatureStage.Name = "btnTemperatureStage";
-            this.btnTemperatureStage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTemperatureStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTemperatureStage_ItemClick);
-            // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Edit = null;
-            this.barEditItem1.Id = 41;
-            this.barEditItem1.Name = "barEditItem1";
-            // 
-            // barEditItem2
-            // 
-            this.barEditItem2.Caption = "barEditItem2";
-            this.barEditItem2.Edit = this.repositoryItemComboBox1;
-            this.barEditItem2.Id = 44;
-            this.barEditItem2.Name = "barEditItem2";
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            // 
-            // barEditItem3
-            // 
-            this.barEditItem3.Caption = "Проверка подключения к БД";
-            this.barEditItem3.Edit = this.repositoryItemButtonEdit1;
-            this.barEditItem3.EditWidth = 100;
-            this.barEditItem3.Id = 45;
-            this.barEditItem3.Name = "barEditItem3";
-            // 
-            // repositoryItemButtonEdit1
-            // 
-            this.repositoryItemButtonEdit1.AutoHeight = false;
-            this.repositoryItemButtonEdit1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinRight, "", -1, false, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Close)});
-            this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
-            this.repositoryItemButtonEdit1.ReadOnly = true;
-            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.pgSerial,
-            this.pgStages,
-            this.pgFunctionals});
+            this.pgStages});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Сборка";
             // 
@@ -382,14 +282,8 @@
             this.pgStages.ItemLinks.Add(this.btnTrasportListCreateStage);
             this.pgStages.ItemLinks.Add(this.btnReportCreateStage);
             this.pgStages.ItemLinks.Add(this.btnMaxigrafStage);
-            this.pgStages.ItemLinks.Add(this.btnTemperatureStage);
             this.pgStages.Name = "pgStages";
             this.pgStages.Text = "Стадии";
-            // 
-            // pgFunctionals
-            // 
-            this.pgFunctionals.Name = "pgFunctionals";
-            this.pgFunctionals.Text = "Задачи";
             // 
             // ribbonPage2
             // 
@@ -438,7 +332,7 @@
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 775);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1392, 28);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1012, 28);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -458,7 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 803);
+            this.ClientSize = new System.Drawing.Size(1012, 803);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -470,8 +364,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
@@ -513,17 +405,5 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem3;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem4;
-        private DevExpress.XtraBars.BarButtonItem btnTemperatureStage;
-        private DevExpress.XtraBars.BarEditItem barEditItem1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup pgFunctionals;
-        private DevExpress.XtraBars.BarEditItem barEditItem2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraBars.BarEditItem barEditItem3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
     }
 }

@@ -15,16 +15,19 @@ namespace ReportManager.Core.Functional
     internal class SynchronizeDbFunctional : Functional
     {
         public event EventHandler<(IEnumerable<InputData>, DateTime)> SyncronizeDataIncome;
-        public override event EventHandler<bool> StatusChanged;
 
+        [XmlIgnore]
         private ISUPNifudaDataTableAdapter IsupDataTableAdapter { get; } = new ISUPNifudaDataTableAdapter();
 
+        [XmlIgnore]
         private NifudaDataTableAdapter NifudaDataTableAdapter { get; } = new NifudaDataTableAdapter();
 
+        [XmlIgnore]
         private Thread SyncThread { get; set; }
 
-        public override bool IsRunning { get { return (bool) SyncThread?.IsAlive; } }
-
+        [XmlIgnore]
+        public bool? IsAlive => SyncThread?.IsAlive;
+        
         public SynchronizeDbFunctional()
         {
             Name = "Синхронизация БД";
@@ -38,7 +41,6 @@ namespace ReportManager.Core.Functional
                 SettingsContext.GlobalSettings.IsupConnectionString;
             SyncThread = new Thread(Syncronize);
             SyncThread.Start();
-            StatusChanged?.Invoke(this, true);
         }
 
         private void Syncronize()
@@ -88,7 +90,6 @@ namespace ReportManager.Core.Functional
         public override void Stop()
         {
             SyncThread?.Abort();
-            StatusChanged?.Invoke(this, false);
         }
 
         public override string ToString()

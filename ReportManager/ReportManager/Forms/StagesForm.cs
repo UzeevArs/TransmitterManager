@@ -20,17 +20,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
 using System.Text;
-using ReportManager.TemperatureLogger.Modbus;
-using ReportManager.Forms.Stages;
-using DevExpress.XtraEditors.Repository;
-using ReportManager.Data.Extensions;
 
 namespace ReportManager.Forms
 {
     public partial class StagesForm : XtraForm
     {
-        TemperatureDevice Device;
-
         public StagesForm()
         {
             InitializeComponent();
@@ -50,63 +44,7 @@ namespace ReportManager.Forms
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
             ReportManagerContext.GetInstance().InputDataCreatedStatus += StagesForm_DeviceModelCreatedStatus;
             FunctionalSubscribe();
-
-            CreateFunctionalControls();
         }
-
-        private void CreateFunctionalControls()
-        {
-            foreach (var func in ReportManagerContext.GetInstance().Functionals)
-            {
-                CreateBarItem(func);
-            }
-        }
-
-        private int NextId = 100;
-        private BarEditItem CreateBarItem(Functional functional)
-        {
-            RepositoryItemButtonEdit buttons = new RepositoryItemButtonEdit();
-            buttons.BeginInit();
-
-            BarEditItem item = new BarEditItem
-            {
-                Caption = $"{functional.Name}: ",
-                Edit = buttons,
-                Id = ++NextId,
-                Name = $"barEditItem{NextId}",
-                Tag = functional,
-            };
-            item.EditWidth = 110;
-            item.Edit.ReadOnly = true;
-            ribbonControl1.Items.Add(item);
-            pgFunctionals.ItemLinks.Add(item);
-
-            buttons.AutoHeight = true;
-            buttons.TextEditStyle = TextEditStyles.DisableTextEditor;
-            buttons.BorderStyle = BorderStyles.HotFlat;
-            buttons.Buttons.AddRange(new EditorButton[] { new EditorButton(ButtonPredefines.SpinRight),
-                                                          new EditorButton(ButtonPredefines.Close) });
-            buttons.Buttons[0].Click += (sender, args) => functional.Start();
-            buttons.Buttons[1].Click += (sender, args) => functional.Stop();
-            functional.StatusChanged += (sender, isRunning) => this.SafeInvoke(() => 
-            {
-                buttons.Buttons[0].Enabled = !isRunning;
-                buttons.Buttons[1].Enabled = isRunning;
-            });
-            buttons.Name = $"repositoryItemButtonEdit{NextId}";
-            buttons.Buttons[0].Enabled = !functional.IsRunning;
-            buttons.Buttons[1].Enabled = functional.IsRunning;
-
-            buttons.EndInit();
-
-            functional.StatusChanged += (sender, isRunning) => 
-                this.SafeInvoke(() => item.EditValue = isRunning ? "Выполняется" : "Остановлено");
-            item.EditValue = functional.IsRunning ? "Выполняется" : "Остановлено";
-
-            return item;
-        }
-
-
 
         private void FillData()
         {
@@ -247,11 +185,6 @@ namespace ReportManager.Forms
                 stage.GetType() == typeof(MaxigrafStage)) != null ? BarItemVisibility.Always : BarItemVisibility.Never;
             btnMaxigrafStage.Tag =
                 SettingsContext.CurrentUser.UserStages.Find(stage => stage.GetType() == typeof(MaxigrafStage));
-
-            btnTemperatureStage.Visibility = SettingsContext.CurrentUser.UserStages.Find(stage =>
-                stage.GetType() == typeof(TemperatureStage)) != null ? BarItemVisibility.Always : BarItemVisibility.Never;
-            btnTemperatureStage.Tag =
-                SettingsContext.CurrentUser.UserStages.Find(stage => stage.GetType() == typeof(TemperatureStage));
         }
 
         #region Application launch
@@ -357,7 +290,7 @@ namespace ReportManager.Forms
             (btnMaxigrafStage.Tag as Stage)?.OpenForm(this);
         }
 
-        private void BtnOpenSettings_ItemClick(object sender, ItemClickEventArgs e)
+        private void BtnOpenSettings_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new SettingsForm().ShowDialog();
         }
@@ -387,6 +320,9 @@ namespace ReportManager.Forms
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
+            
+           
+
             SqlConnection sqlConnection1 = new SqlConnection("Data Source = localhost\\SQLEXPRESS; Initial Catalog = YruPCIassembling; Integrated Security = True");
             SqlCommand cmd = new SqlCommand();
             SqlDataReader reader;
@@ -419,16 +355,11 @@ namespace ReportManager.Forms
                 MessageBox.Show("No rows found.");
             }
         
-            sqlConnection1.Close();
+        sqlConnection1.Close();
 
             //TestClass tst = new TestClass();
             //tst.RunStoredProc();
             //tst.CreateUser();
-        }
-
-        private void btnTemperatureStage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            (btnTemperatureStage.Tag as Stage)?.OpenForm(this);
         }
     }
 
