@@ -119,12 +119,15 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v16.2, Version=16.2.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v16.2, Version=16.2.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
+<<<<<<< HEAD
     <Reference Include="sapnco">
       <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco.dll</HintPath>
     </Reference>
     <Reference Include="sapnco_utils">
       <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco_utils.dll</HintPath>
     </Reference>
+=======
+>>>>>>> parent of 01a9c63... Added temperature logger
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
