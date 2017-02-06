@@ -60,9 +60,9 @@ namespace ReportManager.Forms.Settings
         {
             cb.Items.Clear();
             cb.Items.AddRange(typeof(T).Assembly.GetTypes()
-                .Where(t => t.GetBaseType() == typeof(T))
-                .Select(t => (T) Activator.CreateInstance(t))
-                .ToArray());
+                    .Where(t => t.GetBaseType() == typeof(T))
+                    .Select(t => (T) Activator.CreateInstance(t))
+                    .ToArray());
         }
 
         private void BtnOk_Click(object sender, EventArgs e)

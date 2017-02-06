@@ -11,15 +11,13 @@ namespace ReportManager.Core.Functional
     internal class CheckManifactureDbConnectionFunctional : Functional
     {
         public virtual event StateChangeEventHandler StateChange;
+        public override event EventHandler<bool> StatusChanged;
 
-        [XmlIgnore]
         private Thread CheckNifudaThread { get; set; }
 
-        [XmlIgnore]
         private NifudaDataTableAdapter NifudaDataTableAdapter { get; set; }
 
-        [XmlIgnore]
-        public bool? IsAlive => CheckNifudaThread?.IsAlive;
+        public override bool IsRunning { get { return (bool) CheckNifudaThread?.IsAlive; } }
 
         public CheckManifactureDbConnectionFunctional()
         {
@@ -35,6 +33,7 @@ namespace ReportManager.Core.Functional
 
             CheckNifudaThread = new Thread(CheckNifudaConnection);
             CheckNifudaThread.Start();
+            StatusChanged?.Invoke(this, true);
         }
 
         private void CheckNifudaConnection()
@@ -106,6 +105,7 @@ namespace ReportManager.Core.Functional
         public override void Stop()
         {
             CheckNifudaThread?.Abort();
+            StatusChanged?.Invoke(this, false);
         }
 
         public override string ToString()

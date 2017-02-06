@@ -2,10 +2,9 @@
 <xs:schema id="MaxigrafDataSet" targetNamespace="http://tempuri.org/MaxigrafDataSet.xsd" xmlns:mstns="http://tempuri.org/MaxigrafDataSet.xsd" xmlns="http://tempuri.org/MaxigrafDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="YruPCIassemblingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="YruPCIassemblingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReportManager.Properties.Settings.GlobalReference.Default.YruPCIassemblingConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="YruPCIassemblingConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="YruPCIassemblingConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ReportManager.Properties.Settings.GlobalReference.Default.YruPCIassemblingConnectionString2" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MaxigrafPlatesSettingDataTableTableAdapter" GeneratorDataComponentClassName="MaxigrafPlatesSettingDataTableTableAdapter" Name="MaxigrafPlatesSettingDataTable" UserDataComponentName="MaxigrafPlatesSettingDataTableTableAdapter">

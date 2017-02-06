@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>true</Prefer32Bit>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -119,15 +119,12 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v16.2, Version=16.2.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v16.2, Version=16.2.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Build.Tasks.v4.0" />
-<<<<<<< HEAD
-    <Reference Include="sapnco">
-      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco.dll</HintPath>
+    <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
     </Reference>
-    <Reference Include="sapnco_utils">
-      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco_utils.dll</HintPath>
+    <Reference Include="Stateless, Version=3.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stateless.3.1.0\lib\net45\Stateless.dll</HintPath>
     </Reference>
-=======
->>>>>>> parent of 01a9c63... Added temperature logger
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -154,12 +151,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Functional\TemperatureDbWriteFunctional.cs" />
     <Compile Include="Core\Loader.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Core\Logger\Log.cs" />
     <Compile Include="Core\Stages\MaxigrafStage.cs" />
     <Compile Include="Core\Stages\ReportCreateStage.cs" />
+    <Compile Include="Core\Stages\TemperatureStage.cs" />
     <Compile Include="Core\Utility\EnumUtility.cs" />
     <Compile Include="Core\Utility\FolderUtility.cs" />
     <Compile Include="Data\AbstractAdapters\IExtraInputDataAdapter.cs" />
@@ -180,6 +179,7 @@
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesSettingsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\NifudaInputDataDatabaseAdapter.cs" />
+    <Compile Include="Data\Database\ConcreteAdapters\TemperatureFrameDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\UsersDatabaseAdapter.cs" />
     <Compile Include="Data\Database\MaxigrafDataSet.cs">
       <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
@@ -189,10 +189,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Data\SAP\SaveSapConnection.cs" />
-    <Compile Include="Data\SAP\ConcreteAdapters\SapResultDatabaseAdapter.cs" />
-    <Compile Include="Data\SAP\SapConnection.cs" />
     <Compile Include="Data\Database\SafeCheck.cs" />
+    <Compile Include="Data\Database\TemperatureDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TemperatureDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\Database\UsersDataSet.cs">
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </Compile>
@@ -203,8 +205,10 @@
     </Compile>
     <Compile Include="Data\DataModel\MaxigrafPlate.cs" />
     <Compile Include="Data\DataModel\MaxigrafPlateSetting.cs" />
+    <Compile Include="Data\DataModel\TemperatureFrame.cs" />
     <Compile Include="Data\DataModel\Users.cs" />
     <Compile Include="Data\Extensions\ExpandoExtension.cs" />
+    <Compile Include="Data\Extensions\FormExtension.cs" />
     <Compile Include="Data\Extensions\TypeExtension.cs" />
     <Compile Include="Data\Settings\Settings.cs" />
     <Compile Include="Data\Database\IsupDataSet.cs">
@@ -284,6 +288,12 @@
     <Compile Include="Forms\Stages\MaxigrafStageForm.Designer.cs">
       <DependentUpon>MaxigrafStageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Stages\TemperatureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Stages\TemperatureForm.Designer.cs">
+      <DependentUpon>TemperatureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Stages\TransportListGenerateStageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +351,8 @@
     </Compile>
     <Compile Include="Core\Stages\Stage.cs" />
     <Compile Include="Core\Stages\TransportListCreateStage.cs" />
+    <Compile Include="TemperatureLogger\Modbus\ModbusDetector.cs" />
+    <Compile Include="TemperatureLogger\Modbus\ModbusDevice.cs" />
     <EmbeddedResource Include="Forms\Data\AllDataForm.resx">
       <DependentUpon>AllDataForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Stages\MaxigrafStageForm.resx">
       <DependentUpon>MaxigrafStageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Stages\TemperatureForm.resx">
+      <DependentUpon>TemperatureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Stages\TransportListGenerateStageForm.resx">
       <DependentUpon>TransportListGenerateStageForm.cs</DependentUpon>
@@ -456,6 +471,17 @@
     <None Include="Data\Database\NifudaDataSet.xss">
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Data\Database\TemperatureDataSet.xsc">
+      <DependentUpon>TemperatureDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\TemperatureDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TemperatureDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\Database\TemperatureDataSet.xss">
+      <DependentUpon>TemperatureDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Data\Database\UsersDataSet.xsc">
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </None>
@@ -468,6 +494,7 @@
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ReportManager.Data.DataModel.TemperatureFrame.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -9,7 +9,8 @@ namespace ReportManager.Data.Extensions
     {
         private static bool IsSimple(Type type)
         {
-            return type.IsPrimitive || type.Equals(typeof(string)) || type.Equals(typeof((string, string)));
+            return type.IsPrimitive || type.IsValueType || type.Equals(typeof(string)) 
+                        || type.Equals(typeof((string, string)));
         }
 
         public static IEnumerable<KeyValuePair<string, object>> PropertiesToDict(this IEnumerable<object> objects)
@@ -50,21 +51,6 @@ namespace ReportManager.Data.Extensions
                             });
                 yield return result;
             }
-        }
-
-        public static IEnumerable<T> SapAdaptWithSameProperties<T>(this IEnumerable<(string,string)> source)
-            where T : class, new()
-        {
-            var result = new T();
-            source.PropertiesToTuple()
-                  .ForEach(t =>
-                  {
-                      typeof(T)
-                          .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                          .FirstOrDefault(p => p.Name.ToLower() == t.Name.ToLower())
-                          ?.SetValue(result, t.Value);
-                  });
-            yield return result;
         }
     }
 }

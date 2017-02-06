@@ -8,7 +8,6 @@ using ReportManager.Data.Settings;
 using ReportManager.Data.Database.ConcreteAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Core.Functional;
-using ReportManager.Data.Database;
 
 namespace ReportManager.Forms
 {
