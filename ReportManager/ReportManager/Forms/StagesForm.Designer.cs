@@ -91,11 +91,16 @@
             this.btnUserSettings,
             this.btnPlates});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+<<<<<<< HEAD
 //<<<<<<< HEAD
             this.ribbonControl1.MaxItemId = 23;
 //=======
             this.ribbonControl1.MaxItemId = 24;
 //>>>>>>> df58244f99adacac94fca2633f552b588860b3b6
+=======
+            this.ribbonControl1.MaxItemId = 54;
+>>>>>>> df58244f99adacac94fca2633f552b588860b3b6
+>>>>>>> parent of bf800ac... little changes
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
