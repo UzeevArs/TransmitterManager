@@ -52,5 +52,20 @@ namespace ReportManager.Data.Extensions
                 yield return result;
             }
         }
+
+        public static IEnumerable<T> SapAdaptWithSameProperties<T>(this IEnumerable<(string, string)> source)
+    where T : class, new()
+        {
+            var result = new T();
+            source.PropertiesToTuple()
+                  .ForEach(t =>
+                  {
+                      typeof(T)
+                          .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                          .FirstOrDefault(p => p.Name.ToLower() == t.Name.ToLower())
+                          ?.SetValue(result, t.Value);
+                  });
+            yield return result;
+        }
     }
 }

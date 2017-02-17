@@ -122,6 +122,12 @@
     <Reference Include="NModbus4, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
     </Reference>
+    <Reference Include="sapnco">
+      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco.dll</HintPath>
+    </Reference>
+    <Reference Include="sapnco_utils">
+      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco_utils.dll</HintPath>
+    </Reference>
     <Reference Include="Stateless, Version=3.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
       <HintPath>..\packages\Stateless.3.1.0\lib\net45\Stateless.dll</HintPath>
     </Reference>
@@ -210,6 +216,9 @@
     <Compile Include="Data\Extensions\ExpandoExtension.cs" />
     <Compile Include="Data\Extensions\FormExtension.cs" />
     <Compile Include="Data\Extensions\TypeExtension.cs" />
+    <Compile Include="Data\SAP\ConcreteAdapters\SapResultDatabaseAdapter.cs" />
+    <Compile Include="Data\SAP\SapConnection.cs" />
+    <Compile Include="Data\SAP\SaveSapConnection.cs" />
     <Compile Include="Data\Settings\Settings.cs" />
     <Compile Include="Data\Database\IsupDataSet.cs">
       <DependentUpon>IsupDataSet.xsd</DependentUpon>

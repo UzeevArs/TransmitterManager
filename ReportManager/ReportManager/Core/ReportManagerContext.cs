@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using ReportManager.Core.Functional;
 using ReportManager.Core.Stages;
-using ReportManager.Core.Utility;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
-using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using System.Linq;
 using ReportManager.TemperatureLogger.Modbus;
+using ReportManager.Data.AbstractAdapters.Generic;
 
 namespace ReportManager.Core
 {
     internal class ReportManagerContext
     {
         private static ReportManagerContext _instance;
-        private NifudaInputDataDatabaseAdapter inputDataAdapter = new NifudaInputDataDatabaseAdapter();
+        private ISelectBySerialAdapter<InputData> inputDataAdapter = new SapResultDatabaseAdapter();
 
         private ReportManagerContext()
         {
@@ -65,7 +64,10 @@ namespace ReportManager.Core
         {
             try
             {
-                var dataBySerial = inputDataAdapter.SelectDataByIndex(msCode).ToList();
+                //TODO: CHANGED 
+                //var dataBySerial = inputDataAdapter.SelectDataByIndex(msCode).ToList();
+
+                var dataBySerial = inputDataAdapter.SelectBySerial(msCode).ToList();
                 if (dataBySerial.Count() == 0)
                 {
                     InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
@@ -82,12 +84,40 @@ namespace ReportManager.Core
                 InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedSuccess, CurrentInput));
                 return (DeviceModelStatus.CreatedSuccess, CurrentInput);
             }
-            catch
+            catch (Exception ex)
             {
+
                 InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
                 return (DeviceModelStatus.CreatedError, null);
             }
         }
+        //public (DeviceModelStatus status, InputData input) FillCurrentDeviceByMsCode(string msCode)
+        //{
+        //    try
+        //    {
+        //        var dataBySerial = inputDataAdapter.SelectBySerial(msCode).ToList();
+        //        if (dataBySerial.Count() == 0)
+        //        {
+        //            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+        //            return (DeviceModelStatus.CreatedError, null);
+        //        }
+
+        //        CurrentInput = inputDataAdapter.SelectBySerial(dataBySerial[0].SERIAL_NO).FirstOrDefault();
+        //        if (CurrentInput == null)
+        //        {
+        //            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+        //            return (DeviceModelStatus.CreatedError, null);
+        //        }
+
+        //        InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedSuccess, CurrentInput));
+        //        return (DeviceModelStatus.CreatedSuccess, CurrentInput);
+        //    }
+        //    catch
+        //    {
+        //        InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
+        //        return (DeviceModelStatus.CreatedError, null);
+        //    }
+        //}
 
         public InputData CurrentInput { get; private set; }
         public TemperatureDevice Device { get; private set; } = new TemperatureDevice();

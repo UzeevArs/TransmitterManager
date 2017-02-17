@@ -2,8 +2,8 @@
 
 namespace ReportManager.Data.AbstractAdapters.Generic
 {
-    interface ISelectBySerialAdapter<T> where T: class, new()
+    interface ISelectBySerialAdapter<T> where T : class, new()
     {
-        IEnumerable<T> SelectBySerial(string serial, object state);
+        IEnumerable<T> SelectBySerial(string serial, object state = null);
     }
 }
