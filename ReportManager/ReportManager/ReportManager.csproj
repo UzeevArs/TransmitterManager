@@ -123,10 +123,10 @@
       <HintPath>..\packages\NModbus4.2.1.0\lib\net40\NModbus4.dll</HintPath>
     </Reference>
     <Reference Include="sapnco">
-      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco.dll</HintPath>
+      <HintPath>..\packages\SAP\sapnco.dll</HintPath>
     </Reference>
     <Reference Include="sapnco_utils">
-      <HintPath>..\..\..\RFC_RUS\RFC_RUS\WindowsApplication1\WindowsApplication1\bin\Debug\sapnco_utils.dll</HintPath>
+      <HintPath>..\packages\SAP\sapnco_utils.dll</HintPath>
     </Reference>
     <Reference Include="Stateless, Version=3.0.0.0, Culture=neutral, PublicKeyToken=93038f0927583c9a, processorArchitecture=MSIL">
       <HintPath>..\packages\Stateless.3.1.0\lib\net45\Stateless.dll</HintPath>
@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Functional\TemperatureDbWriteFunctional.cs" />
+    <Compile Include="Core\Functional\TempteratureDeviceFunctional.cs" />
     <Compile Include="Core\Loader.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,7 +179,6 @@
     <Compile Include="Core\Functional\CheckIsupDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\CheckManifactureDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\Functional.cs" />
-    <Compile Include="Core\Functional\SynchronizeDbFunctional.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\CalibrationResultsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\DeviceTestResultsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\IsupInputDataDatabaseAdapter.cs" />

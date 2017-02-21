@@ -88,23 +88,23 @@ namespace ReportManager.Forms
             buttons.Buttons[1].Click += (sender, args) => functional.Stop();
             functional.StatusChanged += (sender, isRunning) => this.SafeInvoke(() => 
             {
+                buttons.BeginUpdate();
                 buttons.Buttons[0].Enabled = !isRunning;
                 buttons.Buttons[1].Enabled = isRunning;
+                buttons.EndUpdate();
             });
             buttons.Name = $"repositoryItemButtonEdit{NextId}";
-            buttons.Buttons[0].Enabled = !functional.IsRunning;
-            buttons.Buttons[1].Enabled = functional.IsRunning;
+            buttons.Buttons[0].Enabled = !functional.IsRunning ?? true;
+            buttons.Buttons[1].Enabled = functional.IsRunning ?? false;
 
             buttons.EndInit();
 
             functional.StatusChanged += (sender, isRunning) => 
                 this.SafeInvoke(() => item.EditValue = isRunning ? "Выполняется" : "Остановлено");
-            item.EditValue = functional.IsRunning ? "Выполняется" : "Остановлено";
+            item.EditValue = (functional.IsRunning ?? false) ? "Выполняется" : "Остановлено";
 
             return item;
         }
-
-
 
         private void FillData()
         {
@@ -112,13 +112,14 @@ namespace ReportManager.Forms
             lblUserName.Caption += SettingsContext.CurrentUser.FullName;
         }
 
-        private void StagesForm_DeviceModelCreatedStatus(object sender, (DeviceModelStatus, InputData) data)
+        private void StagesForm_DeviceModelCreatedStatus(object sender, (DeviceModelStatus, string, InputData) data)
         {
-            var (status, input) = data;
+            var (status, error, input) = data;
 
             Invoke((MethodInvoker) delegate
             {
-                if (status == DeviceModelStatus.CreatedError)
+                if (status != DeviceModelStatus.SuccessNifuda 
+                    || status != DeviceModelStatus.SuccessSap)
                 {
                     MessageBox.Show("Серийный номер не найден", "Предупреждение",
                         MessageBoxButtons.OK,
@@ -132,6 +133,10 @@ namespace ReportManager.Forms
                 }
                 else
                 {
+                    input = ReportManagerContext.GetInstance().CurrentInput;
+                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
+                    lblExtraInformation.Visibility = BarItemVisibility.Always;
+
                     btnTrasportListCreateStage.Enabled = true;
                     btnReportCreateStage.Enabled = true;
                     btnMaxigrafStage.Enabled = true;
@@ -152,25 +157,6 @@ namespace ReportManager.Forms
                     (functional as CheckManifactureDbConnectionFunctional).StateChange +=
                         ManifactureDbConnectionOnStateChange;
                 }
-                else if (functional.GetType() == typeof(SynchronizeDbFunctional))
-                {
-                    (functional as SynchronizeDbFunctional).SyncronizeDataIncome += SyncOnStateChanged;
-                }
-            }
-        }
-
-        private void SyncOnStateChanged(object sender, (IEnumerable<InputData>, DateTime) data)
-        {
-            try
-            {
-                Invoke((MethodInvoker) delegate
-                {
-                    var (input, date) = data;
-                    lblStatus.Caption = $"Дата: {date}. Непринятых заказов: {input.Count()}";
-                });
-            }
-            catch
-            {
             }
         }
 
@@ -325,19 +311,7 @@ namespace ReportManager.Forms
                 edtMsCode.Edit.BorderStyle = BorderStyles.Default;
                 edtMsCode.Edit.Appearance.BorderColor = DefaultBackColor;
 
-                if (ReportManagerContext.GetInstance().FillCurrentDeviceByMsCode(edtMsCode.EditValue as string).Item1 ==
-                    DeviceModelStatus.CreatedError)
-                {
-                    lblExtraInformation.EditValue = "";
-                    lblExtraInformation.Visibility = BarItemVisibility.Never;
-                    edtMsCode.EditValue = "";
-                }
-                else
-                {
-                    var input = ReportManagerContext.GetInstance().CurrentInput;
-                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
-                    lblExtraInformation.Visibility = BarItemVisibility.Always;
-                }
+                ReportManagerContext.GetInstance().FillCurrentDeviceByMsCode(edtMsCode.EditValue as string);
             }
         }
         #endregion

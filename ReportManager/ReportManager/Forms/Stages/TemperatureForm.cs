@@ -13,8 +13,6 @@ namespace ReportManager.Forms.Stages
 {
     public partial class TemperatureForm : XtraForm
     {
-        private TemperatureDevice Device { get { return ReportManagerContext.GetInstance().Device; } }
-
         public TemperatureForm()
         {
             InitializeComponent();
@@ -23,7 +21,11 @@ namespace ReportManager.Forms.Stages
             TFunctionalChartSubscribe();
             TFunctionalGaugesSubscribe();
 
-            Device.StartRead();
+            var functional = ReportManagerContext.GetInstance()
+                                                 .Functionals
+                                                 .Find(func => func.GetType() == typeof(TempteratureDeviceFunctional));
+            if (functional == null) Close();
+            functional.Start();
         }
 
         private void TFunctionalGaugesSubscribe()

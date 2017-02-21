@@ -121,10 +121,10 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 1"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 2", System.Windows.Forms.CheckState.Checked),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Функция 3")});
-            this.cbFunctionsList.Location = new System.Drawing.Point(2, 20);
+            this.cbFunctionsList.Location = new System.Drawing.Point(2, 21);
             this.cbFunctionsList.Name = "cbFunctionsList";
             this.cbFunctionsList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbFunctionsList.Size = new System.Drawing.Size(268, 214);
+            this.cbFunctionsList.Size = new System.Drawing.Size(268, 213);
             this.cbFunctionsList.TabIndex = 999;
             this.cbFunctionsList.TabStop = false;
             // 
@@ -146,10 +146,10 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 1"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 2"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem("Стадия 3", System.Windows.Forms.CheckState.Checked)});
-            this.cbStageList.Location = new System.Drawing.Point(2, 20);
+            this.cbStageList.Location = new System.Drawing.Point(2, 21);
             this.cbStageList.Name = "cbStageList";
             this.cbStageList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.cbStageList.Size = new System.Drawing.Size(268, 214);
+            this.cbStageList.Size = new System.Drawing.Size(268, 213);
             this.cbStageList.TabIndex = 999;
             this.cbStageList.TabStop = false;
             // 

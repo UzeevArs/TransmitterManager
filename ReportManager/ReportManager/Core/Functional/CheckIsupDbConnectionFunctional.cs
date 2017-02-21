@@ -17,7 +17,7 @@ namespace ReportManager.Core.Functional
 
         private Thread CheckIsupThread { get; set; }
 
-        public override bool IsRunning { get { return (bool) CheckIsupThread?.IsAlive; } }
+        public override bool? IsRunning { get { return CheckIsupThread?.IsAlive; } }
 
         public CheckIsupDbConnectionFunctional()
         {

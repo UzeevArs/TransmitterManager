@@ -39,7 +39,8 @@ namespace ReportManager.TemperatureLogger.Modbus
             CheckConnection,
             FindPortName,
             Read,
-            StopRead
+            StopRead,
+            Idle
         }
 
         private enum TemperatureDeviceEdge
@@ -47,7 +48,8 @@ namespace ReportManager.TemperatureLogger.Modbus
             ConnectionValid, ConnectionInvalid,
             PortNameFounded, PortNameNotFounded,
             ReadSuccess, ReadError,
-            ReadStop, ReadStart
+            ReadStop, ReadStart,
+            ToIdle
         }
 
         public event EventHandler<ReadPacket<float>> OnTemperatureRead;
@@ -59,52 +61,65 @@ namespace ReportManager.TemperatureLogger.Modbus
         {
             IsReading = true;
 
-            StateGraph = new StateMachine<TemperatureDeviceState, TemperatureDeviceEdge>(TemperatureDeviceState.CheckConnection);
-            StateGraph.Configure(TemperatureDeviceState.CheckConnection)
+            ModbusDeviceStates = new StateMachine<TemperatureDeviceState, TemperatureDeviceEdge>(TemperatureDeviceState.Idle);
+            ModbusDeviceStates.Configure(TemperatureDeviceState.CheckConnection)
                       .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.CheckConnection)))
                       .OnEntry(() => Connect())
                       .Permit(TemperatureDeviceEdge.ConnectionInvalid,  TemperatureDeviceState.FindPortName)
                       .Permit(TemperatureDeviceEdge.ReadStart,          TemperatureDeviceState.FindPortName)
                       .Permit(TemperatureDeviceEdge.ConnectionValid,    TemperatureDeviceState.Read)
-                      .Permit(TemperatureDeviceEdge.ReadStop,           TemperatureDeviceState.StopRead);
-            StateGraph.Configure(TemperatureDeviceState.FindPortName)
+                      .Permit(TemperatureDeviceEdge.ReadStop,           TemperatureDeviceState.StopRead)
+                      .Permit(TemperatureDeviceEdge.ToIdle,             TemperatureDeviceState.Idle);
+            ModbusDeviceStates.Configure(TemperatureDeviceState.FindPortName)
                       .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.FindPortName)))
                       .OnEntry(async () => await FindPortNameAsync())
                       .PermitReentry(TemperatureDeviceEdge.PortNameNotFounded)
                       .Permit(TemperatureDeviceEdge.PortNameFounded,   TemperatureDeviceState.CheckConnection)
-                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead);
-            StateGraph.Configure(TemperatureDeviceState.Read)
+                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead)
+                      .Permit(TemperatureDeviceEdge.ToIdle,            TemperatureDeviceState.Idle);
+            ModbusDeviceStates.Configure(TemperatureDeviceState.Read)
                       .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.Read)))
                       .OnEntry(async () => await ReadAsync())
                       .PermitReentry(TemperatureDeviceEdge.ReadSuccess)
                       .Permit(TemperatureDeviceEdge.ReadError,         TemperatureDeviceState.CheckConnection)
-                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead);
-            StateGraph.Configure(TemperatureDeviceState.StopRead)
+                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead)
+                      .Permit(TemperatureDeviceEdge.ToIdle,            TemperatureDeviceState.Idle);
+            ModbusDeviceStates.Configure(TemperatureDeviceState.StopRead)
                       .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.StopRead)))
-                      .Permit(TemperatureDeviceEdge.ReadStart,         TemperatureDeviceState.Read);
+                      .Permit(TemperatureDeviceEdge.ReadStart,         TemperatureDeviceState.Read)
+                      .Permit(TemperatureDeviceEdge.ToIdle,            TemperatureDeviceState.Idle);
+            ModbusDeviceStates.Configure(TemperatureDeviceState.Idle)
+                      .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.Idle)))
+                      .Permit(TemperatureDeviceEdge.ReadStart,         TemperatureDeviceState.Read)
+                      .PermitReentry(TemperatureDeviceEdge.ToIdle);
         }
 
         public bool StartRead()
         {
-            if (!StateGraph.CanFire(TemperatureDeviceEdge.ReadStart)) return false;
+            if (!ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadStart)) return false;
 
             IsReading = true;
-            StateGraph.Fire(TemperatureDeviceEdge.ReadStart);
+            ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadStart);
             return true;
         }
 
         public bool Alive()
         {
-            return StateGraph.State == TemperatureDeviceState.Read;
+            return ModbusDeviceStates.State == TemperatureDeviceState.Read;
         }
 
         public bool StopRead()
         {
-            if (!StateGraph.CanFire(TemperatureDeviceEdge.ReadStop)) return false;
+            if (!ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadStop)) return false;
 
             IsReading = false;
-            StateGraph.Fire(TemperatureDeviceEdge.ReadStop);
+            ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadStop);
             return true;
+        }
+
+        public void ToIdle()
+        {
+            ModbusDeviceStates.Fire(TemperatureDeviceEdge.ToIdle);
         }
 
         private void Connect()
@@ -128,13 +143,15 @@ namespace ReportManager.TemperatureLogger.Modbus
                 Modbus.Transport.ReadTimeout = 100;
                 Modbus.ReadInputRegisters(1, 0, 4);
 
-                StateGraph.Fire(TemperatureDeviceEdge.ConnectionValid);
+                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ConnectionValid))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionValid);
             }
             catch
             {
                 Serial?.Close();
                 Thread.Sleep(50);
-                StateGraph.Fire(TemperatureDeviceEdge.ConnectionInvalid);
+                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ConnectionInvalid))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionInvalid);
             }
         }
 
@@ -145,9 +162,11 @@ namespace ReportManager.TemperatureLogger.Modbus
                                                                              SlaveAdress = 1,
                                                                              StartAdress = 0 });
             if (PortName == string.Empty)
-                StateGraph.Fire(TemperatureDeviceEdge.PortNameNotFounded);
+                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.PortNameNotFounded))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameNotFounded);
             else
-                StateGraph.Fire(TemperatureDeviceEdge.PortNameFounded);
+                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.PortNameFounded))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameFounded);
         }
 
         private async Task ReadAsync()
@@ -171,13 +190,15 @@ namespace ReportManager.TemperatureLogger.Modbus
                     OnPressureRead?.Invoke(this, new ReadPacket<float> { Value = (pressure * 133.322f) / 1000.0f, Time = DateTime.Now });
                 });
 
-                if (IsReading) StateGraph.Fire(TemperatureDeviceEdge.ReadSuccess);
+                if (IsReading && ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadSuccess))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadSuccess);
 
                 Thread.Sleep(1000);
             }
             catch (Exception e)
             {
-                StateGraph.Fire(TemperatureDeviceEdge.ReadError);
+                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadError))
+                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadError);
             }
         }
 
@@ -215,7 +236,7 @@ namespace ReportManager.TemperatureLogger.Modbus
         }
         #endregion
 
-        private StateMachine<TemperatureDeviceState, TemperatureDeviceEdge> StateGraph { get; set; }
+        private StateMachine<TemperatureDeviceState, TemperatureDeviceEdge> ModbusDeviceStates { get; set; }
         private SerialPort Serial { get; set; }
         private ModbusSerialMaster Modbus { get; set; }
 

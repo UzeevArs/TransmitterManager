@@ -23,8 +23,8 @@ namespace ReportManager.Data.DataModel
         None                                        = 0x0,
         CheckIsupDbConnectionFunctional             = 0x1,
         CheckManifactureDbConnectionFunctional      = 0x2,
-        SynchronizeDbFunctional                     = 0x4,
-        TemperatureDbWriteFunctional                = 0x8
+        TemperatureDbWriteFunctional                = 0x4,
+        TempteratureDeviceFunctional                = 0x8
     }
 
     public class User
@@ -57,7 +57,7 @@ namespace ReportManager.Data.DataModel
             {
                 if (_functions != null) return _functions;
 
-                var namesp = typeof(SynchronizeDbFunctional).Namespace;
+                var namesp = typeof(CheckIsupDbConnectionFunctional).Namespace;
                 _functions = new List<Functional>();
                 _functions.AddRange(Enum.GetNames(typeof(UserExtraFunc))
                           .Where(en => en != "None" && UserExtraFuncMask.IsSet((long)Enum.Parse(typeof(UserExtraFunc), en)))

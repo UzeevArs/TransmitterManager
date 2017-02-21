@@ -196,14 +196,15 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             _memo.Clear();
         }
 
-        private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, InputData) data)
+        private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, string, InputData) data)
         {
-            var (status, input) = data;
+            var (status, error, input) = data;
             _inputData = input;
             SetDataSource();
             if (!FindPlate()) return;
 
-            if (status == DeviceModelStatus.CreatedSuccess)
+            if (status != DeviceModelStatus.SuccessNifuda
+                   || status != DeviceModelStatus.SuccessSap)
             {
                 tbSerial.Text = _inputData.INDEX_NO;
                 tbPlateName.Text = _plate.PlateName;

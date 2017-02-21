@@ -17,7 +17,7 @@ namespace ReportManager.Core.Functional
 
         private NifudaDataTableAdapter NifudaDataTableAdapter { get; set; }
 
-        public override bool IsRunning { get { return (bool) CheckNifudaThread?.IsAlive; } }
+        public override bool? IsRunning { get { return CheckNifudaThread?.IsAlive; } }
 
         public CheckManifactureDbConnectionFunctional()
         {

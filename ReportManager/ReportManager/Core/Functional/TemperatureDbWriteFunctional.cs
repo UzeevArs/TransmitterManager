@@ -24,7 +24,7 @@ namespace ReportManager.Core.Functional
 
         public TemperatureDevice Device { get { return ReportManagerContext.GetInstance().Device; } }
 
-        public override bool IsRunning { get { return (bool) CurrentThread?.IsAlive; } }
+        public override bool? IsRunning { get { return CurrentThread?.IsAlive; } }
 
         public TemperatureDbWriteFunctional()
         {

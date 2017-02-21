@@ -10,22 +10,12 @@ namespace ReportManager.Data.SAP
 {
     class SaveSapConnection
     {
-
         public static IEnumerable<(string, string)> SapGetData(string OrderNo)
         {
-
-            try
-            {
-                var destination = RfcDestinationManager.GetDestination("DEV");
-                var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
-                return SapConnection.SapGetData(destination, function, OrderNo);
-            }
-
-            catch
-            {
-                return new List<(string, string)>();
-            }
+            var destination = RfcDestinationManager.GetDestination("DEV");
+            var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
+            return SapConnection.SapGetData(destination, function, OrderNo);
         }
 
-}
+    }
 }

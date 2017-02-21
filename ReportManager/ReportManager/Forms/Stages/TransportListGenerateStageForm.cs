@@ -75,15 +75,16 @@ namespace ReportManager.Forms.Stages
             }
         }
 
-        private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, InputData) data)
+        private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, string, InputData) data)
         {
-            var (status, input) = data;
+            var (status, error, input) = data;
 
-            if (status == DeviceModelStatus.CreatedSuccess)
+             if (status == DeviceModelStatus.SuccessNifuda 
+                    || status == DeviceModelStatus.SuccessSap)
             {
                 ShowReport(input);
             }
-            else if(data.Item1 == DeviceModelStatus.CreatedError)
+            else 
             {
                 Close();
             }
