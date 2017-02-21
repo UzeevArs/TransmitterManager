@@ -53,12 +53,11 @@ namespace ReportManager.Data.Extensions
             }
         }
 
-        public static IEnumerable<T> SapAdaptWithSameProperties<T>(this IEnumerable<(string, string)> source)
+        public static IEnumerable<T> SapAdaptWithSameProperties<T>(this IEnumerable<(string Name, string Value)> source)
     where T : class, new()
         {
             var result = new T();
-            source.PropertiesToTuple()
-                  .ForEach(t =>
+            source.ForEach(t =>
                   {
                       typeof(T)
                           .GetProperties(BindingFlags.Public | BindingFlags.Instance)

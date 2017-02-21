@@ -51,6 +51,10 @@
         public string ORD_INST_CONTECT1_X94 { get; set; } = "";
         public string INDEX_NO { get; set; } = "";
         public string CAP_NO { get; set; } = "";
-
+        public string REQUEST_D { get; set; } = "";
+        public string FATOR_500 { get; set; } = "";
+        public string ORD_INST_CONTECT1_T63 { get; set; } = "";
+        public string ORD_INST_CONTECT1_W24 { get; set; } = "";
+        public string ORD_INST_CONTECT1_W25 { get; set; } = "";
     }
 }

@@ -73,8 +73,8 @@ namespace ReportManager.Core
                     InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));
                     return (DeviceModelStatus.CreatedError, null);
                 }
-
-                CurrentInput = inputDataAdapter.SelectBySerial(dataBySerial[0].SERIAL_NO).FirstOrDefault();
+                //dataBySerial[0].SERIAL_NO
+                CurrentInput = inputDataAdapter.SelectBySerial(msCode).FirstOrDefault();
                 if (CurrentInput == null)
                 {
                     InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.CreatedError, null));

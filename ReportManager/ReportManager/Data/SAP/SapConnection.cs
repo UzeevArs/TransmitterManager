@@ -7,13 +7,16 @@ using SAP.Middleware.Connector;
 
 namespace ReportManager.Data.Database
 {
-    public class SapConnection
+        public class SapConnection
     {
+
+        
 
         public static IEnumerable<(string, string)> SapGetData(RfcDestination destination, IRfcFunction function, string OrderNo)
         {
             function.SetValue("I_ORDER_NO", OrderNo);
             function.Invoke(destination);
+                      
 
             return function.GetTable("E_PROD_ORDERS")
                            .Take(1)

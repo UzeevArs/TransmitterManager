@@ -315,6 +315,7 @@ namespace ReportManager.Forms
         }
 
         private void EdtSerial_EditValueChanged(object sender, EventArgs e)
+
         {
             if (edtMsCode.EditValue != null && !edtMsCode.EditValue.Equals(string.Empty))
             {
@@ -323,6 +324,7 @@ namespace ReportManager.Forms
                 edtMsCode.CanOpenEdit = false;
                 edtMsCode.Edit.BorderStyle = BorderStyles.Default;
                 edtMsCode.Edit.Appearance.BorderColor = DefaultBackColor;
+
                 if (ReportManagerContext.GetInstance().FillCurrentDeviceByMsCode(edtMsCode.EditValue as string).Item1 ==
                     DeviceModelStatus.CreatedError)
                 {
