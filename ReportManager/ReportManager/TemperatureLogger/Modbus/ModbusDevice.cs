@@ -61,35 +61,35 @@ namespace ReportManager.TemperatureLogger.Modbus
 
             StateGraph = new StateMachine<TemperatureDeviceState, TemperatureDeviceEdge>(TemperatureDeviceState.CheckConnection);
             StateGraph.Configure(TemperatureDeviceState.CheckConnection)
-                      .OnEntryAsync(async () => await Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.CheckConnection)))
-                      .OnEntryAsync(async () => await ConnectAsync())
-                      .Permit(TemperatureDeviceEdge.ConnectionInvalid, TemperatureDeviceState.FindPortName)
-                      .Permit(TemperatureDeviceEdge.ReadStart, TemperatureDeviceState.FindPortName)
-                      .Permit(TemperatureDeviceEdge.ConnectionValid,   TemperatureDeviceState.Read)
-                      .Permit(TemperatureDeviceEdge.ReadStop, TemperatureDeviceState.StopRead);
+                      .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.CheckConnection)))
+                      .OnEntry(() => Connect())
+                      .Permit(TemperatureDeviceEdge.ConnectionInvalid,  TemperatureDeviceState.FindPortName)
+                      .Permit(TemperatureDeviceEdge.ReadStart,          TemperatureDeviceState.FindPortName)
+                      .Permit(TemperatureDeviceEdge.ConnectionValid,    TemperatureDeviceState.Read)
+                      .Permit(TemperatureDeviceEdge.ReadStop,           TemperatureDeviceState.StopRead);
             StateGraph.Configure(TemperatureDeviceState.FindPortName)
-                      .OnEntryAsync(async () => await Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.FindPortName)))
-                      .OnEntryAsync(async () => await FindPortNameAsync())
+                      .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.FindPortName)))
+                      .OnEntry(async () => await FindPortNameAsync())
                       .PermitReentry(TemperatureDeviceEdge.PortNameNotFounded)
                       .Permit(TemperatureDeviceEdge.PortNameFounded,   TemperatureDeviceState.CheckConnection)
-                      .Permit(TemperatureDeviceEdge.ReadStop, TemperatureDeviceState.StopRead);
+                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead);
             StateGraph.Configure(TemperatureDeviceState.Read)
-                      .OnEntryAsync(async () => await Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.Read)))
-                      .OnEntryAsync(async () => await ReadAsync())
+                      .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.Read)))
+                      .OnEntry(async () => await ReadAsync())
                       .PermitReentry(TemperatureDeviceEdge.ReadSuccess)
-                      .Permit(TemperatureDeviceEdge.ReadError, TemperatureDeviceState.CheckConnection)
-                      .Permit(TemperatureDeviceEdge.ReadStop,  TemperatureDeviceState.StopRead);
+                      .Permit(TemperatureDeviceEdge.ReadError,         TemperatureDeviceState.CheckConnection)
+                      .Permit(TemperatureDeviceEdge.ReadStop,          TemperatureDeviceState.StopRead);
             StateGraph.Configure(TemperatureDeviceState.StopRead)
-                      .OnEntryAsync(async () => await Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.StopRead)))
-                      .Permit(TemperatureDeviceEdge.ReadStart, TemperatureDeviceState.Read);
+                      .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.StopRead)))
+                      .Permit(TemperatureDeviceEdge.ReadStart,         TemperatureDeviceState.Read);
         }
 
-        public async Task<bool> StartReadAsync()
+        public bool StartRead()
         {
             if (!StateGraph.CanFire(TemperatureDeviceEdge.ReadStart)) return false;
 
             IsReading = true;
-            await StateGraph.FireAsync(TemperatureDeviceEdge.ReadStart);
+            StateGraph.Fire(TemperatureDeviceEdge.ReadStart);
             return true;
         }
 
@@ -98,47 +98,44 @@ namespace ReportManager.TemperatureLogger.Modbus
             return StateGraph.State == TemperatureDeviceState.Read;
         }
 
-        public async Task<bool> StopReadAsync()
+        public bool StopRead()
         {
             if (!StateGraph.CanFire(TemperatureDeviceEdge.ReadStop)) return false;
 
             IsReading = false;
-            await StateGraph.FireAsync(TemperatureDeviceEdge.ReadStop);
+            StateGraph.Fire(TemperatureDeviceEdge.ReadStop);
             return true;
         }
 
-        private async Task ConnectAsync()
+        private void Connect()
         {
-            await Task.Run(async () =>
+            try
             {
-                try
+                Serial?.Close();
+                Thread.Sleep(50);
+
+                Serial = new SerialPort(PortName)
                 {
-                    Serial?.Close();
-                    Thread.Sleep(50);
+                    BaudRate = 9600,
+                    DataBits = 8,
+                    Parity = Parity.None,
+                    StopBits = StopBits.One
+                };
+                Serial.Open();
 
-                    Serial = new SerialPort(PortName)
-                    {
-                        BaudRate = 9600,
-                        DataBits = 8,
-                        Parity = Parity.None,
-                        StopBits = StopBits.One
-                    };
-                    Serial.Open();
+                Modbus = ModbusSerialMaster.CreateRtu(Serial);
+                Modbus.Transport.Retries = 2;
+                Modbus.Transport.ReadTimeout = 100;
+                Modbus.ReadInputRegisters(1, 0, 4);
 
-                    Modbus = ModbusSerialMaster.CreateRtu(Serial);
-                    Modbus.Transport.Retries = 2;
-                    Modbus.Transport.ReadTimeout = 100;
-                    Modbus.ReadInputRegisters(1, 0, 4);
-
-                    await StateGraph.FireAsync(TemperatureDeviceEdge.ConnectionValid);
-                }
-                catch
-                {
-                    Serial?.Close();
-                    Thread.Sleep(50);
-                    await StateGraph.FireAsync(TemperatureDeviceEdge.ConnectionInvalid);
-                }
-            });
+                StateGraph.Fire(TemperatureDeviceEdge.ConnectionValid);
+            }
+            catch
+            {
+                Serial?.Close();
+                Thread.Sleep(50);
+                StateGraph.Fire(TemperatureDeviceEdge.ConnectionInvalid);
+            }
         }
 
         private async Task FindPortNameAsync()
@@ -148,43 +145,40 @@ namespace ReportManager.TemperatureLogger.Modbus
                                                                              SlaveAdress = 1,
                                                                              StartAdress = 0 });
             if (PortName == string.Empty)
-                await StateGraph.FireAsync(TemperatureDeviceEdge.PortNameNotFounded);
+                StateGraph.Fire(TemperatureDeviceEdge.PortNameNotFounded);
             else
-                await StateGraph.FireAsync(TemperatureDeviceEdge.PortNameFounded);
+                StateGraph.Fire(TemperatureDeviceEdge.PortNameFounded);
         }
 
         private async Task ReadAsync()
         {
-            await Task.Run(async () =>
+            try
             {
-                try
+                ushort[] data = await Modbus.ReadInputRegistersAsync(1, 0, 6);
+                var temperature = BitConverter.ToSingle(BitConverter.GetBytes(data[0])
+                                                                    .Concat(BitConverter.GetBytes(data[1]))
+                                                                    .ToArray(), 0);
+                var humidity = BitConverter.ToSingle(BitConverter.GetBytes(data[2])
+                                                                    .Concat(BitConverter.GetBytes(data[3]))
+                                                                    .ToArray(), 0);
+                var pressure = BitConverter.ToSingle(BitConverter.GetBytes(data[4])
+                                                                    .Concat(BitConverter.GetBytes(data[5]))
+                                                                    .ToArray(), 0);
+                Task.Run(() =>
                 {
-                    ushort[] data = await Modbus.ReadInputRegistersAsync(1, 0, 6);
-                    var temperature = BitConverter.ToSingle(BitConverter.GetBytes(data[0])
-                                                                        .Concat(BitConverter.GetBytes(data[1]))
-                                                                        .ToArray(), 0);
-                    var humidity = BitConverter.ToSingle(BitConverter.GetBytes(data[2])
-                                                                     .Concat(BitConverter.GetBytes(data[3]))
-                                                                     .ToArray(), 0);
-                    var pressure = BitConverter.ToSingle(BitConverter.GetBytes(data[4])
-                                                                     .Concat(BitConverter.GetBytes(data[5]))
-                                                                     .ToArray(), 0);
-                    Task.Run(() =>
-                    {
-                        OnTemperatureRead?.Invoke(this, new ReadPacket<float> { Value = temperature, Time = DateTime.Now });
-                        OnHumidityRead?.Invoke(this, new ReadPacket<float> { Value = humidity, Time = DateTime.Now });
-                        OnPressureRead?.Invoke(this, new ReadPacket<float> { Value = (pressure * 133.322f) / 1000.0f, Time = DateTime.Now });
-                    });
+                    OnTemperatureRead?.Invoke(this, new ReadPacket<float> { Value = temperature, Time = DateTime.Now });
+                    OnHumidityRead?.Invoke(this, new ReadPacket<float> { Value = humidity, Time = DateTime.Now });
+                    OnPressureRead?.Invoke(this, new ReadPacket<float> { Value = (pressure * 133.322f) / 1000.0f, Time = DateTime.Now });
+                });
 
-                    if (IsReading) await StateGraph.FireAsync(TemperatureDeviceEdge.ReadSuccess);
+                if (IsReading) StateGraph.Fire(TemperatureDeviceEdge.ReadSuccess);
 
-                    Thread.Sleep(1000);
-                }
-                catch (Exception e)
-                {
-                    await StateGraph.FireAsync(TemperatureDeviceEdge.ReadError);
-                }
-            });
+                Thread.Sleep(1000);
+            }
+            catch (Exception e)
+            {
+                StateGraph.Fire(TemperatureDeviceEdge.ReadError);
+            }
         }
 
         #region IDisposable Support

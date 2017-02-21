@@ -23,7 +23,7 @@ namespace ReportManager.Forms.Stages
             TFunctionalChartSubscribe();
             TFunctionalGaugesSubscribe();
 
-            Device.StartReadAsync();
+            Device.StartRead();
         }
 
         private void TFunctionalGaugesSubscribe()

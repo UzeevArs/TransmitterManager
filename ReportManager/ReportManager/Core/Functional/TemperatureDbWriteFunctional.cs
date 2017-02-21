@@ -54,7 +54,7 @@ namespace ReportManager.Core.Functional
 
         public override void Start()
         {
-            Device.StartReadAsync();
+            Device.StartRead();
             CurrentThread = new Thread(WriteToDb);
             CurrentThread.Start();
             StatusChanged?.Invoke(this, true);
@@ -83,7 +83,7 @@ namespace ReportManager.Core.Functional
         public override void Stop()
         {
             CurrentThread?.Abort();
-            Device.StopReadAsync();
+            Device.StopRead();
             StatusChanged?.Invoke(this, false);
         }
 
@@ -94,7 +94,8 @@ namespace ReportManager.Core.Functional
 
             if (!Device.Alive()) yield break;
 
-            while (!TemperatureStack.TryPop(out float value)) { Thread.Yield(); }
+            float value = 0.0f;
+            while (!TemperatureStack.TryPop(out value)) { Thread.Yield(); }
             frame.Temperature = value;
 
             while (!HumidityStack.TryPop(out value)) { Thread.Yield(); }
