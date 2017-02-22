@@ -205,7 +205,6 @@
             this.prgsDbConnect.Description = "Попытка подключения к БД...";
             this.prgsDbConnect.Location = new System.Drawing.Point(173, 256);
             this.prgsDbConnect.Name = "prgsDbConnect";
-            this.prgsDbConnect.RangeAnimationElementThickness = 2;
             this.prgsDbConnect.Size = new System.Drawing.Size(243, 66);
             this.prgsDbConnect.TabIndex = 999;
             this.prgsDbConnect.TabStop = false;

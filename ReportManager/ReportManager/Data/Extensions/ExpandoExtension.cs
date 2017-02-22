@@ -24,7 +24,7 @@ namespace ReportManager.Data.Extensions
             }
             return dt;
         }
-
+        
         public static ExpandoObject ToExpando(this IEnumerable<KeyValuePair<string, object>> dictionary)
         {
             var expando = new ExpandoObject();

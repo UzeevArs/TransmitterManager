@@ -11,6 +11,7 @@ using ReportManager.Data.DataModel;
 using ReportManager.Reports;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Database.ConcreteAdapters;
+using System.Data;
 
 namespace ReportManager.Forms.Stages
 {
@@ -63,6 +64,7 @@ namespace ReportManager.Forms.Stages
                                 .ToExpando()
                                 .ToDynamicArray()
                                 .ToDataTable();
+                        
             return report;
         }
 
