@@ -127,7 +127,7 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
-                var dataTable = adapter.GetDataBy(serial);
+                var dataTable = adapter.GetDataBySerial(serial);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
                                                                       NifudaDataSet.NifudaDataTableRow>())
                     yield return obj;
@@ -144,12 +144,30 @@ namespace ReportManager.Data.Database.ConcreteAdapters
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
-                var dataTable = adapter.GetDataBySerial(index);
+                var dataTable = adapter.GetDataByIndex(index);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
                                                                       NifudaDataSet.NifudaDataTableRow>())
                     yield return obj;
             }
         }
+
+        public IEnumerable<InputData> SelectDataByProdNO(string ProdNO, object state = null)
+        {
+            using (var adapter = new NifudaDataTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    yield break;
+
+                var dataTable = adapter.GetDataByProdNO(ProdNO);
+                foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
+                                                                      NifudaDataSet.NifudaDataTableRow>())
+                    yield return obj;
+            }
+        }
+
 
         public IEnumerable<InputData> SelectNotGeneratedData(object state = null)
         {

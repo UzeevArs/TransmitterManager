@@ -1,4 +1,4 @@
-﻿namespace ReportManager.Database
+﻿namespace ReportManager.Data.Database
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace ReportManager.Database.NifudaDataSetTableAdapters
+namespace ReportManager.Data.Database.NifudaDataSetTableAdapters
 {
     partial class NifudaDataTableAdapter
     {
@@ -15,5 +15,12 @@ namespace ReportManager.Database.NifudaDataSetTableAdapters
 
     public partial class UniqueSerialNumberDataTableAdapter
     {
+    }
+}
+
+namespace ReportManager.Data.Database.NifudaDataSetTableAdapters {
+    
+    
+    public partial class NifudaDataTableAdapter {
     }
 }

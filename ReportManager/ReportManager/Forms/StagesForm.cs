@@ -121,6 +121,15 @@ namespace ReportManager.Forms
                 if (status != DeviceModelStatus.SuccessNifuda 
                     || status != DeviceModelStatus.SuccessSap)
                 {
+                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
+                    lblExtraInformation.Visibility = BarItemVisibility.Always;
+
+                    btnTrasportListCreateStage.Enabled = true;
+                    btnReportCreateStage.Enabled = true;
+                    btnMaxigrafStage.Enabled = true;
+                }
+                else
+                {
                     MessageBox.Show("Серийный номер не найден", "Предупреждение",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
@@ -130,16 +139,6 @@ namespace ReportManager.Forms
                     lblExtraInformation.EditValue = "";
                     lblExtraInformation.Visibility = BarItemVisibility.Never;
                     edtMsCode.EditValue = "";
-                }
-                else
-                {
-                    input = ReportManagerContext.GetInstance().CurrentInput;
-                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
-                    lblExtraInformation.Visibility = BarItemVisibility.Always;
-
-                    btnTrasportListCreateStage.Enabled = true;
-                    btnReportCreateStage.Enabled = true;
-                    btnMaxigrafStage.Enabled = true;
                 }
             });
         }

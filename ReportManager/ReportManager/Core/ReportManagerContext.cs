@@ -166,7 +166,7 @@ namespace ReportManager.Core
         {
             try
             {
-                FromNifudaRequest = nifudaDataAdapter.SelectBySerial(MsCode);
+                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(MsCode);
                 InputDataStateMachine.Fire(InputDataTriggers.ToCheckNifudaData);
             }
             catch (Exception ex)
@@ -192,6 +192,7 @@ namespace ReportManager.Core
 
         private void SuccessNifuda()
         {
+            CurrentInput = FromNifudaRequest.First();
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.SuccessNifuda, "", FromNifudaRequest.First()));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
@@ -249,7 +250,7 @@ namespace ReportManager.Core
         {
             try
             {
-                var NifudaRequest = nifudaDataAdapter.SelectBySerial(MsCode);
+                var NifudaRequest = nifudaDataAdapter.SelectBySerial(FromSapRequest.First().SERIAL_NO);
                 if (NifudaRequest.Count() > 0)
                 {
                     InputDataStateMachine.Fire(InputDataTriggers.ToSuccessSap);
@@ -276,6 +277,7 @@ namespace ReportManager.Core
 
         private void SuccessSap()
         {
+            CurrentInput = FromSapRequest.First();
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.SuccessSap, "", FromSapRequest.First()));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
