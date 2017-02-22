@@ -64,7 +64,7 @@ namespace ReportManager.TemperatureLogger.Modbus
             ModbusDeviceStates = new StateMachine<TemperatureDeviceState, TemperatureDeviceEdge>(TemperatureDeviceState.Idle);
             ModbusDeviceStates.Configure(TemperatureDeviceState.CheckConnection)
                       .OnEntry(() => Task.Run(() => OnChangeState?.Invoke(this, TemperatureDeviceState.CheckConnection)))
-                      .OnEntry(() => Connect())
+                      .OnEntry(Connect)
                       .Permit(TemperatureDeviceEdge.ConnectionInvalid,  TemperatureDeviceState.FindPortName)
                       .Permit(TemperatureDeviceEdge.ReadStart,          TemperatureDeviceState.FindPortName)
                       .Permit(TemperatureDeviceEdge.ConnectionValid,    TemperatureDeviceState.Read)
@@ -143,15 +143,13 @@ namespace ReportManager.TemperatureLogger.Modbus
                 Modbus.Transport.ReadTimeout = 100;
                 Modbus.ReadInputRegisters(1, 0, 4);
 
-                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ConnectionValid))
-                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionValid);
+                ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionValid);
             }
             catch
             {
                 Serial?.Close();
                 Thread.Sleep(50);
-                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ConnectionInvalid))
-                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionInvalid);
+                ModbusDeviceStates.Fire(TemperatureDeviceEdge.ConnectionInvalid);
             }
         }
 
@@ -162,11 +160,9 @@ namespace ReportManager.TemperatureLogger.Modbus
                                                                              SlaveAdress = 1,
                                                                              StartAdress = 0 });
             if (PortName == string.Empty)
-                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.PortNameNotFounded))
-                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameNotFounded);
+                ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameNotFounded);
             else
-                if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.PortNameFounded))
-                    ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameFounded);
+                ModbusDeviceStates.Fire(TemperatureDeviceEdge.PortNameFounded);
         }
 
         private async Task ReadAsync()
@@ -178,12 +174,12 @@ namespace ReportManager.TemperatureLogger.Modbus
                                                                     .Concat(BitConverter.GetBytes(data[1]))
                                                                     .ToArray(), 0);
                 var humidity = BitConverter.ToSingle(BitConverter.GetBytes(data[2])
-                                                                    .Concat(BitConverter.GetBytes(data[3]))
-                                                                    .ToArray(), 0);
+                                                                 .Concat(BitConverter.GetBytes(data[3]))
+                                                                 .ToArray(), 0);
                 var pressure = BitConverter.ToSingle(BitConverter.GetBytes(data[4])
-                                                                    .Concat(BitConverter.GetBytes(data[5]))
-                                                                    .ToArray(), 0);
-                Task.Run(() =>
+                                                                 .Concat(BitConverter.GetBytes(data[5]))
+                                                                 .ToArray(), 0);
+                await Task.Run(() =>
                 {
                     OnTemperatureRead?.Invoke(this, new ReadPacket<float> { Value = temperature, Time = DateTime.Now });
                     OnHumidityRead?.Invoke(this, new ReadPacket<float> { Value = humidity, Time = DateTime.Now });
@@ -193,7 +189,8 @@ namespace ReportManager.TemperatureLogger.Modbus
                 if (IsReading && ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadSuccess))
                     ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadSuccess);
 
-                Thread.Sleep(1000);
+                await Task.Run(() => Thread.Sleep(1000));
+                
             }
             catch (Exception e)
             {

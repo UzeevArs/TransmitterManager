@@ -1,9 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using ReportManager.Core;
-using ReportManager.TemperatureLogger.Modbus;
-using System;
-using System.Threading;
-using System.Windows.Forms;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Database.ConcreteAdapters;
 using ReportManager.Core.Functional;

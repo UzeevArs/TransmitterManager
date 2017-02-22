@@ -80,7 +80,6 @@
             this.progressPanel.Description = "Идёт подключение к Maxigraph";
             this.progressPanel.Location = new System.Drawing.Point(8, 53);
             this.progressPanel.Name = "progressPanel";
-            this.progressPanel.RangeAnimationElementThickness = 2;
             this.progressPanel.Size = new System.Drawing.Size(232, 66);
             this.progressPanel.TabIndex = 0;
             this.progressPanel.Text = "Connection";
