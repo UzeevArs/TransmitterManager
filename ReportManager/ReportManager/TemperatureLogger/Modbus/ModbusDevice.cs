@@ -192,7 +192,7 @@ namespace ReportManager.TemperatureLogger.Modbus
                 await Task.Run(() => Thread.Sleep(1000));
                 
             }
-            catch (Exception e)
+            catch
             {
                 if (ModbusDeviceStates.CanFire(TemperatureDeviceEdge.ReadError))
                     ModbusDeviceStates.Fire(TemperatureDeviceEdge.ReadError);

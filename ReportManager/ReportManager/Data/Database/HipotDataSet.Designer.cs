@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ReportManager.Data.Database {
+namespace ReportManager.Data.SAP {
     
     
     /// <summary>
@@ -1094,7 +1094,7 @@ namespace ReportManager.Data.Database {
         }
     }
 }
-namespace ReportManager.Data.Database.HipotDataTableTableAdapters {
+namespace ReportManager.Data.SAP.HipotDataTableTableAdapters {
     
     
     /// <summary>

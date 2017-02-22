@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using ReportManager.Core;
 using ReportManager.Data.Extensions;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using ReportManager.Core.Functional;
 using DevExpress.XtraCharts;
 
@@ -26,15 +26,24 @@ namespace ReportManager.Forms.Stages
 
         private void TFunctionalGaugesSubscribe()
         {
-            ReportManagerContext.GetInstance().Device.OnTemperatureRead += (sender, data)
-                => this.SafeInvoke(() 
-                => gaugeTemperature.Text = data.Value.ToString("F"));
-            ReportManagerContext.GetInstance().Device.OnHumidityRead += (sender, data)
-                => this.SafeInvoke(()
-                => gaugeHumidity.Text = data.Value.ToString("F"));
-            ReportManagerContext.GetInstance().Device.OnPressureRead += (sender, data)
-                => this.SafeInvoke(()
-                => gaugePressure.Text = data.Value.ToString("F"));
+            ReportManagerContext.GetInstance().Device.OnTemperatureRead += Device_OnTemperatureRead;
+            ReportManagerContext.GetInstance().Device.OnHumidityRead += Device_OnHumidityRead;
+            ReportManagerContext.GetInstance().Device.OnPressureRead += Device_OnPressureRead;
+        }
+
+        private void Device_OnPressureRead(object sender, TemperatureLogger.Modbus.ReadPacket<float> e)
+        {
+            this.SafeInvoke(() => gaugePressure.Text = e.Value.ToString("F"));
+        }
+
+        private void Device_OnHumidityRead(object sender, TemperatureLogger.Modbus.ReadPacket<float> e)
+        {
+            this.SafeInvoke(() => gaugeHumidity.Text = e.Value.ToString("F"));
+        }
+
+        private void Device_OnTemperatureRead(object sender, TemperatureLogger.Modbus.ReadPacket<float> e)
+        {
+            this.SafeInvoke(() => gaugeTemperature.Text = e.Value.ToString("F"));
         }
 
         private void TFunctionalChartSubscribe()
@@ -71,6 +80,13 @@ namespace ReportManager.Forms.Stages
                 (functional as TemperatureDbWriteFunctional).OnInsert += (sender, args)
                     => this.SafeInvoke(()
                     => grdTemp.DataSource = new TemperatureFrameDatabaseAdapter().Select());
+        }
+
+        private void TemperatureForm_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            ReportManagerContext.GetInstance().Device.OnTemperatureRead -= Device_OnTemperatureRead;
+            ReportManagerContext.GetInstance().Device.OnHumidityRead -= Device_OnHumidityRead;
+            ReportManagerContext.GetInstance().Device.OnPressureRead -= Device_OnPressureRead;
         }
     }
 }

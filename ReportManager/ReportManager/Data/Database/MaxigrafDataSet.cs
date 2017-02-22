@@ -1,4 +1,4 @@
-﻿namespace ReportManager.Data.Database
+﻿namespace ReportManager.Data.SAP
 {
 
 

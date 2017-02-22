@@ -10,7 +10,7 @@ using ReportManager.Core;
 using ReportManager.Core.Functional;
 using ReportManager.Core.Stages;
 using ReportManager.Core.Utility;
-using ReportManager.Data.Database;
+using ReportManager.Data.SAP;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Forms.Data;
@@ -27,8 +27,6 @@ namespace ReportManager.Forms
 {
     public partial class StagesForm : XtraForm
     {
-        TemperatureDevice Device;
-
         public StagesForm()
         {
             InitializeComponent();
@@ -47,17 +45,38 @@ namespace ReportManager.Forms
 
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
             ReportManagerContext.GetInstance().InputDataCreatedStatus += StagesForm_DeviceModelCreatedStatus;
+            ReportManagerContext.GetInstance().Device.OnChangeState += ModbusDevice_OnChangeState;
             FunctionalSubscribe();
 
             CreateFunctionalControls();
         }
 
+        private void ModbusDevice_OnChangeState(object sender, TemperatureDevice.TemperatureDeviceState e)
+        {
+            switch (e)
+            {
+                case TemperatureDevice.TemperatureDeviceState.CheckConnection:
+                    lblDevice.Caption = "Проверка соединения с устройством";
+                    break;
+                case TemperatureDevice.TemperatureDeviceState.FindPortName:
+                    lblDevice.Caption = "Поиск COM порта";
+                    break;
+                case TemperatureDevice.TemperatureDeviceState.Read:
+                    lblDevice.Caption = "Чтение с устройства";
+                    break;
+                case TemperatureDevice.TemperatureDeviceState.StopRead:
+                    lblDevice.Caption = "Приостановлено чтение с устройства";
+                    break;
+                case TemperatureDevice.TemperatureDeviceState.Idle:
+                    lblDevice.Caption = "Отключение устройства";
+                    break;
+            }
+        }
+
         private void CreateFunctionalControls()
         {
             foreach (var func in ReportManagerContext.GetInstance().Functionals)
-            {
                 CreateBarItem(func);
-            }
         }
 
         private int NextId = 100;
@@ -88,10 +107,8 @@ namespace ReportManager.Forms
             buttons.Buttons[1].Click += (sender, args) => functional.Stop();
             functional.StatusChanged += (sender, isRunning) => this.SafeInvoke(() => 
             {
-                buttons.BeginUpdate();
                 buttons.Buttons[0].Enabled = !isRunning;
                 buttons.Buttons[1].Enabled = isRunning;
-                buttons.EndUpdate();
             });
             buttons.Name = $"repositoryItemButtonEdit{NextId}";
             buttons.Buttons[0].Enabled = !functional.IsRunning ?? true;
@@ -112,33 +129,58 @@ namespace ReportManager.Forms
             lblUserName.Caption += SettingsContext.CurrentUser.FullName;
         }
 
-        private void StagesForm_DeviceModelCreatedStatus(object sender, (DeviceModelStatus, string, InputData) data)
+        private void StagesForm_DeviceModelCreatedStatus(object sender, 
+                                                         (DeviceModelStatus, string, InputData) data)
         {
             var (status, error, input) = data;
-
-            Invoke((MethodInvoker) delegate
+            Action OnSuccess = () =>
             {
-                if (status != DeviceModelStatus.SuccessNifuda 
-                    || status != DeviceModelStatus.SuccessSap)
-                {
-                    lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
-                    lblExtraInformation.Visibility = BarItemVisibility.Always;
+                lblExtraInformation.EditValue = $"Модель: {input.MODEL}. Серийный номер: {input.SERIAL_NO}";
+                lblExtraInformation.Visibility = BarItemVisibility.Always;
+                lblInputDataStatus.ItemAppearance.Normal.ForeColor = Color.Transparent;
+                btnTrasportListCreateStage.Enabled = true;
+                btnReportCreateStage.Enabled = true;
+                btnMaxigrafStage.Enabled = true;
+            };
+            Action OnError = () =>
+            {
+                btnTrasportListCreateStage.Enabled = false;
+                btnReportCreateStage.Enabled = false;
+                btnMaxigrafStage.Enabled = false;
+                lblInputDataStatus.ItemAppearance.Normal.ForeColor = Color.Coral;
+                lblExtraInformation.EditValue = "";
+                lblExtraInformation.Visibility = BarItemVisibility.Never;
+                edtMsCode.EditValue = "";
+            };
 
-                    btnTrasportListCreateStage.Enabled = true;
-                    btnReportCreateStage.Enabled = true;
-                    btnMaxigrafStage.Enabled = true;
-                }
-                else
+            this.SafeInvoke(() =>
+            {
+                switch (status)
                 {
-                    MessageBox.Show("Серийный номер не найден", "Предупреждение",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    btnTrasportListCreateStage.Enabled = false;
-                    btnReportCreateStage.Enabled = false;
-                    btnMaxigrafStage.Enabled = false;
-                    lblExtraInformation.EditValue = "";
-                    lblExtraInformation.Visibility = BarItemVisibility.Never;
-                    edtMsCode.EditValue = "";
+                    case DeviceModelStatus.ErrorNifudaConnection:
+                        lblInputDataStatus.Caption = "Произошла ошибка. Проверьте подключение к Nifuda БД";
+                        OnError();
+                        break;
+                    case DeviceModelStatus.ErrorSapConnection:
+                        lblInputDataStatus.Caption = "Произошла ошибка. Проверьте подключение к SAP";
+                        OnError();
+                        break;
+                    case DeviceModelStatus.ErrorSapNoData:
+                        lblInputDataStatus.Caption = "Произошла ошибка. Введённый серийный номер не найден в SAP";
+                        OnError();
+                        break;
+                    case DeviceModelStatus.NifudaInsertError:
+                        lblInputDataStatus.Caption = "Произошла ошибка. Копирование данных в Nifuda БД произошло с ошибкой.";
+                        OnError();
+                        break;
+                    case DeviceModelStatus.SuccessNifuda:
+                        lblInputDataStatus.Caption = "Данные успешно загружены из Nifuda БД";
+                        OnSuccess();
+                        break;
+                    case DeviceModelStatus.SuccessSap:
+                        lblInputDataStatus.Caption = "Данные успешно загружены из SAP и скопированы в Nifuda";
+                        OnSuccess();
+                        break;
                 }
             });
         }
@@ -150,61 +192,75 @@ namespace ReportManager.Forms
                 if (functional.GetType() == typeof(CheckIsupDbConnectionFunctional))
                 {
                     (functional as CheckIsupDbConnectionFunctional).StateChange += IsupDbConnectionOnStateChange;
+                    (functional as CheckIsupDbConnectionFunctional).StatusChanged += (sender, status) =>
+                    {
+                        if (!status) { lblIsupConnectionStatus.Caption = ""; lblIsupConnectionStatus.Visibility = BarItemVisibility.Never; }
+                        else { lblIsupConnectionStatus.Visibility = BarItemVisibility.Always; }
+                    };
                 }
                 else if (functional.GetType() == typeof(CheckManifactureDbConnectionFunctional))
                 {
                     (functional as CheckManifactureDbConnectionFunctional).StateChange +=
                         ManifactureDbConnectionOnStateChange;
+                    (functional as CheckManifactureDbConnectionFunctional).StatusChanged += (sender, status) =>
+                    {
+                        if (!status) { lblNifudaConnectionStatus.Caption = ""; lblNifudaConnectionStatus.Visibility = BarItemVisibility.Never; }
+                        else { lblNifudaConnectionStatus.Visibility = BarItemVisibility.Always; }
+                    };
+                }
+                else if (functional.GetType() == typeof(TempteratureDeviceFunctional))
+                {
+                    (functional as TempteratureDeviceFunctional).StatusChanged += (sender, status) =>
+                    {
+                        if (!status) { lblDevice.Caption = ""; lblDevice.Visibility = BarItemVisibility.Never; }
+                        else { lblDevice.Visibility = BarItemVisibility.Always; }
+                    };
                 }
             }
         }
 
         private void ManifactureDbConnectionOnStateChange(object sender, StateChangeEventArgs stateChangeEventArgs)
         {
-            try
+            this.SafeInvoke(() =>
             {
-                Invoke((MethodInvoker) delegate
+                switch (stateChangeEventArgs.CurrentState)
                 {
-                    if (stateChangeEventArgs.CurrentState == ConnectionState.Closed)
-                    {
+                    case ConnectionState.Closed:
                         btnTrasportListCreateStage.Enabled = false;
                         btnReportCreateStage.Enabled = false;
                         btnMaxigrafStage.Enabled = false;
                         lblNifudaConnectionStatus.Caption = "Соединение с производственной бд отсутствует";
-                    }
-                    else if (stateChangeEventArgs.CurrentState == ConnectionState.Open)
-                    {
+                        break;
+                    case ConnectionState.Open:
                         lblNifudaConnectionStatus.Caption = "Соединение с производственной бд установлено";
-                    }
-                });
-            }
-            catch { }
+                        break;
+                }
+            });
         }
 
         private void IsupDbConnectionOnStateChange(object sender, StateChangeEventArgs stateChangeEventArgs)
         {
-            try
+            this.SafeInvoke(() =>
             {
-                Invoke((MethodInvoker)delegate
+                switch (stateChangeEventArgs.CurrentState)
                 {
-                    if (stateChangeEventArgs.CurrentState == ConnectionState.Closed)
-                    {
+                    case ConnectionState.Closed:
                         btnTrasportListCreateStage.Enabled = false;
                         lblIsupConnectionStatus.Caption = "Соединение с ISUP бд отсутствует";
-                    }
-                    else if (stateChangeEventArgs.CurrentState == ConnectionState.Open)
-                    {
+                        break;
+                    case ConnectionState.Open:
                         lblIsupConnectionStatus.Caption = "Соединение с ISUP бд установлено";
-                    }
-                });
-            }
-            catch { }
+                        break;
+                }
+            });
         }
 
-        private void SettingsContextOnSettingsLoadingEvent(object sender, (ReportManager.Data.Settings.Settings, SettingsStatus, string) status)
+        private void SettingsContextOnSettingsLoadingEvent(object sender, 
+                                                           (ReportManager.Data.Settings.Settings, SettingsStatus, string) status)
         {
             var (settings, settingsStatus, message) = status;
-            if (settingsStatus == SettingsStatus.Changed || settingsStatus == SettingsStatus.SuccessLoaded)
+            if (settingsStatus == SettingsStatus.Changed 
+                || settingsStatus == SettingsStatus.SuccessLoaded)
             {
                 lblIsupConnectionStatus.Caption = "";
                 lblNifudaConnectionStatus.Caption = "";
@@ -241,22 +297,16 @@ namespace ReportManager.Forms
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == NativeMethods.WM_SHOWME)
-            {
                 ShowMe();
-            }
             base.WndProc(ref m);
         }
 
         private void ShowMe()
         {
             if (WindowState == FormWindowState.Minimized)
-            {
                 WindowState = FormWindowState.Normal;
-            }
             if (!Visible)
-            {
                 Show();
-            }
             notifyIcon.Visible = false;
         }
 
@@ -300,9 +350,9 @@ namespace ReportManager.Forms
         }
 
         private void EdtSerial_EditValueChanged(object sender, EventArgs e)
-
         {
-            if (edtMsCode.EditValue != null && !edtMsCode.EditValue.Equals(string.Empty))
+            if (edtMsCode.EditValue != null 
+                && !edtMsCode.EditValue.Equals(string.Empty))
             {
                 btnToSetManual.Enabled = true;
 
@@ -310,7 +360,7 @@ namespace ReportManager.Forms
                 edtMsCode.Edit.BorderStyle = BorderStyles.Default;
                 edtMsCode.Edit.Appearance.BorderColor = DefaultBackColor;
 
-                ReportManagerContext.GetInstance().FillCurrentDeviceByMsCode(edtMsCode.EditValue as string);
+                new WaitForm(edtMsCode.EditValue as string).ShowDialog();                
             }
         }
         #endregion
@@ -328,6 +378,11 @@ namespace ReportManager.Forms
         private void BtnLoadData_ItemClick(object sender, ItemClickEventArgs e)
         {
             (btnMaxigrafStage.Tag as Stage)?.OpenForm(this);
+        }
+
+        private void BtnTemperatureStage_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            (btnTemperatureStage.Tag as Stage)?.OpenForm(this);
         }
 
         private void BtnOpenSettings_ItemClick(object sender, ItemClickEventArgs e)
@@ -356,11 +411,6 @@ namespace ReportManager.Forms
         private void BtnPlates_ItemClick(object sender, ItemClickEventArgs e)
         {
             new PlatesForm { MdiParent = this }.Show();
-        }
-
-        private void btnTemperatureStage_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            new TemperatureForm { MdiParent = this }.Show();
         }
     }
 

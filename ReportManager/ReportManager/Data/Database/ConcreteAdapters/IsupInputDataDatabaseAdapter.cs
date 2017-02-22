@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.ISUPDataTableAdapters;
+using ReportManager.Data.SAP.ISUPDataTableAdapters;
 using ReportManager.Data.Settings;
 using System.Linq;
 using System.Data.SqlClient;
 
-using static ReportManager.Data.Database.ISUPData;
+using static ReportManager.Data.SAP.ISUPData;
 using System.Data;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class IsupInputDataDatabaseAdapter : ICommonAdapter<InputData>
     {

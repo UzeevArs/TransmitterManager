@@ -10,7 +10,7 @@ using ReportManager.Data.Extensions;
 
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings;
 using static ReportManager.MaxigrafIntegration.ServerPipeSettings.Commands;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Threading.Tasks;

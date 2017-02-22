@@ -1,4 +1,4 @@
-﻿namespace ReportManager.Data.Database
+﻿namespace ReportManager.Data.SAP
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace ReportManager.Data.Database.UsersDataSetTableAdapters {
+namespace ReportManager.Data.SAP.UsersDataSetTableAdapters {
     
     
     public partial class UsersTableAdapter {

@@ -61,6 +61,7 @@
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemButtonEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.lblInputDataStatus = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.pgSerial = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pgStages = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -75,6 +76,7 @@
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.lblDevice = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -113,9 +115,11 @@
             this.btnTemperatureStage,
             this.barEditItem1,
             this.barEditItem2,
-            this.barEditItem3});
+            this.barEditItem3,
+            this.lblInputDataStatus,
+            this.lblDevice});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 54;
+            this.ribbonControl1.MaxItemId = 56;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -320,7 +324,7 @@
             this.btnTemperatureStage.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTemperatureStage.ImageOptions.Image")));
             this.btnTemperatureStage.Name = "btnTemperatureStage";
             this.btnTemperatureStage.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTemperatureStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTemperatureStage_ItemClick);
+            this.btnTemperatureStage.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTemperatureStage_ItemClick);
             // 
             // barEditItem1
             // 
@@ -359,6 +363,21 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Close)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.ReadOnly = true;
+            // 
+            // lblInputDataStatus
+            // 
+            this.lblInputDataStatus.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
+            this.lblInputDataStatus.Id = 54;
+            this.lblInputDataStatus.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("lblInputDataStatus.ImageOptions.LargeImage")));
+            this.lblInputDataStatus.ItemAppearance.Normal.BackColor = System.Drawing.Color.Transparent;
+            this.lblInputDataStatus.ItemAppearance.Normal.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.lblInputDataStatus.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Coral;
+            this.lblInputDataStatus.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.lblInputDataStatus.ItemAppearance.Normal.Options.UseFont = true;
+            this.lblInputDataStatus.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.lblInputDataStatus.Name = "lblInputDataStatus";
+            this.lblInputDataStatus.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.lblInputDataStatus.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // ribbonPage1
             // 
@@ -431,10 +450,11 @@
             // 
             // ribbonStatusBar1
             // 
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblDevice);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblNifudaConnectionStatus);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblIsupConnectionStatus);
-            this.ribbonStatusBar1.ItemLinks.Add(this.lblStatus);
             this.ribbonStatusBar1.ItemLinks.Add(this.lblUserName);
+            this.ribbonStatusBar1.ItemLinks.Add(this.lblInputDataStatus);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 775);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -453,6 +473,12 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Visual Studio 2013 Light";
+            // 
+            // lblDevice
+            // 
+            this.lblDevice.Id = 55;
+            this.lblDevice.Name = "lblDevice";
+            this.lblDevice.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
             // StagesForm
             // 
@@ -525,5 +551,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraBars.BarEditItem barEditItem3;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
+        private DevExpress.XtraBars.BarStaticItem lblInputDataStatus;
+        private DevExpress.XtraBars.BarStaticItem lblDevice;
     }
 }

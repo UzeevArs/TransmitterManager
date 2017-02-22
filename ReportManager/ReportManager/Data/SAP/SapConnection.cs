@@ -1,37 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ReportManager.Data.SAP;
 using SAP.Middleware.Connector;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
-    public class SapConnection
+    internal class SapConnection
     {
-        public static IEnumerable<(string, string)> SapGetData(RfcDestination destination, IRfcFunction function, string OrderNo)
+        public static IEnumerable<(string, string)> GetData(string OrderNo)
         {
-            function.SetValue("I_ORDER_NO", OrderNo);
-            function.Invoke(destination);
-
-            return function.GetTable("E_PROD_ORDERS")
-                           .Take(1)
-                           .Single()
-                           .Select(item => (item.Metadata.Name, item.GetString()));
+            var destination = RfcDestinationManager.GetDestination("DEV");
+            var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
+            return SapDataParcer.Parce(destination, function, OrderNo);
         }
 
-        public static async Task<IEnumerable<(string, string)>> SapTestGetDataAsync(RfcDestination destination, IRfcFunction function, string OrderNo)
+        public static async Task<IEnumerable<(string, string)>> GetDataAsync(string OrderNo)
         {
-            return await Task.Run(() =>
-            {
-                function.SetValue("I_ORDER_NO", OrderNo);
-                function.Invoke(destination);
-
-                return function.GetTable("E_PROD_ORDERS")
-                               .Take(1)
-                               .Single()
-                               .Select(item => (item.Metadata.Name, item.GetString()));
-            });
+            var destination = RfcDestinationManager.GetDestination("DEV");
+            var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
+            return await SapDataParcer.ParceAsync(destination, function, OrderNo);
         }
     }
 }

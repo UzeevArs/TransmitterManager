@@ -1,16 +1,7 @@
-﻿using ReportManager.Data.AbstractAdapters;
-using ReportManager.Data.AbstractAdapters.Generic;
-using System;
+﻿using ReportManager.Data.AbstractAdapters.Generic;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.ISUPDataTableAdapters;
-using SAP.Middleware.Connector;
-using ReportManager.Data.Database;
 using ReportManager.Data.Extensions;
-
 
 namespace ReportManager.Data.SAP.ConcreteAdapters
 {
@@ -18,7 +9,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
     {
         public IEnumerable<InputData> SelectBySerial(string serial, object state = null)
         {
-            var data = SaveSapConnection.SapGetData(serial);
+            var data = SapConnection.GetData(serial);
             
             foreach (var obj in data.SapAdaptWithSameProperties<InputData>())
                 yield return obj;

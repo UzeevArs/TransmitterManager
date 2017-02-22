@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using ReportManager.Core.Stages;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
-using ReportManager.Data.Database.ConcreteAdapters;
 using ReportManager.Data.SAP.ConcreteAdapters;
 using System.Linq;
 using ReportManager.TemperatureLogger.Modbus;
 using Stateless;
+using System.Threading.Tasks;
 
 namespace ReportManager.Core
 {
@@ -37,7 +37,6 @@ namespace ReportManager.Core
             ToNifudaInsertCheckData,
             ToNifudaInsertError,
             ToSuccessSap
-
         }
 
         private static ReportManagerContext _instance;
@@ -150,10 +149,13 @@ namespace ReportManager.Core
             // Functionals.ForEach(functional => functional.Start());
         }
 
-        public void FillCurrentDeviceByMsCode(string msCode)
+        public async Task FillCurrentDeviceByMsCodeAsync(string msCode)
         {
-            MsCode = msCode;
-            InputDataStateMachine.Fire(InputDataTriggers.Start);
+            await Task.Run(() =>
+            {
+                MsCode = msCode;
+                InputDataStateMachine.Fire(InputDataTriggers.Start);
+            });
         }
 
         #region InputDataStateMachine methods
@@ -166,7 +168,7 @@ namespace ReportManager.Core
         {
             try
             {
-                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(MsCode);
+                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(MsCode).ToList();
                 InputDataStateMachine.Fire(InputDataTriggers.ToCheckNifudaData);
             }
             catch (Exception ex)
@@ -219,11 +221,19 @@ namespace ReportManager.Core
 
         private void SapCheckData()
         {
-            if (FromSapRequest.Count() > 0
-                && !FromSapRequest.First().SERIAL_NO.Equals(string.Empty))
-                InputDataStateMachine.Fire(InputDataTriggers.ToNifudaInsert);
-            else
+            try
+            {
+                if (FromSapRequest.Count() > 0
+                && !(FromSapRequest.First().SERIAL_NO == string.Empty))
+                    InputDataStateMachine.Fire(InputDataTriggers.ToNifudaInsert);
+                else
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSapErrorNoData);
+            }
+            catch (Exception ex)
+            {
                 InputDataStateMachine.Fire(InputDataTriggers.ToSapErrorNoData);
+                Error = ex.Message;
+            }
         }
 
         private void SapErrorNoData()
@@ -252,27 +262,21 @@ namespace ReportManager.Core
             {
                 var NifudaRequest = nifudaDataAdapter.SelectBySerial(FromSapRequest.First().SERIAL_NO);
                 if (NifudaRequest.Count() > 0)
-                {
                     InputDataStateMachine.Fire(InputDataTriggers.ToSuccessSap);
-                }
                 else
-                {
                     throw new Exception("No Inserted Data");
-                }
             }
             catch (Exception ex)
             {
                 InputDataStateMachine.Fire(InputDataTriggers.ToNifudaInsertError);
                 Error = ex.Message;
             }
-
         }
 
         private void NifudaInsertError()
         {
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.NifudaInsertError, Error, null));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
-
         }
 
         private void SuccessSap()
@@ -281,7 +285,6 @@ namespace ReportManager.Core
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.SuccessSap, "", FromSapRequest.First()));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
-
         #endregion
 
         public InputData CurrentInput { get; private set; }
@@ -296,9 +299,7 @@ namespace ReportManager.Core
         }
     }
 
-
-
-    public enum DeviceModelStatus
+    internal enum DeviceModelStatus
     {
         ErrorNifudaConnection, SuccessNifuda, ErrorSapConnection,
         ErrorSapNoData, NifudaInsertError, SuccessSap

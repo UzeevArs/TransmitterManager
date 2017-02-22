@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
     internal static class SafeCheck
     {

@@ -54,7 +54,7 @@
             this.btnOk.Location = new System.Drawing.Point(283, 64);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 2;
+            this.btnOk.TabIndex = 1;
             this.btnOk.Text = "Вход";
             this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             this.btnOk.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
@@ -83,7 +83,7 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Properties.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(180, 20);
-            this.tbPassword.TabIndex = 4;
+            this.tbPassword.TabIndex = 0;
             this.tbPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // cbUsersName
@@ -94,7 +94,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbUsersName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbUsersName.Size = new System.Drawing.Size(180, 20);
-            this.cbUsersName.TabIndex = 0;
+            this.cbUsersName.TabIndex = 2;
             this.cbUsersName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);
             // 
             // btnOpenSettings
@@ -102,7 +102,7 @@
             this.btnOpenSettings.Location = new System.Drawing.Point(151, 64);
             this.btnOpenSettings.Name = "btnOpenSettings";
             this.btnOpenSettings.Size = new System.Drawing.Size(75, 23);
-            this.btnOpenSettings.TabIndex = 6;
+            this.btnOpenSettings.TabIndex = 4;
             this.btnOpenSettings.Text = "Настройки";
             this.btnOpenSettings.Click += new System.EventHandler(this.BtnOpenSettings_Click);
             this.btnOpenSettings.KeyUp += new System.Windows.Forms.KeyEventHandler(this.LoginForm_KeyUp);

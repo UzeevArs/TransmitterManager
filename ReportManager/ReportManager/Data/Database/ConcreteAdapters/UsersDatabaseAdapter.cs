@@ -7,11 +7,11 @@ using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
 using ReportManager.Data.Settings;
-using ReportManager.Data.Database.UsersDataSetTableAdapters;
+using ReportManager.Data.SAP.UsersDataSetTableAdapters;
 
-using static ReportManager.Data.Database.UsersDataSet;
+using static ReportManager.Data.SAP.UsersDataSet;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class UsersDatabaseAdapter : ICommonAdapter<User>
     {

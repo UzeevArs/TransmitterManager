@@ -10,7 +10,7 @@ using ReportManager.Core;
 using ReportManager.Data.DataModel;
 using ReportManager.Reports;
 using ReportManager.Data.Extensions;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using System.Data;
 
 namespace ReportManager.Forms.Stages

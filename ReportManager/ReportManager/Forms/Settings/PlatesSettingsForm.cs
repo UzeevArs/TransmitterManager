@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using ReportManager.Forms.Settings;
 using ReportManager.Data.AbstractAdapters;
 

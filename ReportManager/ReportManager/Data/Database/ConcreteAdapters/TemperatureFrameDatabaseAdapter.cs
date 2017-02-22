@@ -1,5 +1,5 @@
 ﻿using ReportManager.Data.AbstractAdapters;
-using ReportManager.Data.Database.TemperatureDataSetTableAdapters;
+using ReportManager.Data.SAP.TemperatureDataSetTableAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Data.Extensions;
@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using static ReportManager.Data.Database.TemperatureDataSet;
+using static ReportManager.Data.SAP.TemperatureDataSet;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class TemperatureFrameDatabaseAdapter : ICommonAdapter<TemperatureFrame>
     {

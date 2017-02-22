@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ReportManager.Forms.Settings;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using ReportManager.Data.AbstractAdapters;
 
 namespace ReportManager.Forms.Stages.MaxigraphStageForm

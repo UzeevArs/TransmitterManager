@@ -1,4 +1,4 @@
-﻿using ReportManager.Data.Database.ConcreteAdapters;
+﻿using ReportManager.Data.SAP.ConcreteAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.TemperatureLogger.Modbus;
 using System;

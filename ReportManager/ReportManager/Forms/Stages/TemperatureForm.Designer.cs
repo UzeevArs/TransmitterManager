@@ -48,8 +48,11 @@ namespace ReportManager.Forms.Stages
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gaugeControl1 = new DevExpress.XtraGauges.Win.GaugeControl();
             this.gaugeTemperature = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.gaugeHumidity = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.labelComponent2 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.gaugePressure = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
+            this.labelComponent3 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.chartTemp = new DevExpress.XtraCharts.ChartControl();
             this.temperatureFrameBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,13 +65,13 @@ namespace ReportManager.Forms.Stages
             this.grdPressure = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
-            this.labelComponent1 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
-            this.labelComponent2 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
-            this.labelComponent3 = new DevExpress.XtraGauges.Win.Base.LabelComponent();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gaugeTemperature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaugeHumidity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaugePressure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartTemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
@@ -88,9 +91,6 @@ namespace ReportManager.Forms.Stages
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).BeginInit();
             this.SuspendLayout();
             // 
             // tabNavigationPage3
@@ -124,6 +124,12 @@ namespace ReportManager.Forms.Stages
             this.gaugeTemperature.Name = "gaugeTemperature";
             this.gaugeTemperature.Text = "00.000";
             // 
+            // labelComponent1
+            // 
+            this.labelComponent1.Name = "labelComponent1";
+            this.labelComponent1.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
+            this.labelComponent1.Text = "Температура (°С)";
+            // 
             // gaugeHumidity
             // 
             this.gaugeHumidity.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF");
@@ -133,6 +139,12 @@ namespace ReportManager.Forms.Stages
             this.labelComponent2});
             this.gaugeHumidity.Name = "gaugeHumidity";
             this.gaugeHumidity.Text = "00.000";
+            // 
+            // labelComponent2
+            // 
+            this.labelComponent2.Name = "labelComponent2";
+            this.labelComponent2.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
+            this.labelComponent2.Text = "Влажность (%)";
             // 
             // gaugePressure
             // 
@@ -144,13 +156,19 @@ namespace ReportManager.Forms.Stages
             this.gaugePressure.Name = "gaugePressure";
             this.gaugePressure.Text = "00.000";
             // 
+            // labelComponent3
+            // 
+            this.labelComponent3.Name = "labelComponent3";
+            this.labelComponent3.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
+            this.labelComponent3.Text = "Давление (кПа)";
+            // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Сводный график";
             this.tabNavigationPage2.Controls.Add(this.chartTemp);
             this.tabNavigationPage2.Image = ((System.Drawing.Image)(resources.GetObject("tabNavigationPage2.Image")));
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1053, 558);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1051, 558);
             // 
             // chartTemp
             // 
@@ -230,7 +248,7 @@ namespace ReportManager.Forms.Stages
         series1,
         series2,
         series3};
-            this.chartTemp.Size = new System.Drawing.Size(1053, 558);
+            this.chartTemp.Size = new System.Drawing.Size(1051, 558);
             this.chartTemp.TabIndex = 0;
             // 
             // temperatureFrameBindingSource
@@ -334,24 +352,6 @@ namespace ReportManager.Forms.Stages
             this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
             this.digitalBackgroundLayerComponent1.ZOrder = 1000;
             // 
-            // labelComponent1
-            // 
-            this.labelComponent1.Name = "labelComponent1";
-            this.labelComponent1.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
-            this.labelComponent1.Text = "Температура (°С)";
-            // 
-            // labelComponent2
-            // 
-            this.labelComponent2.Name = "labelComponent2";
-            this.labelComponent2.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
-            this.labelComponent2.Text = "Влажность (%)";
-            // 
-            // labelComponent3
-            // 
-            this.labelComponent3.Name = "labelComponent3";
-            this.labelComponent3.Position = new DevExpress.XtraGauges.Core.Base.PointF2D(-100F, 50F);
-            this.labelComponent3.Text = "Давление (кПа)";
-            // 
             // TemperatureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -360,10 +360,14 @@ namespace ReportManager.Forms.Stages
             this.Controls.Add(this.tabPane1);
             this.Name = "TemperatureForm";
             this.Text = "Температурный датчик";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TemperatureForm_FormClosing);
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gaugeTemperature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaugeHumidity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gaugePressure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(secondaryAxisY1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(secondaryAxisY2)).EndInit();
@@ -383,9 +387,6 @@ namespace ReportManager.Forms.Stages
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.labelComponent3)).EndInit();
             this.ResumeLayout(false);
 
         }

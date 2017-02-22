@@ -3,16 +3,16 @@ using System;
 using System.Collections.Generic;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.HipotDataTableTableAdapters;
+using ReportManager.Data.SAP.HipotDataTableTableAdapters;
 using ReportManager.Data.AbstractAdapters.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using ReportManager.Data.Settings;
 
-using static ReportManager.Data.Database.HipotDataTable;
+using static ReportManager.Data.SAP.HipotDataTable;
 using System.Data;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class DeviceTestResultsDatabaseAdapter : ICommonAdapter<DeviceTestResults>, ISelectBySerialAdapter<DeviceTestResults>
     {

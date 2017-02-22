@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.nifudaDataTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nifudaDataSet = new ReportManager.Data.Database.NifudaDataSet();
+            this.nifudaDataSet = new ReportManager.Data.SAP.NifudaDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMS_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMODEL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,7 +82,7 @@
             this.colORD_INST_CONTECT1_X78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colORD_INST_CONTECT1_X94 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCAP_NO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.nifudaDataTableAdapter = new ReportManager.Data.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
+            this.nifudaDataTableAdapter = new ReportManager.Data.SAP.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nifudaDataTableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nifudaDataSet)).BeginInit();
@@ -632,9 +632,9 @@
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private ReportManager.Data.Database.NifudaDataSet nifudaDataSet;
+        private ReportManager.Data.SAP.NifudaDataSet nifudaDataSet;
         private System.Windows.Forms.BindingSource nifudaDataTableBindingSource;
-        private ReportManager.Data.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter;
+        private ReportManager.Data.SAP.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colMS_CODE;
         private DevExpress.XtraGrid.Columns.GridColumn colMODEL;
         private DevExpress.XtraGrid.Columns.GridColumn colPROD_NO;

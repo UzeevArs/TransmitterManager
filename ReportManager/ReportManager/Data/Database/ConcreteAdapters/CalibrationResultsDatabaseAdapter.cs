@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Extensions;
 using System.Data.SqlClient;
-using ReportManager.Data.Database.CalibrationDataSetTableAdapters;
+using ReportManager.Data.SAP.CalibrationDataSetTableAdapters;
 using ReportManager.Data.AbstractAdapters.Generic;
 using System.Linq;
 using ReportManager.Data.Settings;
 using System;
 using System.Data;
 
-using static ReportManager.Data.Database.CalibrationDataSet;
+using static ReportManager.Data.SAP.CalibrationDataSet;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class CalibrationResultsDatabaseAdapter : ICommonAdapter<CalibrationResults>, ISelectBySerialAdapter<CalibrationResults>
     {

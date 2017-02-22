@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Xml.Serialization;
-using ReportManager.Data.Database.ISUPDataTableAdapters;
+using ReportManager.Data.SAP.ISUPDataTableAdapters;
 using ReportManager.Data.Settings;
 
 namespace ReportManager.Core.Functional

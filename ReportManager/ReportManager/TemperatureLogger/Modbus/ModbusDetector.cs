@@ -41,7 +41,7 @@ namespace ReportManager.TemperatureLogger.Modbus
                                                                        settings.NumberOfPoints);
                                 return (true, name);
                             }
-                            catch (Exception e)
+                            catch
                             {
                                 return (false, name);
                             }

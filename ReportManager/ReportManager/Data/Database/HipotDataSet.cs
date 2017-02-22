@@ -2,7 +2,7 @@
 {
 }
 
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
 
 
@@ -10,7 +10,7 @@ namespace ReportManager.Data.Database
     {
     }
 }
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
 
 

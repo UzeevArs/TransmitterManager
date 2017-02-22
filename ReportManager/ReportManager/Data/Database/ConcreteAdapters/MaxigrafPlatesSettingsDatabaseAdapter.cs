@@ -2,16 +2,16 @@
 using System.Linq;
 using System.Collections.Generic;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.Database.MaxigrafDataSetTableAdapters;
+using ReportManager.Data.SAP.MaxigrafDataSetTableAdapters;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Settings;
 using System.Data.SqlClient;
 using System;
 using System.Data;
 
-using static ReportManager.Data.Database.MaxigrafDataSet;
+using static ReportManager.Data.SAP.MaxigrafDataSet;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     internal class MaxigrafPlatesSettingsDatabaseAdapter : ICommonAdapter<MaxigrafPlateSetting>
     {

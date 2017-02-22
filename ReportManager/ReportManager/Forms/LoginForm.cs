@@ -5,7 +5,7 @@ using System.Management;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using ReportManager.Data.Settings;
-using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.SAP.ConcreteAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Core.Functional;
 

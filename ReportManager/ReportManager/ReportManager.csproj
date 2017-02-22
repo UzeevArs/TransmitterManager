@@ -222,8 +222,8 @@
     <Compile Include="Data\Extensions\ReportExtentions.cs" />
     <Compile Include="Data\Extensions\TypeExtension.cs" />
     <Compile Include="Data\SAP\ConcreteAdapters\SapResultDatabaseAdapter.cs" />
+    <Compile Include="Data\SAP\SapDataParcer.cs" />
     <Compile Include="Data\SAP\SapConnection.cs" />
-    <Compile Include="Data\SAP\SaveSapConnection.cs" />
     <Compile Include="Data\Settings\Settings.cs" />
     <Compile Include="Data\Database\IsupDataSet.cs">
       <DependentUpon>IsupDataSet.xsd</DependentUpon>
@@ -322,6 +322,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HipotDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MaxigrafIntegration\Converter.cs" />
     <Compile Include="MaxigrafIntegration\DataFilling.cs" />
     <Compile Include="MaxigrafIntegration\MaxiConnection.cs" />
@@ -403,6 +409,9 @@
     <EmbeddedResource Include="Forms\Stages\TransportListGenerateStageForm.resx">
       <DependentUpon>TransportListGenerateStageForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

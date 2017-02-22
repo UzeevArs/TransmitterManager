@@ -40,6 +40,7 @@ namespace ReportManager.Core.Stages
 
         public virtual void Dispose()
         {
+            CloseForm();
             StageStatusChanged?.Invoke(this, StageStatus.Disposed);
         }
     }

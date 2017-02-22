@@ -29,14 +29,14 @@ namespace ReportManager.Core.Functional
                 StatusChanged?.Invoke(this, false);
         }
 
-        public override void Start()
+        public async override void Start()
         {
-            Device.StartRead();
+            await Task.Run(() => Device.StartRead());
         }
 
-        public override void Stop()
+        public async override void Stop()
         {
-            Device.ToIdle();
+            await Task.Run(() => Device.ToIdle());
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using ReportManager.Data.Database;
+﻿using ReportManager.Data.SAP;
 
 namespace ReportManager.Forms.Stages
 {
@@ -31,8 +31,8 @@ namespace ReportManager.Forms.Stages
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.nifudaDataSet1 = new ReportManager.Data.Database.NifudaDataSet();
-            this.nifudaDataTableAdapter1 = new ReportManager.Data.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
+            this.nifudaDataSet1 = new ReportManager.Data.SAP.NifudaDataSet();
+            this.nifudaDataTableAdapter1 = new ReportManager.Data.SAP.NifudaDataSetTableAdapters.NifudaDataTableAdapter();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.snapDockManager1 = new DevExpress.Snap.Extensions.SnapDockManager(this.components);
@@ -129,7 +129,7 @@ namespace ReportManager.Forms.Stages
 
         #endregion
         private NifudaDataSet nifudaDataSet1;
-        private ReportManager.Data.Database.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter1;
+        private ReportManager.Data.SAP.NifudaDataSetTableAdapters.NifudaDataTableAdapter nifudaDataTableAdapter1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.Snap.Extensions.SnapDockManager snapDockManager1;

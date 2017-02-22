@@ -1,12 +1,12 @@
-﻿namespace ReportManager.Data.Database
+﻿namespace ReportManager.Data.SAP
 {
 }
 
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
 }
 
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
 
 
@@ -15,7 +15,7 @@ namespace ReportManager.Data.Database
     }
 }
 
-namespace ReportManager.Data.Database.ISUPDataTableAdapters
+namespace ReportManager.Data.SAP.ISUPDataTableAdapters
 {
 
 
@@ -24,7 +24,7 @@ namespace ReportManager.Data.Database.ISUPDataTableAdapters
     }
 }
 
-namespace ReportManager.Data.Database.ISUPDataTableAdapters
+namespace ReportManager.Data.SAP.ISUPDataTableAdapters
 {
 
 
@@ -32,7 +32,7 @@ namespace ReportManager.Data.Database.ISUPDataTableAdapters
     {
     }
 }
-namespace ReportManager.Data.Database
+namespace ReportManager.Data.SAP
 {
 
 
@@ -40,7 +40,7 @@ namespace ReportManager.Data.Database
     {
     }
 }
-namespace ReportManager.Data.Database {
+namespace ReportManager.Data.SAP {
     
     
     public partial class ISUPData {

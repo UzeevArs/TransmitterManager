@@ -1,4 +1,4 @@
-﻿namespace ReportManager.Data.Database
+﻿namespace ReportManager.Data.SAP
 {
 
 
@@ -7,7 +7,7 @@
     }
 }
 
-namespace ReportManager.Data.Database.NifudaDataSetTableAdapters
+namespace ReportManager.Data.SAP.NifudaDataSetTableAdapters
 {
     partial class NifudaDataTableAdapter
     {
@@ -18,7 +18,7 @@ namespace ReportManager.Data.Database.NifudaDataSetTableAdapters
     }
 }
 
-namespace ReportManager.Data.Database.NifudaDataSetTableAdapters {
+namespace ReportManager.Data.SAP.NifudaDataSetTableAdapters {
     
     
     public partial class NifudaDataTableAdapter {

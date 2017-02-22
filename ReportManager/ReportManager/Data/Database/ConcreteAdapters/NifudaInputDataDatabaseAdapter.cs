@@ -1,6 +1,6 @@
 ﻿using ReportManager.Data.AbstractAdapters;
 using ReportManager.Data.AbstractAdapters.Generic;
-using ReportManager.Data.Database.NifudaDataSetTableAdapters;
+using ReportManager.Data.SAP.NifudaDataSetTableAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Settings;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReportManager.Data.Database.ConcreteAdapters
+namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     class NifudaInputDataDatabaseAdapter : ICommonAdapter<InputData>, IExtraInputDataAdapter<InputData>, ISelectBySerialAdapter<InputData>
     {
