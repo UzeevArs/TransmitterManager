@@ -7,18 +7,18 @@ namespace ReportManager.Data.SAP
 {
     internal class SapConnection
     {
-        public static IEnumerable<(string, string)> GetData(string OrderNo)
+        public static IEnumerable<(string, string)> GetData(string LinkageNo)
         {
             var destination = RfcDestinationManager.GetDestination("DEV");
             var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
-            return SapDataParcer.Parce(destination, function, OrderNo);
+            return SapDataParcer.Parce(destination, function, LinkageNo);
         }
 
-        public static async Task<IEnumerable<(string, string)>> GetDataAsync(string OrderNo)
+        public static async Task<IEnumerable<(string, string)>> GetDataAsync(string LinkageNo)
         {
             var destination = RfcDestinationManager.GetDestination("DEV");
             var function = destination.Repository.CreateFunction("Z_GPP_PRODUCTION_ORDER_IF");
-            return await SapDataParcer.ParceAsync(destination, function, OrderNo);
+            return await SapDataParcer.ParceAsync(destination, function, LinkageNo);
         }
     }
 }
