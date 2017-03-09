@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ReportManager.Data.SAP {
+namespace ReportManager.Data.Database {
     
     
     /// <summary>
@@ -2705,7 +2705,7 @@ namespace ReportManager.Data.SAP {
         }
     }
 }
-namespace ReportManager.Data.SAP.NifudaDataSetTableAdapters {
+namespace ReportManager.Data.Database.NifudaDataSetTableAdapters {
     
     
     /// <summary>

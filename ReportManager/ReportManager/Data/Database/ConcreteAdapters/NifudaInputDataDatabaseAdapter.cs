@@ -1,6 +1,7 @@
 ﻿using ReportManager.Data.AbstractAdapters;
 using ReportManager.Data.AbstractAdapters.Generic;
-using ReportManager.Data.SAP.NifudaDataSetTableAdapters;
+using ReportManager.Data.Database;
+using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Settings;
@@ -151,7 +152,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             }
         }
 
-        public IEnumerable<InputData> SelectDataByProdNO(string ProdNO, object state = null)
+        public IEnumerable<InputData> SelectDataByProdNO(string ProdNo, object state = null)
         {
             using (var adapter = new NifudaDataTableAdapter
             {
@@ -161,13 +162,28 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
                     yield break;
 
-                var dataTable = adapter.GetDataByProdNO(ProdNO);
+                var dataTable = adapter.GetDataByProdNO(ProdNo);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
                                                                       NifudaDataSet.NifudaDataTableRow>())
                     yield return obj;
             }
         }
+        public IEnumerable<InputData> SelectDataByIndexNo(string IndexNo, object state = null)
+        {
+            using (var adapter = new NifudaDataTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    yield break;
 
+                var dataTable = adapter.GetDataByIndex(IndexNo);
+                foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
+                                                                      NifudaDataSet.NifudaDataTableRow>())
+                    yield return obj;
+            }
+        }
 
         public IEnumerable<InputData> SelectNotGeneratedData(object state = null)
         {

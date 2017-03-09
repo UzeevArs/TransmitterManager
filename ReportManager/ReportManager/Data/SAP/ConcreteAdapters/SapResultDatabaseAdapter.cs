@@ -7,9 +7,9 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
 {
     class SapResultDatabaseAdapter : ISelectBySerialAdapter<InputData>
     {
-        public IEnumerable<InputData> SelectBySerial(string serial, object state = null)
+        public IEnumerable<InputData> SelectBySerial(string ProdNo, object state = null)
         {
-            var data = SapConnection.GetData(serial);
+            var data = SapConnection.GetData(ProdNo);
             
             foreach (var obj in data.SapAdaptWithSameProperties<InputData>())
                 yield return obj;

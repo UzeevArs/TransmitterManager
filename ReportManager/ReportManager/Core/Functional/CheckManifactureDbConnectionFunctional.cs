@@ -3,8 +3,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading;
 using System.Xml.Serialization;
-using ReportManager.Data.SAP.NifudaDataSetTableAdapters;
+//using ReportManager.Data.SAP.NifudaDataSetTableAdapters;
 using ReportManager.Data.Settings;
+using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 
 namespace ReportManager.Core.Functional
 {

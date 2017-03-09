@@ -7,9 +7,9 @@ namespace ReportManager.Data.SAP
 {
     internal class SapDataParcer
     {
-        public static IEnumerable<(string, string)> Parce(RfcDestination destination, IRfcFunction function, string LinkageNo)
+        public static IEnumerable<(string, string)> Parce(RfcDestination destination, IRfcFunction function, string ProdNo)
         {
-            function.SetValue("I_LINKAGE_NO", LinkageNo);
+            function.SetValue("I_ORDER_NO", ProdNo);
             function.Invoke(destination);
 
             return function.GetTable("E_PROD_ORDERS")
@@ -18,11 +18,11 @@ namespace ReportManager.Data.SAP
                            .Select(item => (item.Metadata.Name, item.GetString()));
         }
 
-        public static async Task<IEnumerable<(string, string)>> ParceAsync(RfcDestination destination, IRfcFunction function, string LinkageNo)
+        public static async Task<IEnumerable<(string, string)>> ParceAsync(RfcDestination destination, IRfcFunction function, string ProdNo)
         {
             return await Task.Run(() =>
             {
-                function.SetValue("I_LINKAGE_NO", LinkageNo);
+                function.SetValue("I_ORDER_NO", ProdNo);
                 function.Invoke(destination);
 
                 return function.GetTable("E_PROD_ORDERS")

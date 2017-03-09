@@ -16,7 +16,7 @@ namespace ReportManager.Core
         private enum InputDataStates
         {
             Initial,
-            NifudaRequest, NifudaCheckData, NifudaConnectionError,
+            NifudaRequestByIndexNo, NifudaRequestByProdNo, NifudaConnectionError,
             SapRequest, SapCheckData, SapErrorConnection, SapErrorNoData,
             NifudaInsert, NifudaInsertCheckData, NifudaInsertError,
             SuccessNifuda, SuccessSap
@@ -25,8 +25,8 @@ namespace ReportManager.Core
         private enum InputDataTriggers
         {
             Start,
+            ToNifudaRequestByProdNo,
             ToErrorNifudaConnection,
-            ToCheckNifudaData,
             Reset,
             ToSapRequest,
             ToSuccessNifuda,
@@ -50,21 +50,23 @@ namespace ReportManager.Core
             SettingsContext.SettingsLoadingEvent += SettingsContextOnSettingsLoadingEvent;
 
             InputDataStateMachine.Configure(InputDataStates.Initial)
-                                 .Permit(InputDataTriggers.Start, InputDataStates.NifudaRequest);
+                                 .Permit(InputDataTriggers.Start, InputDataStates.NifudaRequestByIndexNo);
 
-            InputDataStateMachine.Configure(InputDataStates.NifudaRequest)
-                                 .OnEntry(NifudaRequest)
-                                 .Permit(InputDataTriggers.ToCheckNifudaData, InputDataStates.NifudaCheckData)
+            InputDataStateMachine.Configure(InputDataStates.NifudaRequestByIndexNo)
+                                 .OnEntry(NifudaRequestByIndexNo)
+                                 .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
+                                 .Permit(InputDataTriggers.ToNifudaRequestByProdNo, InputDataStates.NifudaRequestByProdNo)
+                                 .Permit(InputDataTriggers.ToErrorNifudaConnection, InputDataStates.NifudaConnectionError);
+
+            InputDataStateMachine.Configure(InputDataStates.NifudaRequestByProdNo)
+                                 .OnEntry(NifudaRequestByProdNo)
+                                 .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
+                                 .Permit(InputDataTriggers.ToSapRequest, InputDataStates.SapRequest)
                                  .Permit(InputDataTriggers.ToErrorNifudaConnection, InputDataStates.NifudaConnectionError);
 
             InputDataStateMachine.Configure(InputDataStates.NifudaConnectionError)
                                  .OnEntry(NifudaConnectionError)
                                  .Permit(InputDataTriggers.Reset, InputDataStates.Initial);
-
-            InputDataStateMachine.Configure(InputDataStates.NifudaCheckData)
-                                 .OnEntry(NifudaCheckData)
-                                 .Permit(InputDataTriggers.ToSapRequest, InputDataStates.SapRequest)
-                                 .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda);
 
             InputDataStateMachine.Configure(InputDataStates.SuccessNifuda)
                                  .OnEntry(SuccessNifuda)
@@ -153,23 +155,26 @@ namespace ReportManager.Core
         {
             await Task.Run(() =>
             {
-                MsCode = msCode;
+                RequestNo = msCode;
                 InputDataStateMachine.Fire(InputDataTriggers.Start);
             });
         }
 
         #region InputDataStateMachine methods
         private string Error { get; set; } = "";
-        private string MsCode { get; set; } = "";
+        private string RequestNo { get; set; } = "";
         private IEnumerable<InputData> FromNifudaRequest { get; set; }
         private IEnumerable<InputData> FromSapRequest { get; set; }
 
-        private void NifudaRequest()
+        private void NifudaRequestByIndexNo()
         {
             try
             {
-                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(MsCode).ToList();
-                InputDataStateMachine.Fire(InputDataTriggers.ToCheckNifudaData);
+                FromNifudaRequest = nifudaDataAdapter.SelectDataByIndexNo(RequestNo).ToList();
+                if (FromNifudaRequest.Count() == 0)
+                    InputDataStateMachine.Fire(InputDataTriggers.ToNifudaRequestByProdNo);
+                else
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
             }
             catch (Exception ex)
             {
@@ -178,19 +183,36 @@ namespace ReportManager.Core
             }
         }
 
+        private void NifudaRequestByProdNo()
+        {
+            try
+            {
+                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(RequestNo).ToList();
+                if (FromNifudaRequest.Count() == 0)
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
+                else
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
+            }
+            catch (Exception ex)
+            {
+                InputDataStateMachine.Fire(InputDataTriggers.ToErrorNifudaConnection);
+                Error = ex.Message;
+            }
+        }
+        
         private void NifudaConnectionError()
         {
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorNifudaConnection, Error, null));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
 
-        private void NifudaCheckData()
-        {
-            if (FromNifudaRequest.Count() == 0)
-                InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
-            else
-                InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
-        }
+        //private void NifudaCheckData()
+        //{
+        //    if (FromNifudaRequest.Count() == 0)
+        //        InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
+        //    else
+        //        InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
+        //}
 
         private void SuccessNifuda()
         {
@@ -203,7 +225,7 @@ namespace ReportManager.Core
         {
             try
             {
-                FromSapRequest = sapDataAdapter.SelectBySerial(MsCode);
+                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo);
                 InputDataStateMachine.Fire(InputDataTriggers.ToSapCheckData);
             }
             catch (Exception ex)

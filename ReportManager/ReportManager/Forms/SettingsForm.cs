@@ -13,7 +13,7 @@ using DevExpress.XtraReports.UI;
 using ReportManager.Core.Functional;
 using ReportManager.Core.Stages;
 using ReportManager.Data.SAP.ISUPDataTableAdapters;
-using ReportManager.Data.SAP.NifudaDataSetTableAdapters;
+using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.Settings;
 using ReportManager.Reports;
 
