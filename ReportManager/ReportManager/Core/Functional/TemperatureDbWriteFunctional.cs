@@ -69,7 +69,11 @@ namespace ReportManager.Core.Functional
                     while (DateTime.Now.Second != 0)
                         Thread.Sleep(TimeSpan.FromMilliseconds(400));
 
-                    new TemperatureFrameDatabaseAdapter().Insert(GetFromQueues());
+                    try
+                    {
+                        new TemperatureFrameDatabaseAdapter().Insert(GetFromQueues());
+                    }
+                    catch { }
                     OnInsert?.Invoke(this, EventArgs.Empty);
                     Thread.Sleep(TimeSpan.FromSeconds(1));
                 }

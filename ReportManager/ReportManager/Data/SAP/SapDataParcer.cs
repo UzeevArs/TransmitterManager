@@ -9,7 +9,7 @@ namespace ReportManager.Data.SAP
     {
         public static IEnumerable<(string, string)> Parce(RfcDestination destination, IRfcFunction function, string ProdNo)
         {
-            function.SetValue("I_ORDER_NO", ProdNo);
+            function.SetValue("I_PROD_ORD_NO", ProdNo);
             function.Invoke(destination);
 
             return function.GetTable("E_PROD_ORDERS")
@@ -22,7 +22,7 @@ namespace ReportManager.Data.SAP
         {
             return await Task.Run(() =>
             {
-                function.SetValue("I_ORDER_NO", ProdNo);
+                function.SetValue("I_PROD_ORD_NO", ProdNo);
                 function.Invoke(destination);
 
                 return function.GetTable("E_PROD_ORDERS")

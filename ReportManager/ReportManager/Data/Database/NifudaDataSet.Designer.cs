@@ -3098,8 +3098,40 @@ WHERE                       (INDEX_NO = N'') OR
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT                      SERIAL_NO\r\nFROM                         NIFUDA\r\nWHERE" +
-                "                       (INDEX_NO = @INDEX_NO)";
+            this._commandCollection[3].CommandText = "SELECT        SERIAL_NO AS Expr1, MS_CODE AS Expr2, MODEL AS Expr3, PROD_NO AS Ex" +
+                "pr4, PROD_NO_SFIX AS Expr5, MS_CODE, MODEL, PROD_NO, PROD_NO_SFIX, LINE_NO, CRP_" +
+                "GR_NO, PROD_CAREER, \r\n                         INDEX_NO, TEST_CERT_SIGN, DOC_LAN" +
+                "G_TYPE, INST_FINISH_D, TEST_CERT_YN, END_USER_CUST_N_J, ORDER_NO, ITEM_NO, PROD_" +
+                "ITEM_REV_NO, PROD_INST_REV_NO, COMP_NO, \r\n                         START_SCHDULE" +
+                "_D, FINISH_SCHDULE_D, START_NO, SERIAL_NO, ALLOWANCE_SIGN, PROD_N_J, PROD_N_E, T" +
+                "OKUCHU_SPEC_SIGN, SAP_LINKAGE_NO, RANGE_INST_SIGN_500, ORD_INST_MAX_500, \r\n     " +
+                "                    ORD_INST_MIN_500, UNIT_500, FEATURES_500, RANGE_INST_SIGN_50" +
+                "2, ORD_INST_MAX_502, ORD_INST_MIN_502, UNIT_502, ORD_INST_CONTECT1_W69, ORD_INST" +
+                "_CONTECT1_X72, \r\n                         ORD_INST_CONTECT1_X91, ORD_INST_CONTEC" +
+                "T1_Z30, TAG_NO_525, XJ_NO, ORD_INST_CONTECT1_H46, ORD_INST_CONTECT1_X92, ORD_INS" +
+                "T_CONTECT1_Y28, ORD_INST_CONTECT1_W35, \r\n                         ORD_INST_CONTE" +
+                "CT1_X78, ORD_INST_CONTECT1_X94, CAP_NO, REQUEST_D, FATOR_500, ORD_INST_CONTECT1_" +
+                "T63, ORD_INST_CONTECT1_W24, ORD_INST_CONTECT1_W25, LINE_NO AS Expr6, \r\n         " +
+                "                CRP_GR_NO AS Expr7, PROD_CAREER AS Expr8, INDEX_NO AS Expr9, TES" +
+                "T_CERT_SIGN AS Expr10, DOC_LANG_TYPE AS Expr11, INST_FINISH_D AS Expr12, TEST_CE" +
+                "RT_YN AS Expr13, \r\n                         END_USER_CUST_N_J AS Expr14, ORDER_N" +
+                "O AS Expr15, ITEM_NO AS Expr16, PROD_INST_REV_NO AS Expr17, PROD_ITEM_REV_NO AS " +
+                "Expr18, COMP_NO AS Expr19, START_SCHDULE_D AS Expr20, \r\n                        " +
+                " FINISH_SCHDULE_D AS Expr21, START_NO AS Expr22, ALLOWANCE_SIGN AS Expr23, PROD_" +
+                "N_J AS Expr24, PROD_N_E AS Expr25, TOKUCHU_SPEC_SIGN AS Expr26, SAP_LINKAGE_NO A" +
+                "S Expr27, \r\n                         RANGE_INST_SIGN_500 AS Expr28, ORD_INST_MAX" +
+                "_500 AS Expr29, ORD_INST_MIN_500 AS Expr30, UNIT_500 AS Expr31, FEATURES_500 AS " +
+                "Expr32, RANGE_INST_SIGN_502 AS Expr33, \r\n                         ORD_INST_MAX_5" +
+                "02 AS Expr34, ORD_INST_MIN_502 AS Expr35, ORD_INST_CONTECT1_W69 AS Expr36, UNIT_" +
+                "502 AS Expr37, ORD_INST_CONTECT1_X72 AS Expr38, ORD_INST_CONTECT1_X91 AS Expr39," +
+                " \r\n                         ORD_INST_CONTECT1_Z30 AS Expr40, TAG_NO_525 AS Expr4" +
+                "1, XJ_NO AS Expr42, ORD_INST_CONTECT1_H46 AS Expr43, ORD_INST_CONTECT1_X92 AS Ex" +
+                "pr44, ORD_INST_CONTECT1_Y28 AS Expr45, \r\n                         ORD_INST_CONTE" +
+                "CT1_W35 AS Expr46, ORD_INST_CONTECT1_X78 AS Expr47, ORD_INST_CONTECT1_X94 AS Exp" +
+                "r48, CAP_NO AS Expr49, REQUEST_D AS Expr50, FATOR_500 AS Expr51, \r\n             " +
+                "            ORD_INST_CONTECT1_T63 AS Expr52, ORD_INST_CONTECT1_W24 AS Expr53, OR" +
+                "D_INST_CONTECT1_W25 AS Expr54\r\nFROM            NIFUDA\r\nWHERE        (INDEX_NO = " +
+                "@INDEX_NO)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INDEX_NO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "INDEX_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();

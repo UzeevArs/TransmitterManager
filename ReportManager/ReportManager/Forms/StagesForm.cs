@@ -420,7 +420,7 @@ namespace ReportManager.Forms
         public delegate void KeyHandler(object sender, Keys key, string keyChar);
         public event KeyHandler EventKeyHandler;
 
-        private int _maxNumCount = 10;
+        private IEnumerable<int> _maxNumCount = Enumerable.Range(10, 13);
         private int _currentNumCount = 0;
 
         private string _tempString = "";
@@ -439,7 +439,7 @@ namespace ReportManager.Forms
             }
             else if (keyData == Keys.Enter)
             {
-                if (_currentNumCount == _maxNumCount)
+                if (_maxNumCount.Contains(_currentNumCount))
                 {
                     GenerateEvent(keyData, _tempString);
                     _tempString = "";
