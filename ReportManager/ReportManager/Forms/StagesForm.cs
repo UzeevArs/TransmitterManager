@@ -158,27 +158,27 @@ namespace ReportManager.Forms
                 switch (status)
                 {
                     case DeviceModelStatus.ErrorNifudaConnection:
-                        lblInputDataStatus.Caption = "Произошла ошибка. Проверьте подключение к Nifuda БД";
+                        lblInputDataStatus.Caption = $"Произошла ошибка. Проверьте подключение к Nifuda БД";
                         OnError();
                         break;
                     case DeviceModelStatus.ErrorSapConnection:
-                        lblInputDataStatus.Caption = "Произошла ошибка. Проверьте подключение к SAP";
+                        lblInputDataStatus.Caption = $"Произошла ошибка. Проверьте подключение к SAP";
                         OnError();
                         break;
                     case DeviceModelStatus.ErrorSapNoData:
-                        lblInputDataStatus.Caption = "Произошла ошибка. Введённый серийный номер не найден в SAP";
+                        lblInputDataStatus.Caption = $"Произошла ошибка. Введённый серийный номер не найден в SAP";
                         OnError();
                         break;
                     case DeviceModelStatus.NifudaInsertError:
-                        lblInputDataStatus.Caption = "Произошла ошибка. Копирование данных в Nifuda БД произошло с ошибкой.";
+                        lblInputDataStatus.Caption = $"Произошла ошибка. Копирование данных в Nifuda БД произошло с ошибкой";
                         OnError();
                         break;
                     case DeviceModelStatus.SuccessNifuda:
-                        lblInputDataStatus.Caption = "Данные успешно загружены из Nifuda БД";
+                        lblInputDataStatus.Caption = $"Данные успешно загружены из Nifuda БД";
                         OnSuccess();
                         break;
                     case DeviceModelStatus.SuccessSap:
-                        lblInputDataStatus.Caption = "Данные успешно загружены из SAP и скопированы в Nifuda";
+                        lblInputDataStatus.Caption = $"Данные успешно загружены из SAP и скопированы в Nifuda";
                         OnSuccess();
                         break;
                 }

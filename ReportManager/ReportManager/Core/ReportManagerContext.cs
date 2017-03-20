@@ -16,7 +16,7 @@ namespace ReportManager.Core
         private enum InputDataStates
         {
             Initial,
-            NifudaRequestByIndexNo, NifudaRequestByProdNo, NifudaConnectionError,
+            NifudaRequestByIndexNo, NifudaConnectionError,
             SapRequest, SapCheckData, SapErrorConnection, SapErrorNoData,
             NifudaInsert, NifudaInsertCheckData, NifudaInsertError,
             SuccessNifuda, SuccessSap
@@ -25,7 +25,6 @@ namespace ReportManager.Core
         private enum InputDataTriggers
         {
             Start,
-            ToNifudaRequestByProdNo,
             ToErrorNifudaConnection,
             Reset,
             ToSapRequest,
@@ -54,12 +53,6 @@ namespace ReportManager.Core
 
             InputDataStateMachine.Configure(InputDataStates.NifudaRequestByIndexNo)
                                  .OnEntry(NifudaRequestByIndexNo)
-                                 .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
-                                 .Permit(InputDataTriggers.ToNifudaRequestByProdNo, InputDataStates.NifudaRequestByProdNo)
-                                 .Permit(InputDataTriggers.ToErrorNifudaConnection, InputDataStates.NifudaConnectionError);
-
-            InputDataStateMachine.Configure(InputDataStates.NifudaRequestByProdNo)
-                                 .OnEntry(NifudaRequestByProdNo)
                                  .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
                                  .Permit(InputDataTriggers.ToSapRequest, InputDataStates.SapRequest)
                                  .Permit(InputDataTriggers.ToErrorNifudaConnection, InputDataStates.NifudaConnectionError);
@@ -172,23 +165,6 @@ namespace ReportManager.Core
             {
                 FromNifudaRequest = nifudaDataAdapter.SelectDataByIndexNo(RequestNo).ToList();
                 if (FromNifudaRequest.Count() == 0)
-                    InputDataStateMachine.Fire(InputDataTriggers.ToNifudaRequestByProdNo);
-                else
-                    InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
-            }
-            catch (Exception ex)
-            {
-                InputDataStateMachine.Fire(InputDataTriggers.ToErrorNifudaConnection);
-                Error = ex.Message;
-            }
-        }
-
-        private void NifudaRequestByProdNo()
-        {
-            try
-            {
-                FromNifudaRequest = nifudaDataAdapter.SelectDataByProdNO(RequestNo).ToList();
-                if (FromNifudaRequest.Count() == 0)
                     InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
                 else
                     InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
@@ -199,7 +175,7 @@ namespace ReportManager.Core
                 Error = ex.Message;
             }
         }
-        
+                      
         private void NifudaConnectionError()
         {
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorNifudaConnection, Error, null));
@@ -217,7 +193,7 @@ namespace ReportManager.Core
         private void SuccessNifuda()
         {
             CurrentInput = FromNifudaRequest.First();
-            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.SuccessNifuda, "", FromNifudaRequest.First()));
+            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.SuccessNifuda, RequestNo , FromNifudaRequest.First()));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
 
@@ -225,7 +201,7 @@ namespace ReportManager.Core
         {
             try
             {
-                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo);
+                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo).ToList();
                 InputDataStateMachine.Fire(InputDataTriggers.ToSapCheckData);
             }
             catch (Exception ex)
@@ -260,7 +236,7 @@ namespace ReportManager.Core
 
         private void SapErrorNoData()
         {
-            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorSapNoData, "", null));
+            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorSapNoData, RequestNo, null));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
 

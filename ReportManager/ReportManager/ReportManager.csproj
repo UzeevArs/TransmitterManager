@@ -169,6 +169,7 @@
     <Compile Include="Core\Stages\TemperatureStage.cs" />
     <Compile Include="Core\Utility\EnumUtility.cs" />
     <Compile Include="Core\Utility\FolderUtility.cs" />
+    <Compile Include="Data\AbstractAdapters\ConnectionException.cs" />
     <Compile Include="Data\AbstractAdapters\IExtraInputDataAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ISelectBySerialAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ICommonAdapter.cs" />
