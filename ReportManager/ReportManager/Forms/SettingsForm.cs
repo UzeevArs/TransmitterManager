@@ -12,7 +12,6 @@ using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraReports.UI;
 using ReportManager.Core.Functional;
 using ReportManager.Core.Stages;
-using ReportManager.Data.SAP.ISUPDataTableAdapters;
 using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.Settings;
 using ReportManager.Reports;
@@ -45,7 +44,6 @@ namespace ReportManager.Forms
 
         private void LoadSettings()
         {
-            edtIsupString.Text = SettingsContext.GlobalSettings.IsupConnectionString;
             edtManufString.Text = SettingsContext.GlobalSettings.NifudaConnectionString;
             edtUpdateTimeout.Value = SettingsContext.GlobalSettings.UpdateTimeout;
             btnReportSavePath.Text = SettingsContext.GlobalSettings.ReportSavePath;
@@ -53,7 +51,6 @@ namespace ReportManager.Forms
 
         private (SettingsStatus status, string message) SaveSettings()
         {
-            SettingsContext.GlobalSettings.IsupConnectionString = edtIsupString.Text;
             SettingsContext.GlobalSettings.NifudaConnectionString = edtManufString.Text;
             SettingsContext.GlobalSettings.UpdateTimeout = (uint) edtUpdateTimeout.Value;
             SettingsContext.GlobalSettings.ReportSavePath = btnReportSavePath.Text;
@@ -71,32 +68,6 @@ namespace ReportManager.Forms
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void BtnTryConnectIsup_Click(object sender, EventArgs e)
-        {
-            btnOk.Enabled = false;
-            btnCancel.Enabled = false;
-            grpMainSettings.Enabled = false;
-            prgsDbConnect.Visible = true;
-
-            new Thread(delegate()
-            {
-                var iSupNifudaDataTableAdapter = new ISUPNifudaDataTableAdapter
-                {
-                    Connection = { ConnectionString = edtIsupString.Text }
-                };
-
-                try
-                {
-                    iSupNifudaDataTableAdapter.Connection.Open();
-                    SuccessConnection();
-                }
-                catch (Exception s)
-                {
-                    ErrorConnection(s.Message);
-                }
-            }).Start();
         }
 
         private void BtnTryConnectManif_Click(object sender, EventArgs e)

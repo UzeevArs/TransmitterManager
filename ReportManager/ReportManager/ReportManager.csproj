@@ -173,17 +173,16 @@
     <Compile Include="Data\AbstractAdapters\IExtraInputDataAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ISelectBySerialAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ICommonAdapter.cs" />
+    <Compile Include="Data\AbstractAdapters\Misc.cs" />
     <Compile Include="Data\Database\CalibrationDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Core\Functional\CheckIsupDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\CheckManifactureDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\Functional.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\CalibrationResultsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\DeviceTestResultsDatabaseAdapter.cs" />
-    <Compile Include="Data\Database\ConcreteAdapters\IsupInputDataDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesSettingsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\NifudaInputDataDatabaseAdapter.cs" />
@@ -226,14 +225,6 @@
     <Compile Include="Data\SAP\SapDataParcer.cs" />
     <Compile Include="Data\SAP\SapConnection.cs" />
     <Compile Include="Data\Settings\Settings.cs" />
-    <Compile Include="Data\Database\IsupDataSet.cs">
-      <DependentUpon>IsupDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Data\Database\IsupDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IsupDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Data\Database\NifudaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -461,17 +452,6 @@
     </None>
     <None Include="Data\Database\HipotDataSet.xss">
       <DependentUpon>HipotDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\Database\IsupDataSet.xsc">
-      <DependentUpon>IsupDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Data\Database\IsupDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IsupDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Data\Database\IsupDataSet.xss">
-      <DependentUpon>IsupDataSet.xsd</DependentUpon>
     </None>
     <None Include="Data\Database\MaxigrafDataSet.xsc">
       <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>

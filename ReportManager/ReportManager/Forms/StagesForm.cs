@@ -189,16 +189,7 @@ namespace ReportManager.Forms
         {
             foreach (var functional in SettingsContext.CurrentUser.UserExtraFunction)
             {
-                if (functional.GetType() == typeof(CheckIsupDbConnectionFunctional))
-                {
-                    (functional as CheckIsupDbConnectionFunctional).StateChange += IsupDbConnectionOnStateChange;
-                    (functional as CheckIsupDbConnectionFunctional).StatusChanged += (sender, status) =>
-                    {
-                        if (!status) { lblIsupConnectionStatus.Caption = ""; lblIsupConnectionStatus.Visibility = BarItemVisibility.Never; }
-                        else { lblIsupConnectionStatus.Visibility = BarItemVisibility.Always; }
-                    };
-                }
-                else if (functional.GetType() == typeof(CheckManifactureDbConnectionFunctional))
+                if (functional.GetType() == typeof(CheckManifactureDbConnectionFunctional))
                 {
                     (functional as CheckManifactureDbConnectionFunctional).StateChange +=
                         ManifactureDbConnectionOnStateChange;

@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Globalization;
+using ReportManager.Data.AbstractAdapters;
 
 namespace ReportManager.Forms.Stages.MaxigraphStageForm
 {
@@ -31,11 +32,14 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             InitializeComponent();
             _memo = GetInnerTextBox(memoLog);
             _inputData = ReportManagerContext.GetInstance().CurrentInput;
-            SetDataSource();
         }
 
         private async void SetDataSource()
         {
+            var results = new NifudaInputDataDatabaseAdapter()
+                .SelectFromProcedure(_plate.StoredProcedureName, _plate.PlateID, _inputData.SERIAL_NO)
+                .ToList();
+
             var table = new List<GU1_Table> {
                 new GU1_Table
                 {
@@ -57,7 +61,7 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             .Select(el => new Pair { Item1 = (((string, string))el.Value).Item1, Item2 = (((string, string))el.Value).Item2 } )
             .ToList();
 
-            gridControl1.DataSource = table;
+            gridControl1.DataSource = results;
             gridControl1.RefreshDataSource();
 
             await Task.Run(() =>
@@ -81,16 +85,15 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
         private MaxigrafPlate MatchPlate(string msCode)
         {
-            //var plates = (new MaxigrafPlatesDatabaseAdapter()).Select();
-            //return plates.FirstOrDefault(p => Regex.Match(msCode, p.Regex).Success);
             var plates = (new MaxigrafPlatesDatabaseAdapter()).Select();
-            return plates.FirstOrDefault(p => Regex.Match("GU1", p.Regex).Success);
+            return plates.FirstOrDefault(p => Regex.Match(msCode, p.Regex).Success);
         }
 
         private void MaxigrafStageForm_Shown(object sender, EventArgs e)
         {
             ReportManagerContext.GetInstance().InputDataCreatedStatus += OnDeviceModelCreatedStatus;
             if (!FindPlate()) return;
+            SetDataSource();
             tbSerial.Text = _inputData.INDEX_NO;
             tbPlateName.Text = _plate.PlateName;
         }
@@ -204,7 +207,7 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             if (!FindPlate()) return;
 
             if (status != DeviceModelStatus.SuccessNifuda
-                   || status != DeviceModelStatus.SuccessSap)
+                || status != DeviceModelStatus.SuccessSap)
             {
                 tbSerial.Text = _inputData.INDEX_NO;
                 tbPlateName.Text = _plate.PlateName;
@@ -306,13 +309,6 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
         {
             return editor?.Controls.OfType<TextBox>().FirstOrDefault();
         }
-    }
-
-    internal class Pair
-    {
-        public string Item1 { get; set; }
-        public string Item2 { get; set; }
-
     }
 
     internal class GU1_Table

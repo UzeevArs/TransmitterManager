@@ -2,14 +2,13 @@
 using System.Linq;
 using System.Collections.Generic;
 using ReportManager.Data.DataModel;
-using ReportManager.Data.SAP.MaxigrafDataSetTableAdapters;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.Settings;
 using System.Data.SqlClient;
 using System;
 using System.Data;
-
-using static ReportManager.Data.SAP.MaxigrafDataSet;
+using ReportManager.Data.Database.MaxigrafDataSetTableAdapters;
+using static ReportManager.Data.Database.MaxigrafDataSet;
 
 namespace ReportManager.Data.SAP.ConcreteAdapters
 {

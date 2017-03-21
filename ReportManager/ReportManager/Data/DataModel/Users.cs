@@ -21,10 +21,9 @@ namespace ReportManager.Data.DataModel
     public enum UserExtraFunc : long
     {
         None                                        = 0x0,
-        CheckIsupDbConnectionFunctional             = 0x1,
-        CheckManifactureDbConnectionFunctional      = 0x2,
-        TemperatureDbWriteFunctional                = 0x4,
-        TempteratureDeviceFunctional                = 0x8
+        CheckManifactureDbConnectionFunctional      = 0x1,
+        TemperatureDbWriteFunctional                = 0x2,
+        TempteratureDeviceFunctional                = 0x4
     }
 
     public class User
@@ -57,7 +56,7 @@ namespace ReportManager.Data.DataModel
             {
                 if (_functions != null) return _functions;
 
-                var namesp = typeof(CheckIsupDbConnectionFunctional).Namespace;
+                var namesp = typeof(CheckManifactureDbConnectionFunctional).Namespace;
                 _functions = new List<Functional>();
                 _functions.AddRange(Enum.GetNames(typeof(UserExtraFunc))
                           .Where(en => en != "None" && UserExtraFuncMask.IsSet((long)Enum.Parse(typeof(UserExtraFunc), en)))

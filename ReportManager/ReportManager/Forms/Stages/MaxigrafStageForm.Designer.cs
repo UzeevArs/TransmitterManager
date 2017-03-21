@@ -76,6 +76,7 @@
             // 
             this.progressPanel.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.progressPanel.Appearance.Options.UseBackColor = true;
+            this.progressPanel.BarAnimationElementThickness = 2;
             this.progressPanel.Caption = "Пожалуйста, подождите";
             this.progressPanel.Description = "Идёт подключение к Maxigraph";
             this.progressPanel.Location = new System.Drawing.Point(8, 53);

@@ -34,6 +34,35 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             }
         }
 
+        public IEnumerable<Pair> SelectFromProcedure(string procedureName, int plateId, string serialNum)
+        {
+            using (var adapter = new NifudaDataTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    yield break;
+
+                using (var command = new SqlCommand(procedureName, adapter.Connection)
+                {
+                    CommandType = CommandType.StoredProcedure
+                })
+                {
+                    command.Parameters.Add(new SqlParameter("@plateID", plateId.ToString()));
+                    command.Parameters.Add(new SqlParameter("@sn", serialNum));
+
+                    using (SqlDataReader rdr = command.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            yield return new Pair { Item1 = rdr["Object_path"].ToString() , Item2 = rdr["Value"].ToString() };
+                        }
+                    }
+                }
+            }
+        }
+
         public (Result, string) Insert(IEnumerable<InputData> data, object state = null)
         {
             using (var adapter = new NifudaDataTableAdapter

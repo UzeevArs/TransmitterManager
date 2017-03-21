@@ -8,8 +8,6 @@ namespace ReportManager.Data.Settings
     {
         public string NifudaConnectionString { get; set; }
 
-        public string IsupConnectionString { get; set; }
-
         public string ReportSavePath { get; set; }
 
         public uint UpdateTimeout { get; set; }

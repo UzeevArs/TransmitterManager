@@ -74,7 +74,6 @@ namespace ReportManager.Data.Settings
         {
             GlobalSettings = new Settings
             {
-                IsupConnectionString = "Data Source=10.26.0.35;Initial Catalog=yru_v2;Persist Security Info=True;User ID=yru_operator;Password=yru_operator",
                 NifudaConnectionString = "Data Source=HIS0555\\;Initial Catalog=YruPCIassembling;User ID=YruPCItestUser; Password=YruPCItestUser",
                 ReportSavePath = "C:\\",
                 UpdateTimeout = 1000,
