@@ -22,7 +22,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetDataBy();
                 foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlateSetting,
@@ -39,7 +39,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetData(plateId);
                 foreach (var obj in dataTable.AdaptWithSameProperties<MaxigrafPlateSetting,

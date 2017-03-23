@@ -24,7 +24,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetData();
                 foreach (var obj in dataTable.AdaptWithSameProperties<CalibrationResults,
@@ -41,7 +41,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetDataBy(serial);
                 foreach (var obj in dataTable.AdaptWithSameProperties<CalibrationResults,

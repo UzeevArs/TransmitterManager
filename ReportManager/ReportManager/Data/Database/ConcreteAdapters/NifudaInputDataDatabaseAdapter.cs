@@ -25,7 +25,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetData();
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
@@ -42,7 +42,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 using (var command = new SqlCommand(procedureName, adapter.Connection)
                 {
@@ -155,7 +155,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetDataBySerial(serial);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
@@ -172,7 +172,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetDataByIndex(index);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
@@ -189,7 +189,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetDataByProdNO(ProdNo);
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
@@ -222,7 +222,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = adapter.GetNotGeneratedData();
                 foreach (var obj in dataTable.AdaptWithSameProperties<InputData,
@@ -239,7 +239,7 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
             })
             {
                 if (!SafeCheck.IsValidConnection(adapter.Connection))
-                    yield break;
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
 
                 var dataTable = new NifudaDataSet.NifudaDataTableDataTable();
                 adapter.FillByEmptyBarCode(new NifudaDataSet.NifudaDataTableDataTable(dataTable));

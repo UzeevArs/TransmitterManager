@@ -201,22 +201,25 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
 
         private void OnDeviceModelCreatedStatus(object sender, (DeviceModelStatus, string, InputData) data)
         {
-            var (status, error, input) = data;
-            _inputData = input;
-            SetDataSource();
-            if (!FindPlate()) return;
+            this.SafeInvoke(() =>
+            {
+                var (status, error, input) = data;
+                _inputData = input;
+                SetDataSource();
+                if (!FindPlate()) return;
 
-            if (status != DeviceModelStatus.SuccessNifuda
-                || status != DeviceModelStatus.SuccessSap)
-            {
-                tbSerial.Text = _inputData.INDEX_NO;
-                tbPlateName.Text = _plate.PlateName;
-            }
-            else
-            {
-                _connection?.Dispose();
-                Close();
-            }
+                if (status != DeviceModelStatus.SuccessNifuda
+                    || status != DeviceModelStatus.SuccessSap)
+                {
+                    tbSerial.Text = _inputData.INDEX_NO;
+                    tbPlateName.Text = _plate.PlateName;
+                }
+                else
+                {
+                    _connection?.Dispose();
+                    Close();
+                }
+            });
         }
 
         private void MemoLog_TextChanged(object sender, EventArgs e)

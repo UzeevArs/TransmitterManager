@@ -58,13 +58,12 @@ namespace ReportManager.Forms.Stages
 
             var input = ReportManagerContext.GetInstance().CurrentInput;
             report.DataSource = new List<object> { input,
-                                                   (new CalibrationResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault() ?? new CalibrationResults(),
-                                                   (new DeviceTestResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault() ?? new DeviceTestResults() }
+                                                   (new DeviceTestResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault() ?? new DeviceTestResults(),
+                                                   (new CalibrationResultsDatabaseAdapter()).SelectBySerial(input.SERIAL_NO).FirstOrDefault() ?? new CalibrationResults() }
                                 .PropertiesToDict()
                                 .ToExpando()
                                 .ToDynamicArray()
                                 .ToDataTable();
-                        
             return report;
         }
 

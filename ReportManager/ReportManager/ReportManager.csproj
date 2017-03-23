@@ -169,6 +169,7 @@
     <Compile Include="Core\Stages\TemperatureStage.cs" />
     <Compile Include="Core\Utility\EnumUtility.cs" />
     <Compile Include="Core\Utility\FolderUtility.cs" />
+    <Compile Include="Core\Utility\IndexNOGenerator.cs" />
     <Compile Include="Data\AbstractAdapters\ConnectionException.cs" />
     <Compile Include="Data\AbstractAdapters\IExtraInputDataAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ISelectBySerialAdapter.cs" />
@@ -182,12 +183,18 @@
     <Compile Include="Core\Functional\CheckManifactureDbConnectionFunctional.cs" />
     <Compile Include="Core\Functional\Functional.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\CalibrationResultsDatabaseAdapter.cs" />
+    <Compile Include="Data\Database\ConcreteAdapters\IndexNODatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\DeviceTestResultsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\MaxigrafPlatesSettingsDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\NifudaInputDataDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\TemperatureFrameDatabaseAdapter.cs" />
     <Compile Include="Data\Database\ConcreteAdapters\UsersDatabaseAdapter.cs" />
+    <Compile Include="Data\Database\IndexNODataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexNODataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\Database\MaxigrafDataSet.cs">
       <DependentUpon>MaxigrafDataSet.xsd</DependentUpon>
     </Compile>
@@ -213,6 +220,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsersDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data\DataModel\IndexNOResult.cs" />
     <Compile Include="Data\DataModel\MaxigrafPlate.cs" />
     <Compile Include="Data\DataModel\MaxigrafPlateSetting.cs" />
     <Compile Include="Data\DataModel\TemperatureFrame.cs" />
@@ -441,6 +449,17 @@
     </None>
     <None Include="Data\Database\CalibrationDataSet.xss">
       <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\IndexNODataSet.xsc">
+      <DependentUpon>IndexNODataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Data\Database\IndexNODataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IndexNODataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\Database\IndexNODataSet.xss">
+      <DependentUpon>IndexNODataSet.xsd</DependentUpon>
     </None>
     <None Include="Data\Database\HipotDataSet.xsc">
       <DependentUpon>HipotDataSet.xsd</DependentUpon>

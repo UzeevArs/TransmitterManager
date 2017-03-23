@@ -8,6 +8,9 @@ using System.Linq;
 using ReportManager.TemperatureLogger.Modbus;
 using Stateless;
 using System.Threading.Tasks;
+using ReportManager.Data.Database.DataSet1TableAdapters;
+using ReportManager.Core.Utility;
+using ReportManager.Data.Database.ConcreteAdapters;
 
 namespace ReportManager.Core
 {
@@ -15,9 +18,10 @@ namespace ReportManager.Core
     {
         private enum InputDataStates
         {
-            Initial,
+            Initial, NifudaRequestBySapIndexNo,
             NifudaRequestByIndexNo, NifudaConnectionError,
             SapRequest, SapCheckData, SapErrorConnection, SapErrorNoData,
+            IndexNoGenerattion, IndexNoGenerationError, IndexNODatabaseConnectionError,
             NifudaInsert, NifudaInsertCheckData, NifudaInsertError,
             SuccessNifuda, SuccessSap
         }
@@ -30,9 +34,13 @@ namespace ReportManager.Core
             ToSapRequest,
             ToSuccessNifuda,
             ToSapCheckData,
+            ToErrorIndexNODatabaseConnection,
+            ToErrorIndexNOGeneration,
             ToErrorSapConnection,
+            ToIndexNoGeneration,
             ToNifudaInsert,
             ToSapErrorNoData,
+            ToNifudaRequestBySapIndexNo,
             ToNifudaInsertCheckData,
             ToNifudaInsertError,
             ToSuccessSap
@@ -41,6 +49,7 @@ namespace ReportManager.Core
         private static ReportManagerContext _instance;
         private SapResultDatabaseAdapter sapDataAdapter = new SapResultDatabaseAdapter();
         private NifudaInputDataDatabaseAdapter nifudaDataAdapter = new NifudaInputDataDatabaseAdapter();
+        private IndexNODataAdapter indexNODataAdapter = new IndexNODataAdapter();
         private StateMachine<InputDataStates, InputDataTriggers> InputDataStateMachine =
             new StateMachine<InputDataStates, InputDataTriggers>(InputDataStates.Initial);
 
@@ -53,9 +62,19 @@ namespace ReportManager.Core
 
             InputDataStateMachine.Configure(InputDataStates.NifudaRequestByIndexNo)
                                  .OnEntry(NifudaRequestByIndexNo)
+                                 .Permit(InputDataTriggers.ToNifudaRequestBySapIndexNo, InputDataStates.NifudaRequestBySapIndexNo)
                                  .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
+                                 .Permit(InputDataTriggers.ToErrorIndexNODatabaseConnection, InputDataStates.IndexNODatabaseConnectionError);
+
+            InputDataStateMachine.Configure(InputDataStates.NifudaRequestBySapIndexNo)
+                                 .OnEntry(NifudaRequestBySapIndexNo)
                                  .Permit(InputDataTriggers.ToSapRequest, InputDataStates.SapRequest)
-                                 .Permit(InputDataTriggers.ToErrorNifudaConnection, InputDataStates.NifudaConnectionError);
+                                 .Permit(InputDataTriggers.ToSuccessNifuda, InputDataStates.SuccessNifuda)
+                                 .Permit(InputDataTriggers.ToErrorIndexNODatabaseConnection, InputDataStates.IndexNODatabaseConnectionError);
+
+            InputDataStateMachine.Configure(InputDataStates.IndexNODatabaseConnectionError)
+                                 .OnEntry(IndexNODatabaseConnectionError)
+                                 .Permit(InputDataTriggers.Reset, InputDataStates.Initial);
 
             InputDataStateMachine.Configure(InputDataStates.NifudaConnectionError)
                                  .OnEntry(NifudaConnectionError)
@@ -75,9 +94,18 @@ namespace ReportManager.Core
                                  .Permit(InputDataTriggers.Reset, InputDataStates.Initial);
 
             InputDataStateMachine.Configure(InputDataStates.SapCheckData)
-                                .OnEntry(SapCheckData)
-                                .Permit(InputDataTriggers.ToNifudaInsert, InputDataStates.NifudaInsert)
-                                .Permit(InputDataTriggers.ToSapErrorNoData, InputDataStates.SapErrorNoData);
+                                 .OnEntry(SapCheckData)
+                                 .Permit(InputDataTriggers.ToIndexNoGeneration, InputDataStates.IndexNoGenerattion)
+                                 .Permit(InputDataTriggers.ToSapErrorNoData, InputDataStates.SapErrorNoData);
+
+            InputDataStateMachine.Configure(InputDataStates.IndexNoGenerattion)
+                                 .OnEntry(IndexNoGeneration)
+                                 .Permit(InputDataTriggers.ToNifudaInsert, InputDataStates.NifudaInsert)
+                                 .Permit(InputDataTriggers.ToErrorIndexNOGeneration, InputDataStates.IndexNoGenerationError);
+
+            InputDataStateMachine.Configure(InputDataStates.IndexNoGenerationError)
+                                 .OnEntry(IndexNoGenerattionError)
+                                 .Permit(InputDataTriggers.Reset, InputDataStates.Initial);
 
             InputDataStateMachine.Configure(InputDataStates.SapErrorNoData)
                                  .OnEntry(SapErrorNoData)
@@ -156,6 +184,8 @@ namespace ReportManager.Core
         #region InputDataStateMachine methods
         private string Error { get; set; } = "";
         private string RequestNo { get; set; } = "";
+        private IEnumerable<IndexNOResult> ToIndexNORequest { get; set; }
+        private IEnumerable<IndexNOResult> FromIndexNORequest { get; set; }
         private IEnumerable<InputData> FromNifudaRequest { get; set; }
         private IEnumerable<InputData> FromSapRequest { get; set; }
 
@@ -165,31 +195,57 @@ namespace ReportManager.Core
             {
                 FromNifudaRequest = nifudaDataAdapter.SelectDataByIndexNo(RequestNo).ToList();
                 if (FromNifudaRequest.Count() == 0)
-                    InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
+                {
+                    InputDataStateMachine.Fire(InputDataTriggers.ToNifudaRequestBySapIndexNo);
+                }
                 else
+                {
+                    FromNifudaRequest = nifudaDataAdapter.SelectDataByIndexNo(RequestNo).ToList();
                     InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
+                }
             }
             catch (Exception ex)
             {
-                InputDataStateMachine.Fire(InputDataTriggers.ToErrorNifudaConnection);
+                InputDataStateMachine.Fire(InputDataTriggers.ToErrorIndexNODatabaseConnection);
                 Error = ex.Message;
             }
         }
-                      
+        private void NifudaRequestBySapIndexNo()
+        {
+            try
+            {
+                FromIndexNORequest =  indexNODataAdapter.SelectDataByIndex(RequestNo, null).ToList();
+                if (FromIndexNORequest.Count() == 0)
+                {
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
+                }
+                else
+                {
+                   
+                    FromNifudaRequest = nifudaDataAdapter.SelectDataByIndexNo(FromIndexNORequest.First().INDEX_NO).ToList();
+                    InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
+                }
+            }
+            catch (Exception ex)
+            {
+                InputDataStateMachine.Fire(InputDataTriggers.ToErrorIndexNODatabaseConnection);
+                Error = ex.Message;
+            }
+        }
+
+        private void IndexNODatabaseConnectionError()
+        {
+            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorIndexNoDatabaseConnection, Error, null));
+            InputDataStateMachine.Fire(InputDataTriggers.Reset);
+        }
+
         private void NifudaConnectionError()
         {
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorNifudaConnection, Error, null));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
 
-        //private void NifudaCheckData()
-        //{
-        //    if (FromNifudaRequest.Count() == 0)
-        //        InputDataStateMachine.Fire(InputDataTriggers.ToSapRequest);
-        //    else
-        //        InputDataStateMachine.Fire(InputDataTriggers.ToSuccessNifuda);
-        //}
-
+       
         private void SuccessNifuda()
         {
             CurrentInput = FromNifudaRequest.First();
@@ -223,7 +279,7 @@ namespace ReportManager.Core
             {
                 if (FromSapRequest.Count() > 0
                 && !(FromSapRequest.First().SERIAL_NO == string.Empty))
-                    InputDataStateMachine.Fire(InputDataTriggers.ToNifudaInsert);
+                    InputDataStateMachine.Fire(InputDataTriggers.ToIndexNoGeneration);
                 else
                     InputDataStateMachine.Fire(InputDataTriggers.ToSapErrorNoData);
             }
@@ -237,6 +293,34 @@ namespace ReportManager.Core
         private void SapErrorNoData()
         {
             InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorSapNoData, RequestNo, null));
+            InputDataStateMachine.Fire(InputDataTriggers.Reset);
+        }
+
+        private void IndexNoGeneration()
+        {
+            
+
+            try
+            {
+                var result = new IndexNOResult
+                {
+                    INDEX_NO = IndexNOGenerator.IndexNoLastNumber().ToString(),
+                    SAP_INDEX_NO = FromSapRequest.First().INDEX_NO
+                };
+                indexNODataAdapter.Insert(new List<IndexNOResult> { result } ,null);
+                FromSapRequest.First().INDEX_NO = result.INDEX_NO;
+                InputDataStateMachine.Fire(InputDataTriggers.ToNifudaInsert);
+            }
+            catch(Exception ex)
+            {
+                InputDataStateMachine.Fire(InputDataTriggers.ToErrorIndexNOGeneration);
+                Error = ex.Message;
+            }
+        }
+
+        private void IndexNoGenerattionError()
+        {
+            InputDataCreatedStatus?.Invoke(this, (DeviceModelStatus.ErrorIndexNOGeneration, RequestNo, null));
             InputDataStateMachine.Fire(InputDataTriggers.Reset);
         }
 
@@ -300,6 +384,6 @@ namespace ReportManager.Core
     internal enum DeviceModelStatus
     {
         ErrorNifudaConnection, SuccessNifuda, ErrorSapConnection,
-        ErrorSapNoData, NifudaInsertError, SuccessSap
+        ErrorSapNoData, NifudaInsertError, SuccessSap, ErrorIndexNOGeneration, ErrorIndexNoDatabaseConnection
     }
 }
