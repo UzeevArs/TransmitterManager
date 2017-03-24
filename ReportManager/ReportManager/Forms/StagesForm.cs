@@ -181,6 +181,14 @@ namespace ReportManager.Forms
                         lblInputDataStatus.Caption = $"Данные успешно загружены из SAP и скопированы в Nifuda";
                         OnSuccess();
                         break;
+                    case DeviceModelStatus.ErrorIndexNOGeneration:
+                        lblInputDataStatus.Caption = $"Внутренний Index_NO не сгенерирован";
+                        OnError();
+                        break;
+                    case DeviceModelStatus.ErrorIndexNoDatabaseConnection:
+                        lblInputDataStatus.Caption = $"Отсутствует подключение к Таблице Index_NO";
+                        OnError();
+                        break;
                 }
             });
         }

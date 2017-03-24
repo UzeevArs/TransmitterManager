@@ -257,7 +257,7 @@ namespace ReportManager.Core
         {
             try
             {
-                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo).ToList();
+                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo);
                 InputDataStateMachine.Fire(InputDataTriggers.ToSapCheckData);
             }
             catch (Exception ex)
@@ -278,8 +278,11 @@ namespace ReportManager.Core
             try
             {
                 if (FromSapRequest.Count() > 0
-                && !(FromSapRequest.First().SERIAL_NO == string.Empty))
+                    && !(FromSapRequest.First().SERIAL_NO == string.Empty))
+                {
+                    FromSapRequest = FromSapRequest.ToList();
                     InputDataStateMachine.Fire(InputDataTriggers.ToIndexNoGeneration);
+                }
                 else
                     InputDataStateMachine.Fire(InputDataTriggers.ToSapErrorNoData);
             }
