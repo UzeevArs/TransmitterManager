@@ -205,9 +205,8 @@ namespace ReportManager.Forms.Stages.MaxigraphStageForm
             {
                 var (status, error, input) = data;
                 _inputData = input;
-                SetDataSource();
                 if (!FindPlate()) return;
-
+                SetDataSource();
                 if (status != DeviceModelStatus.SuccessNifuda
                     || status != DeviceModelStatus.SuccessSap)
                 {

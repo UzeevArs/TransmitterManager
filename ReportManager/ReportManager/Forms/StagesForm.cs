@@ -166,7 +166,7 @@ namespace ReportManager.Forms
                         OnError();
                         break;
                     case DeviceModelStatus.ErrorSapNoData:
-                        lblInputDataStatus.Caption = $"Произошла ошибка. Введённый серийный номер не найден в SAP";
+                        lblInputDataStatus.Caption = $"Произошла ошибка. Введённый производственный номер не найден ни в БД SAP ни в БД Nifuda";
                         OnError();
                         break;
                     case DeviceModelStatus.NifudaInsertError:
