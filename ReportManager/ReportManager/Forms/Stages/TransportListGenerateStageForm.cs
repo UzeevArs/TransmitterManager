@@ -57,9 +57,6 @@ namespace ReportManager.Forms.Stages
             {
                 XtraMessageBox.Show($"Не удалось сохранить отчет\n{extra}");
             }
-
-            CertificateReport cer = new CertificateReport();
-            
         }
 
         private void TransportListGenerateStageForm_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)

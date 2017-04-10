@@ -1,5 +1,4 @@
 ﻿using ReportManager.Data.AbstractAdapters;
-using ReportManager.Data.SAP.TemperatureDataSetTableAdapters;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Data.Extensions;
@@ -7,10 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using static ReportManager.Data.SAP.TemperatureDataSet;
+using ReportManager.Data.Database.TemperatureDataSetTableAdapters;
+using static ReportManager.Data.Database.TemperatureDataSet;
 
 namespace ReportManager.Data.SAP.ConcreteAdapters
 {
@@ -30,6 +27,25 @@ namespace ReportManager.Data.SAP.ConcreteAdapters
                 foreach (var obj in dataTable.AdaptWithSameProperties<TemperatureFrame,
                                                                       TemperatureDataTableRow>())
                     yield return obj;
+            }
+        }
+
+        // Результат обязательно проверить на NULL! Выбирает дипазон 10 минут от  заданной даты и ищет максимально близкое значение. 
+        //  Если в диапазоне не оказалось значений, возвращает NULL
+        public TemperatureFrame SelectLastByDate(DateTime time)
+        {
+            using (var adapter = new TemperatureTableAdapter
+            {
+                Connection = new SqlConnection(SettingsContext.GlobalSettings.NifudaConnectionString)
+            })
+            {
+                if (!SafeCheck.IsValidConnection(adapter.Connection))
+                    throw new ConnectionException(SettingsContext.GlobalSettings.NifudaConnectionString);
+
+                var dataTable = adapter.GetDataBetweenDate(time - new TimeSpan(0, 5, 0), time + new TimeSpan(0, 5, 0));
+                return dataTable.AdaptWithSameProperties<TemperatureFrame, TemperatureDataTableRow>()
+                                .OrderBy(t => Math.Abs((t.Time - time).Ticks))
+                                .FirstOrDefault();
             }
         }
 

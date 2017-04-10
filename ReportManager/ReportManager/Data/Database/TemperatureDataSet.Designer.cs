@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ReportManager.Data.SAP {
+namespace ReportManager.Data.Database {
     
     
     /// <summary>
@@ -712,7 +712,7 @@ namespace ReportManager.Data.SAP {
         }
     }
 }
-namespace ReportManager.Data.SAP.TemperatureDataSetTableAdapters {
+namespace ReportManager.Data.Database.TemperatureDataSetTableAdapters {
     
     
     /// <summary>
@@ -866,12 +866,19 @@ namespace ReportManager.Data.SAP.TemperatureDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TOP (1440) SDATETIME, SPRESSURE, SHUMIDITY, STEMPERATURE\r\nFROM dbo.SENVERO" +
                 "NMENT \r\nORDER BY SDATETIME DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT SDATETIME, SPRESSURE, SHUMIDITY, STEMPERATURE\r\nFROM dbo.SENVERONMENT \r\nWHE" +
+                "RE SDATETIME BETWEEN @SDATETIME_MIN AND @SDATETIME_MAX\r\nORDER BY SDATETIME DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDATETIME_MIN", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SDATETIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SDATETIME_MAX", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SDATETIME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -893,6 +900,19 @@ namespace ReportManager.Data.SAP.TemperatureDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual TemperatureDataSet.TemperatureDataTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            TemperatureDataSet.TemperatureDataTableDataTable dataTable = new TemperatureDataSet.TemperatureDataTableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual TemperatureDataSet.TemperatureDataTableDataTable GetDataBetweenDate(System.DateTime SDATETIME_MIN, System.DateTime SDATETIME_MAX) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(SDATETIME_MIN));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(SDATETIME_MAX));
             TemperatureDataSet.TemperatureDataTableDataTable dataTable = new TemperatureDataSet.TemperatureDataTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -952,22 +972,22 @@ namespace ReportManager.Data.SAP.TemperatureDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime Time, global::System.Nullable<float> Pressure, global::System.Nullable<float> Humidity, global::System.Nullable<float> Temperature) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Time));
-            if ((Pressure.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((float)(Pressure.Value));
+        public virtual int Insert(System.DateTime SDATETIME, global::System.Nullable<float> SPRESSURE, global::System.Nullable<float> SHUMIDITY, global::System.Nullable<float> STEMPERATURE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(SDATETIME));
+            if ((SPRESSURE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((float)(SPRESSURE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Humidity.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((float)(Humidity.Value));
+            if ((SHUMIDITY.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((float)(SHUMIDITY.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Temperature.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((float)(Temperature.Value));
+            if ((STEMPERATURE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((float)(STEMPERATURE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;

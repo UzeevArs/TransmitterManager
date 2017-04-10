@@ -15,6 +15,7 @@ using ReportManager.Core.Stages;
 using ReportManager.Data.Database.NifudaDataSetTableAdapters;
 using ReportManager.Data.Settings;
 using ReportManager.Reports;
+using ReportManager.Data.Extensions;
 
 namespace ReportManager.Forms
 {
@@ -47,6 +48,7 @@ namespace ReportManager.Forms
             edtManufString.Text = SettingsContext.GlobalSettings.NifudaConnectionString;
             edtUpdateTimeout.Value = SettingsContext.GlobalSettings.UpdateTimeout;
             btnReportSavePath.Text = SettingsContext.GlobalSettings.ReportSavePath;
+            signaturePict.LoadAsync(SettingsContext.SignaturePath);
         }
 
         private (SettingsStatus status, string message) SaveSettings()
@@ -98,7 +100,7 @@ namespace ReportManager.Forms
 
         private void SuccessConnection()
         {
-            Invoke((MethodInvoker) delegate
+            this.SafeInvoke(() =>
             {
                 btnOk.Enabled = true;
                 btnCancel.Enabled = true;
@@ -114,7 +116,7 @@ namespace ReportManager.Forms
 
         private void ErrorConnection(string error)
         {
-            Invoke((MethodInvoker)delegate
+            this.SafeInvoke(() => 
             {
                 btnOk.Enabled = true;
                 btnCancel.Enabled = true;
@@ -156,6 +158,11 @@ namespace ReportManager.Forms
             {
                 btnOk.PerformClick();
             }
+        }
+
+        private void signaturePict_DoubleClick(object sender, EventArgs e)
+        {
+            signaturePict.LoadAsync(SettingsContext.SignaturePath);
         }
     }
 }

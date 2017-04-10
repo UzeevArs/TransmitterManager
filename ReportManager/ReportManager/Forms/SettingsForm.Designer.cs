@@ -32,6 +32,8 @@
             this.btnOk = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.grpMainSettings = new DevExpress.XtraEditors.GroupControl();
+            this.signaturePict = new DevExpress.XtraEditors.PictureEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnTryConnectManif = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnReportSavePath = new DevExpress.XtraEditors.ButtonEdit();
@@ -42,6 +44,7 @@
             this.prgsDbConnect = new DevExpress.XtraWaitForm.ProgressPanel();
             ((System.ComponentModel.ISupportInitialize)(this.grpMainSettings)).BeginInit();
             this.grpMainSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.signaturePict.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportSavePath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtUpdateTimeout.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtManufString.Properties)).BeginInit();
@@ -49,7 +52,7 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(462, 181);
+            this.btnOk.Location = new System.Drawing.Point(462, 334);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(100, 23);
             this.btnOk.TabIndex = 6;
@@ -59,7 +62,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(12, 181);
+            this.btnCancel.Location = new System.Drawing.Point(12, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 23);
             this.btnCancel.TabIndex = 5;
@@ -68,6 +71,8 @@
             // 
             // grpMainSettings
             // 
+            this.grpMainSettings.Controls.Add(this.signaturePict);
+            this.grpMainSettings.Controls.Add(this.labelControl1);
             this.grpMainSettings.Controls.Add(this.btnTryConnectManif);
             this.grpMainSettings.Controls.Add(this.labelControl4);
             this.grpMainSettings.Controls.Add(this.btnReportSavePath);
@@ -77,9 +82,28 @@
             this.grpMainSettings.Controls.Add(this.labelControl2);
             this.grpMainSettings.Location = new System.Drawing.Point(12, 12);
             this.grpMainSettings.Name = "grpMainSettings";
-            this.grpMainSettings.Size = new System.Drawing.Size(550, 146);
+            this.grpMainSettings.Size = new System.Drawing.Size(550, 295);
             this.grpMainSettings.TabIndex = 999;
             this.grpMainSettings.Text = "Основные настройки";
+            // 
+            // signaturePict
+            // 
+            this.signaturePict.Cursor = System.Windows.Forms.Cursors.Default;
+            this.signaturePict.Location = new System.Drawing.Point(270, 145);
+            this.signaturePict.Name = "signaturePict";
+            this.signaturePict.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.signaturePict.Properties.ZoomAccelerationFactor = 1D;
+            this.signaturePict.Size = new System.Drawing.Size(229, 145);
+            this.signaturePict.TabIndex = 1001;
+            this.signaturePict.DoubleClick += new System.EventHandler(this.signaturePict_DoubleClick);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(18, 145);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(116, 13);
+            this.labelControl1.TabIndex = 1000;
+            this.labelControl1.Text = "Электронная подпись:";
             // 
             // btnTryConnectManif
             // 
@@ -172,7 +196,7 @@
             this.prgsDbConnect.BarAnimationElementThickness = 2;
             this.prgsDbConnect.Caption = "Пожалуйста, подождите";
             this.prgsDbConnect.Description = "Попытка подключения к БД...";
-            this.prgsDbConnect.Location = new System.Drawing.Point(172, 160);
+            this.prgsDbConnect.Location = new System.Drawing.Point(172, 313);
             this.prgsDbConnect.Name = "prgsDbConnect";
             this.prgsDbConnect.Size = new System.Drawing.Size(243, 66);
             this.prgsDbConnect.TabIndex = 999;
@@ -186,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(575, 228);
+            this.ClientSize = new System.Drawing.Size(575, 384);
             this.Controls.Add(this.grpMainSettings);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.prgsDbConnect);
@@ -200,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpMainSettings)).EndInit();
             this.grpMainSettings.ResumeLayout(false);
             this.grpMainSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.signaturePict.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReportSavePath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtUpdateTimeout.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edtManufString.Properties)).EndInit();
@@ -219,5 +244,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SpinEdit edtUpdateTimeout;
         private DevExpress.XtraEditors.SimpleButton btnTryConnectManif;
+        private DevExpress.XtraEditors.PictureEdit signaturePict;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

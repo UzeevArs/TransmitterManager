@@ -19,6 +19,8 @@ namespace ReportManager.Data.Settings
 
         public static User CurrentUser { get; set; } = new User();
 
+        public static string SignaturePath => $"signatures/{CurrentUser.TUSER}.jpg";
+
         public static (SettingsStatus status, string message) SaveSettings()
         {
             try
