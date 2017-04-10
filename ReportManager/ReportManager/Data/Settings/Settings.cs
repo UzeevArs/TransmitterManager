@@ -4,7 +4,7 @@ using ReportManager.Core.Stages;
 
 namespace ReportManager.Data.Settings
 {
-    internal class Settings
+    public class Settings
     {
         public string NifudaConnectionString { get; set; }
 

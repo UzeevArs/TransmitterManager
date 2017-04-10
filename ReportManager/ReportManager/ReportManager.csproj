@@ -207,6 +207,9 @@
       <DependentUpon>NifudaDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\Database\SafeCheck.cs" />
+    <Compile Include="Data\Database\TemperatureDataSet.cs">
+      <DependentUpon>TemperatureDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\Database\TemperatureDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

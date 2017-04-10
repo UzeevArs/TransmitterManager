@@ -8,7 +8,7 @@ using ReportManager.Data.DataModel;
 
 namespace ReportManager.Data.Settings
 {
-    internal static class SettingsContext
+    public static class SettingsContext
     {
         private static readonly string SettingsPath =
             $@"{Environment.GetEnvironmentVariable("AllUsersProfile")}\ReportManagerSettings\Settings.xml";
