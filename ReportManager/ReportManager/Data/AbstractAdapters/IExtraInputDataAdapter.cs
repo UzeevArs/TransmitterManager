@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportManager.Data.AbstractAdapters
 {
-    internal interface IExtraInputDataAdapter<T> where T : class, new()
+    public interface IExtraInputDataAdapter<T> where T : class, new()
     {
         IEnumerable<T> SelectDataByIndex(string index, object state);
         IEnumerable<T> SelectNotGeneratedData(object state);

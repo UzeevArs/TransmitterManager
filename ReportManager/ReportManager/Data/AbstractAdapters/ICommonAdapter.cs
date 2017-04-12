@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ReportManager.Data.AbstractAdapters
 {
-    internal enum Result
+    public enum Result
     {
         Success, Unsuccess
     }
 
-    internal interface ICommonAdapter<T> where T: class, new()
+    public interface ICommonAdapter<T> where T: class, new()
     {
         IEnumerable<T> Select(object state);
         (Result, string) Insert(IEnumerable<T> data, object state);

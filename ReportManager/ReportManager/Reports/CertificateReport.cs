@@ -4,7 +4,7 @@ using ReportManager.Data.Settings;
 
 namespace ReportManager.Reports
 {
-    internal partial class CertificateReport : XtraReport, ISavingReport
+    public partial class CertificateReport : XtraReport, ISavingReport
     {
         public CertificateReport()
         {

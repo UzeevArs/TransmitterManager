@@ -175,6 +175,11 @@
     <Compile Include="Data\AbstractAdapters\ISelectBySerialAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\ICommonAdapter.cs" />
     <Compile Include="Data\AbstractAdapters\Misc.cs" />
+    <Compile Include="Data\Converters\AbstractConverter.cs" />
+    <Compile Include="Data\Converters\SapCorrectionDataConverter.cs" />
+    <Compile Include="Data\Database\CalibrationDataSet.cs">
+      <DependentUpon>CalibrationDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\Database\CalibrationDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

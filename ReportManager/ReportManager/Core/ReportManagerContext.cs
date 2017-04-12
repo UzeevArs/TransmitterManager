@@ -4,6 +4,7 @@ using ReportManager.Core.Stages;
 using ReportManager.Data.DataModel;
 using ReportManager.Data.Settings;
 using ReportManager.Data.SAP.ConcreteAdapters;
+using ReportManager.Data.Converters;
 using System.Linq;
 using ReportManager.TemperatureLogger.Modbus;
 using Stateless;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using ReportManager.Data.Database.DataSet1TableAdapters;
 using ReportManager.Core.Utility;
 using ReportManager.Data.Database.ConcreteAdapters;
+using ReportManager.Data.Converters;
 
 namespace ReportManager.Core
 {
@@ -257,7 +259,9 @@ namespace ReportManager.Core
         {
             try
             {
-                FromSapRequest = sapDataAdapter.SelectBySerial(RequestNo);
+                FromSapRequest = sapDataAdapter
+                    .SelectBySerial(RequestNo)
+                    .Convert<SapCorrectionDataConverter, InputData>();
                 InputDataStateMachine.Fire(InputDataTriggers.ToSapCheckData);
             }
             catch (Exception ex)

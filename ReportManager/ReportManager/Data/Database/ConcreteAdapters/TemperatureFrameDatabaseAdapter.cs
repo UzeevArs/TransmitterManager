@@ -11,7 +11,7 @@ using static ReportManager.Data.Database.TemperatureDataSet;
 
 namespace ReportManager.Data.SAP.ConcreteAdapters
 {
-    internal class TemperatureFrameDatabaseAdapter : ICommonAdapter<TemperatureFrame>
+    public class TemperatureFrameDatabaseAdapter : ICommonAdapter<TemperatureFrame>
     {
         public IEnumerable<TemperatureFrame> Select(object state = null)
         {

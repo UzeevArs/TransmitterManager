@@ -4,7 +4,7 @@ using ReportManager.Data.Settings;
 
 namespace ReportManager.Core.Utility
 {
-    internal class FolderUtility
+    public class FolderUtility
     {
         public static (FolderUtilityStatus Status, string Extra) CheckAndCreateCurrentPath(string stageName)
         {
