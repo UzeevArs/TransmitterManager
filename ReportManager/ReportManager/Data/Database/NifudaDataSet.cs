@@ -4,6 +4,9 @@
 
     partial class NifudaDataSet
     {
+        partial class NifudaDataTableDataTable
+        {
+        }
     }
 }
 
