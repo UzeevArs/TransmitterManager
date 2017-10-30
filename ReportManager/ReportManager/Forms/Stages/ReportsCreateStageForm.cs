@@ -11,7 +11,9 @@ using ReportManager.Data.DataModel;
 using ReportManager.Reports;
 using ReportManager.Data.Extensions;
 using ReportManager.Data.SAP.ConcreteAdapters;
-using System.Data;
+using System.IO;
+using DevExpress.XtraPrinting;
+using ReportManager.Core.Utility;
 
 namespace ReportManager.Forms.Stages
 {
@@ -42,8 +44,10 @@ namespace ReportManager.Forms.Stages
 
         private XtraReport CreateReportInstance()
         {
+
             var report = (XtraReport)
                 Activator.CreateInstance((cbReports.SelectedItem as ReportTypeWrapper).ReportType);
+
 
             if (!(report is ISavingReport))
             {
@@ -64,6 +68,9 @@ namespace ReportManager.Forms.Stages
                                 .ToExpando()
                                 .ToDynamicArray()
                                 .ToDataTable();
+
+            report.PrintingSystem.PrintProgress += Report_PrintProgreses;
+
             return report;
         }
 
@@ -87,8 +94,30 @@ namespace ReportManager.Forms.Stages
                 designerTool.ShowRibbonDesignerDialog(UserLookAndFeel.Default);
             }
         }
-    }
 
+        private void Report_PrintProgreses(object sender, PrintProgressEventArgs e)
+        {
+            var report = CreateReportInstance();
+            var name = CreateReportInstance().Report.Band.ToString();
+            if (name == "Сертификат")
+            {
+                var (status, extra) = FolderUtility.CheckAndCreateCurrentPath("Certificate");
+                if (status == FolderUtilityStatus.Success)
+                {
+                    var path = $"{extra}" +
+                               $"Certificate_{ReportManagerContext.GetInstance().CurrentInput.SERIAL_NO}.pdf";
+                    if (!Directory.Exists(path))
+                       (report as CertificateReport)?.ExportToPdf(path);
+                }
+                else if (status == FolderUtilityStatus.Error)
+                {
+                    XtraMessageBox.Show($"Не удалось сохранить отчет\n{extra}");
+                }
+            }
+            
+
+        }
+    }
     internal class ReportTypeWrapper
     {
         public Type ReportType { get; set; }
@@ -97,5 +126,8 @@ namespace ReportManager.Forms.Stages
             return ReportType != null ? ReportType.Name : "";
         }
     }
+
+        
+
 }
 

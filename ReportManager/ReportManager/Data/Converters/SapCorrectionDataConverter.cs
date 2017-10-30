@@ -13,11 +13,11 @@ namespace ReportManager.Data.Converters
         {
             foreach(var inputData in data)
             {
-                string ProdNo = inputData.ORDER_NO;
                 inputData.ORDER_NO = inputData.PROD_NO;
-                inputData.PROD_NO = ProdNo;
+                inputData.PROD_NO = "";
                 inputData.ITEM_NO = inputData.LINE_NO;
-                
+                inputData.FACTOR_500 = inputData.FATOR_500;
+
                 yield return inputData;
             }
         }

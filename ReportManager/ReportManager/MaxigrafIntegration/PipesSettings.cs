@@ -5,6 +5,8 @@ namespace ReportManager.MaxigrafIntegration
     internal static class ServerPipeSettings
     {
         public static string Name = "MaxiGrafPipe";
+        
+
 
         public enum Commands
         {

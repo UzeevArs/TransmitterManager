@@ -45,6 +45,7 @@ namespace ReportManager.Forms.Stages
 
         private void Report_PrintProgress(object sender, PrintProgressEventArgs e)
         {
+
             var (status, extra) = FolderUtility.CheckAndCreateCurrentPath("Transport List");
             if (status == FolderUtilityStatus.Success)
             {

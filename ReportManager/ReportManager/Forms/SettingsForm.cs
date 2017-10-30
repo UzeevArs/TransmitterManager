@@ -164,5 +164,10 @@ namespace ReportManager.Forms
         {
             signaturePict.LoadAsync(SettingsContext.SignaturePath);
         }
+
+        private void btnReportSavePath_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

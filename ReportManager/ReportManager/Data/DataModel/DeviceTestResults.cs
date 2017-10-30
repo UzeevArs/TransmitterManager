@@ -15,5 +15,6 @@
         public string TEST_DATE { get; set; } = "";
         public string TEST_TIME { get; set; } = "";
         public string TUSER { get; set; } = "";
+               
     }
 }

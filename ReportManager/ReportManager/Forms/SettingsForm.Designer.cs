@@ -129,11 +129,11 @@
             this.btnReportSavePath.Name = "btnReportSavePath";
             this.btnReportSavePath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnReportSavePath.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnReportSavePath.Size = new System.Drawing.Size(229, 20);
             this.btnReportSavePath.TabIndex = 999;
             this.btnReportSavePath.TabStop = false;
             this.btnReportSavePath.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.BtnReportSavePath_ButtonClick);
+            this.btnReportSavePath.EditValueChanged += new System.EventHandler(this.btnReportSavePath_EditValueChanged);
             // 
             // labelControl3
             // 
